@@ -1,11 +1,13 @@
 {
   "kether": {
     "world": {
+      "title": " ",
       "aspect": "Onipresença"
     },
     "regent": {
       "title": "Serafins - Metatron",
-      "name": "EHEIEH"
+      "name": "EHEIEH",
+      "defect": " "
     },
     "sephirot": {
       "name": "Kether",
@@ -19,7 +21,7 @@
     },
     "planet": {}
   },
-  "chokma": {
+  "chokmah": {
     "world": {
       "title": "Atziluth (mundo arquétipo)",
       "aspect": "Onipotência"

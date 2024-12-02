@@ -18,6 +18,7 @@ import PageUnderConstruction from '@/components/UnderConstruction/UnderConstruct
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
 import Appbar from '@/components/Appbar';
+import useSephirot, { useBiggerSephirot } from '@/hooks/useSephirot';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -202,11 +203,11 @@ export default function HomePage() {
           }}
         >
           <div className="kether">
-            <BiggerSephirot {...kether} />
+            <BiggerSephirot {...useBiggerSephirot(kether)} />
           </div>
           <div className="binah-chokma">
-            <BiggerSephirot {...binah} />
-            <BiggerSephirot {...chokma} />
+            <BiggerSephirot {...useBiggerSephirot(binah)} />
+            <BiggerSephirot {...useBiggerSephirot(chokma)} />
           </div>
 
           <div className="daath">
@@ -214,25 +215,25 @@ export default function HomePage() {
           </div>
 
           <div className="gevura-chesed">
-            <Sephirot {...gevurah} />
-            <Sephirot {...chesed} />
+            <Sephirot {...useSephirot(gevurah)} />
+            <Sephirot {...useSephirot(chesed)} />
           </div>
 
           <div className="tiferet">
-            <Sephirot {...tiferet} />
+            <Sephirot {...useSephirot(tiferet)} />
           </div>
 
           <div className="hod-netzach">
-            <Sephirot {...hod} />
-            <Sephirot {...netzach} />
+            <Sephirot {...useSephirot(hod)} />
+            <Sephirot {...useSephirot(netzach)} />
           </div>
 
           <div className="yesod">
-            <Sephirot {...yesod} />
+            <Sephirot {...useSephirot(yesod)} />
           </div>
 
           <div className="malkuth">
-            <BiggerSephirot {...malkuth} />
+            <BiggerSephirot {...useBiggerSephirot(malkuth)} />
           </div>
         </div>
       </section>

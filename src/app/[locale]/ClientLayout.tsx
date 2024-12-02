@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { theme } from '@/app/config';
+import { theme } from '@/config';
 
 import { useTranslations } from 'next-intl';
 

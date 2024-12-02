@@ -31,6 +31,7 @@ type Planet = {
 };
 
 export type SimpleSephirot = {
+  world?: World & Theming<World>;
   regent: Regent & Theming<Regent>;
   sephirot: Sephirot & Theming<Sephirot>;
   planet: Planet & Theming;
