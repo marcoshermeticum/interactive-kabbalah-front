@@ -234,17 +234,17 @@ export const gevurah = {
   regent: {
     title: 'Arcanjo - Camael',
     name: 'Elohim Gibor',
-    defect: 'Crueldade',
+    defect: 'Ira',
     ...commonStyles,
     backgroundColor: 'rgb(228 29 31)',
-    startOffset: { title: '35%' },
+    startOffset: { title: '20%', defect: '20%' },
   },
   sephirot: {
     name: 'Gevurah',
     valor: 'Força',
     backgroundColor: 'rgb(245 179 156)',
     strokeColor: commonStyles.strokeColor,
-    startOffset: { name: '5%', valor: '5%' },
+    startOffset: { name: '0%', valor: '20%' },
   },
   planet: {
     icon: '♂',
