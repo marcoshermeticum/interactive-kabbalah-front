@@ -211,14 +211,14 @@ export const chesed = {
     defect: 'Tirania',
     ...commonStyles,
     backgroundColor: 'rgb(46 46 135)',
-    startOffset: { title: '30%' },
+    startOffset: { title: '20%' },
   },
   sephirot: {
     name: 'Chesed',
     valor: 'Misericórdia',
     backgroundColor: 'rgb(166 161 210)',
     strokeColor: commonStyles.strokeColor,
-    startOffset: { name: '4%', valor: '4%' },
+    startOffset: { name: '0%', valor: '4%' },
   },
   planet: {
     icon: '♃',
@@ -260,17 +260,17 @@ export const tiferet = {
   regent: {
     title: 'Arcanjo - Raphael',
     name: 'Tetragrammaton',
-    defect: 'Hipocrisia',
+    defect: 'Orgulho',
     ...commonStyles,
     backgroundColor: 'rgb(254 239 2)',
-    startOffset: { title: '40%' },
+    startOffset: { title: '18%' },
   },
   sephirot: {
     name: 'Tiferet',
     valor: 'Beleza',
     backgroundColor: 'rgb(254 248 183)',
     strokeColor: commonStyles.strokeColor,
-    startOffset: { name: '6%', valor: '6%' },
+    startOffset: { name: '3%', valor: '15%' },
   },
   planet: {
     icon: '☉',
