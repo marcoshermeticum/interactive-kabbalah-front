@@ -14,6 +14,7 @@ interface Props {
    * You won't need it on your project.
    */
   window?: () => Window;
+  color?: 'primary' | 'secondary';
   children?: React.ReactElement<{ elevation?: number }>;
 }
 
@@ -40,7 +41,7 @@ export default function ElevateAppBar(props: Props) {
     <React.Fragment>
       <CssBaseline />
       <ElevationScroll {...props}>
-        <AppBar color="secondary">
+        <AppBar color={props.color || 'primary'}>
           <Toolbar>
             <LanguageSelector />
           </Toolbar>

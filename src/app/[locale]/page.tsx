@@ -17,6 +17,7 @@ import {
 import PageUnderConstruction from '@/components/UnderConstruction/UnderConstruction';
 import { useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
+import Appbar from '@/components/Appbar';
 
 export default function HomePage() {
   const t = useTranslations();
@@ -166,6 +167,7 @@ export default function HomePage() {
   }, []);
   return (
     <>
+      <Appbar />
       <PageUnderConstruction />
       <section
         className="App"

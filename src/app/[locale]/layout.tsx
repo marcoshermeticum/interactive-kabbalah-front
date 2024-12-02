@@ -3,6 +3,7 @@ import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 
 import '../../styles/globals.scss';
+import ClientLayout from './ClientLayout';
 
 type AppPageProps = {
   children: ReactNode;
@@ -20,7 +21,7 @@ export default async function RootLayout({
       <head></head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <ClientLayout locale={locale}>{children}</ClientLayout>
         </NextIntlClientProvider>
       </body>
     </html>
