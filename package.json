@@ -12,10 +12,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@mui/material": "^6.1.9",
     "next": "^14.2.6",
     "next-intl": "^3.25.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-world-flags": "^1.6.0",
     "sass": "^1.81.0",
     "zustand": "^4.5.5"
   },
@@ -38,6 +40,7 @@
     "@types/node": "^20.16.1",
     "@types/react": "^18.3.4",
     "@types/react-dom": "~18.3.0",
+    "@types/react-world-flags": "^1.6.0",
     "eslint": ">=8.57.0",
     "eslint-config-next": "^14.2.6",
     "eslint-config-prettier": ">=9.1.0",
