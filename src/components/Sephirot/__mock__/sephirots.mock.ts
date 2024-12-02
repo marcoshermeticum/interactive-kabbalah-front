@@ -1,4 +1,8 @@
-import { BiggerSephirot, SephirotProps } from '../Sephirot.types';
+import {
+  BiggerSephirot,
+  SephirotProps,
+  SimpleSephirot,
+} from '../Sephirot.types';
 
 export const commonStyles = {
   fontColor: 'white',
@@ -37,13 +41,8 @@ export const kether = {
   },
 };
 
-export const daath = {
+export const daath: SimpleSephirot = {
   className: 'sephirot',
-  world: {
-    title: '',
-    aspect: '',
-    backgroundColor: 'rgb(240 240 242)',
-  },
   regent: {
     title: '',
     name: '',
@@ -56,6 +55,9 @@ export const daath = {
     valor: '',
     backgroundColor: 'rgb(240 240 242)',
     strokeColor: commonStyles.strokeColor,
+    startOffset: {
+      name: '7%',
+    },
   },
   planet: {
     icon: '♇',
@@ -63,6 +65,11 @@ export const daath = {
     strokeColor: commonStyles.strokeColor,
     fontColor: commonStyles.fontColor,
     backgroundColor: 'rgb(178 179 183)',
+    coordinates: {
+      number: {
+        x: 235,
+      },
+    },
   },
 };
 
