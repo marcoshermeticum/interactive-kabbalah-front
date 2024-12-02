@@ -1,3 +1,140 @@
 {
-  "welcome": "Welcome"
+  "kether": {
+    "world": {
+      "aspect": "Omnipresence"
+    },
+    "regent": {
+      "title": "Seraphim - Metatron",
+      "name": "EHEIEH"
+    },
+    "sephirot": {
+      "name": "Kether",
+      "valor": "Crown"
+    },
+    "planet": {}
+  },
+  "daath": {
+    "sephirot": {
+      "name": "Daath"
+    },
+    "planet": {}
+  },
+  "chokma": {
+    "world": {
+      "title": "Atziluth (archetypal world)",
+      "aspect": "Omnipotence"
+    },
+    "regent": {
+      "title": "Cherubim - Raziel",
+      "name": "Yah",
+      "defect": "Tyranny"
+    },
+    "sephirot": {
+      "name": "Chokmah",
+      "valor": "Wisdom"
+    },
+    "planet": {}
+  },
+  "binah": {
+    "world": {
+      "title": "Briah (Creative World)",
+      "aspect": "Omniscience"
+    },
+    "regent": {
+      "title": "Thrones - Tzafquiel",
+      "name": "YHVH ELOHIM",
+      "defect": "Greed"
+    },
+    "sephirot": {
+      "name": "Binah",
+      "valor": "Understanding"
+    },
+    "planet": {}
+  },
+  "malkuth": {
+    "world": {
+      "title": "Assiah (material world)"
+    },
+    "regent": {
+      "title": "Sandalphon",
+      "name": "Adonalha Aretz"
+    },
+    "sephirot": {
+      "name": "Malkuth",
+      "valor": "Kingdom"
+    },
+    "planet": {}
+  },
+  "yesod": {
+    "regent": {
+      "title": "Angels - Gabriel",
+      "name": "Shaddai El Chai",
+      "defect": "Laziness"
+    },
+    "sephirot": {
+      "name": "Yesod",
+      "valor": "Foundation"
+    },
+    "planet": {}
+  },
+  "chesed": {
+    "regent": {
+      "title": "Archangel - Tzadkiel",
+      "name": "El Elyon",
+      "defect": "Tyranny"
+    },
+    "sephirot": {
+      "name": "Chesed",
+      "valor": "Mercy"
+    },
+    "planet": {}
+  },
+  "gevurah": {
+    "regent": {
+      "title": "Archangel - Camael",
+      "name": "Elohim Gibor",
+      "defect": "Cruelty"
+    },
+    "sephirot": {
+      "name": "Gevurah",
+      "valor": "Strength"
+    },
+    "planet": {}
+  },
+  "tiferet": {
+    "regent": {
+      "title": "Archangel - Raphael",
+      "name": "Tetragrammaton",
+      "defect": "Hypocrisy"
+    },
+    "sephirot": {
+      "name": "Tiferet",
+      "valor": "Beauty"
+    },
+    "planet": {}
+  },
+  "netzach": {
+    "regent": {
+      "title": "Archangel - Haniel",
+      "name": "Elohim Tzabaoth",
+      "defect": "Hedonism"
+    },
+    "sephirot": {
+      "name": "Netzach",
+      "valor": "Eternity"
+    },
+    "planet": {}
+  },
+  "hod": {
+    "regent": {
+      "title": "Archangel - Michael",
+      "name": "Elohim Tzabaoth",
+      "defect": "Corruption"
+    },
+    "sephirot": {
+      "name": "Hod",
+      "valor": "Glory"
+    },
+    "planet": {}
+  }
 }
