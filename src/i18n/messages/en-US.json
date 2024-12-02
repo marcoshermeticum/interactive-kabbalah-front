@@ -109,7 +109,7 @@
     "regent": {
       "title": "Archangel - Raphael",
       "name": "Tetragrammaton",
-      "defect": "Hypocrisy"
+      "defect": "Pride"
     },
     "sephirot": {
       "name": "Tiferet",
@@ -121,7 +121,7 @@
     "regent": {
       "title": "Archangel - Haniel",
       "name": "Elohim Tzabaoth",
-      "defect": "Hedonism"
+      "defect": "Luxury"
     },
     "sephirot": {
       "name": "Netzach",
@@ -133,7 +133,7 @@
     "regent": {
       "title": "Archangel - Michael",
       "name": "Elohim Tzabaoth",
-      "defect": "Corruption"
+      "defect": "Envy"
     },
     "sephirot": {
       "name": "Hod",

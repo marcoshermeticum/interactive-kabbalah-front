@@ -151,15 +151,14 @@ export const malkuth: BiggerSephirot = {
     ...commonStyles,
     strokeColor: 'white',
     backgroundColor: 'url(#malkuth-regent)',
-    startOffset: { title: '50%' },
+    startOffset: { title: '30%' },
   },
   sephirot: {
     name: 'Malkuth',
     valor: 'Reino',
     backgroundColor: 'url(#malkuth-sephirot)',
     strokeColor: 'white',
-    fontColor: 'white',
-    startOffset: { name: '8%', valor: '8%' },
+    startOffset: { name: '2%', valor: '20%' },
   },
   planet: {
     icon: '⨁',
@@ -301,10 +300,10 @@ export const netzach = {
   regent: {
     title: 'Arcanjo - Haniel',
     name: 'Elohim Tzabaoth',
-    defect: 'Hedonismo',
+    defect: 'Luxúria',
     ...commonStyles,
     backgroundColor: 'rgb(1 152 72)',
-    startOffset: { title: '45%' },
+    startOffset: { title: '20%' },
   },
   sephirot: {
     name: 'Netzach',
@@ -330,22 +329,22 @@ export const netzach = {
   },
 };
 
-export const hod = {
+export const hod: SimpleSephirot = {
   className: 'sephirot',
   regent: {
     title: 'Arcanjo - Michael',
     name: 'Elohim Tzabaoth',
-    defect: 'Corrupção',
+    defect: 'Inveja',
     ...commonStyles,
     backgroundColor: 'rgb(243 145 21)',
-    startOffset: { title: '50%' },
+    startOffset: { title: '18%' },
   },
   sephirot: {
     name: 'Hod',
     valor: 'Glória',
     backgroundColor: 'rgb(254 212 169)',
     strokeColor: commonStyles.strokeColor,
-    startOffset: { name: '8%', valor: '8%' },
+    startOffset: { name: '18%', valor: '19%' },
   },
   planet: {
     icon: '☿',
