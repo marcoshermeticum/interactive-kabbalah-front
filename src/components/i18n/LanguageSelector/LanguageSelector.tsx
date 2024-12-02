@@ -24,24 +24,14 @@ const LanguageSelector: React.FC<LanguageSelectProps> = () => {
 
   const languages = [
     {
-      value: 'pt',
+      value: 'pt-BR',
       code: 'BR',
       alt: 'Português',
     },
     {
-      value: 'en',
+      value: 'en-US',
       code: 'US',
       alt: 'English',
-    },
-    {
-      value: 'ja',
-      code: 'JP',
-      alt: 'Japan',
-    },
-    {
-      value: 'de',
-      code: 'DE',
-      alt: 'Germany',
     },
   ];
 
