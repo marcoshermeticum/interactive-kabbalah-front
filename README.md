@@ -1,8 +1,7 @@
-# React 18 Next.js Template
+# Interactive Kabbalah
 
-This project serves as a starting point for building modern web applications using **React** and **Next.js**. It also incorporates **TypeScript** (a statically typed superset of JavaScript), **Storybook** for UI component development, and **Jest** for automated testing.
+<img width="868" alt="Screen Shot 2024-12-02 at 11 50 46" src="https://github.com/user-attachments/assets/af023a56-fd1e-49ca-9b95-5a77269435d2">
 
-If you are familiar with other programming languages but new to JavaScript, this guide will provide the necessary instructions to get started.
 
 ## Tech Stack
 
