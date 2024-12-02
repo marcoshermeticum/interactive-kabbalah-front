@@ -55,11 +55,13 @@
   },
   "malkuth": {
     "world": {
-      "title": "Assiah (material world)"
+      "title": "Assiah (material world)",
+       "aspect": " "
     },
     "regent": {
       "title": "Sandalphon",
-      "name": "Adonalha Aretz"
+      "name": "Adonalha Aretz",
+      "defect": " "
     },
     "sephirot": {
       "name": "Malkuth",
