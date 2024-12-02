@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 
-import '../../styles/globals.css';
+import '../../styles/globals.scss';
 
 type AppPageProps = {
   children: ReactNode;

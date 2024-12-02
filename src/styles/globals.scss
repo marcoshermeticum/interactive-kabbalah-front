@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  min-width: 1006px;
+}
+
+.kether,
+.malkuth {
+  width: 100%;
+}
+
+.malkuth {
+  padding-top: 8rem;
+}
+
+.binah-chokma,
+.gevura-chesed,
+.hod-netzach {
+  display: flex;
+  justify-content: space-evenly;
+}
