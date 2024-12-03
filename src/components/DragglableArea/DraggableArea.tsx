@@ -1,4 +1,5 @@
 import { ReactElement, useEffect, useRef, useState } from 'react';
+import { DraggableAreaStyled } from './DraggableArea.styled';
 
 interface Props {
   children: ReactElement;
@@ -18,10 +19,6 @@ function DraggableArea({ children }: Props) {
     y: 0,
   });
   const [scale, setScale] = useState<number>(1);
-
-  // Para o gesto de pinça (zoom) no mobile
-  const [initialPinchDistance, setInitialPinchDistance] = useState<number>(0);
-  const [initialScale, setInitialScale] = useState<number>(1);
 
   // Função para calcular a distância entre dois pontos no toque
   const getDistance = (touch1: Touch, touch2: Touch) => {
@@ -96,31 +93,6 @@ function DraggableArea({ children }: Props) {
         Math.min(Math.max(0.5, prevScale + delta), 3)
       );
     }
-
-    // Para o zoom com o gesto de pinça
-    if (e.type === 'touchmove' && 'touches' in e && e.touches.length === 2) {
-      const dist = getDistance(e.touches[0] as Touch, e.touches[1] as Touch);
-      if (initialPinchDistance === 0) {
-        setInitialPinchDistance(dist);
-      } else {
-        const scaleChange = dist / initialPinchDistance;
-        setScale(() => Math.min(Math.max(0.5, initialScale * scaleChange), 3));
-      }
-    }
-  };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
-    if (e.touches.length === 2) {
-      const touch1 = e.touches[0] as Touch;
-      const touch2 = e.touches[1] as Touch;
-      setInitialPinchDistance(getDistance(touch1, touch2));
-      setInitialScale(scale);
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setInitialPinchDistance(0);
-    setInitialScale(scale);
   };
 
   // Estilos inline
@@ -152,17 +124,9 @@ function DraggableArea({ children }: Props) {
   }, []);
 
   return (
-    <section
+    <DraggableAreaStyled
       className="App"
       ref={containerRef}
-      style={{
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
-        position: 'relative',
-        cursor: 'grab',
-        backgroundColor: '#f0f0f0',
-      }}
       onMouseDown={handlePointerDown}
       onMouseMove={handlePointerMove}
       onMouseUp={handlePointerUp}
@@ -170,13 +134,11 @@ function DraggableArea({ children }: Props) {
       onWheel={handleWheelOrPinch}
       onTouchStart={(e) => {
         handlePointerDown(e);
-        handleTouchStart(e);
       }}
       onTouchMove={(e) => {
         handlePointerMove(e);
         handleWheelOrPinch(e);
       }}
-      onTouchEnd={handleTouchEnd}
     >
       <div
         ref={contentRef}
@@ -186,7 +148,7 @@ function DraggableArea({ children }: Props) {
       >
         {children}
       </div>
-    </section>
+    </DraggableAreaStyled>
   );
 }
 
