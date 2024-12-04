@@ -2,9 +2,21 @@ interface Props {
   className?: string;
   type: 'vertical' | 'horizontal' | 'diagonal';
   degree?: 35 | 140;
+  number?: number;
+  letter: string;
+  arcane: string;
+  sign: string;
 }
 
-function Path({ className, type, degree }: Props) {
+function Path({
+  className,
+  type,
+  degree,
+  arcane,
+  number,
+  letter,
+  sign,
+}: Props) {
   const matrix = {
     35: 'matrix(0.819152116776, 0.57357609272, -0.57357609272, 0.819152116776, 0.000032239037, 0.000017759423)', //   ->  \
     140: 'matrix(-0.766044914722, 0.642786979675, -0.642786979675, -0.766044914722, 0.000025774902, 0.000001218199)', // ->  /
@@ -62,21 +74,68 @@ function Path({ className, type, degree }: Props) {
       <svg
         className={className}
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="215.8168 15.482 47.6905 400"
+        viewBox="215.8168 15.482 47.6905 475.048"
         width="47.6905px"
-        height="400px"
-        preserveAspectRatio="none"
+        height="475.048px"
       >
-        <path
-          d="M 400.186 229.161 L 400.186 253.006 L 400 276.851 L 239.662 276.851 L 2.138 276.851 L 2.138 253.006 L 2.138 229.161 L 239.662 229.161 L 400.186 229.161"
-          style={{
-            stroke: 'rgb(255, 255, 255)',
-            fill: 'rgb(42, 134, 70)',
-            transformOrigin: '239.662px 253.006px',
-          }}
-          id="object-0"
-          transform="matrix(-0.000001, 1, -1, -0.000001, 0.000004478568, 0.000014022755)"
-        />
+        <g id="object-1">
+          <path
+            d="M 477.186 229.161 L 477.186 253.006 L 477.186 276.851 L 239.662 276.851 L 2.138 276.851 L 2.138 253.006 L 2.138 229.161 L 239.662 229.161 L 477.186 229.161"
+            style={{
+              stroke: 'rgb(255, 255, 255)',
+              fill: 'rgb(248, 194, 54)',
+              transformBox: 'fill-box',
+              transformOrigin: '50% 50%',
+            }}
+            id="object-0"
+            transform="matrix(-0.000001, 1, -1, -0.000001, 0, -0.000001)"
+          />
+          <text
+            style={{
+              whiteSpace: 'pre',
+              fill: 'rgb(51, 51, 51)',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '20',
+            }}
+            x="226"
+            y="170"
+          >
+            {number}
+          </text>
+          <text
+            style={{
+              fontSize: '25',
+              fontFamily: 'Roboto',
+              whiteSpace: 'pre',
+            }}
+            x="229"
+            y="215"
+          >
+            {letter}
+          </text>
+          <text
+            style={{
+              fontFamily: 'Roboto',
+              fontSize: '20px',
+              whiteSpace: 'pre',
+            }}
+            x="228"
+            y="255"
+          >
+            {sign}
+          </text>
+          <text
+            style={{
+              fontFamily: 'Roboto',
+              fontSize: '20',
+              whiteSpace: 'pre',
+            }}
+            x="223"
+            y="295"
+          >
+            {arcane}
+          </text>
+        </g>
       </svg>
     );
   }

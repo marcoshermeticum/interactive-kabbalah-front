@@ -20,18 +20,55 @@ function KabbalahTree() {
   return (
     <KabbalahTreeContainerStyled>
       <div className="sephirot-container kether">
-        <Path className="path beth ב" type="diagonal" degree={140} />
+        <Path
+          number={12}
+          letter="ב"
+          sign="☿︎"
+          arcane="I"
+          className="path beth ב"
+          type="diagonal"
+          degree={140}
+        />
 
         <BiggerSephirot {...useBiggerSephirot(kether)} />
 
-        <Path className="path aleph א" type="diagonal" degree={35} />
+        <Path
+          number={11}
+          letter="א"
+          sign="🜁"
+          arcane="0"
+          className="path aleph א"
+          type="diagonal"
+          degree={35}
+        />
       </div>
       <div className="sephirot-container binah-chokma">
-        <Path className="path chet ד" type="vertical" />
+        <Path
+          number={18}
+          letter="ח"
+          sign="♋"
+          arcane="VII"
+          className="path chet ח"
+          type="vertical"
+        />
         <BiggerSephirot {...useBiggerSephirot(binah)} />
-        <Path className="path daleth ד" type="horizontal" />
+        <Path
+          number={4}
+          letter="ד"
+          sign="♀"
+          arcane="III"
+          className="path daleth ד"
+          type="horizontal"
+        />
         <BiggerSephirot {...useBiggerSephirot(chokma)} />
-        <Path className="path vav ו" type="vertical" />
+        <Path
+          number={16}
+          letter=" ו"
+          sign="♉"
+          arcane=" VI"
+          className="path vav ו"
+          type="vertical"
+        />
       </div>
 
       <div className="sephirot-container daath">

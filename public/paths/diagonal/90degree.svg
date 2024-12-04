@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="215.8168 15.482 47.6905 475.0481" width="47.6905px"
-  height="475.048px" preserveAspectRatio="none">
-  <path
-    d="M 477.186 229.161 L 477.186 253.006 L 477.186 276.851 L 239.662 276.851 L 2.138 276.851 L 2.138 253.006 L 2.138 229.161 L 239.662 229.161 L 477.186 229.161"
-    style="stroke: rgb(255, 255, 255); fill: rgb(42, 134, 70); transform-origin: 239.662px 253.006px;"
-    id="object-0" transform="matrix(-0.000001, 1, -1, -0.000001, 0.000004478568, 0.000014022755)" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="215.8168 15.482 47.6905 475.048" width="47.6905px"
+  height="475.048px">
+  <g id="object-1">
+    <path
+      d="M 477.186 229.161 L 477.186 253.006 L 477.186 276.851 L 239.662 276.851 L 2.138 276.851 L 2.138 253.006 L 2.138 229.161 L 239.662 229.161 L 477.186 229.161"
+      style="stroke: rgb(255, 255, 255); fill: rgb(248, 194, 54); transform-box: fill-box; transform-origin: 50% 50%;"
+      id="object-0" transform="matrix(-0.000001, 1, -1, -0.000001, 0, -0.000001)" />
+    <text
+      style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;"
+      x="222.668" y="157.094">18</text>
+    <text style="font-size: 36; font-family: Roboto; white-space: pre;" x="225.842" y="250.232">ח</text>
+    <text style="font-family: Roboto; font-size: 27px; white-space: pre;" x="219.743" y="337.957">
+      VII</text>
+  </g>
 </svg>
