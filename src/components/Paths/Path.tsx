@@ -65,6 +65,54 @@ function Path({
           id="object-0"
           transform="matrix(1, 0.000001, -0.000001, 1, -1.7e-11, 1.8e-11)"
         />
+        <text
+          style={{
+            whiteSpace: 'pre',
+            fill: 'rgb(51, 51, 51)',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '20',
+          }}
+          x="180"
+          y="248"
+        >
+          {number}
+        </text>
+        <text
+          style={{
+            whiteSpace: 'pre',
+            fill: 'rgb(51, 51, 51)',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '20',
+          }}
+          x="220"
+          y="248"
+        >
+          {letter}
+        </text>
+        <text
+          style={{
+            whiteSpace: 'pre',
+            fill: 'rgb(51, 51, 51)',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '20',
+          }}
+          x="260"
+          y="248"
+        >
+          {sign}
+        </text>
+        <text
+          style={{
+            whiteSpace: 'pre',
+            fill: 'rgb(51, 51, 51)',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '20',
+          }}
+          x="300"
+          y="248"
+        >
+          {arcane}
+        </text>
       </svg>
     );
   }
