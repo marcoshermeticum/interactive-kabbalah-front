@@ -27,9 +27,11 @@ function KabbalahTree() {
         <Path className="path aleph א" type="diagonal" degree={35} />
       </div>
       <div className="sephirot-container binah-chokma">
+        <Path className="path chet ד" type="vertical" />
         <BiggerSephirot {...useBiggerSephirot(binah)} />
         <Path className="path daleth ד" type="horizontal" />
         <BiggerSephirot {...useBiggerSephirot(chokma)} />
+        <Path className="path vav ו" type="vertical" />
       </div>
 
       <div className="sephirot-container daath">

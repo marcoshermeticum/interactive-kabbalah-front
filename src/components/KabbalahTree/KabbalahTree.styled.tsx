@@ -18,6 +18,18 @@ export const KabbalahTreeContainerStyled = styled.div`
     right: 30%;
   }
 
+  .sephirot-container > svg.path.chet,
+  .sephirot-container > svg.path.vav {
+    top: 14%;
+  }
+
+  .sephirot-container > svg.path.chet {
+    left: 29.5%;
+  }
+  .sephirot-container > svg.path.vav {
+    right: 29.5%;
+  }
+
   .sephirot-container > svg.path.daleth {
     top: 14rem;
   }

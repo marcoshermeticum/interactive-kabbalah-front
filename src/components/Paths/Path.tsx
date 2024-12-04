@@ -57,6 +57,30 @@ function Path({ className, type, degree }: Props) {
     );
   }
 
+  if (type === 'vertical') {
+    return (
+      <svg
+        className={className}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="215.8168 15.482 47.6905 400"
+        width="47.6905px"
+        height="400px"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M 400.186 229.161 L 400.186 253.006 L 400 276.851 L 239.662 276.851 L 2.138 276.851 L 2.138 253.006 L 2.138 229.161 L 239.662 229.161 L 400.186 229.161"
+          style={{
+            stroke: 'rgb(255, 255, 255)',
+            fill: 'rgb(42, 134, 70)',
+            transformOrigin: '239.662px 253.006px',
+          }}
+          id="object-0"
+          transform="matrix(-0.000001, 1, -1, -0.000001, 0.000004478568, 0.000014022755)"
+        />
+      </svg>
+    );
+  }
+
   return <div>path</div>;
 }
 
