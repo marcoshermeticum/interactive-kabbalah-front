@@ -5,11 +5,12 @@ export type PathPosition = {
   $left?: string;
   $right?: string;
   $bottom?: string;
+  $width?: string;
 };
 
 export const PathContainer = styled.div<PathPosition>`
   position: absolute;
-  width: 10rem;
+  width: ${({ $width }) => $width || '10rem'};
   z-index: -1;
   top: ${({ $top }) => $top || 'unset'};
   left: ${({ $left }) => $left || 'unset'};

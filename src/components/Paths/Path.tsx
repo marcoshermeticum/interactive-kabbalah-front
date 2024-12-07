@@ -9,6 +9,7 @@ interface Props {
   arcane: string;
   sign: string;
   position?: PathPosition;
+  $width?: string;
 }
 
 function Path({
@@ -20,6 +21,7 @@ function Path({
   letter,
   sign,
   position,
+  $width,
 }: Props) {
   const matrix = {
     35: 'matrix(0.819152116776, 0.57357609272, -0.57357609272, 0.819152116776, 0.000032239037, 0.000017759423)', //   ->  \
@@ -28,7 +30,7 @@ function Path({
 
   if (type === 'diagonal' && degree) {
     return (
-      <PathContainer {...position}>
+      <PathContainer $width={$width} {...position}>
         <svg
           className={className}
           xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +56,7 @@ function Path({
 
   if (type === 'horizontal') {
     return (
-      <PathContainer {...position}>
+      <PathContainer $width={$width} {...position}>
         <svg
           className={className}
           xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +129,7 @@ function Path({
 
   if (type === 'vertical') {
     return (
-      <PathContainer {...position}>
+      <PathContainer $width={$width} {...position}>
         <svg
           className={className}
           xmlns="http://www.w3.org/2000/svg"

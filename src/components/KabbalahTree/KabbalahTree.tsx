@@ -63,7 +63,8 @@ function KabbalahTree() {
           arcane="III"
           className="path daleth ד"
           type="horizontal"
-          position={{ $top: '15.555%', $right: '58%' }}
+          position={{ $top: '15.555%' }}
+          $width="34rem" //centralized trough width
         />
 
         <div>
