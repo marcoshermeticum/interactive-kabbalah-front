@@ -1,6 +1,6 @@
 import { PathContainer, PathPosition } from './Path.styled';
 
-interface Props {
+interface DefaultProps {
   className?: string;
   type: 'vertical' | 'horizontal' | 'diagonal';
   degree?: 35 | 140;
@@ -12,6 +12,18 @@ interface Props {
   $width?: string;
 }
 
+interface DiagonalProps extends DefaultProps {
+  type: 'diagonal';
+  diagonalTo: 'left' | 'right';
+}
+
+interface NonDiagonalProps extends DefaultProps {
+  type: 'vertical' | 'horizontal';
+  diagonalTo?: never;
+}
+
+type Props = DiagonalProps | NonDiagonalProps;
+
 function Path({
   className,
   type,
@@ -22,7 +34,11 @@ function Path({
   sign,
   position,
   $width,
+  diagonalTo,
 }: Props) {
+  const rotateText =
+    diagonalTo === 'left' ? 'rotate(-40, 200, 290)' : 'rotate(35, 310, 250)';
+
   const matrix = {
     35: 'matrix(0.819152116776, 0.57357609272, -0.57357609272, 0.819152116776, 0.000032239037, 0.000017759423)', //   ->  \
     140: 'matrix(-0.766044914722, 0.642786979675, -0.642786979675, -0.766044914722, 0.000025774902, 0.000001218199)', // ->  /
@@ -49,6 +65,58 @@ function Path({
             transform={matrix[degree]}
             id="object-0"
           />
+          <text
+            style={{
+              whiteSpace: 'pre',
+              fill: 'rgb(51, 51, 51)',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '20',
+            }}
+            x="155"
+            y="290"
+            transform={rotateText}
+          >
+            {number}
+          </text>
+          <text
+            style={{
+              whiteSpace: 'pre',
+              fill: 'rgb(51, 51, 51)',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '20',
+            }}
+            x="202"
+            y="288"
+            transform={rotateText}
+          >
+            {letter}
+          </text>
+          <text
+            style={{
+              whiteSpace: 'pre',
+              fill: 'rgb(51, 51, 51)',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '20',
+            }}
+            x="238"
+            y="288"
+            transform={rotateText}
+          >
+            {sign}
+          </text>
+          <text
+            style={{
+              whiteSpace: 'pre',
+              fill: 'rgb(51, 51, 51)',
+              fontFamily: 'Arial, sans-serif',
+              fontSize: '20',
+            }}
+            x="277"
+            y="289"
+            transform={rotateText}
+          >
+            {arcane}
+          </text>
         </svg>
       </PathContainer>
     );

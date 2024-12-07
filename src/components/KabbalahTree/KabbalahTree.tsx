@@ -27,7 +27,9 @@ function KabbalahTree() {
           arcane="I"
           className="path beth ב"
           type="diagonal"
+          diagonalTo="left"
           degree={140}
+          position={{ $left: '25%', $top: '1%' }}
         />
 
         <BiggerSephirot {...useBiggerSephirot(kether)} />
@@ -39,7 +41,9 @@ function KabbalahTree() {
           arcane="0"
           className="path aleph א"
           type="diagonal"
+          diagonalTo="right"
           degree={35}
+          position={{ $right: '56%', $top: '1%' }}
         />
       </div>
       <div className="sephirot-container binah-chokma">
@@ -64,7 +68,7 @@ function KabbalahTree() {
           className="path daleth ד"
           type="horizontal"
           position={{ $top: '15.555%' }}
-          $width="34rem" //centralized trough width
+          $width="200vw" //centralized trough width
         />
 
         <div>
