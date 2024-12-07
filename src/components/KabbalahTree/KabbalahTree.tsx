@@ -43,15 +43,19 @@ function KabbalahTree() {
         />
       </div>
       <div className="sephirot-container binah-chokma">
-        <Path
-          number={18}
-          letter="ח"
-          sign="♋"
-          arcane="VII"
-          className="path chet ח"
-          type="vertical"
-        />
-        <BiggerSephirot {...useBiggerSephirot(binah)} />
+        <div>
+          <BiggerSephirot {...useBiggerSephirot(binah)} />
+          <Path
+            number={18}
+            letter="ח"
+            sign="♋"
+            arcane="VII"
+            className="path chet ח"
+            type="vertical"
+            position={{ $top: '14%' }}
+          />
+        </div>
+
         <Path
           number={4}
           letter="ד"
@@ -59,16 +63,21 @@ function KabbalahTree() {
           arcane="III"
           className="path daleth ד"
           type="horizontal"
+          position={{ $top: '15.555%', $left: '30%' }}
         />
-        <BiggerSephirot {...useBiggerSephirot(chokma)} />
-        <Path
-          number={16}
-          letter=" ו"
-          sign="♉"
-          arcane=" VI"
-          className="path vav ו"
-          type="vertical"
-        />
+
+        <div>
+          <BiggerSephirot {...useBiggerSephirot(chokma)} />
+          <Path
+            number={16}
+            letter=" ו"
+            sign="♉"
+            arcane=" VI"
+            className="path vav ו"
+            type="vertical"
+            position={{ $top: '14%' }}
+          />
+        </div>
       </div>
 
       <div className="sephirot-container daath">
