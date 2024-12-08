@@ -72,8 +72,8 @@ function Path({
               fontFamily: 'Arial, sans-serif',
               fontSize: '20',
             }}
-            x="155"
-            y="290"
+            x={diagonalTo === 'left' ? '155' : '238'}
+            y={diagonalTo === 'left' ? '290' : '290'}
             transform={rotateText}
           >
             {number}
@@ -85,8 +85,8 @@ function Path({
               fontFamily: 'Arial, sans-serif',
               fontSize: '20',
             }}
-            x="202"
-            y="288"
+            x={diagonalTo === 'left' ? '202' : '275'}
+            y={diagonalTo === 'left' ? '288' : '288'}
             transform={rotateText}
           >
             {letter}
@@ -98,8 +98,8 @@ function Path({
               fontFamily: 'Arial, sans-serif',
               fontSize: '20',
             }}
-            x="238"
-            y="288"
+            x={diagonalTo === 'left' ? '238' : '305'}
+            y={diagonalTo === 'left' ? '288' : '285'}
             transform={rotateText}
           >
             {sign}
@@ -111,8 +111,8 @@ function Path({
               fontFamily: 'Arial, sans-serif',
               fontSize: '20',
             }}
-            x="277"
-            y="289"
+            x={diagonalTo === 'left' ? '277' : '340'}
+            y={diagonalTo === 'left' ? '289' : '289'}
             transform={rotateText}
           >
             {arcane}
