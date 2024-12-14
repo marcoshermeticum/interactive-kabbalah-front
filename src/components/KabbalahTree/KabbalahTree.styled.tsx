@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const KabbalahTreeContainerStyled = styled.div`
-  max-width: 1444px;
+  max-width: 999px;
+  min-width: 999px;
   .sephirot-container > svg.path {
     z-index: -1;
   }

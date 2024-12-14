@@ -29,7 +29,7 @@ function KabbalahTree() {
           type="diagonal"
           diagonalTo="left"
           degree={140}
-          position={{ $left: '25%', $top: '1%' }}
+          position={{ $left: '16%', $top: '1%' }}
         />
 
         <BiggerSephirot {...useBiggerSephirot(kether)} />
@@ -43,7 +43,7 @@ function KabbalahTree() {
           type="diagonal"
           diagonalTo="right"
           degree={35}
-          position={{ $right: '56%', $top: '1%' }}
+          position={{ $right: '70%', $top: '1%' }}
         />
       </div>
       <div className="sephirot-container binah-chokma">
