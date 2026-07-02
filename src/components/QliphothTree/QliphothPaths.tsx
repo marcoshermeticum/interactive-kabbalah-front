@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import type { QliphothPathDef } from '@/data/qliphothPaths';
 
 type Positions = Record<string, { x: number; y: number }>;
@@ -21,6 +22,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
   const [copied, setCopied] = useState(false);
 
   const activePath = pinnedPath ?? hoveredPath;
+  const ui = useTranslations('ui');
 
   const handleMouse = useCallback((e: React.MouseEvent, num: number) => {
     if (pinnedPath !== null) return;
@@ -36,7 +38,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
   const handleCopy = async () => {
     const p = paths.find(pp => pp.number === activePath);
     if (!p) return;
-    const text = `Túnel ${p.number} — ${p.letter} (${p.letterName}) — ${p.sign}\n${p.tunnel}\n${p.meaning}\n${p.from} → ${p.to}\nVirtude: ${p.virtue}\nVício: ${p.vice}`;
+    const text = `${ui('tunnel')} ${p.number} — ${p.letter} (${p.letterName}) — ${p.sign}\n${p.tunnel}\n${p.meaning}\n${p.from} → ${p.to}\n${ui('latentVirtue')}: ${p.virtue}\n${ui('shadowVice')}: ${p.vice}`;
     await navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
@@ -147,24 +149,24 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
               const p = paths.find(pp => pp.number === activePath);
               if (!p) return null;
               return (<>
-                <p className="font-bold text-sm text-red-300">Túnel {p.number} — {p.letter} ({p.letterName}) — {p.sign}</p>
+                <p className="font-bold text-sm text-red-300">{ui('tunnel')} {p.number} — {p.letter} ({p.letterName}) — {p.sign}</p>
                 <p className="text-orange-200 mt-1">🕯️ {p.tunnel}</p>
                 <p className="text-white/60 mt-1">{p.meaning}</p>
                 <p className="text-white/50 text-[10px] mt-1">{p.from} → {p.to}</p>
                 <div className="mt-2 pt-1 border-t border-white/10">
-                  <p className="text-green-300">✦ Virtude latente: {p.virtue}</p>
-                  <p className="text-red-300">✧ Vício/Sombra: {p.vice}</p>
+                  <p className="text-green-300">✦ {ui('latentVirtue')}: {p.virtue}</p>
+                  <p className="text-red-300">✧ {ui('shadowVice')}: {p.vice}</p>
                 </div>
                 {pinnedPath && (
                   <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-                    <button onClick={handleCopy} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">{copied ? '✓ Copiado!' : '📋 Copiar'}</button>
-                    <button onClick={() => setPinnedPath(null)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">✕ Fechar</button>
+                    <button onClick={handleCopy} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">{copied ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}</button>
+                    <button onClick={() => setPinnedPath(null)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">✕ {ui('close')}</button>
                   </div>
                 )}
               </>);
             })()}
           </div>
-          {!pinnedPath && <p className="text-center text-[9px] text-white/40 mt-1">clique para fixar</p>}
+          {!pinnedPath && <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>}
         </div>
       )}
     </div>

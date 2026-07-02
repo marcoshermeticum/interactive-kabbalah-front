@@ -46,13 +46,13 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
       {worldAspect && <p className="text-blue-200">{worldAspect}</p>}
       {data.archetypes.length > 0 && (
         <div className="mt-2 pt-1 border-t border-white/10">
-          <p className="text-white/60 text-[10px] uppercase tracking-wide">Arquétipos</p>
+          <p className="text-white/60 text-[10px] uppercase tracking-wide">{ui('archetypes')}</p>
           <p className="text-white/90">{data.archetypes.join(', ')}</p>
         </div>
       )}
       {data.minorArcana.length > 0 && (
         <div className="mt-2 pt-1 border-t border-white/10">
-          <p className="text-white/60 text-[10px] uppercase tracking-wide">Arcanos Menores</p>
+          <p className="text-white/60 text-[10px] uppercase tracking-wide">{ui('minorArcana')}</p>
           <ul className="mt-0.5 space-y-0.5">
             {data.minorArcana.map((a, i) => (
               <li key={i} className="text-white/80">🃏 {a}</li>

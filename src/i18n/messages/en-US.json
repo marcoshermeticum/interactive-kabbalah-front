@@ -1,10 +1,24 @@
 {
   "app": { "title": "Interactive Tree of Life" },
   "ui": {
+    "title": "Interactive Kabbalah",
+    "life": "Life",
+    "death": "Death",
     "defect": "Defect",
     "planet": "Planet",
     "path": "Path",
-    "meaning": "Meaning"
+    "tunnel": "Tunnel",
+    "meaning": "Meaning",
+    "virtue": "Virtue",
+    "vice": "Vice",
+    "latentVirtue": "Latent virtue",
+    "shadowVice": "Shadow/Vice",
+    "archetypes": "Archetypes",
+    "minorArcana": "Minor Arcana",
+    "clickToPin": "click to pin",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "close": "Close"
   },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Omnipresence" },

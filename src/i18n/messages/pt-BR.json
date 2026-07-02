@@ -1,10 +1,24 @@
 {
   "app": { "title": "Árvore da Vida Interativa" },
   "ui": {
+    "title": "Kabbalah Interativa",
+    "life": "Vida",
+    "death": "Morte",
     "defect": "Defeito",
     "planet": "Planeta",
     "path": "Caminho",
-    "meaning": "Significado"
+    "tunnel": "Túnel",
+    "meaning": "Significado",
+    "virtue": "Virtude",
+    "vice": "Vício",
+    "latentVirtue": "Virtude latente",
+    "shadowVice": "Vício/Sombra",
+    "archetypes": "Arquétipos",
+    "minorArcana": "Arcanos Menores",
+    "clickToPin": "clique para fixar",
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "close": "Fechar"
   },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Onipresença" },

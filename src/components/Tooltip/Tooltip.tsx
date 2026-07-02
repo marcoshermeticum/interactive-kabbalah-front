@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, ReactNode } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface Props {
   children: ReactNode;
@@ -14,6 +15,7 @@ export default function Tooltip({ children, content }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeout = useRef<NodeJS.Timeout | null>(null);
+  const ui = useTranslations('ui');
 
   const show = () => {
     if (hideTimeout.current) clearTimeout(hideTimeout.current);
@@ -86,19 +88,19 @@ export default function Tooltip({ children, content }: Props) {
                   onClick={handleCopy}
                   className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition flex items-center gap-1"
                 >
-                  {copied ? '✓ Copiado!' : '📋 Copiar'}
+                  {copied ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
                 </button>
                 <button
                   onClick={handleClose}
                   className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition"
                 >
-                  ✕ Fechar
+                  ✕ {ui('close')}
                 </button>
               </div>
             )}
           </div>
           {!isPinned && (
-            <p className="text-center text-[9px] text-white/40 mt-1">clique para fixar</p>
+            <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>
           )}
         </div>
       )}
