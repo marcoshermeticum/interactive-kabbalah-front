@@ -5,10 +5,11 @@ import { useTranslations } from 'next-intl';
 import DraggableArea from '@/components/DraggableArea/DraggableArea';
 import KabbalahTree from '@/components/KabbalahTree/KabbalahTree';
 import QliphothTree from '@/components/QliphothTree/QliphothTree';
+import CombinedTree from '@/components/CombinedTree/CombinedTree';
 import LanguageSelector from '@/components/LanguageSelector';
 
 export default function HomePage() {
-  const [view, setView] = useState<'life' | 'death'>('life');
+  const [view, setView] = useState<'life' | 'death' | 'both'>('life');
   const ui = useTranslations('ui');
 
   return (
@@ -34,6 +35,12 @@ export default function HomePage() {
             >
               💀 {ui('death')}
             </button>
+            <button
+              onClick={() => setView('both')}
+              className={`px-3 sm:px-3 py-1.5 sm:py-1 text-sm sm:text-sm rounded-full transition-all ${view === 'both' ? 'bg-purple-900/50 text-purple-200 font-medium' : 'text-white/50 hover:text-white/80'}`}
+            >
+              ☯ {ui('both')}
+            </button>
           </div>
 
           {/* Social links — hidden on very small screens */}
@@ -56,7 +63,9 @@ export default function HomePage() {
       {/* Tree area — fills remaining space, zoom/pan only here */}
       <div className="flex-1 relative">
         <DraggableArea>
-          {view === 'life' ? <KabbalahTree /> : <QliphothTree />}
+          {view === 'life' && <KabbalahTree />}
+          {view === 'death' && <QliphothTree />}
+          {view === 'both' && <CombinedTree />}
         </DraggableArea>
       </div>
     </div>
