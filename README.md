@@ -1,64 +1,120 @@
-# Interactive Kabbalah - Tree of Life
+# 🌳 Interactive Kabbalah — Árvore da Vida
 
-Árvore da Vida interativa com SVGs customizados e suporte a múltiplos idiomas.
+Frontend interativo da Árvore da Vida cabalística. Todas as 10 Sephirots + Daath e os 22 Caminhos são renderizados como SVG com informações detalhadas, tooltips educativos e suporte a múltiplos idiomas.
 
-## Stack
+![Next.js](https://img.shields.io/badge/Next.js-15-black) ![React](https://img.shields.io/badge/React-19-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-4-cyan) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)
 
-- **Next.js 15** (App Router, Turbopack)
-- **React 19**
-- **Tailwind CSS 4** (zero runtime CSS)
-- **next-intl** (i18n: PT-BR, EN-US)
-- **TypeScript**
+## Pré-requisitos
 
-## Desenvolvimento
+- **Node.js 20+** (recomendado: 22 LTS)
+- **npm** (incluído com Node.js)
+
+## Início rápido
 
 ```bash
+# Clonar o repositório
+git clone <url-do-repo>
+cd interactive-kabbalah-front
+
+# Instalar dependências
 npm install
+
+# Rodar em modo desenvolvimento (Turbopack)
 npm run dev
 ```
 
-## Build & Deploy
+A aplicação estará disponível em **http://localhost:3000**
 
-### Vercel (recomendado - zero config)
-```bash
-# Push para GitHub e conecte ao Vercel
-# Ou use a CLI:
-npx vercel
-```
+## Scripts disponíveis
 
-### Docker
-```bash
-npm run build
-# O output standalone está em .next/standalone
-node .next/standalone/server.js
-```
+| Comando | Descrição |
+|---------|-----------|
+| `npm run dev` | Inicia servidor de dev com Turbopack (hot reload) |
+| `npm run build` | Gera build de produção otimizado |
+| `npm start` | Serve o build de produção |
+| `npm run lint` | Executa o linter |
 
-### Qualquer plataforma Node.js
-```bash
-npm run build
-npm start
-```
+## Stack
 
-O `output: 'standalone'` no `next.config.ts` gera um build auto-contido (~30MB) que roda sem `node_modules`.
+| Tecnologia | Função |
+|-----------|--------|
+| Next.js 15 | Framework fullstack (App Router, Turbopack) |
+| React 19 | UI reativa |
+| Tailwind CSS 4 | Estilização zero-runtime |
+| next-intl 4 | Internacionalização (PT-BR, EN-US) |
+| TypeScript 5.8 | Tipagem estática |
 
-## Estrutura
+**Zero dependências pesadas** — sem MUI, styled-components, Storybook ou bundlers extras.
+
+## Estrutura do projeto
 
 ```
 src/
-├── app/[locale]/       # Pages (layout + page)
+├── app/
+│   ├── globals.css              # Tailwind + reset
+│   └── [locale]/
+│       ├── layout.tsx           # Layout raiz com i18n provider
+│       └── page.tsx             # Página principal
 ├── components/
-│   ├── Sephirot/       # SVG sephirot components (Simple + Bigger)
-│   ├── Paths/          # SVG path connections
-│   ├── KabbalahTree/   # Main tree composition
-│   ├── DraggableArea/  # Pan & zoom container
-│   └── LanguageSelector.tsx
-├── data/               # Sephirot configuration data
-└── i18n/               # Internationalization (messages + routing)
+│   ├── DraggableArea/           # Container pan & zoom (mouse + touch)
+│   ├── KabbalahTree/
+│   │   ├── KabbalahTree.tsx     # Composição da árvore (posições + nós)
+│   │   └── TreePaths.tsx        # 22 caminhos (barras SVG + tooltips)
+│   ├── Sephirot/
+│   │   ├── Sephirot.tsx         # Componente SVG com textPath curvado
+│   │   └── types.ts             # Tipagem
+│   ├── Tooltip/
+│   │   └── Tooltip.tsx          # Tooltip fixável com copiar/fechar
+│   └── LanguageSelector.tsx     # Seletor PT/EN
+├── data/
+│   └── sephirots.ts             # Dados das 11 sephirots (cores, arquétipos, arcanos)
+├── i18n/
+│   ├── messages/
+│   │   ├── pt-BR.json           # Traduções português
+│   │   └── en-US.json           # Traduções inglês
+│   ├── request.ts               # Config next-intl server
+│   └── routing.ts               # Rotas de locale
+└── middleware.ts                 # Middleware i18n
 ```
 
-## SVGs
+## Funcionalidades
 
-Os componentes SVG são inline React — cada sephirot é composto por:
-- **SimpleSephirot**: 3 elipses concêntricas (regent, sephirot, planet) + textos curvos
-- **BiggerSephirot**: 4 elipses (world, regent, sephirot, planet) + textos curvos via `<textPath>`
-- **Paths**: Caminhos conectores (vertical, horizontal, diagonal) com letra hebraica, signo e arcano
+### Árvore da Vida
+- 10 Sephirots + Daath com SVG e textos curvados (textPath)
+- 22 Caminhos como barras coloridas com: número, letra hebraica, signo e arcano
+- Gradientes radiais em cada sephirot para efeito 3D
+- Pan & zoom (arrastar + scroll/pinch)
+
+### Tooltips educativos
+- **Sephirots**: nome, significado, planeta (com símbolo), regente angelical, defeito, mundo, arquétipos (ex: Tiferet = Jesus, Neo, Buda), arcanos menores correlacionados
+- **Caminhos**: letra hebraica (com nome), signo/elemento, arcano maior do Tarot, virtude e vício
+- Tooltips **fixáveis com click** — conteúdo selecionável e copiável
+- Botão "Copiar" com feedback visual
+- Fechar com click fora, botão ✕, ou Escape
+
+### Internacionalização
+- Português (BR) e Inglês (US)
+- Troca de idioma reflete em tooltips, nomes, arcanos e labels
+
+## Deploy
+
+### Vercel (recomendado)
+```bash
+npx vercel
+```
+
+### Docker / qualquer plataforma Node
+```bash
+npm run build
+node .next/standalone/server.js
+```
+
+O `output: 'standalone'` no `next.config.ts` gera build auto-contido (~30MB).
+
+### Variáveis de ambiente
+
+Nenhuma variável de ambiente é necessária para rodar o projeto.
+
+## Licença
+
+MIT
