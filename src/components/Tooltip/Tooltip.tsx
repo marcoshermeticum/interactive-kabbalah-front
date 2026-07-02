@@ -74,7 +74,7 @@ export default function Tooltip({ children, content }: Props) {
       {isVisible && (
         <div
           ref={tooltipRef}
-          className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-[200] ${isPinned ? '' : 'pointer-events-none'}`}
+          className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 z-[500] ${isPinned ? '' : 'pointer-events-none'}`}
           onMouseEnter={show}
           onMouseLeave={scheduleHide}
         >

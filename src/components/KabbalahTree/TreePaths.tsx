@@ -250,7 +250,7 @@ export default function TreePaths({ positions, width, height }: Props) {
       </svg>
 
       {/* Text layer — visible on top, but no pointer events (tooltip handled by hit areas below) */}
-      <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 20 }}>
+      <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 12 }}>
         {paths.map(renderTexts)}
       </svg>
 
@@ -292,7 +292,7 @@ export default function TreePaths({ positions, width, height }: Props) {
       {/* Tooltip */}
       {activePath !== null && (
         <div
-          className={`absolute z-[200] ${pinnedPath ? '' : 'pointer-events-none'}`}
+          className={`absolute z-[500] ${pinnedPath ? '' : 'pointer-events-none'}`}
           style={{ left: tooltipPos.x + 20, top: tooltipPos.y - 20 }}
           onMouseEnter={() => { /* keep visible */ }}
           onMouseLeave={() => { if (!pinnedPath) setHoveredPath(null); }}
