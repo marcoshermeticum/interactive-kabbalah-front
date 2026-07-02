@@ -110,7 +110,7 @@ export default function TreePaths({ positions, width, height }: Props) {
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
 
-    const barHeight = 24;
+    const barHeight = 30;
     const nodeRadius = 72;
     const actualLength = length - nodeRadius * 2;
     if (actualLength <= 10) return null;
@@ -162,10 +162,10 @@ export default function TreePaths({ positions, width, height }: Props) {
     const needsFlip = angle > 90 || angle < -90;
 
     const items = [
-      { text: String(path.number), size: 13, bold: true },
-      { text: path.letter, size: 15, bold: true },
-      { text: path.sign, size: 14, bold: false },
-      { text: path.arcane.split(' - ')[0], size: 11, bold: true },
+      { text: String(path.number), size: 15, bold: true },
+      { text: path.letter, size: 18, bold: true },
+      { text: path.sign, size: 16, bold: false },
+      { text: path.arcane.split(' - ')[0], size: 13, bold: true },
     ];
 
     if (isVertical) {

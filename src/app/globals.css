@@ -6,9 +6,29 @@
   margin: 0;
 }
 
+:root {
+  --bg-primary: #f8f6f0;
+  --bg-secondary: #efe9dc;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --header-bg: #1a1a1a;
+  --header-text: #ffffff;
+  --drag-bg: #f0ece4;
+}
+
+.dark {
+  --bg-primary: #0c0a13;
+  --bg-secondary: #1a1a2e;
+  --text-primary: #f0f0f0;
+  --text-secondary: #aaaaaa;
+  --header-bg: #0c0a13;
+  --header-text: #ffffff;
+  --drag-bg: #1a1a2e;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #0c0a13;
-  color: white;
+  font-family: 'Georgia', serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   overflow: hidden;
 }

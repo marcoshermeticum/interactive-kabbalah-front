@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
 const languages = [
-  { value: 'pt-BR', label: '🇧🇷 PT' },
-  { value: 'en-US', label: '🇺🇸 EN' },
+  { value: 'pt-BR', label: '🇧🇷' },
+  { value: 'en-US', label: '🇺🇸' },
 ];
 
 export default function LanguageSelector() {
@@ -16,12 +16,12 @@ export default function LanguageSelector() {
     <select
       value={locale}
       onChange={(e) => router.push(`/${e.target.value}`)}
-      className="bg-white/10 text-white border border-white/20 rounded px-2 py-1 text-sm cursor-pointer hover:bg-white/20 transition"
+      className="bg-white/10 text-white border border-white/20 rounded px-2 py-1.5 text-sm cursor-pointer hover:bg-white/20 transition"
       aria-label="Select Language"
     >
       {languages.map((lang) => (
         <option key={lang.value} value={lang.value} className="bg-gray-900 text-white">
-          {lang.label}
+          {lang.label} {lang.value.split('-')[0].toUpperCase()}
         </option>
       ))}
     </select>

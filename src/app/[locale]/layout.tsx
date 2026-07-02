@@ -18,7 +18,7 @@ export default async function RootLayout({ children, params }: Props) {
         <title>Interactive Kabbalah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
       </head>
-      <body className="bg-[#0c0a13] text-white overflow-hidden touch-manipulation" suppressHydrationWarning>
+      <body className="overflow-hidden touch-manipulation" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>
