@@ -1,6 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import { sephirotCorrespondences } from '@/data/correspondences';
 import Tooltip from '@/components/Tooltip/Tooltip';
 import type { SephirotData } from './types';
 
@@ -60,6 +61,18 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
           </ul>
         </div>
       )}
+      {/* Correspondences */}
+      {(() => {
+        const corr = sephirotCorrespondences[data.name.toLowerCase()];
+        if (!corr) return null;
+        return (
+          <div className="mt-2 pt-1 border-t border-white/10 space-y-1">
+            {corr.animals.length > 0 && <p className="text-white/80">🐾 {corr.animals.join(', ')}</p>}
+            {corr.stones.length > 0 && <p className="text-white/80">💎 {corr.stones.join(', ')}</p>}
+            {corr.bodyParts.length > 0 && <p className="text-white/80">🫀 {corr.bodyParts.join(', ')}</p>}
+          </div>
+        );
+      })()}
     </>
   );
 

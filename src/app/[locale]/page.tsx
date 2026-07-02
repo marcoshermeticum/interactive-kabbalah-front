@@ -8,6 +8,7 @@ import QliphothTree from '@/components/QliphothTree/QliphothTree';
 import CombinedTree from '@/components/CombinedTree/CombinedTree';
 import LanguageSelector from '@/components/LanguageSelector';
 import ThemeToggle from '@/components/ThemeToggle';
+import Search from '@/components/Search/Search';
 
 export default function HomePage() {
   const [view, setView] = useState<'life' | 'death' | 'both'>('life');
@@ -45,6 +46,7 @@ export default function HomePage() {
           </div>
 
           <ThemeToggle />
+          <Search />
 
           {/* Social links */}
           <div className="hidden sm:flex items-center gap-2">
