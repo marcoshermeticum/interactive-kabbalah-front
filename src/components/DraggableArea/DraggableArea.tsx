@@ -40,7 +40,7 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
   return (
     <div
       ref={containerRef}
-      className="w-screen h-screen overflow-hidden relative bg-[#1a1a2e] select-none"
+      className="w-full h-full overflow-hidden relative bg-[#1a1a2e] select-none"
       style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
       onMouseDown={handlePointerDown}
       onMouseMove={handlePointerMove}
