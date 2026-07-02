@@ -67,8 +67,21 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
       if (e.touches.length >= 2) e.preventDefault();
       if (e.touches.length === 1 && window.scrollY === 0) e.preventDefault();
     };
+    const handleKeyboard = (e: KeyboardEvent) => {
+      if (e.key === '+' || e.key === '=') {
+        e.preventDefault();
+        setScale(prev => Math.min(prev + 0.1, 4));
+      } else if (e.key === '-' || e.key === '_') {
+        e.preventDefault();
+        setScale(prev => Math.max(prev - 0.1, 0.3));
+      }
+    };
     document.addEventListener('touchmove', prevent, { passive: false });
-    return () => document.removeEventListener('touchmove', prevent);
+    document.addEventListener('keydown', handleKeyboard);
+    return () => {
+      document.removeEventListener('touchmove', prevent);
+      document.removeEventListener('keydown', handleKeyboard);
+    };
   }, []);
 
   return (
