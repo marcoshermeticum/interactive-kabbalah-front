@@ -1,5 +1,11 @@
 {
   "app": { "title": "Interactive Tree of Life" },
+  "ui": {
+    "defect": "Defect",
+    "planet": "Planet",
+    "path": "Path",
+    "meaning": "Meaning"
+  },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Omnipresence" },
     "regent": { "title": "Seraphim", "name": "Metatron", "defect": " " },
@@ -47,5 +53,29 @@
     "world": { "title": "Assiah", "aspect": "Material World" },
     "regent": { "title": "Cherubim", "name": "Sandalphon", "defect": "" },
     "sephirot": { "name": "Malkuth", "valor": "Kingdom" }
+  },
+  "paths": {
+    "11": { "arcane": "0 - The Fool", "meaning": "Air / Spirit" },
+    "12": { "arcane": "I - The Magician", "meaning": "Mercury" },
+    "13": { "arcane": "II - The High Priestess", "meaning": "Moon" },
+    "14": { "arcane": "III - The Empress", "meaning": "Venus" },
+    "15": { "arcane": "IV - The Emperor", "meaning": "Aries" },
+    "16": { "arcane": "V - The Hierophant", "meaning": "Taurus" },
+    "17": { "arcane": "VI - The Lovers", "meaning": "Gemini" },
+    "18": { "arcane": "VII - The Chariot", "meaning": "Cancer" },
+    "19": { "arcane": "VIII - Strength", "meaning": "Leo" },
+    "20": { "arcane": "IX - The Hermit", "meaning": "Virgo" },
+    "21": { "arcane": "X - Wheel of Fortune", "meaning": "Jupiter" },
+    "22": { "arcane": "XI - Justice", "meaning": "Libra" },
+    "23": { "arcane": "XII - The Hanged Man", "meaning": "Water" },
+    "24": { "arcane": "XIII - Death", "meaning": "Scorpio" },
+    "25": { "arcane": "XIV - Temperance", "meaning": "Sagittarius" },
+    "26": { "arcane": "XV - The Devil", "meaning": "Capricorn" },
+    "27": { "arcane": "XVI - The Tower", "meaning": "Mars" },
+    "28": { "arcane": "XVII - The Star", "meaning": "Aquarius" },
+    "29": { "arcane": "XVIII - The Moon", "meaning": "Pisces" },
+    "30": { "arcane": "XIX - The Sun", "meaning": "Sun" },
+    "31": { "arcane": "XX - Judgement", "meaning": "Fire" },
+    "32": { "arcane": "XXI - The World", "meaning": "Saturn" }
   }
 }

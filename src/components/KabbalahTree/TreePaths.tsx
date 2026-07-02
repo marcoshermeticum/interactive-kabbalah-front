@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 
 type Positions = Record<string, { x: number; y: number }>;
 
@@ -9,35 +10,38 @@ interface PathDef {
   to: string;
   number: number;
   letter: string;
+  letterName: string;
   sign: string;
   arcane: string;
   meaning: string;
   color: string;
+  virtue: string;
+  vice: string;
 }
 
 const paths: PathDef[] = [
-  { from: 'kether', to: 'chokmah', number: 11, letter: 'א', sign: '🜁', arcane: '0 - O Louco', meaning: 'Ar / Espírito', color: '#c9b800' },
-  { from: 'kether', to: 'binah', number: 12, letter: 'ב', sign: '☿', arcane: 'I - O Mago', meaning: 'Mercúrio', color: '#c9b800' },
-  { from: 'kether', to: 'tiferet', number: 13, letter: 'ג', sign: '☽', arcane: 'II - A Sacerdotisa', meaning: 'Lua', color: '#3b82c4' },
-  { from: 'chokmah', to: 'binah', number: 14, letter: 'ד', sign: '♀', arcane: 'III - A Imperatriz', meaning: 'Vênus', color: '#1d7a3f' },
-  { from: 'chokmah', to: 'tiferet', number: 15, letter: 'ה', sign: '♈', arcane: 'IV - O Imperador', meaning: 'Áries', color: '#b52a1c' },
-  { from: 'chokmah', to: 'chesed', number: 16, letter: 'ו', sign: '♉', arcane: 'V - O Hierofante', meaning: 'Touro', color: '#cc7a00' },
-  { from: 'binah', to: 'tiferet', number: 17, letter: 'ז', sign: '♊', arcane: 'VI - Os Amantes', meaning: 'Gêmeos', color: '#cc7a00' },
-  { from: 'binah', to: 'gevurah', number: 18, letter: 'ח', sign: '♋', arcane: 'VII - O Carro', meaning: 'Câncer', color: '#cc7a00' },
-  { from: 'gevurah', to: 'chesed', number: 19, letter: 'ט', sign: '♌', arcane: 'VIII - A Força', meaning: 'Leão', color: '#c9b800' },
-  { from: 'chesed', to: 'tiferet', number: 20, letter: 'י', sign: '♍', arcane: 'IX - O Eremita', meaning: 'Virgem', color: '#1d7a3f' },
-  { from: 'chesed', to: 'netzach', number: 21, letter: 'כ', sign: '♃', arcane: 'X - A Roda', meaning: 'Júpiter', color: '#6b2d8b' },
-  { from: 'gevurah', to: 'tiferet', number: 22, letter: 'ל', sign: '♎', arcane: 'XI - A Justiça', meaning: 'Libra', color: '#1d7a3f' },
-  { from: 'gevurah', to: 'hod', number: 23, letter: 'מ', sign: '🜄', arcane: 'XII - O Enforcado', meaning: 'Água', color: '#2471a3' },
-  { from: 'tiferet', to: 'netzach', number: 24, letter: 'נ', sign: '♏', arcane: 'XIII - A Morte', meaning: 'Escorpião', color: '#1a6b35' },
-  { from: 'tiferet', to: 'yesod', number: 25, letter: 'ס', sign: '♐', arcane: 'XIV - Temperança', meaning: 'Sagitário', color: '#2471a3' },
-  { from: 'tiferet', to: 'hod', number: 26, letter: 'ע', sign: '♑', arcane: 'XV - O Diabo', meaning: 'Capricórnio', color: '#6b2d8b' },
-  { from: 'hod', to: 'netzach', number: 27, letter: 'פ', sign: '♂', arcane: 'XVI - A Torre', meaning: 'Marte', color: '#b52a1c' },
-  { from: 'netzach', to: 'yesod', number: 28, letter: 'צ', sign: '♒', arcane: 'XVII - A Estrela', meaning: 'Aquário', color: '#6b2d8b' },
-  { from: 'netzach', to: 'malkuth', number: 29, letter: 'ק', sign: '♓', arcane: 'XVIII - A Lua', meaning: 'Peixes', color: '#cc7a00' },
-  { from: 'hod', to: 'yesod', number: 30, letter: 'ר', sign: '☉', arcane: 'XIX - O Sol', meaning: 'Sol', color: '#cc7a00' },
-  { from: 'hod', to: 'malkuth', number: 31, letter: 'ש', sign: '🜂', arcane: 'XX - O Julgamento', meaning: 'Fogo', color: '#b52a1c' },
-  { from: 'yesod', to: 'malkuth', number: 32, letter: 'ת', sign: '♄', arcane: 'XXI - O Mundo', meaning: 'Saturno', color: '#2471a3' },
+  { from: 'kether', to: 'chokmah', number: 11, letter: 'א', letterName: 'Aleph', sign: '🜁', arcane: '0 - O Louco', meaning: 'Ar / Espírito', color: '#c9b800', virtue: 'Liberdade, fé no desconhecido', vice: 'Imprudência, irresponsabilidade' },
+  { from: 'kether', to: 'binah', number: 12, letter: 'ב', letterName: 'Beth', sign: '☿', arcane: 'I - O Mago', meaning: 'Mercúrio', color: '#c9b800', virtue: 'Poder de vontade, habilidade', vice: 'Manipulação, charlatanismo' },
+  { from: 'kether', to: 'tiferet', number: 13, letter: 'ג', letterName: 'Gimel', sign: '☽', arcane: 'II - A Sacerdotisa', meaning: 'Lua', color: '#3b82c4', virtue: 'Intuição, sabedoria interior', vice: 'Segredos, passividade excessiva' },
+  { from: 'chokmah', to: 'binah', number: 14, letter: 'ד', letterName: 'Daleth', sign: '♀', arcane: 'III - A Imperatriz', meaning: 'Vênus', color: '#1d7a3f', virtue: 'Fertilidade, abundância, amor', vice: 'Vaidade, possessividade' },
+  { from: 'chokmah', to: 'tiferet', number: 15, letter: 'ה', letterName: 'Heh', sign: '♈', arcane: 'IV - O Imperador', meaning: 'Áries', color: '#b52a1c', virtue: 'Autoridade, estrutura, liderança', vice: 'Tirania, rigidez' },
+  { from: 'chokmah', to: 'chesed', number: 16, letter: 'ו', letterName: 'Vav', sign: '♉', arcane: 'V - O Hierofante', meaning: 'Touro', color: '#cc7a00', virtue: 'Ensinamento, tradição sagrada', vice: 'Dogmatismo, ortodoxia cega' },
+  { from: 'binah', to: 'tiferet', number: 17, letter: 'ז', letterName: 'Zayin', sign: '♊', arcane: 'VI - Os Amantes', meaning: 'Gêmeos', color: '#cc7a00', virtue: 'Escolha consciente, união', vice: 'Indecisão, infidelidade' },
+  { from: 'binah', to: 'gevurah', number: 18, letter: 'ח', letterName: 'Cheth', sign: '♋', arcane: 'VII - O Carro', meaning: 'Câncer', color: '#cc7a00', virtue: 'Triunfo pela disciplina', vice: 'Agressividade, conquista brutal' },
+  { from: 'gevurah', to: 'chesed', number: 19, letter: 'ט', letterName: 'Teth', sign: '♌', arcane: 'VIII - A Força', meaning: 'Leão', color: '#c9b800', virtue: 'Coragem, domínio compassivo', vice: 'Crueldade, dominação' },
+  { from: 'chesed', to: 'tiferet', number: 20, letter: 'י', letterName: 'Yod', sign: '♍', arcane: 'IX - O Eremita', meaning: 'Virgem', color: '#1d7a3f', virtue: 'Sabedoria solitária, guia interior', vice: 'Isolamento, misantropia' },
+  { from: 'chesed', to: 'netzach', number: 21, letter: 'כ', letterName: 'Kaph', sign: '♃', arcane: 'X - A Roda', meaning: 'Júpiter', color: '#6b2d8b', virtue: 'Adaptação aos ciclos, sorte', vice: 'Passividade ante o destino' },
+  { from: 'gevurah', to: 'tiferet', number: 22, letter: 'ל', letterName: 'Lamed', sign: '♎', arcane: 'XI - A Justiça', meaning: 'Libra', color: '#1d7a3f', virtue: 'Equilíbrio, verdade, equidade', vice: 'Julgamento severo, frieza' },
+  { from: 'gevurah', to: 'hod', number: 23, letter: 'מ', letterName: 'Mem', sign: '🜄', arcane: 'XII - O Enforcado', meaning: 'Água', color: '#2471a3', virtue: 'Sacrifício, nova perspectiva', vice: 'Martírio, estagnação' },
+  { from: 'tiferet', to: 'netzach', number: 24, letter: 'נ', letterName: 'Nun', sign: '♏', arcane: 'XIII - A Morte', meaning: 'Escorpião', color: '#1a6b35', virtue: 'Transformação, renovação', vice: 'Apego, medo da mudança' },
+  { from: 'tiferet', to: 'yesod', number: 25, letter: 'ס', letterName: 'Samekh', sign: '♐', arcane: 'XIV - Temperança', meaning: 'Sagitário', color: '#2471a3', virtue: 'Equilíbrio, paciência, alquimia', vice: 'Extremismo, impaciência' },
+  { from: 'tiferet', to: 'hod', number: 26, letter: 'ע', letterName: 'Ayin', sign: '♑', arcane: 'XV - O Diabo', meaning: 'Capricórnio', color: '#6b2d8b', virtue: 'Humor, libertação das ilusões', vice: 'Escravidão, materialismo' },
+  { from: 'hod', to: 'netzach', number: 27, letter: 'פ', letterName: 'Peh', sign: '♂', arcane: 'XVI - A Torre', meaning: 'Marte', color: '#b52a1c', virtue: 'Destruição do falso, despertar', vice: 'Catástrofe, arrogância' },
+  { from: 'netzach', to: 'yesod', number: 28, letter: 'צ', letterName: 'Tzaddi', sign: '♒', arcane: 'XVII - A Estrela', meaning: 'Aquário', color: '#6b2d8b', virtue: 'Esperança, inspiração divina', vice: 'Desconexão, idealismo vão' },
+  { from: 'netzach', to: 'malkuth', number: 29, letter: 'ק', letterName: 'Qoph', sign: '♓', arcane: 'XVIII - A Lua', meaning: 'Peixes', color: '#cc7a00', virtue: 'Intuição, enfrentar a sombra', vice: 'Ilusão, medo, confusão' },
+  { from: 'hod', to: 'yesod', number: 30, letter: 'ר', letterName: 'Resh', sign: '☉', arcane: 'XIX - O Sol', meaning: 'Sol', color: '#cc7a00', virtue: 'Alegria, vitalidade, clareza', vice: 'Vaidade, excesso de confiança' },
+  { from: 'hod', to: 'malkuth', number: 31, letter: 'ש', letterName: 'Shin', sign: '🜂', arcane: 'XX - O Julgamento', meaning: 'Fogo', color: '#b52a1c', virtue: 'Renascimento, absolvição', vice: 'Autopunição, culpa' },
+  { from: 'yesod', to: 'malkuth', number: 32, letter: 'ת', letterName: 'Tav', sign: '♄', arcane: 'XXI - O Mundo', meaning: 'Saturno', color: '#2471a3', virtue: 'Integração, completude', vice: 'Inércia, resistência à conclusão' },
 ];
 
 const centralPaths = new Set([13, 25, 32]);
@@ -50,12 +54,49 @@ interface Props {
 
 export default function TreePaths({ positions, width, height }: Props) {
   const [hoveredPath, setHoveredPath] = useState<number | null>(null);
+  const [pinnedPath, setPinnedPath] = useState<number | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+  const [copied, setCopied] = useState(false);
+  const ui = useTranslations('ui');
+  const pathsT = useTranslations('paths');
+
+  const activePath = pinnedPath ?? hoveredPath;
 
   const handleMouse = useCallback((e: React.MouseEvent, num: number) => {
+    if (pinnedPath !== null) return;
     setHoveredPath(num);
     setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-  }, []);
+  }, [pinnedPath]);
+
+  const handleClick = useCallback((e: React.MouseEvent, num: number) => {
+    if (pinnedPath === num) {
+      setPinnedPath(null);
+    } else {
+      setPinnedPath(num);
+      setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+    }
+  }, [pinnedPath]);
+
+  const handleCopy = async () => {
+    const p = paths.find(pp => pp.number === activePath);
+    if (!p) return;
+    const arcaneText = pathsT(`${p.number}.arcane`);
+    const meaningText = pathsT(`${p.number}.meaning`);
+    const text = `${ui('path')} ${p.number} — ${p.letter} (${p.letterName}) — ${p.sign} (${meaningText})\n${arcaneText}\n${p.from} → ${p.to}\nVirtude: ${p.virtue}\nVício: ${p.vice}`;
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  // Close pinned tooltip on Escape
+  useEffect(() => {
+    if (!pinnedPath) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setPinnedPath(null);
+    };
+    document.addEventListener('keydown', handler);
+    return () => document.removeEventListener('keydown', handler);
+  }, [pinnedPath]);
 
   const renderBar = (path: PathDef) => {
     const from = positions[path.from];
@@ -213,7 +254,7 @@ export default function TreePaths({ positions, width, height }: Props) {
         {paths.map(renderTexts)}
       </svg>
 
-      {/* Invisible hit areas for tooltip — between bars and sephirots */}
+      {/* Invisible hit areas for tooltip */}
       <svg className="absolute inset-0" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 5 }}>
         {paths.map((path) => {
           const from = positions[path.from];
@@ -240,34 +281,54 @@ export default function TreePaths({ positions, width, height }: Props) {
               transform={`rotate(${angle}, ${midX}, ${midY})`}
               className="cursor-pointer"
               onMouseEnter={(e) => handleMouse(e, path.number)}
-              onMouseMove={(e) => setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })}
-              onMouseLeave={() => setHoveredPath(null)}
+              onMouseMove={(e) => { if (!pinnedPath) setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY }); }}
+              onMouseLeave={() => { if (!pinnedPath) setHoveredPath(null); }}
+              onClick={(e) => handleClick(e, path.number)}
             />
           );
         })}
       </svg>
 
       {/* Tooltip */}
-      {hoveredPath !== null && (
+      {activePath !== null && (
         <div
-          className="absolute z-[200] pointer-events-none"
+          className={`absolute z-[200] ${pinnedPath ? '' : 'pointer-events-none'}`}
           style={{ left: tooltipPos.x + 20, top: tooltipPos.y - 20 }}
+          onMouseEnter={() => { /* keep visible */ }}
+          onMouseLeave={() => { if (!pinnedPath) setHoveredPath(null); }}
         >
-          <div className="bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-white/20 whitespace-nowrap">
+          <div className={`bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border ${pinnedPath ? 'border-yellow-400/50' : 'border-white/20'} whitespace-nowrap select-text max-w-[320px]`}>
             {(() => {
-              const p = paths.find(pp => pp.number === hoveredPath);
+              const p = paths.find(pp => pp.number === activePath);
               if (!p) return null;
+              const arcaneText = pathsT(`${p.number}.arcane`);
+              const meaningText = pathsT(`${p.number}.meaning`);
               return (
                 <>
-                  <p className="font-bold text-sm mb-1">Caminho {p.number}</p>
-                  <p className="text-lg mb-1">{p.letter} — {p.sign}</p>
-                  <p className="text-yellow-200">🃏 {p.arcane}</p>
-                  <p className="text-white/70 mt-1">{p.meaning}</p>
-                  <p className="text-white/50 mt-1 text-[10px]">{p.from} → {p.to}</p>
+                  <p className="font-bold text-sm">{ui('path')} {p.number} — {p.letter} ({p.letterName}) — {p.sign} ({meaningText})</p>
+                  <p className="text-yellow-200 mt-1">🃏 {arcaneText}</p>
+                  <p className="text-white/60 mt-1">{p.from} → {p.to}</p>
+                  <div className="mt-2 pt-1 border-t border-white/10">
+                    <p className="text-green-300">✦ Virtude: {p.virtue}</p>
+                    <p className="text-red-300">✧ Vício: {p.vice}</p>
+                  </div>
+                  {pinnedPath && (
+                    <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
+                      <button onClick={handleCopy} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
+                        {copied ? '✓ Copiado!' : '📋 Copiar'}
+                      </button>
+                      <button onClick={() => setPinnedPath(null)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
+                        ✕ Fechar
+                      </button>
+                    </div>
+                  )}
                 </>
               );
             })()}
           </div>
+          {!pinnedPath && (
+            <p className="text-center text-[9px] text-white/40 mt-1">clique para fixar</p>
+          )}
         </div>
       )}
     </div>

@@ -1,5 +1,11 @@
 {
   "app": { "title": "Árvore da Vida Interativa" },
+  "ui": {
+    "defect": "Defeito",
+    "planet": "Planeta",
+    "path": "Caminho",
+    "meaning": "Significado"
+  },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Onipresença" },
     "regent": { "title": "Serafins", "name": "Metatron", "defect": " " },
@@ -47,5 +53,29 @@
     "world": { "title": "Assiah", "aspect": "Mundo Material" },
     "regent": { "title": "Querubins", "name": "Sandalfon", "defect": "" },
     "sephirot": { "name": "Malkuth", "valor": "Reino" }
+  },
+  "paths": {
+    "11": { "arcane": "0 - O Louco", "meaning": "Ar / Espírito" },
+    "12": { "arcane": "I - O Mago", "meaning": "Mercúrio" },
+    "13": { "arcane": "II - A Sacerdotisa", "meaning": "Lua" },
+    "14": { "arcane": "III - A Imperatriz", "meaning": "Vênus" },
+    "15": { "arcane": "IV - O Imperador", "meaning": "Áries" },
+    "16": { "arcane": "V - O Hierofante", "meaning": "Touro" },
+    "17": { "arcane": "VI - Os Amantes", "meaning": "Gêmeos" },
+    "18": { "arcane": "VII - O Carro", "meaning": "Câncer" },
+    "19": { "arcane": "VIII - A Força", "meaning": "Leão" },
+    "20": { "arcane": "IX - O Eremita", "meaning": "Virgem" },
+    "21": { "arcane": "X - A Roda", "meaning": "Júpiter" },
+    "22": { "arcane": "XI - A Justiça", "meaning": "Libra" },
+    "23": { "arcane": "XII - O Enforcado", "meaning": "Água" },
+    "24": { "arcane": "XIII - A Morte", "meaning": "Escorpião" },
+    "25": { "arcane": "XIV - Temperança", "meaning": "Sagitário" },
+    "26": { "arcane": "XV - O Diabo", "meaning": "Capricórnio" },
+    "27": { "arcane": "XVI - A Torre", "meaning": "Marte" },
+    "28": { "arcane": "XVII - A Estrela", "meaning": "Aquário" },
+    "29": { "arcane": "XVIII - A Lua", "meaning": "Peixes" },
+    "30": { "arcane": "XIX - O Sol", "meaning": "Sol" },
+    "31": { "arcane": "XX - O Julgamento", "meaning": "Fogo" },
+    "32": { "arcane": "XXI - O Mundo", "meaning": "Saturno" }
   }
 }
