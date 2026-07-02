@@ -1,27 +1,26 @@
 import { ReactNode } from 'react';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
+import '../globals.css';
 
-import '../../styles/globals.scss';
-import ClientLayout from './ClientLayout';
-
-type AppPageProps = {
+type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({
-  children,
-  params: { locale },
-}: AppPageProps) {
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
   const messages = await getMessages({ locale });
 
   return (
     <html lang={locale}>
-      <head></head>
-      <body>
+      <head>
+        <title>Interactive Kabbalah</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className="bg-[#0c0a13] text-white overflow-hidden" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ClientLayout locale={locale}>{children}</ClientLayout>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

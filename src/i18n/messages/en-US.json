@@ -1,144 +1,51 @@
 {
+  "app": { "title": "Interactive Tree of Life" },
   "kether": {
-    "world": {
-      "title": " ",
-      "aspect": "Omnipresence"
-    },
-    "regent": {
-      "title": "Seraphim - Metatron",
-      "name": "EHEIEH",
-       "defect": " "
-    },
-    "sephirot": {
-      "name": "Kether",
-      "valor": "Crown"
-    },
-    "planet": {}
-  },
-  "daath": {
-    "sephirot": {
-      "name": "Daath"
-    },
-    "planet": {}
+    "world": { "title": "Atziluth", "aspect": "Omnipresence" },
+    "regent": { "title": "Seraphim", "name": "Metatron", "defect": " " },
+    "sephirot": { "name": "Kether", "valor": "Crown" }
   },
   "chokmah": {
-    "world": {
-      "title": "Atziluth (archetypal world)",
-      "aspect": "Omnipotence"
-    },
-    "regent": {
-      "title": "Cherubim - Raziel",
-      "name": "Yah",
-      "defect": "Tyranny"
-    },
-    "sephirot": {
-      "name": "Chokmah",
-      "valor": "Wisdom"
-    },
-    "planet": {}
+    "world": { "title": "Atziluth", "aspect": "Omnipotence" },
+    "regent": { "title": "Cherubim", "name": "Raziel", "defect": "Tyranny" },
+    "sephirot": { "name": "Chokmah", "valor": "Wisdom" }
   },
   "binah": {
-    "world": {
-      "title": "Briah (Creative World)",
-      "aspect": "Omniscience"
-    },
-    "regent": {
-      "title": "Thrones - Tzafquiel",
-      "name": "YHVH ELOHIM",
-      "defect": "Greed"
-    },
-    "sephirot": {
-      "name": "Binah",
-      "valor": "Understanding"
-    },
-    "planet": {}
+    "world": { "title": "Briah", "aspect": "Omniscience" },
+    "regent": { "title": "Thrones", "name": "Tzafquiel", "defect": "Greed" },
+    "sephirot": { "name": "Binah", "valor": "Understanding" }
   },
-  "malkuth": {
-    "world": {
-      "title": "Assiah (material world)",
-       "aspect": " "
-    },
-    "regent": {
-      "title": "Sandalphon",
-      "name": "Adonalha Aretz",
-      "defect": " "
-    },
-    "sephirot": {
-      "name": "Malkuth",
-      "valor": "Kingdom"
-    },
-    "planet": {}
-  },
-  "yesod": {
-    "regent": {
-      "title": "Angels - Gabriel",
-      "name": "Shaddai El Chai",
-      "defect": "Laziness"
-    },
-    "sephirot": {
-      "name": "Yesod",
-      "valor": "Foundation"
-    },
-    "planet": {}
+  "daath": {
+    "regent": { "title": "", "name": "", "defect": "" },
+    "sephirot": { "name": "Daath", "valor": "Knowledge" }
   },
   "chesed": {
-    "regent": {
-      "title": "Archangel - Tzadkiel",
-      "name": "El Elyon",
-      "defect": "Tyranny"
-    },
-    "sephirot": {
-      "name": "Chesed",
-      "valor": "Mercy"
-    },
-    "planet": {}
+    "regent": { "title": "Dominions", "name": "Tzadkiel", "defect": "Tyranny" },
+    "sephirot": { "name": "Chesed", "valor": "Mercy" }
   },
   "gevurah": {
-    "regent": {
-      "title": "Archangel - Camael",
-      "name": "Elohim Gibor",
-      "defect": "Cruelty"
-    },
-    "sephirot": {
-      "name": "Gevurah",
-      "valor": "Strength"
-    },
-    "planet": {}
+    "regent": { "title": "Powers", "name": "Camael", "defect": "Cruelty" },
+    "sephirot": { "name": "Gevurah", "valor": "Strength" }
   },
   "tiferet": {
-    "regent": {
-      "title": "Archangel - Raphael",
-      "name": "Tetragrammaton",
-      "defect": "Pride"
-    },
-    "sephirot": {
-      "name": "Tiferet",
-      "valor": "Beauty"
-    },
-    "planet": {}
+    "regent": { "title": "Virtues", "name": "Raphael", "defect": "Pride" },
+    "sephirot": { "name": "Tiferet", "valor": "Beauty" }
   },
   "netzach": {
-    "regent": {
-      "title": "Archangel - Haniel",
-      "name": "Elohim Tzabaoth",
-      "defect": "Luxury"
-    },
-    "sephirot": {
-      "name": "Netzach",
-      "valor": "Eternity"
-    },
-    "planet": {}
+    "regent": { "title": "Principalities", "name": "Haniel", "defect": "Lust" },
+    "sephirot": { "name": "Netzach", "valor": "Eternity" }
   },
   "hod": {
-    "regent": {
-      "title": "Archangel - Michael",
-      "name": "Elohim Tzabaoth",
-      "defect": "Envy"
-    },
-    "sephirot": {
-      "name": "Hod",
-      "valor": "Glory"
-    },
-    "planet": {}
+    "regent": { "title": "Archangels", "name": "Michael", "defect": "Envy" },
+    "sephirot": { "name": "Hod", "valor": "Glory" }
+  },
+  "yesod": {
+    "regent": { "title": "Angels", "name": "Gabriel", "defect": "Laziness" },
+    "sephirot": { "name": "Yesod", "valor": "Foundation" }
+  },
+  "malkuth": {
+    "world": { "title": "Assiah", "aspect": "Material World" },
+    "regent": { "title": "Cherubim", "name": "Sandalphon", "defect": "" },
+    "sephirot": { "name": "Malkuth", "valor": "Kingdom" }
   }
 }

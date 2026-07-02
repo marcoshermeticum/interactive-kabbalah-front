@@ -1,117 +1,77 @@
-import Sephirot, { BiggerSephirot } from '@/components/Sephirot';
-import {
-  binah,
-  chesed,
-  chokma,
-  daath,
-  gevurah,
-  hod,
-  kether,
-  malkuth,
-  netzach,
-  tiferet,
-  yesod,
-} from '@/components/Sephirot/__mock__/sephirots.mock';
-import useSephirot, { useBiggerSephirot } from '@/hooks/useSephirot';
-import Path from '../Paths';
-import { KabbalahTreeContainerStyled } from './KabbalahTree.styled';
+'use client';
 
-function KabbalahTree() {
-  return (
-    <KabbalahTreeContainerStyled>
-      <div className="sephirot-container kether">
-        <Path
-          number={12}
-          letter="ב"
-          sign="☿︎"
-          arcane="I"
-          className="path beth ב"
-          type="diagonal"
-          diagonalTo="left"
-          degree={140}
-          position={{ $left: '16%', $top: '1%' }}
-        />
+import Sephirot from '@/components/Sephirot/Sephirot';
+import { useTranslations } from 'next-intl';
+import { sephirots } from '@/data/sephirots';
+import TreePaths from './TreePaths';
 
-        <BiggerSephirot {...useBiggerSephirot(kether)} />
+// Tree coordinate system: 800w x 1600h
+// Wider tree, shorter vertical gaps for paths 21/23, more space for Yesod→Malkuth
+export const positions: Record<string, { x: number; y: number }> = {
+  kether:  { x: 400, y: 100 },
+  binah:   { x: 110, y: 310 },
+  chokmah: { x: 690, y: 310 },
+  daath:   { x: 400, y: 470 },
+  gevurah: { x: 110, y: 620 },
+  chesed:  { x: 690, y: 620 },
+  tiferet: { x: 400, y: 790 },
+  hod:     { x: 110, y: 970 },
+  netzach: { x: 690, y: 970 },
+  yesod:   { x: 400, y: 1150 },
+  malkuth: { x: 400, y: 1430 },
+};
 
-        <Path
-          number={11}
-          letter="א"
-          sign="🜁"
-          arcane="0"
-          className="path aleph א"
-          type="diagonal"
-          diagonalTo="right"
-          degree={35}
-          position={{ $right: '70%', $top: '1%' }}
-        />
-      </div>
-      <div className="sephirot-container binah-chokma">
-        <div>
-          <BiggerSephirot {...useBiggerSephirot(binah)} />
-          <Path
-            number={18}
-            letter="ח"
-            sign="♋"
-            arcane="VII"
-            className="path chet ח"
-            type="vertical"
-            position={{ $top: '14%' }}
-          />
-        </div>
+const TREE_WIDTH = 800;
+const TREE_HEIGHT = 1540;
+const NODE_SIZE = 170;
 
-        <Path
-          number={4}
-          letter="ד"
-          sign="♀"
-          arcane="III"
-          className="path daleth ד"
-          type="horizontal"
-          position={{ $top: '15.555%' }}
-          $width="200vw" //centralized trough width
-        />
+function TranslatedSephirot({ id }: { id: string }) {
+  const data = sephirots[id];
+  const t = useTranslations(id);
 
-        <div>
-          <BiggerSephirot {...useBiggerSephirot(chokma)} />
-          <Path
-            number={16}
-            letter=" ו"
-            sign="♉"
-            arcane=" VI"
-            className="path vav ו"
-            type="vertical"
-            position={{ $top: '14%' }}
-          />
-        </div>
-      </div>
+  let translated;
+  try {
+    translated = {
+      name: t('sephirot.name'),
+      valor: t('sephirot.valor'),
+      regent: {
+        title: t('regent.title'),
+        name: t('regent.name'),
+        defect: t('regent.defect'),
+      },
+      world: data.world ? {
+        title: t('world.title'),
+        aspect: t('world.aspect'),
+      } : undefined,
+    };
+  } catch {
+    translated = undefined;
+  }
 
-      <div className="sephirot-container daath">
-        <Sephirot {...daath} />
-      </div>
-
-      <div className="sephirot-container gevura-chesed">
-        <Sephirot {...useSephirot(gevurah)} />
-        <Sephirot {...useSephirot(chesed)} />
-      </div>
-
-      <div className="sephirot-container tiferet">
-        <Sephirot {...useSephirot(tiferet)} />
-      </div>
-
-      <div className="sephirot-container hod-netzach">
-        <Sephirot {...useSephirot(hod)} />
-        <Sephirot {...useSephirot(netzach)} />
-      </div>
-
-      <div className="sephirot-container yesod">
-        <Sephirot {...useSephirot(yesod)} />
-      </div>
-
-      <div className="sephirot-container malkuth">
-        <BiggerSephirot {...useBiggerSephirot(malkuth)} />
-      </div>
-    </KabbalahTreeContainerStyled>
-  );
+  return <Sephirot data={data} size={NODE_SIZE} translated={translated} />;
 }
 
-export default KabbalahTree;
+export default function KabbalahTree() {
+  return (
+    <div className="relative mx-auto" style={{ width: TREE_WIDTH, height: TREE_HEIGHT }}>
+      {/* Connection paths (drawn behind) */}
+      <TreePaths positions={positions} width={TREE_WIDTH} height={TREE_HEIGHT} />
+
+      {/* Sephirot nodes — above hit areas (z-5) but below text overlay (z-20) */}
+      {Object.entries(positions).map(([id, pos]) => (
+        <div
+          key={id}
+          className="absolute z-[15]"
+          style={{
+            left: pos.x - NODE_SIZE / 2,
+            top: pos.y - NODE_SIZE / 2,
+            width: NODE_SIZE,
+            height: NODE_SIZE,
+          }}
+        >
+          <TranslatedSephirot id={id} />
+        </div>
+      ))}
+    </div>
+  );
+}
