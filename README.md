@@ -2,6 +2,7 @@
 
 <img width="172" height="255" alt="image" src="https://github.com/user-attachments/assets/95152462-4299-4818-91d6-99559730e91d" />
 <img width="133" height="140" alt="image" src="https://github.com/user-attachments/assets/ab87e948-1ff6-4e20-be84-76fa1d91c597" />
+<img width="322" height="147" alt="image" src="https://github.com/user-attachments/assets/22092774-fff7-4231-a06e-33e015b9866c" />
 
 
 Frontend interativo da Árvore da Vida cabalística. Todas as 10 Sephirots + Daath e os 22 Caminhos são renderizados como SVG com informações detalhadas, tooltips educativos e suporte a múltiplos idiomas.
