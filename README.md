@@ -1,8 +1,13 @@
 # 🌳 Interactive Kabbalah — Árvore da Vida
 
+<img width="572" height="855" alt="image" src="https://github.com/user-attachments/assets/95152462-4299-4818-91d6-99559730e91d" />
+
 Frontend interativo da Árvore da Vida cabalística. Todas as 10 Sephirots + Daath e os 22 Caminhos são renderizados como SVG com informações detalhadas, tooltips educativos e suporte a múltiplos idiomas.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![React](https://img.shields.io/badge/React-19-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-4-cyan) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue)
+
+<img width="593" height="450" alt="image" src="https://github.com/user-attachments/assets/ab87e948-1ff6-4e20-be84-76fa1d91c597" />
+
 
 ## Pré-requisitos
 
