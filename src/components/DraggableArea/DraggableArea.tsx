@@ -8,29 +8,63 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
+  const lastPinchDist = useRef<number | null>(null);
 
-  const handlePointerDown = (e: React.MouseEvent | React.TouchEvent) => {
-    const point = 'touches' in e ? e.touches[0] : e;
-    setIsDragging(true);
-    setStartPos({ x: point.clientX - offset.x, y: point.clientY - offset.y });
+  const getDistance = (t1: React.Touch, t2: React.Touch) => {
+    const dx = t2.clientX - t1.clientX;
+    const dy = t2.clientY - t1.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
   };
 
-  const handlePointerMove = (e: React.MouseEvent | React.TouchEvent) => {
-    if (!isDragging) return;
-    const point = 'touches' in e && e.touches.length > 0 ? e.touches[0] : (e as React.MouseEvent);
-    setOffset({ x: point.clientX - startPos.x, y: point.clientY - startPos.y });
+  const handlePointerDown = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    if ('touches' in e) {
+      const te = e as React.TouchEvent<HTMLDivElement>;
+      if (te.touches.length >= 2) {
+        lastPinchDist.current = getDistance(te.touches[0], te.touches[1]);
+        return;
+      }
+      setIsDragging(true);
+      setStartPos({ x: te.touches[0].clientX - offset.x, y: te.touches[0].clientY - offset.y });
+    } else {
+      setIsDragging(true);
+      setStartPos({ x: e.clientX - offset.x, y: e.clientY - offset.y });
+    }
   };
 
-  const handlePointerUp = () => setIsDragging(false);
+  const handlePointerMove = (e: React.MouseEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>) => {
+    if ('touches' in e) {
+      const te = e as React.TouchEvent<HTMLDivElement>;
+      if (te.touches.length >= 2) {
+        const dist = getDistance(te.touches[0], te.touches[1]);
+        if (lastPinchDist.current !== null) {
+          const delta = (dist - lastPinchDist.current) * 0.005;
+          setScale(prev => Math.min(Math.max(0.3, prev + delta), 4));
+        }
+        lastPinchDist.current = dist;
+        return;
+      }
+      if (!isDragging || te.touches.length === 0) return;
+      setOffset({ x: te.touches[0].clientX - startPos.x, y: te.touches[0].clientY - startPos.y });
+    } else {
+      if (!isDragging) return;
+      setOffset({ x: e.clientX - startPos.x, y: e.clientY - startPos.y });
+    }
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+    lastPinchDist.current = null;
+  };
 
   const handleWheel = (e: React.WheelEvent) => {
     e.preventDefault();
     const delta = e.deltaY > 0 ? -0.1 : 0.1;
-    setScale(prev => Math.min(Math.max(0.5, prev + delta), 3));
+    setScale(prev => Math.min(Math.max(0.3, prev + delta), 4));
   };
 
   useEffect(() => {
     const prevent = (e: TouchEvent) => {
+      if (e.touches.length >= 2) e.preventDefault();
       if (e.touches.length === 1 && window.scrollY === 0) e.preventDefault();
     };
     document.addEventListener('touchmove', prevent, { passive: false });
