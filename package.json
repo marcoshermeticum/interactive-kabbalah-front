@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "install:yarn": "yarn install",
+    "install:npm": "npm install"
   },
   "dependencies": {
     "next": "^15.3.3",
