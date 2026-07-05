@@ -115,10 +115,10 @@ export default function Search({ onSelectSephirot, onSelectPath }: Props) {
       {/* Search trigger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--bg-secondary)] border border-[var(--text-secondary)]/20 hover:opacity-80 transition text-sm"
+        className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/50 hover:text-white"
         aria-label="Search"
       >
-        🔍
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       </button>
 
       {/* Search panel */}

@@ -144,7 +144,7 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
     <div
       ref={containerRef}
       className="w-full h-full overflow-hidden relative select-none"
-      style={{ cursor: 'grab', background: 'var(--drag-bg)', touchAction: 'none' }}
+      style={{ cursor: 'grab', background: 'var(--bg-canvas)', touchAction: 'none' }}
     >
       <div
         ref={contentRef}
