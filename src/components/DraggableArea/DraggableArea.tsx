@@ -6,6 +6,8 @@ import { ReactNode, useEffect, useRef, useCallback } from 'react';
  * High-performance pan & zoom area.
  * Uses refs for transform state to avoid re-renders on every frame.
  * Unified Pointer Events API works for mouse, touch, and pen.
+ * 
+ * Auto-fits content to viewport on initial load.
  */
 export default function DraggableArea({ children }: { children: ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,6 +19,7 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
   const lastPinchDist = useRef<number>(0);
   const isPanning = useRef(false);
   const panStart = useRef({ x: 0, y: 0 });
+  const initialized = useRef(false);
 
   const applyTransform = useCallback(() => {
     if (contentRef.current) {
@@ -31,17 +34,62 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
     return Math.sqrt(dx * dx + dy * dy);
   };
 
+  // Auto-fit: calculate initial scale so the entire tree is visible
+  const fitToViewport = useCallback(() => {
+    const container = containerRef.current;
+    const content = contentRef.current;
+    if (!container || !content) return;
+
+    const containerRect = container.getBoundingClientRect();
+    if (containerRect.width === 0 || containerRect.height === 0) return;
+    
+    const contentEl = content.firstElementChild as HTMLElement | null;
+    if (!contentEl) return;
+
+    // Use scrollWidth/scrollHeight for accurate measurement including absolute children
+    const contentWidth = Math.max(contentEl.scrollWidth, contentEl.offsetWidth, 800);
+    const contentHeight = Math.max(contentEl.scrollHeight, contentEl.offsetHeight, 1640);
+
+    const padding = 16;
+    const availableWidth = containerRect.width - padding * 2;
+    const availableHeight = containerRect.height - padding * 2;
+
+    const scaleX = availableWidth / contentWidth;
+    const scaleY = availableHeight / contentHeight;
+    const scale = Math.min(scaleX, scaleY, 1); // Never zoom in beyond 1
+
+    // Center the content
+    const scaledWidth = contentWidth * scale;
+    const scaledHeight = contentHeight * scale;
+    const x = (containerRect.width - scaledWidth) / 2;
+    const y = (containerRect.height - scaledHeight) / 2;
+
+    transform.current = { x, y, scale };
+    applyTransform();
+  }, [applyTransform]);
+
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
+    // Fit to viewport on first render (with retry for late-loading content)
+    if (!initialized.current) {
+      const tryFit = () => {
+        fitToViewport();
+        initialized.current = true;
+      };
+      // Try immediately, then again after a short delay for hydration
+      requestAnimationFrame(() => {
+        tryFit();
+        setTimeout(tryFit, 100);
+      });
+    }
+
     const onPointerDown = (e: PointerEvent) => {
-      // Track this pointer
       pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
       container.setPointerCapture(e.pointerId);
 
       if (pointers.current.size === 1) {
-        // Single pointer: start pan
         isPanning.current = true;
         panStart.current = {
           x: e.clientX - transform.current.x,
@@ -49,7 +97,6 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
         };
         container.style.cursor = 'grabbing';
       } else if (pointers.current.size === 2) {
-        // Two pointers: start pinch
         isPanning.current = false;
         const pts = Array.from(pointers.current.values());
         lastPinchDist.current = getDistance(pts[0], pts[1]);
@@ -61,7 +108,6 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
       pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
       if (pointers.current.size === 2) {
-        // Pinch zoom
         const pts = Array.from(pointers.current.values());
         const dist = getDistance(pts[0], pts[1]);
         if (lastPinchDist.current > 0) {
@@ -71,7 +117,6 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
         }
         lastPinchDist.current = dist;
       } else if (pointers.current.size === 1 && isPanning.current) {
-        // Pan
         transform.current.x = e.clientX - panStart.current.x;
         transform.current.y = e.clientY - panStart.current.y;
         applyTransform();
@@ -86,7 +131,6 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
         isPanning.current = false;
         container.style.cursor = 'grab';
       } else if (pointers.current.size === 1) {
-        // Switch from pinch back to pan with remaining pointer
         isPanning.current = true;
         const remaining = Array.from(pointers.current.values())[0];
         panStart.current = {
@@ -116,9 +160,13 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
       }
     };
 
-    // Prevent native gestures
     const onTouchMove = (e: TouchEvent) => {
       if (e.touches.length >= 1) e.preventDefault();
+    };
+
+    // Re-fit on window resize
+    const onResize = () => {
+      fitToViewport();
     };
 
     container.addEventListener('pointerdown', onPointerDown);
@@ -128,6 +176,7 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
     container.addEventListener('wheel', onWheel, { passive: false });
     container.addEventListener('touchmove', onTouchMove, { passive: false });
     document.addEventListener('keydown', onKeyDown);
+    window.addEventListener('resize', onResize);
 
     return () => {
       container.removeEventListener('pointerdown', onPointerDown);
@@ -137,8 +186,9 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
       container.removeEventListener('wheel', onWheel);
       container.removeEventListener('touchmove', onTouchMove);
       document.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('resize', onResize);
     };
-  }, [applyTransform]);
+  }, [applyTransform, fitToViewport]);
 
   return (
     <div
@@ -148,7 +198,7 @@ export default function DraggableArea({ children }: { children: ReactNode }) {
     >
       <div
         ref={contentRef}
-        style={{ transformOrigin: 'center', willChange: 'transform' }}
+        style={{ transformOrigin: 'top left', willChange: 'transform' }}
       >
         {children}
       </div>

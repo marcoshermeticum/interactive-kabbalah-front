@@ -12,6 +12,10 @@ import Search from '@/components/Search/Search';
 
 export default function HomePage() {
   const [view, setView] = useState<'life' | 'death' | 'both'>('life');
+  const [showVeils, setShowVeils] = useState(true);
+  const [showPillars, setShowPillars] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
+  const [showDonation, setShowDonation] = useState(false);
   const ui = useTranslations('ui');
 
   return (
@@ -61,6 +65,23 @@ export default function HomePage() {
           {/* Tools */}
           <div className="flex items-center gap-1.5 sm:gap-2">
             <Search />
+            {/* Settings button */}
+            <button
+              onClick={() => setShowSettings(!showSettings)}
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/50 hover:text-white"
+              aria-label="Settings"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+            {/* Donation button */}
+            <button
+              onClick={() => setShowDonation(!showDonation)}
+              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/50 hover:text-amber-300"
+              aria-label="Donate"
+              title="Buy me a therapy session ☕"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            </button>
             <ThemeToggle />
             <LanguageSelector />
           </div>
@@ -74,10 +95,72 @@ export default function HomePage() {
         </div>
       </header>
 
+      {/* Settings panel */}
+      {showSettings && (
+        <div className="absolute top-16 right-4 z-[600] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-4 w-[260px]">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Configurações</h3>
+            <button onClick={() => setShowSettings(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm">✕</button>
+          </div>
+          <div className="space-y-3">
+            <label className="flex items-center justify-between cursor-pointer">
+              <span className="text-sm text-gray-700 dark:text-gray-300">Exibir Véus</span>
+              <input
+                type="checkbox"
+                checked={showVeils}
+                onChange={(e) => setShowVeils(e.target.checked)}
+                className="w-4 h-4 accent-amber-600 rounded"
+              />
+            </label>
+            <label className="flex items-center justify-between cursor-pointer">
+              <span className="text-sm text-gray-700 dark:text-gray-300">Exibir Pilares</span>
+              <input
+                type="checkbox"
+                checked={showPillars}
+                onChange={(e) => setShowPillars(e.target.checked)}
+                className="w-4 h-4 accent-amber-600 rounded"
+              />
+            </label>
+          </div>
+        </div>
+      )}
+
+      {/* Donation panel */}
+      {showDonation && (
+        <div className="absolute top-16 right-4 z-[600] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-5 w-[300px]">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Buy me a therapy session 🧘</h3>
+            <button onClick={() => setShowDonation(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm">✕</button>
+          </div>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+            Se este projeto te ajudou na jornada, considere apoiar com qualquer valor via PIX.
+          </p>
+          {/* QR Code PIX — generated as SVG */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="bg-white p-3 rounded-lg border border-gray-100">
+              <PixQRCode />
+            </div>
+            <div className="text-center">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Chave PIX (telefone):</p>
+              <button
+                onClick={() => { navigator.clipboard.writeText('48991913318'); }}
+                className="text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+                title="Clique para copiar"
+              >
+                48991913318 📋
+              </button>
+            </div>
+            <p className="text-[10px] text-gray-400 text-center mt-1">
+              Qualquer valor é bem-vindo. Obrigado! 🙏
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Canvas */}
       <main className="flex-1 relative">
         <DraggableArea>
-          {view === 'life' && <KabbalahTree />}
+          {view === 'life' && <KabbalahTree showVeils={showVeils} showPillars={showPillars} />}
           {view === 'death' && <QliphothTree />}
           {view === 'both' && <CombinedTree />}
         </DraggableArea>
@@ -87,6 +170,47 @@ export default function HomePage() {
 }
 
 /* --- Sub-components --- */
+
+function PixQRCode() {
+  // Simple visual placeholder for PIX QR code
+  // In production, generate a real PIX QR code using the payload standard
+  // For now, using a visual representation that communicates the intent
+  return (
+    <svg width="140" height="140" viewBox="0 0 140 140" fill="none">
+      {/* PIX logo stylized */}
+      <rect width="140" height="140" fill="white" rx="4" />
+      {/* Border pattern suggesting QR code */}
+      <rect x="10" y="10" width="30" height="30" rx="2" fill="#333" />
+      <rect x="14" y="14" width="22" height="22" rx="1" fill="white" />
+      <rect x="18" y="18" width="14" height="14" rx="1" fill="#333" />
+      
+      <rect x="100" y="10" width="30" height="30" rx="2" fill="#333" />
+      <rect x="104" y="14" width="22" height="22" rx="1" fill="white" />
+      <rect x="108" y="18" width="14" height="14" rx="1" fill="#333" />
+      
+      <rect x="10" y="100" width="30" height="30" rx="2" fill="#333" />
+      <rect x="14" y="104" width="22" height="22" rx="1" fill="white" />
+      <rect x="18" y="108" width="14" height="14" rx="1" fill="#333" />
+      
+      {/* PIX diamond icon in center */}
+      <g transform="translate(70, 70)">
+        <path d="M-12 0L0-12L12 0L0 12Z" fill="#32BCAD" />
+        <path d="M-6 0L0-6L6 0L0 6Z" fill="white" />
+        <path d="M-3 0L0-3L3 0L0 3Z" fill="#32BCAD" />
+      </g>
+      
+      {/* Data pattern (decorative) */}
+      {[45, 50, 55, 60, 65, 80, 85, 90].map((x) => 
+        [45, 50, 55, 60, 65, 80, 85, 90].map((y) => (
+          <rect key={`${x}-${y}`} x={x} y={y} width="4" height="4" fill={(x + y) % 10 === 0 ? '#333' : 'transparent'} />
+        ))
+      )}
+      
+      {/* Text */}
+      <text x="70" y="135" textAnchor="middle" fontSize="8" fill="#666" fontFamily="Inter, sans-serif">PIX: 48991913318</text>
+    </svg>
+  );
+}
 
 function SocialLink({ href, label, icon }: { href: string; label: string; icon: React.ReactNode }) {
   return (

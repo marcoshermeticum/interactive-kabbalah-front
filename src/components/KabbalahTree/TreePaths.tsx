@@ -110,7 +110,7 @@ export default function TreePaths({ positions, width, height }: Props) {
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
 
-    const barHeight = 30;
+    const barHeight = 32;
     const nodeRadius = 72;
     const actualLength = length - nodeRadius * 2;
     if (actualLength <= 10) return null;
@@ -119,15 +119,29 @@ export default function TreePaths({ positions, width, height }: Props) {
 
     return (
       <g key={`bar-${path.number}`}>
+        {/* Outer shadow/border — gives the "armored" depth */}
         <rect
-          x={midX - actualLength / 2}
-          y={midY - barHeight / 2 - 1}
-          width={actualLength}
-          height={barHeight + 2}
-          rx={5}
-          fill="rgba(0,0,0,0.5)"
+          x={midX - actualLength / 2 - 2}
+          y={midY - barHeight / 2 - 3}
+          width={actualLength + 4}
+          height={barHeight + 6}
+          rx={6}
+          fill="rgba(0,0,0,0.6)"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
         />
+        {/* Outer border ring */}
+        <rect
+          x={midX - actualLength / 2 - 1}
+          y={midY - barHeight / 2 - 2}
+          width={actualLength + 2}
+          height={barHeight + 4}
+          rx={5}
+          fill="none"
+          stroke="rgba(255,255,255,0.12)"
+          strokeWidth="1.5"
+          transform={`rotate(${angle}, ${midX}, ${midY})`}
+        />
+        {/* Main colored bar */}
         <rect
           x={midX - actualLength / 2}
           y={midY - barHeight / 2}
@@ -135,7 +149,17 @@ export default function TreePaths({ positions, width, height }: Props) {
           height={barHeight}
           rx={4}
           fill={path.color}
-          opacity={isHovered ? 1 : 0.9}
+          opacity={isHovered ? 1 : 0.92}
+          transform={`rotate(${angle}, ${midX}, ${midY})`}
+        />
+        {/* Inner highlight — top edge gleam */}
+        <rect
+          x={midX - actualLength / 2 + 3}
+          y={midY - barHeight / 2 + 2}
+          width={actualLength - 6}
+          height={4}
+          rx={2}
+          fill="rgba(255,255,255,0.15)"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
         />
       </g>

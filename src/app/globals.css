@@ -7,17 +7,18 @@
 }
 
 :root {
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --bg-primary: #faf8f5;
-  --bg-secondary: #f3efe8;
-  --bg-canvas: #ece7de;
-  --text-primary: #1c1917;
-  --text-secondary: #57534e;
-  --text-muted: #a8a29e;
+  --bg-primary: #fff9eb;
+  --bg-secondary: #f9f3e5;
+  --bg-canvas: #f3ede0;
+  --text-primary: #1d1c13;
+  --text-secondary: #4c4637;
+  --text-muted: #7e7665;
   --accent: #7c5e3c;
   --accent-hover: #5c3d1e;
+  --gold: #d4af37;
   --border: rgba(28, 25, 23, 0.08);
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.06);

@@ -3,26 +3,15 @@
 import Sephirot from '@/components/Sephirot/Sephirot';
 import { qliphoth } from '@/data/qliphoth';
 import { qliphothPaths } from '@/data/qliphothPaths';
+import { qliphothTreeLayout } from '@/data/tree-layout';
 import QliphothPaths from './QliphothPaths';
 
-// Same geometry as Tree of Life
-export const positions: Record<string, { x: number; y: number }> = {
-  thaumiel:       { x: 400, y: 100 },
-  satariel:       { x: 110, y: 310 },
-  ghogiel:        { x: 690, y: 310 },
-  daath_qliphoth: { x: 400, y: 470 },
-  golohab:        { x: 110, y: 620 },
-  ghagsheblah:    { x: 690, y: 620 },
-  tagimron:       { x: 400, y: 790 },
-  samael:         { x: 110, y: 970 },
-  gharab:         { x: 690, y: 970 },
-  gamaliel:       { x: 400, y: 1150 },
-  nahemoth:       { x: 400, y: 1430 },
-};
+// Use centralized layout config
+export const positions = qliphothTreeLayout.positions;
 
-const TREE_WIDTH = 800;
-const TREE_HEIGHT = 1540;
-const NODE_SIZE = 170;
+const TREE_WIDTH = qliphothTreeLayout.width;
+const TREE_HEIGHT = qliphothTreeLayout.height;
+const NODE_SIZE = qliphothTreeLayout.nodeSize;
 
 export default function QliphothTree() {
   return (

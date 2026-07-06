@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#d1e4fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#320047",
+                    "on-primary-container": "#554300",
+                    "on-secondary-container": "#526478",
+                    "surface-bright": "#fff9eb",
+                    "tertiary-fixed": "#f8d8ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#efe8d5",
+                    "surface": "#fff9eb",
+                    "on-surface-variant": "#4d4635",
+                    "on-secondary-fixed-variant": "#36485b",
+                    "secondary": "#4e6073",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#6c228c",
+                    "secondary-fixed-dim": "#b5c8df",
+                    "outline-variant": "#d0c5af",
+                    "tertiary-container": "#e295ff",
+                    "primary-fixed": "#ffe088",
+                    "on-surface": "#1e1c10",
+                    "on-secondary-fixed": "#091d2e",
+                    "primary-fixed-dim": "#e9c349",
+                    "secondary-container": "#cfe2f9",
+                    "inverse-primary": "#e9c349",
+                    "on-primary-fixed-variant": "#574500",
+                    "tertiary": "#873da6",
+                    "primary-container": "#d4af37",
+                    "on-background": "#1e1c10",
+                    "outline": "#7f7663",
+                    "inverse-on-surface": "#f7f0de",
+                    "surface-variant": "#e9e2d0",
+                    "surface-dim": "#e0dac7",
+                    "surface-tint": "#735c00",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#fff9eb",
+                    "surface-container-highest": "#e9e2d0",
+                    "primary": "#735c00",
+                    "on-tertiary-container": "#6a1f8a",
+                    "tertiary-fixed-dim": "#ecb2ff",
+                    "surface-container": "#f4eedb",
+                    "surface-container-low": "#faf3e0",
+                    "inverse-surface": "#333024"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "phi": "1.618",
+                    "unit": "4px",
+                    "gutter": "1.5rem",
+                    "margin-page": "2rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "headline-lg": ["EB Garamond"],
+                    "display-lg": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #1e1c10; /* inverse-surface/dark background base */
+            overflow-x: hidden;
+        }
+        .parchment-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/dark-matter.png");
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
+        .veil-overlay {
+            backdrop-filter: blur(8px);
+            background: rgba(30, 28, 16, 0.85);
+        }
+        .emanation-glow {
+            filter: drop-shadow(0 0 12px rgba(186, 26, 26, 0.4));
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .emanation-glow:hover {
+            filter: drop-shadow(0 0 25px rgba(186, 26, 26, 0.8));
+            transform: scale(1.05);
+        }
+        .tunnel-line {
+            stroke: #4d4635;
+            stroke-width: 1.5;
+            stroke-dasharray: 4 2;
+            opacity: 0.4;
+        }
+        .abyss-sphere {
+            stroke-dasharray: 2 4;
+            animation: rotate-abyss 20s linear infinite;
+        }
+        @keyframes rotate-abyss {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .marginalia {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+        }
+        /* Custom scroll appearance */
+        .scroll-reveal {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s ease-in-out;
+        }
+        .scroll-reveal.active {
+            max-height: 1000px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-inverse-on-surface selection:bg-error selection:text-white">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-unit max-w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity duration-300 cursor-pointer">
+<span class="material-symbols-outlined">auto_awesome</span>
+<h1 class="font-display-lg text-display-lg tracking-widest text-primary dark:text-primary-fixed uppercase">AURA HERMETICA</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined">language</span>
+</button>
+</div>
+</header>
+<main class="relative min-h-screen pt-24 pb-32 flex flex-col items-center px-gutter overflow-hidden">
+<!-- Atmospheric Background Animation -->
+
+<div class="absolute inset-0 parchment-texture opacity-20"></div>
+<!-- Header Content -->
+<div class="z-10 text-center mb-12 max-w-2xl">
+<h2 class="font-headline-lg text-headline-lg text-error mb-2 tracking-tighter">THE QLIPHOTH</h2>
+<p class="font-body-md text-outline italic marginalia">"The Shells of the Unclean. The inverse of the celestial order."</p>
+</div>
+<!-- The Tree of Death (Interactive SVG) -->
+<div class="relative z-20 w-full max-w-3xl aspect-[3/4] flex items-center justify-center">
+<svg class="w-full h-full drop-shadow-2xl" viewbox="0 0 400 600">
+<!-- Tunnels of Set (22 Connections) -->
+<!-- Simple mapping of paths for visualization -->
+<g class="tunnels">
+<line class="tunnel-line" x1="200" x2="100" y1="50" y2="120"></line>
+<line class="tunnel-line" x1="200" x2="300" y1="50" y2="120"></line>
+<line class="tunnel-line" x1="100" x2="300" y1="120" y2="120"></line>
+<line class="tunnel-line" x1="100" x2="100" y1="120" y2="240"></line>
+<line class="tunnel-line" x1="300" x2="300" y1="120" y2="240"></line>
+<line class="tunnel-line" x1="100" x2="200" y1="120" y2="180"></line>
+<line class="tunnel-line" x1="300" x2="200" y1="120" y2="180"></line>
+<line class="tunnel-line" x1="100" x2="300" y1="240" y2="240"></line>
+<line class="tunnel-line" x1="100" x2="200" y1="240" y2="330"></line>
+<line class="tunnel-line" x1="300" x2="200" y1="240" y2="330"></line>
+<line class="tunnel-line" x1="200" x2="200" y1="180" y2="330"></line>
+<line class="tunnel-line" x1="100" x2="100" y1="240" y2="380"></line>
+<line class="tunnel-line" x1="300" x2="300" y1="240" y2="380"></line>
+<line class="tunnel-line" x1="100" x2="300" y1="380" y2="380"></line>
+<line class="tunnel-line" x1="200" x2="200" y1="330" y2="450"></line>
+<line class="tunnel-line" x1="100" x2="200" y1="380" y2="450"></line>
+<line class="tunnel-line" x1="300" x2="200" y1="380" y2="450"></line>
+<line class="tunnel-line" x1="200" x2="200" y1="450" y2="550"></line>
+</g>
+<!-- Qliphothic Spheres (Sephiroth Inverted) -->
+<defs>
+<radialgradient cx="50%" cy="50%" fx="50%" fy="50%" id="grad-red" r="50%">
+<stop offset="0%" style="stop-color:#ba1a1a;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#333024;stop-opacity:1"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" fx="50%" fy="50%" id="grad-abyss" r="50%">
+<stop offset="0%" style="stop-color:#1e1c10;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#4d4635;stop-opacity:0"></stop>
+</radialgradient>
+</defs>
+<!-- Thaumiel (Kether) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Thaumiel', 'Satan &amp; Moloch', 'The Duality in Unity. The abyss of contention and conflicting forces.')">
+<circle cx="200" cy="50" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="200" y="55">1</text>
+</g>
+<!-- Chaigidel (Chokmah) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Chaigidel', 'Beelzebub', 'The Hinderers. Wisdom distorted into chaotic confusion.')">
+<circle cx="300" cy="120" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="300" y="125">2</text>
+</g>
+<!-- Sathariel (Binah) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Sathariel', 'Lucifuge Rofocale', 'The Concealers. The darkness that hides the light of understanding.')">
+<circle cx="100" cy="120" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="100" y="125">3</text>
+</g>
+<!-- Choronzon (The Abyss - Da'at) -->
+<g class="cursor-pointer" onclick="showInfo('The Abyss', 'Choronzon', 'The Dweller in the Abyss. The dissolution of the ego into non-being.')">
+<circle class="abyss-sphere" cx="200" cy="180" fill="url(#grad-abyss)" r="30" stroke="#7f7663" stroke-width="1"></circle>
+<text fill="#7f7663" font-family="EB Garamond" font-size="8" font-style="italic" text-anchor="middle" x="200" y="185">DAATH</text>
+</g>
+<!-- Gamchicoth (Chesed) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Gamchicoth', 'Astaroth', 'The Devourers. Excessive mercy turned into waste and obsession.')">
+<circle cx="300" cy="240" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="300" y="245">4</text>
+</g>
+<!-- Golachab (Gevurah) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Golachab', 'Asmodeus', 'The Burning Ones. Destruction and wrath without purpose.')">
+<circle cx="100" cy="240" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="100" y="245">5</text>
+</g>
+<!-- Thagirion (Tiphareth) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Thagirion', 'Belphegor', 'The Disputers. The sun of shadow; beauty distorted into ugly vanity.')">
+<circle cx="200" cy="330" fill="url(#grad-red)" r="30" stroke="#ba1a1a" stroke-width="2"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="200" y="335">6</text>
+</g>
+<!-- Harab Serapel (Netzach) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Harab Serapel', 'Baal', 'The Ravens of Death. Passion turned into mourning and decay.')">
+<circle cx="300" cy="380" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="300" y="385">7</text>
+</g>
+<!-- Samael (Hod) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Samael', 'Adrammelech', 'The Desolation of God. Intellectual pride and barren skepticism.')">
+<circle cx="100" cy="380" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="100" y="385">8</text>
+</g>
+<!-- Gamaliel (Yesod) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Gamaliel', 'Lilith', 'The Obscene Ones. The shadow of the moon; dark fantasies and instincts.')">
+<circle cx="200" cy="450" fill="url(#grad-red)" r="25" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="200" y="455">9</text>
+</g>
+<!-- Nehemoth (Malkuth) -->
+<g class="emanation-glow cursor-pointer" onclick="showInfo('Nehemoth', 'Nahema', 'The Whisperers. The realm of material attachment and whispers of the earth.')">
+<circle cx="200" cy="550" fill="url(#grad-red)" r="30" stroke="#ba1a1a" stroke-width="1"></circle>
+<text fill="#f7f0de" font-family="EB Garamond" font-size="10" pointer-events="none" text-anchor="middle" x="200" y="555">10</text>
+</g>
+</svg>
+</div>
+<!-- Info Panel (Scroll Style) -->
+<div class="scroll-reveal z-30 w-full max-w-md mt-12 bg-surface-container-highest/20 border border-error/30 p-gutter rounded-lg backdrop-blur-md" id="info-panel">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-lg text-headline-lg text-error" id="panel-title">Thaumiel</h3>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-on-surface" onclick="closeInfo()">close</span>
+</div>
+<div class="mb-4">
+<span class="text-label-sm uppercase tracking-widest text-outline">Guardian:</span>
+<p class="font-body-md text-inverse-on-surface font-bold" id="panel-demon">Satan &amp; Moloch</p>
+</div>
+<div>
+<span class="text-label-sm uppercase tracking-widest text-outline">Correspondence:</span>
+<p class="font-body-md text-inverse-on-surface italic" id="panel-desc">The Duality in Unity. The abyss of contention and conflicting forces.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant/30 flex justify-center">
+<button class="text-error font-label-sm border-b border-transparent hover:border-error transition-all duration-300 py-1">INVOKE CONTEMPLATION</button>
+</div>
+</div>
+<!-- Marginalia Notes -->
+<aside class="absolute left-8 bottom-32 hidden lg:block max-w-[200px] opacity-60">
+<p class="marginalia text-label-sm text-outline">
+                "As above, so below; but in the mirror of the night, the reflection is distorted by the flaws of the soul."
+            </p>
+</aside>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant rounded-t-xl flat no shadows">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-105 transition-transform duration-300">brightness_5</span>
+<span class="font-label-sm text-label-sm">Life</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold border-t-2 border-primary dark:border-primary-fixed pt-1 scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined">brightness_3</span>
+<span class="font-label-sm text-label-sm">Death</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-105 transition-transform duration-300">contrast</span>
+<span class="font-label-sm text-label-sm">Mirror</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined group-active:scale-105 transition-transform duration-300">menu_book</span>
+<span class="font-label-sm text-label-sm">Grimoire</span>
+</a>
+</nav>
+<script>
+        function showInfo(title, demon, desc) {
+            const panel = document.getElementById('info-panel');
+            document.getElementById('panel-title').innerText = title;
+            document.getElementById('panel-demon').innerText = demon;
+            document.getElementById('panel-desc').innerText = desc;
+            
+            panel.classList.add('active');
+            
+            // Scroll to panel on mobile
+            if(window.innerWidth < 768) {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function closeInfo() {
+            document.getElementById('info-panel').classList.remove('active');
+        }
+
+        // Optional: Close on escape
+        document.addEventListener('keydown', (e) => {
+            if(e.key === "Escape") closeInfo();
+        });
+    </script>
+</body></html>

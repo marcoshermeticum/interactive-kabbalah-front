@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Aura Hermetica | The Divine Emanations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary": "#873da6",
+                        "surface-container-high": "#efe8d5",
+                        "inverse-on-surface": "#f7f0de",
+                        "on-tertiary-fixed": "#320047",
+                        "outline-variant": "#d0c5af",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "primary": "#735c00",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#526478",
+                        "secondary-container": "#cfe2f9",
+                        "tertiary-container": "#e295ff",
+                        "on-background": "#1e1c10",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#36485b",
+                        "surface-bright": "#fff9eb",
+                        "primary-fixed": "#ffe088",
+                        "on-surface-variant": "#4d4635",
+                        "on-tertiary-fixed-variant": "#6c228c",
+                        "tertiary-fixed-dim": "#ecb2ff",
+                        "on-tertiary-container": "#6a1f8a",
+                        "primary-container": "#d4af37",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-variant": "#e9e2d0",
+                        "inverse-primary": "#e9c349",
+                        "tertiary-fixed": "#f8d8ff",
+                        "on-secondary-fixed": "#091d2e",
+                        "surface-dim": "#e0dac7",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#735c00",
+                        "on-surface": "#1e1c10",
+                        "primary-fixed-dim": "#e9c349",
+                        "background": "#fff9eb",
+                        "secondary": "#4e6073",
+                        "on-error": "#ffffff",
+                        "surface": "#fff9eb",
+                        "secondary-fixed": "#d1e4fb",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#333024",
+                        "outline": "#7f7663",
+                        "surface-container": "#f4eedb",
+                        "surface-container-low": "#faf3e0",
+                        "on-primary-container": "#554300",
+                        "surface-container-highest": "#e9e2d0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "1.5rem",
+                        "phi": "1.618",
+                        "margin-page": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @layer base {
+            body {
+                @apply bg-background text-on-surface font-body-md selection:bg-primary-container/30 overflow-x-hidden;
+                background-image: url("https://www.transparenttextures.com/patterns/p6-dark.png"); /* Subtle parchment grain */
+            }
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .parchment-glow {
+            box-shadow: inset 0 0 100px rgba(115, 92, 0, 0.05);
+        }
+
+        .sephirah {
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .sephirah:hover {
+            filter: brightness(1.2) drop-shadow(0 0 12px currentColor);
+        }
+
+        .scroll-reveal {
+            animation: unfold 0.6s ease-out forwards;
+            transform-origin: top;
+        }
+
+        @keyframes unfold {
+            0% { transform: scaleY(0); opacity: 0; }
+            100% { transform: scaleY(1); opacity: 1; }
+        }
+
+        .path-line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 2s ease-out forwards;
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        .tree-container {
+            height: calc(100vh - 128px); /* Full height minus bars */
+            perspective: 1000px;
+        }
+
+        /* Occult Scroll Aesthetic */
+        .marginalia {
+            font-style: italic;
+            font-family: 'EB Garamond', serif;
+            opacity: 0.7;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased min-h-screen">
+<!-- Top Bar Navigation (Shared Component Strategy) -->
+<header class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50 flex justify-between items-center w-full px-margin-page max-w-full flat no shadows h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile tracking-widest text-primary font-bold">AURA HERMETICA</h1>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hover:text-tertiary transition-colors duration-300 scale-95 duration-150">
+<span class="material-symbols-outlined">translate</span>
+</button>
+<button class="hover:text-tertiary transition-colors duration-300 scale-95 duration-150">
+<span class="material-symbols-outlined">contrast</span>
+</button>
+<button class="hover:text-tertiary transition-colors duration-300 scale-95 duration-150" id="search-btn">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<!-- Search Overlay (Hidden by default) -->
+<div class="hidden fixed top-16 left-0 w-full bg-surface-container/95 backdrop-blur-md z-40 p-4 border-b border-outline-variant transition-all" id="search-bar">
+<input class="w-full bg-transparent border-b-2 border-primary focus:ring-0 focus:border-tertiary font-body-md placeholder:italic" placeholder="Search correspondences (e.g. Ruby, Sun...)" type="text"/>
+</div>
+<main class="relative tree-container overflow-y-auto px-4 pt-8 pb-32">
+<!-- Interactive Canvas: The Tree of Life and Death -->
+<div class="flex flex-col items-center justify-center w-full min-h-screen max-w-lg mx-auto">
+<svg class="w-full h-auto drop-shadow-2xl" id="kabbalah-tree" viewbox="0 0 400 800">
+<!-- Definitions for Gradients and Paths -->
+<defs>
+<radialgradient cx="50%" cy="50%" id="grad-kether" r="50%">
+<stop offset="0%" style="stop-color:#ffffff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.3"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="grad-tiferet" r="50%">
+<stop offset="0%" style="stop-color:#fcd34d;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#735c00;stop-opacity:0.6"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="grad-malkuth" r="50%">
+<stop offset="0%" style="stop-color:#4d4635;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#1e1c10;stop-opacity:1"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="grad-qliphoth" r="50%">
+<stop offset="0%" style="stop-color:#93000a;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#1e1c10;stop-opacity:0.9"></stop>
+</radialgradient>
+<path d="M 170,250 A 30,30 0 0 1 230,250" id="label-path-tiferet"></path>
+</defs>
+<!-- 22 Paths (Simplified selection) -->
+<g class="stroke-primary opacity-30 stroke-1" id="paths-life">
+<line class="path-line" x1="200" x2="200" y1="50" y2="150"></line>
+<line class="path-line" x1="200" x2="200" y1="150" y2="300"></line>
+<line class="path-line" x1="120" x2="280" y1="100" y2="100"></line>
+<line class="path-line" x1="120" x2="200" y1="100" y2="150"></line>
+<line class="path-line" x1="280" x2="200" y1="100" y2="150"></line>
+<!-- ... more paths connecting nodes ... -->
+</g>
+<!-- Sephiroth Nodes -->
+<!-- Kether -->
+<circle class="sephirah" cx="200" cy="50" fill="url(#grad-kether)" onclick="openDetails('Keter', 'Primum Mobile', 'Seraphim', 'Diamond, White', 'Ancient of Days')" r="25"></circle>
+<text class="font-label-sm text-[10px] fill-on-surface-variant pointer-events-none" text-anchor="middle" x="200" y="55">1</text>
+<!-- Tiferet -->
+<circle class="sephirah" cx="200" cy="250" fill="url(#grad-tiferet)" onclick="openDetails('Tiferet (Beleza)', 'Sol ☀️', 'Melekhim', 'Rubi, Leão, Coração', 'Jesus, Buda, Neo')" r="30"></circle>
+<text class="font-label-sm text-[10px] fill-on-primary-container pointer-events-none" text-anchor="middle" x="200" y="255">6</text>
+<!-- Malkuth -->
+<circle class="sephirah" cx="200" cy="450" fill="url(#grad-malkuth)" onclick="openDetails('Malkuth (Reino)', 'Terra 🌍', 'Ishim', 'Cristal, Touro', 'A Noiva')" r="28"></circle>
+<text class="font-label-sm text-[10px] fill-surface-bright pointer-events-none" text-anchor="middle" x="200" y="455">10</text>
+<!-- Qliphoth Transition (Inverted Tree) -->
+<g class="transition-opacity duration-1000" id="qliphoth-section">
+<path class="stroke-error stroke-2 dash-path" d="M 200,478 L 200,550" stroke-dasharray="5,5"></path>
+<line class="path-line stroke-error opacity-40" x1="200" x2="120" y1="550" y2="650"></line>
+<line class="path-line stroke-error opacity-40" x1="200" x2="280" y1="550" y2="650"></line>
+<!-- Thaumiel (Inverted Kether) -->
+<circle class="sephirah" cx="200" cy="750" fill="url(#grad-qliphoth)" onclick="openDetails('Thaumiel', 'Pluto (Dualism)', 'Archdemons', 'Black Quartz', 'Satan/Moloch')" r="25"></circle>
+<text class="font-label-sm text-[10px] fill-error-container pointer-events-none" text-anchor="middle" x="200" y="755">1i</text>
+</g>
+</svg>
+<!-- Introductory Text -->
+<div class="mt-8 text-center max-w-sm px-6">
+<p class="marginalia text-body-md text-on-surface-variant mb-4">"As above, so below. The emanations represent the vessel of creation, descending from the infinite Light to the dense material realm."</p>
+</div>
+</div>
+</main>
+<!-- Interactive Tooltip / Scroll Modal -->
+<div class="hidden fixed inset-0 z-[60] flex items-center justify-center px-margin-page bg-black/40 backdrop-blur-sm transition-opacity duration-300" id="details-overlay">
+<div class="scroll-reveal bg-surface-container border border-primary-container p-gutter rounded-lg shadow-2xl w-full max-w-md relative overflow-hidden">
+<!-- Parchment Texture Overlay -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/handmade-paper.png');"></div>
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-error transition-colors" onclick="closeDetails()">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="relative z-10">
+<h3 class="font-display-lg text-headline-lg text-primary border-b border-outline-variant pb-2 mb-4" id="detail-title">6. Tiferet (Beleza)</h3>
+<div class="space-y-4 font-body-md">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">public</span>
+<div>
+<p class="font-label-sm uppercase opacity-60">Planet/Sphere</p>
+<p id="detail-planet">Sol ☀️</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">groups</span>
+<div>
+<p class="font-label-sm uppercase opacity-60">Angelic Choir</p>
+<p id="detail-choir">Melekhim</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">hub</span>
+<div>
+<p class="font-label-sm uppercase opacity-60">Correspondences</p>
+<p id="detail-correspondences">Rubi, Leão, Coração</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">face</span>
+<div>
+<p class="font-label-sm uppercase opacity-60">Archetypes</p>
+<p id="detail-archetypes">Jesus, Buda, Neo</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-outline-variant flex justify-end">
+<button class="font-label-sm text-primary uppercase tracking-widest hover:underline decoration-primary transition-all">
+                        Deep Study →
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Shared Component Strategy) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant/30 backdrop-blur-md shadow-sm flex justify-around items-center h-16 pb-safe">
+<button class="flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-full px-4 py-1 transition-all" id="nav-life" onclick="setTreeMode('life')">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">brightness_high</span>
+<span class="font-label-sm text-label-sm uppercase">Life</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-high transition-all" id="nav-death" onclick="setTreeMode('death')">
+<span class="material-symbols-outlined">brightness_3</span>
+<span class="font-label-sm text-label-sm uppercase">Death</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-high transition-all" id="nav-mirror" onclick="setTreeMode('mirror')">
+<span class="material-symbols-outlined">swap_vert</span>
+<span class="font-label-sm text-label-sm uppercase">Mirror</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-high transition-all" id="nav-grimoire">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-label-sm text-label-sm uppercase">Grimoire</span>
+</button>
+</nav>
+<script>
+        // UI Navigation State
+        function setTreeMode(mode) {
+            const lifePaths = document.getElementById('paths-life');
+            const qliphoth = document.getElementById('qliphoth-section');
+            const navItems = ['nav-life', 'nav-death', 'nav-mirror'];
+
+            // Clear active states
+            navItems.forEach(id => {
+                const el = document.getElementById(id);
+                el.className = "flex flex-col items-center justify-center text-on-surface-variant/70 hover:bg-surface-container-high transition-all";
+                el.querySelector('span:first-child').style.fontVariationSettings = "'FILL' 0";
+            });
+
+            // Set active mode
+            const activeNav = document.getElementById('nav-' + mode);
+            activeNav.className = "flex flex-col items-center justify-center text-primary font-bold bg-primary-container/20 rounded-full px-4 py-1 transition-all";
+            activeNav.querySelector('span:first-child').style.fontVariationSettings = "'FILL' 1";
+
+            // Visual Tree Transform
+            if (mode === 'life') {
+                lifePaths.style.opacity = "0.3";
+                qliphoth.style.opacity = "0.1";
+            } else if (mode === 'death') {
+                lifePaths.style.opacity = "0.1";
+                qliphoth.style.opacity = "1";
+            } else {
+                lifePaths.style.opacity = "0.3";
+                qliphoth.style.opacity = "1";
+            }
+        }
+
+        // Details Modal Logic
+        function openDetails(title, planet, choir, corresp, archetypes) {
+            document.getElementById('detail-title').innerText = title;
+            document.getElementById('detail-planet').innerText = planet;
+            document.getElementById('detail-choir').innerText = choir;
+            document.getElementById('detail-correspondences').innerText = corresp;
+            document.getElementById('detail-archetypes').innerText = archetypes;
+            
+            const overlay = document.getElementById('details-overlay');
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+        }
+
+        function closeDetails() {
+            const overlay = document.getElementById('details-overlay');
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+        }
+
+        // Search Bar Toggle
+        const searchBtn = document.getElementById('search-btn');
+        const searchBar = document.getElementById('search-bar');
+        searchBtn.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+        });
+
+        // Micro-interaction for drawing paths
+        window.addEventListener('load', () => {
+            console.log("Manuscript initialized.");
+        });
+
+        // Close on background click
+        document.getElementById('details-overlay').addEventListener('click', (e) => {
+            if (e.target.id === 'details-overlay') closeDetails();
+        });
+    </script>
+</body></html>

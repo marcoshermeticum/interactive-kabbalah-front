@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Hermetica - The Tree of Life</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#d1e4fb",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#241a00",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#320047",
+                    "on-primary-container": "#554300",
+                    "on-secondary-container": "#526478",
+                    "surface-bright": "#fff9eb",
+                    "tertiary-fixed": "#f8d8ff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#efe8d5",
+                    "surface": "#fff9eb",
+                    "on-surface-variant": "#4d4635",
+                    "on-secondary-fixed-variant": "#36485b",
+                    "secondary": "#4e6073",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed-variant": "#6c228c",
+                    "secondary-fixed-dim": "#b5c8df",
+                    "outline-variant": "#d0c5af",
+                    "tertiary-container": "#e295ff",
+                    "primary-fixed": "#ffe088",
+                    "on-surface": "#1e1c10",
+                    "on-secondary-fixed": "#091d2e",
+                    "primary-fixed-dim": "#e9c349",
+                    "secondary-container": "#cfe2f9",
+                    "inverse-primary": "#e9c349",
+                    "on-primary-fixed-variant": "#574500",
+                    "tertiary": "#873da6",
+                    "primary-container": "#d4af37",
+                    "on-background": "#1e1c10",
+                    "outline": "#7f7663",
+                    "inverse-on-surface": "#f7f0de",
+                    "surface-variant": "#e9e2d0",
+                    "surface-dim": "#e0dac7",
+                    "surface-tint": "#735c00",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "background": "#fff9eb",
+                    "surface-container-highest": "#e9e2d0",
+                    "primary": "#735c00",
+                    "on-tertiary-container": "#6a1f8a",
+                    "tertiary-fixed-dim": "#ecb2ff",
+                    "surface-container": "#f4eedb",
+                    "surface-container-low": "#faf3e0",
+                    "inverse-surface": "#333024"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "phi": "1.618",
+                    "unit": "4px",
+                    "gutter": "1.5rem",
+                    "margin-page": "2rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["EB Garamond"],
+                    "headline-lg": ["EB Garamond"],
+                    "display-lg": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff9eb;
+            background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .sephiroth-sphere {
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+        }
+
+        .sephiroth-sphere:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 20px currentColor);
+        }
+
+        .path-line {
+            stroke-opacity: 0.6;
+            stroke-width: 8;
+            transition: stroke-opacity 0.3s;
+        }
+
+        .path-line:hover {
+            stroke-opacity: 1;
+        }
+
+        .marginalia {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            color: #7f7663;
+        }
+
+        /* Golden Dawn Sephirah Colors */
+        .color-kether { fill: #ffffff; color: rgba(255,255,255,0.8); stroke: #d0c5af; }
+        .color-chokmah { fill: #c0c0c0; color: rgba(192,192,192,0.8); }
+        .color-binah { fill: #000000; color: rgba(0,0,0,0.8); stroke: #4d4635; }
+        .color-daath { fill: #b5c8df; fill-opacity: 0.4; stroke-dasharray: 4; stroke: #4e6073; }
+        .color-chesed { fill: #3333ff; color: rgba(51,51,255,0.8); }
+        .color-geburah { fill: #ff0000; color: rgba(255,0,0,0.8); }
+        .color-tiphareth { fill: #ffff00; color: rgba(255,255,0,0.8); }
+        .color-netzach { fill: #00ff00; color: rgba(0,255,0,0.8); }
+        .color-hod { fill: #ff9900; color: rgba(255,153,0,0.8); }
+        .color-yesod { fill: #9900ff; color: rgba(153,0,255,0.8); }
+        .color-malkuth { fill: #4b3621; color: rgba(75,54,33,0.8); }
+
+        .emanations-bg {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(212, 175, 55, 0.05) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-unit max-w-full bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="auto_awesome">auto_awesome</span>
+<h1 class="font-display-lg text-[24px] md:text-display-lg tracking-widest text-primary">AURA HERMETICA</h1>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined text-primary hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="language">language</span>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-20 relative flex flex-col items-center overflow-hidden">
+<div class="emanations-bg"></div>
+<!-- Marginalia / Decorative Elements -->
+<div class="absolute left-8 top-32 hidden lg:block w-48 space-y-4">
+<p class="marginalia text-balance">"As above, so below; as within, so without; as the universe, so the soul."</p>
+<div class="h-[1px] w-full bg-outline-variant"></div>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-widest">Macrocosm</p>
+</div>
+<div class="absolute right-8 bottom-32 hidden lg:block w-48 text-right space-y-4">
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-widest">Microcosm</p>
+<div class="h-[1px] w-full bg-outline-variant ml-auto"></div>
+<p class="marginalia text-balance">The path of the serpent winds through the spheres of being.</p>
+</div>
+<!-- Interactive Tree of Life SVG -->
+<div class="relative w-full max-w-2xl aspect-[2/3] px-4 md:px-0">
+<svg class="w-full h-full drop-shadow-sm" viewbox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+<!-- Paths (Connecting Lines) -->
+<g class="paths" stroke="#D4AF37" stroke-width="4">
+<!-- Vertical Pillars -->
+<line class="path-line" x1="200" x2="200" y1="50" y2="150"></line> <!-- Kether to Daath/Tiphareth -->
+<line class="path-line" x1="200" x2="200" y1="150" y2="300"></line> <!-- Daath to Tiphareth -->
+<line class="path-line" x1="200" x2="200" y1="300" y2="450"></line> <!-- Tiphareth to Yesod -->
+<line class="path-line" x1="200" x2="200" y1="450" y2="550"></line> <!-- Yesod to Malkuth -->
+<line class="path-line" x1="300" x2="300" y1="100" y2="225"></line> <!-- Chokmah to Chesed -->
+<line class="path-line" x1="300" x2="300" y1="225" y2="375"></line> <!-- Chesed to Netzach -->
+<line class="path-line" x1="100" x2="100" y1="100" y2="225"></line> <!-- Binah to Geburah -->
+<line class="path-line" x1="100" x2="100" y1="225" y2="375"></line> <!-- Geburah to Hod -->
+<!-- Horizontal & Diagonal Paths -->
+<line class="path-line" x1="100" x2="300" y1="100" y2="100"></line> <!-- Binah to Chokmah -->
+<line class="path-line" x1="100" x2="200" y1="100" y2="50"></line> <!-- Binah to Kether -->
+<line class="path-line" x1="300" x2="200" y1="100" y2="50"></line> <!-- Chokmah to Kether -->
+<line class="path-line" x1="100" x2="200" y1="100" y2="300"></line> <!-- Binah to Tiphareth -->
+<line class="path-line" x1="300" x2="200" y1="100" y2="300"></line> <!-- Chokmah to Tiphareth -->
+<line class="path-line" x1="100" x2="300" y1="225" y2="225"></line> <!-- Geburah to Chesed -->
+<line class="path-line" x1="100" x2="200" y1="225" y2="300"></line> <!-- Geburah to Tiphareth -->
+<line class="path-line" x1="300" x2="200" y1="225" y2="300"></line> <!-- Chesed to Tiphareth -->
+<line class="path-line" x1="100" x2="300" y1="375" y2="375"></line> <!-- Hod to Netzach -->
+<line class="path-line" x1="100" x2="200" y1="375" y2="300"></line> <!-- Hod to Tiphareth -->
+<line class="path-line" x1="300" x2="200" y1="375" y2="300"></line> <!-- Netzach to Tiphareth -->
+<line class="path-line" x1="100" x2="200" y1="375" y2="450"></line> <!-- Hod to Yesod -->
+<line class="path-line" x1="300" x2="200" y1="375" y2="450"></line> <!-- Netzach to Yesod -->
+<line class="path-line" stroke-dasharray="2" x1="100" x2="200" y1="225" y2="150"></line> <!-- Geburah to Daath -->
+<line class="path-line" stroke-dasharray="2" x1="300" x2="200" y1="225" y2="150"></line> <!-- Chesed to Daath -->
+</g>
+<!-- Sephiroth Spheres -->
+<defs>
+<radialgradient cx="50%" cy="50%" id="grad-gold" r="50%">
+<stop offset="0%" stop-color="#fff9eb"></stop>
+<stop offset="100%" stop-color="#d4af37"></stop>
+</radialgradient>
+<path d="M -35, 0 A 35,35 0 0,1 35,0" id="label-path"></path>
+</defs>
+<!-- Kether -->
+<g class="sephiroth-sphere color-kether" onclick="showDetail('Kether')" transform="translate(200, 50)">
+<circle class="stroke-2" r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">KETHER</text>
+</g>
+<!-- Chokmah -->
+<g class="sephiroth-sphere color-chokmah" onclick="showDetail('Chokmah')" transform="translate(300, 100)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">CHOKMAH</text>
+</g>
+<!-- Binah -->
+<g class="sephiroth-sphere color-binah" onclick="showDetail('Binah')" transform="translate(100, 100)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">BINAH</text>
+</g>
+<!-- Daath (The Abyss) -->
+<g class="sephiroth-sphere color-daath" onclick="showDetail('Daath')" transform="translate(200, 150)">
+<circle r="30" stroke-width="1"></circle>
+<text class="font-label-sm text-[9px] fill-secondary" dy="-35" text-anchor="middle">DAATH</text>
+</g>
+<!-- Chesed -->
+<g class="sephiroth-sphere color-chesed" onclick="showDetail('Chesed')" transform="translate(300, 225)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">CHESED</text>
+</g>
+<!-- Geburah -->
+<g class="sephiroth-sphere color-geburah" onclick="showDetail('Geburah')" transform="translate(100, 225)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">GEBURAH</text>
+</g>
+<!-- Tiphareth -->
+<g class="sephiroth-sphere color-tiphareth" onclick="showDetail('Tiphareth')" transform="translate(200, 300)">
+<circle r="40" stroke="#d4af37" stroke-width="2"></circle>
+<text class="font-label-sm text-[11px] font-bold" dy="-45" text-anchor="middle">TIPHARETH</text>
+</g>
+<!-- Netzach -->
+<g class="sephiroth-sphere color-netzach" onclick="showDetail('Netzach')" transform="translate(300, 375)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">NETZACH</text>
+</g>
+<!-- Hod -->
+<g class="sephiroth-sphere color-hod" onclick="showDetail('Hod')" transform="translate(100, 375)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">HOD</text>
+</g>
+<!-- Yesod -->
+<g class="sephiroth-sphere color-yesod" onclick="showDetail('Yesod')" transform="translate(200, 450)">
+<circle r="35"></circle>
+<text class="font-label-sm text-[10px]" dy="-40" text-anchor="middle">YESOD</text>
+</g>
+<!-- Malkuth -->
+<g class="sephiroth-sphere color-malkuth" onclick="showDetail('Malkuth')" transform="translate(200, 550)">
+<circle r="40"></circle>
+<text class="font-label-sm text-[11px]" dy="-45" text-anchor="middle">MALKUTH</text>
+</g>
+</svg>
+</div>
+<!-- Ritual Card Overlay (Hidden by default) -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-gutter hidden" id="detail-modal">
+<div class="absolute inset-0 bg-surface/80 backdrop-blur-md" onclick="hideDetail()"></div>
+<div class="relative bg-surface-container border border-primary-container p-10 max-w-lg w-full rounded-lg shadow-2xl animate-scroll-unfold">
+<div class="flex justify-between items-start mb-6">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-widest" id="modal-title">Kether</h2>
+<button class="material-symbols-outlined text-outline" onclick="hideDetail()">close</button>
+</div>
+<div class="space-y-4">
+<p class="font-body-md text-on-surface-variant leading-relaxed" id="modal-desc">The Crown. The first emanation of the Divine, representing the infinite light from which all creation flows. It is the point of origin, the singular unity before differentiation.</p>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-outline-variant">
+<div>
+<span class="text-label-sm text-outline uppercase block">Correspondence</span>
+<span class="font-body-md font-medium" id="modal-corr">Primordial Point</span>
+</div>
+<div>
+<span class="text-label-sm text-outline uppercase block">Element</span>
+<span class="font-body-md font-medium" id="modal-elem">Infinite Light</span>
+</div>
+</div>
+</div>
+<div class="mt-8 flex justify-center">
+<button class="px-8 py-2 border border-primary text-primary font-label-sm uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">
+                        Begin Contemplation
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low border-t border-outline-variant rounded-t-xl">
+<!-- Life (Active) -->
+<a class="flex flex-col items-center justify-center text-primary font-bold border-t-2 border-primary pt-1 scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_5">brightness_5</span>
+<span class="font-label-sm text-label-sm">Life</span>
+</a>
+<!-- Death -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_3">brightness_3</span>
+<span class="font-label-sm text-label-sm">Death</span>
+</a>
+<!-- Mirror -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="contrast">contrast</span>
+<span class="font-label-sm text-label-sm">Mirror</span>
+</a>
+<!-- Grimoire -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Grimoire</span>
+</a>
+</nav>
+<script>
+        const sephirothData = {
+            'Kether': {
+                desc: 'The Crown. The first emanation of the Divine, representing the infinite light from which all creation flows. It is the point of origin, the singular unity before differentiation.',
+                corr: 'The Source',
+                elem: 'Aether'
+            },
+            'Chokmah': {
+                desc: 'Wisdom. The masculine force of creation, the "Great Father". It is the dynamic energy, the flash of lightning that initiates existence.',
+                corr: 'The Zodiac',
+                elem: 'Fire'
+            },
+            'Binah': {
+                desc: 'Understanding. The feminine force, the "Great Mother". It provides the form and structure for the raw energy of Chokmah to take shape.',
+                corr: 'Saturn',
+                elem: 'Water'
+            },
+            'Daath': {
+                desc: 'Knowledge. The invisible Sephirah, the "Abyss". It represents the bridge (or the void) between the higher supernal triad and the lower manifestation.',
+                corr: 'The Hidden Path',
+                elem: 'Non-existence'
+            },
+            'Chesed': {
+                desc: 'Mercy. Expanding love and benevolence. It is the constructive force that builds and organizes the universe through kindness.',
+                corr: 'Jupiter',
+                elem: 'Water'
+            },
+            'Geburah': {
+                desc: 'Strength/Severity. The restrictive force that balances Chesed. It provides discipline, judgment, and the power to destroy what is no longer needed.',
+                corr: 'Mars',
+                elem: 'Fire'
+            },
+            'Tiphareth': {
+                desc: 'Beauty. The center of the Tree, balancing Mercy and Severity. It is the seat of consciousness, the soul, and the heart of the initiate.',
+                corr: 'The Sun',
+                elem: 'Air'
+            },
+            'Netzach': {
+                desc: 'Victory. The realm of instinct, emotion, and aesthetic beauty. It represents the endurance of the creative spark in the material world.',
+                corr: 'Venus',
+                elem: 'Fire'
+            },
+            'Hod': {
+                desc: 'Splendor. The realm of intellect, communication, and ritual. It provides the logical framework through which we express Netzach’s emotions.',
+                corr: 'Mercury',
+                elem: 'Water'
+            },
+            'Yesod': {
+                desc: 'Foundation. The astral realm, the subconscious. It acts as the final processing plant for all energies before they reach physical manifestation.',
+                corr: 'The Moon',
+                elem: 'Air'
+            },
+            'Malkuth': {
+                desc: 'Kingdom. The physical world. This is the culmination of all spiritual energies into matter, where the divine is fully manifest.',
+                corr: 'Earth',
+                elem: 'Earth'
+            }
+        };
+
+        function showDetail(name) {
+            const data = sephirothData[name];
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-desc').innerText = data.desc;
+            document.getElementById('modal-corr').innerText = data.corr;
+            document.getElementById('modal-elem').innerText = data.elem;
+            
+            const modal = document.getElementById('detail-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function hideDetail() {
+            const modal = document.getElementById('detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Keyboard close
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideDetail();
+        });
+    </script>
+<style>
+        @keyframes scroll-unfold {
+            0% { transform: scaleY(0); opacity: 0; }
+            100% { transform: scaleY(1); opacity: 1; }
+        }
+        .animate-scroll-unfold {
+            animation: scroll-unfold 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            transform-origin: top;
+        }
+    </style>
+</body></html>

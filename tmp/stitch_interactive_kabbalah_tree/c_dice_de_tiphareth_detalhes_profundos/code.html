@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA HERMETICA - Sephiroth Insight</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=EB+Garamond:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#fff9eb",
+                        "on-tertiary-fixed-variant": "#6d228c",
+                        "surface-variant": "#e8e2d4",
+                        "chesed-blue": "#3333ff",
+                        "tertiary-fixed-dim": "#ecb2ff",
+                        "primary-fixed-dim": "#e3c466",
+                        "error": "#ba1a1a",
+                        "binah-black": "#000000",
+                        "background": "#fff9eb",
+                        "tiphareth-yellow": "#ffff00",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b6c8de",
+                        "on-tertiary-fixed": "#320046",
+                        "on-primary": "#ffffff",
+                        "geburah-red": "#ff0000",
+                        "parchment-bg": "#fff9eb",
+                        "marginalia-text": "#7f7663",
+                        "primary-container": "#735c00",
+                        "surface-bright": "#fff9eb",
+                        "on-tertiary": "#ffffff",
+                        "gold-accent": "#d4af37",
+                        "inverse-primary": "#e3c466",
+                        "on-secondary-fixed": "#091d2d",
+                        "error-container": "#ffdad6",
+                        "kether-white": "#ffffff",
+                        "tertiary": "#6d218c",
+                        "on-tertiary-container": "#f4caff",
+                        "tertiary-container": "#873da6",
+                        "surface-container-low": "#f9f3e5",
+                        "on-primary-container": "#f6d676",
+                        "secondary-container": "#d1e4fb",
+                        "surface-tint": "#735c00",
+                        "inverse-on-surface": "#f6f0e2",
+                        "surface-container-highest": "#e8e2d4",
+                        "on-background": "#1d1c13",
+                        "malkuth-earth": "#4b3621",
+                        "on-primary-fixed-variant": "#574500",
+                        "outline-variant": "#cfc6b2",
+                        "outline": "#7e7665",
+                        "on-surface": "#1d1c13",
+                        "secondary": "#4e6073",
+                        "primary-fixed": "#ffe085",
+                        "on-secondary-fixed-variant": "#37485b",
+                        "inverse-surface": "#333027",
+                        "on-primary-fixed": "#231b00",
+                        "on-surface-variant": "#4c4637",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f3ede0",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ede8da",
+                        "primary": "#574500",
+                        "surface-dim": "#dfdacc",
+                        "secondary-fixed": "#d1e4fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#546679",
+                        "tertiary-fixed": "#f8d8ff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "margin-page": "32px",
+                        "gutter": "24px",
+                        "phi": "1.618",
+                        "unit": "4px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["EB Garamond"],
+                        "marginalia": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "body-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "marginalia": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-image: url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100" height="100" filter="url(%23noise)" opacity="0.05"/%3E%3C/svg%3E');
+            background-blend-mode: multiply;
+        }
+        .sphere-glow {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.2);
+            animation: pulse-glow 4s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), inset 0 0 15px rgba(212, 175, 55, 0.1); }
+            100% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.6), inset 0 0 25px rgba(212, 175, 55, 0.3); }
+        }
+        .thin-border {
+            border: 1px solid #d0c5af;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-24 md:pb-0 pt-[72px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-unit max-w-full bg-surface border-b border-outline-variant flat no shadows h-[64px]">
+<button class="text-primary hover:opacity-80 transition-opacity duration-300 flex items-center justify-center p-2">
+<span class="material-symbols-outlined font-light">auto_awesome</span>
+</button>
+<h1 class="font-display-lg text-display-lg tracking-widest text-primary text-center absolute left-1/2 -translate-x-1/2">AURA HERMETICA</h1>
+<button class="text-primary hover:opacity-80 transition-opacity duration-300 flex items-center justify-center p-2">
+<span class="material-symbols-outlined font-light">language</span>
+</button>
+</header>
+<main class="container mx-auto px-4 md:px-margin-page py-12 max-w-7xl relative">
+<!-- Marginalia Sidebar (Left) -->
+<aside class="hidden xl:block absolute left-4 top-24 w-48 text-marginalia-text font-marginalia text-marginalia italic">
+<p class="mb-8">"And the central point is Tiphareth, the Beauty that balances the pillars of Mercy and Severity."</p>
+<p>Sepher Yetzirah, Ch. 2</p>
+</aside>
+<!-- Main Content Area - 8 Column Center -->
+<div class="xl:ml-56 xl:mr-56">
+<!-- Hero / Central Sphere -->
+<section class="flex flex-col items-center justify-center mb-24">
+<div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full flex items-center justify-center bg-gradient-to-br from-tiphareth-yellow/20 to-surface-variant thin-border sphere-glow mb-8 transition-transform hover:scale-105 duration-700 ease-in-out cursor-pointer group">
+<div class="absolute inset-2 border border-gold-accent/30 rounded-full pointer-events-none group-hover:rotate-45 transition-transform duration-1000"></div>
+<div class="text-center z-10">
+<div class="text-gold-accent text-6xl mb-2">☉</div> <!-- Sun Symbol -->
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary tracking-widest uppercase">Tiphareth</h2>
+<div class="font-display-lg text-display-lg text-gold-accent mt-2 opacity-80">תפארת</div>
+</div>
+</div>
+<div class="text-center max-w-2xl mx-auto">
+<p class="font-label-sm text-label-sm text-outline tracking-widest uppercase mb-4">The Sixth Sephirah • Beauty &amp; Balance</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Tiphareth resides at the very center of the Tree of Life, serving as the equilibrating force between Geburah (Severity) and Chesed (Mercy). It is the sphere of the Sun, representing harmony, spiritual awakening, and the radiant core of the soul.
+                    </p>
+</div>
+</section>
+<!-- Bento Grid: Attributes -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-24">
+<!-- Divine Names -->
+<div class="bg-surface-container-low p-8 rounded-lg thin-border hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute -right-12 -top-12 opacity-5 text-9xl font-display-lg group-hover:scale-110 transition-transform duration-700">יהוה</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-6 flex items-center border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined mr-3 font-light">menu_book</span> Divine Names
+                    </h3>
+<ul class="space-y-4">
+<li class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">God Name</span>
+<span class="font-body-md text-body-md text-on-surface">Jehovah Aloah va Daath</span>
+</li>
+<li class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Archangel</span>
+<span class="font-body-md text-body-md text-on-surface">Raphael</span>
+</li>
+<li class="flex justify-between items-end border-b border-outline-variant/30 pb-2">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Angelic Choir</span>
+<span class="font-body-md text-body-md text-on-surface">Malachim (Kings)</span>
+</li>
+</ul>
+</div>
+<!-- Virtues & Vices -->
+<div class="bg-surface-container-low p-8 rounded-lg thin-border hover:shadow-[0_0_15px_rgba(212,175,55,0.15)] transition-shadow duration-300 relative overflow-hidden group">
+<div class="absolute -left-12 -bottom-12 opacity-5 text-9xl font-display-lg group-hover:scale-110 transition-transform duration-700">⚖️</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-6 flex items-center border-b border-outline-variant pb-2">
+<span class="material-symbols-outlined mr-3 font-light">contrast</span> Virtue &amp; Vice
+                    </h3>
+<div class="space-y-6">
+<div>
+<span class="font-label-sm text-label-sm text-gold-accent uppercase tracking-wider block mb-1">Spiritual Experience</span>
+<p class="font-body-md text-body-md text-on-surface">The Vision of the Harmony of Things</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Virtue</span>
+<p class="font-body-md text-body-md text-on-surface">Devotion to the Great Work</p>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider block mb-1">Vice</span>
+<p class="font-body-md text-body-md text-on-surface">Pride</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low border-t border-outline-variant flat no shadows md:hidden rounded-t-xl h-[64px]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors w-16">
+<span class="material-symbols-outlined font-light mb-1">brightness_5</span>
+<span class="font-label-sm text-[10px] tracking-widest uppercase">Life</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors w-16">
+<span class="material-symbols-outlined font-light mb-1">brightness_3</span>
+<span class="font-label-sm text-[10px] tracking-widest uppercase">Death</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold border-t-2 border-primary pt-1 scale-105 transition-transform duration-300 w-16">
+<span class="material-symbols-outlined font-light mb-1">contrast</span>
+<span class="font-label-sm text-[10px] tracking-widest uppercase">Mirror</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors w-16">
+<span class="material-symbols-outlined font-light mb-1">menu_book</span>
+<span class="font-label-sm text-[10px] tracking-widest uppercase">Grimoire</span>
+</button>
+</nav>
+</body></html>

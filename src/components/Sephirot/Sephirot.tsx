@@ -104,9 +104,18 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
             <path id={`${uid}-world`} d="M 90 290 A 175 175 0 0 0 410 290" fill="none" />
           </defs>
 
-          <circle cx={cx} cy={cy} r={220} fill={`url(#${uid}-grad-outer)`} stroke={colors.stroke} strokeWidth="4" />
-          <circle cx={cx} cy={cy} r={168} fill={`url(#${uid}-grad-mid)`} stroke={colors.stroke} strokeWidth="2.5" strokeOpacity="0.6" />
-          <circle cx={cx} cy={cy} r={108} fill={`url(#${uid}-grad-inner)`} stroke={colors.stroke} strokeWidth="2" strokeOpacity="0.5" />
+          {/* Outer armored ring — double border for "board game" feel */}
+          <circle cx={cx} cy={cy} r={230} fill="none" stroke={colors.stroke} strokeWidth="3" strokeOpacity="0.3" />
+          <circle cx={cx} cy={cy} r={220} fill={`url(#${uid}-grad-outer)`} stroke={colors.stroke} strokeWidth="5" />
+          <circle cx={cx} cy={cy} r={215} fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" />
+          
+          {/* Middle ring — defined border */}
+          <circle cx={cx} cy={cy} r={168} fill={`url(#${uid}-grad-mid)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.8" />
+          <circle cx={cx} cy={cy} r={163} fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+          
+          {/* Inner core — solid presence */}
+          <circle cx={cx} cy={cy} r={108} fill={`url(#${uid}-grad-inner)`} stroke={colors.stroke} strokeWidth="3" strokeOpacity="0.7" />
+          <circle cx={cx} cy={cy} r={104} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
           <text x={cx} y={cy - 12} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize="78" fontFamily="Arial, sans-serif">{data.icon}</text>
           <text x={cx} y={cy + 48} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize="34" fontFamily="Arial, sans-serif" opacity="0.9">{data.number}</text>

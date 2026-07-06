@@ -61,15 +61,21 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
     const angle = Math.atan2(dy, dx) * (180 / Math.PI);
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
-    const barHeight = 24;
+    const barHeight = 26;
     const nodeRadius = 72;
     const actualLength = length - nodeRadius * 2;
     if (actualLength <= 10) return null;
     const isHovered = activePath === path.number;
     return (
       <g key={`bar-${path.number}`}>
-        <rect x={midX - actualLength / 2} y={midY - barHeight / 2 - 1} width={actualLength} height={barHeight + 2} rx={5} fill="rgba(0,0,0,0.6)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
-        <rect x={midX - actualLength / 2} y={midY - barHeight / 2} width={actualLength} height={barHeight} rx={4} fill={path.color} opacity={isHovered ? 1 : 0.85} transform={`rotate(${angle}, ${midX}, ${midY})`} />
+        {/* Outer shadow/border — armored depth */}
+        <rect x={midX - actualLength / 2 - 2} y={midY - barHeight / 2 - 3} width={actualLength + 4} height={barHeight + 6} rx={6} fill="rgba(0,0,0,0.7)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
+        {/* Outer border ring */}
+        <rect x={midX - actualLength / 2 - 1} y={midY - barHeight / 2 - 2} width={actualLength + 2} height={barHeight + 4} rx={5} fill="none" stroke="rgba(255,100,100,0.12)" strokeWidth="1.5" transform={`rotate(${angle}, ${midX}, ${midY})`} />
+        {/* Main colored bar */}
+        <rect x={midX - actualLength / 2} y={midY - barHeight / 2} width={actualLength} height={barHeight} rx={4} fill={path.color} opacity={isHovered ? 1 : 0.88} transform={`rotate(${angle}, ${midX}, ${midY})`} />
+        {/* Inner highlight */}
+        <rect x={midX - actualLength / 2 + 3} y={midY - barHeight / 2 + 2} width={actualLength - 6} height={3} rx={1.5} fill="rgba(255,255,255,0.08)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
       </g>
     );
   };
