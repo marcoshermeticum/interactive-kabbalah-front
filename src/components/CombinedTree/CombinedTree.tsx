@@ -33,24 +33,28 @@ export default function CombinedTree() {
       <div className="relative mx-auto" style={{ width: TREE_WIDTH, height: TREE_HEIGHT }}>
         <QliphothPaths positions={invertedPositions} width={TREE_WIDTH} height={TREE_HEIGHT} paths={qliphothPaths} />
 
-        {Object.entries(invertedPositions).map(([id, pos]) => {
-          const data = qliphoth[id];
-          if (!data) return null;
-          return (
-            <div
-              key={id}
-              className="absolute z-[15]"
-              style={{
-                left: pos.x - NODE_SIZE / 2,
-                top: pos.y - NODE_SIZE / 2,
-                width: NODE_SIZE,
-                height: NODE_SIZE,
-              }}
-            >
-              <Sephirot data={data} size={NODE_SIZE} />
-            </div>
-          );
-        })}
+        <div className="absolute inset-0 z-[15]" style={{ pointerEvents: 'none' }}>
+          {Object.entries(invertedPositions).map(([id, pos]) => {
+            const data = qliphoth[id];
+            if (!data) return null;
+            return (
+              <div
+                key={id}
+                className="absolute"
+                data-sephirot-id={id}
+                style={{
+                  left: pos.x - NODE_SIZE / 2,
+                  top: pos.y - NODE_SIZE / 2,
+                  width: NODE_SIZE,
+                  height: NODE_SIZE,
+                  pointerEvents: 'auto',
+                }}
+              >
+                <Sephirot data={data} size={NODE_SIZE} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

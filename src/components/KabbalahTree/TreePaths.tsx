@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { tooltipManager } from '@/components/Tooltip/TooltipManager';
 
 type Positions = Record<string, { x: number; y: number }>;
 
@@ -52,51 +53,70 @@ interface Props {
   height: number;
 }
 
+interface PinnedTooltip {
+  pathNumber: number;
+  pos: { x: number; y: number };
+}
+
 export default function TreePaths({ positions, width, height }: Props) {
   const [hoveredPath, setHoveredPath] = useState<number | null>(null);
-  const [pinnedPath, setPinnedPath] = useState<number | null>(null);
-  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
-  const [copied, setCopied] = useState(false);
+  const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
+  const [pinnedTooltips, setPinnedTooltips] = useState<PinnedTooltip[]>([]);
+  const [copiedPath, setCopiedPath] = useState<number | null>(null);
+  const deregisterRefs = useRef<Map<number, () => void>>(new Map());
   const ui = useTranslations('ui');
   const pathsT = useTranslations('paths');
 
-  const activePath = pinnedPath ?? hoveredPath;
+  const unpinPath = useCallback((pathNumber: number) => {
+    setPinnedTooltips((prev) => prev.filter((t) => t.pathNumber !== pathNumber));
+    const dereg = deregisterRefs.current.get(pathNumber);
+    if (dereg) {
+      dereg();
+      deregisterRefs.current.delete(pathNumber);
+    }
+  }, []);
 
   const handleMouse = useCallback((e: React.MouseEvent, num: number) => {
-    if (pinnedPath !== null) return;
+    // Hover always works — show preview tooltip even if others are pinned
     setHoveredPath(num);
-    setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-  }, [pinnedPath]);
+    setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+  }, []);
 
   const handleClick = useCallback((e: React.MouseEvent, num: number) => {
-    if (pinnedPath === num) {
-      setPinnedPath(null);
+    const alreadyPinned = pinnedTooltips.some((t) => t.pathNumber === num);
+    if (alreadyPinned) {
+      // Unpin it
+      unpinPath(num);
     } else {
-      setPinnedPath(num);
-      setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
+      // Pin at click position
+      const pos = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
+      setPinnedTooltips((prev) => [...prev, { pathNumber: num, pos }]);
+      // Register with global manager for sequential close
+      const dereg = tooltipManager.register(() => unpinPath(num));
+      deregisterRefs.current.set(num, dereg);
     }
-  }, [pinnedPath]);
+  }, [pinnedTooltips, unpinPath]);
 
-  const handleCopy = async () => {
-    const p = paths.find(pp => pp.number === activePath);
+  const handleCopy = async (pathNumber: number) => {
+    const p = paths.find((pp) => pp.number === pathNumber);
     if (!p) return;
     const arcaneText = pathsT(`${p.number}.arcane`);
     const meaningText = pathsT(`${p.number}.meaning`);
     const text = `${ui('path')} ${p.number} — ${p.letter} (${p.letterName}) — ${p.sign} (${meaningText})\n${arcaneText}\n${p.from} → ${p.to}\n${ui('virtue')}: ${p.virtue}\n${ui('vice')}: ${p.vice}`;
     await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setCopiedPath(pathNumber);
+    setTimeout(() => setCopiedPath(null), 1500);
   };
 
-  // Close pinned tooltip on Escape
+  // Escape is handled globally by TooltipOutsideHandler
+
+  // Cleanup on unmount
   useEffect(() => {
-    if (!pinnedPath) return;
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setPinnedPath(null);
+    return () => {
+      deregisterRefs.current.forEach((dereg) => dereg());
+      deregisterRefs.current.clear();
     };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
-  }, [pinnedPath]);
+  }, []);
 
   const renderBar = (path: PathDef) => {
     const from = positions[path.from];
@@ -203,7 +223,7 @@ export default function TreePaths({ positions, width, height }: Props) {
           key={`txt-${path.number}`}
           className="cursor-pointer"
           onMouseEnter={(e) => handleMouse(e, path.number)}
-          onMouseMove={(e) => setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })}
+          onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })}
           onMouseLeave={() => setHoveredPath(null)}
         >
           {items.map((item, i) => (
@@ -235,7 +255,7 @@ export default function TreePaths({ positions, width, height }: Props) {
           transform={`translate(${midX}, ${midY}) rotate(${textAngle})`}
           className="cursor-pointer"
           onMouseEnter={(e) => handleMouse(e, path.number)}
-          onMouseMove={(e) => setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })}
+          onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })}
           onMouseLeave={() => setHoveredPath(null)}
         >
           {items.map((item, i) => (
@@ -304,26 +324,59 @@ export default function TreePaths({ positions, width, height }: Props) {
               fill="transparent"
               transform={`rotate(${angle}, ${midX}, ${midY})`}
               className="cursor-pointer"
+              data-path-number={String(path.number)}
               onMouseEnter={(e) => handleMouse(e, path.number)}
-              onMouseMove={(e) => { if (!pinnedPath) setTooltipPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY }); }}
-              onMouseLeave={() => { if (!pinnedPath) setHoveredPath(null); }}
+              onMouseMove={(e) => { setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY }); }}
+              onMouseLeave={() => setHoveredPath(null)}
               onClick={(e) => handleClick(e, path.number)}
             />
           );
         })}
       </svg>
 
-      {/* Tooltip */}
-      {activePath !== null && (
+      {/* Pinned tooltips — multiple can exist simultaneously */}
+      {pinnedTooltips.map((pinned) => {
+        const p = paths.find((pp) => pp.number === pinned.pathNumber);
+        if (!p) return null;
+        const arcaneText = pathsT(`${p.number}.arcane`);
+        const meaningText = pathsT(`${p.number}.meaning`);
+        return (
+          <div
+            key={`pinned-${pinned.pathNumber}`}
+            className="absolute z-[500]"
+            data-pinned-tooltip
+            style={{ left: pinned.pos.x + 20, top: pinned.pos.y - 20 }}
+          >
+            <div className="bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-yellow-400/50 whitespace-nowrap select-text max-w-[320px]">
+              <p className="font-bold text-sm">{ui('path')} {p.number} — {p.letter} ({p.letterName}) — {p.sign} ({meaningText})</p>
+              <p className="text-yellow-200 mt-1">🃏 {arcaneText}</p>
+              <p className="text-white/60 mt-1">{p.from} → {p.to}</p>
+              <div className="mt-2 pt-1 border-t border-white/10">
+                <p className="text-green-300">✦ {ui('virtue')}: {p.virtue}</p>
+                <p className="text-red-300">✧ {ui('vice')}: {p.vice}</p>
+              </div>
+              <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
+                <button onClick={() => handleCopy(pinned.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
+                  {copiedPath === pinned.pathNumber ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
+                </button>
+                <button onClick={() => unpinPath(pinned.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
+                  ✕ {ui('close')}
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Hover tooltip — temporary preview (only if not already pinned) */}
+      {hoveredPath !== null && !pinnedTooltips.some((t) => t.pathNumber === hoveredPath) && (
         <div
-          className={`absolute z-[500] ${pinnedPath ? '' : 'pointer-events-none'}`}
-          style={{ left: tooltipPos.x + 20, top: tooltipPos.y - 20 }}
-          onMouseEnter={() => { /* keep visible */ }}
-          onMouseLeave={() => { if (!pinnedPath) setHoveredPath(null); }}
+          className="absolute z-[490] pointer-events-none"
+          style={{ left: hoverPos.x + 20, top: hoverPos.y - 20 }}
         >
-          <div className={`bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border ${pinnedPath ? 'border-yellow-400/50' : 'border-white/20'} whitespace-nowrap select-text max-w-[320px]`}>
+          <div className="bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-white/20 whitespace-nowrap select-text max-w-[320px]">
             {(() => {
-              const p = paths.find(pp => pp.number === activePath);
+              const p = paths.find((pp) => pp.number === hoveredPath);
               if (!p) return null;
               const arcaneText = pathsT(`${p.number}.arcane`);
               const meaningText = pathsT(`${p.number}.meaning`);
@@ -336,23 +389,11 @@ export default function TreePaths({ positions, width, height }: Props) {
                     <p className="text-green-300">✦ {ui('virtue')}: {p.virtue}</p>
                     <p className="text-red-300">✧ {ui('vice')}: {p.vice}</p>
                   </div>
-                  {pinnedPath && (
-                    <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-                      <button onClick={handleCopy} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
-                        {copied ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
-                      </button>
-                      <button onClick={() => setPinnedPath(null)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
-                        ✕ {ui('close')}
-                      </button>
-                    </div>
-                  )}
                 </>
               );
             })()}
           </div>
-          {!pinnedPath && (
-            <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>
-          )}
+          <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>
         </div>
       )}
     </div>

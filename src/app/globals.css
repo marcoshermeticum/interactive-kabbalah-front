@@ -59,6 +59,59 @@ body, header, div, button, select, input {
   transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
+/* === Living Hermetic Background === */
+
+/* Layer 1: Textured Base — warm volumetric glow on the canvas */
+:root {
+  --geometry-stroke: rgba(124, 94, 60, 0.06);
+}
+.dark {
+  --geometry-stroke: rgba(212, 175, 55, 0.05);
+}
+
+/* Sacred geometry grid breathing animation */
+@media (prefers-reduced-motion: no-preference) {
+  .hermetic-grid {
+    animation: hermetic-breathe 12s ease-in-out infinite;
+  }
+}
+@keyframes hermetic-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Vignette — light theme */
+.hermetic-vignette {
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 45%,
+    transparent 35%,
+    rgba(28, 25, 23, 0.04) 100%
+  );
+}
+.dark .hermetic-vignette {
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 45%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+/* Canvas texture — subtle volumetric gradients */
+.canvas-texture {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124, 94, 60, 0.02) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(124, 94, 60, 0.015) 0%, transparent 45%),
+    var(--bg-canvas);
+}
+.dark .canvas-texture {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(212, 165, 116, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 20%, rgba(100, 60, 30, 0.02) 0%, transparent 45%),
+    var(--bg-canvas);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -68,4 +121,41 @@ body, header, div, button, select, input {
 ::-webkit-scrollbar-thumb {
   background: var(--text-muted);
   border-radius: 3px;
+}
+
+/* === Mobile Navbar Animations === */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slideDown {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Safe area padding for bottom bar (iOS notch devices) */
+.safe-area-bottom {
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+/* Mobile bottom bar spacing — prevent content from hiding behind it */
+@media (max-width: 639px) {
+  main {
+    padding-bottom: 56px;
+  }
 }
