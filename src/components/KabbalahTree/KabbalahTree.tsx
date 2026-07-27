@@ -3,27 +3,16 @@
 import Sephirot from '@/components/Sephirot/Sephirot';
 import { useTranslations } from 'next-intl';
 import { sephirots } from '@/data/sephirots';
+import { kabbalahTreeLayout } from '@/data/tree-layout';
 import TreePaths from './TreePaths';
+import TreeOrnaments from './TreeOrnaments';
 
-// Tree coordinate system: 800w x 1600h
-// Wider tree, shorter vertical gaps for paths 21/23, more space for Yesod→Malkuth
-export const positions: Record<string, { x: number; y: number }> = {
-  kether:  { x: 400, y: 100 },
-  binah:   { x: 110, y: 310 },
-  chokmah: { x: 690, y: 310 },
-  daath:   { x: 400, y: 470 },
-  gevurah: { x: 110, y: 620 },
-  chesed:  { x: 690, y: 620 },
-  tiferet: { x: 400, y: 790 },
-  hod:     { x: 110, y: 970 },
-  netzach: { x: 690, y: 970 },
-  yesod:   { x: 400, y: 1150 },
-  malkuth: { x: 400, y: 1430 },
-};
+// Use centralized layout config
+export const positions = kabbalahTreeLayout.positions;
 
-const TREE_WIDTH = 800;
-const TREE_HEIGHT = 1540;
-const NODE_SIZE = 170;
+const TREE_WIDTH = kabbalahTreeLayout.width;
+const TREE_HEIGHT = kabbalahTreeLayout.height;
+const NODE_SIZE = kabbalahTreeLayout.nodeSize;
 
 function TranslatedSephirot({ id }: { id: string }) {
   const data = sephirots[id];
@@ -51,27 +40,34 @@ function TranslatedSephirot({ id }: { id: string }) {
   return <Sephirot data={data} size={NODE_SIZE} translated={translated} />;
 }
 
-export default function KabbalahTree() {
+export default function KabbalahTree({ showVeils = true, showPillars = true }: { showVeils?: boolean; showPillars?: boolean }) {
   return (
     <div className="relative mx-auto" style={{ width: TREE_WIDTH, height: TREE_HEIGHT }}>
+      {/* Ornamental frame: veils, pillars, labels — with interactive tooltips */}
+      <TreeOrnaments width={TREE_WIDTH} height={TREE_HEIGHT} showVeils={showVeils} showPillars={showPillars} />
+
       {/* Connection paths (drawn behind) */}
       <TreePaths positions={positions} width={TREE_WIDTH} height={TREE_HEIGHT} />
 
-      {/* Sephirot nodes — above hit areas (z-5) but below text overlay (z-20) */}
-      {Object.entries(positions).map(([id, pos]) => (
-        <div
-          key={id}
-          className="absolute z-[15]"
-          style={{
-            left: pos.x - NODE_SIZE / 2,
-            top: pos.y - NODE_SIZE / 2,
-            width: NODE_SIZE,
-            height: NODE_SIZE,
-          }}
-        >
-          <TranslatedSephirot id={id} />
-        </div>
-      ))}
+      {/* Sephirot nodes — single container so tooltips share one stacking context */}
+      <div className="absolute inset-0 z-[15]" style={{ pointerEvents: 'none' }}>
+        {Object.entries(positions).map(([id, pos]) => (
+          <div
+            key={id}
+            className="absolute"
+            data-sephirot-id={id}
+            style={{
+              left: pos.x - NODE_SIZE / 2,
+              top: pos.y - NODE_SIZE / 2,
+              width: NODE_SIZE,
+              height: NODE_SIZE,
+              pointerEvents: 'auto',
+            }}
+          >
+            <TranslatedSephirot id={id} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

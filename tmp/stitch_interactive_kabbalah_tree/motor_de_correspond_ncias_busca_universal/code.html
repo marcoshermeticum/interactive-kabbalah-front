@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grimoire - Search &amp; Correspondences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#fff9eb",
+                        "on-tertiary-fixed-variant": "#6d228c",
+                        "surface-variant": "#e8e2d4",
+                        "chesed-blue": "#3333ff",
+                        "tertiary-fixed-dim": "#ecb2ff",
+                        "primary-fixed-dim": "#e3c466",
+                        "error": "#ba1a1a",
+                        "binah-black": "#000000",
+                        "background": "#fff9eb",
+                        "tiphareth-yellow": "#ffff00",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#b6c8de",
+                        "on-tertiary-fixed": "#320046",
+                        "on-primary": "#ffffff",
+                        "geburah-red": "#ff0000",
+                        "parchment-bg": "#fff9eb",
+                        "marginalia-text": "#7f7663",
+                        "primary-container": "#735c00",
+                        "surface-bright": "#fff9eb",
+                        "on-tertiary": "#ffffff",
+                        "gold-accent": "#d4af37",
+                        "inverse-primary": "#e3c466",
+                        "on-secondary-fixed": "#091d2d",
+                        "error-container": "#ffdad6",
+                        "kether-white": "#ffffff",
+                        "tertiary": "#6d218c",
+                        "on-tertiary-container": "#f4caff",
+                        "tertiary-container": "#873da6",
+                        "surface-container-low": "#f9f3e5",
+                        "on-primary-container": "#f6d676",
+                        "secondary-container": "#d1e4fb",
+                        "surface-tint": "#735c00",
+                        "inverse-on-surface": "#f6f0e2",
+                        "surface-container-highest": "#e8e2d4",
+                        "on-background": "#1d1c13",
+                        "malkuth-earth": "#4b3621",
+                        "on-primary-fixed-variant": "#574500",
+                        "outline-variant": "#cfc6b2",
+                        "outline": "#7e7665",
+                        "on-surface": "#1d1c13",
+                        "secondary": "#4e6073",
+                        "primary-fixed": "#ffe085",
+                        "on-secondary-fixed-variant": "#37485b",
+                        "inverse-surface": "#333027",
+                        "on-primary-fixed": "#231b00",
+                        "on-surface-variant": "#4c4637",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f3ede0",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#ede8da",
+                        "primary": "#574500",
+                        "surface-dim": "#dfdacc",
+                        "secondary-fixed": "#d1e4fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#546679",
+                        "tertiary-fixed": "#f8d8ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "gutter": "24px",
+                        "phi": "1.618",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["EB Garamond"],
+                        "marginalia": ["EB Garamond"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "marginalia": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+        }
+        .emanation:hover {
+            filter: drop-shadow(0 0 12px currentColor);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24 md:pb-0">
+<!-- Top Navigation (Web & Anchor) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-unit max-w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: 'wght' 300;">auto_awesome</span>
+<h1 class="font-display-lg text-display-lg tracking-widest text-primary dark:text-primary-fixed">AURA HERMETICA</h1>
+</div>
+<!-- Desktop Nav Items -->
+<nav class="hidden md:flex items-center gap-8 font-label-sm text-label-sm uppercase">
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-80 transition-opacity duration-300" href="#">Life</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-80 transition-opacity duration-300" href="#">Death</a>
+<a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:opacity-80 transition-opacity duration-300" href="#">Mirror</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1" href="#">Grimoire</a>
+</nav>
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" style="font-variation-settings: 'wght' 300;">language</span>
+</header>
+<!-- Main Content -->
+<main class="pt-24 px-gutter md:px-margin-page max-w-7xl mx-auto flex gap-12">
+<!-- Center Column Canvas -->
+<div class="flex-1 w-full">
+<!-- Search Engine -->
+<section class="mb-12">
+<div class="relative max-w-2xl mx-auto group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'wght' 300;">search</span>
+</div>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-4 pl-12 pr-4 font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors emanation text-primary" placeholder="Query the Arcanum..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-4 flex items-center">
+<button class="text-marginalia-text hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Periodic Table of Mysticism -->
+<section>
+<div class="text-center mb-8">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-2">Correspondences</h2>
+<p class="font-marginalia text-marginalia text-marginalia-text">Select a domain to unveil its signatures.</p>
+</div>
+<!-- Category Filters -->
+<div class="flex justify-center gap-4 mb-12 flex-wrap">
+<button class="px-6 py-2 border border-outline-variant rounded uppercase font-label-sm text-label-sm text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-300">Animalia</button>
+<button class="px-6 py-2 border border-primary bg-primary text-on-primary rounded uppercase font-label-sm text-label-sm transition-colors duration-300 emanation">Mineralia</button>
+<button class="px-6 py-2 border border-outline-variant rounded uppercase font-label-sm text-label-sm text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors duration-300">Anatomia</button>
+</div>
+<!-- Bento Grid / Correspondences -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<article class="bg-surface-container-low border border-outline-variant rounded-lg p-6 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-500 emanation text-gold-accent">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'wght' 100;">diamond</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">Amethyst</h3>
+<p class="font-label-sm text-label-sm text-marginalia-text uppercase tracking-widest mb-4">Quartz • Violet</p>
+<div class="space-y-3 font-marginalia text-marginalia text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Planet</span>
+<span class="text-on-surface">Jupiter</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Element</span>
+<span class="text-on-surface">Water</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Property</span>
+<span class="text-on-surface">Sobriety, Protection</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-low border border-outline-variant rounded-lg p-6 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-500 emanation text-geburah-red">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'wght' 100;">water_drop</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">Ruby</h3>
+<p class="font-label-sm text-label-sm text-marginalia-text uppercase tracking-widest mb-4">Corundum • Red</p>
+<div class="space-y-3 font-marginalia text-marginalia text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Planet</span>
+<span class="text-on-surface">Mars</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Element</span>
+<span class="text-on-surface">Fire</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Property</span>
+<span class="text-on-surface">Vitality, Courage</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-low border border-outline-variant rounded-lg p-6 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-500 emanation text-secondary-fixed-dim">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl" style="font-variation-settings: 'wght' 100;">mode_night</span>
+</div>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">Moonstone</h3>
+<p class="font-label-sm text-label-sm text-marginalia-text uppercase tracking-widest mb-4">Feldspar • Opalescent</p>
+<div class="space-y-3 font-marginalia text-marginalia text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Planet</span>
+<span class="text-on-surface">Moon</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Element</span>
+<span class="text-on-surface">Water</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant pb-1">
+<span>Property</span>
+<span class="text-on-surface">Intuition, Dreams</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+<!-- Marginalia Sidebar (Large Screens Only) -->
+<aside class="hidden xl:block w-64 pt-12">
+<div class="sticky top-32">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-marginalia-text border-b border-outline-variant pb-2 mb-4">Scholastic Notes</h4>
+<p class="font-marginalia text-marginalia text-marginalia-text leading-relaxed">
+                    The doctrine of signatures posits that herbs and minerals resembling various parts of the body can be used to treat ailments of those body parts.
+                </p>
+<div class="mt-8">
+<img class="w-full h-auto rounded border border-outline-variant opacity-80 mix-blend-multiply" data-alt="A detailed, esoteric etching of a mineral crystal formation, rendered in thin, precise black lines against a parchment background. The style is reminiscent of Renaissance alchemical manuscripts, conveying a sense of scholarly precision and ancient wisdom. Minimalist, high contrast, scholarly aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8pb73Ia6fa2dyhz-cT0JJz44IhacPZUW7qkZwzvFpTJbAA4hdpg-C-UwnCnXuhogYvmw4Sr5ZQsRds27HG4kdIUULWlROEI5qtoQqGdaBYCGeMTdbcR-C6kzVUrX7q9uJx9kf451YpiNpobpkYsIdGi9rM9_q9Cm8W6dfGVMYzw7ppsY-PYICvFgN3L4cPBUlxCJBWdMzHtRug92HATwMx87730BW6Zr-XVTdGBajLO1e9nBun573"/>
+</div>
+</div>
+</aside>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant rounded-t-xl flat no shadows">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">brightness_5</span>
+<span class="font-label-sm text-label-sm mt-1">Life</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">brightness_3</span>
+<span class="font-label-sm text-label-sm mt-1">Death</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">contrast</span>
+<span class="font-label-sm text-label-sm mt-1">Mirror</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold border-t-2 border-primary dark:border-primary-fixed pt-1 scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300, 'FILL' 1;">menu_book</span>
+<span class="font-label-sm text-label-sm mt-1">Grimoire</span>
+</button>
+</nav>
+</body></html>

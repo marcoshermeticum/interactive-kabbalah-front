@@ -4,6 +4,7 @@ import KabbalahTree from '@/components/KabbalahTree/KabbalahTree';
 import Sephirot from '@/components/Sephirot/Sephirot';
 import { qliphoth } from '@/data/qliphoth';
 import { qliphothPaths } from '@/data/qliphothPaths';
+import { qliphothInvertedLayout } from '@/data/tree-layout';
 import QliphothPaths from '@/components/QliphothTree/QliphothPaths';
 
 /**
@@ -12,24 +13,10 @@ import QliphothPaths from '@/components/QliphothTree/QliphothPaths';
  * Thaumiel (Death 1) at the very bottom.
  */
 
-// Inverted positions: Nahemoth at top, Thaumiel at bottom
-const TREE_WIDTH = 800;
-const TREE_HEIGHT = 1540;
-const NODE_SIZE = 170;
-
-const invertedPositions: Record<string, { x: number; y: number }> = {
-  nahemoth:       { x: 400, y: 100 },   // was bottom, now top
-  gamaliel:       { x: 400, y: 380 },
-  samael:         { x: 110, y: 560 },
-  gharab:         { x: 690, y: 560 },
-  tagimron:       { x: 400, y: 740 },
-  golohab:        { x: 110, y: 910 },
-  ghagsheblah:    { x: 690, y: 910 },
-  daath_qliphoth: { x: 400, y: 1060 },
-  satariel:       { x: 110, y: 1220 },
-  ghogiel:        { x: 690, y: 1220 },
-  thaumiel:       { x: 400, y: 1430 },   // was top, now bottom
-};
+const TREE_WIDTH = qliphothInvertedLayout.width;
+const TREE_HEIGHT = qliphothInvertedLayout.height;
+const NODE_SIZE = qliphothInvertedLayout.nodeSize;
+const invertedPositions = qliphothInvertedLayout.positions;
 
 export default function CombinedTree() {
   return (
@@ -46,24 +33,28 @@ export default function CombinedTree() {
       <div className="relative mx-auto" style={{ width: TREE_WIDTH, height: TREE_HEIGHT }}>
         <QliphothPaths positions={invertedPositions} width={TREE_WIDTH} height={TREE_HEIGHT} paths={qliphothPaths} />
 
-        {Object.entries(invertedPositions).map(([id, pos]) => {
-          const data = qliphoth[id];
-          if (!data) return null;
-          return (
-            <div
-              key={id}
-              className="absolute z-[15]"
-              style={{
-                left: pos.x - NODE_SIZE / 2,
-                top: pos.y - NODE_SIZE / 2,
-                width: NODE_SIZE,
-                height: NODE_SIZE,
-              }}
-            >
-              <Sephirot data={data} size={NODE_SIZE} />
-            </div>
-          );
-        })}
+        <div className="absolute inset-0 z-[15]" style={{ pointerEvents: 'none' }}>
+          {Object.entries(invertedPositions).map(([id, pos]) => {
+            const data = qliphoth[id];
+            if (!data) return null;
+            return (
+              <div
+                key={id}
+                className="absolute"
+                data-sephirot-id={id}
+                style={{
+                  left: pos.x - NODE_SIZE / 2,
+                  top: pos.y - NODE_SIZE / 2,
+                  width: NODE_SIZE,
+                  height: NODE_SIZE,
+                  pointerEvents: 'auto',
+                }}
+              >
+                <Sephirot data={data} size={NODE_SIZE} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

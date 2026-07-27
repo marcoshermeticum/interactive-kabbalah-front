@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Árvore da Vida - The Tree of Life</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary": "#6d218c",
+                "on-background": "#1d1c13",
+                "on-primary-fixed": "#231b00",
+                "background": "#fff9eb",
+                "secondary": "#4e6073",
+                "on-tertiary": "#ffffff",
+                "secondary-fixed": "#d1e4fb",
+                "parchment-bg": "#fff9eb",
+                "malkuth-earth": "#4b3621",
+                "on-primary-container": "#f6d676",
+                "on-secondary-fixed-variant": "#37485b",
+                "gold-accent": "#d4af37",
+                "surface-container-high": "#ede8da",
+                "chesed-blue": "#3333ff",
+                "on-error": "#ffffff",
+                "kether-white": "#ffffff",
+                "secondary-container": "#d1e4fb",
+                "on-surface": "#1d1c13",
+                "on-primary-fixed-variant": "#574500",
+                "tertiary-container": "#873da6",
+                "surface-dim": "#dfdacc",
+                "on-secondary-fixed": "#091d2d",
+                "surface-container-low": "#f9f3e5",
+                "primary-container": "#735c00",
+                "primary": "#574500",
+                "on-secondary-container": "#546679",
+                "error-container": "#ffdad6",
+                "on-primary": "#ffffff",
+                "geburah-red": "#ff0000",
+                "error": "#ba1a1a",
+                "on-tertiary-container": "#f4caff",
+                "surface-container-highest": "#e8e2d4",
+                "tiphareth-yellow": "#ffff00",
+                "marginalia-text": "#7f7663",
+                "tertiary-fixed-dim": "#ecb2ff",
+                "inverse-primary": "#e3c466",
+                "on-error-container": "#93000a",
+                "primary-fixed-dim": "#e3c466",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#f3ede0",
+                "on-tertiary-fixed-variant": "#6d228c",
+                "surface": "#fff9eb",
+                "primary-fixed": "#ffe085",
+                "on-secondary": "#ffffff",
+                "outline": "#7e7665",
+                "on-tertiary-fixed": "#320046",
+                "tertiary-fixed": "#f8d8ff",
+                "surface-variant": "#e8e2d4",
+                "on-surface-variant": "#4c4637",
+                "inverse-on-surface": "#f6f0e2",
+                "inverse-surface": "#1a1a1a",
+                "surface-bright": "#fff9eb",
+                "surface-tint": "#735c00",
+                "secondary-fixed-dim": "#b6c8de",
+                "binah-black": "#000000",
+                "outline-variant": "#cfc6b2",
+                "charcoal-bg": "#121212",
+                "charcoal-surface": "#1e1e1e"
+        },
+        "fontFamily": {
+                "body-md": ["Inter"],
+                "marginalia": ["EB Garamond"],
+                "label-sm": ["Inter"],
+                "headline-lg": ["EB Garamond"],
+                "display-lg": ["EB Garamond"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body {
+            background-color: #121212;
+            color: #f6f0e2;
+            overflow-x: hidden;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.15;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .tree-container {
+            transition: all 0.3s ease;
+        }
+
+        .tree-container.focus-mode .sephiroth-sphere,
+        .tree-container.focus-mode .path-group {
+            opacity: 0.2;
+            filter: grayscale(80%);
+        }
+
+        .tree-container.focus-mode .sephiroth-sphere.active,
+        .tree-container.focus-mode .path-group.active {
+            opacity: 1;
+            filter: drop-shadow(0 0 15px #d4af37) brightness(1.2);
+            z-index: 10;
+        }
+
+        .sephiroth-sphere {
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.3));
+        }
+
+        .sephiroth-sphere:hover {
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
+        }
+
+        .sephiroth-sphere circle.outer-ring {
+            stroke: rgba(255, 255, 255, 0.2);
+            stroke-width: 2px;
+            fill: none;
+        }
+        
+        .sephiroth-sphere circle.inner-fill {
+            stroke: rgba(212, 175, 55, 0.5);
+            stroke-width: 1px;
+        }
+
+        .path-group {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .path-line {
+            stroke: #d4af37;
+            stroke-width: 2px;
+            fill: none;
+            opacity: 0.8;
+            transition: stroke-width 0.3s, filter 0.3s;
+        }
+
+        .path-group:hover .path-line {
+            stroke-width: 3px;
+            filter: drop-shadow(0 0 5px #d4af37);
+        }
+
+        .path-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 5px;
+            fill: #d4af37;
+            text-anchor: middle;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+        
+        .path-hebrew {
+            font-size: 7px;
+            font-weight: bold;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .path-title {
+            font-size: 3.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            fill: rgba(212, 175, 55, 0.7);
+        }
+
+        /* Golden Dawn Colors */
+        .color-kether .inner-fill { fill: #ffffff; }
+        .color-chokmah .inner-fill { fill: #808080; } /* Grey */
+        .color-binah .inner-fill { fill: #111111; stroke: #333; }
+        .color-daath .inner-fill { fill: transparent; stroke-dasharray: 2; stroke: #4e6073; }
+        .color-chesed .inner-fill { fill: #0000ff; }
+        .color-geburah .inner-fill { fill: #ff0000; }
+        .color-tiphareth .inner-fill { fill: #ffff00; }
+        .color-netzach .inner-fill { fill: #008000; }
+        .color-hod .inner-fill { fill: #ffa500; }
+        .color-yesod .inner-fill { fill: #800080; }
+        
+        /* Malkuth Quartered */
+        .malkuth-gradient {
+            fill: url(#malkuth-grad);
+        }
+        .color-malkuth .inner-fill { fill: url(#malkuth-pattern); }
+
+        .emanations-bg {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.03) 0%, transparent 80%);
+        }
+
+        .pillar-line {
+            stroke: rgba(255, 255, 255, 0.05);
+            stroke-width: 1;
+            fill: none;
+        }
+
+        /* Sephiroth Text Styles */
+        .seph-name-hebrew {
+            font-family: 'EB Garamond', serif;
+            font-size: 7px;
+            fill: #111;
+            font-weight: bold;
+        }
+        
+        .seph-name-hebrew.light-text { fill: #fff; }
+
+        .seph-number {
+            font-family: 'EB Garamond', serif;
+            font-size: 14px;
+            fill: #111;
+            font-weight: 600;
+        }
+        .seph-number.light-text { fill: #fff; }
+
+        .seph-angel {
+            font-family: 'Inter', sans-serif;
+            font-size: 4px;
+            fill: rgba(0,0,0,0.7);
+            letter-spacing: 0.05em;
+        }
+        .seph-angel.light-text { fill: rgba(255,255,255,0.8); }
+
+        .seph-virtue-vice {
+            font-family: 'Inter', sans-serif;
+            font-size: 3px;
+            fill: rgba(0,0,0,0.6);
+        }
+        .seph-virtue-vice.light-text { fill: rgba(255,255,255,0.7); }
+
+        .seph-planet {
+            font-family: 'Material Symbols Outlined';
+            font-size: 6px;
+            fill: #111;
+        }
+        .seph-planet.light-text { fill: #fff; }
+        
+        .decorative-border {
+            position: absolute;
+            inset: 0.5rem;
+            pointer-events: none;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            z-index: 0;
+        }
+        .decorative-border::before, .decorative-border::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.5);
+        }
+        .decorative-border::before { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+        .decorative-border::after { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+        
+        .border-tl { position: absolute; top: -2px; right: -2px; width: 20px; height: 20px; border: 2px solid rgba(212, 175, 55, 0.5); border-left: none; border-bottom: none; }
+        .border-bl { position: absolute; bottom: -2px; left: -2px; width: 20px; height: 20px; border: 2px solid rgba(212, 175, 55, 0.5); border-right: none; border-top: none; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-inverse-on-surface bg-charcoal-bg">
+<div class="grain-overlay"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-full bg-charcoal-surface/90 backdrop-blur-md border-b border-[#333] shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gold-accent hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="auto_awesome">auto_awesome</span>
+<h1 class="font-display-lg text-[20px] md:text-headline-lg tracking-[0.2em] text-gold-accent uppercase">ÁRVORE DA VIDA</h1>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-outline hover:text-gold-accent transition-colors duration-300 cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined text-outline hover:text-gold-accent transition-colors duration-300 cursor-pointer" data-icon="language">language</span>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-24 relative flex flex-col items-center overflow-hidden">
+<div class="decorative-border">
+<div class="border-tl"></div>
+<div class="border-bl"></div>
+<div class="absolute top-2 left-2 text-gold-accent opacity-50 text-xs">🜂</div>
+<div class="absolute top-2 right-2 text-gold-accent opacity-50 text-xs">🜄</div>
+<div class="absolute bottom-2 left-2 text-gold-accent opacity-50 text-xs">🜁</div>
+<div class="absolute bottom-2 right-2 text-gold-accent opacity-50 text-xs">🜃</div>
+</div>
+<div class="emanations-bg"></div>
+<!-- Marginalia / Decorative Elements -->
+<div class="absolute left-8 top-40 hidden lg:block w-48 space-y-4 z-10">
+<p class="marginalia text-balance text-outline">"As above, so below; as within, so without; as the universe, so the soul."</p>
+<div class="h-[1px] w-full bg-[#333]"></div>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-widest">Pilar da Severidade</p>
+<p class="text-[10px] text-outline/50 uppercase">Boaz</p>
+</div>
+<div class="absolute right-8 bottom-40 hidden lg:block w-48 text-right space-y-4 z-10">
+<p class="text-[10px] text-outline/50 uppercase">Jachin</p>
+<p class="text-label-sm font-label-sm text-outline uppercase tracking-widest">Pilar da Misericórdia</p>
+<div class="h-[1px] w-full bg-[#333] ml-auto"></div>
+<p class="marginalia text-balance text-outline">The path of the serpent winds through the spheres of being.</p>
+</div>
+<!-- Interactive Tree of Life SVG -->
+<div class="relative w-full max-w-4xl aspect-[2/3] px-2 md:px-0 mt-8 z-20">
+<svg class="w-full h-full drop-shadow-2xl" id="tree-svg" viewbox="0 0 400 650" xmlns="http://www.w3.org/2000/svg">
+<!-- Definitions -->
+<defs>
+<!-- Geometric guides behind -->
+<pattern height="20" id="grid" patternunits="userSpaceOnUse" width="20">
+<circle cx="10" cy="10" fill="rgba(255,255,255,0.03)" r="1"></circle>
+</pattern>
+<!-- Malkuth Pattern (Citrine, Olive, Russet, Black) -->
+<pattern height="60" id="malkuth-pattern" patternunits="userSpaceOnUse" width="60" x="-30" y="-30">
+<rect fill="#E4D00A" height="30" width="30" x="0" y="0"></rect> <!-- Citrine -->
+<rect fill="#808000" height="30" width="30" x="30" y="0"></rect> <!-- Olive -->
+<rect fill="#80461B" height="30" width="30" x="0" y="30"></rect> <!-- Russet -->
+<rect fill="#111111" height="30" width="30" x="30" y="30"></rect> <!-- Black -->
+</pattern>
+<path d="M 0,20 A 20,20 0 0,1 40,20" fill="none" id="arch-top"></path>
+<path d="M 40,20 A 20,20 0 0,1 0,20" fill="none" id="arch-bottom"></path>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+<!-- Pillars (Background) -->
+<g opacity="0.1">
+<!-- Left Pillar (Severity) -->
+<rect fill="none" height="500" stroke="#fff" stroke-width="0.5" width="20" x="90" y="60"></rect>
+<line stroke="#fff" stroke-width="0.5" x1="100" x2="100" y1="60" y2="560"></line>
+<!-- Right Pillar (Mercy) -->
+<rect fill="none" height="500" stroke="#fff" stroke-width="0.5" width="20" x="290" y="60"></rect>
+<line stroke="#fff" stroke-width="0.5" x1="300" x2="300" y1="60" y2="560"></line>
+<!-- Middle Pillar (Mildness) -->
+<line stroke="#fff" stroke-dasharray="2 2" stroke-width="0.5" x1="200" x2="200" y1="20" y2="580"></line>
+</g>
+<g class="tree-container" id="tree-interactive-layer">
+<!-- Paths (Connecting Lines) -->
+<!-- 11: Kether to Chokmah -->
+<g class="path-group" onclick="showDetail('Path 11')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="300" y1="60" y2="120"></line>
+<g transform="translate(250, 90) rotate(31)">
+<rect fill="#121212" height="12" width="20" x="-10" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">א</text>
+<text class="path-text" dy="4">11</text>
+<text class="path-text path-title" dy="-6">The Fool</text>
+</g>
+</g>
+<!-- 12: Kether to Binah -->
+<g class="path-group" onclick="showDetail('Path 12')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="100" y1="60" y2="120"></line>
+<g transform="translate(150, 90) rotate(-31)">
+<rect fill="#121212" height="12" width="24" x="-12" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ב</text>
+<text class="path-text" dy="4">12</text>
+<text class="path-text path-title" dy="-6">The Magician</text>
+</g>
+</g>
+<!-- 13: Kether to Tiphareth -->
+<g class="path-group" onclick="showDetail('Path 13')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="200" y1="60" y2="300"></line>
+<g transform="translate(200, 180) rotate(90)">
+<rect fill="#121212" height="12" width="28" x="-14" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ג</text>
+<text class="path-text" dy="4">13</text>
+<text class="path-text path-title" dy="-6">High Priestess</text>
+</g>
+</g>
+<!-- 14: Chokmah to Binah -->
+<g class="path-group" onclick="showDetail('Path 14')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="100" y1="120" y2="120"></line>
+<g transform="translate(200, 120)">
+<rect fill="#121212" height="12" width="24" x="-12" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ד</text>
+<text class="path-text" dy="4">14</text>
+<text class="path-text path-title" dy="-6">The Empress</text>
+</g>
+</g>
+<!-- 15: Chokmah to Tiphareth -->
+<g class="path-group" onclick="showDetail('Path 15')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="200" y1="120" y2="300"></line>
+<g transform="translate(250, 210) rotate(61)">
+<rect fill="#121212" height="12" width="20" x="-10" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ה</text>
+<text class="path-text" dy="4">15</text>
+<text class="path-text path-title" dy="-6">The Star</text>
+</g>
+</g>
+<!-- 16: Chokmah to Chesed -->
+<g class="path-group" onclick="showDetail('Path 16')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="300" y1="120" y2="225"></line>
+<g transform="translate(300, 172.5) rotate(90)">
+<rect fill="#121212" height="12" width="26" x="-13" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ו</text>
+<text class="path-text" dy="4">16</text>
+<text class="path-text path-title" dy="-6">The Hierophant</text>
+</g>
+</g>
+<!-- 17: Binah to Tiphareth -->
+<g class="path-group" onclick="showDetail('Path 17')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="100" x2="200" y1="120" y2="300"></line>
+<g transform="translate(150, 210) rotate(-61)">
+<rect fill="#121212" height="12" width="22" x="-11" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ז</text>
+<text class="path-text" dy="4">17</text>
+<text class="path-text path-title" dy="-6">The Lovers</text>
+</g>
+</g>
+<!-- 18: Binah to Geburah -->
+<g class="path-group" onclick="showDetail('Path 18')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="100" x2="100" y1="120" y2="225"></line>
+<g transform="translate(100, 172.5) rotate(-90)">
+<rect fill="#121212" height="12" width="22" x="-11" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ח</text>
+<text class="path-text" dy="4">18</text>
+<text class="path-text path-title" dy="-6">The Chariot</text>
+</g>
+</g>
+<!-- 19: Chesed to Geburah -->
+<g class="path-group" onclick="showDetail('Path 19')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="100" y1="225" y2="225"></line>
+<g transform="translate(200, 225)">
+<rect fill="#121212" height="12" width="20" x="-10" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ט</text>
+<text class="path-text" dy="4">19</text>
+<text class="path-text path-title" dy="-6">Strength</text>
+</g>
+</g>
+<!-- 20: Chesed to Tiphareth -->
+<g class="path-group" onclick="showDetail('Path 20')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="200" y1="225" y2="300"></line>
+<g transform="translate(250, 262.5) rotate(-37)">
+<rect fill="#121212" height="12" width="22" x="-11" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">י</text>
+<text class="path-text" dy="4">20</text>
+<text class="path-text path-title" dy="-6">The Hermit</text>
+</g>
+</g>
+<!-- 21: Chesed to Netzach -->
+<g class="path-group" onclick="showDetail('Path 21')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="300" y1="225" y2="390"></line>
+<g transform="translate(300, 307.5) rotate(90)">
+<rect fill="#121212" height="12" width="30" x="-15" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">כ</text>
+<text class="path-text" dy="4">21</text>
+<text class="path-text path-title" dy="-6">Wheel of Fortune</text>
+</g>
+</g>
+<!-- 22: Geburah to Tiphareth -->
+<g class="path-group" onclick="showDetail('Path 22')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="100" x2="200" y1="225" y2="300"></line>
+<g transform="translate(150, 262.5) rotate(37)">
+<rect fill="#121212" height="12" width="18" x="-9" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ל</text>
+<text class="path-text" dy="4">22</text>
+<text class="path-text path-title" dy="-6">Justice</text>
+</g>
+</g>
+<!-- 23: Geburah to Hod -->
+<g class="path-group" onclick="showDetail('Path 23')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="100" x2="100" y1="225" y2="390"></line>
+<g transform="translate(100, 307.5) rotate(-90)">
+<rect fill="#121212" height="12" width="28" x="-14" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">מ</text>
+<text class="path-text" dy="4">23</text>
+<text class="path-text path-title" dy="-6">The Hanged Man</text>
+</g>
+</g>
+<!-- 24: Tiphareth to Netzach -->
+<g class="path-group" onclick="showDetail('Path 24')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="300" y1="300" y2="390"></line>
+<g transform="translate(250, 345) rotate(42)">
+<rect fill="#121212" height="12" width="18" x="-9" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">נ</text>
+<text class="path-text" dy="4">24</text>
+<text class="path-text path-title" dy="-6">Death</text>
+</g>
+</g>
+<!-- 25: Tiphareth to Yesod -->
+<g class="path-group" onclick="showDetail('Path 25')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="200" y1="300" y2="460"></line>
+<g transform="translate(200, 380) rotate(90)">
+<rect fill="#121212" height="12" width="24" x="-12" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ס</text>
+<text class="path-text" dy="4">25</text>
+<text class="path-text path-title" dy="-6">Temperance</text>
+</g>
+</g>
+<!-- 26: Tiphareth to Hod -->
+<g class="path-group" onclick="showDetail('Path 26')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="100" y1="300" y2="390"></line>
+<g transform="translate(150, 345) rotate(-42)">
+<rect fill="#121212" height="12" width="20" x="-10" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ע</text>
+<text class="path-text" dy="4">26</text>
+<text class="path-text path-title" dy="-6">The Devil</text>
+</g>
+</g>
+<!-- 27: Netzach to Hod -->
+<g class="path-group" onclick="showDetail('Path 27')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="100" y1="390" y2="390"></line>
+<g transform="translate(200, 390)">
+<rect fill="#121212" height="12" width="20" x="-10" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">פ</text>
+<text class="path-text" dy="4">27</text>
+<text class="path-text path-title" dy="-6">The Tower</text>
+</g>
+</g>
+<!-- 28: Netzach to Yesod -->
+<g class="path-group" onclick="showDetail('Path 28')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="200" y1="390" y2="460"></line>
+<g transform="translate(250, 425) rotate(-35)">
+<rect fill="#121212" height="12" width="24" x="-12" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">צ</text>
+<text class="path-text" dy="4">28</text>
+<text class="path-text path-title" dy="-6">The Emperor</text>
+</g>
+</g>
+<!-- 29: Netzach to Malkuth -->
+<g class="path-group" onclick="showDetail('Path 29')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="300" x2="200" y1="390" y2="560"></line>
+<g transform="translate(250, 475) rotate(59)">
+<rect fill="#121212" height="12" width="20" x="-10" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ק</text>
+<text class="path-text" dy="4">29</text>
+<text class="path-text path-title" dy="-6">The Moon</text>
+</g>
+</g>
+<!-- 30: Hod to Yesod -->
+<g class="path-group" onclick="showDetail('Path 30')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="100" x2="200" y1="390" y2="460"></line>
+<g transform="translate(150, 425) rotate(35)">
+<rect fill="#121212" height="12" width="18" x="-9" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ר</text>
+<text class="path-text" dy="4">30</text>
+<text class="path-text path-title" dy="-6">The Sun</text>
+</g>
+</g>
+<!-- 31: Hod to Malkuth -->
+<g class="path-group" onclick="showDetail('Path 31')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="100" x2="200" y1="390" y2="560"></line>
+<g transform="translate(150, 475) rotate(-59)">
+<rect fill="#121212" height="12" width="24" x="-12" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ש</text>
+<text class="path-text" dy="4">31</text>
+<text class="path-text path-title" dy="-6">Judgement</text>
+</g>
+</g>
+<!-- 32: Yesod to Malkuth -->
+<g class="path-group" onclick="showDetail('Path 32')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)">
+<line class="path-line" x1="200" x2="200" y1="460" y2="560"></line>
+<g transform="translate(200, 510) rotate(90)">
+<rect fill="#121212" height="12" width="24" x="-12" y="-6"></rect>
+<text class="path-text path-hebrew" dy="-1">ת</text>
+<text class="path-text" dy="4">32</text>
+<text class="path-text path-title" dy="-6">The Universe</text>
+</g>
+</g>
+<!-- Sephiroth Spheres -->
+<!-- Kether -->
+<g class="sephiroth-sphere color-kether" onclick="showDetail('Kether')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(200, 60)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel" dy="-18" text-anchor="middle">Metatron</text>
+<text class="seph-planet" dy="-10" text-anchor="middle">❂</text>
+<text class="seph-number" dy="5" text-anchor="middle">1</text>
+<text class="seph-name-hebrew" dy="16" text-anchor="middle">KETHER</text>
+<text class="seph-virtue-vice" dy="24" text-anchor="middle">V: Attainment / V: -</text>
+</g>
+<!-- Chokmah -->
+<g class="sephiroth-sphere color-chokmah" onclick="showDetail('Chokmah')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(300, 120)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel light-text" dy="-18" text-anchor="middle">Raziel</text>
+<text class="seph-planet light-text" dy="-10" text-anchor="middle">♅</text>
+<text class="seph-number light-text" dy="5" text-anchor="middle">2</text>
+<text class="seph-name-hebrew light-text" dy="16" text-anchor="middle">CHOKMAH</text>
+<text class="seph-virtue-vice light-text" dy="24" text-anchor="middle">V: Devotion / V: -</text>
+</g>
+<!-- Binah -->
+<g class="sephiroth-sphere color-binah" onclick="showDetail('Binah')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(100, 120)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel light-text" dy="-18" text-anchor="middle">Tzaphkiel</text>
+<text class="seph-planet light-text" dy="-10" text-anchor="middle">♄</text>
+<text class="seph-number light-text" dy="5" text-anchor="middle">3</text>
+<text class="seph-name-hebrew light-text" dy="16" text-anchor="middle">BINAH</text>
+<text class="seph-virtue-vice light-text" dy="24" text-anchor="middle">V: Silence / V: Avarice</text>
+</g>
+<!-- Daath (The Abyss) -->
+<g class="sephiroth-sphere color-daath" onclick="showDetail('Daath')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(200, 165)">
+<circle class="inner-fill" r="20"></circle>
+<text class="font-label-sm text-[7px] font-bold fill-outline tracking-widest light-text" dy="2" text-anchor="middle">DAATH</text>
+</g>
+<!-- Chesed -->
+<g class="sephiroth-sphere color-chesed" onclick="showDetail('Chesed')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(300, 225)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel light-text" dy="-18" text-anchor="middle">Tzadkiel</text>
+<text class="seph-planet light-text" dy="-10" text-anchor="middle">♃</text>
+<text class="seph-number light-text" dy="5" text-anchor="middle">4</text>
+<text class="seph-name-hebrew light-text" dy="16" text-anchor="middle">CHESED</text>
+<text class="seph-virtue-vice light-text" dy="24" text-anchor="middle">V: Obedience / V: Bigotry</text>
+</g>
+<!-- Geburah -->
+<g class="sephiroth-sphere color-geburah" onclick="showDetail('Geburah')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(100, 225)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel light-text" dy="-18" text-anchor="middle">Kamael</text>
+<text class="seph-planet light-text" dy="-10" text-anchor="middle">♂</text>
+<text class="seph-number light-text" dy="5" text-anchor="middle">5</text>
+<text class="seph-name-hebrew light-text" dy="16" text-anchor="middle">GEBURAH</text>
+<text class="seph-virtue-vice light-text" dy="24" text-anchor="middle">V: Energy / V: Cruelty</text>
+</g>
+<!-- Tiphareth -->
+<g class="sephiroth-sphere color-tiphareth" onclick="showDetail('Tiphareth')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(200, 300)">
+<circle class="outer-ring" r="36"></circle>
+<circle class="inner-fill" r="32"></circle>
+<text class="seph-angel" dy="-20" text-anchor="middle">Raphael</text>
+<text class="seph-planet" dy="-12" text-anchor="middle">☉</text>
+<text class="seph-number" dy="6" text-anchor="middle">6</text>
+<text class="seph-name-hebrew" dy="18" text-anchor="middle">TIPHARETH</text>
+<text class="seph-virtue-vice" dy="26" text-anchor="middle">V: Devotion / V: Pride</text>
+</g>
+<!-- Netzach -->
+<g class="sephiroth-sphere color-netzach" onclick="showDetail('Netzach')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(300, 390)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel light-text" dy="-18" text-anchor="middle">Haniel</text>
+<text class="seph-planet light-text" dy="-10" text-anchor="middle">♀</text>
+<text class="seph-number light-text" dy="5" text-anchor="middle">7</text>
+<text class="seph-name-hebrew light-text" dy="16" text-anchor="middle">NETZACH</text>
+<text class="seph-virtue-vice light-text" dy="24" text-anchor="middle">V: Unselfishness / V: Lust</text>
+</g>
+<!-- Hod -->
+<g class="sephiroth-sphere color-hod" onclick="showDetail('Hod')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(100, 390)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel" dy="-18" text-anchor="middle">Michael</text>
+<text class="seph-planet" dy="-10" text-anchor="middle">☿</text>
+<text class="seph-number" dy="5" text-anchor="middle">8</text>
+<text class="seph-name-hebrew" dy="16" text-anchor="middle">HOD</text>
+<text class="seph-virtue-vice" dy="24" text-anchor="middle">V: Truth / V: Falsehood</text>
+</g>
+<!-- Yesod -->
+<g class="sephiroth-sphere color-yesod" onclick="showDetail('Yesod')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(200, 460)">
+<circle class="outer-ring" r="32"></circle>
+<circle class="inner-fill" r="28"></circle>
+<text class="seph-angel light-text" dy="-18" text-anchor="middle">Gabriel</text>
+<text class="seph-planet light-text" dy="-10" text-anchor="middle">☽</text>
+<text class="seph-number light-text" dy="5" text-anchor="middle">9</text>
+<text class="seph-name-hebrew light-text" dy="16" text-anchor="middle">YESOD</text>
+<text class="seph-virtue-vice light-text" dy="24" text-anchor="middle">V: Independence / V: Idleness</text>
+</g>
+<!-- Malkuth -->
+<g class="sephiroth-sphere color-malkuth" onclick="showDetail('Malkuth')" onmouseout="unfocusElement(this)" onmouseover="focusElement(this)" transform="translate(200, 560)">
+<circle class="outer-ring" r="34"></circle>
+<circle class="inner-fill" r="30"></circle>
+<text class="seph-angel light-text" dy="-20" text-anchor="middle">Sandalphon</text>
+<text class="seph-planet light-text" dy="-12" text-anchor="middle">♁</text>
+<rect fill="rgba(0,0,0,0.5)" height="14" width="16" x="-8" y="-4"></rect>
+<text class="seph-number light-text" dy="6" text-anchor="middle">10</text>
+<rect fill="rgba(0,0,0,0.5)" height="10" width="36" x="-18" y="10"></rect>
+<text class="seph-name-hebrew light-text" dy="18" text-anchor="middle">MALKUTH</text>
+<rect fill="rgba(0,0,0,0.5)" height="6" width="38" x="-19" y="21"></rect>
+<text class="seph-virtue-vice light-text" dy="26" text-anchor="middle">V: Discrimination / V: Inertia</text>
+</g>
+</g>
+</svg>
+</div>
+<!-- Ritual Card Overlay (Hidden by default) -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-gutter hidden" id="detail-modal">
+<div class="absolute inset-0 bg-[#000000]/80 backdrop-blur-md" onclick="hideDetail()"></div>
+<div class="relative bg-charcoal-surface border border-gold-accent p-10 max-w-lg w-full shadow-2xl animate-scroll-unfold rounded-sm">
+<div class="flex justify-between items-start mb-6">
+<h2 class="font-headline-lg text-display-lg text-gold-accent tracking-[0.1em] uppercase" id="modal-title">Kether</h2>
+<button class="material-symbols-outlined text-outline hover:text-gold-accent transition-colors" onclick="hideDetail()">close</button>
+</div>
+<div class="space-y-4">
+<p class="font-body-md text-inverse-on-surface leading-relaxed" id="modal-desc">The Crown. The first emanation of the Divine, representing the infinite light from which all creation flows. It is the point of origin, the singular unity before differentiation.</p>
+<div class="grid grid-cols-2 gap-4 pt-6 border-t border-[#333]">
+<div>
+<span class="text-label-sm text-outline uppercase tracking-widest block mb-1">Correspondence</span>
+<span class="font-body-md text-gold-accent" id="modal-corr">Primordial Point</span>
+</div>
+<div>
+<span class="text-label-sm text-outline uppercase tracking-widest block mb-1">Element</span>
+<span class="font-body-md text-gold-accent" id="modal-elem">Infinite Light</span>
+</div>
+</div>
+</div>
+<div class="mt-10 flex justify-center">
+<button class="px-8 py-3 border border-gold-accent text-gold-accent font-label-sm uppercase tracking-widest hover:bg-gold-accent hover:text-charcoal-bg transition-all duration-300">
+                        Begin Contemplation
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-charcoal-surface/95 backdrop-blur-md border-t border-[#333]">
+<!-- Life (Active) -->
+<a class="flex flex-col items-center justify-center text-gold-accent font-bold border-t-2 border-gold-accent pt-1 scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_5">brightness_5</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Life</span>
+</a>
+<!-- Death -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-gold-accent transition-colors pt-1" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_3">brightness_3</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Death</span>
+</a>
+<!-- Mirror -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-gold-accent transition-colors pt-1" href="#">
+<span class="material-symbols-outlined" data-icon="contrast">contrast</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Mirror</span>
+</a>
+<!-- Grimoire -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-gold-accent transition-colors pt-1" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Grimoire</span>
+</a>
+</nav>
+<script>
+        const treeLayer = document.getElementById('tree-interactive-layer');
+
+        function focusElement(element) {
+            treeLayer.classList.add('focus-mode');
+            element.classList.add('active');
+        }
+
+        function unfocusElement(element) {
+            treeLayer.classList.remove('focus-mode');
+            element.classList.remove('active');
+        }
+
+        const sephirothData = {
+            'Kether': {
+                desc: 'The Crown. The first emanation of the Divine, representing the infinite light from which all creation flows. It is the point of origin, the singular unity before differentiation.',
+                corr: 'The Source',
+                elem: 'Aether'
+            },
+            'Chokmah': {
+                desc: 'Wisdom. The masculine force of creation, the "Great Father". It is the dynamic energy, the flash of lightning that initiates existence.',
+                corr: 'The Zodiac',
+                elem: 'Fire'
+            },
+            'Binah': {
+                desc: 'Understanding. The feminine force, the "Great Mother". It provides the form and structure for the raw energy of Chokmah to take shape.',
+                corr: 'Saturn',
+                elem: 'Water'
+            },
+            'Daath': {
+                desc: 'Knowledge. The invisible Sephirah, the "Abyss". It represents the bridge (or the void) between the higher supernal triad and the lower manifestation.',
+                corr: 'The Hidden Path',
+                elem: 'Non-existence'
+            },
+            'Chesed': {
+                desc: 'Mercy. Expanding love and benevolence. It is the constructive force that builds and organizes the universe through kindness.',
+                corr: 'Jupiter',
+                elem: 'Water'
+            },
+            'Geburah': {
+                desc: 'Strength/Severity. The restrictive force that balances Chesed. It provides discipline, judgment, and the power to destroy what is no longer needed.',
+                corr: 'Mars',
+                elem: 'Fire'
+            },
+            'Tiphareth': {
+                desc: 'Beauty. The center of the Tree, balancing Mercy and Severity. It is the seat of consciousness, the soul, and the heart of the initiate.',
+                corr: 'The Sun',
+                elem: 'Air'
+            },
+            'Netzach': {
+                desc: 'Victory. The realm of instinct, emotion, and aesthetic beauty. It represents the endurance of the creative spark in the material world.',
+                corr: 'Venus',
+                elem: 'Fire'
+            },
+            'Hod': {
+                desc: 'Splendor. The realm of intellect, communication, and ritual. It provides the logical framework through which we express Netzach’s emotions.',
+                corr: 'Mercury',
+                elem: 'Water'
+            },
+            'Yesod': {
+                desc: 'Foundation. The astral realm, the subconscious. It acts as the final processing plant for all energies before they reach physical manifestation.',
+                corr: 'The Moon',
+                elem: 'Air'
+            },
+            'Malkuth': {
+                desc: 'Kingdom. The physical world. This is the culmination of all spiritual energies into matter, where the divine is fully manifest.',
+                corr: 'Earth',
+                elem: 'Earth'
+            }
+        };
+
+        function showDetail(name) {
+            let data = sephirothData[name];
+            if (!data) {
+                // Fallback for Paths
+                data = {
+                    desc: 'A divine path connecting the spheres, transmitting the cosmic energies in their descent and ascent.',
+                    corr: 'Tarot Arcanum',
+                    elem: 'Hebrew Letter'
+                };
+            }
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-desc').innerText = data.desc;
+            document.getElementById('modal-corr').innerText = data.corr;
+            document.getElementById('modal-elem').innerText = data.elem;
+            
+            const modal = document.getElementById('detail-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function hideDetail() {
+            const modal = document.getElementById('detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Keyboard close
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideDetail();
+        });
+    </script>
+<style>
+        @keyframes scroll-unfold {
+            0% { transform: scaleY(0); opacity: 0; }
+            100% { transform: scaleY(1); opacity: 1; }
+        }
+        .animate-scroll-unfold {
+            animation: scroll-unfold 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            transform-origin: top;
+        }
+    </style>
+</body></html>

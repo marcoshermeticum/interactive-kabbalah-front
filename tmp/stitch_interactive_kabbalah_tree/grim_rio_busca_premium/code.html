@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA HERMETICA | Grimoire Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#f8d8ff",
+                "tiphareth-yellow": "#ffff00",
+                "surface-container-highest": "#e8e2d4",
+                "secondary": "#4e6073",
+                "kether-white": "#ffffff",
+                "malkuth-earth": "#4b3621",
+                "primary-fixed": "#ffe085",
+                "secondary-fixed": "#d1e4fb",
+                "error": "#ba1a1a",
+                "surface-tint": "#735c00",
+                "primary": "#574500",
+                "chesed-blue": "#3333ff",
+                "background": "#fff9eb",
+                "inverse-surface": "#333027",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed-variant": "#37485b",
+                "on-tertiary-container": "#f4caff",
+                "parchment-bg": "#fff9eb",
+                "on-secondary-container": "#546679",
+                "on-surface": "#1d1c13",
+                "surface-container-high": "#ede8da",
+                "binah-black": "#000000",
+                "inverse-primary": "#e3c466",
+                "primary-container": "#735c00",
+                "on-tertiary-fixed": "#320046",
+                "on-primary-fixed": "#231b00",
+                "on-secondary-fixed": "#091d2d",
+                "tertiary": "#6d218c",
+                "on-primary-fixed-variant": "#574500",
+                "geburah-red": "#ff0000",
+                "on-surface-variant": "#4c4637",
+                "primary-fixed-dim": "#e3c466",
+                "tertiary-fixed-dim": "#ecb2ff",
+                "surface": "#fff9eb",
+                "on-secondary": "#ffffff",
+                "surface-dim": "#dfdacc",
+                "inverse-on-surface": "#f6f0e2",
+                "error-container": "#ffdad6",
+                "surface-bright": "#fff9eb",
+                "surface-container": "#f3ede0",
+                "gold-accent": "#d4af37",
+                "secondary-container": "#d1e4fb",
+                "outline": "#7e7665",
+                "on-error-container": "#93000a",
+                "outline-variant": "#cfc6b2",
+                "on-background": "#1d1c13",
+                "surface-variant": "#e8e2d4",
+                "secondary-fixed-dim": "#b6c8de",
+                "on-error": "#ffffff",
+                "marginalia-text": "#7f7663",
+                "tertiary-container": "#873da6",
+                "on-tertiary-fixed-variant": "#6d228c",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f9f3e5",
+                "on-primary-container": "#f6d676"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "phi": "1.618",
+                "unit": "4px",
+                "margin-page": "32px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "EB Garamond"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "EB Garamond"
+                ],
+                "headline-lg-mobile": [
+                        "EB Garamond"
+                ],
+                "marginalia": [
+                        "EB Garamond"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "marginalia": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #fff9eb;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            overflow-x: hidden;
+        }
+        .parchment-grain {
+            background-image: url("https://www.transparenttextures.com/patterns/parchment.png");
+        }
+        .sacred-glow {
+            box-shadow: inset 0 0 20px rgba(115, 92, 0, 0.05), 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+        .ink-underline {
+            position: relative;
+        }
+        .ink-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #735c00;
+            transition: width 0.3s ease-in-out;
+        }
+        .ink-underline:hover::after {
+            width: 100%;
+        }
+        .scroll-reveal {
+            animation: unfold 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes unfold {
+            from { transform: scaleY(0); opacity: 0; }
+            to { transform: scaleY(1); opacity: 1; }
+        }
+        .gold-border {
+            border: 1px solid #d4af37;
+        }
+        .thin-border {
+            border-width: 1px;
+            border-color: #cfc6b2;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 max-w-full bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">auto_awesome</span>
+<h1 class="font-display-lg text-headline-lg-mobile tracking-widest text-primary leading-none uppercase">Aura Hermetica</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-opacity">language</span>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="pt-24 pb-32 px-gutter min-h-screen max-w-5xl mx-auto flex flex-col items-center">
+<!-- Search Section -->
+<div class="w-full max-w-3xl mb-12 flex flex-col items-center text-center">
+<div class="mb-6 opacity-40">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'wght' 200;">menu_book</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile text-on-surface-variant mb-6 italic">O Olho Interior busca no Macrocosmo...</h2>
+<div class="relative w-full group">
+<input class="w-full bg-transparent border thin-border py-4 px-6 text-headline-lg font-headline-lg text-on-surface placeholder:text-outline focus:outline-none focus:border-gold-accent transition-colors italic" placeholder="Busque por correspondências..." type="text"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline opacity-50 group-hover:opacity-100 transition-opacity">search</span>
+</div>
+<div class="mt-6 flex flex-wrap justify-center gap-4 items-center">
+<span class="text-label-sm font-label-sm text-outline uppercase tracking-widest">Sugestões:</span>
+<button class="text-label-sm font-label-sm text-primary font-semibold ink-underline">Escarlate</button>
+<button class="text-label-sm font-label-sm text-primary font-semibold ink-underline">Marte</button>
+<button class="text-label-sm font-label-sm text-primary font-semibold ink-underline">Ouro</button>
+<button class="text-label-sm font-label-sm text-primary font-semibold ink-underline">Cedro</button>
+</div>
+</div>
+<!-- Results Grid -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal">
+<!-- Result Card 1 -->
+<div class="parchment-grain bg-surface border thin-border p-6 rounded-lg sacred-glow hover:border-gold-accent transition-all duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute top-4 right-4 opacity-10 text-on-surface pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">brightness_7</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-[0.2em] uppercase font-bold">Sephirah 5</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">Gevurah</h3>
+</div>
+<div class="w-10 h-10 border-2 border-primary flex items-center justify-center rounded-full text-primary font-bold text-lg group-hover:bg-primary group-hover:text-surface transition-colors bg-surface-container">
+                        5
+                    </div>
+</div>
+<p class="text-body-md italic text-on-surface-variant mb-6">"A Força e a Severidade de Deus"</p>
+<div class="pt-4 border-t thin-border flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-sm">check_circle</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Metal: <strong class="text-primary font-bold">Ferro</strong></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-sm">check_circle</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Pedra: <strong class="text-primary font-bold">Rubi</strong> (Busca)</span>
+</div>
+</div>
+</div>
+<!-- Result Card 2 -->
+<div class="parchment-grain bg-surface border thin-border p-6 rounded-lg sacred-glow hover:border-gold-accent transition-all duration-300 group cursor-pointer relative overflow-hidden">
+<div class="absolute top-4 right-4 opacity-10 text-on-surface pointer-events-none">
+<span class="material-symbols-outlined text-[80px]">pets</span>
+</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="font-label-sm text-label-sm text-primary tracking-[0.2em] uppercase font-bold">Sephirah 6</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-1">Tiphareth</h3>
+</div>
+<div class="w-10 h-10 border-2 border-primary flex items-center justify-center rounded-full text-primary font-bold text-lg group-hover:bg-primary group-hover:text-surface transition-colors bg-surface-container">
+                        6
+                    </div>
+</div>
+<p class="text-body-md italic text-on-surface-variant mb-6">"A Beleza e o Coração do Sol"</p>
+<div class="pt-4 border-t thin-border flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-sm">check_circle</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Animal: <strong class="text-primary font-bold">Leão</strong> (Busca)</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-sm">check_circle</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Órgão: <strong class="text-primary font-bold">Coração</strong> (Busca)</span>
+</div>
+</div>
+</div>
+<!-- Result Card 3 (Path) -->
+<div class="parchment-grain bg-surface border thin-border p-8 rounded-lg sacred-glow hover:border-gold-accent transition-all duration-300 group cursor-pointer relative overflow-hidden md:col-span-2">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-3">
+<span class="font-label-sm text-label-sm text-primary tracking-[0.2em] uppercase font-bold">Caminho 19</span>
+<span class="material-symbols-outlined text-outline text-sm">trending_flat</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Chesed - Gevurah</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface">Teth (A Serpente)</h3>
+<p class="text-body-md italic text-on-surface-variant mt-3">A inteligência de todas as atividades das criaturas espirituais.</p>
+</div>
+<div class="flex flex-col items-end gap-3 border-l-2 border-outline-variant pl-8 relative">
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Tarô: <strong class="text-primary font-bold">A Força</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Correspondência: <strong class="text-primary font-bold">Leão</strong> (Busca)</span>
+</div>
+<span class="text-[64px] font-display-lg text-primary opacity-20 absolute -bottom-4 right-8">ט</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="mt-20 opacity-10">
+<div class="w-32 h-32 border border-primary rounded-full flex items-center justify-center animate-spin-slow">
+<div class="w-24 h-24 border border-primary rotate-45"></div>
+<div class="absolute w-24 h-24 border border-primary"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container border-t border-outline-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors scale-100 active:scale-105 duration-300 py-2" href="#">
+<span class="material-symbols-outlined mb-1">brightness_5</span>
+<span class="font-label-sm text-label-sm">Life</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors scale-100 active:scale-105 duration-300 py-2" href="#">
+<span class="material-symbols-outlined mb-1">brightness_3</span>
+<span class="font-label-sm text-label-sm">Death</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-primary transition-colors scale-100 active:scale-105 duration-300 py-2" href="#">
+<span class="material-symbols-outlined mb-1">contrast</span>
+<span class="font-label-sm text-label-sm">Mirror</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold border-t-2 border-primary pt-2 transition-transform duration-300 scale-105 -mt-2" href="#">
+<span class="material-symbols-outlined mb-1">menu_book</span>
+<span class="font-label-sm text-label-sm">Grimoire</span>
+</a>
+</nav>
+<script>
+        // Micro-interactions for the search results
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.parchment-grain');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 100}ms`;
+            });
+
+            const searchInput = document.querySelector('input');
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('scale-[1.01]');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+<style>
+        .animate-spin-slow {
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</body></html>

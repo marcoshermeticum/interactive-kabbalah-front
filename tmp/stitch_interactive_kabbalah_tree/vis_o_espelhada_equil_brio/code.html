@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA HERMETICA - Mirror View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d1e4fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#320047",
+                        "on-primary-container": "#554300",
+                        "on-secondary-container": "#526478",
+                        "surface-bright": "#fff9eb",
+                        "tertiary-fixed": "#f8d8ff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#efe8d5",
+                        "surface": "#fff9eb",
+                        "on-surface-variant": "#4d4635",
+                        "on-secondary-fixed-variant": "#36485b",
+                        "secondary": "#4e6073",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#6c228c",
+                        "secondary-fixed-dim": "#b5c8df",
+                        "outline-variant": "#d0c5af",
+                        "tertiary-container": "#e295ff",
+                        "primary-fixed": "#ffe088",
+                        "on-surface": "#1e1c10",
+                        "on-secondary-fixed": "#091d2e",
+                        "primary-fixed-dim": "#e9c349",
+                        "secondary-container": "#cfe2f9",
+                        "inverse-primary": "#e9c349",
+                        "on-primary-fixed-variant": "#574500",
+                        "tertiary": "#873da6",
+                        "primary-container": "#d4af37",
+                        "on-background": "#1e1c10",
+                        "outline": "#7f7663",
+                        "inverse-on-surface": "#f7f0de",
+                        "surface-variant": "#e9e2d0",
+                        "surface-dim": "#e0dac7",
+                        "surface-tint": "#735c00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "background": "#fff9eb",
+                        "surface-container-highest": "#e9e2d0",
+                        "primary": "#735c00",
+                        "on-tertiary-container": "#6a1f8a",
+                        "tertiary-fixed-dim": "#ecb2ff",
+                        "surface-container": "#f4eedb",
+                        "surface-container-low": "#faf3e0",
+                        "inverse-surface": "#333024"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "phi": "1.618",
+                        "unit": "4px",
+                        "gutter": "1.5rem",
+                        "margin-page": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["EB Garamond"],
+                        "headline-lg": ["EB Garamond"],
+                        "display-lg": ["EB Garamond"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background: radial-gradient(circle at center, #fff9eb 0%, #f4eedb 100%);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .parchment-grain {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.05;
+            background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+            z-index: 100;
+        }
+
+        .mirror-gradient {
+            background: linear-gradient(180deg, #fff9eb 0%, #e9e2d0 45%, #333024 55%, #1e1c10 100%);
+        }
+
+        .sephirah-glow {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .sephirah-glow:hover {
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.7);
+            transform: scale(1.1);
+        }
+
+        .qliphoth-glow {
+            box-shadow: 0 0 20px rgba(135, 61, 166, 0.3);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .qliphoth-glow:hover {
+            box-shadow: 0 0 40px rgba(135, 61, 166, 0.6);
+            transform: scale(1.1);
+        }
+
+        .connecting-path {
+            stroke-width: 1;
+            stroke: #7f7663;
+            stroke-dasharray: 4;
+            opacity: 0.4;
+        }
+
+        .marginalia {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+        }
+
+        .tree-container {
+            perspective: 1000px;
+        }
+
+        .mirror-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            width: 100%;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md">
+<div class="parchment-grain"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-unit max-w-full bg-surface border-b border-outline-variant">
+<div class="flex items-center gap-2 text-primary hover:opacity-80 transition-opacity duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-display-lg" data-icon="auto_awesome">auto_awesome</span>
+<h1 class="font-display-lg text-display-lg tracking-widest text-primary">AURA HERMETICA</h1>
+</div>
+<button class="text-primary hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+</header>
+<main class="relative min-h-screen pt-24 pb-24 overflow-hidden mirror-gradient">
+<!-- Floating Marginalia -->
+<div class="absolute left-8 top-1/4 hidden lg:block max-w-[150px] opacity-60 text-outline marginalia text-sm">
+            "As above, so below; as below, so above, to accomplish the miracles of the One Thing."
+        </div>
+<div class="absolute right-8 bottom-1/4 hidden lg:block max-w-[150px] opacity-60 text-outline marginalia text-sm text-right">
+            "The shadow is the first step toward the light, for without the abyss, the peak remains unseen."
+        </div>
+<div class="container mx-auto flex flex-col items-center justify-center py-12 tree-container">
+<!-- TREE OF LIFE (Top) -->
+<div class="relative w-full max-w-2xl aspect-[3/4] flex flex-col items-center">
+<!-- SVG Paths for Sephiroth -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none" viewbox="0 0 400 500">
+<line class="connecting-path" x1="200" x2="130" y1="50" y2="120"></line>
+<line class="connecting-path" x1="200" x2="270" y1="50" y2="120"></line>
+<line class="connecting-path" x1="130" x2="270" y1="120" y2="120"></line>
+<line class="connecting-path" x1="130" x2="130" y1="120" y2="220"></line>
+<line class="connecting-path" x1="270" x2="270" y1="120" y2="220"></line>
+<line class="connecting-path" x1="200" x2="200" y1="170" y2="280"></line>
+<line class="connecting-path" x1="200" x2="130" y1="280" y2="340"></line>
+<line class="connecting-path" x1="200" x2="270" y1="280" y2="340"></line>
+<line class="connecting-path" x1="130" x2="200" y1="340" y2="450"></line>
+<line class="connecting-path" x1="270" x2="200" y1="340" y2="450"></line>
+</svg>
+<!-- Sephirah Nodes -->
+<!-- Kether -->
+<div class="absolute top-[50px] left-1/2 -translate-x-1/2 group">
+<div class="w-12 h-12 rounded-full border border-primary bg-surface-bright flex items-center justify-center sephirah-glow cursor-help">
+<span class="text-primary font-bold text-xs">1</span>
+</div>
+<div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-high px-2 py-1 rounded text-[10px] whitespace-nowrap z-10 border border-outline-variant">KETHER</div>
+</div>
+<!-- Tiphareth -->
+<div class="absolute top-[280px] left-1/2 -translate-x-1/2 group">
+<div class="w-16 h-16 rounded-full border-2 border-primary-container bg-surface-bright flex items-center justify-center sephirah-glow cursor-help">
+<span class="text-primary font-bold text-sm">6</span>
+</div>
+<div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-high px-2 py-1 rounded text-[10px] whitespace-nowrap z-10 border border-outline-variant">TIPHARETH</div>
+</div>
+<!-- Malkuth (The Junction) -->
+<div class="absolute bottom-[20px] left-1/2 -translate-x-1/2 group z-20">
+<div class="w-14 h-14 rounded-full border-2 border-primary bg-surface-container flex items-center justify-center sephirah-glow cursor-help ring-4 ring-background/30 ring-offset-2 ring-offset-primary">
+<span class="text-primary font-bold text-sm">10</span>
+</div>
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-surface-container-high px-2 py-1 rounded text-[10px] whitespace-nowrap z-10 border border-outline-variant">MALKUTH</div>
+</div>
+</div>
+<!-- THE MIRROR LINE -->
+<div class="relative w-full py-8 flex flex-col items-center">
+<div class="mirror-line opacity-50"></div>
+<div class="absolute top-1/2 -translate-y-1/2 px-6 py-1 bg-background border border-primary-container rounded-full text-primary font-label-sm uppercase tracking-[0.2em] shadow-lg">
+                    The Threshold
+                </div>
+</div>
+<!-- TREE OF DEATH (Bottom Inverted) -->
+<div class="relative w-full max-w-2xl aspect-[3/4] flex flex-col items-center">
+<svg class="absolute inset-0 w-full h-full pointer-events-none scale-y-[-1]" viewbox="0 0 400 500">
+<line class="connecting-path stroke-tertiary" x1="200" x2="130" y1="50" y2="120"></line>
+<line class="connecting-path stroke-tertiary" x1="200" x2="270" y1="50" y2="120"></line>
+<line class="connecting-path stroke-tertiary" x1="130" x2="270" y1="120" y2="120"></line>
+<line class="connecting-path stroke-tertiary" x1="130" x2="130" y1="120" y2="220"></line>
+<line class="connecting-path stroke-tertiary" x1="270" x2="270" y1="120" y2="220"></line>
+<line class="connecting-path stroke-tertiary" x1="200" x2="200" y1="170" y2="280"></line>
+<line class="connecting-path stroke-tertiary" x1="200" x2="130" y1="280" y2="340"></line>
+<line class="connecting-path stroke-tertiary" x1="200" x2="270" y1="280" y2="340"></line>
+<line class="connecting-path stroke-tertiary" x1="130" x2="200" y1="340" y2="450"></line>
+<line class="connecting-path stroke-tertiary" x1="270" x2="200" y1="340" y2="450"></line>
+</svg>
+<!-- Nahemoth (Mirror of Malkuth) -->
+<div class="absolute top-[20px] left-1/2 -translate-x-1/2 group z-20">
+<div class="w-14 h-14 rounded-full border-2 border-tertiary bg-inverse-surface flex items-center justify-center qliphoth-glow cursor-help">
+<span class="text-tertiary-fixed-dim font-bold text-sm">10</span>
+</div>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface px-2 py-1 rounded text-[10px] text-tertiary-fixed-dim whitespace-nowrap z-10 border border-outline">NAHEMOTH</div>
+</div>
+<!-- Thagirion (Mirror of Tiphareth) -->
+<div class="absolute top-[180px] left-1/2 -translate-x-1/2 group">
+<div class="w-16 h-16 rounded-full border-2 border-tertiary-container bg-inverse-surface flex items-center justify-center qliphoth-glow cursor-help">
+<span class="text-tertiary-fixed-dim font-bold text-sm">6</span>
+</div>
+<div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface px-2 py-1 rounded text-[10px] text-tertiary-fixed-dim whitespace-nowrap z-10 border border-outline">THAGIRION</div>
+</div>
+<!-- Thaumiel (The Abyss) -->
+<div class="absolute bottom-[50px] left-1/2 -translate-x-1/2 group">
+<div class="w-12 h-12 rounded-full border border-tertiary bg-on-background flex items-center justify-center qliphoth-glow cursor-help shadow-[0_0_30px_rgba(135,61,166,0.5)]">
+<span class="text-tertiary-fixed-dim font-bold text-xs">1</span>
+</div>
+<div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-inverse-surface px-2 py-1 rounded text-[10px] text-tertiary-fixed-dim whitespace-nowrap z-10 border border-outline">THAUMIEL</div>
+</div>
+</div>
+</div>
+<!-- Detail Panel (Scroll Style) -->
+<div class="fixed right-gutter top-1/2 -translate-y-1/2 w-80 bg-surface-container border border-outline-variant p-gutter shadow-2xl rounded-lg hidden lg:block transform translate-x-[110%] transition-transform duration-700 ease-in-out" id="info-scroll">
+<div class="flex justify-between items-center mb-4 border-b border-outline-variant pb-2">
+<h3 class="font-headline-lg text-primary">Marginalia</h3>
+<button class="text-outline hover:text-primary" onclick="toggleScroll()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-4">
+<p class="text-sm italic text-on-surface-variant leading-relaxed">
+                    The Mirror View represents the Hermetic concept of cosmic duality. Here, the Sephirotic Tree reflects its own inverse—the Qliphoth. 
+                </p>
+<div class="p-4 bg-surface-container-low border border-primary-container/30 rounded">
+<h4 class="font-bold text-xs uppercase tracking-tighter text-primary mb-1">Observation</h4>
+<p class="text-xs text-on-surface">The connection between Malkuth and Nahemoth is the pivotal point of manifestation. All energy falling into the shadow must first pass through the kingdom.</p>
+</div>
+<div class="pt-2 text-center">
+<button class="w-full py-2 border-b border-primary text-primary font-label-sm uppercase hover:tracking-widest transition-all">Deep Dive</button>
+</div>
+</div>
+</div>
+<button class="fixed right-gutter bottom-24 bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40" onclick="toggleScroll()">
+<span class="material-symbols-outlined">history_edu</span>
+</button>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low border-t border-outline-variant rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_5">brightness_5</span>
+<span class="font-label-sm text-label-sm">Life</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_3">brightness_3</span>
+<span class="font-label-sm text-label-sm">Death</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold border-t-2 border-primary pt-1 scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="contrast">contrast</span>
+<span class="font-label-sm text-label-sm">Mirror</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-60 hover:text-tertiary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm">Grimoire</span>
+</a>
+</nav>
+<script>
+        let scrollOpen = false;
+        function toggleScroll() {
+            const scroll = document.getElementById('info-scroll');
+            scrollOpen = !scrollOpen;
+            if (scrollOpen) {
+                scroll.classList.remove('translate-x-[110%]');
+                scroll.classList.add('translate-x-0');
+            } else {
+                scroll.classList.add('translate-x-[110%]');
+                scroll.classList.remove('translate-x-0');
+            }
+        }
+
+        // Add subtle hover interaction to sephiroth
+        document.querySelectorAll('.sephirah-glow, .qliphoth-glow').forEach(node => {
+            node.addEventListener('mouseenter', () => {
+                // Subtle interaction logic could go here
+            });
+        });
+
+        // Initialize with a slight delay for entry animation
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // Initial animations if needed
+            }, 500);
+        });
+    </script>
+</body></html>
