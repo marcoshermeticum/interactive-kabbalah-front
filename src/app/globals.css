@@ -7,17 +7,18 @@
 }
 
 :root {
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-heading: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  --bg-primary: #faf8f5;
-  --bg-secondary: #f3efe8;
-  --bg-canvas: #ece7de;
-  --text-primary: #1c1917;
-  --text-secondary: #57534e;
-  --text-muted: #a8a29e;
+  --bg-primary: #fff9eb;
+  --bg-secondary: #f9f3e5;
+  --bg-canvas: #f3ede0;
+  --text-primary: #1d1c13;
+  --text-secondary: #4c4637;
+  --text-muted: #7e7665;
   --accent: #7c5e3c;
   --accent-hover: #5c3d1e;
+  --gold: #d4af37;
   --border: rgba(28, 25, 23, 0.08);
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
@@ -58,6 +59,59 @@ body, header, div, button, select, input {
   transition: background-color 0.3s ease, color 0.2s ease, border-color 0.3s ease;
 }
 
+/* === Living Hermetic Background === */
+
+/* Layer 1: Textured Base — warm volumetric glow on the canvas */
+:root {
+  --geometry-stroke: rgba(124, 94, 60, 0.06);
+}
+.dark {
+  --geometry-stroke: rgba(212, 175, 55, 0.05);
+}
+
+/* Sacred geometry grid breathing animation */
+@media (prefers-reduced-motion: no-preference) {
+  .hermetic-grid {
+    animation: hermetic-breathe 12s ease-in-out infinite;
+  }
+}
+@keyframes hermetic-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Vignette — light theme */
+.hermetic-vignette {
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 45%,
+    transparent 35%,
+    rgba(28, 25, 23, 0.04) 100%
+  );
+}
+.dark .hermetic-vignette {
+  background: radial-gradient(
+    ellipse 80% 80% at 50% 45%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+}
+
+/* Canvas texture — subtle volumetric gradients */
+.canvas-texture {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(124, 94, 60, 0.02) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(124, 94, 60, 0.015) 0%, transparent 45%),
+    var(--bg-canvas);
+}
+.dark .canvas-texture {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(212, 175, 55, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(212, 165, 116, 0.03) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 20%, rgba(100, 60, 30, 0.02) 0%, transparent 45%),
+    var(--bg-canvas);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -67,4 +121,41 @@ body, header, div, button, select, input {
 ::-webkit-scrollbar-thumb {
   background: var(--text-muted);
   border-radius: 3px;
+}
+
+/* === Mobile Navbar Animations === */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slideDown {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Safe area padding for bottom bar (iOS notch devices) */
+.safe-area-bottom {
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+/* Mobile bottom bar spacing — prevent content from hiding behind it */
+@media (max-width: 639px) {
+  main {
+    padding-bottom: 56px;
+  }
 }

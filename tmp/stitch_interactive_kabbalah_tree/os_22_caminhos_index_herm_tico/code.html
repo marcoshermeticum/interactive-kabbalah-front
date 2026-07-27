@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Path of the Serpent - Aura Hermetica</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#fff9eb",
+                      "on-tertiary-fixed-variant": "#6d228c",
+                      "surface-variant": "#e8e2d4",
+                      "chesed-blue": "#3333ff",
+                      "tertiary-fixed-dim": "#ecb2ff",
+                      "primary-fixed-dim": "#e3c466",
+                      "error": "#ba1a1a",
+                      "binah-black": "#000000",
+                      "background": "#fff9eb",
+                      "tiphareth-yellow": "#ffff00",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#b6c8de",
+                      "on-tertiary-fixed": "#320046",
+                      "on-primary": "#ffffff",
+                      "geburah-red": "#ff0000",
+                      "parchment-bg": "#fff9eb",
+                      "marginalia-text": "#7f7663",
+                      "primary-container": "#735c00",
+                      "surface-bright": "#fff9eb",
+                      "on-tertiary": "#ffffff",
+                      "gold-accent": "#d4af37",
+                      "inverse-primary": "#e3c466",
+                      "on-secondary-fixed": "#091d2d",
+                      "error-container": "#ffdad6",
+                      "kether-white": "#ffffff",
+                      "tertiary": "#6d218c",
+                      "on-tertiary-container": "#f4caff",
+                      "tertiary-container": "#873da6",
+                      "surface-container-low": "#f9f3e5",
+                      "on-primary-container": "#f6d676",
+                      "secondary-container": "#d1e4fb",
+                      "surface-tint": "#735c00",
+                      "inverse-on-surface": "#f6f0e2",
+                      "surface-container-highest": "#e8e2d4",
+                      "on-background": "#1d1c13",
+                      "malkuth-earth": "#4b3621",
+                      "on-primary-fixed-variant": "#574500",
+                      "outline-variant": "#cfc6b2",
+                      "outline": "#7e7665",
+                      "on-surface": "#1d1c13",
+                      "secondary": "#4e6073",
+                      "primary-fixed": "#ffe085",
+                      "on-secondary-fixed-variant": "#37485b",
+                      "inverse-surface": "#333027",
+                      "on-primary-fixed": "#231b00",
+                      "on-surface-variant": "#4c4637",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f3ede0",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#ede8da",
+                      "primary": "#574500",
+                      "surface-dim": "#dfdacc",
+                      "secondary-fixed": "#d1e4fb",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-container": "#546679",
+                      "tertiary-fixed": "#f8d8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-page": "32px",
+                      "gutter": "24px",
+                      "phi": "1.618",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "EB Garamond"
+                      ],
+                      "marginalia": [
+                              "EB Garamond"
+                      ],
+                      "headline-lg-mobile": [
+                              "EB Garamond"
+                      ],
+                      "display-lg": [
+                              "EB Garamond"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "marginalia": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .texture-overlay {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+        .etched-line {
+            background: repeating-linear-gradient(
+                45deg,
+                var(--tw-colors-outline-variant),
+                var(--tw-colors-outline-variant) 1px,
+                transparent 1px,
+                transparent 4px
+            );
+        }
+        .golden-glow:hover {
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+        }
+        .hebrew-letter {
+            font-family: 'Times New Roman', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-gold-accent selection:text-white">
+<div class="fixed inset-0 texture-overlay z-[-1]"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-unit max-w-full bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline flat no shadows">
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">auto_awesome</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg font-display-lg text-display-lg tracking-widest text-primary dark:text-primary-fixed">AURA HERMETICA</h1>
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">language</span>
+</button>
+</header>
+<main class="flex-grow pt-24 pb-24 md:pb-12 px-gutter max-w-7xl mx-auto w-full flex flex-col md:flex-row gap-8">
+<!-- Marginalia Sidebar (Left) -->
+<aside class="hidden md:block w-48 shrink-0 py-8 sticky top-24 h-[calc(100vh-120px)] border-r border-outline-variant pr-6">
+<nav class="space-y-6">
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm text-marginalia-text uppercase tracking-widest border-b border-outline-variant pb-2">Navigation</span>
+<a class="font-marginalia text-marginalia text-primary hover:text-gold-accent transition-colors flex items-center gap-2 mt-2" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                        Tree of Life
+                    </a>
+<a class="font-marginalia text-marginalia text-on-surface-variant hover:text-gold-accent transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility_off</span>
+                        Tree of Death
+                    </a>
+</div>
+<div class="flex flex-col gap-2 mt-12">
+<span class="font-label-sm text-label-sm text-marginalia-text uppercase tracking-widest border-b border-outline-variant pb-2">Filters</span>
+<a class="font-marginalia text-marginalia text-on-surface-variant hover:text-gold-accent transition-colors flex items-center gap-2 mt-2" href="#">
+<span class="material-symbols-outlined text-[16px]">filter_vintage</span>
+                        Elements
+                    </a>
+<a class="font-marginalia text-marginalia text-on-surface-variant hover:text-gold-accent transition-colors flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+                        Zodiac
+                    </a>
+</div>
+</nav>
+<div class="absolute bottom-8 left-0 right-6 text-center">
+<div class="etched-line h-px w-full mb-4"></div>
+<p class="font-marginalia text-marginalia text-marginalia-text text-xs">The 22 Paths connecting the Sephiroth, acting as channels of divine energy.</p>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<div class="flex-grow py-8 max-w-4xl mx-auto w-full">
+<header class="mb-12 text-center">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Path of the Serpent</h2>
+<p class="font-marginalia text-marginalia text-on-surface-variant max-w-2xl mx-auto">Explore the intricate network of twenty-two paths that map the descent of divine consciousness and the ascent of the adept.</p>
+<!-- Mobile Nav Toggle -->
+<div class="mt-8 flex justify-center gap-4 md:hidden">
+<button class="px-4 py-2 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-surface transition-colors bg-surface-container-low">Life</button>
+<button class="px-4 py-2 border border-outline-variant text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:border-primary hover:text-primary transition-colors">Death</button>
+</div>
+</header>
+<!-- Bento Grid / Path List -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Path 11: Aleph -->
+<article class="bg-surface-container-low border border-outline-variant rounded p-6 relative overflow-hidden group cursor-pointer hover:border-gold-accent transition-all duration-300 golden-glow flex flex-col items-center text-center">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 200;">air</span>
+</div>
+<span class="hebrew-letter text-6xl text-primary mb-2 group-hover:text-gold-accent transition-colors">א</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Aleph</h3>
+<div class="etched-line w-12 h-px my-3"></div>
+<div class="grid grid-cols-2 gap-4 w-full font-marginalia text-marginalia text-sm text-on-surface-variant mt-2">
+<div>
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Value</span>
+                            1
+                        </div>
+<div>
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Element</span>
+                            Air
+                        </div>
+<div class="col-span-2 mt-2">
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Tarot</span>
+                             0. The Fool
+                        </div>
+</div>
+</article>
+<!-- Path 12: Beth -->
+<article class="bg-surface-container-low border border-outline-variant rounded p-6 relative overflow-hidden group cursor-pointer hover:border-gold-accent transition-all duration-300 golden-glow flex flex-col items-center text-center">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 200;">star</span>
+</div>
+<span class="hebrew-letter text-6xl text-primary mb-2 group-hover:text-gold-accent transition-colors">ב</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Beth</h3>
+<div class="etched-line w-12 h-px my-3"></div>
+<div class="grid grid-cols-2 gap-4 w-full font-marginalia text-marginalia text-sm text-on-surface-variant mt-2">
+<div>
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Value</span>
+                            2
+                        </div>
+<div>
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Planet</span>
+                            Mercury
+                        </div>
+<div class="col-span-2 mt-2">
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Tarot</span>
+                             I. The Magician
+                        </div>
+</div>
+</article>
+<!-- Path 13: Gimel -->
+<article class="bg-surface-container-low border border-outline-variant rounded p-6 relative overflow-hidden group cursor-pointer hover:border-gold-accent transition-all duration-300 golden-glow flex flex-col items-center text-center">
+<div class="absolute top-0 right-0 p-2 opacity-10 group-hover:opacity-30 transition-opacity">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'wght' 200;">bedtime</span>
+</div>
+<span class="hebrew-letter text-6xl text-primary mb-2 group-hover:text-gold-accent transition-colors">ג</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-1">Gimel</h3>
+<div class="etched-line w-12 h-px my-3"></div>
+<div class="grid grid-cols-2 gap-4 w-full font-marginalia text-marginalia text-sm text-on-surface-variant mt-2">
+<div>
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Value</span>
+                            3
+                        </div>
+<div>
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Planet</span>
+                            Moon
+                        </div>
+<div class="col-span-2 mt-2">
+<span class="block text-[10px] uppercase tracking-wider text-marginalia-text">Tarot</span>
+                             II. The High Priestess
+                        </div>
+</div>
+</article>
+</div>
+<div class="mt-12 text-center">
+<button class="px-8 py-3 border border-primary text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-surface transition-colors golden-glow">
+                    Reveal Further Paths
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface-container-low dark:bg-surface-container-highest border-t border-outline-variant rounded-t-xl flat no shadows md:hidden">
+<!-- Active Tab: Life -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed font-bold border-t-2 border-primary dark:border-primary-fixed pt-1 scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">brightness_5</span>
+<span class="font-label-sm text-label-sm mt-1">Life</span>
+</a>
+<!-- Inactive Tab: Death -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors pt-1 border-t-2 border-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">brightness_3</span>
+<span class="font-label-sm text-label-sm mt-1">Death</span>
+</a>
+<!-- Inactive Tab: Mirror -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors pt-1 border-t-2 border-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">contrast</span>
+<span class="font-label-sm text-label-sm mt-1">Mirror</span>
+</a>
+<!-- Inactive Tab: Grimoire -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant opacity-60 hover:text-tertiary dark:hover:text-tertiary-fixed-dim transition-colors pt-1 border-t-2 border-transparent" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">menu_book</span>
+<span class="font-label-sm text-label-sm mt-1">Grimoire</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aura Hermetica - The Tree of Life</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed": "#f8d8ff",
+                "tiphareth-yellow": "#ffff00",
+                "surface-container-highest": "#e8e2d4",
+                "secondary": "#4e6073",
+                "kether-white": "#ffffff",
+                "malkuth-earth": "#4b3621",
+                "primary-fixed": "#ffe085",
+                "secondary-fixed": "#d1e4fb",
+                "error": "#ba1a1a",
+                "surface-tint": "#735c00",
+                "primary": "#574500",
+                "chesed-blue": "#3333ff",
+                "background": "#fff9eb",
+                "inverse-surface": "#333027",
+                "on-primary": "#ffffff",
+                "on-secondary-fixed-variant": "#37485b",
+                "on-tertiary-container": "#f4caff",
+                "parchment-bg": "#fff9eb",
+                "on-secondary-container": "#546679",
+                "on-surface": "#1d1c13",
+                "surface-container-high": "#ede8da",
+                "binah-black": "#000000",
+                "inverse-primary": "#e3c466",
+                "primary-container": "#735c00",
+                "on-tertiary-fixed": "#320046",
+                "on-primary-fixed": "#231b00",
+                "on-secondary-fixed": "#091d2d",
+                "tertiary": "#6d218c",
+                "on-primary-fixed-variant": "#574500",
+                "geburah-red": "#ff0000",
+                "on-surface-variant": "#4c4637",
+                "primary-fixed-dim": "#e3c466",
+                "tertiary-fixed-dim": "#ecb2ff",
+                "surface": "#fff9eb",
+                "on-secondary": "#ffffff",
+                "surface-dim": "#dfdacc",
+                "inverse-on-surface": "#f6f0e2",
+                "error-container": "#ffdad6",
+                "surface-bright": "#fff9eb",
+                "surface-container": "#f3ede0",
+                "gold-accent": "#d4af37",
+                "secondary-container": "#d1e4fb",
+                "outline": "#7e7665",
+                "on-error-container": "#93000a",
+                "outline-variant": "#cfc6b2",
+                "on-background": "#1d1c13",
+                "surface-variant": "#e8e2d4",
+                "secondary-fixed-dim": "#b6c8de",
+                "on-error": "#ffffff",
+                "marginalia-text": "#7f7663",
+                "tertiary-container": "#873da6",
+                "on-tertiary-fixed-variant": "#6d228c",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f9f3e5",
+                "on-primary-container": "#f6d676"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "phi": "1.618",
+                "unit": "4px",
+                "margin-page": "32px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "EB Garamond"
+                ],
+                "label-sm": [
+                        "EB Garamond"
+                ],
+                "headline-lg": [
+                        "EB Garamond"
+                ],
+                "headline-lg-mobile": [
+                        "EB Garamond"
+                ],
+                "marginalia": [
+                        "EB Garamond"
+                ],
+                "body-md": [
+                        "EB Garamond"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "marginalia": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #f3ede0;
+            background-image: 
+                radial-gradient(circle at center, transparent 0%, rgba(212, 175, 55, 0.05) 100%),
+                url("https://www.transparenttextures.com/patterns/parchment.png"),
+                url("https://www.transparenttextures.com/patterns/aged-paper.png");
+            overflow-x: hidden;
+            font-family: 'EB Garamond', serif;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 100;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            opacity: 0.15;
+            mix-blend-mode: multiply;
+        }
+
+        .ornate-border {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 2px solid #d4af37;
+            pointer-events: none;
+            z-index: 40;
+            box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+        
+        .ornate-border::before, .ornate-border::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(212, 175, 55, 0.5);
+            pointer-events: none;
+        }
+        .ornate-border::before { top: 4px; left: 4px; width: calc(100% - 8px); height: calc(100% - 8px); }
+        .ornate-border::after { top: -6px; left: -6px; width: calc(100% + 12px); height: calc(100% + 12px); }
+
+        .corner-symbol {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            background: #f3ede0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            border-radius: 50%;
+        }
+        .corner-tl { top: -16px; left: -16px; }
+        .corner-tr { top: -16px; right: -16px; }
+        .corner-bl { bottom: -16px; left: -16px; }
+        .corner-br { bottom: -16px; right: -16px; }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .sephiroth-sphere {
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.3));
+        }
+
+        .sephiroth-sphere:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px #d4af37);
+        }
+
+        .path-line {
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: all 0.3s;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .path-line:hover {
+            stroke-opacity: 1;
+            filter: drop-shadow(0 0 8px #d4af37);
+        }
+
+        .marginalia {
+            font-family: 'EB Garamond', serif;
+            font-style: italic;
+            font-size: 0.875rem;
+            color: #7f7663;
+        }
+
+        /* Complex Gradient Colors for Sephiroth */
+        .color-kether { fill: url(#grad-kether); stroke: #d4af37; stroke-width: 2px; }
+        .color-chokmah { fill: url(#grad-chokmah); stroke: #d4af37; stroke-width: 2px; }
+        .color-binah { fill: url(#grad-binah); stroke: #d4af37; stroke-width: 2px; }
+        .color-daath { fill: url(#grad-daath); stroke-dasharray: 4; stroke: #888; stroke-width: 2px; }
+        .color-chesed { fill: url(#grad-chesed); stroke: #d4af37; stroke-width: 2px; }
+        .color-geburah { fill: url(#grad-geburah); stroke: #d4af37; stroke-width: 2px; }
+        .color-tiphareth { fill: url(#grad-tiphareth); stroke: #d4af37; stroke-width: 3px; }
+        .color-netzach { fill: url(#grad-netzach); stroke: #d4af37; stroke-width: 2px; }
+        .color-hod { fill: url(#grad-hod); stroke: #d4af37; stroke-width: 2px; }
+        .color-yesod { fill: url(#grad-yesod); stroke: #d4af37; stroke-width: 2px; }
+        .color-malkuth { fill: url(#grad-malkuth); stroke: #d4af37; stroke-width: 2px; }
+
+        .emanations-bg {
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(212, 175, 55, 0.1) 100%);
+        }
+        
+        .path-text {
+            font-family: 'EB Garamond', serif;
+            font-size: 8px;
+            fill: #1d1c13;
+            text-anchor: middle;
+            pointer-events: none;
+        }
+        
+        .sphere-inner-text {
+            font-family: 'EB Garamond', serif;
+            fill: rgba(0,0,0,0.7);
+            pointer-events: none;
+            text-anchor: middle;
+        }
+        .sphere-inner-text.light {
+            fill: rgba(255,255,255,0.9);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-on-surface">
+<div class="grain-overlay"></div>
+<div class="ornate-border">
+<div class="corner-symbol corner-tl">🜁</div> <!-- Air -->
+<div class="corner-symbol corner-tr">🜃</div> <!-- Earth -->
+<div class="corner-symbol corner-bl">🜂</div> <!-- Fire -->
+<div class="corner-symbol corner-br">🜄</div> <!-- Water -->
+</div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 max-w-full bg-surface-container-low/90 backdrop-blur-md border-b border-gold-accent shadow-sm">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-gold-accent hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="auto_awesome">auto_awesome</span>
+<h1 class="font-display-lg text-[20px] md:text-headline-lg tracking-[0.2em] text-gold-accent uppercase">Aura Hermetica</h1>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-gold-accent hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="search">search</span>
+<span class="material-symbols-outlined text-gold-accent hover:opacity-80 transition-opacity duration-300 cursor-pointer" data-icon="language">language</span>
+</div>
+</header>
+<main class="flex-grow pt-32 pb-24 relative flex flex-col items-center overflow-hidden z-10">
+<div class="emanations-bg"></div>
+<!-- Marginalia / Decorative Elements -->
+<div class="absolute left-8 top-40 hidden lg:block w-48 space-y-4">
+<p class="marginalia text-balance">"As above, so below; as within, so without; as the universe, so the soul."</p>
+<div class="h-[1px] w-full bg-gold-accent opacity-50"></div>
+<p class="text-label-sm font-label-sm text-gold-accent uppercase tracking-widest">Macrocosm</p>
+</div>
+<div class="absolute right-8 bottom-40 hidden lg:block w-48 text-right space-y-4">
+<p class="text-label-sm font-label-sm text-gold-accent uppercase tracking-widest">Microcosm</p>
+<div class="h-[1px] w-full bg-gold-accent opacity-50 ml-auto"></div>
+<p class="marginalia text-balance">The path of the serpent winds through the spheres of being.</p>
+</div>
+<!-- Interactive Tree of Life SVG -->
+<div class="relative w-full max-w-2xl aspect-[2/3] px-6 md:px-0">
+<svg class="w-full h-full drop-shadow-2xl" viewbox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Gradients for Sephirah -->
+<radialgradient cx="30%" cy="30%" id="grad-kether" r="70%">
+<stop offset="0%" stop-color="#ffffff"></stop>
+<stop offset="70%" stop-color="#fdfbf7"></stop>
+<stop offset="100%" stop-color="#e8e2d4"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-chokmah" r="70%">
+<stop offset="0%" stop-color="#f8fafc"></stop>
+<stop offset="60%" stop-color="#cbd5e1"></stop>
+<stop offset="100%" stop-color="#64748b"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-binah" r="70%">
+<stop offset="0%" stop-color="#71717a"></stop>
+<stop offset="60%" stop-color="#27272a"></stop>
+<stop offset="100%" stop-color="#000000"></stop>
+</radialgradient>
+<radialgradient cx="50%" cy="50%" id="grad-daath" r="50%">
+<stop offset="0%" stop-color="#cbd5e1" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#475569" stop-opacity="0.7"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-chesed" r="70%">
+<stop offset="0%" stop-color="#93c5fd"></stop>
+<stop offset="60%" stop-color="#3b82f6"></stop>
+<stop offset="100%" stop-color="#1e3a8a"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-geburah" r="70%">
+<stop offset="0%" stop-color="#fca5a5"></stop>
+<stop offset="60%" stop-color="#ef4444"></stop>
+<stop offset="100%" stop-color="#7f1d1d"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-tiphareth" r="70%">
+<stop offset="0%" stop-color="#fef08a"></stop>
+<stop offset="50%" stop-color="#fbbf24"></stop>
+<stop offset="100%" stop-color="#b45309"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-netzach" r="70%">
+<stop offset="0%" stop-color="#86efac"></stop>
+<stop offset="60%" stop-color="#22c55e"></stop>
+<stop offset="100%" stop-color="#14532d"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-hod" r="70%">
+<stop offset="0%" stop-color="#fde047"></stop>
+<stop offset="60%" stop-color="#f59e0b"></stop>
+<stop offset="100%" stop-color="#78350f"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-yesod" r="70%">
+<stop offset="0%" stop-color="#d8b4fe"></stop>
+<stop offset="60%" stop-color="#a855f7"></stop>
+<stop offset="100%" stop-color="#581c87"></stop>
+</radialgradient>
+<radialgradient cx="30%" cy="30%" id="grad-malkuth" r="70%">
+<stop offset="0%" stop-color="#a8a29e"></stop>
+<stop offset="50%" stop-color="#57534e"></stop>
+<stop offset="100%" stop-color="#1c1917"></stop>
+</radialgradient>
+<!-- Path Gradient -->
+<lineargradient id="path-grad" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#e3c466"></stop>
+<stop offset="50%" stop-color="#d4af37"></stop>
+<stop offset="100%" stop-color="#735c00"></stop>
+</lineargradient>
+</defs>
+<!-- Pillars Background -->
+<g class="pillars" fill="#1d1c13" opacity="0.15">
+<!-- Boaz (Severity - Left) -->
+<rect height="480" rx="4" width="60" x="70" y="80"></rect>
+<rect height="20" rx="2" width="80" x="60" y="70"></rect>
+<rect height="20" rx="2" width="80" x="60" y="550"></rect>
+<text fill="#000" font-family="EB Garamond" font-size="24" text-anchor="middle" x="100" y="530">B</text>
+<!-- Jachin (Mercy - Right) -->
+<rect height="480" rx="4" width="60" x="270" y="80"></rect>
+<rect height="20" rx="2" width="80" x="260" y="70"></rect>
+<rect height="20" rx="2" width="80" x="260" y="550"></rect>
+<text fill="#000" font-family="EB Garamond" font-size="24" text-anchor="middle" x="300" y="530">J</text>
+</g>
+<!-- Paths (Connecting Lines) -->
+<g class="paths" stroke="url(#path-grad)">
+<!-- Vertical Pillars -->
+<line class="path-line" x1="200" x2="200" y1="50" y2="150"></line>
+<line class="path-line" x1="200" x2="200" y1="150" y2="300"></line>
+<line class="path-line" x1="200" x2="200" y1="300" y2="450"></line>
+<line class="path-line" x1="200" x2="200" y1="450" y2="550"></line>
+<line class="path-line" x1="300" x2="300" y1="100" y2="225"></line>
+<line class="path-line" x1="300" x2="300" y1="225" y2="375"></line>
+<line class="path-line" x1="100" x2="100" y1="100" y2="225"></line>
+<line class="path-line" x1="100" x2="100" y1="225" y2="375"></line>
+<!-- Horizontal & Diagonal Paths -->
+<line class="path-line" x1="100" x2="300" y1="100" y2="100"></line>
+<line class="path-line" x1="100" x2="200" y1="100" y2="50"></line>
+<line class="path-line" x1="300" x2="200" y1="100" y2="50"></line>
+<line class="path-line" x1="100" x2="200" y1="100" y2="300"></line>
+<line class="path-line" x1="300" x2="200" y1="100" y2="300"></line>
+<line class="path-line" x1="100" x2="300" y1="225" y2="225"></line>
+<line class="path-line" x1="100" x2="200" y1="225" y2="300"></line>
+<line class="path-line" x1="300" x2="200" y1="225" y2="300"></line>
+<line class="path-line" x1="100" x2="300" y1="375" y2="375"></line>
+<line class="path-line" x1="100" x2="200" y1="375" y2="300"></line>
+<line class="path-line" x1="300" x2="200" y1="375" y2="300"></line>
+<line class="path-line" x1="100" x2="200" y1="375" y2="450"></line>
+<line class="path-line" x1="300" x2="200" y1="375" y2="450"></line>
+</g>
+<!-- Path Labels (Simplified representation of Hebrew/Tarot) -->
+<g class="path-labels">
+<text class="path-text" transform="rotate(-26.5 150 70)" x="150" y="70">11 • א • Fool</text>
+<text class="path-text" transform="rotate(26.5 250 70)" x="250" y="70">12 • ב • Magus</text>
+<text class="path-text" x="200" y="95">14 • ד • Empress</text>
+</g>
+<!-- Sephiroth Spheres -->
+<!-- Kether -->
+<g class="sephiroth-sphere color-kether" onclick="showDetail('Kether')" transform="translate(200, 50)">
+<circle r="38"></circle>
+<circle fill="none" r="34" stroke="rgba(212,175,55,0.5)" stroke-width="1"></circle>
+<text class="font-label-sm text-[11px] font-bold fill-gold-accent tracking-widest" dy="-46" text-anchor="middle">KETHER</text>
+<text class="sphere-inner-text" dy="-5" font-size="10">1</text>
+<text class="sphere-inner-text" dy="8" font-size="12">כתר</text>
+<text class="sphere-inner-text" dy="22" font-size="14">☉</text>
+</g>
+<!-- Chokmah -->
+<g class="sephiroth-sphere color-chokmah" onclick="showDetail('Chokmah')" transform="translate(300, 100)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.4)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">CHOKMAH</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">2</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">חכמה</text>
+</g>
+<!-- Binah -->
+<g class="sephiroth-sphere color-binah" onclick="showDetail('Binah')" transform="translate(100, 100)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.2)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">BINAH</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">3</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">בינה</text>
+</g>
+<!-- Daath (The Abyss) -->
+<g class="sephiroth-sphere color-daath" onclick="showDetail('Daath')" transform="translate(200, 160)">
+<circle r="25" stroke-width="1"></circle>
+<text class="font-label-sm text-[9px] fill-outline tracking-widest" dy="-32" text-anchor="middle">DAATH</text>
+</g>
+<!-- Chesed -->
+<g class="sephiroth-sphere color-chesed" onclick="showDetail('Chesed')" transform="translate(300, 225)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.3)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">CHESED</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">4</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">חסד</text>
+</g>
+<!-- Geburah -->
+<g class="sephiroth-sphere color-geburah" onclick="showDetail('Geburah')" transform="translate(100, 225)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.3)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">GEBURAH</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">5</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">גבורה</text>
+</g>
+<!-- Tiphareth -->
+<g class="sephiroth-sphere color-tiphareth" onclick="showDetail('Tiphareth')" transform="translate(200, 300)">
+<circle r="44"></circle>
+<circle fill="none" r="39" stroke="rgba(255,255,255,0.5)" stroke-width="1"></circle>
+<text class="font-label-sm text-[12px] font-bold fill-gold-accent tracking-widest" dy="-52" text-anchor="middle">TIPHARETH</text>
+<text class="sphere-inner-text" dy="-8" font-size="12">6</text>
+<text class="sphere-inner-text" dy="8" font-size="16">תפארת</text>
+</g>
+<!-- Netzach -->
+<g class="sephiroth-sphere color-netzach" onclick="showDetail('Netzach')" transform="translate(300, 375)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.3)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">NETZACH</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">7</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">נצח</text>
+</g>
+<!-- Hod -->
+<g class="sephiroth-sphere color-hod" onclick="showDetail('Hod')" transform="translate(100, 375)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.3)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">HOD</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">8</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">הוד</text>
+</g>
+<!-- Yesod -->
+<g class="sephiroth-sphere color-yesod" onclick="showDetail('Yesod')" transform="translate(200, 450)">
+<circle r="35"></circle>
+<circle fill="none" r="31" stroke="rgba(255,255,255,0.3)" stroke-width="1"></circle>
+<text class="font-label-sm text-[10px] fill-gold-accent tracking-widest" dy="-42" text-anchor="middle">YESOD</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">9</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">יסוד</text>
+</g>
+<!-- Malkuth -->
+<g class="sephiroth-sphere color-malkuth" onclick="showDetail('Malkuth')" transform="translate(200, 550)">
+<circle r="40"></circle>
+<circle fill="none" r="36" stroke="rgba(255,255,255,0.2)" stroke-width="1"></circle>
+<text class="font-label-sm text-[11px] font-bold fill-gold-accent tracking-widest" dy="-48" text-anchor="middle">MALKUTH</text>
+<text class="sphere-inner-text light" dy="-5" font-size="10">10</text>
+<text class="sphere-inner-text light" dy="8" font-size="12">מלכות</text>
+</g>
+</svg>
+</div>
+<!-- Ritual Card Overlay -->
+<div class="fixed inset-0 z-[70] flex items-center justify-center p-gutter hidden" id="detail-modal">
+<div class="absolute inset-0 bg-inverse-surface/90 backdrop-blur-md" onclick="hideDetail()"></div>
+<div class="relative bg-surface-container-low border-2 border-gold-accent p-10 max-w-lg w-full shadow-2xl animate-scroll-unfold rounded-sm">
+<div class="flex justify-between items-start mb-6">
+<h2 class="font-headline-lg text-display-lg text-gold-accent tracking-[0.1em] uppercase" id="modal-title">Kether</h2>
+<button class="material-symbols-outlined text-outline hover:text-gold-accent transition-colors" onclick="hideDetail()">close</button>
+</div>
+<div class="space-y-4">
+<p class="font-body-md text-on-surface-variant leading-relaxed" id="modal-desc">The Crown. The first emanation of the Divine, representing the infinite light from which all creation flows. It is the point of origin, the singular unity before differentiation.</p>
+<div class="grid grid-cols-2 gap-4 pt-6 border-t border-gold-accent/30">
+<div>
+<span class="text-label-sm text-outline uppercase tracking-widest block mb-1">Correspondence</span>
+<span class="font-body-md text-gold-accent" id="modal-corr">Primordial Point</span>
+</div>
+<div>
+<span class="text-label-sm text-outline uppercase tracking-widest block mb-1">Element</span>
+<span class="font-body-md text-gold-accent" id="modal-elem">Infinite Light</span>
+</div>
+</div>
+</div>
+<div class="mt-10 flex justify-center">
+<button class="px-8 py-3 border border-gold-accent text-gold-accent font-label-sm uppercase tracking-widest hover:bg-gold-accent hover:text-surface-container-low transition-all duration-300">
+                        Begin Contemplation
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 py-3 bg-surface-container-low/95 backdrop-blur-md border-t-2 border-gold-accent shadow-[0_-4px_15px_rgba(212,175,55,0.1)]">
+<!-- Life (Active) -->
+<a class="flex flex-col items-center justify-center text-gold-accent font-bold scale-105 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_5">brightness_5</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Life</span>
+</a>
+<!-- Death -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-gold-accent transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="brightness_3">brightness_3</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Death</span>
+</a>
+<!-- Mirror -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-gold-accent transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="contrast">contrast</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Mirror</span>
+</a>
+<!-- Grimoire -->
+<a class="flex flex-col items-center justify-center text-outline hover:text-gold-accent transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider mt-1">Grimoire</span>
+</a>
+</nav>
+<script>
+        const sephirothData = {
+            'Kether': {
+                desc: 'The Crown. The first emanation of the Divine, representing the infinite light from which all creation flows. It is the point of origin, the singular unity before differentiation.',
+                corr: 'The Source',
+                elem: 'Aether'
+            },
+            'Chokmah': {
+                desc: 'Wisdom. The masculine force of creation, the "Great Father". It is the dynamic energy, the flash of lightning that initiates existence.',
+                corr: 'The Zodiac',
+                elem: 'Fire'
+            },
+            'Binah': {
+                desc: 'Understanding. The feminine force, the "Great Mother". It provides the form and structure for the raw energy of Chokmah to take shape.',
+                corr: 'Saturn',
+                elem: 'Water'
+            },
+            'Daath': {
+                desc: 'Knowledge. The invisible Sephirah, the "Abyss". It represents the bridge (or the void) between the higher supernal triad and the lower manifestation.',
+                corr: 'The Hidden Path',
+                elem: 'Non-existence'
+            },
+            'Chesed': {
+                desc: 'Mercy. Expanding love and benevolence. It is the constructive force that builds and organizes the universe through kindness.',
+                corr: 'Jupiter',
+                elem: 'Water'
+            },
+            'Geburah': {
+                desc: 'Strength/Severity. The restrictive force that balances Chesed. It provides discipline, judgment, and the power to destroy what is no longer needed.',
+                corr: 'Mars',
+                elem: 'Fire'
+            },
+            'Tiphareth': {
+                desc: 'Beauty. The center of the Tree, balancing Mercy and Severity. It is the seat of consciousness, the soul, and the heart of the initiate.',
+                corr: 'The Sun',
+                elem: 'Air'
+            },
+            'Netzach': {
+                desc: 'Victory. The realm of instinct, emotion, and aesthetic beauty. It represents the endurance of the creative spark in the material world.',
+                corr: 'Venus',
+                elem: 'Fire'
+            },
+            'Hod': {
+                desc: 'Splendor. The realm of intellect, communication, and ritual. It provides the logical framework through which we express Netzach’s emotions.',
+                corr: 'Mercury',
+                elem: 'Water'
+            },
+            'Yesod': {
+                desc: 'Foundation. The astral realm, the subconscious. It acts as the final processing plant for all energies before they reach physical manifestation.',
+                corr: 'The Moon',
+                elem: 'Air'
+            },
+            'Malkuth': {
+                desc: 'Kingdom. The physical world. This is the culmination of all spiritual energies into matter, where the divine is fully manifest.',
+                corr: 'Earth',
+                elem: 'Earth'
+            }
+        };
+
+        function showDetail(name) {
+            const data = sephirothData[name];
+            document.getElementById('modal-title').innerText = name;
+            document.getElementById('modal-desc').innerText = data.desc;
+            document.getElementById('modal-corr').innerText = data.corr;
+            document.getElementById('modal-elem').innerText = data.elem;
+            
+            const modal = document.getElementById('detail-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function hideDetail() {
+            const modal = document.getElementById('detail-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Keyboard close
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideDetail();
+        });
+    </script>
+<style>
+        @keyframes scroll-unfold {
+            0% { transform: scaleY(0); opacity: 0; }
+            100% { transform: scaleY(1); opacity: 1; }
+        }
+        .animate-scroll-unfold {
+            animation: scroll-unfold 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            transform-origin: top;
+        }
+    </style>
+</body></html>
