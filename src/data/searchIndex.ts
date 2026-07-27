@@ -79,6 +79,24 @@ const veilSearchData = [
     keywords: ['nephesch', 'qesheth', 'arco-íris', 'véu', 'astral', 'matéria', 'sonho', 'veil', 'rainbow'],
     position: { x: 400, y: 1390 },
   },
+  {
+    id: 'ain',
+    name: 'Ain (Nada)',
+    keywords: ['ain', 'nada', 'vazio', 'negatividade', 'nothing', 'zero', 'absoluto', 'véu negativo'],
+    position: { x: 400, y: 40 },
+  },
+  {
+    id: 'ain-soph',
+    name: 'Ain Soph (Ilimitado)',
+    keywords: ['ain soph', 'ilimitado', 'infinito', 'sem fim', 'limitless', 'infinite', 'potencial'],
+    position: { x: 400, y: 60 },
+  },
+  {
+    id: 'ain-soph-aur',
+    name: 'Ain Soph Aur (Luz Ilimitada)',
+    keywords: ['ain soph aur', 'luz ilimitada', 'luz', 'limitless light', 'tzimtzum', 'emanação', 'criação', 'kether'],
+    position: { x: 400, y: 80 },
+  },
 ];
 
 // Pillar data for search
