@@ -150,7 +150,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
     } else if (id.startsWith('veil-')) {
       const data = veilData[id.replace('veil-', '') as keyof typeof veilData];
       if (data) text = `${data.name}\n${data.description}`;
-    } else if (id.startsWith('ain-')) {
+    } else if (id === 'ain' || id === 'ain-soph' || id === 'ain-soph-aur') {
       const key = id === 'ain-soph-aur' ? 'ainSophAur' : id === 'ain-soph' ? 'ainSoph' : 'ain';
       const data = ainSophData[key];
       if (data) text = `${data.name} (${data.hebrewName})\n${data.description}\n\nGolden Dawn: ${data.goldenDawn}`;
@@ -182,7 +182,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
           {d.sephirots.map((s, i) => <p key={i} className="text-white/70 text-[11px]">• {s}</p>)}
         </div>
       </>);
-    } else if (id.startsWith('ain-')) {
+    } else if (id === 'ain' || id === 'ain-soph' || id === 'ain-soph-aur') {
       const key = id === 'ain-soph-aur' ? 'ainSophAur' : id === 'ain-soph' ? 'ainSoph' : 'ain';
       const d = ainSophData[key];
       return (<>

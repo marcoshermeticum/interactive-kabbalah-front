@@ -79,7 +79,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const length = Math.sqrt(dx * dx + dy * dy);
-    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    const angle = Math.round(Math.atan2(dy, dx) * (180 / Math.PI) * 1000) / 1000;
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
     const barHeight = 26;
@@ -104,7 +104,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const length = Math.sqrt(dx * dx + dy * dy);
-    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    const angle = Math.round(Math.atan2(dy, dx) * (180 / Math.PI) * 1000) / 1000;
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
     const nodeRadius = 72;
@@ -159,7 +159,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
           if (!from || !to) return null;
           const dx = to.x - from.x; const dy = to.y - from.y;
           const length = Math.sqrt(dx * dx + dy * dy);
-          const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+          const angle = Math.round(Math.atan2(dy, dx) * (180 / Math.PI) * 1000) / 1000;
           const midX = (from.x + to.x) / 2; const midY = (from.y + to.y) / 2;
           const actualLength = length - 144;
           if (actualLength <= 10) return null;
