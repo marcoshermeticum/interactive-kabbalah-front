@@ -12,9 +12,10 @@ type Props = {
 export default async function RootLayout({ children, params }: Props) {
   const { locale } = await params;
   const messages = await getMessages({ locale });
+  const dir = locale === 'he' ? 'rtl' : 'ltr';
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
         <title>Interactive Kabbalah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />

@@ -99,7 +99,7 @@ export default function Navbar({
               onClick={() => setShowDonation(!showDonation)}
               className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-amber-300"
               aria-label="Donate"
-              title="Apoiar"
+              title={ui('support')}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
             </button>
@@ -153,14 +153,14 @@ export default function Navbar({
             <div className="p-4 space-y-5">
               {/* Settings */}
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">Configurações</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('settings')}</p>
                 <div className="space-y-2">
                   <label className="flex items-center justify-between px-1 py-1.5 cursor-pointer">
-                    <span className="text-sm text-white/80">Exibir Véus</span>
+                    <span className="text-sm text-white/80">{ui('showVeils')}</span>
                     <ToggleSwitch checked={showVeils} onChange={onShowVeilsChange} />
                   </label>
                   <label className="flex items-center justify-between px-1 py-1.5 cursor-pointer">
-                    <span className="text-sm text-white/80">Exibir Pilares</span>
+                    <span className="text-sm text-white/80">{ui('showPillars')}</span>
                     <ToggleSwitch checked={showPillars} onChange={onShowPillarsChange} />
                   </label>
                 </div>
@@ -168,11 +168,11 @@ export default function Navbar({
 
               {/* Appearance */}
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">Aparência</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('appearance')}</p>
                 <div className="flex items-center justify-between px-1">
                   <div className="flex items-center gap-3">
                     <ThemeToggle />
-                    <span className="text-sm text-white/60">Tema</span>
+                    <span className="text-sm text-white/60">{ui('appearance')}</span>
                   </div>
                   <LanguageSelector />
                 </div>
@@ -180,7 +180,7 @@ export default function Navbar({
 
               {/* Links */}
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">Redes & Links</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('links')}</p>
                 <div className="space-y-1">
                   <SidebarLink href="https://github.com/mrviniciux" icon={<GithubIcon />} label="GitHub" subtitle="@mrviniciux" />
                   <SidebarLink href="https://linkedin.com/in/mrviniciux" icon={<LinkedInIcon />} label="LinkedIn" subtitle="@mrviniciux" />
@@ -190,7 +190,7 @@ export default function Navbar({
 
               {/* Donation */}
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">Apoiar</p>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('support')}</p>
                 <button
                   onClick={() => { setShowDonation(true); setSidebarOpen(false); }}
                   className="w-full flex items-center gap-3 px-3 py-3 rounded-xl bg-amber-900/20 border border-amber-700/30 hover:bg-amber-900/30 transition text-sm text-amber-200"
@@ -271,6 +271,7 @@ function SidebarLink({ href, icon, label, subtitle }: { href: string; icon: Reac
 
 function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPillarsChange }: { showVeils: boolean; onShowVeilsChange: (v: boolean) => void; showPillars: boolean; onShowPillarsChange: (v: boolean) => void }) {
   const [open, setOpen] = useState(false);
+  const ui = useTranslations('ui');
   return (
     <div className="relative">
       <button onClick={() => setOpen(!open)} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-white" aria-label="Settings">
@@ -279,12 +280,12 @@ function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPill
       {open && (
         <div className="absolute right-0 top-full mt-2 w-[220px] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-3 z-[600]">
           <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xs font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Configurações</h3>
+            <h3 className="text-xs font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>{ui('settings')}</h3>
             <button onClick={() => setOpen(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-xs">✕</button>
           </div>
           <div className="space-y-2">
-            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">Exibir Véus</span><input type="checkbox" checked={showVeils} onChange={(e) => onShowVeilsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
-            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">Exibir Pilares</span><input type="checkbox" checked={showPillars} onChange={(e) => onShowPillarsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
+            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('showVeils')}</span><input type="checkbox" checked={showVeils} onChange={(e) => onShowVeilsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
+            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('showPillars')}</span><input type="checkbox" checked={showPillars} onChange={(e) => onShowPillarsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
           </div>
         </div>
       )}
@@ -293,19 +294,20 @@ function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPill
 }
 
 function DonationPanel({ onClose }: { onClose: () => void }) {
+  const ui = useTranslations('ui');
   return (
     <div className="absolute top-14 right-4 z-[600] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-5 w-[280px]">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Buy me a coffee ☕</h3>
         <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm">✕</button>
       </div>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">Se este projeto te ajudou na jornada, considere apoiar com qualquer valor via PIX.</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">{ui('donate')}</p>
       <div className="flex flex-col items-center gap-3">
         <div className="text-center">
-          <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Chave PIX (telefone):</p>
-          <button onClick={() => { navigator.clipboard.writeText('48991913318'); }} className="text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition" title="Clique para copiar">48991913318 📋</button>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">{ui('pixKey')}</p>
+          <button onClick={() => { navigator.clipboard.writeText('48991913318'); }} className="text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition" title={ui('clickToCopy')}>48991913318 📋</button>
         </div>
-        <p className="text-[10px] text-gray-400 text-center mt-1">Qualquer valor é bem-vindo. Obrigado! 🙏</p>
+        <p className="text-[10px] text-gray-400 text-center mt-1">{ui('donateThank')}</p>
       </div>
     </div>
   );

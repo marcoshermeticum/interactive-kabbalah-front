@@ -1,0 +1,274 @@
+{
+  "app": { "title": "生命の樹インタラクティブ" },
+  "ui": {
+    "title": "インタラクティブ・カバラ",
+    "life": "生命",
+    "death": "死",
+    "both": "両方",
+    "defect": "欠点",
+    "planet": "惑星",
+    "path": "小径",
+    "tunnel": "トンネル",
+    "meaning": "意味",
+    "virtue": "美徳",
+    "vice": "悪徳",
+    "latentVirtue": "潜在的美徳",
+    "shadowVice": "影/悪徳",
+    "archetypes": "元型",
+    "minorArcana": "小アルカナ",
+    "clickToPin": "クリックで固定",
+    "copy": "コピー",
+    "copied": "コピー済み！",
+    "close": "閉じる",
+    "settings": "設定",
+    "showVeils": "ヴェールを表示",
+    "showPillars": "柱を表示",
+    "appearance": "外観",
+    "links": "リンク",
+    "support": "サポート",
+    "donate": "このプロジェクトがあなたの旅に役立ったなら、PIXで任意の金額で支援をご検討ください。",
+    "pixKey": "PIXキー（電話番号）：",
+    "clickToCopy": "クリックでコピー",
+    "donateThank": "どんな金額でも歓迎です。ありがとうございます！🙏",
+    "searchPlaceholder": "検索: 牛、月、心臓、ルビー...",
+    "matchedOn": "対応",
+    "noResults": "結果なし："
+  },
+  "kether": {
+    "world": { "title": "アツィルト", "aspect": "遍在" },
+    "regent": { "title": "セラフィム", "name": "メタトロン", "defect": " " },
+    "sephirot": { "name": "ケテル", "valor": "王冠" },
+    "archetypes": ["父なる神", "ブラフマー", "日の老いたる者", "エイン・ソフ"],
+    "minorArcana": ["ワンドのエース（火の根源）", "カップのエース（水の根源）", "ソードのエース（風の根源）", "ペンタクルのエース（地の根源）"],
+    "planetName": "海王星",
+    "correspondences": {
+      "animals": ["白鳥", "鳩", "鷹"],
+      "stones": ["ダイヤモンド", "水晶"],
+      "bodyParts": ["頭蓋骨", "頭頂", "松果体"]
+    }
+  },
+  "chokmah": {
+    "world": { "title": "アツィルト", "aspect": "全能" },
+    "regent": { "title": "ケルビム", "name": "ラジエル", "defect": "暴政" },
+    "sephirot": { "name": "コクマー", "valor": "知恵" },
+    "archetypes": ["ゼウス", "オーディン", "シヴァ", "天の父"],
+    "minorArcana": ["ワンドの2（支配）", "カップの2（愛）", "ソードの2（回復した平和）", "ペンタクルの2（調和的変化）"],
+    "planetName": "天王星",
+    "correspondences": {
+      "animals": ["男根", "オオヤマネコ", "コンドル"],
+      "stones": ["トルコ石", "スタールビー"],
+      "bodyParts": ["顔の左側", "右脳半球"]
+    }
+  },
+  "binah": {
+    "world": { "title": "ブリアー", "aspect": "全知" },
+    "regent": { "title": "トロネス", "name": "ツァフキエル", "defect": "貪欲" },
+    "sephirot": { "name": "ビナー", "valor": "理解" },
+    "archetypes": ["聖母マリア", "イシス", "カーリー", "偉大なる母"],
+    "minorArcana": ["ワンドの3（確立された美徳）", "カップの3（豊穣）", "ソードの3（悲しみ）", "ペンタクルの3（物質的労働）"],
+    "planetName": "土星",
+    "correspondences": {
+      "animals": ["蜜蜂", "女性", "梟"],
+      "stones": ["真珠", "サファイア", "スターオニキス"],
+      "bodyParts": ["顔の右側", "左脳半球", "子宮"]
+    }
+  },
+  "daath": {
+    "regent": { "title": "", "name": "", "defect": "" },
+    "sephirot": { "name": "ダアト", "valor": "知識" },
+    "archetypes": ["深淵", "コロンゾン", "渡り"],
+    "minorArcana": [],
+    "planetName": "冥王星",
+    "correspondences": {
+      "animals": ["蛇", "龍", "カメレオン"],
+      "stones": ["モルダバイト", "ラブラドライト", "黒曜石"],
+      "bodyParts": ["喉", "うなじ", "首"]
+    }
+  },
+  "chesed": {
+    "regent": { "title": "ドミニオンズ", "name": "ツァドキエル", "defect": "暴政" },
+    "sephirot": { "name": "ケセド", "valor": "慈悲" },
+    "archetypes": ["ユピテル", "ポセイドン", "オシャラ", "ソロモン王"],
+    "minorArcana": ["ワンドの4（完成）", "カップの4（贅沢）", "ソードの4（休息）", "ペンタクルの4（地上の力）"],
+    "planetName": "木星",
+    "correspondences": {
+      "animals": ["ユニコーン", "馬", "鷲"],
+      "stones": ["サファイア", "アメジスト", "ラピスラズリ"],
+      "bodyParts": ["左腕", "左肩"]
+    }
+  },
+  "gevurah": {
+    "regent": { "title": "パワーズ", "name": "カマエル", "defect": "残忍" },
+    "sephirot": { "name": "ゲブラー", "valor": "力" },
+    "archetypes": ["アレス", "トール", "オグン", "ドゥルガー"],
+    "minorArcana": ["ワンドの5（闘争）", "カップの5（快楽の喪失）", "ソードの5（敗北）", "ペンタクルの5（物質的困難）"],
+    "planetName": "火星",
+    "correspondences": {
+      "animals": ["バジリスク", "狼", "軍馬", "蠍"],
+      "stones": ["ルビー", "ガーネット", "ブラッドストーン"],
+      "bodyParts": ["右腕", "右肩"]
+    }
+  },
+  "tiferet": {
+    "regent": { "title": "ヴァーチューズ", "name": "ラファエル", "defect": "傲慢" },
+    "sephirot": { "name": "ティフェレト", "valor": "美" },
+    "archetypes": ["イエス・キリスト", "ネオ（マトリックス）", "オシリス", "オシャラ", "仏陀", "クリシュナ"],
+    "minorArcana": ["ワンドの6（勝利）", "カップの6（喜び）", "ソードの6（科学）", "ペンタクルの6（物質的成功）"],
+    "planetName": "太陽",
+    "correspondences": {
+      "animals": ["獅子", "不死鳥", "蜘蛛", "ペリカン"],
+      "stones": ["トパーズ", "イエローダイヤモンド", "タイガーアイ"],
+      "bodyParts": ["心臓", "胸", "太陽神経叢"]
+    }
+  },
+  "netzach": {
+    "regent": { "title": "プリンシパリティーズ", "name": "ハニエル", "defect": "色欲" },
+    "sephirot": { "name": "ネツァク", "valor": "永遠" },
+    "archetypes": ["アフロディーテ", "オシュン", "フレイヤ", "ラクシュミー"],
+    "minorArcana": ["ワンドの7（勇気）", "カップの7（幻想的成功）", "ソードの7（不安定）", "ペンタクルの7（失敗）"],
+    "planetName": "金星",
+    "correspondences": {
+      "animals": ["鳩", "オオヤマネコ", "雀", "白鳥"],
+      "stones": ["エメラルド", "グリーントルマリン", "ローズクォーツ"],
+      "bodyParts": ["右腰", "右腎臓", "生殖器官"]
+    }
+  },
+  "hod": {
+    "regent": { "title": "大天使", "name": "ミカエル", "defect": "嫉妬" },
+    "sephirot": { "name": "ホド", "valor": "栄光" },
+    "archetypes": ["ヘルメス", "トート", "エシュ", "ガネーシャ"],
+    "minorArcana": ["ワンドの8（迅速）", "カップの8（放棄された成功）", "ソードの8（干渉）", "ペンタクルの8（慎重）"],
+    "planetName": "水星",
+    "correspondences": {
+      "animals": ["猿", "トキ", "狐", "翼のある蛇"],
+      "stones": ["オパール", "瑪瑙", "ムーンストーン"],
+      "bodyParts": ["左腰", "左腎臓", "脚"]
+    }
+  },
+  "yesod": {
+    "regent": { "title": "天使", "name": "ガブリエル", "defect": "怠惰" },
+    "sephirot": { "name": "イェソド", "valor": "基盤" },
+    "archetypes": ["ディアナ", "イェマンジャー", "セレーネ", "無意識"],
+    "minorArcana": ["ワンドの9（大いなる力）", "カップの9（物質的幸福）", "ソードの9（残酷）", "ペンタクルの9（物質的利益）"],
+    "planetName": "月",
+    "correspondences": {
+      "animals": ["象", "野兎", "蛙", "イルカ"],
+      "stones": ["水晶", "セレナイト", "ムーンストーン"],
+      "bodyParts": ["性器", "生殖器系", "膀胱"]
+    }
+  },
+  "malkuth": {
+    "world": { "title": "アッシャー", "aspect": "物質世界" },
+    "regent": { "title": "ケルビム", "name": "サンダルフォン", "defect": "" },
+    "sephirot": { "name": "マルクト", "valor": "王国" },
+    "archetypes": ["ガイア", "ペルセポネ", "花嫁", "ナナ"],
+    "minorArcana": ["ワンドの10（抑圧）", "カップの10（満足）", "ソードの10（破滅）", "ペンタクルの10（富）"],
+    "planetName": "地球",
+    "correspondences": {
+      "animals": ["牛", "スフィンクス", "雌牛", "雄牛"],
+      "stones": ["水晶", "オニキス", "海塩"],
+      "bodyParts": ["足", "肛門", "全身"]
+    }
+  },
+  "paths": {
+    "11": { "arcane": "0 - 愚者", "meaning": "空気 / 精神" },
+    "12": { "arcane": "I - 魔術師", "meaning": "水星" },
+    "13": { "arcane": "II - 女教皇", "meaning": "月" },
+    "14": { "arcane": "III - 女帝", "meaning": "金星" },
+    "15": { "arcane": "IV - 皇帝", "meaning": "牡羊座" },
+    "16": { "arcane": "V - 法王", "meaning": "牡牛座" },
+    "17": { "arcane": "VI - 恋人", "meaning": "双子座" },
+    "18": { "arcane": "VII - 戦車", "meaning": "蟹座" },
+    "19": { "arcane": "VIII - 力", "meaning": "獅子座" },
+    "20": { "arcane": "IX - 隠者", "meaning": "乙女座" },
+    "21": { "arcane": "X - 運命の輪", "meaning": "木星" },
+    "22": { "arcane": "XI - 正義", "meaning": "天秤座" },
+    "23": { "arcane": "XII - 吊るされた男", "meaning": "水" },
+    "24": { "arcane": "XIII - 死神", "meaning": "蠍座" },
+    "25": { "arcane": "XIV - 節制", "meaning": "射手座" },
+    "26": { "arcane": "XV - 悪魔", "meaning": "山羊座" },
+    "27": { "arcane": "XVI - 塔", "meaning": "火星" },
+    "28": { "arcane": "XVII - 星", "meaning": "水瓶座" },
+    "29": { "arcane": "XVIII - 月", "meaning": "魚座" },
+    "30": { "arcane": "XIX - 太陽", "meaning": "太陽" },
+    "31": { "arcane": "XX - 審判", "meaning": "火" },
+    "32": { "arcane": "XXI - 世界", "meaning": "土星" }
+  },
+  "ornaments": {
+    "veils": {
+      "abyss": {
+        "name": "深淵のヴェール",
+        "description": "至高の三角形（不可知なる神性）を樹の残りの部分から分離する。これを越えるにはエゴの完全な解体が必要である。",
+        "element": "風",
+        "world": "境界 アツィルト → ブリアー",
+        "guardian": "コロンゾン (333)"
+      },
+      "parokhet": {
+        "name": "パロケトのヴェール",
+        "description": "内なる神殿のヴェール。高次の自己（意識的魂）をアストラル界から分離する。イニシエーションの門である。",
+        "element": "火",
+        "world": "境界 ブリアー → イェツィラー",
+        "guardian": "ラファエル（ティフェレト）"
+      },
+      "nephesch": {
+        "name": "ネフェシュのヴェール",
+        "description": "アストラル界（無意識）を物質界から分離する虹。夢と物質の境界である。",
+        "element": "地",
+        "world": "境界 イェツィラー → アッシャー",
+        "guardian": "ガブリエル（イェソド）"
+      }
+    },
+    "pillars": {
+      "boaz": {
+        "name": "峻厳の柱",
+        "side": "左",
+        "element": "水",
+        "gender": "女性",
+        "description": "峻厳の柱は制限する力、形態、規律、神の厳格さを表す。女性的、受動的、受容的な柱である。",
+        "principle": "収縮、形態、裁き"
+      },
+      "jachin": {
+        "name": "慈悲の柱",
+        "side": "右",
+        "element": "火",
+        "gender": "男性",
+        "description": "慈悲の柱は拡張する力、エネルギー、慈悲、神の恩寵を表す。男性的、能動的、投射的な柱である。",
+        "principle": "拡張、力、恩寵"
+      }
+    },
+    "ainSoph": {
+      "ain": {
+        "name": "アイン",
+        "subtitle": "無",
+        "description": "絶対的な無 — いかなる顕現にも先立つ原初の状態。ゴールデン・ドーンの伝統において、アインは純粋な否定性を表し、潜在性すら先立つ不可思議なる虚空である。",
+        "goldenDawn": "否定的存在の第一のヴェール。アインはゴールデン・ドーンの文書において、人間の理解を完全に超越するものとして記述される — 存在でも非存在でもなく、その両者に先立つ状態。",
+        "principle": "絶対的否定性 — 存在と非存在を超えて",
+        "relation": "アイン・ソフに先行する — 無限なるものの不可思議な根源"
+      },
+      "ainSoph": {
+        "name": "アイン・ソフ",
+        "subtitle": "無限",
+        "description": "無限なるもの — 形態、尺度、属性なき無限の拡張。ゴールデン・ドーンにおいて、アイン・ソフは第二の否定的抽象を表す：すべての可能性を含むが何も顕現しない無限の潜在力。",
+        "goldenDawn": "否定的存在の第二のヴェール。マサースとウェストコットはアイン・ソフを無限の延長として記述する — 始まりも終わりも方向もない。光が集中する前の純粋な無限性の概念である。",
+        "principle": "属性なき無限 — 純粋な未顕現の潜在力",
+        "relation": "アインとアイン・ソフ・アウルの間 — 光に先立つ無限"
+      },
+      "ainSophAur": {
+        "name": "アイン・ソフ・アウル",
+        "subtitle": "無限光",
+        "description": "無限光 — 無限なるものの最初の放射、原初の創造衝動。ゴールデン・ドーンにおいて、これは絶対者が流出を決意する瞬間を表す：光が一点（ケテル）に集中し、生命の樹が誕生する。",
+        "goldenDawn": "否定的存在の第三のヴェール。ゴールデン・ドーンの儀式は、アイン・ソフ・アウルが一点に集中する無限光であると教える — ケテル（王冠）を形成する。これはルリア・カバラのツィムツム：創造を可能にする収縮である。",
+        "principle": "原初の光 — 顕現の最初の衝動",
+        "relation": "ケテルに直接先行する — 最初のセフィラの源泉"
+      }
+    },
+    "svgLabels": {
+      "ain": "AIN — 無 — 0",
+      "ainSoph": "AIN SOPH — 無限 — 00",
+      "ainSophAur": "AIN SOPH AUR — 無限光 — 000",
+      "veilAbyss": "深淵のヴェール",
+      "veilParokhet": "パロケトのヴェール",
+      "veilNephesch": "ネフェシュのヴェール"
+    }
+  }
+}
