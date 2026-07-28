@@ -57,7 +57,7 @@ A aplicação estará disponível em **http://localhost:3000**
 | Estilo visual | "Armadura de RPG de mesa" — bordas duplas, anéis concêntricos, moldura ornamental |
 
 ### Referência visual
-O design segue a estética da HOD Studios (autorizado por e-mail):
+O design segue a estética da Daemon Editora (autorizado por e-mail):
 - Colunas B (Boaz) e J (Jachin)
 - Lemniscata (∞) acima de Kether
 - Véus (Abismo, Parokhet, Nephesch) como linhas tracejadas
@@ -212,7 +212,7 @@ npx vercel
 - **The Golden Dawn** (Israel Regardie) — sistema de Qliphoth
 - **Nightside of Eden** (Kenneth Grant) — Túneis de Set
 - **A Cabala Mística** (Dion Fortune) — interpretação ocidental
-- **HOD Studios** — referência visual (autorizado)
+- **Daemon Editora** — referência visual (autorizado)
 
 ## Autor
 

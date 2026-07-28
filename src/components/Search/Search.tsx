@@ -17,15 +17,6 @@ const typeIcons: Record<string, string> = {
   pillar: '🏛️',
 };
 
-const typeLabels: Record<string, string> = {
-  sephirot: 'Sephirot',
-  qliphah: 'Qliphah',
-  path: 'Caminho',
-  tunnel: 'Túnel',
-  veil: 'Véu',
-  pillar: 'Pilar',
-};
-
 export default function Search({ onSelectResult }: Props) {
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +46,7 @@ export default function Search({ onSelectResult }: Props) {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Buscar: boi, lua, coração, rubi, abismo, boaz..."
+              placeholder={ui('searchPlaceholder')}
               className="w-full px-3 py-2 text-sm rounded-lg border border-gray-200 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
               autoFocus
             />
@@ -79,8 +70,15 @@ export default function Search({ onSelectResult }: Props) {
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{r.name}</p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
-                      <span className="inline-block px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-[10px] mr-1.5">{typeLabels[r.type]}</span>
-                      corresponde a: {r.matchedOn}
+                      <span className="inline-block px-1.5 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-[10px] mr-1.5">{
+                        r.type === 'sephirot' ? 'Sephirot' :
+                        r.type === 'qliphah' ? 'Qliphah' :
+                        r.type === 'path' ? ui('path') :
+                        r.type === 'tunnel' ? ui('tunnel') :
+                        r.type === 'veil' ? '🪬' :
+                        '🏛️'
+                      }</span>
+                      {ui('matchedOn')}: {r.matchedOn}
                     </p>
                   </div>
                   {r.view !== 'any' && (
@@ -95,7 +93,7 @@ export default function Search({ onSelectResult }: Props) {
 
           {query.length >= 2 && results.length === 0 && (
             <div className="p-4 text-center text-sm text-gray-400">
-              Nenhum resultado para &ldquo;{query}&rdquo;
+              {ui('noResults')} &ldquo;{query}&rdquo;
             </div>
           )}
         </div>
