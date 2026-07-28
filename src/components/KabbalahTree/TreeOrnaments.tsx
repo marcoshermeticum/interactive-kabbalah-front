@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
 
 interface Props {
@@ -15,89 +16,6 @@ interface PinnedOrnament {
   pos: { x: number; y: number };
 }
 
-const pillarData = {
-  boaz: {
-    name: 'Pilar da Severidade',
-    hebrewName: 'Boaz (בעז)',
-    letter: 'B',
-    side: 'Esquerda',
-    icon: '⚡',
-    element: '🜄 Água',
-    gender: '♀ Feminino',
-    color: 'Preto',
-    description: 'O Pilar da Severidade representa a força restritiva, a forma, a disciplina e o rigor divino. É o pilar feminino, passivo e receptivo.',
-    sephirots: ['Binah (Entendimento)', 'Gevurah (Força)', 'Hod (Glória)'],
-    principle: 'Contração, Forma, Julgamento',
-  },
-  jachin: {
-    name: 'Pilar da Misericórdia',
-    hebrewName: 'Jachin (יכין)',
-    letter: 'J',
-    side: 'Direita',
-    icon: '☀️',
-    element: '🜂 Fogo',
-    gender: '♂ Masculino',
-    color: 'Branco',
-    description: 'O Pilar da Misericórdia representa a força expansiva, a energia, a compaixão e a graça divina. É o pilar masculino, ativo e projetivo.',
-    sephirots: ['Chokmah (Sabedoria)', 'Chesed (Misericórdia)', 'Netzach (Eternidade)'],
-    principle: 'Expansão, Força, Graça',
-  },
-};
-
-const veilData = {
-  abyss: {
-    name: 'Véu do Abismo', hebrewName: 'Masach (מסך)', icon: '🕳️', element: '🜁 Ar',
-    description: 'Separa a Tríade Superna (o Divino Incognoscível) do restante da Árvore. Cruzá-lo exige a dissolução completa do ego.',
-    above: ['Kether', 'Chokmah', 'Binah'], below: ['Chesed', 'Gevurah', 'Tiferet', 'Netzach', 'Hod', 'Yesod', 'Malkuth'],
-    guardian: 'Choronzon (333)', paths: ['14 (Daleth)', '17 (Zayin)', '13 (Gimel)'], world: 'Fronteira Atziluth → Briah',
-  },
-  parokhet: {
-    name: 'Véu de Parokhet', hebrewName: 'Parokhet (פרכת)', icon: '🪬', element: '🜂 Fogo',
-    description: 'O véu do Templo Interior. Separa o Self Superior (alma consciente) do mundo astral. É o portal da iniciação.',
-    above: ['Chesed', 'Gevurah', 'Tiferet'], below: ['Netzach', 'Hod', 'Yesod', 'Malkuth'],
-    guardian: 'Raphael (Tiferet)', paths: ['24 (Nun)', '25 (Samekh)', '26 (Ayin)'], world: 'Fronteira Briah → Yetzirah',
-  },
-  nephesch: {
-    name: 'Véu de Nephesch', hebrewName: 'Qesheth (קשת)', icon: '🌈', element: '🜃 Terra',
-    description: 'O Arco-Íris que separa o mundo astral (inconsciente) do mundo físico. É a fronteira entre sonho e matéria.',
-    above: ['Yesod (Fundação)'], below: ['Malkuth (Reino)'],
-    guardian: 'Gabriel (Yesod)', paths: ['29 (Qoph)', '30 (Resh)', '31 (Shin)', '32 (Tav)'], world: 'Fronteira Yetzirah → Assiah',
-  },
-};
-
-const ainSophData = {
-  ain: {
-    name: 'Ain',
-    hebrewName: 'אין (Nada)',
-    number: '0',
-    icon: '∅',
-    description: 'O Nada Absoluto — o estado primordial anterior a qualquer manifestação. Na tradição da Golden Dawn, Ain representa a Negatividade Pura, o Vazio inconcebível que precede até mesmo a potencialidade. Não é o vazio como ausência, mas como a raiz sem raiz de toda existência, além de qualquer atributo ou definição.',
-    goldenDawn: 'O primeiro véu da existência negativa. Ain é descrito nos documentos da Golden Dawn como aquilo que transcende completamente a compreensão humana — nem ser, nem não-ser, mas o estado que antecede ambos.',
-    principle: 'Negatividade Absoluta — além de existência e não-existência',
-    relation: 'Precede Ain Soph — é a raiz inconcebível do Ilimitado',
-  },
-  ainSoph: {
-    name: 'Ain Soph',
-    hebrewName: 'אין סוף (Sem Fim)',
-    number: '00',
-    icon: '∞',
-    description: 'O Ilimitado — a expansão infinita sem forma, sem medida, sem atributo. Na Golden Dawn, Ain Soph representa a segunda abstração negativa: o Infinito potencial que contém todas as possibilidades mas não manifesta nenhuma. É o Oceano sem margens do qual toda criação emergirá.',
-    goldenDawn: 'O segundo véu da existência negativa. Mathers e Westcott descrevem Ain Soph como a extensão ilimitada — sem começo, sem fim, sem direção. É o conceito de infinitude pura antes que a Luz se concentre.',
-    principle: 'Infinitude sem atributo — potencial puro não manifestado',
-    relation: 'Entre Ain e Ain Soph Aur — o infinito que precede a Luz',
-  },
-  ainSophAur: {
-    name: 'Ain Soph Aur',
-    hebrewName: 'אין סוף אור (Luz Ilimitada)',
-    number: '000',
-    icon: '☀',
-    description: 'A Luz Ilimitada — a primeira irradiação do Infinito, o impulso criativo primordial. Na Golden Dawn, representa o momento em que o Absoluto decide emanar: a Luz concentra-se num ponto (Kether) e a Árvore da Vida nasce. É a ponte entre o Nada e o Algo.',
-    goldenDawn: 'O terceiro véu da existência negativa. Os rituais da Golden Dawn ensinam que Ain Soph Aur é a Luz Ilimitada que se concentra num único ponto — formando Kether, a Coroa. Este é o Tzimtzum da Kabbalah Luriana: a contração que permite a criação.',
-    principle: 'Luz Primordial — o primeiro impulso de manifestação',
-    relation: 'Precede diretamente Kether — é a fonte da primeira Sephirah',
-  },
-};
-
 export default function TreeOrnaments({ width, height, showVeils = true, showPillars = true }: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
@@ -105,8 +23,10 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const deregisterRefs = useRef<Map<string, () => void>>(new Map());
   const containerRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations('ornaments');
+  const ui = useTranslations('ui');
 
-  const col = '#c9a033'; // Vibrant gold for better visibility in dark mode
+  const col = '#c9a033';
   const pillarTopY = 130;
   const pillarBottomY = height - 80;
   const pillarW = 52;
@@ -145,15 +65,14 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   const handleCopy = async (id: string) => {
     let text = '';
     if (id.startsWith('pillar-')) {
-      const data = pillarData[id.replace('pillar-', '') as keyof typeof pillarData];
-      if (data) text = `${data.name}\n${data.description}`;
+      const key = id.replace('pillar-', '') as 'boaz' | 'jachin';
+      text = `${t(`pillars.${key}.name`)}\n${t(`pillars.${key}.description`)}`;
     } else if (id.startsWith('veil-')) {
-      const data = veilData[id.replace('veil-', '') as keyof typeof veilData];
-      if (data) text = `${data.name}\n${data.description}`;
+      const key = id.replace('veil-', '') as 'abyss' | 'parokhet' | 'nephesch';
+      text = `${t(`veils.${key}.name`)}\n${t(`veils.${key}.description`)}`;
     } else if (id === 'ain' || id === 'ain-soph' || id === 'ain-soph-aur') {
       const key = id === 'ain-soph-aur' ? 'ainSophAur' : id === 'ain-soph' ? 'ainSoph' : 'ain';
-      const data = ainSophData[key];
-      if (data) text = `${data.name} (${data.hebrewName})\n${data.description}\n\nGolden Dawn: ${data.goldenDawn}`;
+      text = `${t(`ainSoph.${key}.name`)} (${t(`ainSoph.${key}.subtitle`)})\n${t(`ainSoph.${key}.description`)}\n\nGolden Dawn: ${t(`ainSoph.${key}.goldenDawn`)}`;
     }
     if (!text) return;
     await navigator.clipboard.writeText(text);
@@ -167,54 +86,48 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
 
   const renderTooltipContent = (id: string) => {
     if (id.startsWith('pillar-')) {
-      const d = pillarData[id.replace('pillar-', '') as keyof typeof pillarData];
+      const key = id.replace('pillar-', '') as 'boaz' | 'jachin';
+      const icon = key === 'boaz' ? '⚡' : '☀️';
       return (<>
-        <p className="font-bold text-sm">{d.icon} {d.name}</p>
-        <p className="text-white/60 text-[11px]">{d.hebrewName} — {d.side}</p>
-        <p className="mt-1.5 text-white/80 whitespace-normal">{d.description}</p>
+        <p className="font-bold text-sm">{icon} {t(`pillars.${key}.name`)}</p>
+        <p className="text-white/60 text-[11px]">{key === 'boaz' ? 'Boaz (בעז)' : 'Jachin (יכין)'} — {t(`pillars.${key}.side`)}</p>
+        <p className="mt-1.5 text-white/80 whitespace-normal">{t(`pillars.${key}.description`)}</p>
         <div className="mt-2 pt-1.5 border-t border-white/10 space-y-0.5">
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Elemento:</span> {d.element}</p>
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Gênero:</span> {d.gender}</p>
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Princípio:</span> {d.principle}</p>
-        </div>
-        <div className="mt-2 pt-1.5 border-t border-white/10">
-          <p className="text-white/40 text-[10px] uppercase tracking-wide mb-0.5">Sephirots</p>
-          {d.sephirots.map((s, i) => <p key={i} className="text-white/70 text-[11px]">• {s}</p>)}
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">{ui('planet')}:</span> {t(`pillars.${key}.element`)}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">♀/♂:</span> {t(`pillars.${key}.gender`)}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">⚙:</span> {t(`pillars.${key}.principle`)}</p>
         </div>
       </>);
     } else if (id === 'ain' || id === 'ain-soph' || id === 'ain-soph-aur') {
       const key = id === 'ain-soph-aur' ? 'ainSophAur' : id === 'ain-soph' ? 'ainSoph' : 'ain';
-      const d = ainSophData[key];
+      const icons: Record<string, string> = { ain: '∅', ainSoph: '∞', ainSophAur: '☀' };
+      const numbers: Record<string, string> = { ain: '0', ainSoph: '00', ainSophAur: '000' };
       return (<>
-        <p className="font-bold text-sm">{d.icon} {d.name}</p>
-        <p className="text-white/60 text-[11px]">{d.hebrewName} — {d.number}</p>
-        <p className="mt-1.5 text-white/80 whitespace-normal">{d.description}</p>
+        <p className="font-bold text-sm">{icons[key]} {t(`ainSoph.${key}.name`)}</p>
+        <p className="text-white/60 text-[11px]">{t(`ainSoph.${key}.subtitle`)} — {numbers[key]}</p>
+        <p className="mt-1.5 text-white/80 whitespace-normal">{t(`ainSoph.${key}.description`)}</p>
         <div className="mt-2 pt-1.5 border-t border-white/10">
           <p className="text-amber-300/80 text-[10px] uppercase tracking-wide mb-0.5">✡ Golden Dawn</p>
-          <p className="text-white/70 text-[11px] whitespace-normal">{d.goldenDawn}</p>
+          <p className="text-white/70 text-[11px] whitespace-normal">{t(`ainSoph.${key}.goldenDawn`)}</p>
         </div>
         <div className="mt-2 pt-1.5 border-t border-white/10 space-y-0.5">
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Princípio:</span> {d.principle}</p>
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Relação:</span> {d.relation}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">⚙:</span> {t(`ainSoph.${key}.principle`)}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">↔:</span> {t(`ainSoph.${key}.relation`)}</p>
         </div>
       </>);
     } else {
-      const d = veilData[id.replace('veil-', '') as keyof typeof veilData];
+      const key = id.replace('veil-', '') as 'abyss' | 'parokhet' | 'nephesch';
+      const icons: Record<string, string> = { abyss: '🕳️', parokhet: '🪬', nephesch: '🌈' };
+      const hebrewNames: Record<string, string> = { abyss: 'Masach (מסך)', parokhet: 'Parokhet (פרכת)', nephesch: 'Qesheth (קשת)' };
       return (<>
-        <p className="font-bold text-sm">{d.icon} {d.name}</p>
-        <p className="text-white/60 text-[11px]">{d.hebrewName}</p>
-        <p className="mt-1.5 text-white/80 whitespace-normal">{d.description}</p>
+        <p className="font-bold text-sm">{icons[key]} {t(`veils.${key}.name`)}</p>
+        <p className="text-white/60 text-[11px]">{hebrewNames[key]}</p>
+        <p className="mt-1.5 text-white/80 whitespace-normal">{t(`veils.${key}.description`)}</p>
         <div className="mt-2 pt-1.5 border-t border-white/10 space-y-0.5">
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Elemento:</span> {d.element}</p>
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Mundo:</span> {d.world}</p>
-          <p className="text-white/70"><span className="text-white/40 text-[10px]">Guardião:</span> {d.guardian}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">{ui('planet')}:</span> {t(`veils.${key}.element`)}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">🌍:</span> {t(`veils.${key}.world`)}</p>
+          <p className="text-white/70"><span className="text-white/40 text-[10px]">🛡:</span> {t(`veils.${key}.guardian`)}</p>
         </div>
-        <div className="mt-2 pt-1.5 border-t border-white/10">
-          <p className="text-white/40 text-[10px] uppercase tracking-wide mb-0.5">Caminhos</p>
-          <p className="text-white/70 text-[11px]">{d.paths.join(', ')}</p>
-        </div>
-        <div className="mt-1"><p className="text-white/40 text-[10px]">Acima: <span className="text-white/70">{d.above.join(', ')}</span></p></div>
-        <div className="mt-0.5"><p className="text-white/40 text-[10px]">Abaixo: <span className="text-white/70">{d.below.join(', ')}</span></p></div>
       </>);
     }
   };
@@ -274,20 +187,20 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
       {/* === SVG decorations === */}
       <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 1 }}>
         {/* Ain Soph Aur */}
-        <text x={width / 2} y={40} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="3">AIN — NADA — 0</text>
-        <text x={width / 2} y={60} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="2.5">AIN SOPH — ILIMITADO — 00</text>
-        <text x={width / 2} y={80} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="2">AIN SOPH AUR — LUZ ILIMITADA — 000</text>
+        <text x={width / 2} y={40} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="3">{t('svgLabels.ain')}</text>
+        <text x={width / 2} y={60} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="2.5">{t('svgLabels.ainSoph')}</text>
+        <text x={width / 2} y={80} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="2">{t('svgLabels.ainSophAur')}</text>
         <text x={width / 2} y={105} textAnchor="middle" fill={col} fontSize="24" opacity="0.7">∞</text>
         <text x={width / 2} y={120} textAnchor="middle" fill={col} fontSize="10" opacity="0.6" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">Jechidah</text>
 
         {/* Veils */}
         {showVeils && <>
           <line x1={60} y1={520} x2={width - 60} y2={520} stroke={col} strokeWidth="1.2" opacity="0.55" strokeDasharray="10 5" />
-          <text x={12} y={516} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">Véu do Abismo</text>
+          <text x={12} y={516} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">{t('svgLabels.veilAbyss')}</text>
           <line x1={60} y1={980} x2={width - 60} y2={980} stroke={col} strokeWidth="1.2" opacity="0.55" strokeDasharray="10 5" />
-          <text x={12} y={976} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">Véu de Parokhet</text>
+          <text x={12} y={976} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">{t('svgLabels.veilParokhet')}</text>
           <line x1={60} y1={1390} x2={width - 60} y2={1390} stroke={col} strokeWidth="1.2" opacity="0.55" strokeDasharray="10 5" />
-          <text x={12} y={1386} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">Véu de Nephesch</text>
+          <text x={12} y={1386} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">{t('svgLabels.veilNephesch')}</text>
         </>}
 
         {/* Pillars */}
@@ -329,8 +242,8 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
           <div className="bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-yellow-400/50 select-text w-[270px]">
             {renderTooltipContent(pinned.id)}
             <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-              <button onClick={() => handleCopy(pinned.id)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">{copiedId === pinned.id ? '✓ Copiado' : '📋 Copiar'}</button>
-              <button onClick={() => unpinOrnament(pinned.id)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">✕ Fechar</button>
+              <button onClick={() => handleCopy(pinned.id)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">{copiedId === pinned.id ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}</button>
+              <button onClick={() => unpinOrnament(pinned.id)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">✕ {ui('close')}</button>
             </div>
           </div>
         </div>
@@ -342,7 +255,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
           <div className="bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-white/10 select-text w-[270px]">
             {renderTooltipContent(hoveredId)}
           </div>
-          <p className="text-center text-[9px] text-white/40 mt-1">clique para fixar</p>
+          <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>
         </div>
       )}
     </div>

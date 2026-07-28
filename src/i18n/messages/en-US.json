@@ -19,55 +19,156 @@
     "clickToPin": "click to pin",
     "copy": "Copy",
     "copied": "Copied!",
-    "close": "Close"
+    "close": "Close",
+    "settings": "Settings",
+    "showVeils": "Show Veils",
+    "showPillars": "Show Pillars",
+    "appearance": "Appearance",
+    "links": "Links",
+    "support": "Support",
+    "donate": "If this project helped you on your journey, consider supporting with any amount via PIX.",
+    "pixKey": "PIX Key (phone):",
+    "clickToCopy": "Click to copy",
+    "donateThank": "Any amount is welcome. Thank you! 🙏",
+    "searchPlaceholder": "Search: ox, moon, heart, ruby...",
+    "matchedOn": "matches",
+    "noResults": "No results for"
   },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Omnipresence" },
     "regent": { "title": "Seraphim", "name": "Metatron", "defect": " " },
-    "sephirot": { "name": "Kether", "valor": "Crown" }
+    "sephirot": { "name": "Kether", "valor": "Crown" },
+    "archetypes": ["God the Father", "Brahma", "The Ancient of Days", "Ein Sof"],
+    "minorArcana": ["Ace of Wands (root of fire)", "Ace of Cups (root of water)", "Ace of Swords (root of air)", "Ace of Pentacles (root of earth)"],
+    "planetName": "Neptune",
+    "correspondences": {
+      "animals": ["swan", "dove", "falcon"],
+      "stones": ["diamond", "rock crystal"],
+      "bodyParts": ["skull", "top of head", "pineal gland"]
+    }
   },
   "chokmah": {
     "world": { "title": "Atziluth", "aspect": "Omnipotence" },
     "regent": { "title": "Cherubim", "name": "Raziel", "defect": "Tyranny" },
-    "sephirot": { "name": "Chokmah", "valor": "Wisdom" }
+    "sephirot": { "name": "Chokmah", "valor": "Wisdom" },
+    "archetypes": ["Zeus", "Odin", "Shiva", "The Celestial Father"],
+    "minorArcana": ["2 of Wands (dominion)", "2 of Cups (love)", "2 of Swords (peace restored)", "2 of Pentacles (harmonious change)"],
+    "planetName": "Uranus",
+    "correspondences": {
+      "animals": ["phallus", "lynx", "condor"],
+      "stones": ["turquoise", "star ruby"],
+      "bodyParts": ["left side of face", "right brain hemisphere"]
+    }
   },
   "binah": {
     "world": { "title": "Briah", "aspect": "Omniscience" },
     "regent": { "title": "Thrones", "name": "Tzafquiel", "defect": "Greed" },
-    "sephirot": { "name": "Binah", "valor": "Understanding" }
+    "sephirot": { "name": "Binah", "valor": "Understanding" },
+    "archetypes": ["Virgin Mary", "Isis", "Kali", "The Great Mother"],
+    "minorArcana": ["3 of Wands (established virtue)", "3 of Cups (abundance)", "3 of Swords (sorrow)", "3 of Pentacles (material work)"],
+    "planetName": "Saturn",
+    "correspondences": {
+      "animals": ["bee", "woman", "owl"],
+      "stones": ["pearl", "sapphire", "star onyx"],
+      "bodyParts": ["right side of face", "left brain hemisphere", "womb"]
+    }
   },
   "daath": {
     "regent": { "title": "", "name": "", "defect": "" },
-    "sephirot": { "name": "Daath", "valor": "Knowledge" }
+    "sephirot": { "name": "Daath", "valor": "Knowledge" },
+    "archetypes": ["The Abyss", "Choronzon", "The Crossing"],
+    "minorArcana": [],
+    "planetName": "Pluto",
+    "correspondences": {
+      "animals": ["serpent", "dragon", "chameleon"],
+      "stones": ["moldavite", "labradorite", "obsidian"],
+      "bodyParts": ["throat", "nape", "neck"]
+    }
   },
   "chesed": {
     "regent": { "title": "Dominions", "name": "Tzadkiel", "defect": "Tyranny" },
-    "sephirot": { "name": "Chesed", "valor": "Mercy" }
+    "sephirot": { "name": "Chesed", "valor": "Mercy" },
+    "archetypes": ["Jupiter", "Poseidon", "Oxalá", "King Solomon"],
+    "minorArcana": ["4 of Wands (completion)", "4 of Cups (luxury)", "4 of Swords (rest)", "4 of Pentacles (earthly power)"],
+    "planetName": "Jupiter",
+    "correspondences": {
+      "animals": ["unicorn", "horse", "eagle"],
+      "stones": ["sapphire", "amethyst", "lapis lazuli"],
+      "bodyParts": ["left arm", "left shoulder"]
+    }
   },
   "gevurah": {
     "regent": { "title": "Powers", "name": "Camael", "defect": "Cruelty" },
-    "sephirot": { "name": "Gevurah", "valor": "Strength" }
+    "sephirot": { "name": "Gevurah", "valor": "Strength" },
+    "archetypes": ["Ares", "Thor", "Ogum", "Durga"],
+    "minorArcana": ["5 of Wands (strife)", "5 of Cups (loss in pleasure)", "5 of Swords (defeat)", "5 of Pentacles (material trouble)"],
+    "planetName": "Mars",
+    "correspondences": {
+      "animals": ["basilisk", "wolf", "warhorse", "scorpion"],
+      "stones": ["ruby", "garnet", "bloodstone"],
+      "bodyParts": ["right arm", "right shoulder"]
+    }
   },
   "tiferet": {
     "regent": { "title": "Virtues", "name": "Raphael", "defect": "Pride" },
-    "sephirot": { "name": "Tiferet", "valor": "Beauty" }
+    "sephirot": { "name": "Tiferet", "valor": "Beauty" },
+    "archetypes": ["Jesus Christ", "Neo (Matrix)", "Osiris", "Oxalá", "Buddha", "Krishna"],
+    "minorArcana": ["6 of Wands (victory)", "6 of Cups (joy)", "6 of Swords (science)", "6 of Pentacles (material success)"],
+    "planetName": "Sun",
+    "correspondences": {
+      "animals": ["lion", "phoenix", "spider", "pelican"],
+      "stones": ["topaz", "yellow diamond", "tiger's eye"],
+      "bodyParts": ["heart", "chest", "solar plexus"]
+    }
   },
   "netzach": {
     "regent": { "title": "Principalities", "name": "Haniel", "defect": "Lust" },
-    "sephirot": { "name": "Netzach", "valor": "Eternity" }
+    "sephirot": { "name": "Netzach", "valor": "Eternity" },
+    "archetypes": ["Aphrodite", "Oxum", "Freya", "Lakshmi"],
+    "minorArcana": ["7 of Wands (valor)", "7 of Cups (illusory success)", "7 of Swords (instability)", "7 of Pentacles (failure)"],
+    "planetName": "Venus",
+    "correspondences": {
+      "animals": ["dove", "lynx", "sparrow", "swan"],
+      "stones": ["emerald", "green tourmaline", "rose quartz"],
+      "bodyParts": ["right hip", "right kidney", "reproductive organs"]
+    }
   },
   "hod": {
     "regent": { "title": "Archangels", "name": "Michael", "defect": "Envy" },
-    "sephirot": { "name": "Hod", "valor": "Glory" }
+    "sephirot": { "name": "Hod", "valor": "Glory" },
+    "archetypes": ["Hermes", "Thoth", "Exu", "Ganesha"],
+    "minorArcana": ["8 of Wands (swiftness)", "8 of Cups (abandoned success)", "8 of Swords (interference)", "8 of Pentacles (prudence)"],
+    "planetName": "Mercury",
+    "correspondences": {
+      "animals": ["monkey", "ibis", "fox", "winged serpent"],
+      "stones": ["opal", "agate", "moonstone"],
+      "bodyParts": ["left hip", "left kidney", "legs"]
+    }
   },
   "yesod": {
     "regent": { "title": "Angels", "name": "Gabriel", "defect": "Laziness" },
-    "sephirot": { "name": "Yesod", "valor": "Foundation" }
+    "sephirot": { "name": "Yesod", "valor": "Foundation" },
+    "archetypes": ["Diana", "Yemanjá", "Selene", "The Unconscious"],
+    "minorArcana": ["9 of Wands (great strength)", "9 of Cups (material happiness)", "9 of Swords (cruelty)", "9 of Pentacles (material gain)"],
+    "planetName": "Moon",
+    "correspondences": {
+      "animals": ["elephant", "hare", "toad", "dolphin"],
+      "stones": ["quartz", "selenite", "moonstone"],
+      "bodyParts": ["genitals", "reproductive system", "bladder"]
+    }
   },
   "malkuth": {
     "world": { "title": "Assiah", "aspect": "Material World" },
     "regent": { "title": "Cherubim", "name": "Sandalphon", "defect": "" },
-    "sephirot": { "name": "Malkuth", "valor": "Kingdom" }
+    "sephirot": { "name": "Malkuth", "valor": "Kingdom" },
+    "archetypes": ["Gaia", "Persephone", "The Bride", "Nanã"],
+    "minorArcana": ["10 of Wands (oppression)", "10 of Cups (satiety)", "10 of Swords (ruin)", "10 of Pentacles (wealth)"],
+    "planetName": "Earth",
+    "correspondences": {
+      "animals": ["ox", "sphinx", "cow", "bull"],
+      "stones": ["rock crystal", "onyx", "sea salt"],
+      "bodyParts": ["feet", "anus", "entire body"]
+    }
   },
   "paths": {
     "11": { "arcane": "0 - The Fool", "meaning": "Air / Spirit" },
@@ -92,5 +193,82 @@
     "30": { "arcane": "XIX - The Sun", "meaning": "Sun" },
     "31": { "arcane": "XX - Judgement", "meaning": "Fire" },
     "32": { "arcane": "XXI - The World", "meaning": "Saturn" }
+  },
+  "ornaments": {
+    "veils": {
+      "abyss": {
+        "name": "Veil of the Abyss",
+        "description": "Separates the Supernal Triad (the Unknowable Divine) from the rest of the Tree. Crossing it requires the complete dissolution of the ego.",
+        "element": "Air",
+        "world": "Border Atziluth → Briah",
+        "guardian": "Choronzon (333)"
+      },
+      "parokhet": {
+        "name": "Veil of Parokhet",
+        "description": "The veil of the Inner Temple. Separates the Higher Self (conscious soul) from the astral world. It is the portal of initiation.",
+        "element": "Fire",
+        "world": "Border Briah → Yetzirah",
+        "guardian": "Raphael (Tiferet)"
+      },
+      "nephesch": {
+        "name": "Veil of Nephesch",
+        "description": "The Rainbow that separates the astral world (unconscious) from the physical world. It is the boundary between dream and matter.",
+        "element": "Earth",
+        "world": "Border Yetzirah → Assiah",
+        "guardian": "Gabriel (Yesod)"
+      }
+    },
+    "pillars": {
+      "boaz": {
+        "name": "Pillar of Severity",
+        "side": "Left",
+        "element": "Water",
+        "gender": "Feminine",
+        "description": "The Pillar of Severity represents the restrictive force, form, discipline, and divine rigor. It is the feminine, passive, and receptive pillar.",
+        "principle": "Contraction, Form, Judgment"
+      },
+      "jachin": {
+        "name": "Pillar of Mercy",
+        "side": "Right",
+        "element": "Fire",
+        "gender": "Masculine",
+        "description": "The Pillar of Mercy represents the expansive force, energy, compassion, and divine grace. It is the masculine, active, and projective pillar.",
+        "principle": "Expansion, Force, Grace"
+      }
+    },
+    "ainSoph": {
+      "ain": {
+        "name": "Ain",
+        "subtitle": "Nothing",
+        "description": "The Absolute Nothing — the primordial state prior to any manifestation. In the Golden Dawn tradition, Ain represents Pure Negativity, the inconceivable Void that precedes even potentiality.",
+        "goldenDawn": "The first veil of negative existence. Ain is described in Golden Dawn documents as that which completely transcends human comprehension — neither being nor non-being, but the state that precedes both.",
+        "principle": "Absolute Negativity — beyond existence and non-existence",
+        "relation": "Precedes Ain Soph — the inconceivable root of the Limitless"
+      },
+      "ainSoph": {
+        "name": "Ain Soph",
+        "subtitle": "Limitless",
+        "description": "The Limitless — infinite expansion without form, measure, or attribute. In the Golden Dawn, Ain Soph represents the second negative abstraction: the infinite potential containing all possibilities but manifesting none.",
+        "goldenDawn": "The second veil of negative existence. Mathers and Westcott describe Ain Soph as limitless extension — without beginning, end, or direction. It is the concept of pure infinitude before the Light concentrates.",
+        "principle": "Infinitude without attribute — pure unmanifested potential",
+        "relation": "Between Ain and Ain Soph Aur — the infinite preceding the Light"
+      },
+      "ainSophAur": {
+        "name": "Ain Soph Aur",
+        "subtitle": "Limitless Light",
+        "description": "The Limitless Light — the first irradiation of the Infinite, the primordial creative impulse. In the Golden Dawn, it represents the moment the Absolute decides to emanate: the Light concentrates into a point (Kether) and the Tree of Life is born.",
+        "goldenDawn": "The third veil of negative existence. Golden Dawn rituals teach that Ain Soph Aur is the Limitless Light that concentrates into a single point — forming Kether, the Crown. This is the Tzimtzum of Lurianic Kabbalah: the contraction that allows creation.",
+        "principle": "Primordial Light — the first impulse of manifestation",
+        "relation": "Directly precedes Kether — the source of the first Sephirah"
+      }
+    },
+    "svgLabels": {
+      "ain": "AIN — NOTHING — 0",
+      "ainSoph": "AIN SOPH — LIMITLESS — 00",
+      "ainSophAur": "AIN SOPH AUR — LIMITLESS LIGHT — 000",
+      "veilAbyss": "Veil of the Abyss",
+      "veilParokhet": "Veil of Parokhet",
+      "veilNephesch": "Veil of Nephesch"
+    }
   }
 }
