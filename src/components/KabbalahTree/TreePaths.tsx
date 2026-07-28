@@ -126,7 +126,7 @@ export default function TreePaths({ positions, width, height }: Props) {
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const length = Math.sqrt(dx * dx + dy * dy);
-    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    const angle = Math.round(Math.atan2(dy, dx) * (180 / Math.PI) * 1000) / 1000;
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
 
@@ -194,7 +194,7 @@ export default function TreePaths({ positions, width, height }: Props) {
     const dx = to.x - from.x;
     const dy = to.y - from.y;
     const length = Math.sqrt(dx * dx + dy * dy);
-    const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+    const angle = Math.round(Math.atan2(dy, dx) * (180 / Math.PI) * 1000) / 1000;
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
 
@@ -307,7 +307,7 @@ export default function TreePaths({ positions, width, height }: Props) {
           const dx = to.x - from.x;
           const dy = to.y - from.y;
           const length = Math.sqrt(dx * dx + dy * dy);
-          const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+          const angle = Math.round(Math.atan2(dy, dx) * (180 / Math.PI) * 1000) / 1000;
           const midX = (from.x + to.x) / 2;
           const midY = (from.y + to.y) / 2;
           const nodeRadius = 72;
