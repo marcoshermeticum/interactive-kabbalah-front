@@ -19,6 +19,7 @@ interface Props {
 export default function Sephirot({ data, size = 160, translated }: Props) {
   const { colors } = data;
   const ui = useTranslations('ui');
+  const sephT = useTranslations(data.name.toLowerCase());
 
   const name = translated?.name || data.name;
   const valor = translated?.valor || data.valor;
@@ -28,6 +29,35 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
   const worldTitle = translated?.world?.title || data.world?.title;
   const worldAspect = translated?.world?.aspect || data.world?.aspect;
 
+  // Read archetypes and minorArcana from translations (falls back to data)
+  let archetypes: string[] = data.archetypes;
+  let minorArcana: string[] = data.minorArcana;
+  let planetName = data.planetName;
+  let corrAnimals: string[] = [];
+  let corrStones: string[] = [];
+  let corrBodyParts: string[] = [];
+
+  try {
+    const rawArch = sephT.raw('archetypes');
+    if (Array.isArray(rawArch)) archetypes = rawArch;
+  } catch { /* fallback to data */ }
+  try {
+    const rawMinor = sephT.raw('minorArcana');
+    if (Array.isArray(rawMinor)) minorArcana = rawMinor;
+  } catch { /* fallback to data */ }
+  try {
+    const rawPlanet = sephT.raw('planetName');
+    if (typeof rawPlanet === 'string') planetName = rawPlanet;
+  } catch { /* fallback to data */ }
+  try {
+    const rawCorr = sephT.raw('correspondences') as { animals?: string[]; stones?: string[]; bodyParts?: string[] } | undefined;
+    if (rawCorr) {
+      if (Array.isArray(rawCorr.animals)) corrAnimals = rawCorr.animals;
+      if (Array.isArray(rawCorr.stones)) corrStones = rawCorr.stones;
+      if (Array.isArray(rawCorr.bodyParts)) corrBodyParts = rawCorr.bodyParts;
+    }
+  } catch { /* fallback — will use correspondences.ts data below */ }
+
   const cx = 250;
   const cy = 250;
   const uid = `s-${data.name.toLowerCase()}`;
@@ -36,7 +66,7 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
     <>
       <p className="font-bold text-sm">{name} — {data.number}</p>
       <p className="text-white/80">{valor}</p>
-      <p className="mt-1">{data.icon} ({data.planetName})</p>
+      <p className="mt-1">{data.icon} ({planetName})</p>
       {regentTitle && regentName && (
         <p className="mt-1">🔱 {regentTitle} — {regentName}</p>
       )}
@@ -45,17 +75,17 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
       )}
       {worldTitle && <p className="mt-1 text-blue-300">🌍 {worldTitle}</p>}
       {worldAspect && <p className="text-blue-200">{worldAspect}</p>}
-      {data.archetypes.length > 0 && (
+      {archetypes.length > 0 && (
         <div className="mt-2 pt-1 border-t border-white/10">
           <p className="text-white/60 text-[10px] uppercase tracking-wide">{ui('archetypes')}</p>
-          <p className="text-white/90">{data.archetypes.join(', ')}</p>
+          <p className="text-white/90">{archetypes.join(', ')}</p>
         </div>
       )}
-      {data.minorArcana.length > 0 && (
+      {minorArcana.length > 0 && (
         <div className="mt-2 pt-1 border-t border-white/10">
           <p className="text-white/60 text-[10px] uppercase tracking-wide">{ui('minorArcana')}</p>
           <ul className="mt-0.5 space-y-0.5">
-            {data.minorArcana.map((a, i) => (
+            {minorArcana.map((a, i) => (
               <li key={i} className="text-white/80">🃏 {a}</li>
             ))}
           </ul>
@@ -64,12 +94,16 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
       {/* Correspondences */}
       {(() => {
         const corr = sephirotCorrespondences[data.name.toLowerCase()];
-        if (!corr) return null;
+        // Use translated correspondences if available, otherwise fall back to data file
+        const animals = corrAnimals.length > 0 ? corrAnimals : (corr?.animals || []);
+        const stones = corrStones.length > 0 ? corrStones : (corr?.stones || []);
+        const bodyParts = corrBodyParts.length > 0 ? corrBodyParts : (corr?.bodyParts || []);
+        if (animals.length === 0 && stones.length === 0 && bodyParts.length === 0) return null;
         return (
           <div className="mt-2 pt-1 border-t border-white/10 space-y-1">
-            {corr.animals.length > 0 && <p className="text-white/80">🐾 {corr.animals.join(', ')}</p>}
-            {corr.stones.length > 0 && <p className="text-white/80">💎 {corr.stones.join(', ')}</p>}
-            {corr.bodyParts.length > 0 && <p className="text-white/80">🫀 {corr.bodyParts.join(', ')}</p>}
+            {animals.length > 0 && <p className="text-white/80">🐾 {animals.join(', ')}</p>}
+            {stones.length > 0 && <p className="text-white/80">💎 {stones.join(', ')}</p>}
+            {bodyParts.length > 0 && <p className="text-white/80">🫀 {bodyParts.join(', ')}</p>}
           </div>
         );
       })()}

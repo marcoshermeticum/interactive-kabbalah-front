@@ -19,55 +19,156 @@
     "clickToPin": "clique para fixar",
     "copy": "Copiar",
     "copied": "Copiado!",
-    "close": "Fechar"
+    "close": "Fechar",
+    "settings": "Configurações",
+    "showVeils": "Exibir Véus",
+    "showPillars": "Exibir Pilares",
+    "appearance": "Aparência",
+    "links": "Redes & Links",
+    "support": "Apoiar",
+    "donate": "Se este projeto te ajudou na jornada, considere apoiar com qualquer valor via PIX.",
+    "pixKey": "Chave PIX (telefone):",
+    "clickToCopy": "Clique para copiar",
+    "donateThank": "Qualquer valor é bem-vindo. Obrigado! 🙏",
+    "searchPlaceholder": "Buscar: boi, lua, coração, rubi...",
+    "matchedOn": "corresponde a",
+    "noResults": "Nenhum resultado para"
   },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Onipresença" },
     "regent": { "title": "Serafins", "name": "Metatron", "defect": " " },
-    "sephirot": { "name": "Kether", "valor": "Coroa" }
+    "sephirot": { "name": "Kether", "valor": "Coroa" },
+    "archetypes": ["Deus Pai", "Brahma", "O Ancião dos Dias", "Ein Sof"],
+    "minorArcana": ["Ás de Paus (raiz do fogo)", "Ás de Copas (raiz da água)", "Ás de Espadas (raiz do ar)", "Ás de Ouros (raiz da terra)"],
+    "planetName": "Netuno",
+    "correspondences": {
+      "animals": ["cisne", "pomba", "falcão"],
+      "stones": ["diamante", "cristal de rocha"],
+      "bodyParts": ["crânio", "topo da cabeça", "glândula pineal"]
+    }
   },
   "chokmah": {
     "world": { "title": "Atziluth", "aspect": "Onipotência" },
     "regent": { "title": "Querubins", "name": "Raziel", "defect": "Tirania" },
-    "sephirot": { "name": "Chokmah", "valor": "Sabedoria" }
+    "sephirot": { "name": "Chokmah", "valor": "Sabedoria" },
+    "archetypes": ["Zeus", "Odin", "Shiva", "O Pai Celestial"],
+    "minorArcana": ["2 de Paus (domínio)", "2 de Copas (amor)", "2 de Espadas (paz restaurada)", "2 de Ouros (mudança harmoniosa)"],
+    "planetName": "Urano",
+    "correspondences": {
+      "animals": ["falo", "lince", "condor"],
+      "stones": ["turquesa", "estrela rubi"],
+      "bodyParts": ["lado esquerdo do rosto", "hemisfério direito do cérebro"]
+    }
   },
   "binah": {
     "world": { "title": "Briah", "aspect": "Onisciência" },
     "regent": { "title": "Tronos", "name": "Tzafquiel", "defect": "Avareza" },
-    "sephirot": { "name": "Binah", "valor": "Entendimento" }
+    "sephirot": { "name": "Binah", "valor": "Entendimento" },
+    "archetypes": ["Virgem Maria", "Ísis", "Kali", "A Grande Mãe"],
+    "minorArcana": ["3 de Paus (virtude estabelecida)", "3 de Copas (abundância)", "3 de Espadas (tristeza)", "3 de Ouros (trabalho material)"],
+    "planetName": "Saturno",
+    "correspondences": {
+      "animals": ["abelha", "mulher", "coruja"],
+      "stones": ["pérola", "safira", "ônix estrela"],
+      "bodyParts": ["lado direito do rosto", "hemisfério esquerdo do cérebro", "útero"]
+    }
   },
   "daath": {
     "regent": { "title": "", "name": "", "defect": "" },
-    "sephirot": { "name": "Daath", "valor": "Conhecimento" }
+    "sephirot": { "name": "Daath", "valor": "Conhecimento" },
+    "archetypes": ["O Abismo", "Choronzon", "A Travessia"],
+    "minorArcana": [],
+    "planetName": "Plutão",
+    "correspondences": {
+      "animals": ["serpente", "dragão", "camaleão"],
+      "stones": ["moldavita", "labradorita", "obsidiana"],
+      "bodyParts": ["garganta", "nuca", "pescoço"]
+    }
   },
   "chesed": {
     "regent": { "title": "Dominações", "name": "Tzadkiel", "defect": "Tirania" },
-    "sephirot": { "name": "Chesed", "valor": "Misericórdia" }
+    "sephirot": { "name": "Chesed", "valor": "Misericórdia" },
+    "archetypes": ["Júpiter", "Poseidon", "Oxalá", "Rei Salomão"],
+    "minorArcana": ["4 de Paus (conclusão)", "4 de Copas (luxúria)", "4 de Espadas (repouso)", "4 de Ouros (poder terreno)"],
+    "planetName": "Júpiter",
+    "correspondences": {
+      "animals": ["unicórnio", "cavalo", "águia"],
+      "stones": ["safira", "ametista", "lápis-lazúli"],
+      "bodyParts": ["braço esquerdo", "ombro esquerdo"]
+    }
   },
   "gevurah": {
     "regent": { "title": "Potestades", "name": "Camael", "defect": "Ira" },
-    "sephirot": { "name": "Gevurah", "valor": "Força" }
+    "sephirot": { "name": "Gevurah", "valor": "Força" },
+    "archetypes": ["Ares", "Thor", "Ogum", "Durga"],
+    "minorArcana": ["5 de Paus (conflito)", "5 de Copas (perda no prazer)", "5 de Espadas (derrota)", "5 de Ouros (preocupação material)"],
+    "planetName": "Marte",
+    "correspondences": {
+      "animals": ["basilisco", "lobo", "cavalo de guerra", "escorpião"],
+      "stones": ["rubi", "granada", "pedra de sangue"],
+      "bodyParts": ["braço direito", "ombro direito"]
+    }
   },
   "tiferet": {
     "regent": { "title": "Virtudes", "name": "Raphael", "defect": "Orgulho" },
-    "sephirot": { "name": "Tiferet", "valor": "Beleza" }
+    "sephirot": { "name": "Tiferet", "valor": "Beleza" },
+    "archetypes": ["Jesus Cristo", "Neo (Matrix)", "Osíris", "Oxalá", "Buda", "Krishna"],
+    "minorArcana": ["6 de Paus (vitória)", "6 de Copas (alegria)", "6 de Espadas (ciência)", "6 de Ouros (sucesso material)"],
+    "planetName": "Sol",
+    "correspondences": {
+      "animals": ["leão", "fênix", "aranha", "pelicano"],
+      "stones": ["topázio", "diamante amarelo", "olho de tigre"],
+      "bodyParts": ["coração", "peito", "plexo solar"]
+    }
   },
   "netzach": {
     "regent": { "title": "Principados", "name": "Haniel", "defect": "Luxúria" },
-    "sephirot": { "name": "Netzach", "valor": "Eternidade" }
+    "sephirot": { "name": "Netzach", "valor": "Eternidade" },
+    "archetypes": ["Afrodite", "Oxum", "Freya", "Lakshmi"],
+    "minorArcana": ["7 de Paus (valor)", "7 de Copas (sucesso ilusório)", "7 de Espadas (instabilidade)", "7 de Ouros (fracasso)"],
+    "planetName": "Vênus",
+    "correspondences": {
+      "animals": ["pomba", "lince", "pardal", "cisne"],
+      "stones": ["esmeralda", "turmalina verde", "quartzo rosa"],
+      "bodyParts": ["quadril direito", "rim direito", "órgãos reprodutores"]
+    }
   },
   "hod": {
     "regent": { "title": "Arcanjos", "name": "Michael", "defect": "Inveja" },
-    "sephirot": { "name": "Hod", "valor": "Glória" }
+    "sephirot": { "name": "Hod", "valor": "Glória" },
+    "archetypes": ["Hermes", "Thoth", "Exu", "Ganesha"],
+    "minorArcana": ["8 de Paus (rapidez)", "8 de Copas (sucesso abandonado)", "8 de Espadas (interferência)", "8 de Ouros (prudência)"],
+    "planetName": "Mercúrio",
+    "correspondences": {
+      "animals": ["macaco", "íbis", "raposa", "serpente com asas"],
+      "stones": ["opala", "ágata", "pedra da lua"],
+      "bodyParts": ["quadril esquerdo", "rim esquerdo", "pernas"]
+    }
   },
   "yesod": {
     "regent": { "title": "Anjos", "name": "Gabriel", "defect": "Preguiça" },
-    "sephirot": { "name": "Yesod", "valor": "Fundação" }
+    "sephirot": { "name": "Yesod", "valor": "Fundação" },
+    "archetypes": ["Diana", "Iemanjá", "Selene", "O Inconsciente"],
+    "minorArcana": ["9 de Paus (grande força)", "9 de Copas (felicidade material)", "9 de Espadas (crueldade)", "9 de Ouros (ganho material)"],
+    "planetName": "Lua",
+    "correspondences": {
+      "animals": ["elefante", "lebre", "sapo", "golfinho"],
+      "stones": ["quartzo", "selenita", "pedra da lua"],
+      "bodyParts": ["genitais", "sistema reprodutor", "bexiga"]
+    }
   },
   "malkuth": {
     "world": { "title": "Assiah", "aspect": "Mundo Material" },
     "regent": { "title": "Querubins", "name": "Sandalfon", "defect": "" },
-    "sephirot": { "name": "Malkuth", "valor": "Reino" }
+    "sephirot": { "name": "Malkuth", "valor": "Reino" },
+    "archetypes": ["Gaia", "Perséfone", "A Noiva", "Nanã"],
+    "minorArcana": ["10 de Paus (opressão)", "10 de Copas (saciedade)", "10 de Espadas (ruína)", "10 de Ouros (riqueza)"],
+    "planetName": "Terra",
+    "correspondences": {
+      "animals": ["boi", "esfinge", "vaca", "touro"],
+      "stones": ["cristal de rocha", "ônix", "sal marinho"],
+      "bodyParts": ["pés", "ânus", "corpo inteiro"]
+    }
   },
   "paths": {
     "11": { "arcane": "0 - O Louco", "meaning": "Ar / Espírito" },
@@ -92,5 +193,82 @@
     "30": { "arcane": "XIX - O Sol", "meaning": "Sol" },
     "31": { "arcane": "XX - O Julgamento", "meaning": "Fogo" },
     "32": { "arcane": "XXI - O Mundo", "meaning": "Saturno" }
+  },
+  "ornaments": {
+    "veils": {
+      "abyss": {
+        "name": "Véu do Abismo",
+        "description": "Separa a Tríade Superna (o Divino Incognoscível) do restante da Árvore. Cruzá-lo requer a dissolução completa do ego.",
+        "element": "Ar",
+        "world": "Fronteira Atziluth → Briah",
+        "guardian": "Choronzon (333)"
+      },
+      "parokhet": {
+        "name": "Véu de Parokhet",
+        "description": "O véu do Templo Interior. Separa o Eu Superior (alma consciente) do mundo astral. É o portal da iniciação.",
+        "element": "Fogo",
+        "world": "Fronteira Briah → Yetzirah",
+        "guardian": "Raphael (Tiferet)"
+      },
+      "nephesch": {
+        "name": "Véu de Nephesch",
+        "description": "O Arco-íris que separa o mundo astral (inconsciente) do mundo físico. É a fronteira entre o sonho e a matéria.",
+        "element": "Terra",
+        "world": "Fronteira Yetzirah → Assiah",
+        "guardian": "Gabriel (Yesod)"
+      }
+    },
+    "pillars": {
+      "boaz": {
+        "name": "Pilar da Severidade",
+        "side": "Esquerdo",
+        "element": "Água",
+        "gender": "Feminino",
+        "description": "O Pilar da Severidade representa a força restritiva, a forma, a disciplina e o rigor divino. É o pilar feminino, passivo e receptivo.",
+        "principle": "Contração, Forma, Julgamento"
+      },
+      "jachin": {
+        "name": "Pilar da Misericórdia",
+        "side": "Direito",
+        "element": "Fogo",
+        "gender": "Masculino",
+        "description": "O Pilar da Misericórdia representa a força expansiva, a energia, a compaixão e a graça divina. É o pilar masculino, ativo e projetivo.",
+        "principle": "Expansão, Força, Graça"
+      }
+    },
+    "ainSoph": {
+      "ain": {
+        "name": "Ain",
+        "subtitle": "Nada",
+        "description": "O Nada Absoluto — o estado primordial anterior a qualquer manifestação. Na tradição da Golden Dawn, Ain representa a Negatividade Pura, o Vazio inconcebível que precede até mesmo a potencialidade.",
+        "goldenDawn": "O primeiro véu da existência negativa. Ain é descrito nos documentos da Golden Dawn como aquilo que transcende completamente a compreensão humana — nem ser nem não-ser, mas o estado que precede ambos.",
+        "principle": "Negatividade Absoluta — além da existência e da não-existência",
+        "relation": "Precede Ain Soph — a raiz inconcebível do Ilimitado"
+      },
+      "ainSoph": {
+        "name": "Ain Soph",
+        "subtitle": "Ilimitado",
+        "description": "O Ilimitado — expansão infinita sem forma, medida ou atributo. Na Golden Dawn, Ain Soph representa a segunda abstração negativa: o potencial infinito contendo todas as possibilidades mas não manifestando nenhuma.",
+        "goldenDawn": "O segundo véu da existência negativa. Mathers e Westcott descrevem Ain Soph como extensão ilimitada — sem início, fim ou direção. É o conceito de infinitude pura antes que a Luz se concentre.",
+        "principle": "Infinitude sem atributo — puro potencial não manifestado",
+        "relation": "Entre Ain e Ain Soph Aur — o infinito que precede a Luz"
+      },
+      "ainSophAur": {
+        "name": "Ain Soph Aur",
+        "subtitle": "Luz Ilimitada",
+        "description": "A Luz Ilimitada — a primeira irradiação do Infinito, o impulso criativo primordial. Na Golden Dawn, representa o momento em que o Absoluto decide emanar: a Luz se concentra em um ponto (Kether) e a Árvore da Vida nasce.",
+        "goldenDawn": "O terceiro véu da existência negativa. Os rituais da Golden Dawn ensinam que Ain Soph Aur é a Luz Ilimitada que se concentra em um único ponto — formando Kether, a Coroa. Este é o Tzimtzum da Cabala Luriana: a contração que permite a criação.",
+        "principle": "Luz Primordial — o primeiro impulso de manifestação",
+        "relation": "Precede diretamente Kether — a fonte da primeira Sephirah"
+      }
+    },
+    "svgLabels": {
+      "ain": "AIN — NADA — 0",
+      "ainSoph": "AIN SOPH — ILIMITADO — 00",
+      "ainSophAur": "AIN SOPH AUR — LUZ ILIMITADA — 000",
+      "veilAbyss": "Véu do Abismo",
+      "veilParokhet": "Véu de Parokhet",
+      "veilNephesch": "Véu de Nephesch"
+    }
   }
 }

@@ -221,3 +221,74 @@ test.describe('Desktop', () => {
     await expect(page.locator('nav button.bg-red-900\\/40')).toBeVisible();
   });
 });
+
+test.describe('i18n', () => {
+  test.use({ viewport: { width: 1440, height: 900 } });
+
+  test('all locales load and display translated UI + ornaments', async ({ page }) => {
+    // ── pt-BR (default) ──
+    await page.goto('/pt-BR');
+    await page.waitForSelector('[data-sephirot-id]', { timeout: 10000 });
+    await expect(page.locator('text=Vida')).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('lang', 'pt-BR');
+    // Veil label should be in Portuguese
+    await expect(page.locator('text=Véu do Abismo')).toBeVisible();
+
+    // ── en-US ──
+    await page.goto('/en-US');
+    await page.waitForSelector('[data-sephirot-id]', { timeout: 10000 });
+    await expect(page.locator('text=Life')).toBeVisible();
+    // Veil label in English
+    await expect(page.locator('text=Veil of the Abyss')).toBeVisible();
+    // Ain Soph label in English
+    await expect(page.locator('text=AIN SOPH — LIMITLESS — 00')).toBeVisible();
+
+    // ── ja ──
+    await page.goto('/ja');
+    await page.waitForSelector('[data-sephirot-id]', { timeout: 10000 });
+    await expect(page.locator('text=生命')).toBeVisible();
+    await expect(page.locator('text=深淵のヴェール')).toBeVisible();
+
+    // ── he (RTL) ──
+    await page.goto('/he');
+    await page.waitForSelector('[data-sephirot-id]', { timeout: 10000 });
+    await expect(page.locator('text=חיים')).toBeVisible();
+    await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
+    await expect(page.locator('text=מסך התהום')).toBeVisible();
+  });
+
+  test('sephirot tooltip content is fully translated per locale', async ({ page }) => {
+    // English: hover Kether → should show translated planet, correspondences, archetypes
+    await page.goto('/en-US');
+    await page.waitForSelector('[data-sephirot-id="kether"]', { timeout: 10000 });
+    await page.locator('[data-sephirot-id="kether"]').hover();
+    await page.waitForTimeout(300);
+    const tooltip = page.locator('.bg-gray-900\\/95:has-text("Crown")');
+    await expect(tooltip).toBeVisible();
+    // Planet translated
+    await expect(tooltip).toContainText('Neptune');
+    // Archetypes translated
+    await expect(tooltip).toContainText('Ancient of Days');
+    // Minor Arcana translated
+    await expect(tooltip).toContainText('Ace of Wands');
+    // Correspondences translated (not Portuguese)
+    await expect(tooltip).toContainText('swan');
+    await expect(tooltip).toContainText('diamond');
+    await expect(tooltip).toContainText('skull');
+  });
+
+  test('language selector switches locale', async ({ page }) => {
+    await page.goto('/pt-BR');
+    await page.waitForSelector('[data-sephirot-id]', { timeout: 10000 });
+
+    // Switch to English
+    await page.locator('select[aria-label="Select Language"]').selectOption('en-US');
+    await page.waitForSelector('text=Life', { timeout: 5000 });
+    expect(page.url()).toContain('/en-US');
+
+    // Switch to Japanese
+    await page.locator('select[aria-label="Select Language"]').selectOption('ja');
+    await page.waitForSelector('text=生命', { timeout: 5000 });
+    expect(page.url()).toContain('/ja');
+  });
+});
