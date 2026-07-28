@@ -201,11 +201,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     }
 
     const onPointerDown = (e: PointerEvent) => {
-      // On mouse (desktop): skip capture for interactive elements so click fires
-      // On touch (mobile): always capture — we use a movement threshold to
-      // distinguish between tap (click on element) and drag (pan canvas)
       const target = e.target as Element;
-      const isTouch = e.pointerType === 'touch';
       const isOnInteractive = !!(
         target.closest('[data-tooltip-container]') ||
         target.closest('button') ||
@@ -216,16 +212,24 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
       );
       const isOnClickable = !!target.closest('.cursor-pointer');
 
-      // Desktop mouse: skip for interactive elements (so click propagates)
-      if (!isTouch && (isOnInteractive || isOnClickable)) {
+      // For inputs/selects, don't capture — they need native focus
+      if (target.closest('input') || target.closest('select')) {
         return;
       }
 
+      // Always capture pointer for panning — we distinguish click vs drag
+      // via movement threshold (same approach for both touch and mouse)
       pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
       container.setPointerCapture(e.pointerId);
 
+      // Prevent native click on interactive elements — we'll dispatch it
+      // ourselves on pointerUp if the user didn't drag
+      if (isOnInteractive || isOnClickable) {
+        e.preventDefault();
+      }
+
       if (pointers.current.size === 1) {
-        isPanning.current = false; // Don't pan yet — wait for movement
+        isPanning.current = false;
         panStart.current = {
           x: e.clientX - transform.current.x,
           y: e.clientY - transform.current.y,
@@ -234,9 +238,8 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
         dragStartedOnInteractive.current = isOnInteractive || isOnClickable;
         hasMoved.current = false;
       } else if (pointers.current.size === 2) {
-        // Switch to pinch immediately
         isPanning.current = false;
-        hasMoved.current = true; // Pinch always counts as movement
+        hasMoved.current = true;
         const pts = Array.from(pointers.current.values());
         lastPinchDist.current = getDistance(pts[0], pts[1]);
         lastPinchMid.current = getMidpoint(pts[0], pts[1]);
@@ -307,16 +310,17 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
       container.releasePointerCapture(e.pointerId);
 
       if (pointers.current.size === 0) {
-        // If touch started on interactive element and didn't move — fire click
-        if (!hasMoved.current && dragStartedOnInteractive.current && e.pointerType === 'touch') {
+        // If started on interactive element and didn't move — fire click
+        // Works for both touch and mouse (since we now capture all pointers)
+        if (!hasMoved.current && dragStartedOnInteractive.current) {
           const target = document.elementFromPoint(e.clientX, e.clientY);
           if (target) {
-            // Dispatch a click at the touch point
             target.dispatchEvent(new MouseEvent('click', {
               bubbles: true,
               cancelable: true,
               clientX: e.clientX,
               clientY: e.clientY,
+              view: window,
             }));
           }
         }
