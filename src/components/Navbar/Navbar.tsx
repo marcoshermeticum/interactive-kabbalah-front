@@ -197,8 +197,8 @@ export default function Navbar({
                 >
                   <span className="text-lg">❤️</span>
                   <div className="text-left">
-                    <span className="block font-medium">Buy me a therapy session</span>
-                    <span className="text-[11px] text-amber-300/60">PIX • Qualquer valor</span>
+                    <span className="block font-medium">Buy me a coffee ☕</span>
+                    <span className="text-[11px] text-amber-300/60">PIX</span>
                   </div>
                 </button>
               </div>
@@ -296,7 +296,7 @@ function DonationPanel({ onClose }: { onClose: () => void }) {
   return (
     <div className="absolute top-14 right-4 z-[600] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-5 w-[280px]">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Buy me a therapy session 🧘</h3>
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Buy me a coffee ☕</h3>
         <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm">✕</button>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">Se este projeto te ajudou na jornada, considere apoiar com qualquer valor via PIX.</p>
