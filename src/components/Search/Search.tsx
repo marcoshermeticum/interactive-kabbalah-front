@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import { useTranslations } from 'next-intl';
 import { searchAll, SearchResult } from '@/data/searchIndex';
+import { SigilImage } from '@/components/Search/SigilImage';
 
 interface Props {
   onSelectResult?: (result: SearchResult) => void;
@@ -15,6 +16,7 @@ const typeIcons: Record<string, string> = {
   tunnel: '🕳️',
   veil: '🪬',
   pillar: '🏛️',
+  daemon: '🜏',
 };
 
 export default function Search({ onSelectResult }: Props) {
@@ -66,7 +68,14 @@ export default function Search({ onSelectResult }: Props) {
                     setQuery('');
                   }}
                 >
-                  <span className="text-lg">{typeIcons[r.type] || '🔍'}</span>
+                  {r.sigilUrl ? (
+                    <span className="shrink-0 w-9 sm:w-10 flex items-center justify-center">
+                      <span className="hidden sm:block"><SigilImage url={r.sigilUrl} alt={r.name} size={32} /></span>
+                      <span className="block sm:hidden"><SigilImage url={r.sigilUrl} alt={r.name} size={28} /></span>
+                    </span>
+                  ) : (
+                    <span className="text-lg">{typeIcons[r.type] || '🔍'}</span>
+                  )}
                   <div className="min-w-0 flex-1">
                     <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{r.name}</p>
                     <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -75,6 +84,7 @@ export default function Search({ onSelectResult }: Props) {
                         r.type === 'qliphah' ? 'Qliphah' :
                         r.type === 'path' ? ui('path') :
                         r.type === 'tunnel' ? ui('tunnel') :
+                        r.type === 'daemon' ? 'Daemon' :
                         r.type === 'veil' ? '🪬' :
                         '🏛️'
                       }</span>

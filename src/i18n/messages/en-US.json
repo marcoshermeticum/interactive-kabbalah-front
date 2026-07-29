@@ -32,7 +32,12 @@
     "donateThank": "Any amount is welcome. Thank you! 🙏",
     "searchPlaceholder": "Search: ox, moon, heart, ruby...",
     "matchedOn": "matches",
-    "noResults": "No results for"
+    "noResults": "No results for",
+    "integration": "Integration",
+    "dailyLife": "Daily Life",
+    "notifications": "Notifications",
+    "seeMore": "See more",
+    "seeLess": "See less"
   },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Omnipresence" },
@@ -269,6 +274,72 @@
       "veilAbyss": "Veil of the Abyss",
       "veilParokhet": "Veil of Parokhet",
       "veilNephesch": "Veil of Nephesch"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "guideTitle": "Orientation Guide",
+    "guideDescription": "Learn how to use the Tree of Life as a self-knowledge tool",
+    "guide": {
+      "title": "New: Orientation Guide",
+      "description": "A guide for interpreting the Tree of Life in a non-dualistic way"
+    }
+  },
+  "guide": {
+    "title": "Orientation Guide",
+    "purposeHeading": "Purpose",
+    "purpose": "The Tree of Life is a tool for personal self-knowledge and inner exploration. It is not a system of moral or religious judgment, nor does it prescribe what is right or wrong. Each sphere and path represents an aspect of human experience that can be recognized, understood, and integrated. Use it as a mirror for reflection, not as a rulebook for behavior.",
+    "interpretationHeading": "Non-Dualistic Interpretation",
+    "interpretation": "In this application, the Sefirot and the Qliphoth are not presented as opposing forces of good and evil. They represent spectrums of experience — balanced and imbalanced expressions of the same energies. The Qliphoth are understood as shadow aspects, rejected parts of the psyche, or stagnant creative potential waiting to be recognized. This perspective follows the tradition of psychological and transpersonal Kabbalah.",
+    "pruningHeading": "The Pruning Metaphor",
+    "pruning": "The word Qliphoth literally means 'shells' or 'husks' — like dead bark on a living tree. The pruning approach involves three steps: recognize the pattern, understand its origin and function, and integrate the energy it contains into conscious life. This is not about eliminating parts of yourself, but about transforming unconscious compulsions into conscious choices.",
+    "tipsHeading": "Usage Tips",
+    "tips": "Explore at your own pace without pressure to understand everything at once. Click on any sphere to see its correspondences and reflect on how they relate to your experience. The search function can help you find specific symbols, archetypes, or correspondences. Remember that personal meaning is more valuable than memorizing traditional attributions."
+  },
+  "qliphoth": {
+    "thaumiel": {
+      "integration": "By recognizing internal duality, one develops the capacity to hold paradoxes without fragmentation, enabling authentic leadership and a unifying vision.",
+      "dailyLife": "Manifests as a constant need to polarize situations, creating divisions in groups and relationships through rigid 'me against everyone' positioning."
+    },
+    "ghogiel": {
+      "integration": "By facing intellectual blockages, one recognizes the difference between accumulated knowledge and lived wisdom, releasing genuine creative flow.",
+      "dailyLife": "Manifests as creative procrastination, accumulating information without practical application, and a tendency to dismiss one's own ideas before trying them."
+    },
+    "satariel": {
+      "integration": "By looking at what one prefers not to see, deep discernment develops along with the ability to distinguish between healthy protection and paralyzing denial.",
+      "dailyLife": "Manifests as systematic avoidance of difficult conversations, postponing medical exams, and preferring simplistic explanations for complex situations."
+    },
+    "ghagsheblah": {
+      "integration": "By recognizing patterns of conditional generosity, one learns to offer care without attachment to outcomes, cultivating compassion that respects others' autonomy.",
+      "dailyLife": "Manifests as difficulty respecting others' boundaries, offering unsolicited help, and resentment when expected gratitude is not demonstrated."
+    },
+    "golohab": {
+      "integration": "By embracing anger as a signal of violated boundaries, destructive energy transforms into assertiveness and the capacity to act with determination in the face of injustice.",
+      "dailyLife": "Manifests as disproportionate outbursts of irritation, chronic impatience in traffic or queues, and a tendency to resolve conflicts through intimidation rather than dialogue."
+    },
+    "tagimron": {
+      "integration": "By observing the need for recognition, one develops self-esteem based on internal experience rather than external validation, allowing one to shine without overshadowing others.",
+      "dailyLife": "Manifests as excessive seeking of praise, constant comparison with peers on social media, and difficulty celebrating others' achievements without feeling personal diminishment."
+    },
+    "gharab": {
+      "integration": "By recognizing desire as a driving force, one learns to channel emotional intensity toward constructive bonds and creative expression rather than compulsive consumption.",
+      "dailyLife": "Manifests as impulsive purchases, relationship patterns based on idealization followed by rapid disinterest, and difficulty feeling content with what one already has."
+    },
+    "samael": {
+      "integration": "By perceiving one's own rationalization patterns, intellectual honesty and transparent communication develop, using intelligence to clarify rather than obscure.",
+      "dailyLife": "Manifests as elaborate justifications for contradictory behaviors, use of ambiguous language to avoid commitment, and a tendency to manipulate narratives for personal benefit."
+    },
+    "gamaliel": {
+      "integration": "By welcoming instincts without judgment, a conscious relationship with the body and emotional cycles develops, transforming compulsion into directed vitality.",
+      "dailyLife": "Manifests as oscillations between repression and excessive indulgence, difficulty maintaining regular sleep routines, and using sensory stimulation to avoid contact with underlying emotions."
+    },
+    "nahemoth": {
+      "integration": "By recognizing the attraction to material comfort as a need for security, bodily presence develops along with the capacity to inhabit the physical world without getting lost in it.",
+      "dailyLife": "Manifests as excessive attachment to possessions and routines, difficulty accepting changes in the physical environment, and seeking security exclusively through material accumulation."
+    },
+    "daath_qliphoth": {
+      "integration": "By traversing dispersion without resistance, identity rebuilds on broader foundations, integrating previously inaccessible fragments of personal experience.",
+      "dailyLife": "Manifests as recurring identity crises, a persistent sense of lack of purpose, and difficulty maintaining continuity between projects or life phases."
     }
   }
 }

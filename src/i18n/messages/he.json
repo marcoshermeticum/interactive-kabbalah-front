@@ -32,7 +32,12 @@
     "donateThank": "כל סכום מתקבל בברכה. תודה! 🙏",
     "searchPlaceholder": "חיפוש: שור, ירח, לב, רובי...",
     "matchedOn": "מתאים ל",
-    "noResults": "אין תוצאות עבור"
+    "noResults": "אין תוצאות עבור",
+    "integration": "שילוב",
+    "dailyLife": "חיי יום-יום",
+    "notifications": "התראות",
+    "seeMore": "ראה עוד",
+    "seeLess": "ראה פחות"
   },
   "kether": {
     "world": { "title": "אצילות", "aspect": "נוכחות אינסופית" },
@@ -269,6 +274,116 @@
       "veilAbyss": "מסך התהום",
       "veilParokhet": "פרוכת",
       "veilNephesch": "מסך הנפש"
+    }
+  },
+  "notifications": {
+    "title": "התראות",
+    "guideTitle": "מדריך התמצאות",
+    "guideDescription": "למד כיצד לפרש את עץ החיים ככלי להכרה עצמית",
+    "guide": {
+      "title": "מדריך התמצאות",
+      "description": "למד כיצד להשתמש בכלי זה להכרה עצמית"
+    }
+  },
+  "guide": {
+    "title": "Orientation Guide",
+    "purposeHeading": "Purpose",
+    "purpose": "The Tree of Life is a tool for personal self-knowledge and inner exploration. It is not a system of moral or religious judgment, nor does it prescribe what is right or wrong. Each sphere and path represents an aspect of human experience that can be recognized, understood, and integrated. Use it as a mirror for reflection, not as a rulebook for behavior.",
+    "interpretationHeading": "Non-Dualistic Interpretation",
+    "interpretation": "In this application, the Sefirot and the Qliphoth are not presented as opposing forces of good and evil. They represent spectrums of experience — balanced and imbalanced expressions of the same energies. The Qliphoth are understood as shadow aspects, rejected parts of the psyche, or stagnant creative potential waiting to be recognized. This perspective follows the tradition of psychological and transpersonal Kabbalah.",
+    "pruningHeading": "The Pruning Metaphor",
+    "pruning": "The word Qliphoth literally means 'shells' or 'husks' — like dead bark on a living tree. The pruning approach involves three steps: recognize the pattern, understand its origin and function, and integrate the energy it contains into conscious life. This is not about eliminating parts of yourself, but about transforming unconscious compulsions into conscious choices.",
+    "tipsHeading": "Usage Tips",
+    "tips": "Explore at your own pace without pressure to understand everything at once. Click on any sphere to see its correspondences and reflect on how they relate to your experience. The search function can help you find specific symbols, archetypes, or correspondences. Remember that personal meaning is more valuable than memorizing traditional attributions."
+  },
+  "thaumiel": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "ghogiel": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "satariel": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "gha'agsheblah": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "golohab": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "tagimron": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "a'arab zaraq": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "samael": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "gamaliel": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "nahemoth": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "o abismo": {
+    "integration": "",
+    "dailyLife": ""
+  },
+  "qliphoth": {
+    "thaumiel": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "ghogiel": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "satariel": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "ghagsheblah": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "golohab": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "tagimron": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "gharab": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "samael": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "gamaliel": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "nahemoth": {
+      "integration": "",
+      "dailyLife": ""
+    },
+    "daath_qliphoth": {
+      "integration": "",
+      "dailyLife": ""
     }
   }
 }
