@@ -32,7 +32,12 @@
     "donateThank": "Qualquer valor é bem-vindo. Obrigado! 🙏",
     "searchPlaceholder": "Buscar: boi, lua, coração, rubi...",
     "matchedOn": "corresponde a",
-    "noResults": "Nenhum resultado para"
+    "noResults": "Nenhum resultado para",
+    "integration": "Integração",
+    "dailyLife": "Cotidiano",
+    "notifications": "Notificações",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos"
   },
   "kether": {
     "world": { "title": "Atziluth", "aspect": "Onipresença" },
@@ -270,5 +275,69 @@
       "veilParokhet": "Véu de Parokhet",
       "veilNephesch": "Véu de Nephesch"
     }
+  },
+  "notifications": {
+    "title": "Notificações",
+    "guideTitle": "Guia de Orientações",
+    "guideDescription": "Entenda como usar a Árvore da Vida como ferramenta de autoconhecimento",
+    "guide": {
+      "title": "Novo: Guia de Orientações",
+      "description": "Um guia para interpretar a Árvore da Vida de forma não-dualística"
+    }
+  },
+  "guide": {
+    "title": "Guia de Orientações",
+    "purposeHeading": "Propósito",
+    "purpose": "A Árvore da Vida é uma ferramenta de autoconhecimento pessoal, não um sistema de julgamento moral ou religioso. Ela oferece um mapa simbólico para explorar aspectos da psique e da experiência humana. Nenhuma posição na Árvore é inerentemente \"boa\" ou \"má\" — cada esfera representa um espectro de potencialidades que todos carregamos. Use este mapa como espelho para reconhecer padrões internos, não como régua para medir valor pessoal. O objetivo é a integração consciente, não a eliminação de aspectos de si mesmo.",
+    "interpretationHeading": "Interpretação Não-Dualística",
+    "interpretation": "Sefirot e Qliphoth não representam \"bem contra mal\", mas sim espectros complementares da experiência humana. As Sefirot expressam qualidades em equilíbrio funcional, enquanto as Qliphoth revelam essas mesmas qualidades em desequilíbrio ou excesso. Ambas são partes naturais do todo — como luz e sombra que definem a forma. Compreender uma Qliphah não é \"abraçar o mal\", mas reconhecer um padrão que, uma vez consciente, pode ser integrado e transformado. Esta perspectiva segue a tradição psicológica profunda que vê a sombra como material para crescimento.",
+    "pruningHeading": "A Metáfora da Poda",
+    "pruning": "O trabalho com as Qliphoth segue a metáfora da poda: reconhecer, compreender e integrar. Primeiro, reconheça o padrão em sua vida — como e quando ele se manifesta no cotidiano. Depois, compreenda sua função: que necessidade ele tenta atender, mesmo que de forma disfuncional? Por fim, integre a energia subjacente de forma consciente, redirecionando-a para expressões mais construtivas. A poda não elimina o galho — ela redireciona o crescimento. Da mesma forma, não se trata de negar aspectos de si, mas de cultivá-los com consciência.",
+    "tipsHeading": "Dicas de Uso",
+    "tips": "Navegue pela Árvore clicando em cada esfera para explorar seus significados e correspondências. Use a alternância entre Vida e Morte para ver as duas faces de cada posição. Os campos de Integração mostram o potencial construtivo de cada padrão, enquanto Cotidiano indica como ele se manifesta no dia-a-dia. Não há ordem \"correta\" de exploração — siga sua curiosidade e observe quais esferas ressoam com sua experiência atual. A busca permite encontrar conexões por palavras-chave, animais, pedras e arquétipos."
+  },
+  "thaumiel": {
+    "integration": "Ao reconhecer a dualidade interna, desenvolve-se a capacidade de sustentar paradoxos sem fragmentação, permitindo liderança autêntica e visão unificadora.",
+    "dailyLife": "Manifesta-se como necessidade constante de polarizar situações, criando divisões em grupos e relacionamentos por meio de posicionamentos rígidos do tipo \"eu contra todos\"."
+  },
+  "ghogiel": {
+    "integration": "Ao enfrentar os bloqueios intelectuais, reconhece-se a diferença entre conhecimento acumulado e sabedoria vivida, liberando o fluxo criativo genuíno.",
+    "dailyLife": "Manifesta-se como procrastinação criativa, acúmulo de informações sem aplicação prática e tendência a desqualificar ideias próprias antes de experimentá-las."
+  },
+  "satariel": {
+    "integration": "Ao olhar para aquilo que se prefere não ver, desenvolve-se discernimento profundo e a habilidade de distinguir entre proteção saudável e negação paralisante.",
+    "dailyLife": "Manifesta-se como evitação sistemática de conversas difíceis, adiamento de exames médicos e preferência por explicações simplistas diante de situações complexas."
+  },
+  "gha'agsheblah": {
+    "integration": "Ao reconhecer os padrões de generosidade condicionada, aprende-se a oferecer cuidado sem apego ao resultado, cultivando compaixão que respeita a autonomia alheia.",
+    "dailyLife": "Manifesta-se como dificuldade em respeitar limites alheios, oferta de ajuda não solicitada e ressentimento quando a gratidão esperada não é demonstrada."
+  },
+  "golohab": {
+    "integration": "Ao acolher a raiva como sinal de limites violados, transforma-se a energia destrutiva em assertividade e capacidade de agir com determinação diante de injustiças.",
+    "dailyLife": "Manifesta-se como explosões de irritação desproporcional, impaciência crônica no trânsito ou filas, e tendência a resolver conflitos por intimidação em vez de diálogo."
+  },
+  "tagimron": {
+    "integration": "Ao observar a necessidade de reconhecimento, desenvolve-se autoestima baseada em experiência interna em vez de validação externa, permitindo brilhar sem ofuscar os outros.",
+    "dailyLife": "Manifesta-se como busca excessiva por elogios, comparação constante com pares em redes sociais e dificuldade em celebrar conquistas alheias sem sentir diminuição pessoal."
+  },
+  "a'arab zaraq": {
+    "integration": "Ao reconhecer o desejo como força motriz, aprende-se a direcionar a intensidade emocional para vínculos construtivos e expressão criativa em vez de consumo compulsivo.",
+    "dailyLife": "Manifesta-se como compras impulsivas, padrões de relacionamento baseados em idealização seguida de desinteresse rápido e dificuldade de contentamento com o que já se possui."
+  },
+  "samael": {
+    "integration": "Ao perceber os próprios padrões de racionalização, desenvolve-se honestidade intelectual e comunicação transparente, usando a inteligência para esclarecer em vez de obscurecer.",
+    "dailyLife": "Manifesta-se como justificativas elaboradas para comportamentos contraditórios, uso de linguagem ambígua para evitar compromisso e tendência a manipular narrativas em benefício próprio."
+  },
+  "gamaliel": {
+    "integration": "Ao acolher os instintos sem julgamento, desenvolve-se uma relação consciente com o corpo e os ciclos emocionais, transformando compulsão em vitalidade direcionada.",
+    "dailyLife": "Manifesta-se como oscilações entre repressão e indulgência excessiva, dificuldade em manter rotinas de sono regulares e uso de estímulos sensoriais para evitar o contato com emoções subjacentes."
+  },
+  "nahemoth": {
+    "integration": "Ao reconhecer a atração pelo conforto material como necessidade de segurança, desenvolve-se presença corporal e a capacidade de habitar o mundo físico sem se perder nele.",
+    "dailyLife": "Manifesta-se como apego excessivo a posses e rotinas, dificuldade em aceitar mudanças no ambiente físico e busca de segurança exclusivamente em acumulação material."
+  },
+  "o abismo": {
+    "integration": "Ao atravessar a dispersão sem resistir, reconstrói-se a identidade sobre bases mais amplas, integrando fragmentos antes inacessíveis da experiência pessoal.",
+    "dailyLife": "Manifesta-se como crises de identidade recorrentes, sensação persistente de falta de propósito e dificuldade em manter continuidade entre projetos ou fases da vida."
   }
 }

@@ -6,6 +6,11 @@ import Search from '@/components/Search/Search';
 import type { SearchResult } from '@/data/searchIndex';
 import ThemeToggle from '@/components/ThemeToggle';
 import LanguageSelector from '@/components/LanguageSelector';
+import NotificationButton from '@/components/Notifications/NotificationButton';
+import NotificationDialog from '@/components/Notifications/NotificationDialog';
+import OrientationGuideDialog from '@/components/Notifications/OrientationGuideDialog';
+import { useNotificationState } from '@/hooks/useNotificationState';
+import { notifications } from '@/data/notifications';
 
 interface Props {
   view: 'life' | 'death' | 'both';
@@ -28,8 +33,28 @@ export default function Navbar({
 }: Props) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showDonation, setShowDonation] = useState(false);
+  const [isNotificationDialogOpen, setIsNotificationDialogOpen] = useState(false);
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const ui = useTranslations('ui');
+
+  const { unreadCount, readIds, markAsRead, isGuideRead, markGuideRead } = useNotificationState(notifications);
+
+  const totalUnread = unreadCount + (isGuideRead ? 0 : 1);
+
+  const handleOpenGuide = () => {
+    setIsNotificationDialogOpen(false);
+    setIsGuideOpen(true);
+    markGuideRead();
+  };
+
+  const handleGuideClose = () => {
+    setIsGuideOpen(false);
+  };
+
+  const handleNotificationDialogClose = () => {
+    setIsNotificationDialogOpen(false);
+  };
 
   // Close sidebar on Escape
   useEffect(() => {
@@ -92,6 +117,10 @@ export default function Navbar({
               onShowVeilsChange={onShowVeilsChange}
               showPillars={showPillars}
               onShowPillarsChange={onShowPillarsChange}
+            />
+            <NotificationButton
+              unreadCount={totalUnread}
+              onClick={() => setIsNotificationDialogOpen(true)}
             />
             <ThemeToggle />
             <LanguageSelector />
@@ -178,6 +207,18 @@ export default function Navbar({
                 </div>
               </div>
 
+              {/* Notifications */}
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('notifications')}</p>
+                <div className="flex items-center gap-3 px-1">
+                  <NotificationButton
+                    unreadCount={totalUnread}
+                    onClick={() => { setIsNotificationDialogOpen(true); setSidebarOpen(false); }}
+                  />
+                  <span className="text-sm text-white/60">{ui('notifications')}</span>
+                </div>
+              </div>
+
               {/* Links */}
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('links')}</p>
@@ -231,6 +272,22 @@ export default function Navbar({
           </button>
         ))}
       </nav>
+
+      {/* Notification Dialog */}
+      <NotificationDialog
+        isOpen={isNotificationDialogOpen}
+        onClose={handleNotificationDialogClose}
+        notifications={notifications}
+        readIds={readIds}
+        onMarkRead={markAsRead}
+        onOpenGuide={handleOpenGuide}
+      />
+
+      {/* Orientation Guide Dialog */}
+      <OrientationGuideDialog
+        isOpen={isGuideOpen}
+        onClose={handleGuideClose}
+      />
     </>
   );
 }
