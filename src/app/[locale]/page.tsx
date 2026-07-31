@@ -102,6 +102,15 @@ function triggerTooltipForResult(result: SearchResult) {
       target = document.querySelector(`[data-path-number="tunnel-${result.id}"]`);
       break;
     }
+    case 'daemon': {
+      // Daemon result id is the associated qliphah or tunnel refId
+      // Try as qliphah first, then as tunnel
+      target = document.querySelector(`[data-sephirot-id="${result.id}"]`);
+      if (!target) {
+        target = document.querySelector(`[data-path-number="tunnel-${result.id}"]`);
+      }
+      break;
+    }
     case 'veil': {
       target = document.querySelector(`[data-ornament-id="${result.id}"]`);
       break;
