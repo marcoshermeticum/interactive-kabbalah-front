@@ -3,7 +3,16 @@
 import { useTranslations } from 'next-intl';
 import { sephirotCorrespondences } from '@/data/correspondences';
 import Tooltip from '@/components/Tooltip/Tooltip';
+import { daemons } from '@/data/daemons';
+import { SigilImage } from '@/components/Search/SigilImage';
+import { ExpandableSection } from '@/components/ExpandableSection/ExpandableSection';
 import type { SephirotData } from './types';
+
+function getDaemonsForQliphah(qliphahId: string) {
+  return daemons.filter((d) =>
+    d.associations.some((a) => a.type === 'qliphah' && a.refId === qliphahId)
+  );
+}
 
 interface Props {
   data: SephirotData;
@@ -29,7 +38,44 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
   const worldTitle = translated?.world?.title || data.world?.title;
   const worldAspect = translated?.world?.aspect || data.world?.aspect;
 
+  // Read integration and dailyLife from translations, fallback to data values
+  // Only attempt i18n lookup if the data field exists (qliphoth only)
+  let integration: string | undefined = data.integration;
+  let dailyLife: string | undefined = data.dailyLife;
+
+  if (data.integration) {
+    try {
+      const rawIntegration = sephT.raw('integration');
+      if (typeof rawIntegration === 'string' && rawIntegration.trim() && !rawIntegration.includes('.integration')) {
+        integration = rawIntegration;
+      }
+    } catch { /* fallback to data */ }
+  }
+  if (data.dailyLife) {
+    try {
+      const rawDailyLife = sephT.raw('dailyLife');
+      if (typeof rawDailyLife === 'string' && rawDailyLife.trim() && !rawDailyLife.includes('.dailyLife')) {
+        dailyLife = rawDailyLife;
+      }
+    } catch { /* fallback to data */ }
+  }
+
+  // Get translated labels for integration and dailyLife
+  let integrationLabel = 'Integration';
+  let dailyLifeLabel = 'Daily Life';
+  try {
+    const rawLabel = ui('integration');
+    if (rawLabel) integrationLabel = rawLabel;
+  } catch { /* fallback */ }
+  try {
+    const rawLabel = ui('dailyLife');
+    if (rawLabel) dailyLifeLabel = rawLabel;
+  } catch { /* fallback */ }
+
   // Read archetypes and minorArcana from translations (falls back to data)
+  // Only attempt i18n lookups for sephirots (they have full translations).
+  // Qliphoth namespaces only have integration/dailyLife keys.
+  const isSephirot = !!sephirotCorrespondences[data.name.toLowerCase()];
   let archetypes: string[] = data.archetypes;
   let minorArcana: string[] = data.minorArcana;
   let planetName = data.planetName;
@@ -37,26 +83,28 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
   let corrStones: string[] = [];
   let corrBodyParts: string[] = [];
 
-  try {
-    const rawArch = sephT.raw('archetypes');
-    if (Array.isArray(rawArch)) archetypes = rawArch;
-  } catch { /* fallback to data */ }
-  try {
-    const rawMinor = sephT.raw('minorArcana');
-    if (Array.isArray(rawMinor)) minorArcana = rawMinor;
-  } catch { /* fallback to data */ }
-  try {
-    const rawPlanet = sephT.raw('planetName');
-    if (typeof rawPlanet === 'string') planetName = rawPlanet;
-  } catch { /* fallback to data */ }
-  try {
-    const rawCorr = sephT.raw('correspondences') as { animals?: string[]; stones?: string[]; bodyParts?: string[] } | undefined;
-    if (rawCorr) {
-      if (Array.isArray(rawCorr.animals)) corrAnimals = rawCorr.animals;
-      if (Array.isArray(rawCorr.stones)) corrStones = rawCorr.stones;
-      if (Array.isArray(rawCorr.bodyParts)) corrBodyParts = rawCorr.bodyParts;
-    }
-  } catch { /* fallback — will use correspondences.ts data below */ }
+  if (isSephirot) {
+    try {
+      const rawArch = sephT.raw('archetypes');
+      if (Array.isArray(rawArch)) archetypes = rawArch;
+    } catch { /* fallback to data */ }
+    try {
+      const rawMinor = sephT.raw('minorArcana');
+      if (Array.isArray(rawMinor)) minorArcana = rawMinor;
+    } catch { /* fallback to data */ }
+    try {
+      const rawPlanet = sephT.raw('planetName');
+      if (typeof rawPlanet === 'string') planetName = rawPlanet;
+    } catch { /* fallback to data */ }
+    try {
+      const rawCorr = sephT.raw('correspondences') as { animals?: string[]; stones?: string[]; bodyParts?: string[] } | undefined;
+      if (rawCorr) {
+        if (Array.isArray(rawCorr.animals)) corrAnimals = rawCorr.animals;
+        if (Array.isArray(rawCorr.stones)) corrStones = rawCorr.stones;
+        if (Array.isArray(rawCorr.bodyParts)) corrBodyParts = rawCorr.bodyParts;
+      }
+    } catch { /* fallback — will use correspondences.ts data below */ }
+  }
 
   const cx = 250;
   const cy = 250;
@@ -68,10 +116,30 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
       <p className="text-white/80">{valor}</p>
       <p className="mt-1">{data.icon} ({planetName})</p>
       {regentTitle && regentName && (
-        <p className="mt-1">🔱 {regentTitle} — {regentName}</p>
+        <div className="mt-1 inline-flex items-center gap-1 flex-wrap">
+          <span>🔱 {regentTitle} — {regentName}</span>
+          {!isSephirot && getDaemonsForQliphah(data.name.toLowerCase()).map((daemon) => (
+            <SigilImage
+              key={daemon.id}
+              url={daemon.sigilUrl}
+              alt={daemon.canonicalName}
+              size={28}
+            />
+          ))}
+        </div>
       )}
       {regentDefect && regentDefect.trim() && (
         <p className="text-red-300">⚠️ {ui('defect')}: {regentDefect}</p>
+      )}
+      {(integration || dailyLife) && (
+        <ExpandableSection>
+          {integration && (
+            <p className="text-green-300 text-xs mt-1">🌱 {integrationLabel}: {integration}</p>
+          )}
+          {dailyLife && (
+            <p className="text-yellow-300 text-xs mt-1">🔄 {dailyLifeLabel}: {dailyLife}</p>
+          )}
+        </ExpandableSection>
       )}
       {worldTitle && <p className="mt-1 text-blue-300">🌍 {worldTitle}</p>}
       {worldAspect && <p className="text-blue-200">{worldAspect}</p>}
