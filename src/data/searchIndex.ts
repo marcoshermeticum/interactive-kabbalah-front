@@ -330,8 +330,8 @@ export function searchAll(query: string, pathLabel: string, tunnelLabel: string)
 
         if (position) {
           found.push({
-            type: 'daemon',
-            id: daemon.id,
+            type: assoc.type === 'qliphah' ? 'daemon' : 'daemon',
+            id: assoc.refId,
             name: daemon.canonicalName,
             matchedOn: matchedTerm,
             score: matchScore,
