@@ -9,8 +9,9 @@ import { qliphoth } from './qliphoth';
 import { sephirotCorrespondences, pathCorrespondences } from './correspondences';
 import { qliphothPaths } from './qliphothPaths';
 import { kabbalahTreeLayout, qliphothTreeLayout, qliphothInvertedLayout } from './tree-layout';
+import { daemons, DaemonEntry } from './daemons';
 
-export type SearchableType = 'sephirot' | 'qliphah' | 'path' | 'tunnel' | 'veil' | 'pillar';
+export type SearchableType = 'sephirot' | 'qliphah' | 'path' | 'tunnel' | 'veil' | 'pillar' | 'daemon';
 
 export interface SearchResult {
   type: SearchableType;
@@ -22,6 +23,8 @@ export interface SearchResult {
   view: 'life' | 'death' | 'both' | 'any';
   /** Coordinates in the tree's coordinate space (for focus/zoom) */
   position: { x: number; y: number };
+  /** Optional sigil image URL (used for daemon results) */
+  sigilUrl?: string;
 }
 
 // Hebrew letter names for Kabbalah paths
@@ -286,6 +289,57 @@ export function searchAll(query: string, pathLabel: string, tunnelLabel: string)
           position: pillar.position,
         });
         break;
+      }
+    }
+  }
+
+  // 7. Search Daemons
+  for (const daemon of daemons) {
+    const allTerms = [
+      daemon.canonicalName.toLowerCase(),
+      ...daemon.aliases.map(a => a.toLowerCase()),
+    ];
+
+    let matchedTerm: string | null = null;
+    let matchScore = 0;
+
+    for (const term of allTerms) {
+      if (term.includes(q) || q.includes(term.substring(0, 3))) {
+        matchScore = term === q ? 10 : term.startsWith(q) ? 8 : 5;
+        matchedTerm = term;
+        break;
+      }
+    }
+
+    if (matchedTerm) {
+      for (const assoc of daemon.associations) {
+        let position: { x: number; y: number } | null = null;
+
+        if (assoc.type === 'qliphah') {
+          position = qliphothTreeLayout.positions[assoc.refId] || null;
+        } else if (assoc.type === 'tunnel') {
+          const tunnel = qliphothPaths.find(t => t.number === parseInt(assoc.refId));
+          if (tunnel) {
+            const fromPos = qliphothTreeLayout.positions[tunnel.from];
+            const toPos = qliphothTreeLayout.positions[tunnel.to];
+            if (fromPos && toPos) {
+              position = getMidpoint(fromPos, toPos);
+            }
+          }
+        }
+
+        if (position) {
+          found.push({
+            type: assoc.type === 'qliphah' ? 'daemon' : 'daemon',
+            id: assoc.refId,
+            name: daemon.canonicalName,
+            matchedOn: matchedTerm,
+            score: matchScore,
+            view: 'death',
+            position,
+            sigilUrl: daemon.sigilUrl,
+          });
+        }
       }
     }
   }

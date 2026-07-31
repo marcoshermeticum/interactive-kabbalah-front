@@ -22,4 +22,6 @@ export type SephirotData = {
     text: string;
     stroke: string;
   };
+  integration?: string;
+  dailyLife?: string;
 };

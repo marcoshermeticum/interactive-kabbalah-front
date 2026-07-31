@@ -19,6 +19,10 @@ export const qliphoth: Record<string, SephirotData> = {
       'Ás de Ouros invertido (ganância)',
     ],
     colors: { outer: '#1a0a0a', middle: '#3d1010', inner: '#0d0d0d', text: '#ff4444', stroke: '#660000' },
+    integration:
+      'Ao reconhecer a dualidade interna, desenvolve-se a capacidade de sustentar paradoxos sem fragmentação, permitindo liderança autêntica e visão unificadora.',
+    dailyLife:
+      'Manifesta-se como necessidade constante de polarizar situações, criando divisões em grupos e relacionamentos por meio de posicionamentos rígidos do tipo "eu contra todos".',
   },
   ghogiel: {
     name: 'Ghogiel',
@@ -36,6 +40,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '2 de Ouros invertido (instabilidade)',
     ],
     colors: { outer: '#0a0a1a', middle: '#1a1a3d', inner: '#0d0d20', text: '#8888ff', stroke: '#333366' },
+    integration:
+      'Ao enfrentar os bloqueios intelectuais, reconhece-se a diferença entre conhecimento acumulado e sabedoria vivida, liberando o fluxo criativo genuíno.',
+    dailyLife:
+      'Manifesta-se como procrastinação criativa, acúmulo de informações sem aplicação prática e tendência a desqualificar ideias próprias antes de experimentá-las.',
   },
   satariel: {
     name: 'Satariel',
@@ -53,6 +61,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '3 de Ouros invertido (mediocridade)',
     ],
     colors: { outer: '#0a0a0a', middle: '#2d2d2d', inner: '#1a1a1a', text: '#aaaaaa', stroke: '#444444' },
+    integration:
+      'Ao olhar para aquilo que se prefere não ver, desenvolve-se discernimento profundo e a habilidade de distinguir entre proteção saudável e negação paralisante.',
+    dailyLife:
+      'Manifesta-se como evitação sistemática de conversas difíceis, adiamento de exames médicos e preferência por explicações simplistas diante de situações complexas.',
   },
   ghagsheblah: {
     name: "Gha'agsheblah",
@@ -69,6 +81,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '4 de Ouros invertido (avareza)',
     ],
     colors: { outer: '#1a0a2a', middle: '#2d1a4d', inner: '#150a30', text: '#bb77ff', stroke: '#4a2a6a' },
+    integration:
+      'Ao reconhecer os padrões de generosidade condicionada, aprende-se a oferecer cuidado sem apego ao resultado, cultivando compaixão que respeita a autonomia alheia.',
+    dailyLife:
+      'Manifesta-se como dificuldade em respeitar limites alheios, oferta de ajuda não solicitada e ressentimento quando a gratidão esperada não é demonstrada.',
   },
   golohab: {
     name: 'Golohab',
@@ -85,6 +101,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '5 de Ouros invertido (miséria)',
     ],
     colors: { outer: '#2a0a0a', middle: '#5d1010', inner: '#3d0505', text: '#ff6633', stroke: '#882200' },
+    integration:
+      'Ao acolher a raiva como sinal de limites violados, transforma-se a energia destrutiva em assertividade e capacidade de agir com determinação diante de injustiças.',
+    dailyLife:
+      'Manifesta-se como explosões de irritação desproporcional, impaciência crônica no trânsito ou filas, e tendência a resolver conflitos por intimidação em vez de diálogo.',
   },
   tagimron: {
     name: 'Tagimron',
@@ -101,6 +121,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '6 de Ouros invertido (dívida kármica)',
     ],
     colors: { outer: '#2a2a00', middle: '#4d4d0a', inner: '#333300', text: '#ffcc00', stroke: '#666600' },
+    integration:
+      'Ao observar a necessidade de reconhecimento, desenvolve-se autoestima baseada em experiência interna em vez de validação externa, permitindo brilhar sem ofuscar os outros.',
+    dailyLife:
+      'Manifesta-se como busca excessiva por elogios, comparação constante com pares em redes sociais e dificuldade em celebrar conquistas alheias sem sentir diminuição pessoal.',
   },
   gharab: {
     name: "A'arab Zaraq",
@@ -117,6 +141,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '7 de Ouros invertido (impaciência)',
     ],
     colors: { outer: '#0a1a0a', middle: '#1a3d1a', inner: '#0d2a0d', text: '#44ff44', stroke: '#226622' },
+    integration:
+      'Ao reconhecer o desejo como força motriz, aprende-se a direcionar a intensidade emocional para vínculos construtivos e expressão criativa em vez de consumo compulsivo.',
+    dailyLife:
+      'Manifesta-se como compras impulsivas, padrões de relacionamento baseados em idealização seguida de desinteresse rápido e dificuldade de contentamento com o que já se possui.',
   },
   samael: {
     name: 'Samael',
@@ -133,6 +161,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '8 de Ouros invertido (perfeccionismo tóxico)',
     ],
     colors: { outer: '#1a0a00', middle: '#3d2200', inner: '#2a1500', text: '#ffaa33', stroke: '#664400' },
+    integration:
+      'Ao perceber os próprios padrões de racionalização, desenvolve-se honestidade intelectual e comunicação transparente, usando a inteligência para esclarecer em vez de obscurecer.',
+    dailyLife:
+      'Manifesta-se como justificativas elaboradas para comportamentos contraditórios, uso de linguagem ambígua para evitar compromisso e tendência a manipular narrativas em benefício próprio.',
   },
   gamaliel: {
     name: 'Gamaliel',
@@ -149,6 +181,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '9 de Ouros invertido (solidão material)',
     ],
     colors: { outer: '#1a0a1a', middle: '#3d1a3d', inner: '#2a0d2a', text: '#ff55ff', stroke: '#662266' },
+    integration:
+      'Ao acolher os instintos sem julgamento, desenvolve-se uma relação consciente com o corpo e os ciclos emocionais, transformando compulsão em vitalidade direcionada.',
+    dailyLife:
+      'Manifesta-se como oscilações entre repressão e indulgência excessiva, dificuldade em manter rotinas de sono regulares e uso de estímulos sensoriais para evitar o contato com emoções subjacentes.',
   },
   nahemoth: {
     name: 'Nahemoth',
@@ -166,6 +202,10 @@ export const qliphoth: Record<string, SephirotData> = {
       '10 de Ouros invertido (perda de tudo)',
     ],
     colors: { outer: '#1a0a05', middle: '#3d1a0a', inner: '#0a1a0a', text: '#ff8844', stroke: '#553311' },
+    integration:
+      'Ao reconhecer a atração pelo conforto material como necessidade de segurança, desenvolve-se presença corporal e a capacidade de habitar o mundo físico sem se perder nele.',
+    dailyLife:
+      'Manifesta-se como apego excessivo a posses e rotinas, dificuldade em aceitar mudanças no ambiente físico e busca de segurança exclusivamente em acumulação material.',
   },
   daath_qliphoth: {
     name: 'O Abismo',
@@ -177,5 +217,9 @@ export const qliphoth: Record<string, SephirotData> = {
     archetypes: ['O Abismo', 'Dispersão Total', 'Choronzon'],
     minorArcana: [],
     colors: { outer: '#050505', middle: '#1a1a1a', inner: '#000000', text: '#666666', stroke: '#333333' },
+    integration:
+      'Ao atravessar a dispersão sem resistir, reconstrói-se a identidade sobre bases mais amplas, integrando fragmentos antes inacessíveis da experiência pessoal.',
+    dailyLife:
+      'Manifesta-se como crises de identidade recorrentes, sensação persistente de falta de propósito e dificuldade em manter continuidade entre projetos ou fases da vida.',
   },
 };
