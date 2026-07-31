@@ -31,46 +31,19 @@ export function normalizeDaemonName(name: string): string {
 const SIGIL_BASE_URL = 'https://daemons.com.br/wp-content/uploads';
 
 // Local sigils for daemons we have downloaded images for
+// ONLY includes sigils with documented sources (Goetia - Mathers/Crowley, 1904)
 const LOCAL_SIGILS: Record<string, string> = {
-  // Qliphoth regents (goetic daemons with existing images)
-  baal: '/sigils/baal.png',
-  ashtaroth: '/sigils/astaroth.png',
-  asmodeus: '/sigils/asmoday.png',
-  belial: '/sigils/belial.png',
-  // Additional aliases that normalizeDaemonName might produce
-  beelzebub: '/sigils/baal.png', // Beelzebub = Baal variant in goetic tradition
-  // Generated sigils — Qliphoth regents
-  satan: '/sigils/satan.png',
-  moloch: '/sigils/moloch.png',
-  'lucifuge-rofocale': '/sigils/lucifuge-rofocale.png',
-  belphegor: '/sigils/belphegor.png',
-  adramalech: '/sigils/adramalech.png',
-  lilith: '/sigils/lilith.png',
-  nahema: '/sigils/nahema.png',
-  choronzon: '/sigils/choronzon.png',
-  // Generated sigils — Tunnel of Set daemons
-  amprodias: '/sigils/amprodias.png',
-  baratchial: '/sigils/baratchial.png',
-  gargophias: '/sigils/gargophias.png',
-  dagdagiel: '/sigils/dagdagiel.png',
-  hemethterith: '/sigils/hemethterith.png',
-  uriens: '/sigils/uriens.png',
-  zamradiel: '/sigils/zamradiel.png',
-  characith: '/sigils/characith.png',
-  temphioth: '/sigils/temphioth.png',
-  yamatu: '/sigils/yamatu.png',
-  kurgasiax: '/sigils/kurgasiax.png',
-  lafcursiax: '/sigils/lafcursiax.png',
-  malkunofat: '/sigils/malkunofat.png',
-  niantiel: '/sigils/niantiel.png',
-  saksaksalim: '/sigils/saksaksalim.png',
-  "a'ano'nin": '/sigils/aanonin.png',
-  parfaxitas: '/sigils/parfaxitas.png',
-  tzuflifu: '/sigils/tzuflifu.png',
-  qulielfi: '/sigils/qulielfi.png',
-  raflifu: '/sigils/raflifu.png',
-  shalicu: '/sigils/shalicu.png',
-  thantifaxath: '/sigils/thantifaxath.png',
+  // Qliphoth regents — Goetia seals (public domain, pre-1931)
+  baal: '/sigils/baal.png',           // Goetia #1 (Bael)
+  ashtaroth: '/sigils/astaroth.png',  // Goetia #29
+  asmodeus: '/sigils/asmoday.png',    // Goetia #32 (Asmoday)
+  belial: '/sigils/belial.png',       // Goetia #68
+  // Note: Satan, Moloch, Beelzebub, Lucifuge Rofocale, Belphegor, Adramalech,
+  // Lilith, Nahema, Choronzon — NÃO são goéticos. Sigilos existem em outras
+  // tradições (Grimorium Verum, Kenneth Grant, tradição judaica) mas precisam
+  // ser obtidos manualmente de fontes com licenciamento adequado.
+  // Os 22 Túneis de Set (Nightside of Eden, Kenneth Grant) também têm sigilos
+  // documentados mas ainda não foram adquiridos.
 };
 
 function buildSigilUrl(name: string): string {
