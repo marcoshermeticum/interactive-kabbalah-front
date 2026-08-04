@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Run commitlint and capture output
+OUTPUT=$(npx --no -- commitlint --edit $1 2>&1)
+EXIT_CODE=$?
+
+if [ $EXIT_CODE -ne 0 ]; then
+  echo ""
+  echo "══════════════════════════════════════════════════════════════"
+  echo "  ❌ Commit rejeitado: mensagem fora do padrão"
+  echo "══════════════════════════════════════════════════════════════"
+  echo ""
+  echo "  Formato esperado:"
+  echo "    <tipo>: <descrição>"
+  echo ""
+  echo "  Tipos permitidos:"
+  echo "    feat, fix, docs, style, refactor, perf, test, chore, ci, build, revert"
+  echo ""
+  echo "  Exemplos:"
+  echo "    feat: add search by correspondence"
+  echo "    fix: correct drag behavior on mobile"
+  echo "    docs: update README with setup instructions"
+  echo "    feat!: redesign layout (BREAKING CHANGE)"
+  echo ""
+  echo "──────────────────────────────────────────────────────────────"
+  echo "  Detalhes do erro:"
+  echo "$OUTPUT" | sed 's/^/    /'
+  echo "──────────────────────────────────────────────────────────────"
+  echo ""
+  exit $EXIT_CODE
+fi
