@@ -14,7 +14,8 @@
     "test:mobile": "npx playwright test mobile.spec.ts",
     "test:unit": "vitest --run",
     "install:yarn": "yarn install",
-    "install:npm": "npm install"
+    "install:npm": "npm install",
+    "prepare": "husky"
   },
   "dependencies": {
     "next": "^15.3.3",
@@ -23,12 +24,15 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^22.15.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "fast-check": "^3.23.2",
+    "husky": "^9.1.7",
     "postcss": "^8.5.4",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3",
