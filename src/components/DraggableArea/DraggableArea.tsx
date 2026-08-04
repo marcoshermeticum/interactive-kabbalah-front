@@ -341,12 +341,44 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
       }
     };
 
+    // Smooth wheel zoom — accumulates delta and applies via rAF for fluid motion
+    let wheelDeltaAccum = 0;
+    let wheelCenter = { x: 0, y: 0 };
+    let wheelRafId: number | null = null;
+
+    const applyWheelZoom = () => {
+      wheelRafId = null;
+      if (Math.abs(wheelDeltaAccum) < 0.001) return;
+
+      // Convert accumulated delta to a scale factor
+      // Sensitivity tuned so trackpad pinch and mouse wheel both feel natural
+      const factor = Math.pow(0.998, wheelDeltaAccum);
+      const newScale = transform.current.scale * factor;
+      zoomToward(wheelCenter.x, wheelCenter.y, newScale);
+      wheelDeltaAccum = 0;
+    };
+
     const onWheel = (e: WheelEvent) => {
       e.preventDefault();
-      // Zoom toward mouse position
-      const delta = e.deltaY > 0 ? 0.92 : 1.08; // multiplicative for smoother feel
-      const newScale = transform.current.scale * delta;
-      zoomToward(e.clientX, e.clientY, newScale);
+
+      // Trackpads report ctrlKey=true for pinch gestures and small deltaY values.
+      // Mouse wheels report ctrlKey=false with larger deltaY (typically multiples of ~100).
+      // Normalize so both feel consistent.
+      let delta = e.deltaY;
+      if (e.ctrlKey) {
+        // Trackpad pinch: deltaY is already small (-2 to 2 range), amplify slightly
+        delta *= 4;
+      } else {
+        // Mouse wheel: deltaY ~100-120 per notch, reduce for smoothness
+        delta *= 0.8;
+      }
+
+      wheelDeltaAccum += delta;
+      wheelCenter = { x: e.clientX, y: e.clientY };
+
+      if (!wheelRafId) {
+        wheelRafId = requestAnimationFrame(applyWheelZoom);
+      }
     };
 
     const onKeyDown = (e: KeyboardEvent) => {
@@ -388,6 +420,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
       container.removeEventListener('touchmove', onTouchMove);
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
+      if (wheelRafId) cancelAnimationFrame(wheelRafId);
     };
   }, [applyTransform, fitToViewport, zoomToward]);
 
