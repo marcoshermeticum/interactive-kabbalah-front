@@ -4,5 +4,6 @@ import { routing } from './i18n/routing';
 export default createMiddleware(routing);
 
 export const config = {
-  matcher: ['/', '/(pt-BR|en-US|ja|he)/:path*', '/((?!api|_next|_vercel|.*\\..*).*)'],
+  // Exclude /admin and /api routes from locale middleware
+  matcher: ['/', '/(pt-BR|en-US|ja|he)/:path*', '/((?!api|admin|_next|_vercel|.*\\..*).*)'],
 };
