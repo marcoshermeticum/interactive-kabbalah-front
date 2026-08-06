@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyToken } from '@/app/admin/lib/auth';
 import { getFileContent, updateFileContent } from '@/app/admin/lib/github';
+import { logger } from '@/app/admin/lib/logger';
 
 const CONTENT_FILES: Record<string, string> = {
   'pt-BR': 'src/i18n/messages/pt-BR.json',
@@ -36,6 +37,7 @@ export async function GET(request: NextRequest) {
     const { content, sha } = await getFileContent(filePath);
     return NextResponse.json({ content: JSON.parse(content), sha, locale });
   } catch (error) {
+    logger.error('Falha ao ler conteúdo do GitHub', { route: '/api/admin/content', method: 'GET', locale }, error);
     return NextResponse.json(
       { error: `Erro ao ler conteúdo: ${error instanceof Error ? error.message : 'desconhecido'}` },
       { status: 500 }
@@ -71,12 +73,15 @@ export async function PUT(request: NextRequest) {
 
     const result = await updateFileContent(filePath, formatted, commitMessage, sha);
 
+    logger.info('Conteúdo atualizado com sucesso', { route: '/api/admin/content', method: 'PUT', locale, commitSha: result.commitSha });
+
     return NextResponse.json({
       success: true,
       commitSha: result.commitSha,
       commitUrl: result.commitUrl,
     });
   } catch (error) {
+    logger.error('Falha ao salvar conteúdo no GitHub', { route: '/api/admin/content', method: 'PUT' }, error);
     return NextResponse.json(
       { error: `Erro ao salvar: ${error instanceof Error ? error.message : 'desconhecido'}` },
       { status: 500 }

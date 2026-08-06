@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyToken } from '@/app/admin/lib/auth';
 import { getFileHistory, getFileAtCommit, revertToCommit } from '@/app/admin/lib/github';
+import { logger } from '@/app/admin/lib/logger';
 
 const CONTENT_FILES: Record<string, string> = {
   'pt-BR': 'src/i18n/messages/pt-BR.json',
@@ -52,6 +53,7 @@ export async function GET(request: NextRequest) {
       })),
     });
   } catch (error) {
+    logger.error('Falha ao buscar histórico do GitHub', { route: '/api/admin/history', method: 'GET', locale }, error);
     return NextResponse.json(
       { error: `Erro ao buscar histórico: ${error instanceof Error ? error.message : 'desconhecido'}` },
       { status: 500 }
@@ -83,12 +85,14 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await revertToCommit(filePath, commitSha);
+    logger.info('Revert executado com sucesso', { route: '/api/admin/history', method: 'POST', locale, commitSha: result.commitSha });
     return NextResponse.json({
       success: true,
       commitSha: result.commitSha,
       commitUrl: result.commitUrl,
     });
   } catch (error) {
+    logger.error('Falha ao reverter commit', { route: '/api/admin/history', method: 'POST' }, error);
     return NextResponse.json(
       { error: `Erro ao reverter: ${error instanceof Error ? error.message : 'desconhecido'}` },
       { status: 500 }

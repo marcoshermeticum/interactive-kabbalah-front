@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { validateCredentials, createToken } from '@/app/admin/lib/auth';
 import { verifyCaptcha } from '@/app/admin/lib/captcha';
+import { logger } from '@/app/admin/lib/logger';
 
 export async function POST(request: NextRequest) {
   try {
@@ -17,6 +18,7 @@ export async function POST(request: NextRequest) {
 
     const captchaValid = verifyCaptcha(captchaAnswer, captchaSignature, captchaTimestamp);
     if (!captchaValid) {
+      logger.warn('Captcha inválido ou expirado', { route: '/api/admin/login', method: 'POST' });
       return NextResponse.json(
         { error: 'Desafio incorreto ou expirado. Tente novamente.' },
         { status: 403 }
@@ -33,6 +35,7 @@ export async function POST(request: NextRequest) {
 
     const valid = validateCredentials(email, password);
     if (!valid) {
+      logger.warn('Tentativa de login com credenciais inválidas', { route: '/api/admin/login', method: 'POST' });
       return NextResponse.json(
         { error: 'Credenciais inválidas.' },
         { status: 401 }
@@ -53,7 +56,8 @@ export async function POST(request: NextRequest) {
     });
 
     return response;
-  } catch {
+  } catch (error) {
+    logger.error('Erro interno no login', { route: '/api/admin/login', method: 'POST' }, error);
     return NextResponse.json(
       { error: 'Erro interno do servidor.' },
       { status: 500 }
