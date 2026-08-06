@@ -4,8 +4,6 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  # Omit GH_REPO_BRANCH from secrets scanning — its value ("main") is a
-  # common string that triggers false positives across build output.
   SECRETS_SCAN_OMIT_KEYS = "GH_REPO_BRANCH"
 
 [[plugins]]
