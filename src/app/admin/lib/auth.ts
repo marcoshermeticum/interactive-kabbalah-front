@@ -8,8 +8,8 @@ const ALLOWED_EMAIL_HASHES = [
 ];
 
 // Password hash is stored as env var ADMIN_PASSWORD_HASH
-// Fallback for local dev only
-const PASSWORD_HASH_FALLBACK = 'REDACTED_PASSWORD_HASH';
+// Fallback: only used if env var is not set (will fail auth intentionally)
+const PASSWORD_HASH_FALLBACK = '0000000000000000000000000000000000000000000000000000000000000000';
 
 const JWT_SECRET_KEY = process.env.ADMIN_JWT_SECRET || 'keter-chokmah-binah-default-secret-change-me';
 
