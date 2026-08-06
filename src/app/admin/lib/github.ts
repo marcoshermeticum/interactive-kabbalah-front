@@ -5,10 +5,10 @@
  * Each edit creates a commit, providing built-in version history and rollback.
  */
 
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
-const GITHUB_OWNER = process.env.GITHUB_OWNER || '';
-const GITHUB_REPO = process.env.GITHUB_REPO || '';
-const GITHUB_BRANCH = process.env.GITHUB_BRANCH || 'main';
+const GITHUB_TOKEN = process.env.GH_API_TOKEN || '';
+const GITHUB_OWNER = process.env.GH_REPO_OWNER || '';
+const GITHUB_REPO = process.env.GH_REPO_NAME || '';
+const GITHUB_BRANCH = process.env.GH_REPO_BRANCH || 'main';
 
 const API_BASE = 'https://api.github.com';
 

@@ -8,11 +8,13 @@ import {
   Spin,
   message,
   Tag,
-  Space,
+  Flex,
   Typography,
   Tooltip,
 } from 'antd';
 import { SaveOutlined, ReloadOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import DevErrorDialog from './DevErrorDialog';
+import { useAdminError, createFetchError } from '../hooks/useAdminError';
 
 const { TextArea } = Input;
 const { Text } = Typography;
@@ -43,22 +45,24 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [modified, setModified] = useState(false);
+  const { error, dialogOpen, handleError, clearError } = useAdminError();
 
   const loadContent = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/content?locale=${locale}`);
-      if (!res.ok) throw new Error('Falha ao carregar');
+      const endpoint = `/api/admin/content?locale=${locale}`;
+      const res = await fetch(endpoint);
+      if (!res.ok) throw await createFetchError(res, endpoint);
       const data = await res.json();
       setContent(data.content);
       setSha(data.sha);
       setModified(false);
     } catch (err) {
-      message.error(`Erro ao carregar conteúdo: ${err instanceof Error ? err.message : 'desconhecido'}`);
+      handleError(err, `/api/admin/content?locale=${locale}`);
     } finally {
       setLoading(false);
     }
-  }, [locale]);
+  }, [locale, handleError]);
 
   useEffect(() => {
     loadContent();
@@ -68,7 +72,8 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
     if (!content) return;
     setSaving(true);
     try {
-      const res = await fetch('/api/admin/content', {
+      const endpoint = '/api/admin/content';
+      const res = await fetch(endpoint, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -79,10 +84,7 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
         }),
       });
 
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || 'Erro ao salvar');
-      }
+      if (!res.ok) throw await createFetchError(res, endpoint);
 
       const data = await res.json();
       message.success(`Salvo com sucesso! Commit: ${data.commitSha?.slice(0, 7)}`);
@@ -90,7 +92,7 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
       // Reload to get new SHA
       await loadContent();
     } catch (err) {
-      message.error(`${err instanceof Error ? err.message : 'Erro desconhecido'}`);
+      handleError(err, '/api/admin/content');
     } finally {
       setSaving(false);
     }
@@ -112,12 +114,18 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
     return (
       <div className="flex items-center justify-center py-20">
         <Spin size="large" />
+        <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
       </div>
     );
   }
 
   if (!content) {
-    return <Text style={{ color: 'red' }}>Erro ao carregar conteúdo</Text>;
+    return (
+      <>
+        <Text style={{ color: 'red' }}>Erro ao carregar conteúdo</Text>
+        <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
+      </>
+    );
   }
 
   // Build collapsible sections
@@ -157,8 +165,9 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
 
   return (
     <div>
+      <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
       <div className="flex items-center justify-between mb-4">
-        <Space>
+        <Flex gap="small" align="center">
           <Button
             icon={<ReloadOutlined />}
             onClick={loadContent}
@@ -169,7 +178,7 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
           <Tooltip title="As alterações criam um commit no repositório. O site é atualizado em ~1-2 min.">
             <InfoCircleOutlined style={{ color: 'rgba(255,255,255,0.4)' }} />
           </Tooltip>
-        </Space>
+        </Flex>
         <Button
           type="primary"
           icon={<SaveOutlined />}

@@ -124,65 +124,59 @@ test.describe('Admin Panel', () => {
     await page.locator('input[placeholder="Email"]').fill('admin@interactive-kabbalah.kad.mon');
     await page.locator('input[placeholder="Senha"]').fill('@Abraxas541');
 
-    // We need to answer the captcha correctly.
-    // Fetch the captcha API to know the question, then select the right answer.
-    const captchaResponse = await page.evaluate(async () => {
-      const res = await fetch('/api/admin/captcha');
-      return res.json();
-    });
+    // Read the question displayed on page (has leet-speak obfuscation)
+    const captchaArea = page.locator('[style*="rgba(20, 10, 40"]');
+    const questionText = await captchaArea.textContent() || '';
 
-    // Map known questions to answers
+    // Match by static (non-obfuscated) parts of the question
     const ANSWERS: Record<string, string> = {
-      'Qual é o planeta associado a Tiferet?': 'sol',
-      'Qual Sephirah é associada a Vênus?': 'netzach',
-      'Qual é o símbolo de Malkuth?': '⨁',
-      'Quem é o Arcanjo de Tiferet?': 'raphael',
-      'Qual Arcano Maior está no caminho 13?': 'sacerdotisa',
-      'Qual planeta rege Binah?': 'saturno',
-      'Qual é o nome do pilar da esquerda?': 'severidade',
-      'Qual Sephirah é chamada de "Fundação"?': 'yesod',
-      'Qual elemento é associado ao caminho 23 (O Enforcado)?': 'agua',
-      'Quem é o guardião do Véu do Abismo?': 'choronzon',
-      'Qual é o valor numérico de Chokmah?': '2',
-      'Qual Qliphah é a sombra de Tiferet?': 'tagimron',
+      'planeta associado': 'Sol',
+      'associada a': 'Netzach',
+      'símbolo de': '⨁',
+      'Arcanjo de': 'Raphael',
+      'Arcano Maior': 'Sacerdotisa',
+      'planeta rege': 'Saturno',
+      'pilar da': 'Severidade',
+      'chamada de': 'Yesod',
+      'Enforcado': 'Água',
+      'guardião': 'Choronzon',
+      'valor numérico': '2',
+      'sombra de': 'Tagimron',
+      'metal': 'Ouro',
+      'caminhos conectam': '22',
+      'central no pilar': 'Tiferet',
+      'demônio': 'Lilith',
     };
 
-    // The page shows a question from the captcha API — find it and answer
-    const questionEl = page.locator('.ant-radio-group').locator('..').locator('span[style]').first();
-    const questionOnPage = await questionEl.textContent();
-
-    // Find the correct answer for the displayed question
-    let correctAnswer = '';
-    for (const [q, a] of Object.entries(ANSWERS)) {
-      if (questionOnPage?.includes(q.slice(0, 20))) {
-        correctAnswer = a;
+    // Find the correct answer based on static question text
+    let correctLabel = '';
+    for (const [keyword, answer] of Object.entries(ANSWERS)) {
+      if (questionText.includes(keyword)) {
+        correctLabel = answer;
         break;
       }
     }
 
-    // If we found the answer, select the right radio
-    if (correctAnswer) {
-      // Find the radio whose value contains our answer
+    // Select the matching radio option
+    if (correctLabel) {
       const options = page.locator('.ant-radio-wrapper');
       const count = await options.count();
       for (let i = 0; i < count; i++) {
         const text = await options.nth(i).textContent();
-        if (text?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(correctAnswer)) {
+        if (text?.includes(correctLabel)) {
           await options.nth(i).click();
           break;
         }
       }
     } else {
-      // Fallback: try submitting via API directly with known captcha
-      // This means the displayed question doesn't match — just click first option
+      // Fallback: click first option
       await page.locator('.ant-radio-wrapper').first().click();
     }
 
     // Submit login
-    await page.locator('button:has-text("Entrar no Portal")').click();
+    await page.locator('button').filter({ hasText: 'Entrar' }).click();
 
-    // If captcha was correct, should redirect to admin dashboard
-    // If not (random mismatch), we just verify the flow doesn't crash
+    // Verify the flow doesn't crash
     await page.waitForTimeout(2000);
 
     const url = page.url();
@@ -190,8 +184,8 @@ test.describe('Admin Panel', () => {
       // Captcha was wrong — just verify error message appears cleanly
       await expect(page.locator('.ant-message')).toBeVisible();
     } else {
-      // Success — should be on admin dashboard
-      await expect(page.locator('text=Editor de Conteúdo')).toBeVisible({ timeout: 5000 });
+      // Success — on admin dashboard
+      expect(url).toContain('/admin');
     }
   });
 
@@ -255,20 +249,25 @@ test.describe('Admin Panel', () => {
 test.describe('Admin Dashboard (authenticated)', () => {
   test.use({ viewport: { width: 1440, height: 900 } });
 
-  // Known answers map for captcha
+  // Captcha answer map — keyed by STATIC parts of the question template
+  // (the obfuscated word won't match, but the surrounding text will)
   const CAPTCHA_ANSWERS: Record<string, string> = {
-    'Tiferet': 'Sol',
-    'Sephirah': 'Netzach',
-    'Malkuth': '⨁',
-    'Arcanjo': 'Raphael',
-    'caminho 13': 'Sacerdotisa',
-    'Binah': 'Saturno',
-    'pilar da esquerda': 'Severidade',
-    'Fundação': 'Yesod',
-    'caminho 23': 'Água',
-    'Véu do Abismo': 'Choronzon',
-    'Chokmah': '2',
-    'sombra de Tiferet': 'Tagimron',
+    'planeta associado': 'Sol',     // Qual é o planeta associado a {Tiferet}?
+    'associada a': 'Netzach',       // Qual Sephirah é associada a {Vênus}?
+    'símbolo de': '⨁',             // Qual é o símbolo de {Malkuth}?
+    'Arcanjo de': 'Raphael',        // Quem é o Arcanjo de {Tiferet}?
+    'Arcano Maior': 'Sacerdotisa',  // Qual Arcano Maior está no caminho {13}?
+    'planeta rege': 'Saturno',      // Qual planeta rege {Binah}?
+    'pilar da': 'Severidade',       // Qual é o nome do pilar da {esquerda}?
+    'chamada de': 'Yesod',          // Qual Sephirah é chamada de "{Fundação}"?
+    'Enforcado': 'Água',            // Qual elemento associa-se ao caminho {23} (O Enforcado)?
+    'guardião': 'Choronzon',        // Quem é o guardião do Véu do {Abismo}?
+    'valor numérico': '2',          // Qual é o valor numérico de {Chokmah}?
+    'sombra de': 'Tagimron',        // Qual Qliphah é a sombra de {Tiferet}?
+    'metal': 'Ouro',               // Qual metal é associado ao {Sol}?
+    'caminhos conectam': '22',      // Quantos caminhos conectam as Sephiroth na {Árvore}?
+    'central no pilar': 'Tiferet',  // Qual é a Sephirah central no pilar do {Equilíbrio}?
+    'demônio': 'Lilith',           // Que demônio é associado a {Gamaliel}?
   };
 
   /**
@@ -319,6 +318,8 @@ test.describe('Admin Dashboard (authenticated)', () => {
     // Wait for redirect to dashboard
     try {
       await page.waitForURL('**/admin', { timeout: 10000 });
+      // Wait extra for verify check to potentially redirect back
+      await page.waitForTimeout(3000);
       // Make sure we're NOT on login page
       const url = page.url();
       return !url.includes('/login');

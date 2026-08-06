@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useRef, useCallback, useEffect, useState } from 'react';
 import DraggableArea from '@/components/DraggableArea/DraggableArea';
 import type { DraggableAreaHandle } from '@/components/DraggableArea/DraggableArea';
 import KabbalahTree from '@/components/KabbalahTree/KabbalahTree';
@@ -9,11 +9,12 @@ import CombinedTree from '@/components/CombinedTree/CombinedTree';
 import Navbar from '@/components/Navbar/Navbar';
 import TooltipOutsideHandler from '@/components/Tooltip/TooltipOutsideHandler';
 import type { SearchResult } from '@/data/searchIndex';
+import { usePersistedState } from '@/hooks/usePersistedState';
 
 export default function HomePage() {
-  const [view, setView] = useState<'life' | 'death' | 'both'>('life');
-  const [showVeils, setShowVeils] = useState(true);
-  const [showPillars, setShowPillars] = useState(true);
+  const [view, setView] = usePersistedState<'life' | 'death' | 'both'>('view', 'life');
+  const [showVeils, setShowVeils] = usePersistedState('showVeils', true);
+  const [showPillars, setShowPillars] = usePersistedState('showPillars', true);
   const [pendingFocus, setPendingFocus] = useState<SearchResult | null>(null);
   const draggableRef = useRef<DraggableAreaHandle>(null);
 
