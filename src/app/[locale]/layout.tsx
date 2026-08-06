@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import CookieNotice from '@/components/CookieNotice';
 import '../globals.css';
 
 type Props = {
@@ -34,6 +35,7 @@ export default async function RootLayout({ children, params }: Props) {
         <GoogleAnalytics />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <CookieNotice />
         </NextIntlClientProvider>
       </body>
     </html>

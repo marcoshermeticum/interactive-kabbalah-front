@@ -4,7 +4,7 @@ import crypto from 'crypto';
 // SHA-256 hashes of allowed emails — never store plaintext
 const ALLOWED_EMAIL_HASHES = [
   '248caecb44b9d58aa268e8f09bcc5f04a12ac311e4d28b3e8aab363fb7fffbba', // admin
-  '0d0364e84c89b1204db23395e4f9bd5b0669ceb39d26975394acba2498758bed', // alterar
+  '1bfde58e7f999806468f2e3762933814523e0f9bdc31a3df3cd2674cf17be5d5', // sopri
 ];
 
 // Password hash is stored as env var ADMIN_PASSWORD_HASH

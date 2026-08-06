@@ -17,6 +17,8 @@ import {
   ExclamationCircleOutlined,
   LinkOutlined,
 } from '@ant-design/icons';
+import DevErrorDialog from './DevErrorDialog';
+import { useAdminError, createFetchError } from '../hooks/useAdminError';
 
 const { Text, Paragraph } = Typography;
 
@@ -36,20 +38,22 @@ export default function HistoryPanel({ locale }: HistoryPanelProps) {
   const [commits, setCommits] = useState<Commit[]>([]);
   const [loading, setLoading] = useState(true);
   const [reverting, setReverting] = useState<string | null>(null);
+  const { error, dialogOpen, handleError, clearError } = useAdminError();
 
   const loadHistory = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/history?locale=${locale}`);
-      if (!res.ok) throw new Error('Falha ao carregar histórico');
+      const endpoint = `/api/admin/history?locale=${locale}`;
+      const res = await fetch(endpoint);
+      if (!res.ok) throw await createFetchError(res, endpoint);
       const data = await res.json();
       setCommits(data.commits || []);
     } catch (err) {
-      message.error(`Erro: ${err instanceof Error ? err.message : 'desconhecido'}`);
+      handleError(err, `/api/admin/history?locale=${locale}`);
     } finally {
       setLoading(false);
     }
-  }, [locale]);
+  }, [locale, handleError]);
 
   useEffect(() => {
     loadHistory();
@@ -79,21 +83,19 @@ export default function HistoryPanel({ locale }: HistoryPanelProps) {
       onOk: async () => {
         setReverting(commit.sha);
         try {
-          const res = await fetch('/api/admin/history', {
+          const endpoint = '/api/admin/history';
+          const res = await fetch(endpoint, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ locale, commitSha: commit.sha }),
           });
 
-          if (!res.ok) {
-            const data = await res.json();
-            throw new Error(data.error || 'Erro ao reverter');
-          }
+          if (!res.ok) throw await createFetchError(res, endpoint);
 
           message.success('Revertido com sucesso! O site será atualizado em ~1-2 min.');
           await loadHistory();
         } catch (err) {
-          message.error(`${err instanceof Error ? err.message : 'Erro'}`);
+          handleError(err, '/api/admin/history');
         } finally {
           setReverting(null);
         }
@@ -105,21 +107,26 @@ export default function HistoryPanel({ locale }: HistoryPanelProps) {
     return (
       <div className="flex items-center justify-center py-20">
         <Spin size="large" />
+        <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
       </div>
     );
   }
 
   if (commits.length === 0) {
     return (
-      <Empty
-        description="Nenhum histórico encontrado"
-        image={Empty.PRESENTED_IMAGE_SIMPLE}
-      />
+      <>
+        <Empty
+          description="Nenhum histórico encontrado"
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+        />
+        <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
+      </>
     );
   }
 
   return (
     <div style={{ maxWidth: 800 }}>
+      <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
       <div className="mb-4 flex items-center justify-between">
         <Text style={{ color: 'rgba(255,255,255,0.5)' }}>
           <HistoryOutlined /> Últimas {commits.length} alterações em{' '}
