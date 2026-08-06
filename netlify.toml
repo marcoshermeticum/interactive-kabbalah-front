@@ -4,7 +4,7 @@
 
 [build.environment]
   NODE_VERSION = "22"
-  SECRETS_SCAN_OMIT_KEYS = "GH_REPO_BRANCH"
+  SECRETS_SCAN_OMIT_KEYS = "GH_REPO_BRANCH,GH_REPO_NAME,GH_REPO_OWNER"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
