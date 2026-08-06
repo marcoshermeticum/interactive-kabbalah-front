@@ -166,12 +166,13 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
   return (
     <div>
       <DevErrorDialog error={error} open={dialogOpen} onClose={clearError} />
-      <div className="flex items-center justify-between mb-4">
-        <Flex gap="small" align="center">
+      <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+        <Flex gap="small" align="center" wrap="wrap">
           <Button
             icon={<ReloadOutlined />}
             onClick={loadContent}
             disabled={loading}
+            size="middle"
           >
             Recarregar
           </Button>
@@ -187,7 +188,7 @@ export default function ContentEditor({ locale }: ContentEditorProps) {
           disabled={!modified}
           style={{ background: modified ? '#7c3aed' : undefined }}
         >
-          {modified ? 'Salvar Alterações' : 'Sem alterações'}
+          {modified ? 'Salvar' : 'Sem alterações'}
         </Button>
       </div>
 
@@ -222,7 +223,7 @@ function SephirahEditor({
     <div className="space-y-3">
       {/* Sephirot name/valor */}
       {sephirot && (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="text-xs text-gray-400 block mb-1">Nome</label>
             <Input
@@ -256,7 +257,7 @@ function SephirahEditor({
 
       {/* Regent */}
       {regent && (
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           <div>
             <label className="text-xs text-gray-400 block mb-1">Regente (título)</label>
             <Input
@@ -286,7 +287,7 @@ function SephirahEditor({
 
       {/* World */}
       {world && (
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="text-xs text-gray-400 block mb-1">Mundo</label>
             <Input
