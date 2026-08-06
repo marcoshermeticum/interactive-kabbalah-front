@@ -71,15 +71,6 @@
 - [ ] Ir em: Netlify → Site Settings → Environment variables
 - [ ] Adicionar cada variável:
 
-```env
-ADMIN_PASSWORD_HASH=REDACTED_PASSWORD_HASH
-ADMIN_JWT_SECRET=<gerar string aleatória com 32+ chars>
-CAPTCHA_SECRET=<gerar string aleatória qualquer>
-GITHUB_TOKEN=<token gerado no passo 1>
-GITHUB_OWNER=<seu username do GitHub>
-GITHUB_REPO=<nome do repositório, ex: interactive-kabbalah-front>
-GITHUB_BRANCH=main
-```
 
 > Dica para gerar secrets aleatórios: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
 
