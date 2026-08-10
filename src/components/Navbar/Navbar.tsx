@@ -9,7 +9,9 @@ import LanguageSelector from '@/components/LanguageSelector';
 import NotificationButton from '@/components/Notifications/NotificationButton';
 import NotificationDialog from '@/components/Notifications/NotificationDialog';
 import OrientationGuideDialog from '@/components/Notifications/OrientationGuideDialog';
+import VakinhaCampaignDialog from '@/components/Notifications/VakinhaCampaignDialog';
 import { useNotificationState } from '@/hooks/useNotificationState';
+import { useVakinhaCampaign } from '@/hooks/useVakinhaCampaign';
 import { notifications } from '@/data/notifications';
 
 interface Props {
@@ -40,12 +42,21 @@ export default function Navbar({
 
   const { unreadCount, readIds, markAsRead, isGuideRead, markGuideRead } = useNotificationState(notifications);
 
+  const { isDialogOpen: isVakinhaCampaignOpen, openDialog: openVakinhaCampaign, closeDialog: closeVakinhaCampaign } = useVakinhaCampaign();
+
   const totalUnread = unreadCount + (isGuideRead ? 0 : 1);
 
   const handleOpenGuide = () => {
     setIsNotificationDialogOpen(false);
     setIsGuideOpen(true);
     markGuideRead();
+  };
+
+  const handleNotificationAction = (id: string) => {
+    if (id === 'vakinha-campaign-v1') {
+      setIsNotificationDialogOpen(false);
+      openVakinhaCampaign();
+    }
   };
 
   const handleGuideClose = () => {
@@ -238,8 +249,8 @@ export default function Navbar({
                 >
                   <span className="text-lg">❤️</span>
                   <div className="text-left">
-                    <span className="block font-medium">Buy me a coffee ☕</span>
-                    <span className="text-[11px] text-amber-300/60">PIX</span>
+                    <span className="block font-medium">{ui('vakinhaLink')}</span>
+                    <span className="text-[11px] text-amber-300/60">Vakinha</span>
                   </div>
                 </button>
               </div>
@@ -281,12 +292,19 @@ export default function Navbar({
         readIds={readIds}
         onMarkRead={markAsRead}
         onOpenGuide={handleOpenGuide}
+        onNotificationAction={handleNotificationAction}
       />
 
       {/* Orientation Guide Dialog */}
       <OrientationGuideDialog
         isOpen={isGuideOpen}
         onClose={handleGuideClose}
+      />
+
+      {/* Vakinha Campaign Dialog */}
+      <VakinhaCampaignDialog
+        isOpen={isVakinhaCampaignOpen}
+        onClose={closeVakinhaCampaign}
       />
     </>
   );
@@ -350,19 +368,71 @@ function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPill
   );
 }
 
+const VAKINHA_URL = "https://www.vakinha.com.br/vaquinha/interactive-kabbalah-redesign-e-plataformizacao";
+const VAKINHA_PIX = "6257640@vakinha.com.br";
+
 function DonationPanel({ onClose }: { onClose: () => void }) {
   const ui = useTranslations('ui');
+  const [copied, setCopied] = useState(false);
+  const [clipboardUnavailable, setClipboardUnavailable] = useState(false);
+
+  const handleCopyPix = async () => {
+    try {
+      if (!navigator.clipboard) {
+        setClipboardUnavailable(true);
+        return;
+      }
+      await navigator.clipboard.writeText(VAKINHA_PIX);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setClipboardUnavailable(true);
+    }
+  };
+
   return (
     <div className="absolute top-14 right-4 z-[600] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-5 w-[280px]">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Buy me a coffee ☕</h3>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm">✕</button>
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Vakinha ☕</h3>
+        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm" aria-label="Close">✕</button>
       </div>
-      <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">{ui('donate')}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">{ui('donate')}</p>
+      <a
+        href={VAKINHA_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 text-sm font-medium text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 transition mb-3"
+        aria-label={ui('vakinhaLink')}
+      >
+        {ui('vakinhaLink')} 🔗
+      </a>
+      <p className="text-[11px] text-gray-500 dark:text-gray-400 mb-3">{ui('vakinhaPurpose')}</p>
       <div className="flex flex-col items-center gap-3">
         <div className="text-center">
           <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">{ui('pixKey')}</p>
-          <button onClick={() => { navigator.clipboard.writeText('48991913318'); }} className="text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition" title={ui('clickToCopy')}>48991913318 📋</button>
+          {clipboardUnavailable ? (
+            <input
+              type="text"
+              readOnly
+              value={VAKINHA_PIX}
+              className="text-sm font-mono bg-gray-100 dark:bg-gray-800 px-3 py-1.5 rounded-lg text-gray-800 dark:text-gray-200 w-full text-center select-all border border-gray-300 dark:border-gray-600"
+              onClick={(e) => (e.target as HTMLInputElement).select()}
+              aria-label={`${ui('pixKey')} ${VAKINHA_PIX}`}
+            />
+          ) : (
+            <button
+              onClick={handleCopyPix}
+              className={`text-sm font-mono px-3 py-1.5 rounded-lg transition ${
+                copied
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700'
+              }`}
+              title={ui('clickToCopy')}
+              aria-label={`${ui('clickToCopy')} ${VAKINHA_PIX}`}
+            >
+              {copied ? `${VAKINHA_PIX} ✓` : `${VAKINHA_PIX} 📋`}
+            </button>
+          )}
         </div>
         <p className="text-[10px] text-gray-400 text-center mt-1">{ui('donateThank')}</p>
       </div>

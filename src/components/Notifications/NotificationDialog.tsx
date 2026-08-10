@@ -11,6 +11,7 @@ interface NotificationDialogProps {
   readIds: Set<string>;
   onMarkRead: (id: string) => void;
   onOpenGuide: () => void;
+  onNotificationAction?: (id: string) => void;
 }
 
 export default function NotificationDialog({
@@ -20,6 +21,7 @@ export default function NotificationDialog({
   readIds,
   onMarkRead,
   onOpenGuide,
+  onNotificationAction,
 }: NotificationDialogProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
@@ -152,7 +154,10 @@ export default function NotificationDialog({
             return (
               <button
                 key={notification.id}
-                onClick={() => onMarkRead(notification.id)}
+                onClick={() => {
+                  onMarkRead(notification.id);
+                  onNotificationAction?.(notification.id);
+                }}
                 className={`w-full flex items-center gap-3 px-3 py-3 rounded-xl hover:bg-white/5 transition text-left min-h-[44px] ${
                   isRead ? 'opacity-50' : ''
                 }`}

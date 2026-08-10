@@ -26,10 +26,12 @@
     "appearance": "מראה",
     "links": "קישורים",
     "support": "תמיכה",
-    "donate": "אם הפרויקט הזה עזר לך במסע שלך, שקול לתמוך בכל סכום דרך PIX.",
-    "pixKey": "מפתח PIX (טלפון):",
+    "donate": "הפכו את הפרויקט הזה למשהו גדול יותר! תרמו לקמפיין שלנו:",
+    "pixKey": "מפתח PIX של Vakinha:",
     "clickToCopy": "לחץ להעתקה",
-    "donateThank": "כל סכום מתקבל בברכה. תודה! 🙏",
+    "vakinhaLink": "בקרו בקמפיין",
+    "vakinhaPurpose": "פלטפורמיזציה של Interactive Kabbalah",
+    "donateThank": "כל תרומה מקרבת אותנו לפלטפורמיזציה. תודה! 🙏",
     "searchPlaceholder": "חיפוש: שור, ירח, לב, רובי...",
     "matchedOn": "מתאים ל",
     "noResults": "אין תוצאות עבור",
@@ -283,6 +285,10 @@
     "guide": {
       "title": "מדריך התמצאות",
       "description": "למד כיצד להשתמש בכלי זה להכרה עצמית"
+    },
+    "vakinha_campaign": {
+      "title": "🚀 תמכו בפרויקט!",
+      "description": "תרמו לפלטפורמיזציה של Interactive Kabbalah"
     }
   },
   "guide": {
@@ -385,5 +391,13 @@
       "integration": "",
       "dailyLife": ""
     }
+  },
+  "vakinhaCampaign": {
+    "title": "הפכו את הפרויקט הזה למשהו גדול יותר",
+    "subtitle": "✦ פלטפורמיזציה ✦",
+    "message": "Interactive Kabbalah מתפתח לפלטפורמה מלאה ללימוד ותרגול. התרומה שלך ממנת פיתוח של פיצ'רים חדשים, שרתים והמשימה להנגיש את חכמת הקבלה לכולם.",
+    "linkButton": "בקרו בקמפיין",
+    "pixLabel": "מפתח PIX של Vakinha",
+    "pixCopied": "✓ הועתק!"
   }
 }

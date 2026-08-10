@@ -28,10 +28,12 @@
     "appearance": "Aparência",
     "links": "Redes & Links",
     "support": "Apoiar",
-    "donate": "Se este projeto te ajudou na jornada, considere apoiar com qualquer valor via PIX.",
-    "pixKey": "Chave PIX (telefone):",
+    "donate": "Transmute este projeto em algo maior! Faça um donativo para nossa vakinha:",
+    "pixKey": "Chave PIX Vakinha:",
     "clickToCopy": "Clique para copiar",
-    "donateThank": "Qualquer valor é bem-vindo. Obrigado! 🙏",
+    "vakinhaLink": "Acessar a Vakinha",
+    "vakinhaPurpose": "Plataformização do Interactive Kabbalah",
+    "donateThank": "Toda contribuição nos aproxima da plataformização. Obrigado! 🙏",
     "searchPlaceholder": "Buscar: boi, lua, coração, rubi...",
     "matchedOn": "corresponde a",
     "noResults": "Nenhum resultado para",
@@ -679,7 +681,19 @@
     "guide": {
       "title": "Novo: Guia de Orientações",
       "description": "Um guia para interpretar a Árvore da Vida de forma não-dualística"
+    },
+    "vakinha_campaign": {
+      "title": "🚀 Apoie o projeto!",
+      "description": "Doe para a plataformização do Interactive Kabbalah"
     }
+  },
+  "vakinhaCampaign": {
+    "title": "Transmute este projeto em algo maior",
+    "subtitle": "✦ Plataformização ✦",
+    "message": "O Interactive Kabbalah está evoluindo para uma plataforma completa de estudo e prática. Sua contribuição financia o desenvolvimento de novas features, servidores e a missão de tornar a sabedoria da Kabbalah acessível a todos.",
+    "linkButton": "Acessar a Vakinha",
+    "pixLabel": "Chave PIX Vakinha",
+    "pixCopied": "✓ Copiado!"
   },
   "guide": {
     "title": "Guia de Orientações",
