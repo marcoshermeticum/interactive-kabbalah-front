@@ -16,6 +16,7 @@ export default function HomePage() {
   const [showVeils, setShowVeils] = usePersistedState('showVeils', true);
   const [showPillars, setShowPillars] = usePersistedState('showPillars', true);
   const [pendingFocus, setPendingFocus] = useState<SearchResult | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const draggableRef = useRef<DraggableAreaHandle>(null);
 
   const focusAndTrigger = useCallback((result: SearchResult) => {
@@ -54,8 +55,25 @@ export default function HomePage() {
     }
   }, [pendingFocus, focusAndTrigger]);
 
+  // Dismiss loading screen after tree has had time to render and fit
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 600);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden" style={{ background: 'var(--bg-primary)' }}>
+      {/* Loading overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ background: 'var(--bg-primary)' }}>
+          <div className="flex flex-col items-center gap-4 animate-pulse">
+            <div className="text-4xl" style={{ filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.3))' }}>✡️</div>
+            <div className="w-8 h-[2px] rounded-full bg-amber-500/40" />
+          </div>
+        </div>
+      )}
       <TooltipOutsideHandler />
       <Navbar
         view={view}

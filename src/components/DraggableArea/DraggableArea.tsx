@@ -82,8 +82,8 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     applyTransform();
   }, [applyTransform]);
 
-  // Auto-fit: calculate initial scale so the entire tree is visible and centered
-  // On mobile: centers Tiferet (y=890) in the viewport as focal point
+  // Auto-fit: calculate initial scale so the entire tree fills the viewport
+  // Uses the actual bounding box of the tree nodes (not just the coordinate space)
   const fitToViewport = useCallback(() => {
     const container = containerRef.current;
     const content = contentRef.current;
@@ -95,36 +95,30 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     const contentEl = content.firstElementChild as HTMLElement | null;
     if (!contentEl) return;
 
-    // The tree layout is a fixed 800x1640 coordinate space
+    // The full tree coordinate space (includes ornaments, veils, pillars)
     const contentWidth = 800;
     const contentHeight = 1640;
 
-    // On mobile (narrow viewport), use minimal padding to maximize tree visibility
+    // Available space with small padding
     const isMobile = containerRect.width < 768;
-    const padding = isMobile ? 2 : 16;
+    const padding = isMobile ? 4 : 20;
     const availableWidth = containerRect.width - padding * 2;
     const availableHeight = containerRect.height - padding * 2;
 
+    // Scale to fit: use the smaller ratio to ensure everything is visible
     const scaleX = availableWidth / contentWidth;
     const scaleY = availableHeight / contentHeight;
-    const scale = Math.min(scaleX, scaleY, 1); // Never zoom in beyond 1
+    const scale = Math.min(scaleX, scaleY, 1);
 
-    // Center horizontally
+    // Center the tree in the container
     const scaledWidth = contentWidth * scale;
+    const scaledHeight = contentHeight * scale;
     const x = (containerRect.width - scaledWidth) / 2;
 
-    // Vertically: on mobile, center Tiferet (y=890) in the viewport
-    // On desktop, center the whole tree
-    let y: number;
-    if (isMobile) {
-      // Tiferet at y=890 in content space → should map to center of viewport
-      const tiferetScreenY = 890 * scale;
-      const viewportCenterY = containerRect.height / 2;
-      y = viewportCenterY - tiferetScreenY;
-    } else {
-      const scaledHeight = contentHeight * scale;
-      y = (containerRect.height - scaledHeight) / 2;
-    }
+    // On mobile: align near the top; on desktop: center vertically
+    const y = isMobile
+      ? padding
+      : (containerRect.height - scaledHeight) / 2;
 
     transform.current = { x, y, scale };
     applyTransform();
