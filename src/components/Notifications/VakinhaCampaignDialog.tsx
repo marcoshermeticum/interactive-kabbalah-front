@@ -205,8 +205,13 @@ export default function VakinhaCampaignDialog({ isOpen, onClose }: VakinhaCampai
         </button>
 
         {/* Decorative symbol */}
-        <div className="text-center text-[40px] mb-4" style={{ filter: 'drop-shadow(0 0 12px rgba(245, 158, 11, 0.4))' }}>
-          ✡️
+        <div className="text-center mb-4">
+          <img
+            src="/mrviniciux.png"
+            alt=""
+            className="w-12 h-12 mx-auto"
+            style={{ filter: 'drop-shadow(0 0 12px rgba(245, 158, 11, 0.4))' }}
+          />
         </div>
 
         {/* Heading */}

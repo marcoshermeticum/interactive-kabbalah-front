@@ -84,8 +84,8 @@ export default function Navbar({
       >
         {/* Left: Brand */}
         <div className="flex items-center gap-2 min-w-0">
-          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-gradient-to-br from-amber-600 to-amber-900 flex items-center justify-center shrink-0">
-            <span className="text-white text-xs sm:text-sm">✡</span>
+          <div className="shrink-0 flex items-center justify-center">
+            <img src="/mrviniciux.png" alt="" className="h-7 sm:h-8 w-auto object-contain" />
           </div>
           <h1
             className="text-sm sm:text-base md:text-lg font-semibold tracking-tight truncate"

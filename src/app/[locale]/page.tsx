@@ -68,9 +68,14 @@ export default function HomePage() {
       {/* Loading overlay */}
       {isLoading && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ background: 'var(--bg-primary)' }}>
-          <div className="flex flex-col items-center gap-4 animate-pulse">
-            <div className="text-4xl" style={{ filter: 'drop-shadow(0 0 8px rgba(245, 158, 11, 0.3))' }}>✡️</div>
-            <div className="w-8 h-[2px] rounded-full bg-amber-500/40" />
+          <div className="flex flex-col items-center gap-4">
+            <img
+              src="/mrviniciux.png"
+              alt=""
+              className="h-16 w-auto animate-pulse"
+              style={{ filter: 'drop-shadow(0 0 12px rgba(245, 158, 11, 0.4))' }}
+            />
+            <div className="w-8 h-[2px] rounded-full bg-amber-500/40 animate-pulse" />
           </div>
         </div>
       )}

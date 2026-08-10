@@ -91,9 +91,6 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
 
     const containerRect = container.getBoundingClientRect();
     if (containerRect.width === 0 || containerRect.height === 0) return;
-    
-    const contentEl = content.firstElementChild as HTMLElement | null;
-    if (!contentEl) return;
 
     // The full tree coordinate space (includes ornaments, veils, pillars)
     const contentWidth = 800;
@@ -119,6 +116,8 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     const y = isMobile
       ? padding
       : (containerRect.height - scaledHeight) / 2;
+
+    console.log('[fitToViewport]', { containerW: containerRect.width, containerH: containerRect.height, isMobile, scaleX: scaleX.toFixed(4), scaleY: scaleY.toFixed(4), scale: scale.toFixed(4), x: x.toFixed(2), y: y.toFixed(2) });
 
     transform.current = { x, y, scale };
     applyTransform();
@@ -186,11 +185,13 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
         fitToViewport();
         initialized.current = true;
       };
-      // Try immediately, then again after short delays for hydration + layout
+      // Try multiple times to handle hydration, layout shifts, and late container sizing
       requestAnimationFrame(() => {
         tryFit();
-        setTimeout(tryFit, 100);
-        setTimeout(tryFit, 300);
+        setTimeout(fitToViewport, 50);
+        setTimeout(fitToViewport, 150);
+        setTimeout(fitToViewport, 400);
+        setTimeout(fitToViewport, 700);
       });
     }
 
@@ -427,6 +428,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
       <HermeticBackground />
       <div
         ref={contentRef}
+        className="absolute"
         style={{ transformOrigin: '0 0', willChange: 'transform' }}
       >
         {children}
