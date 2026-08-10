@@ -39,7 +39,7 @@ This document defines the requirements for the Vakinha Campaign Dialog feature â
 1. WHILE the Campaign_Dialog is open, THE Campaign_Dialog SHALL render as a fixed full-screen overlay (fixed positioning, inset-0) at z-index 900 or above, with a backdrop of at least 60% opacity black and backdrop-blur applied, preventing interaction with content underneath
 2. WHILE the Campaign_Dialog is open, THE Campaign_Dialog SHALL display amber/gold gradient styling using the project's amber-300 through amber-600 color tokens on a gray-900/950 background, and SHALL apply at least one visible glow effect (box-shadow or text-shadow) on the primary heading or container border
 3. WHILE the Campaign_Dialog is open, THE Campaign_Dialog SHALL present a layout that occupies at least 95% viewport width on screens below 640px and a maximum width of 480px on screens 640px and above, centered both horizontally and vertically
-4. WHILE the Campaign_Dialog is open, THE Campaign_Dialog SHALL display the following content in top-to-bottom order: (a) the campaign motivational message as the primary heading, (b) the Campaign_URL link button, (c) the PIX_Key display with an adjacent copy-to-clipboard button, and (d) a "Don't show again" checkbox at the bottom of the dialog
+4. WHILE the Campaign_Dialog is open, THE Campaign_Dialog SHALL display the following content in top-to-bottom order: (a) the campaign motivational message as the primary heading, (b) the Campaign_URL link button, (c) the PIX_Key display with an adjacent copy-to-clipboard button, and (d) a thank-you message at the bottom
 5. WHILE the Campaign_Dialog is open, THE Campaign_Dialog SHALL constrain its maximum height to 90vh and enable vertical scrolling of content if the dialog content exceeds the available height
 
 ### Requirement 3: Campaign Link Interaction
@@ -68,12 +68,12 @@ This document defines the requirements for the Vakinha Campaign Dialog feature â
 
 ### Requirement 5: Dialog Dismissal and Persistence
 
-**User Story:** As a user, I want to dismiss the campaign dialog and optionally prevent it from appearing again, so that I am not repeatedly interrupted after I have seen the campaign.
+**User Story:** As a user, I want the campaign dialog to appear only once per device, so that I am not repeatedly interrupted on subsequent visits.
 
 #### Acceptance Criteria
 
-1. WHEN a user closes the Campaign_Dialog by any method (close button, backdrop click, or Escape key) without checking the "Don't show again" checkbox, THE Campaign_Hook SHALL call `safeSetItem` to set the Dismissal_Flag to "true" in localStorage
-2. WHEN a user checks the "Don't show again" checkbox and then closes the Campaign_Dialog by any method (close button, backdrop click, or Escape key), THE Campaign_Hook SHALL call `safeSetItem` to set the Dismissal_Flag to "true" in localStorage
+1. WHEN a user closes the Campaign_Dialog by any method (close button, backdrop click, or Escape key), THE Campaign_Hook SHALL call `safeSetItem` to set the Dismissal_Flag to "true" in localStorage immediately, ensuring the dialog never auto-shows again on this device
+2. THE Campaign_Dialog SHALL NOT render a "Don't show again" checkbox â€” dismissal always persists automatically
 3. WHEN the Campaign_Dialog is dismissed, THE Umami_Tracker SHALL dispatch the event `"vakinha-dialog-dismissed"` before the dialog is removed from the DOM
 4. WHEN the Campaign_Dialog is dismissed, THE Campaign_Dialog SHALL set `isOpen` to false and return null from render, removing itself from the DOM within a single React render cycle
 5. IF `safeSetItem` fails to write the Dismissal_Flag (localStorage unavailable or quota exceeded), THEN THE Campaign_Hook SHALL still close the dialog without throwing an error, and the dialog will auto-show again on the next visit
@@ -125,7 +125,7 @@ This document defines the requirements for the Vakinha Campaign Dialog feature â
 #### Acceptance Criteria
 
 1. THE Campaign_Dialog SHALL display all user-facing text using translation keys from the `vakinhaCampaign` namespace resolved by next-intl
-2. THE locale files for each supported locale (pt-BR, en-US, he, ja) SHALL contain non-empty string values for all keys in the `vakinhaCampaign` namespace: title, subtitle, message, linkButton, pixLabel, pixCopied, dontShowAgain
+2. THE locale files for each supported locale (pt-BR, en-US, he, ja) SHALL contain non-empty string values for all keys in the `vakinhaCampaign` namespace: title, subtitle, message, linkButton, pixLabel, pixCopied
 3. THE locale files for each supported locale (pt-BR, en-US, he, ja) SHALL contain non-empty string values for `notifications.vakinha_campaign.title` and `notifications.vakinha_campaign.description` keys
 4. THE Campaign_Dialog SHALL display the PIX_Key and Campaign_URL as untranslated constants regardless of active locale
 5. WHILE the active locale is a right-to-left language (he), THE Campaign_Dialog SHALL render text content with right-to-left direction

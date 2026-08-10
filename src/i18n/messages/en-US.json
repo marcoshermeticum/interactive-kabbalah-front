@@ -278,6 +278,14 @@
       "veilNephesch": "Veil of Nephesch"
     }
   },
+  "vakinhaCampaign": {
+    "title": "Transmute this project into something greater",
+    "subtitle": "✦ Platformization ✦",
+    "message": "Interactive Kabbalah is evolving into a complete study and practice platform. Your contribution funds the development of new features, servers, and the mission to make the wisdom of Kabbalah accessible to all.",
+    "linkButton": "Visit the Campaign",
+    "pixLabel": "Vakinha PIX Key",
+    "pixCopied": "✓ Copied!"
+  },
   "notifications": {
     "title": "Notifications",
     "guideTitle": "Orientation Guide",
@@ -285,6 +293,10 @@
     "guide": {
       "title": "New: Orientation Guide",
       "description": "A guide for interpreting the Tree of Life in a non-dualistic way"
+    },
+    "vakinha_campaign": {
+      "title": "🚀 Support the project!",
+      "description": "Donate to the platformization of Interactive Kabbalah"
     }
   },
   "guide": {

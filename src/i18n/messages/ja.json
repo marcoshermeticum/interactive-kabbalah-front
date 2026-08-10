@@ -278,6 +278,14 @@
       "veilNephesch": "ネフェシュのヴェール"
     }
   },
+  "vakinhaCampaign": {
+    "title": "このプロジェクトをさらに大きなものに",
+    "subtitle": "✦ プラットフォーム化 ✦",
+    "message": "Interactive Kabbalahは完全な学習・実践プラットフォームへと進化しています。あなたの貢献が新機能の開発、サーバー、そしてカバラの叡智をすべての人に届ける使命を支えます。",
+    "linkButton": "キャンペーンを見る",
+    "pixLabel": "Vakinha PIXキー",
+    "pixCopied": "✓ コピーしました！"
+  },
   "notifications": {
     "title": "通知",
     "guideTitle": "オリエンテーションガイド",
@@ -285,6 +293,10 @@
     "guide": {
       "title": "オリエンテーションガイド",
       "description": "この個人的な自己認識ツールの使い方を学ぶ"
+    },
+    "vakinha_campaign": {
+      "title": "🚀 プロジェクトを支援！",
+      "description": "Interactive Kabbalahのプラットフォーム化に寄付"
     }
   },
   "guide": {

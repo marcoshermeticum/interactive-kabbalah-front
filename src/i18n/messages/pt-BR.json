@@ -681,7 +681,19 @@
     "guide": {
       "title": "Novo: Guia de Orientações",
       "description": "Um guia para interpretar a Árvore da Vida de forma não-dualística"
+    },
+    "vakinha_campaign": {
+      "title": "🚀 Apoie o projeto!",
+      "description": "Doe para a plataformização do Interactive Kabbalah"
     }
+  },
+  "vakinhaCampaign": {
+    "title": "Transmute este projeto em algo maior",
+    "subtitle": "✦ Plataformização ✦",
+    "message": "O Interactive Kabbalah está evoluindo para uma plataforma completa de estudo e prática. Sua contribuição financia o desenvolvimento de novas features, servidores e a missão de tornar a sabedoria da Kabbalah acessível a todos.",
+    "linkButton": "Acessar a Vakinha",
+    "pixLabel": "Chave PIX Vakinha",
+    "pixCopied": "✓ Copiado!"
   },
   "guide": {
     "title": "Guia de Orientações",

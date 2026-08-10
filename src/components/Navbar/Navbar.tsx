@@ -9,7 +9,9 @@ import LanguageSelector from '@/components/LanguageSelector';
 import NotificationButton from '@/components/Notifications/NotificationButton';
 import NotificationDialog from '@/components/Notifications/NotificationDialog';
 import OrientationGuideDialog from '@/components/Notifications/OrientationGuideDialog';
+import VakinhaCampaignDialog from '@/components/Notifications/VakinhaCampaignDialog';
 import { useNotificationState } from '@/hooks/useNotificationState';
+import { useVakinhaCampaign } from '@/hooks/useVakinhaCampaign';
 import { notifications } from '@/data/notifications';
 
 interface Props {
@@ -40,12 +42,21 @@ export default function Navbar({
 
   const { unreadCount, readIds, markAsRead, isGuideRead, markGuideRead } = useNotificationState(notifications);
 
+  const { isDialogOpen: isVakinhaCampaignOpen, openDialog: openVakinhaCampaign, closeDialog: closeVakinhaCampaign } = useVakinhaCampaign();
+
   const totalUnread = unreadCount + (isGuideRead ? 0 : 1);
 
   const handleOpenGuide = () => {
     setIsNotificationDialogOpen(false);
     setIsGuideOpen(true);
     markGuideRead();
+  };
+
+  const handleNotificationAction = (id: string) => {
+    if (id === 'vakinha-campaign-v1') {
+      setIsNotificationDialogOpen(false);
+      openVakinhaCampaign();
+    }
   };
 
   const handleGuideClose = () => {
@@ -281,12 +292,19 @@ export default function Navbar({
         readIds={readIds}
         onMarkRead={markAsRead}
         onOpenGuide={handleOpenGuide}
+        onNotificationAction={handleNotificationAction}
       />
 
       {/* Orientation Guide Dialog */}
       <OrientationGuideDialog
         isOpen={isGuideOpen}
         onClose={handleGuideClose}
+      />
+
+      {/* Vakinha Campaign Dialog */}
+      <VakinhaCampaignDialog
+        isOpen={isVakinhaCampaignOpen}
+        onClose={closeVakinhaCampaign}
       />
     </>
   );

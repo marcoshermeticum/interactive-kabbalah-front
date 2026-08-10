@@ -6,8 +6,8 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
 
 ## Tasks
 
-- [ ] 1. Create useVakinhaCampaign hook and campaign constants
-  - [ ] 1.1 Create the useVakinhaCampaign custom hook at `src/hooks/useVakinhaCampaign.ts`
+- [x] 1. Create useVakinhaCampaign hook and campaign constants
+  - [x] 1.1 Create the useVakinhaCampaign custom hook at `src/hooks/useVakinhaCampaign.ts`
     - Define campaign constants: `VAKINHA_CAMPAIGN_URL`, `VAKINHA_PIX_KEY`, `STORAGE_KEY_DISMISSED`
     - Import `safeGetItem` and `safeSetItem` from `@/hooks/useNotificationState`
     - Implement `useVakinhaCampaign` hook with `isDialogOpen`, `openDialog`, `closeDialog` state management
@@ -29,23 +29,23 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
     - Use fast-check to generate arbitrary dismissal states
     - Verify: `openDialog()` always results in `isDialogOpen === true`
 
-- [ ] 2. Add i18n translation keys for all 4 locales
-  - [ ] 2.1 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/pt-BR.json`
-    - Add keys: title, subtitle, message, linkButton, pixLabel, pixCopied, dontShowAgain
+- [x] 2. Add i18n translation keys for all 4 locales
+  - [x] 2.1 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/pt-BR.json`
+    - Add keys: title, subtitle, message, linkButton, pixLabel, pixCopied
     - Add `notifications.vakinha_campaign.title` and `notifications.vakinha_campaign.description`
     - _Requirements: 9.1, 9.2, 9.3_
 
-  - [ ] 2.2 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/en-US.json`
+  - [x] 2.2 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/en-US.json`
     - Same key structure as pt-BR with English translations
     - Add `notifications.vakinha_campaign.title` and `notifications.vakinha_campaign.description`
     - _Requirements: 9.1, 9.2, 9.3_
 
-  - [ ] 2.3 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/he.json`
+  - [x] 2.3 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/he.json`
     - Same key structure with Hebrew translations (RTL language)
     - Add `notifications.vakinha_campaign.title` and `notifications.vakinha_campaign.description`
     - _Requirements: 9.1, 9.2, 9.3, 9.5_
 
-  - [ ] 2.4 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/ja.json`
+  - [x] 2.4 Add `vakinhaCampaign` namespace translations to `src/i18n/messages/ja.json`
     - Same key structure with Japanese translations
     - Add `notifications.vakinha_campaign.title` and `notifications.vakinha_campaign.description`
     - _Requirements: 9.1, 9.2, 9.3_
@@ -57,14 +57,15 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
     - Verify: every key exists and is a non-empty string in every locale file
 
 - [ ] 3. Implement VakinhaCampaignDialog component
-  - [ ] 3.1 Create `src/components/Notifications/VakinhaCampaignDialog.tsx` with full-screen modal structure
+  - [x] 3.1 Create `src/components/Notifications/VakinhaCampaignDialog.tsx` with full-screen modal structure
     - 'use client' directive at top
     - Props interface: `{ isOpen: boolean; onClose: () => void }`
     - Fixed overlay with backdrop (bg-black/60, backdrop-blur-sm, z-[900])
     - Dialog panel: centered, max-w-[480px] on desktop, 95vw on mobile, max-h-[90vh] with overflow-y-auto
     - Amber/gold gradient styling: amber-300 through amber-600, gray-900/950 background, glow box-shadow on container border
-    - Layout order: (a) campaign heading, (b) campaign link button, (c) PIX key + copy button, (d) "Don't show again" checkbox
+    - Layout order: (a) decorative symbol + campaign heading, (b) subtitle + message, (c) campaign link CTA button, (d) PIX key section with copy button, (e) thank-you text
     - Close button in top-right corner
+    - Subtle particle/glow animations matching the approved mockup design
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
 
   - [ ] 3.2 Implement accessibility features in VakinhaCampaignDialog
@@ -93,14 +94,13 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
     - Fallback input: `onClick` selects full text content for manual copy
     - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 10.3_
 
-  - [ ] 3.5 Implement "Don't show again" checkbox and dismiss logic
-    - Render checkbox with translated label at bottom of dialog
+  - [ ] 3.5 Implement dismiss logic (auto-persist on any close)
     - All close methods (close button, backdrop, Escape) trigger dismiss
     - On dismiss: call `window.umami?.track('vakinha-dialog-dismissed')` then call `onClose()`
-    - Checkbox state passed to parent for persistence (hook handles localStorage)
+    - No checkbox needed — closing always persists dismissal to localStorage via hook
     - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
-  - [ ] 3.6 Implement Umami analytics tracking
+  - [x] 3.6 Implement Umami analytics tracking
     - On dialog open (isOpen transitions to true): `window.umami?.track('vakinha-dialog-opened')`
     - On link click: `window.umami?.track('vakinha-link-clicked')`
     - On PIX copy success: `window.umami?.track('vakinha-pix-copied')`
@@ -124,16 +124,16 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
     - Test: clipboard fallback renders when clipboard unavailable
     - _Requirements: 2.1, 3.1, 3.2, 4.1, 6.2, 6.5, 10.3_
 
-- [ ] 4. Checkpoint - Ensure all tests pass
+- [x] 4. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 5. Add notification entry and wire notification click handler
-  - [ ] 5.1 Add Vakinha campaign notification entry to `src/data/notifications.ts`
+- [x] 5. Add notification entry and wire notification click handler
+  - [x] 5.1 Add Vakinha campaign notification entry to `src/data/notifications.ts`
     - Add entry: `{ id: 'vakinha-campaign-v1', publishedAt: '2025-01-15T00:00:00Z', titleKey: 'notifications.vakinha_campaign.title', descriptionKey: 'notifications.vakinha_campaign.description' }`
     - Place at beginning of array (most recent first)
     - _Requirements: 7.1, 7.5_
 
-  - [ ] 5.2 Wire notification click handler in Navbar to open VakinhaCampaignDialog
+  - [x] 5.2 Wire notification click handler in Navbar to open VakinhaCampaignDialog
     - Import `useVakinhaCampaign` hook in Navbar
     - Import `VakinhaCampaignDialog` component
     - Add state and handler: when notification with id `'vakinha-campaign-v1'` is clicked, close notification dialog, call `openDialog()`
@@ -148,8 +148,8 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
     - Test: campaign dialog opens even when dismissal flag is set in localStorage
     - _Requirements: 7.2, 7.3, 7.4_
 
-- [ ] 6. Integrate auto-show logic in Navbar
-  - [ ] 6.1 Wire useVakinhaCampaign auto-show in Navbar component
+- [x] 6. Integrate auto-show logic in Navbar
+  - [x] 6.1 Wire useVakinhaCampaign auto-show in Navbar component
     - The hook already manages auto-show via useEffect on mount
     - Ensure `VakinhaCampaignDialog` receives `isDialogOpen` from the hook
     - Ensure dialog renders after hydration only (hook's useEffect handles this)
@@ -162,7 +162,7 @@ Implement a full-screen modal dialog promoting the Interactive Kabbalah Vakinha 
     - Use fast-check to generate close methods from set {closeButton, backdrop, escape}
     - Verify: localStorage is set to "true" after any close method
 
-- [ ] 7. Final checkpoint - Ensure all tests pass
+- [x] 7. Final checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
 ## Notes

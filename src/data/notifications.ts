@@ -13,6 +13,12 @@ export interface NotificationEntry {
 
 export const notifications: NotificationEntry[] = [
   {
+    id: 'vakinha-campaign-v1',
+    publishedAt: '2025-01-15T00:00:00Z',
+    titleKey: 'notifications.vakinha_campaign.title',
+    descriptionKey: 'notifications.vakinha_campaign.description',
+  },
+  {
     id: 'orientation-guide-v1',
     publishedAt: '2024-01-01T00:00:00Z',
     titleKey: 'notifications.guide.title',

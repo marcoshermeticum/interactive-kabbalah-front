@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vakinha Campaign Dialog — Design Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === BACKDROP === */
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.70);
+      backdrop-filter: blur(8px);
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* === DIALOG === */
+    .dialog {
+      position: relative;
+      width: 95vw;
+      max-width: 440px;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: radial-gradient(ellipse at top center, rgba(217, 119, 6, 0.08) 0%, transparent 60%),
+                  linear-gradient(180deg, #111118 0%, #0d0d12 100%);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 20px;
+      box-shadow:
+        0 0 60px rgba(245, 158, 11, 0.08),
+        0 0 120px rgba(217, 119, 6, 0.04),
+        0 25px 50px rgba(0, 0, 0, 0.5);
+      padding: 32px 28px;
+      z-index: 901;
+      animation: dialogEntry 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes dialogEntry {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    /* === GLOW BORDER EFFECT === */
+    .dialog::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 21px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.3) 0%, transparent 50%, rgba(217, 119, 6, 0.15) 100%);
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    /* === CLOSE BUTTON === */
+    .close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 18px;
+    }
+    .close-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* === DECORATIVE SYMBOL === */
+    .symbol {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.4));
+    }
+
+    /* === HEADING === */
+    .heading {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+      text-align: center;
+      margin-bottom: 8px;
+      line-height: 1.3;
+      text-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
+    }
+
+    /* === SUBTITLE === */
+    .subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(245, 158, 11, 0.7);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* === MESSAGE === */
+    .message {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+      text-align: center;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      padding: 0 8px;
+    }
+
+    /* === CTA BUTTON (LINK) === */
+    .cta-link {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 12px;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow:
+        0 4px 12px rgba(217, 119, 6, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
+    }
+    .cta-link:hover {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      box-shadow:
+        0 6px 20px rgba(245, 158, 11, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      transform: translateY(-1px);
+    }
+    .cta-link .icon {
+      margin-left: 6px;
+    }
+
+    /* === PIX SECTION === */
+    .pix-section {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .pix-label {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .pix-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pix-value {
+      flex: 1;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    .copy-btn {
+      padding: 10px 14px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 8px;
+      color: #f59e0b;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover {
+      background: rgba(245, 158, 11, 0.2);
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+    .copy-btn.copied {
+      background: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.4);
+      color: #22c55e;
+    }
+
+    /* === THANK YOU TEXT === */
+    .thank-you {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.35);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* === CHECKBOX === */
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: #d97706;
+      cursor: pointer;
+    }
+
+    .checkbox-row label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+    }
+
+    /* === DECORATIVE PARTICLES (subtle background) === */
+    .particles {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(245, 158, 11, 0.3);
+      border-radius: 50%;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .particle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+    .particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 1.5s; }
+    .particle:nth-child(3) { top: 40%; left: 40%; animation-delay: 3s; }
+    .particle:nth-child(4) { top: 75%; left: 25%; animation-delay: 4.5s; }
+    .particle:nth-child(5) { top: 30%; left: 70%; animation-delay: 2s; }
+    .particle:nth-child(6) { top: 85%; left: 60%; animation-delay: 5s; }
+
+    @keyframes float {
+      0%, 100% { opacity: 0; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-8px); }
+    }
+
+    /* === NOTIFICATION PREVIEW === */
+    .notification-preview {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #111118;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 12px 16px;
+      max-width: 300px;
+      z-index: 800;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .notif-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .notif-bell {
+      font-size: 14px;
+    }
+
+    .notif-title {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .notif-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: rgba(245, 158, 11, 0.05);
+      border: 1px solid rgba(245, 158, 11, 0.15);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .notif-item:hover {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .notif-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f59e0b;
+      flex-shrink: 0;
+    }
+
+    .notif-text {
+      flex: 1;
+    }
+
+    .notif-text-title {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .notif-text-desc {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* === LABELS === */
+    .design-label {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.3);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Notification Bell Preview (top-right) -->
+  <div class="notification-preview">
+    <div class="notif-header">
+      <span class="notif-bell">🔔</span>
+      <span class="notif-title">Notificações</span>
+    </div>
+    <div class="notif-item">
+      <span class="notif-dot"></span>
+      <div class="notif-text">
+        <div class="notif-text-title">🚀 Apoie o projeto!</div>
+        <div class="notif-text-desc">Doe para a plataformização do Interactive Kabbalah</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialog Backdrop -->
+  <div class="backdrop">
+    <!-- Campaign Dialog -->
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="campaign-title">
+
+      <!-- Decorative particles -->
+      <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <!-- Close button -->
+      <button class="close-btn" aria-label="Fechar">✕</button>
+
+      <!-- Decorative symbol -->
+      <div class="symbol">✡️</div>
+
+      <!-- Heading -->
+      <h2 class="heading" id="campaign-title">
+        Transmute este projeto<br>em algo maior
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="subtitle">✦ Plataformização ✦</p>
+
+      <!-- Message -->
+      <p class="message">
+        O Interactive Kabbalah está evoluindo para uma plataforma completa de estudo e prática. 
+        Sua contribuição financia o desenvolvimento de novas features, 
+        servidores e a missão de tornar a sabedoria da Kabbalah acessível a todos.
+      </p>
+
+      <!-- CTA Button -->
+      <a class="cta-link" href="https://www.vakinha.com.br/vaquinha/interactive-kabbalah-redesign-e-plataformizacao" target="_blank" rel="noopener noreferrer">
+        Acessar a Vakinha <span class="icon">🔗</span>
+      </a>
+
+      <!-- PIX Section -->
+      <div class="pix-section">
+        <p class="pix-label">Chave PIX Vakinha</p>
+        <div class="pix-row">
+          <span class="pix-value">6257640@vakinha.com.br</span>
+          <button class="copy-btn" onclick="copyPix(this)">📋 Copiar</button>
+        </div>
+      </div>
+
+      <!-- Thank you -->
+      <p class="thank-you">Toda contribuição nos aproxima da plataformização. Obrigado! 🙏</p>
+
+      <!-- Don't show again -->
+      <div class="checkbox-row">
+        <input type="checkbox" id="dontShow" />
+        <label for="dontShow">Não mostrar novamente</label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Design label -->
+  <div class="design-label">
+    Design Preview — Vakinha Campaign Dialog · Interactive Kabbalah
+  </div>
+
+  <script>
+    function copyPix(btn) {
+      navigator.clipboard.writeText('6257640@vakinha.com.br').then(() => {
+        btn.textContent = '✓ Copiado!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = '📋 Copiar';
+          btn.classList.remove('copied');
+        }, 2500);
+      });
+    }
+  </script>
+</body>
+</html>

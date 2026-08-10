@@ -285,6 +285,10 @@
     "guide": {
       "title": "מדריך התמצאות",
       "description": "למד כיצד להשתמש בכלי זה להכרה עצמית"
+    },
+    "vakinha_campaign": {
+      "title": "🚀 תמכו בפרויקט!",
+      "description": "תרמו לפלטפורמיזציה של Interactive Kabbalah"
     }
   },
   "guide": {
@@ -387,5 +391,13 @@
       "integration": "",
       "dailyLife": ""
     }
+  },
+  "vakinhaCampaign": {
+    "title": "הפכו את הפרויקט הזה למשהו גדול יותר",
+    "subtitle": "✦ פלטפורמיזציה ✦",
+    "message": "Interactive Kabbalah מתפתח לפלטפורמה מלאה ללימוד ותרגול. התרומה שלך ממנת פיתוח של פיצ'רים חדשים, שרתים והמשימה להנגיש את חכמת הקבלה לכולם.",
+    "linkButton": "בקרו בקמפיין",
+    "pixLabel": "מפתח PIX של Vakinha",
+    "pixCopied": "✓ הועתק!"
   }
 }
