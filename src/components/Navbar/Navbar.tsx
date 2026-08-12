@@ -346,7 +346,19 @@ function SidebarLink({ href, icon, label, subtitle }: { href: string; icon: Reac
 
 function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPillarsChange }: { showVeils: boolean; onShowVeilsChange: (v: boolean) => void; showPillars: boolean; onShowPillarsChange: (v: boolean) => void }) {
   const [open, setOpen] = useState(false);
+  const [categoriesExpanded, setCategoriesExpanded] = useState(() => {
+    if (typeof window === 'undefined') return true;
+    try { return localStorage.getItem('tooltipCategoriesExpanded') !== 'false'; } catch { return true; }
+  });
   const ui = useTranslations('ui');
+
+  const toggleCategories = (checked: boolean) => {
+    setCategoriesExpanded(checked);
+    try { localStorage.setItem('tooltipCategoriesExpanded', String(checked)); } catch { /* silent */ }
+    // Notify TooltipSection components in the same tab
+    window.dispatchEvent(new Event('tooltipCategoriesChanged'));
+  };
+
   return (
     <div className="relative">
       <button onClick={() => setOpen(!open)} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-white" aria-label="Settings">
@@ -361,6 +373,7 @@ function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPill
           <div className="space-y-2">
             <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('showVeils')}</span><input type="checkbox" checked={showVeils} onChange={(e) => onShowVeilsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
             <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('showPillars')}</span><input type="checkbox" checked={showPillars} onChange={(e) => onShowPillarsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
+            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('expandCategories')}</span><input type="checkbox" checked={categoriesExpanded} onChange={(e) => toggleCategories(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
           </div>
         </div>
       )}

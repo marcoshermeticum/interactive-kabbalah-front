@@ -145,12 +145,12 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
       {worldTitle && <p className="mt-1 text-blue-300">🌍 {worldTitle}</p>}
       {worldAspect && <p className="text-blue-200">{worldAspect}</p>}
       {archetypes.length > 0 && (
-        <TooltipSection title={ui('archetypes')} defaultExpanded={false}>
+        <TooltipSection title={ui('archetypes')}>
           <p className="text-white/90">{archetypes.join(', ')}</p>
         </TooltipSection>
       )}
       {minorArcana.length > 0 && (
-        <TooltipSection title={ui('minorArcana')} defaultExpanded={false}>
+        <TooltipSection title={ui('minorArcana')}>
           <ul className="mt-0.5 space-y-0.5">
             {minorArcana.map((a, i) => (
               <li key={i} className="text-white/80">🃏 {a}</li>
@@ -166,7 +166,7 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
         const bodyParts = corrBodyParts.length > 0 ? corrBodyParts : (corr?.bodyParts || []);
         if (animals.length === 0 && stones.length === 0 && bodyParts.length === 0) return null;
         return (
-          <TooltipSection title="Correspondences" defaultExpanded={false}>
+          <TooltipSection title="Correspondences">
             <div className="space-y-1">
               {animals.length > 0 && <p className="text-white/80">🐾 {animals.join(', ')}</p>}
               {stones.length > 0 && <p className="text-white/80">💎 {stones.join(', ')}</p>}
