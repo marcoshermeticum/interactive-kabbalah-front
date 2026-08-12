@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { TooltipActions } from '@/components/Tooltip/TooltipActions';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
 
 interface Props {
@@ -243,10 +244,24 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
         <div key={pinned.id} className="absolute z-[500]" data-pinned-tooltip style={{ left: Math.max(10, Math.min(pinned.pos.x + 15, width - 300)), top: Math.max(10, pinned.pos.y - 40) }}>
           <div className="bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-yellow-400/50 select-text w-[270px]">
             {renderTooltipContent(pinned.id)}
-            <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-              <button onClick={() => handleCopy(pinned.id)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">{copiedId === pinned.id ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}</button>
-              <button onClick={() => unpinOrnament(pinned.id)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">✕ {ui('close')}</button>
-            </div>
+            <TooltipActions
+              onCopy={async () => {
+                let text = '';
+                const t2 = (key: string) => { try { return t(key); } catch { return ''; } };
+                if (pinned.id.startsWith('pillar-')) {
+                  const key = pinned.id.replace('pillar-', '') as 'severity' | 'mercy' | 'equilibrium';
+                  text = `${t2(`pillars.${key}.name`)}\n${t2(`pillars.${key}.description`)}`;
+                } else if (pinned.id.startsWith('veil-')) {
+                  const key = pinned.id.replace('veil-', '') as 'abyss' | 'parokhet' | 'nephesch';
+                  text = `${t2(`veils.${key}.name`)}\n${t2(`veils.${key}.description`)}`;
+                } else {
+                  const key = pinned.id === 'ain-soph-aur' ? 'ainSophAur' : pinned.id === 'ain-soph' ? 'ainSoph' : 'ain';
+                  text = `${t2(`ainSoph.${key}.name`)}\n${t2(`ainSoph.${key}.description`)}`;
+                }
+                return text;
+              }}
+              onClose={() => unpinOrnament(pinned.id)}
+            />
           </div>
         </div>
       ))}

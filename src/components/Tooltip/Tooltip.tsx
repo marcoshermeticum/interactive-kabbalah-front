@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from './TooltipManager';
+import { TooltipActions } from './TooltipActions';
 
 interface Props {
   children: ReactNode;
@@ -21,7 +22,6 @@ interface Props {
 export default function Tooltip({ children, content }: Props) {
   const [isVisible, setIsVisible] = useState(false);
   const [isPinned, setIsPinned] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [placement, setPlacement] = useState<'above' | 'below' | 'left' | 'right'>('above');
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
@@ -119,21 +119,6 @@ export default function Tooltip({ children, content }: Props) {
     };
   }, []);
 
-  const handleCopy = async (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const el = tooltipRef.current;
-    if (!el) return;
-    const text = el.innerText;
-    await navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
-  };
-
-  const handleClose = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    hide();
-  };
-
   const positionClasses = (() => {
     switch (placement) {
       case 'above': return 'bottom-full mb-2 left-1/2 -translate-x-1/2';
@@ -166,22 +151,13 @@ export default function Tooltip({ children, content }: Props) {
           <div className={`bg-gray-900/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border ${isPinned ? 'border-yellow-400/50' : 'border-white/10'} min-w-[220px] max-w-[340px] select-text`}>
             {content}
             {isPinned && (
-              <div className="flex items-center gap-2 mt-3 pt-2 border-t border-white/10">
-                <button
-                  onClick={handleCopy}
-                  className="min-h-[44px] text-xs bg-white/10 hover:bg-white/20 rounded-lg transition flex items-center justify-center gap-1.5"
-                  style={{ paddingLeft: 12, paddingRight: 12, paddingTop: 8, paddingBottom: 8 }}
-                >
-                  {copied ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
-                </button>
-                <button
-                  onClick={handleClose}
-                  className="min-h-[44px] text-xs bg-white/10 hover:bg-white/20 rounded-lg transition flex items-center justify-center gap-1.5"
-                  style={{ paddingLeft: 12, paddingRight: 12, paddingTop: 8, paddingBottom: 8 }}
-                >
-                  ✕ {ui('close')}
-                </button>
-              </div>
+              <TooltipActions
+                onCopy={async () => {
+                  const el = tooltipRef.current;
+                  return el ? el.innerText : '';
+                }}
+                onClose={() => hide()}
+              />
             )}
           </div>
           {!isPinned && (

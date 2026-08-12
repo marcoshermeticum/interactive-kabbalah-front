@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
+import { TooltipActions } from '@/components/Tooltip/TooltipActions';
 import type { QliphothPathDef } from '@/data/qliphothPaths';
 
 type Positions = Record<string, { x: number; y: number }>;
@@ -201,14 +202,13 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
                 <p className="text-green-300">✦ {ui('latentVirtue')}: {p.virtue}</p>
                 <p className="text-red-300">✧ {ui('shadowVice')}: {p.vice}</p>
               </div>
-              <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-                <button onClick={() => handleCopy(pinned.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
-                  {copiedPath === pinned.pathNumber ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
-                </button>
-                <button onClick={() => unpinPath(pinned.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
-                  ✕ {ui('close')}
-                </button>
-              </div>
+              <TooltipActions
+                onCopy={async () => {
+                  const p = paths.find((pp) => pp.number === pinned.pathNumber);
+                  return p ? `${p.number} — ${p.arcane}\n${p.meaning}\n${p.virtue} / ${p.vice}` : '';
+                }}
+                onClose={() => unpinPath(pinned.pathNumber)}
+              />
             </div>
           </div>
         );
