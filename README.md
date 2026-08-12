@@ -95,7 +95,7 @@ src/data/           ← Camada de dados PURA (exportável como JSON)
 ### 💀 Árvore da Morte (Qliphoth)
 - 10 Qliphoth + O Abismo (Choronzon)
 - 22 Túneis de Set (Kenneth Grant)
-- Demônios goéticos como arquétipos psicológicos
+- Daimons goéticos como arquétipos psicológicos
 - Virtudes latentes e vícios de cada túnel
 
 ### ☯ Visão Combinada

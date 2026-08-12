@@ -6,6 +6,7 @@ import Tooltip from '@/components/Tooltip/Tooltip';
 import { daemons } from '@/data/daemons';
 import { SigilImage } from '@/components/Search/SigilImage';
 import { ExpandableSection } from '@/components/ExpandableSection/ExpandableSection';
+import { TooltipSection } from '@/components/Tooltip/TooltipSection';
 import type { SephirotData } from './types';
 
 function getDaemonsForQliphah(qliphahId: string) {
@@ -144,35 +145,34 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
       {worldTitle && <p className="mt-1 text-blue-300">🌍 {worldTitle}</p>}
       {worldAspect && <p className="text-blue-200">{worldAspect}</p>}
       {archetypes.length > 0 && (
-        <div className="mt-2 pt-1 border-t border-white/10">
-          <p className="text-white/60 text-[10px] uppercase tracking-wide">{ui('archetypes')}</p>
+        <TooltipSection title={ui('archetypes')} defaultExpanded={false}>
           <p className="text-white/90">{archetypes.join(', ')}</p>
-        </div>
+        </TooltipSection>
       )}
       {minorArcana.length > 0 && (
-        <div className="mt-2 pt-1 border-t border-white/10">
-          <p className="text-white/60 text-[10px] uppercase tracking-wide">{ui('minorArcana')}</p>
+        <TooltipSection title={ui('minorArcana')} defaultExpanded={false}>
           <ul className="mt-0.5 space-y-0.5">
             {minorArcana.map((a, i) => (
               <li key={i} className="text-white/80">🃏 {a}</li>
             ))}
           </ul>
-        </div>
+        </TooltipSection>
       )}
       {/* Correspondences */}
       {(() => {
         const corr = sephirotCorrespondences[data.name.toLowerCase()];
-        // Use translated correspondences if available, otherwise fall back to data file
         const animals = corrAnimals.length > 0 ? corrAnimals : (corr?.animals || []);
         const stones = corrStones.length > 0 ? corrStones : (corr?.stones || []);
         const bodyParts = corrBodyParts.length > 0 ? corrBodyParts : (corr?.bodyParts || []);
         if (animals.length === 0 && stones.length === 0 && bodyParts.length === 0) return null;
         return (
-          <div className="mt-2 pt-1 border-t border-white/10 space-y-1">
-            {animals.length > 0 && <p className="text-white/80">🐾 {animals.join(', ')}</p>}
-            {stones.length > 0 && <p className="text-white/80">💎 {stones.join(', ')}</p>}
-            {bodyParts.length > 0 && <p className="text-white/80">🫀 {bodyParts.join(', ')}</p>}
-          </div>
+          <TooltipSection title="Correspondences" defaultExpanded={false}>
+            <div className="space-y-1">
+              {animals.length > 0 && <p className="text-white/80">🐾 {animals.join(', ')}</p>}
+              {stones.length > 0 && <p className="text-white/80">💎 {stones.join(', ')}</p>}
+              {bodyParts.length > 0 && <p className="text-white/80">🫀 {bodyParts.join(', ')}</p>}
+            </div>
+          </TooltipSection>
         );
       })()}
     </>

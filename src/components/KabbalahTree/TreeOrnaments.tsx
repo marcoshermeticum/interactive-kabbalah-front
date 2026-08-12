@@ -45,9 +45,11 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   }, []);
 
   const handleMouseMove = useCallback((e: React.MouseEvent, id: string) => {
+    // Don't show hover tooltips when any tooltip is pinned (prevents bleed-through)
+    if (tooltipManager.count > 0 && !pinnedOrnaments.some((p) => p.id === id)) return;
     setHoveredId(id);
     setHoverPos(getLocalPos(e));
-  }, [getLocalPos]);
+  }, [getLocalPos, pinnedOrnaments]);
 
   const handleClick = useCallback((e: React.MouseEvent, id: string) => {
     e.stopPropagation();

@@ -145,7 +145,7 @@ test.describe('Admin Panel', () => {
       'metal': 'Ouro',
       'caminhos conectam': '22',
       'central no pilar': 'Tiferet',
-      'demônio': 'Lilith',
+      'daimon': 'Lilith',
     };
 
     // Find the correct answer based on static question text
@@ -267,7 +267,7 @@ test.describe('Admin Dashboard (authenticated)', () => {
     'metal': 'Ouro',               // Qual metal é associado ao {Sol}?
     'caminhos conectam': '22',      // Quantos caminhos conectam as Sephiroth na {Árvore}?
     'central no pilar': 'Tiferet',  // Qual é a Sephirah central no pilar do {Equilíbrio}?
-    'demônio': 'Lilith',           // Que demônio é associado a {Gamaliel}?
+    'daimon': 'Lilith',           // Que daimon é associado a {Gamaliel}?
   };
 
   /**

@@ -172,7 +172,7 @@ const CHALLENGES: ChallengeDefinition[] = [
     options: ['Tiferet', 'Kether', 'Yesod', 'Daath'],
   },
   {
-    questionTemplate: 'Que demônio é associado a {word}?',
+    questionTemplate: 'Que daimon é associado a {word}?',
     obfuscateWord: 'Gamaliel',
     answer: 'lilith',
     options: ['Lilith', 'Asmodeus', 'Baal', 'Lucifuge'],

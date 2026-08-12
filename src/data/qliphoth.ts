@@ -9,7 +9,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '⛧',
     planetName: 'Plutão/Primum Mobile',
     valor: 'Dois que se Opõem',
-    regent: { title: 'Demônio', name: 'Satã & Moloch', defect: 'Dualidade egoísta' },
+    regent: { title: 'Daimon', name: 'Satã & Moloch', defect: 'Dualidade egoísta' },
     world: { title: 'Anti-Atziluth', aspect: 'Divisão do Uno' },
     archetypes: ['O Rebelde Orgulhoso', 'Lúcifer Caído', 'O Ego Inflado'],
     minorArcana: [
@@ -30,7 +30,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '🝊',
     planetName: 'Netuno (sombra)',
     valor: 'Os Obstaculizadores',
-    regent: { title: 'Demônio', name: 'Belzebu & Belial', defect: 'Falsa sabedoria' },
+    regent: { title: 'Daimon', name: 'Belzebu & Belial', defect: 'Falsa sabedoria' },
     world: { title: 'Anti-Atziluth', aspect: 'Bloqueio criativo' },
     archetypes: ['O Sabotador Interno', 'A Ganância Intelectual', 'O Medo Criativo'],
     minorArcana: [
@@ -51,7 +51,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '🝆',
     planetName: 'Saturno (sombra)',
     valor: 'Os Ocultadores',
-    regent: { title: 'Demônio', name: 'Lucifuge Rofocale', defect: 'Ignorância voluntária' },
+    regent: { title: 'Daimon', name: 'Lucifuge Rofocale', defect: 'Ignorância voluntária' },
     world: { title: 'Anti-Briah', aspect: 'Negação da verdade' },
     archetypes: ['O Véu da Ignorância', 'A Negação', 'O Medo de Ver'],
     minorArcana: [
@@ -72,7 +72,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '♇',
     planetName: 'Júpiter (sombra)',
     valor: 'Os Quebradores',
-    regent: { title: 'Demônio', name: 'Ashtaroth', defect: 'Amor sufocante' },
+    regent: { title: 'Daimon', name: 'Ashtaroth', defect: 'Amor sufocante' },
     archetypes: ['A Amante Possessiva', 'Compaixão Doentia', 'Caridade que Aprisiona'],
     minorArcana: [
       '4 de Paus invertido (opressão festiva)',
@@ -92,7 +92,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '🜃',
     planetName: 'Marte (sombra)',
     valor: 'Os Queimadores',
-    regent: { title: 'Demônio', name: 'Asmodeus', defect: 'Violência cega' },
+    regent: { title: 'Daimon', name: 'Asmodeus', defect: 'Violência cega' },
     archetypes: ['O Lobo Voraz', 'Raiva Incontrolável', 'Fanatismo Punitivo'],
     minorArcana: [
       '5 de Paus invertido (conflito destrutivo)',
@@ -112,7 +112,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '☠',
     planetName: 'Sol (sombra)',
     valor: 'Os Disputadores',
-    regent: { title: 'Demônio', name: 'Belphegor', defect: 'Vaidade espiritual' },
+    regent: { title: 'Daimon', name: 'Belphegor', defect: 'Vaidade espiritual' },
     archetypes: ['A Vaidade Invertida', 'Cegueira Espiritual', 'Loucura Egoica'],
     minorArcana: [
       '6 de Paus invertido (arrogância)',
@@ -132,7 +132,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '🜁',
     planetName: 'Vênus (sombra)',
     valor: 'Os Corrosivos',
-    regent: { title: 'Demônio', name: 'Baal', defect: 'Desejo destrutivo' },
+    regent: { title: 'Daimon', name: 'Baal', defect: 'Desejo destrutivo' },
     archetypes: ['O Conquistador Insaciável', 'Paixão que Devora', 'Inveja Corrosiva'],
     minorArcana: [
       '7 de Paus invertido (agressão)',
@@ -152,7 +152,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '🜄',
     planetName: 'Mercúrio (sombra)',
     valor: 'Os Enganadores',
-    regent: { title: 'Demônio', name: 'Adramalech', defect: 'Ilusão mental' },
+    regent: { title: 'Daimon', name: 'Adramalech', defect: 'Ilusão mental' },
     archetypes: ['O Manipulador Mental', 'Mente Enganosa', 'Charlatão Intelectual'],
     minorArcana: [
       '8 de Paus invertido (precipitação)',
@@ -172,7 +172,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '☾',
     planetName: 'Lua (sombra)',
     valor: 'Os Obscenos',
-    regent: { title: 'Demônio', name: 'Lilith', defect: 'Libido obsessiva' },
+    regent: { title: 'Daimon', name: 'Lilith', defect: 'Libido obsessiva' },
     archetypes: ['A Amante Selvagem', 'Erotismo Sombrio', 'Instinto Primal Descontrolado'],
     minorArcana: [
       '9 de Paus invertido (paranoia)',
@@ -192,7 +192,7 @@ export const qliphoth: Record<string, SephirotData> = {
     icon: '⊗',
     planetName: 'Terra (sombra)',
     valor: 'Rainha da Noite',
-    regent: { title: 'Demônio', name: 'Nahema', defect: 'Sedução letal' },
+    regent: { title: 'Daimon', name: 'Nahema', defect: 'Sedução letal' },
     world: { title: 'Anti-Assiah', aspect: 'Caos final' },
     archetypes: ['A Tentadora Final', 'Todos os Males Condensados', 'A Sombra Coletiva'],
     minorArcana: [

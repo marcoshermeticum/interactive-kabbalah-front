@@ -55,17 +55,14 @@ export default function TooltipOutsideHandler() {
       // Inside a tooltip or its trigger — don't close
       if (target.closest('[data-tooltip-container]')) return;
       if (target.closest('[data-pinned-tooltip]')) return;
-      
-      // Inside the tree SVG (sephirots, paths, ornaments) — don't close
-      if (target.closest('svg')) return;
 
       // Inside a sephirot node — don't close
-      if (target.closest('[style*="width: 170px"]')) return;
+      if (target.closest('[data-sephirot-id]')) return;
 
-      // Inside a cursor-pointer interactive element (path hit areas) — don't close
-      if (target.closest('.cursor-pointer')) return;
+      // Inside a path hit area (clickable paths/tunnels) — don't close
+      if (target.closest('[data-path-number]')) return;
 
-      // It's outside tree context — close the most recent tooltip
+      // Everything else (empty space, background, ornaments) — close the most recent tooltip
       tooltipManager.closeLatest();
     };
 
