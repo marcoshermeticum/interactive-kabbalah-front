@@ -25,6 +25,9 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
   const [treeFontFamily, setTreeFontFamily] = useState(() => typeof window === 'undefined' ? TREE_FONT_DEFAULT : window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
   const [previousTreeFontFamily, setPreviousTreeFontFamily] = useState(() => typeof window === 'undefined' ? 'Georgia, serif' : window.InteractiveDebug?.getPreviousTreeTextFontFamily?.() ?? 'Georgia, serif');
+  const [borderOpacity, setBorderOpacity] = useState(() => typeof window === 'undefined' ? 1 : window.InteractiveDebug?.getTreeBorderOpacity?.() ?? 1);
+  const [borderColor, setBorderColor] = useState(() => typeof window === 'undefined' ? '#ffffff' : window.InteractiveDebug?.getTreeBorderColor?.() ?? '#ffffff');
+  const [borderWidth, setBorderWidth] = useState(() => typeof window === 'undefined' ? 1 : window.InteractiveDebug?.getTreeBorderWidth?.() ?? 1);
   const deregisterRefs = useRef<Map<string, () => void>>(new Map());
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('ornaments');
@@ -36,13 +39,20 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
       setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
       setTreeFontFamily(window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
       setPreviousTreeFontFamily(window.InteractiveDebug?.getPreviousTreeTextFontFamily?.() ?? 'Georgia, serif');
+      setBorderOpacity(window.InteractiveDebug?.getTreeBorderOpacity?.() ?? 1);
+      setBorderColor(window.InteractiveDebug?.getTreeBorderColor?.() ?? '#ffffff');
+      setBorderWidth(window.InteractiveDebug?.getTreeBorderWidth?.() ?? 1);
     };
     sync();
     window.addEventListener('tree-tooltips-status-change', sync);
     window.addEventListener('tree-font-family-change', sync);
+    window.addEventListener('tree-border-opacity-change', sync);
+    window.addEventListener('tree-border-style-change', sync);
     return () => {
       window.removeEventListener('tree-tooltips-status-change', sync);
       window.removeEventListener('tree-font-family-change', sync);
+      window.removeEventListener('tree-border-opacity-change', sync);
+      window.removeEventListener('tree-border-style-change', sync);
     };
   }, []);
 
@@ -238,6 +248,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
       {treeFontDebugVisible && (
         <div
           className="absolute z-[500]"
+          data-no-pan
           style={{
             left: Math.max(20, width / 2 - 160),
             top: 10,
@@ -278,6 +289,66 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
               ))}
             </select>
           </label>
+          <div style={{ marginTop: 8, paddingTop: 8, borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <div style={{ fontWeight: 600, marginBottom: 6, opacity: 0.9 }}>Borda global</div>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 6 }}>
+              <span style={{ opacity: 0.8 }}>Cor</span>
+              <input
+                type="color"
+                value={borderColor}
+                onChange={(event) => {
+                  if (typeof window !== 'undefined') {
+                    window.InteractiveDebug?.setTreeBorderColor?.(event.target.value);
+                  }
+                }}
+                style={{ width: 28, height: 20, padding: 0, border: '1px solid rgba(255,255,255,0.3)', borderRadius: 4, cursor: 'pointer', background: 'transparent' }}
+              />
+              <input
+                type="text"
+                value={borderColor}
+                onChange={(event) => {
+                  if (typeof window !== 'undefined') {
+                    window.InteractiveDebug?.setTreeBorderColor?.(event.target.value);
+                  }
+                }}
+                style={{ width: 80, padding: '2px 6px', borderRadius: 4, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)', color: '#fff', fontSize: 10 }}
+              />
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 6 }}>
+              <span style={{ opacity: 0.8 }}>Espessura</span>
+              <input
+                type="range"
+                min={0}
+                max={6}
+                step={0.25}
+                value={borderWidth}
+                onChange={(event) => {
+                  if (typeof window !== 'undefined') {
+                    window.InteractiveDebug?.setTreeBorderWidth?.(Number(event.target.value));
+                  }
+                }}
+                style={{ width: 100, cursor: 'pointer' }}
+              />
+              <span style={{ opacity: 0.7, width: 28, textAlign: 'right' }}>{borderWidth.toFixed(1)}</span>
+            </label>
+            <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+              <span style={{ opacity: 0.8 }}>Visibilidade</span>
+              <input
+                type="range"
+                min={0}
+                max={1}
+                step={0.05}
+                value={borderOpacity}
+                onChange={(event) => {
+                  if (typeof window !== 'undefined') {
+                    window.InteractiveDebug?.setTreeBorderOpacity?.(Number(event.target.value));
+                  }
+                }}
+                style={{ width: 100, cursor: 'pointer' }}
+              />
+              <span style={{ opacity: 0.7, width: 28, textAlign: 'right' }}>{(borderOpacity * 100).toFixed(0)}%</span>
+            </label>
+          </div>
         </div>
       )}
 

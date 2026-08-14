@@ -24,10 +24,12 @@ export interface SephirotDebugEntry {
   name: string;
   getState: () => {
     offsets: DebugOffsets;
+    colors: Record<string, string>;
     panelPosition: { x: number; y: number };
     visible: boolean;
   };
   setOffsets: (offsets: DebugOffsets) => void;
+  setColors: (colors: Record<string, string>) => void;
   setPanelPosition: (panelPosition: { x: number; y: number }) => void;
   setVisible: (visible: boolean) => void;
 }
@@ -42,30 +44,26 @@ export function unregisterSephirotDebugEntry(id: string) {
   debugRegistry.delete(id);
 }
 
+/** Default offsets shared by all sephirots. Override per-sephirah if needed in the future. */
+const DEFAULT_DEBUG_OFFSETS: DebugOffsets = {
+  icon: { x: 0, y: -2, size: 38 },
+  number: { x: 0, y: 12, size: 24 },
+  subtitle: { x: 0, y: -8, size: 15 },
+  title: { x: 0, y: -35, size: 15 },
+  valor: { x: 0, y: 50, size: 16 },
+  world: { x: 0, y: 59, size: 14 },
+};
+
+/** Per-sephirah overrides (add entries here when individual tuning is needed). */
+const SEPHIROT_OFFSET_OVERRIDES: Partial<Record<string, Partial<DebugOffsets>>> = {
+  // Example: kether: { title: { x: 0, y: -40, size: 15 } },
+};
+
 export function getDefaultDebugOffsets(sephirahName: string): DebugOffsets {
   const normalized = sephirahName.toLowerCase();
-  const map: Record<string, DebugOffsets> = {
-    kether: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    chokmah: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    binah: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    daath: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    chesed: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    gevurah: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    tiferet: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    netzach: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    hod: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    yesod: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-    malkuth: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
-  };
-
-  return map[normalized] ?? {
-    icon: { x: 0, y: -2, size: 38 },
-    number: { x: 0, y: 12, size: 24 },
-    subtitle: { x: 0, y: -8, size: 15 },
-    title: { x: 0, y: -35, size: 15 },
-    valor: { x: 0, y: 50, size: 16 },
-    world: { x: 0, y: 59, size: 14 },
-  };
+  const overrides = SEPHIROT_OFFSET_OVERRIDES[normalized];
+  if (!overrides) return { ...DEFAULT_DEBUG_OFFSETS };
+  return { ...DEFAULT_DEBUG_OFFSETS, ...overrides };
 }
 
 export class InteractiveDebug {
@@ -73,6 +71,9 @@ export class InteractiveDebug {
   private treeTooltipsEnabled = true;
   private treeTextFontFamily = TREE_FONT_DEFAULT;
   private previousTreeTextFontFamily = TREE_FONT_PREVIOUS;
+  private treeBorderOpacity = 1;
+  private treeBorderColor = '#ffffff';
+  private treeBorderWidth = 1;
   private dragControllers = new Set<(enabled: boolean) => void>();
 
   public registerDragController(handler: (enabled: boolean) => void) {
@@ -161,6 +162,62 @@ export class InteractiveDebug {
     return this.treeTextFontFamily;
   }
 
+  /**
+   * Control decorative border opacity (0 = hidden, 1 = full).
+   * Affects the white/gray decorative rings around sephirots and path outlines.
+   */
+  public setTreeBorderOpacity(opacity: number): number {
+    this.treeBorderOpacity = Math.max(0, Math.min(1, opacity));
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('tree-border-opacity-change', {
+        detail: { opacity: this.treeBorderOpacity },
+      }));
+    }
+    return this.treeBorderOpacity;
+  }
+
+  public getTreeBorderOpacity(): number {
+    return this.treeBorderOpacity;
+  }
+
+  public hideTreeBorders(): number {
+    return this.setTreeBorderOpacity(0);
+  }
+
+  public showTreeBorders(): number {
+    return this.setTreeBorderOpacity(1);
+  }
+
+  /** Set global border color (any CSS color). */
+  public setTreeBorderColor(color: string): string {
+    this.treeBorderColor = color.trim() || '#ffffff';
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('tree-border-style-change', {
+        detail: { color: this.treeBorderColor, width: this.treeBorderWidth },
+      }));
+    }
+    return this.treeBorderColor;
+  }
+
+  public getTreeBorderColor(): string {
+    return this.treeBorderColor;
+  }
+
+  /** Set global border width (0–10). */
+  public setTreeBorderWidth(width: number): number {
+    this.treeBorderWidth = Math.max(0, Math.min(10, width));
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('tree-border-style-change', {
+        detail: { color: this.treeBorderColor, width: this.treeBorderWidth },
+      }));
+    }
+    return this.treeBorderWidth;
+  }
+
+  public getTreeBorderWidth(): number {
+    return this.treeBorderWidth;
+  }
+
   public getSephirotInformationByName(name: string): SephirotDebugInfo | undefined {
     const normalized = name.trim().toLowerCase();
     const entry = sephirots[normalized];
@@ -189,11 +246,30 @@ export class InteractiveDebug {
           visible: state.visible,
           panelPosition: { ...state.panelPosition },
           offsets: { ...state.offsets },
+          colors: { ...state.colors },
         }];
       })
     );
   }
 
+  /** Returns a full snapshot of all tree-level debug settings + per-sephirot overrides. */
+  public getAllTreeDebugData() {
+    return {
+      global: {
+        fontFamily: this.treeTextFontFamily,
+        borderColor: this.treeBorderColor,
+        borderWidth: this.treeBorderWidth,
+        borderOpacity: this.treeBorderOpacity,
+      },
+      sephirots: this.getAllSephirotDebugData(),
+    };
+  }
+
+  /**
+   * Update a single offset for a sephirah's debug text element.
+   * 
+   * @param value - A number (shortcut for `{ y: value }`), a partial offset, or a full `{x, y, size}`.
+   */
   public setDebugTextOffset(sephirotName: string, key: DebugOffsetKey, value: number | Partial<DebugOffsetValue> | DebugOffsetValue): boolean {
     const entry = this.resolveTarget(sephirotName);
     if (!entry) return false;
@@ -233,6 +309,63 @@ export class InteractiveDebug {
     const entry = this.resolveTarget(sephirotName);
     if (!entry) return undefined;
     return { ...entry.getState().panelPosition };
+  }
+
+  /**
+   * Set a debug color override for a sephirah.
+   * @param key - One of: outer, middle, inner, stroke, text
+   * @param color - Any valid CSS color (hex, rgb, named). Pass empty string to clear.
+   */
+  public setDebugColor(sephirotName: string, key: string, color: string): boolean {
+    const entry = this.resolveTarget(sephirotName);
+    if (!entry) return false;
+    const current = { ...entry.getState().colors };
+    if (!color.trim()) {
+      delete current[key];
+    } else {
+      current[key] = color.trim();
+    }
+    entry.setColors(current);
+    return true;
+  }
+
+  /**
+   * Set all debug color overrides for a sephirah at once.
+   * Pass partial object — only provided keys are overridden.
+   */
+  public setDebugColors(sephirotName: string, colors: Record<string, string>): boolean {
+    const entry = this.resolveTarget(sephirotName);
+    if (!entry) return false;
+    const current = { ...entry.getState().colors };
+    for (const [k, v] of Object.entries(colors)) {
+      if (!v.trim()) delete current[k];
+      else current[k] = v.trim();
+    }
+    entry.setColors(current);
+    return true;
+  }
+
+  /** Get current debug color overrides for a sephirah. */
+  public getDebugColors(sephirotName: string): Record<string, string> | undefined {
+    const entry = this.resolveTarget(sephirotName);
+    if (!entry) return undefined;
+    return { ...entry.getState().colors };
+  }
+
+  /** Reset all debug color overrides for a sephirah (or all if no name given). */
+  public resetDebugColors(sephirotName?: string): boolean {
+    if (sephirotName) {
+      const entry = this.resolveTarget(sephirotName);
+      if (!entry) return false;
+      entry.setColors({});
+      return true;
+    }
+    let didReset = false;
+    for (const entry of debugRegistry.values()) {
+      entry.setColors({});
+      didReset = true;
+    }
+    return didReset;
   }
 
   public setDebugTextVisible(visible: boolean, sephirotName?: string): boolean {

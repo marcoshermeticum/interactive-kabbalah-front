@@ -222,18 +222,20 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
       if (!dragEnabledRef.current) return;
 
       const target = e.target as Element;
+      const isOnNoPan = !!target.closest('[data-no-pan]');
       const isOnInteractive = !!(
         target.closest('[data-tooltip-container]') ||
         target.closest('button') ||
         target.closest('a') ||
         target.closest('input') ||
         target.closest('select') ||
-        target.closest('[data-no-pan]')
+        isOnNoPan
       );
       const isOnClickable = !!target.closest('.cursor-pointer');
 
-      // For inputs/selects, don't capture — they need native focus
-      if (target.closest('input') || target.closest('select')) {
+      // For inputs/selects and data-no-pan elements, don't capture —
+      // they handle their own pointer events (e.g. debug panel drag)
+      if (target.closest('input') || target.closest('select') || isOnNoPan) {
         return;
       }
 

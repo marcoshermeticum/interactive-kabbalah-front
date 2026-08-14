@@ -66,6 +66,9 @@ export default function TreePaths({ positions, width, height }: Props) {
   const [copiedPath, setCopiedPath] = useState<number | null>(null);
   const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
   const [treeFontFamily, setTreeFontFamily] = useState(() => typeof window === 'undefined' ? TREE_FONT_DEFAULT : window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
+  const [borderOpacity, setBorderOpacity] = useState(() => typeof window === 'undefined' ? 1 : window.InteractiveDebug?.getTreeBorderOpacity?.() ?? 1);
+  const [borderColor, setBorderColor] = useState(() => typeof window === 'undefined' ? '#ffffff' : window.InteractiveDebug?.getTreeBorderColor?.() ?? '#ffffff');
+  const [borderWidth, setBorderWidth] = useState(() => typeof window === 'undefined' ? 1 : window.InteractiveDebug?.getTreeBorderWidth?.() ?? 1);
   const deregisterRefs = useRef<Map<number, () => void>>(new Map());
   const ui = useTranslations('ui');
   const pathsT = useTranslations('paths');
@@ -75,13 +78,20 @@ export default function TreePaths({ positions, width, height }: Props) {
     const sync = () => {
       setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
       setTreeFontFamily(window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
+      setBorderOpacity(window.InteractiveDebug?.getTreeBorderOpacity?.() ?? 1);
+      setBorderColor(window.InteractiveDebug?.getTreeBorderColor?.() ?? '#ffffff');
+      setBorderWidth(window.InteractiveDebug?.getTreeBorderWidth?.() ?? 1);
     };
     sync();
     window.addEventListener('tree-tooltips-status-change', sync);
     window.addEventListener('tree-font-family-change', sync);
+    window.addEventListener('tree-border-opacity-change', sync);
+    window.addEventListener('tree-border-style-change', sync);
     return () => {
       window.removeEventListener('tree-tooltips-status-change', sync);
       window.removeEventListener('tree-font-family-change', sync);
+      window.removeEventListener('tree-border-opacity-change', sync);
+      window.removeEventListener('tree-border-style-change', sync);
     };
   }, []);
 
@@ -167,7 +177,7 @@ export default function TreePaths({ positions, width, height }: Props) {
           rx={10}
           fill="rgba(34, 30, 26, 0.48)"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
-          opacity={0.7}
+          opacity={0.7 * borderOpacity}
         />
         <rect
           x={midX - actualLength / 2 - 1}
@@ -176,9 +186,10 @@ export default function TreePaths({ positions, width, height }: Props) {
           height={barHeight + 4}
           rx={8}
           fill="none"
-          stroke="rgba(255,255,255,0.18)"
-          strokeWidth="1.3"
+          stroke={borderColor}
+          strokeWidth={borderWidth * 1.3}
           transform={`rotate(${angle}, ${midX}, ${midY})`}
+          opacity={borderOpacity}
         />
         <rect
           x={midX - actualLength / 2}
@@ -189,8 +200,9 @@ export default function TreePaths({ positions, width, height }: Props) {
           fill={path.color}
           opacity={isHovered ? 1 : 0.97}
           transform={`rotate(${angle}, ${midX}, ${midY})`}
-          stroke="rgba(59, 52, 46, 0.72)"
-          strokeWidth="2"
+          stroke={borderColor}
+          strokeWidth={borderWidth * 2}
+          strokeOpacity={borderOpacity * 0.72}
         />
         <rect
           x={midX - actualLength / 2 + 5}
