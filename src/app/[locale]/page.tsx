@@ -11,6 +11,7 @@ import TooltipOutsideHandler from '@/components/Tooltip/TooltipOutsideHandler';
 import type { SearchResult } from '@/data/searchIndex';
 import { usePersistedState } from '@/hooks/usePersistedState';
 import { interactiveDebug } from '@/lib/interactiveDebug';
+import { getTreeVisibilityStyle } from '@/lib/loadingTreeVisibility';
 
 export default function HomePage() {
   const [view, setView] = usePersistedState<'life' | 'death' | 'both'>('view', 'life');
@@ -70,11 +71,13 @@ export default function HomePage() {
     }
   }, []);
 
+  const treeVisibilityStyle = getTreeVisibilityStyle(isLoading);
+
   return (
-    <div className="h-screen w-screen flex flex-col overflow-hidden" style={{ background: 'var(--bg-primary)' }}>
+    <div className="h-screen w-screen flex flex-col overflow-hidden" style={{ background: 'transparent' }}>
       {/* Loading overlay */}
       {isLoading && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ background: 'var(--bg-primary)' }}>
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center" style={{ background: 'transparent' }}>
           <div className="flex flex-col items-center gap-4">
             <img
               src="/mrviniciux.png"
@@ -98,7 +101,7 @@ export default function HomePage() {
       />
 
       {/* Canvas */}
-      <main className="flex-1 relative">
+      <main className="flex-1 relative" style={treeVisibilityStyle}>
         <DraggableArea ref={draggableRef}>
           {view === 'life' && <KabbalahTree showVeils={showVeils} showPillars={showPillars} />}
           {view === 'death' && <QliphothTree />}

@@ -452,7 +452,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
   return (
     <div
       ref={containerRef}
-      className="w-full h-full overflow-hidden relative select-none canvas-texture"
+      className="w-full h-full overflow-visible relative select-none canvas-texture"
       style={{ cursor: 'grab', touchAction: 'none' }}
     >
       <HermeticBackground />

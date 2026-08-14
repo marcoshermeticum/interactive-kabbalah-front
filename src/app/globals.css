@@ -13,6 +13,11 @@
   --bg-primary: #fff9eb;
   --bg-secondary: #f9f3e5;
   --bg-canvas: #f3ede0;
+  --tree-panel-bg: #f3ebd9;
+  --tree-panel-bg-strong: #e9dfc9;
+  --tree-panel-border: rgba(62, 50, 36, 0.75);
+  --tree-panel-inner-border: rgba(102, 84, 61, 0.26);
+  --tree-panel-glow: rgba(212, 175, 55, 0.18);
   --text-primary: #1d1c13;
   --text-secondary: #4c4637;
   --text-muted: #7e7665;
@@ -32,6 +37,11 @@
   --bg-primary: #0f0e0c;
   --bg-secondary: #1a1815;
   --bg-canvas: #12110f;
+  --tree-panel-bg: #1b1712;
+  --tree-panel-bg-strong: #201c18;
+  --tree-panel-border: rgba(202, 185, 140, 0.78);
+  --tree-panel-inner-border: rgba(214, 199, 167, 0.18);
+  --tree-panel-glow: rgba(212, 175, 55, 0.12);
   --text-primary: #f5f0e8;
   --text-secondary: #a8a29e;
   --text-muted: #6b6560;
@@ -49,12 +59,20 @@
 body {
   font-family: var(--font-body);
   background:
-    radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 35%),
+    radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.16), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(145, 118, 73, 0.08), transparent 42%),
     linear-gradient(180deg, #f5efe4 0%, #f8f3ea 100%);
   color: var(--text-primary);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.14), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.08), transparent 42%),
+    linear-gradient(180deg, #120f0d 0%, #191613 100%);
 }
 
 body, header, div, button, select, input {
