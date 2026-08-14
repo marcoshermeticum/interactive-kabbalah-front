@@ -39,7 +39,8 @@ window.InteractiveDebug.setDebugTextVisible(true, 'kether');
 
 // ajuste fino de texto
 window.InteractiveDebug.getDebugOffsets('kether');
-window.InteractiveDebug.setDebugTextOffset('kether', 'title', -40);
+window.InteractiveDebug.setDebugTextOffset('kether', 'title', { x: 0, y: -40, size: 15 });
+window.InteractiveDebug.setDebugTextOffset('kether', 'number', { x: 0, y: 12, size: 24 });
 window.InteractiveDebug.setDebugTextPosition('kether', 90, -80);
 window.InteractiveDebug.resetDebugOffsets('kether');
 

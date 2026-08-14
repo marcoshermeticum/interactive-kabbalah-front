@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
+import { TREE_FONT_DEFAULT, TREE_FONT_OPTIONS } from '@/lib/interactiveDebug';
 
 interface Props {
   width: number;
@@ -22,6 +23,8 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   const [pinnedOrnaments, setPinnedOrnaments] = useState<PinnedOrnament[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+  const [treeFontFamily, setTreeFontFamily] = useState(() => typeof window === 'undefined' ? TREE_FONT_DEFAULT : window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
+  const [previousTreeFontFamily, setPreviousTreeFontFamily] = useState(() => typeof window === 'undefined' ? 'Georgia, serif' : window.InteractiveDebug?.getPreviousTreeTextFontFamily?.() ?? 'Georgia, serif');
   const deregisterRefs = useRef<Map<string, () => void>>(new Map());
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('ornaments');
@@ -29,16 +32,27 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    const sync = () => {
+      setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+      setTreeFontFamily(window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
+      setPreviousTreeFontFamily(window.InteractiveDebug?.getPreviousTreeTextFontFamily?.() ?? 'Georgia, serif');
+    };
     sync();
     window.addEventListener('tree-tooltips-status-change', sync);
-    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+    window.addEventListener('tree-font-family-change', sync);
+    return () => {
+      window.removeEventListener('tree-tooltips-status-change', sync);
+      window.removeEventListener('tree-font-family-change', sync);
+    };
   }, []);
 
   const col = '#c9a033';
   const pillarTopY = 130;
   const pillarBottomY = height - 80;
   const pillarW = 52;
+  const treeFontDebugVisible = typeof window !== 'undefined' && window.location.search.includes('debug-sephirot-text=1');
+  const currentTreeFontLabel = TREE_FONT_OPTIONS.find((option) => option.value === treeFontFamily)?.label ?? 'EB Garamond';
+  const previousTreeFontLabel = TREE_FONT_OPTIONS.find((option) => option.value === previousTreeFontFamily)?.label ?? 'Georgia';
 
   const unpinOrnament = useCallback((id: string) => {
     setPinnedOrnaments((prev) => prev.filter((t) => t.id !== id));
@@ -188,7 +202,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
         <rect x={x - 6} y={shaftBot + 28} width={sw + 12} height={10} rx={2} fill="none" stroke={col} strokeWidth="1.6" />
 
         {/* Letter */}
-        <text x={cx} y={pillarBottomY + 16} textAnchor="middle" fill={col} fontSize="24" fontFamily="'EB Garamond', Georgia, serif" fontWeight="bold" opacity="0.85">{letter}</text>
+        <text x={cx} y={pillarBottomY + 16} textAnchor="middle" fill={col} fontSize="24" fontFamily={treeFontFamily} fontWeight="bold" opacity="0.85">{letter}</text>
       </g>
     );
   };
@@ -198,20 +212,20 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
       {/* === SVG decorations === */}
       <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 1 }}>
         {/* Ain Soph Aur */}
-        <text x={width / 2} y={40} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="3">{t('svgLabels.ain')}</text>
-        <text x={width / 2} y={60} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="2.5">{t('svgLabels.ainSoph')}</text>
-        <text x={width / 2} y={80} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" letterSpacing="2">{t('svgLabels.ainSophAur')}</text>
-        <text x={width / 2} y={105} textAnchor="middle" fill={col} fontSize="24" opacity="0.7">∞</text>
-        <text x={width / 2} y={120} textAnchor="middle" fill={col} fontSize="10" opacity="0.6" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">Jechidah</text>
+        <text x={width / 2} y={40} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily={treeFontFamily} letterSpacing="3">{t('svgLabels.ain')}</text>
+        <text x={width / 2} y={60} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily={treeFontFamily} letterSpacing="2.5">{t('svgLabels.ainSoph')}</text>
+        <text x={width / 2} y={80} textAnchor="middle" fill={col} fontSize="11" opacity="0.75" fontFamily={treeFontFamily} letterSpacing="2">{t('svgLabels.ainSophAur')}</text>
+        <text x={width / 2} y={105} textAnchor="middle" fill={col} fontSize="24" opacity="0.7" fontFamily={treeFontFamily}>∞</text>
+        <text x={width / 2} y={120} textAnchor="middle" fill={col} fontSize="10" opacity="0.6" fontFamily={treeFontFamily} fontStyle="italic">Jechidah</text>
 
         {/* Veils */}
         {showVeils && <>
           <line x1={60} y1={520} x2={width - 60} y2={520} stroke={col} strokeWidth="1.2" opacity="0.55" strokeDasharray="10 5" />
-          <text x={12} y={516} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">{t('svgLabels.veilAbyss')}</text>
+          <text x={12} y={516} fill={col} fontSize="11" opacity="0.75" fontFamily={treeFontFamily} fontStyle="italic">{t('svgLabels.veilAbyss')}</text>
           <line x1={60} y1={980} x2={width - 60} y2={980} stroke={col} strokeWidth="1.2" opacity="0.55" strokeDasharray="10 5" />
-          <text x={12} y={976} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">{t('svgLabels.veilParokhet')}</text>
+          <text x={12} y={976} fill={col} fontSize="11" opacity="0.75" fontFamily={treeFontFamily} fontStyle="italic">{t('svgLabels.veilParokhet')}</text>
           <line x1={60} y1={1390} x2={width - 60} y2={1390} stroke={col} strokeWidth="1.2" opacity="0.55" strokeDasharray="10 5" />
-          <text x={12} y={1386} fill={col} fontSize="11" opacity="0.75" fontFamily="'EB Garamond', Georgia, serif" fontStyle="italic">{t('svgLabels.veilNephesch')}</text>
+          <text x={12} y={1386} fill={col} fontSize="11" opacity="0.75" fontFamily={treeFontFamily} fontStyle="italic">{t('svgLabels.veilNephesch')}</text>
         </>}
 
         {/* Pillars */}
@@ -220,6 +234,52 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
           {renderPillarSVG(width - pillarW - 6, 'J')}
         </>}
       </svg>
+
+      {treeFontDebugVisible && (
+        <div
+          className="absolute z-[500]"
+          style={{
+            left: Math.max(20, width / 2 - 160),
+            top: 10,
+            width: 320,
+            padding: '8px 10px',
+            borderRadius: '10px',
+            background: 'rgba(12, 12, 12, 0.88)',
+            border: '1px solid rgba(255,255,255,0.2)',
+            boxShadow: '0 16px 32px rgba(0,0,0,0.32)',
+            color: '#fff',
+            fontSize: 10,
+            lineHeight: 1.4,
+          }}
+        >
+          <div style={{ fontWeight: 700, marginBottom: 6, textAlign: 'center' }}>Tree font debug</div>
+          <div style={{ opacity: 0.9, marginBottom: 6 }}>Atual: {currentTreeFontLabel}</div>
+          <div style={{ opacity: 0.8, marginBottom: 6 }}>Anterior: {previousTreeFontLabel}</div>
+          <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            <span style={{ opacity: 0.8 }}>Fonte</span>
+            <select
+              value={treeFontFamily}
+              onChange={(event) => {
+                if (typeof window !== 'undefined') {
+                  window.InteractiveDebug?.setTreeTextFontFamily?.(event.target.value);
+                }
+              }}
+              style={{
+                width: 180,
+                padding: '4px 6px',
+                borderRadius: 6,
+                background: 'rgba(255,255,255,0.06)',
+                color: '#fff',
+                border: '1px solid rgba(255,255,255,0.15)',
+              }}
+            >
+              {TREE_FONT_OPTIONS.map((option) => (
+                <option key={option.value} value={option.value} style={{ color: '#111' }}>{option.label}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+      )}
 
       {/* === Interactive hit areas (z-20) === */}
       {showPillars && (<>

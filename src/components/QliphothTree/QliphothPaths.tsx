@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
+import { TREE_FONT_DEFAULT } from '@/lib/interactiveDebug';
 import type { QliphothPathDef } from '@/data/qliphothPaths';
 
 type Positions = Record<string, { x: number; y: number }>;
@@ -27,15 +28,23 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
   const [pinnedTooltips, setPinnedTooltips] = useState<PinnedTooltip[]>([]);
   const [copiedPath, setCopiedPath] = useState<number | null>(null);
   const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+  const [treeFontFamily, setTreeFontFamily] = useState(() => typeof window === 'undefined' ? TREE_FONT_DEFAULT : window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
   const deregisterRefs = useRef<Map<number, () => void>>(new Map());
   const ui = useTranslations('ui');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    const sync = () => {
+      setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+      setTreeFontFamily(window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
+    };
     sync();
     window.addEventListener('tree-tooltips-status-change', sync);
-    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+    window.addEventListener('tree-font-family-change', sync);
+    return () => {
+      window.removeEventListener('tree-tooltips-status-change', sync);
+      window.removeEventListener('tree-font-family-change', sync);
+    };
   }, []);
 
   const unpinPath = useCallback((pathNumber: number) => {
@@ -100,8 +109,8 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
     const isHovered = hoveredPath === path.number || pinnedTooltips.some((t) => t.pathNumber === path.number);
     return (
       <g key={`bar-${path.number}`}>
-        <rect x={midX - actualLength / 2 - 2} y={midY - barHeight / 2 - 3} width={actualLength + 4} height={barHeight + 6} rx={6} fill="rgba(0,0,0,0.7)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
-        <rect x={midX - actualLength / 2 - 1} y={midY - barHeight / 2 - 2} width={actualLength + 2} height={barHeight + 4} rx={5} fill="none" stroke="rgba(255,100,100,0.12)" strokeWidth="1.5" transform={`rotate(${angle}, ${midX}, ${midY})`} />
+        <rect x={midX - actualLength / 2 - 2} y={midY - barHeight / 2 - 3} width={actualLength + 4} height={barHeight + 6} rx={6} fill="rgba(32, 28, 25, 0.5)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
+        <rect x={midX - actualLength / 2 - 1} y={midY - barHeight / 2 - 2} width={actualLength + 2} height={barHeight + 4} rx={5} fill="none" stroke="rgba(255,100,100,0.1)" strokeWidth="1.5" transform={`rotate(${angle}, ${midX}, ${midY})`} />
         <rect x={midX - actualLength / 2} y={midY - barHeight / 2} width={actualLength} height={barHeight} rx={4} fill={path.color} opacity={isHovered ? 1 : 0.88} transform={`rotate(${angle}, ${midX}, ${midY})`} />
         <rect x={midX - actualLength / 2 + 3} y={midY - barHeight / 2 + 2} width={actualLength - 6} height={3} rx={1.5} fill="rgba(255,255,255,0.08)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
       </g>
@@ -136,7 +145,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
       return (
         <g key={`txt-${path.number}`} className="cursor-pointer" onMouseEnter={(e) => handleMouse(e, path.number)} onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })} onMouseLeave={() => setHoveredPath(null)}>
           {items.map((item, i) => (
-            <text key={i} x={midX} y={midY + startY + step * i} textAnchor="middle" dominantBaseline="central" fill="#ccc" fontSize={item.size} fontWeight={item.bold ? 'bold' : 'normal'} fontFamily="Arial, sans-serif">{item.text}</text>
+            <text key={i} x={midX} y={midY + startY + step * i} textAnchor="middle" dominantBaseline="central" fill="#ccc" fontSize={item.size} fontWeight={item.bold ? 'bold' : 'normal'} fontFamily={treeFontFamily}>{item.text}</text>
           ))}
         </g>
       );
@@ -147,7 +156,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
       return (
         <g key={`txt-${path.number}`} transform={`translate(${midX}, ${midY}) rotate(${textAngle})`} className="cursor-pointer" onMouseEnter={(e) => handleMouse(e, path.number)} onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })} onMouseLeave={() => setHoveredPath(null)}>
           {items.map((item, i) => (
-            <text key={i} x={xPositions[i]} y={0} textAnchor="middle" dominantBaseline="central" fill="#ccc" fontSize={item.size} fontWeight={item.bold ? 'bold' : 'normal'} fontFamily="Arial, sans-serif">{item.text}</text>
+            <text key={i} x={xPositions[i]} y={0} textAnchor="middle" dominantBaseline="central" fill="#ccc" fontSize={item.size} fontWeight={item.bold ? 'bold' : 'normal'} fontFamily={treeFontFamily}>{item.text}</text>
           ))}
         </g>
       );

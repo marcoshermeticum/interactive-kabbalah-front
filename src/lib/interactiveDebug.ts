@@ -2,7 +2,9 @@ import { sephirots } from '@/data/sephirots';
 
 export type DebugOffsetKey = 'icon' | 'number' | 'subtitle' | 'title' | 'valor' | 'world';
 
-export type DebugOffsets = Record<DebugOffsetKey, number>;
+export type DebugOffsetValue = { x: number; y: number; size: number };
+
+export type DebugOffsets = Record<DebugOffsetKey, DebugOffsetValue>;
 
 export interface SephirotDebugInfo {
   name: string;
@@ -43,32 +45,34 @@ export function unregisterSephirotDebugEntry(id: string) {
 export function getDefaultDebugOffsets(sephirahName: string): DebugOffsets {
   const normalized = sephirahName.toLowerCase();
   const map: Record<string, DebugOffsets> = {
-    kether: { icon: -3, number: -4, subtitle: -8, title: -33, valor: 59, world: 66 },
-    chokmah: { icon: -2, number: -5, subtitle: -8, title: -35, valor: 46, world: 52 },
-    binah: { icon: -2, number: -5, subtitle: -9, title: -30, valor: 41, world: 51 },
-    daath: { icon: -1, number: -3, subtitle: -7, title: -34, valor: 48, world: 48 },
-    chesed: { icon: -2, number: -5, subtitle: -8, title: -35, valor: 44, world: 31 },
-    gevurah: { icon: -2, number: -5, subtitle: -8, title: -36, valor: 46, world: 41 },
-    tiferet: { icon: -2, number: -5, subtitle: -7, title: -34, valor: 48, world: 43 },
-    netzach: { icon: -2, number: -5, subtitle: -9, title: -36, valor: 44, world: 44 },
-    hod: { icon: -2, number: -5, subtitle: -7, title: -35, valor: 45, world: 43 },
-    yesod: { icon: -2, number: -5, subtitle: -8, title: -35, valor: 44, world: 43 },
-    malkuth: { icon: -2, number: -5, subtitle: -8, title: -36, valor: 45, world: 51 },
+    kether: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    chokmah: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    binah: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    daath: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    chesed: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    gevurah: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    tiferet: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    netzach: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    hod: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    yesod: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
+    malkuth: { icon: { x: 0, y: -2, size: 38 }, number: { x: 0, y: 12, size: 24 }, subtitle: { x: 0, y: -8, size: 15 }, title: { x: 0, y: -35, size: 15 }, valor: { x: 0, y: 50, size: 16 }, world: { x: 0, y: 59, size: 14 } },
   };
 
   return map[normalized] ?? {
-    icon: -2,
-    number: -5,
-    subtitle: -9,
-    title: -30,
-    valor: 41,
-    world: 51,
+    icon: { x: 0, y: -2, size: 38 },
+    number: { x: 0, y: 12, size: 24 },
+    subtitle: { x: 0, y: -8, size: 15 },
+    title: { x: 0, y: -35, size: 15 },
+    valor: { x: 0, y: 50, size: 16 },
+    world: { x: 0, y: 59, size: 14 },
   };
 }
 
 export class InteractiveDebug {
   private dragEnabled = true;
   private treeTooltipsEnabled = true;
+  private treeTextFontFamily = TREE_FONT_DEFAULT;
+  private previousTreeTextFontFamily = TREE_FONT_PREVIOUS;
   private dragControllers = new Set<(enabled: boolean) => void>();
 
   public registerDragController(handler: (enabled: boolean) => void) {
@@ -117,6 +121,46 @@ export class InteractiveDebug {
     return this.treeTooltipsEnabled;
   }
 
+  public getTreeTextFontFamily(): string {
+    return this.treeTextFontFamily;
+  }
+
+  public getPreviousTreeTextFontFamily(): string {
+    return this.previousTreeTextFontFamily;
+  }
+
+  public getTreeTextFontOptions() {
+    return [...TREE_FONT_OPTIONS];
+  }
+
+  public setTreeTextFontFamily(fontFamily: string): string {
+    const next = fontFamily?.trim();
+    if (!next) return this.treeTextFontFamily;
+
+    if (next !== this.treeTextFontFamily) {
+      this.previousTreeTextFontFamily = this.treeTextFontFamily;
+      this.treeTextFontFamily = next;
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new CustomEvent('tree-font-family-change', {
+          detail: { fontFamily: next, previous: this.previousTreeTextFontFamily },
+        }));
+      }
+    }
+
+    return this.treeTextFontFamily;
+  }
+
+  public resetTreeTextFontFamily(): string {
+    this.previousTreeTextFontFamily = this.treeTextFontFamily;
+    this.treeTextFontFamily = TREE_FONT_DEFAULT;
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('tree-font-family-change', {
+        detail: { fontFamily: this.treeTextFontFamily, previous: this.previousTreeTextFontFamily },
+      }));
+    }
+    return this.treeTextFontFamily;
+  }
+
   public getSephirotInformationByName(name: string): SephirotDebugInfo | undefined {
     const normalized = name.trim().toLowerCase();
     const entry = sephirots[normalized];
@@ -150,24 +194,32 @@ export class InteractiveDebug {
     );
   }
 
-  public setDebugTextOffset(sephirotName: string, key: DebugOffsetKey, value: number): boolean {
+  public setDebugTextOffset(sephirotName: string, key: DebugOffsetKey, value: number | Partial<DebugOffsetValue> | DebugOffsetValue): boolean {
     const entry = this.resolveTarget(sephirotName);
     if (!entry) return false;
-    const next = { ...entry.getState().offsets, [key]: value };
+    const current = entry.getState().offsets[key];
+    const next = {
+      ...entry.getState().offsets,
+      [key]: typeof value === 'number'
+        ? { ...current, y: value }
+        : { ...current, ...value },
+    };
     entry.setOffsets(next);
     return true;
   }
 
-  public getDebugTextOffset(sephirotName: string, key: DebugOffsetKey): number | undefined {
+  public getDebugTextOffset(sephirotName: string, key: DebugOffsetKey): DebugOffsetValue | undefined {
     const entry = this.resolveTarget(sephirotName);
     if (!entry) return undefined;
-    return entry.getState().offsets[key];
+    return { ...entry.getState().offsets[key] };
   }
 
   public getDebugOffsets(sephirotName: string): DebugOffsets | undefined {
     const entry = this.resolveTarget(sephirotName);
     if (!entry) return undefined;
-    return { ...entry.getState().offsets };
+    return Object.fromEntries(
+      Object.entries(entry.getState().offsets).map(([k, v]) => [k, { x: v.x, y: v.y, size: v.size }])
+    ) as DebugOffsets;
   }
 
   public setDebugTextPosition(sephirotName: string, x: number, y: number): boolean {
@@ -202,8 +254,16 @@ export class InteractiveDebug {
     return this.setDebugTextVisible(true, sephirotName);
   }
 
+  public showDebugTooltips(sephirotName?: string): boolean {
+    return this.showDebugText(sephirotName);
+  }
+
   public hideDebugText(sephirotName?: string): boolean {
     return this.setDebugTextVisible(false, sephirotName);
+  }
+
+  public hideDebugTooltips(sephirotName?: string): boolean {
+    return this.hideDebugText(sephirotName);
   }
 
   public toggleDebugText(sephirotName?: string): boolean {
@@ -214,6 +274,10 @@ export class InteractiveDebug {
     const base = current.__sephirotDebugVisibility?.visible ?? true;
     const next = !base;
     return this.setDebugTextVisible(next, sephirotName);
+  }
+
+  public toggleDebugTooltips(sephirotName?: string): boolean {
+    return this.toggleDebugText(sephirotName);
   }
 
   public resetDebugOffsets(sephirotName?: string): boolean {
@@ -244,6 +308,20 @@ export class InteractiveDebug {
     return debugRegistry.get(normalized) ?? undefined;
   }
 }
+
+export const TREE_FONT_DEFAULT = "'EB Garamond', 'Cormorant Garamond', Georgia, serif";
+export const TREE_FONT_PREVIOUS = 'Georgia, serif';
+
+export const TREE_FONT_OPTIONS = [
+  { label: 'EB Garamond', value: "'EB Garamond', 'Cormorant Garamond', Georgia, serif" },
+  { label: 'Georgia', value: 'Georgia, serif' },
+  { label: 'Cormorant Garamond', value: "'Cormorant Garamond', Georgia, serif" },
+  { label: 'Libre Baskerville', value: "'Libre Baskerville', Georgia, serif" },
+  { label: 'Gilda Display', value: "'Gilda Display', Georgia, serif" },
+  { label: 'Iowan Old Style', value: "'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', serif" },
+  { label: 'Times New Roman', value: "'Times New Roman', Times, serif" },
+  { label: 'Alegreya', value: "'Alegreya', Georgia, serif" },
+] as const;
 
 export const interactiveDebug = new InteractiveDebug();
 

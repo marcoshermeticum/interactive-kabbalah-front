@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
+import { TREE_FONT_DEFAULT } from '@/lib/interactiveDebug';
 
 type Positions = Record<string, { x: number; y: number }>;
 
@@ -64,16 +65,24 @@ export default function TreePaths({ positions, width, height }: Props) {
   const [pinnedTooltips, setPinnedTooltips] = useState<PinnedTooltip[]>([]);
   const [copiedPath, setCopiedPath] = useState<number | null>(null);
   const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+  const [treeFontFamily, setTreeFontFamily] = useState(() => typeof window === 'undefined' ? TREE_FONT_DEFAULT : window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
   const deregisterRefs = useRef<Map<number, () => void>>(new Map());
   const ui = useTranslations('ui');
   const pathsT = useTranslations('paths');
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    const sync = () => {
+      setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+      setTreeFontFamily(window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
+    };
     sync();
     window.addEventListener('tree-tooltips-status-change', sync);
-    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+    window.addEventListener('tree-font-family-change', sync);
+    return () => {
+      window.removeEventListener('tree-tooltips-status-change', sync);
+      window.removeEventListener('tree-font-family-change', sync);
+    };
   }, []);
 
   const unpinPath = useCallback((pathNumber: number) => {
@@ -156,7 +165,7 @@ export default function TreePaths({ positions, width, height }: Props) {
           width={actualLength + 10}
           height={barHeight + 10}
           rx={10}
-          fill="rgba(23, 19, 16, 0.72)"
+          fill="rgba(34, 30, 26, 0.48)"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
           opacity={0.7}
         />
@@ -180,7 +189,7 @@ export default function TreePaths({ positions, width, height }: Props) {
           fill={path.color}
           opacity={isHovered ? 1 : 0.97}
           transform={`rotate(${angle}, ${midX}, ${midY})`}
-          stroke="rgba(36,25,17,0.85)"
+          stroke="rgba(59, 52, 46, 0.72)"
           strokeWidth="2"
         />
         <rect
@@ -246,7 +255,7 @@ export default function TreePaths({ positions, width, height }: Props) {
               fill="white"
               fontSize={item.size}
               fontWeight={item.bold ? 'bold' : 'normal'}
-              fontFamily="Arial, sans-serif"
+              fontFamily={treeFontFamily}
             >
               {item.text}
             </text>
@@ -278,7 +287,7 @@ export default function TreePaths({ positions, width, height }: Props) {
               fill="white"
               fontSize={item.size}
               fontWeight={item.bold ? 'bold' : 'normal'}
-              fontFamily="Arial, sans-serif"
+              fontFamily={treeFontFamily}
             >
               {item.text}
             </text>

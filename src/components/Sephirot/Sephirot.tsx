@@ -7,7 +7,7 @@ import Tooltip from '@/components/Tooltip/Tooltip';
 import { daemons } from '@/data/daemons';
 import { SigilImage } from '@/components/Search/SigilImage';
 import { ExpandableSection } from '@/components/ExpandableSection/ExpandableSection';
-import { getDefaultDebugOffsets, interactiveDebug, registerSephirotDebugEntry, unregisterSephirotDebugEntry } from '@/lib/interactiveDebug';
+import { getDefaultDebugOffsets, interactiveDebug, registerSephirotDebugEntry, unregisterSephirotDebugEntry, type DebugOffsets, TREE_FONT_DEFAULT } from '@/lib/interactiveDebug';
 import type { SephirotData } from './types';
 
 function getDaemonsForQliphah(qliphahId: string) {
@@ -111,24 +111,24 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
   const cx = 250;
   const cy = 250;
   const uid = `s-${data.name.toLowerCase()}`;
-  type DebugOffsets = {
-    icon: number;
-    number: number;
-    subtitle: number;
-    title: number;
-    valor: number;
-    world: number;
-  };
-
   const [debugOffsets, setDebugOffsets] = useState<DebugOffsets>(() => getDefaultDebugOffsets(data.name));
+  const [isClient, setIsClient] = useState(false);
+  const [treeFontFamily, setTreeFontFamily] = useState(() => typeof window === 'undefined' ? TREE_FONT_DEFAULT : window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
   const [, setDebugVisibilityVersion] = useState(0);
   const [panelPosition, setPanelPosition] = useState({ x: 80, y: -72 });
   const containerRef = useRef<HTMLDivElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const dragRef = useRef<{ offsetX: number; offsetY: number } | null>(null);
 
-  const updateDebugOffset = (key: keyof DebugOffsets, value: number) => {
-    setDebugOffsets((prev) => ({ ...prev, [key]: value }));
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const updateDebugOffset = (key: keyof DebugOffsets, axis: 'x' | 'y' | 'size', value: number) => {
+    setDebugOffsets((prev) => ({
+      ...prev,
+      [key]: { ...prev[key], [axis]: value },
+    }));
   };
 
   const handleDebugPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
@@ -180,7 +180,8 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
   };
 
   const debugVisibilityState = readDebugVisibilityState();
-  const showDebugTextControls = typeof window !== 'undefined'
+  const showDebugTextControls = isClient
+    && typeof window !== 'undefined'
     && window.location.search.includes('debug-sephirot-text=1')
     && (debugVisibilityState?.visible ?? true)
     && (!debugVisibilityState?.sephirah || debugVisibilityState.sephirah.toLowerCase() === data.name.toLowerCase());
@@ -301,17 +302,26 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const handleVisibilityChange = () => setDebugVisibilityVersion((prev) => prev + 1);
+    const handleTreeFontChange = () => setTreeFontFamily(window.InteractiveDebug?.getTreeTextFontFamily?.() ?? TREE_FONT_DEFAULT);
     window.addEventListener('sephirot-debug-visibility-change', handleVisibilityChange);
-    return () => window.removeEventListener('sephirot-debug-visibility-change', handleVisibilityChange);
+    window.addEventListener('tree-font-family-change', handleTreeFontChange);
+    return () => {
+      window.removeEventListener('sephirot-debug-visibility-change', handleVisibilityChange);
+      window.removeEventListener('tree-font-family-change', handleTreeFontChange);
+    };
   }, []);
-  const titleFontSize = Math.max(20, Math.min(28, 28 - Math.max(0, name.length - 7) * 1.1));
-  const subtitleFontSize = regentTitle && regentName ? Math.max(11, Math.min(15, 15 - Math.max(0, regentName.length - 11) * 0.35)) : 0;
+  const titleFontSize = Math.max(20, Math.min(28, 28 - Math.max(0, name.length - 7) * 1.1)) + debugOffsets.title.size;
+  const subtitleFontSize = regentTitle && regentName ? Math.max(11, Math.min(15, 15 - Math.max(0, regentName.length - 11) * 0.35)) + debugOffsets.subtitle.size : 0;
   const isKether = data.name.toLowerCase() === 'kether';
   const lowerTextLift = isKether ? -23 : -12;
-  const subtitleArc = `M 90 ${180 + debugOffsets.subtitle} A 170 170 0 0 1 410 ${180 + debugOffsets.subtitle}`;
-  const titleArc = `M 150 ${220 + debugOffsets.title} A 110 110 0 0 1 350 ${220 + debugOffsets.title}`;
-  const valorArc = `M 125 ${285 + lowerTextLift + debugOffsets.valor} A 140 140 0 0 0 375 ${285 + lowerTextLift + debugOffsets.valor}`;
-  const worldArc = `M 90 ${305 + lowerTextLift + debugOffsets.world} A 175 175 0 0 0 410 ${305 + lowerTextLift + debugOffsets.world}`;
+  const subtitleArc = `M ${90 + debugOffsets.subtitle.x} ${180 + debugOffsets.subtitle.y} A 170 170 0 0 1 ${410 + debugOffsets.subtitle.x} ${180 + debugOffsets.subtitle.y}`;
+  const titleArc = `M ${150 + debugOffsets.title.x} ${220 + debugOffsets.title.y} A 110 110 0 0 1 ${350 + debugOffsets.title.x} ${220 + debugOffsets.title.y}`;
+  const valorArc = `M ${125 + debugOffsets.valor.x} ${285 + lowerTextLift + debugOffsets.valor.y} A 140 140 0 0 0 ${375 + debugOffsets.valor.x} ${285 + lowerTextLift + debugOffsets.valor.y}`;
+  const worldArc = `M ${90 + debugOffsets.world.x} ${305 + lowerTextLift + debugOffsets.world.y} A 175 175 0 0 0 ${410 + debugOffsets.world.x} ${305 + lowerTextLift + debugOffsets.world.y}`;
+  const iconFontSize = 76 + debugOffsets.icon.size;
+  const numberFontSize = 34 + debugOffsets.number.size;
+  const valorFontSize = 20 + debugOffsets.valor.size;
+  const worldFontSize = 15 + debugOffsets.world.size;
 
   const tooltipContent = (
     <>
@@ -432,17 +442,45 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
                 { key: 'valor', label: 'virtude' },
                 { key: 'world', label: 'descrição' },
               ].map(({ key, label }) => (
-                <label key={key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
-                  <span>{label}</span>
-                  <input
-                    type="range"
-                    min={-80}
-                    max={80}
-                    value={debugOffsets[key as keyof DebugOffsets]}
-                    onChange={(event) => updateDebugOffset(key as keyof DebugOffsets, Number(event.target.value))}
-                    style={{ width: '92px' }}
-                  />
-                </label>
+                <div key={key} style={{ display: 'grid', gridTemplateColumns: '54px 1fr 1fr 1fr', alignItems: 'center', gap: 6 }}>
+                  <span style={{ opacity: 0.8 }}>{label}</span>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <span style={{ fontSize: 9, opacity: 0.7 }}>X</span>
+                    <input
+                      type="number"
+                      min={-200}
+                      max={200}
+                      step={1}
+                      value={debugOffsets[key as keyof DebugOffsets].x}
+                      onChange={(event) => updateDebugOffset(key as keyof DebugOffsets, 'x', Number(event.target.value))}
+                      style={{ width: '48px', padding: '2px 4px', borderRadius: 4, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)', color: '#fff' }}
+                    />
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <span style={{ fontSize: 9, opacity: 0.7 }}>Y</span>
+                    <input
+                      type="number"
+                      min={-200}
+                      max={200}
+                      step={1}
+                      value={debugOffsets[key as keyof DebugOffsets].y}
+                      onChange={(event) => updateDebugOffset(key as keyof DebugOffsets, 'y', Number(event.target.value))}
+                      style={{ width: '48px', padding: '2px 4px', borderRadius: 4, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)', color: '#fff' }}
+                    />
+                  </label>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <span style={{ fontSize: 9, opacity: 0.7 }}>F</span>
+                    <input
+                      type="number"
+                      min={-40}
+                      max={80}
+                      step={1}
+                      value={debugOffsets[key as keyof DebugOffsets].size}
+                      onChange={(event) => updateDebugOffset(key as keyof DebugOffsets, 'size', Number(event.target.value))}
+                      style={{ width: '48px', padding: '2px 4px', borderRadius: 4, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.04)', color: '#fff' }}
+                    />
+                  </label>
+                </div>
               ))}
             </div>
             <div style={{ marginTop: 6, opacity: 0.8, textAlign: 'center' }}>
@@ -480,34 +518,34 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
             <path id={`${uid}-world`} d={worldArc} fill="none" />
           </defs>
 
-          <circle cx={cx} cy={cy} r={236} fill="rgba(17,13,10,0.76)" />
-          <circle cx={cx} cy={cy} r={220} fill={`url(#${uid}-grad-outer)`} stroke={colors.stroke} strokeWidth="5" filter={`url(#${uid}-soft-glow)`} />
+          <circle cx={cx} cy={cy} r={236} fill="rgba(36,32,28,0.52)" />
+          <circle cx={cx} cy={cy} r={220} fill={`url(#${uid}-grad-outer)`} stroke={colors.stroke} strokeWidth="5" strokeOpacity="0.72" filter={`url(#${uid}-soft-glow)`} />
           <circle cx={cx} cy={cy} r={214} fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" />
 
-          <circle cx={cx} cy={cy} r={173} fill={`url(#${uid}-grad-mid)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.8" />
+          <circle cx={cx} cy={cy} r={173} fill={`url(#${uid}-grad-mid)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.7" />
           <circle cx={cx} cy={cy} r={166} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
 
-          <circle cx={cx} cy={cy} r={110} fill={`url(#${uid}-grad-inner)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.75" />
+          <circle cx={cx} cy={cy} r={110} fill={`url(#${uid}-grad-inner)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.66" />
           <circle cx={cx} cy={cy} r={100} fill="none" stroke="rgba(255,255,255,0.09)" strokeWidth="1" />
 
           <circle cx={cx} cy={cy} r={86} fill="rgba(250, 245, 220, 0.05)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
-          <text x={cx} y={cy - 10 + debugOffsets.icon} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize="76" fontFamily="Georgia, serif">{data.icon}</text>
-          <text x={cx} y={cy + 48 + debugOffsets.number} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize="34" fontFamily="Georgia, serif" fontWeight="700" opacity="0.95">{data.number}</text>
+          <text x={cx + debugOffsets.icon.x} y={cy - 10 + debugOffsets.icon.y} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize={iconFontSize} fontFamily={treeFontFamily}>{data.icon}</text>
+          <text x={cx + debugOffsets.number.x} y={cy + 48 + debugOffsets.number.y} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize={numberFontSize} fontFamily={treeFontFamily} fontWeight="700" opacity="0.95">{data.number}</text>
 
           {regentTitle && regentName && (
-            <text fill={colors.text} fontSize={subtitleFontSize} fontFamily="Georgia, serif" letterSpacing="0.8" opacity="0.9" fontStyle="italic">
+            <text fill={colors.text} fontSize={subtitleFontSize} fontFamily={treeFontFamily} letterSpacing="0.8" opacity="0.9" fontStyle="italic">
               <textPath href={`#${uid}-regent`} startOffset="50%" textAnchor="middle">{regentTitle} - {regentName}</textPath>
             </text>
           )}
-          <text fill={colors.text} fontSize={titleFontSize} fontWeight="700" fontFamily="Georgia, serif" letterSpacing="1.2">
+          <text fill={colors.text} fontSize={titleFontSize} fontWeight="700" fontFamily={treeFontFamily} letterSpacing="1.2">
             <textPath href={`#${uid}-name`} startOffset="50%" textAnchor="middle">{name}</textPath>
           </text>
-          <text fill={colors.text} fontSize="20" fontFamily="Georgia, serif" letterSpacing="1.3" opacity="0.9">
+          <text fill={colors.text} fontSize={valorFontSize} fontFamily={treeFontFamily} letterSpacing="1.3" opacity="0.9">
             <textPath href={`#${uid}-valor`} startOffset="50%" textAnchor="middle">{valor}</textPath>
           </text>
           {worldAspect && (
-            <text fill={colors.text} fontSize="15" fontFamily="Georgia, serif" letterSpacing="1" opacity="0.7">
+            <text fill={colors.text} fontSize={worldFontSize} fontFamily={treeFontFamily} letterSpacing="1" opacity="0.7">
               <textPath href={`#${uid}-world`} startOffset="50%" textAnchor="middle">{worldAspect}</textPath>
             </text>
           )}
