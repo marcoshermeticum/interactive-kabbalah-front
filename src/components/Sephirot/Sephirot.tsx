@@ -458,14 +458,17 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
           preserveAspectRatio="xMidYMid meet"
         >
           <defs>
+            <filter id={`${uid}-soft-glow`} x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor={colors.middle} floodOpacity="0.35" />
+            </filter>
             <radialGradient id={`${uid}-grad-outer`} cx="35%" cy="30%" r="70%">
-              <stop offset="0%" stopColor={colors.middle} stopOpacity="0.8" />
-              <stop offset="42%" stopColor={colors.middle} stopOpacity="0.95" />
+              <stop offset="0%" stopColor={colors.middle} stopOpacity="0.82" />
+              <stop offset="42%" stopColor={colors.middle} stopOpacity="0.98" />
               <stop offset="100%" stopColor={colors.outer} />
             </radialGradient>
             <radialGradient id={`${uid}-grad-mid`} cx="42%" cy="38%" r="62%">
               <stop offset="0%" stopColor={colors.middle} stopOpacity="0.9" />
-              <stop offset="100%" stopColor={colors.outer} stopOpacity="0.95" />
+              <stop offset="100%" stopColor={colors.outer} stopOpacity="0.96" />
             </radialGradient>
             <radialGradient id={`${uid}-grad-inner`} cx="45%" cy="40%" r="60%">
               <stop offset="0%" stopColor={colors.inner} stopOpacity="0.85" />
@@ -477,9 +480,9 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
             <path id={`${uid}-world`} d={worldArc} fill="none" />
           </defs>
 
-          <circle cx={cx} cy={cy} r={232} fill="rgba(17,13,10,0.72)" />
-          <circle cx={cx} cy={cy} r={220} fill={`url(#${uid}-grad-outer)`} stroke={colors.stroke} strokeWidth="5" />
-          <circle cx={cx} cy={cy} r={214} fill="none" stroke="rgba(255,255,255,0.18)" strokeWidth="1.5" />
+          <circle cx={cx} cy={cy} r={236} fill="rgba(17,13,10,0.76)" />
+          <circle cx={cx} cy={cy} r={220} fill={`url(#${uid}-grad-outer)`} stroke={colors.stroke} strokeWidth="5" filter={`url(#${uid}-soft-glow)`} />
+          <circle cx={cx} cy={cy} r={214} fill="none" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" />
 
           <circle cx={cx} cy={cy} r={173} fill={`url(#${uid}-grad-mid)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.8" />
           <circle cx={cx} cy={cy} r={166} fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
@@ -487,7 +490,7 @@ export default function Sephirot({ data, size = 160, translated }: Props) {
           <circle cx={cx} cy={cy} r={110} fill={`url(#${uid}-grad-inner)`} stroke={colors.stroke} strokeWidth="3.5" strokeOpacity="0.75" />
           <circle cx={cx} cy={cy} r={100} fill="none" stroke="rgba(255,255,255,0.09)" strokeWidth="1" />
 
-          <circle cx={cx} cy={cy} r={86} fill="rgba(250, 245, 220, 0.04)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+          <circle cx={cx} cy={cy} r={86} fill="rgba(250, 245, 220, 0.05)" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
 
           <text x={cx} y={cy - 10 + debugOffsets.icon} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize="76" fontFamily="Georgia, serif">{data.icon}</text>
           <text x={cx} y={cy + 48 + debugOffsets.number} textAnchor="middle" dominantBaseline="central" fill={colors.text} fontSize="34" fontFamily="Georgia, serif" fontWeight="700" opacity="0.95">{data.number}</text>
