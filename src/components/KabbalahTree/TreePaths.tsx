@@ -63,9 +63,18 @@ export default function TreePaths({ positions, width, height }: Props) {
   const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
   const [pinnedTooltips, setPinnedTooltips] = useState<PinnedTooltip[]>([]);
   const [copiedPath, setCopiedPath] = useState<number | null>(null);
+  const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
   const deregisterRefs = useRef<Map<number, () => void>>(new Map());
   const ui = useTranslations('ui');
   const pathsT = useTranslations('paths');
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    sync();
+    window.addEventListener('tree-tooltips-status-change', sync);
+    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+  }, []);
 
   const unpinPath = useCallback((pathNumber: number) => {
     setPinnedTooltips((prev) => prev.filter((t) => t.pathNumber !== pathNumber));
@@ -77,12 +86,14 @@ export default function TreePaths({ positions, width, height }: Props) {
   }, []);
 
   const handleMouse = useCallback((e: React.MouseEvent, num: number) => {
+    if (!treeTooltipsEnabled) return;
     // Hover always works — show preview tooltip even if others are pinned
     setHoveredPath(num);
     setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-  }, []);
+  }, [treeTooltipsEnabled]);
 
   const handleClick = useCallback((e: React.MouseEvent, num: number) => {
+    if (!treeTooltipsEnabled) return;
     const alreadyPinned = pinnedTooltips.some((t) => t.pathNumber === num);
     if (alreadyPinned) {
       // Unpin it
@@ -95,7 +106,7 @@ export default function TreePaths({ positions, width, height }: Props) {
       const dereg = tooltipManager.register(() => unpinPath(num));
       deregisterRefs.current.set(num, dereg);
     }
-  }, [pinnedTooltips, unpinPath]);
+  }, [pinnedTooltips, unpinPath, treeTooltipsEnabled]);
 
   const handleCopy = async (pathNumber: number) => {
     const p = paths.find((pp) => pp.number === pathNumber);
@@ -130,7 +141,7 @@ export default function TreePaths({ positions, width, height }: Props) {
     const midX = (from.x + to.x) / 2;
     const midY = (from.y + to.y) / 2;
 
-    const barHeight = 32;
+    const barHeight = 34;
     const nodeRadius = 72;
     const actualLength = length - nodeRadius * 2;
     if (actualLength <= 10) return null;
@@ -139,47 +150,46 @@ export default function TreePaths({ positions, width, height }: Props) {
 
     return (
       <g key={`bar-${path.number}`}>
-        {/* Outer shadow/border — gives the "armored" depth */}
         <rect
-          x={midX - actualLength / 2 - 2}
-          y={midY - barHeight / 2 - 3}
-          width={actualLength + 4}
-          height={barHeight + 6}
-          rx={6}
-          fill="rgba(0,0,0,0.6)"
+          x={midX - actualLength / 2 - 5}
+          y={midY - barHeight / 2 - 5}
+          width={actualLength + 10}
+          height={barHeight + 10}
+          rx={10}
+          fill="rgba(23, 19, 16, 0.72)"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
+          opacity={0.7}
         />
-        {/* Outer border ring */}
         <rect
           x={midX - actualLength / 2 - 1}
           y={midY - barHeight / 2 - 2}
           width={actualLength + 2}
           height={barHeight + 4}
-          rx={5}
+          rx={8}
           fill="none"
-          stroke="rgba(255,255,255,0.12)"
-          strokeWidth="1.5"
+          stroke="rgba(255,255,255,0.18)"
+          strokeWidth="1.3"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
         />
-        {/* Main colored bar */}
         <rect
           x={midX - actualLength / 2}
           y={midY - barHeight / 2}
           width={actualLength}
           height={barHeight}
-          rx={4}
+          rx={8}
           fill={path.color}
-          opacity={isHovered ? 1 : 0.92}
+          opacity={isHovered ? 1 : 0.97}
           transform={`rotate(${angle}, ${midX}, ${midY})`}
+          stroke="rgba(36,25,17,0.85)"
+          strokeWidth="2"
         />
-        {/* Inner highlight — top edge gleam */}
         <rect
-          x={midX - actualLength / 2 + 3}
-          y={midY - barHeight / 2 + 2}
-          width={actualLength - 6}
-          height={4}
-          rx={2}
-          fill="rgba(255,255,255,0.15)"
+          x={midX - actualLength / 2 + 5}
+          y={midY - barHeight / 2 + 3}
+          width={Math.max(18, actualLength - 10)}
+          height={5}
+          rx={3}
+          fill="rgba(255,255,255,0.22)"
           transform={`rotate(${angle}, ${midX}, ${midY})`}
         />
       </g>

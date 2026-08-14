@@ -21,10 +21,19 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
   const [pinnedOrnaments, setPinnedOrnaments] = useState<PinnedOrnament[]>([]);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
   const deregisterRefs = useRef<Map<string, () => void>>(new Map());
   const containerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations('ornaments');
   const ui = useTranslations('ui');
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    sync();
+    window.addEventListener('tree-tooltips-status-change', sync);
+    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+  }, []);
 
   const col = '#c9a033';
   const pillarTopY = 130;
@@ -45,11 +54,13 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   }, []);
 
   const handleMouseMove = useCallback((e: React.MouseEvent, id: string) => {
+    if (!treeTooltipsEnabled) return;
     setHoveredId(id);
     setHoverPos(getLocalPos(e));
-  }, [getLocalPos]);
+  }, [getLocalPos, treeTooltipsEnabled]);
 
   const handleClick = useCallback((e: React.MouseEvent, id: string) => {
+    if (!treeTooltipsEnabled) return;
     e.stopPropagation();
     const alreadyPinned = pinnedOrnaments.some((t) => t.id === id);
     if (alreadyPinned) {
@@ -60,7 +71,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
       const dereg = tooltipManager.register(() => unpinOrnament(id));
       deregisterRefs.current.set(id, dereg);
     }
-  }, [pinnedOrnaments, unpinOrnament, getLocalPos]);
+  }, [pinnedOrnaments, unpinOrnament, getLocalPos, treeTooltipsEnabled]);
 
   const handleCopy = async (id: string) => {
     let text = '';

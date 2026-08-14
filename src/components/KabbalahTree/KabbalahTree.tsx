@@ -42,7 +42,25 @@ function TranslatedSephirot({ id }: { id: string }) {
 
 export default function KabbalahTree({ showVeils = true, showPillars = true }: { showVeils?: boolean; showPillars?: boolean }) {
   return (
-    <div className="relative mx-auto" style={{ width: TREE_WIDTH, height: TREE_HEIGHT }}>
+    <div
+      className="relative mx-auto"
+      style={{
+        width: TREE_WIDTH,
+        height: TREE_HEIGHT,
+        background: 'linear-gradient(180deg, rgba(255,249,235,0.96) 0%, rgba(244,235,214,0.98) 100%)',
+        borderRadius: 28,
+        border: '3px solid rgba(62,50,36,0.8)',
+        boxShadow: 'inset 0 0 0 2px rgba(212,175,55,0.18), 0 18px 48px rgba(31,24,19,0.08)',
+      }}
+    >
+      <div
+        className="absolute inset-[10px] rounded-[18px]"
+        style={{
+          border: '1px solid rgba(102,84,61,0.26)',
+          boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.25)',
+        }}
+      />
+
       {/* Ornamental frame: veils, pillars, labels — with interactive tooltips */}
       <TreeOrnaments width={TREE_WIDTH} height={TREE_HEIGHT} showVeils={showVeils} showPillars={showPillars} />
 

@@ -48,7 +48,9 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
+  background:
+    radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 35%),
+    linear-gradient(180deg, #f5efe4 0%, #f8f3ea 100%);
   color: var(--text-primary);
   overflow: hidden;
   -webkit-font-smoothing: antialiased;

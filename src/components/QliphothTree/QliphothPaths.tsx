@@ -26,8 +26,17 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
   const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
   const [pinnedTooltips, setPinnedTooltips] = useState<PinnedTooltip[]>([]);
   const [copiedPath, setCopiedPath] = useState<number | null>(null);
+  const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
   const deregisterRefs = useRef<Map<number, () => void>>(new Map());
   const ui = useTranslations('ui');
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    sync();
+    window.addEventListener('tree-tooltips-status-change', sync);
+    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+  }, []);
 
   const unpinPath = useCallback((pathNumber: number) => {
     setPinnedTooltips((prev) => prev.filter((t) => t.pathNumber !== pathNumber));
@@ -39,11 +48,13 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
   }, []);
 
   const handleMouse = useCallback((e: React.MouseEvent, num: number) => {
+    if (!treeTooltipsEnabled) return;
     setHoveredPath(num);
     setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-  }, []);
+  }, [treeTooltipsEnabled]);
 
   const handleClick = useCallback((e: React.MouseEvent, num: number) => {
+    if (!treeTooltipsEnabled) return;
     const alreadyPinned = pinnedTooltips.some((t) => t.pathNumber === num);
     if (alreadyPinned) {
       unpinPath(num);
@@ -53,7 +64,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
       const dereg = tooltipManager.register(() => unpinPath(num));
       deregisterRefs.current.set(num, dereg);
     }
-  }, [pinnedTooltips, unpinPath]);
+  }, [pinnedTooltips, unpinPath, treeTooltipsEnabled]);
 
   const handleCopy = async (pathNumber: number) => {
     const p = paths.find((pp) => pp.number === pathNumber);

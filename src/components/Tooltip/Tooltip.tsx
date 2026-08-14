@@ -23,6 +23,7 @@ export default function Tooltip({ children, content }: Props) {
   const [isPinned, setIsPinned] = useState(false);
   const [copied, setCopied] = useState(false);
   const [placement, setPlacement] = useState<'above' | 'below'>('above');
+  const [treeTooltipsEnabled, setTreeTooltipsEnabled] = useState(() => typeof window === 'undefined' ? true : window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
   const containerRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const hideTimeout = useRef<NodeJS.Timeout | null>(null);
@@ -30,10 +31,32 @@ export default function Tooltip({ children, content }: Props) {
   const deregisterRef = useRef<(() => void) | null>(null);
   const ui = useTranslations('ui');
 
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const sync = () => setTreeTooltipsEnabled(window.InteractiveDebug?.getTreeTooltipsEnabled?.() ?? true);
+    sync();
+    window.addEventListener('tree-tooltips-status-change', sync);
+    return () => window.removeEventListener('tree-tooltips-status-change', sync);
+  }, []);
+
+  useEffect(() => {
+    if (!treeTooltipsEnabled) {
+      if (hideTimeout.current) clearTimeout(hideTimeout.current);
+      setIsPinned(false);
+      setIsVisible(false);
+      setPlacement('above');
+      if (deregisterRef.current) {
+        deregisterRef.current();
+        deregisterRef.current = null;
+      }
+    }
+  }, [treeTooltipsEnabled]);
+
   const show = useCallback(() => {
+    if (!treeTooltipsEnabled) return;
     if (hideTimeout.current) clearTimeout(hideTimeout.current);
     setIsVisible(true);
-  }, []);
+  }, [treeTooltipsEnabled]);
 
   const hide = useCallback(() => {
     if (hideTimeout.current) clearTimeout(hideTimeout.current);
@@ -76,16 +99,15 @@ export default function Tooltip({ children, content }: Props) {
   }, [placement]);
 
   const pin = useCallback(() => {
-    if (isPinned) return;
+    if (!treeTooltipsEnabled || isPinned) return;
     setIsPinned(true);
     setIsVisible(true);
     setPlacement('above');
     deregisterRef.current = tooltipManager.register(hide);
-    // Check for overlap after render
     requestAnimationFrame(() => {
       requestAnimationFrame(() => adjustPosition());
     });
-  }, [isPinned, hide, adjustPosition]);
+  }, [isPinned, hide, adjustPosition, treeTooltipsEnabled]);
 
   const handleClick = useCallback((e: React.MouseEvent | React.TouchEvent) => {
     e.stopPropagation();

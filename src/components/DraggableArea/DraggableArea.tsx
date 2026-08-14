@@ -2,6 +2,7 @@
 
 import { ReactNode, useEffect, useRef, useCallback, useImperativeHandle, forwardRef } from 'react';
 import HermeticBackground from '@/components/HermeticBackground/HermeticBackground';
+import { interactiveDebug } from '@/lib/interactiveDebug';
 
 export interface DraggableAreaHandle {
   /** Smoothly pan and zoom so that the given content coordinates are centered on screen */
@@ -29,6 +30,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
   const isPanning = useRef(false);
   const panStart = useRef({ x: 0, y: 0 });
   const initialized = useRef(false);
+  const dragEnabledRef = useRef(true);
   // Touch drag threshold tracking
   const dragStartPos = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const dragStartedOnInteractive = useRef(false);
@@ -179,6 +181,27 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     const container = containerRef.current;
     if (!container) return;
 
+    const deregister = interactiveDebug.registerDragController((enabled) => {
+      dragEnabledRef.current = enabled;
+      if (!enabled) {
+        pointers.current.clear();
+        isPanning.current = false;
+        hasMoved.current = false;
+        container.style.cursor = 'default';
+      } else {
+        container.style.cursor = 'grab';
+      }
+    });
+
+    return () => {
+      deregister();
+    };
+  }, []);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
     // Fit to viewport on first render (with retry for late-loading content)
     if (!initialized.current) {
       const tryFit = () => {
@@ -196,6 +219,8 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     }
 
     const onPointerDown = (e: PointerEvent) => {
+      if (!dragEnabledRef.current) return;
+
       const target = e.target as Element;
       const isOnInteractive = !!(
         target.closest('[data-tooltip-container]') ||
@@ -242,6 +267,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     };
 
     const onPointerMove = (e: PointerEvent) => {
+      if (!dragEnabledRef.current) return;
       if (!pointers.current.has(e.pointerId)) return;
       pointers.current.set(e.pointerId, { x: e.clientX, y: e.clientY });
 
@@ -301,6 +327,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     };
 
     const onPointerUp = (e: PointerEvent) => {
+      if (!dragEnabledRef.current) return;
       pointers.current.delete(e.pointerId);
       container.releasePointerCapture(e.pointerId);
 
@@ -354,6 +381,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     };
 
     const onWheel = (e: WheelEvent) => {
+      if (!dragEnabledRef.current) return;
       e.preventDefault();
 
       // Trackpads report ctrlKey=true for pinch gestures and small deltaY values.
@@ -377,6 +405,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     };
 
     const onKeyDown = (e: KeyboardEvent) => {
+      if (!dragEnabledRef.current) return;
       if (e.key === '+' || e.key === '=') {
         e.preventDefault();
         transform.current.scale = Math.min(transform.current.scale * 1.1, MAX_SCALE);
@@ -389,6 +418,7 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     };
 
     const onTouchMove = (e: TouchEvent) => {
+      if (!dragEnabledRef.current) return;
       if (e.touches.length >= 1) e.preventDefault();
     };
 

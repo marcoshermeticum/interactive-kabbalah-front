@@ -10,6 +10,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import TooltipOutsideHandler from '@/components/Tooltip/TooltipOutsideHandler';
 import type { SearchResult } from '@/data/searchIndex';
 import { usePersistedState } from '@/hooks/usePersistedState';
+import { interactiveDebug } from '@/lib/interactiveDebug';
 
 export default function HomePage() {
   const [view, setView] = usePersistedState<'life' | 'death' | 'both'>('view', 'life');
@@ -61,6 +62,12 @@ export default function HomePage() {
       setIsLoading(false);
     }, 600);
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.InteractiveDebug = interactiveDebug;
+    }
   }, []);
 
   return (
