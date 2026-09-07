@@ -1,5 +1,45 @@
 {
   "app": { "title": "生命の樹インタラクティブ" },
+  "portal": {
+    "brand": "Interactive Kabbalah",
+    "navPortals": "ポータル",
+    "navJourney": "旅",
+    "enter": "入る",
+    "eyebrow": "スピリチュアリティの入口",
+    "heroTitle": "あなたに必要だった",
+    "heroEmphasis": "中道",
+    "heroTitleAfter": "",
+    "heroText": "あなたのスピリチュアリティのためのインタラクティブな地図とツール",
+    "filterAll": "すべて",
+    "filterKabbalah": "カバラ",
+    "filterOracle": "神託",
+    "filterTools": "ツール",
+    "statusLive": "利用可能",
+    "statusSoon": "近日公開",
+    "empty": "この道にはまだポータルがありません。",
+    "footerTagline": "瞑想への誘い · 2026",
+    "cards": {
+      "treeOfLife": {
+        "title": "生命の樹",
+        "description": "10のセフィロト、22の小径、そしてクリフォトが生きて動く。"
+      },
+      "tarotWaite": {
+        "subcategory": "ライダー・ウェイト・タロット",
+        "title": "ライダー・ウェイト・タロット",
+        "description": "ゴールデン・ドーンの対応を持つ78枚のアルカナ。"
+      },
+      "baralhoCigano": {
+        "subcategory": "ジプシーデッキ",
+        "title": "ジプシーデッキ",
+        "description": "ルノルマンの伝統による36枚のカードと組み合わせ。"
+      },
+      "alchemicalSymbols": {
+        "subcategory": "錬金術の記号",
+        "title": "錬金術の記号",
+        "description": "元素、惑星、そして大いなる業の過程を表す記号。"
+      }
+    }
+  },
   "ui": {
     "title": "インタラクティブ・カバラ",
     "life": "生命",

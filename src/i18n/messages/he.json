@@ -1,5 +1,45 @@
 {
   "app": { "title": "עץ החיים האינטראקטיבי" },
+  "portal": {
+    "brand": "Interactive Kabbalah",
+    "navPortals": "שערים",
+    "navJourney": "מסע",
+    "enter": "כניסה",
+    "eyebrow": "שער הרוחניות",
+    "heroTitle": "שהיית צריך",
+    "heroEmphasis": "דרך האמצע",
+    "heroTitleAfter": "",
+    "heroText": "מפות אינטראקטיביות וכלים לרוחניות שלך",
+    "filterAll": "הכול",
+    "filterKabbalah": "קבלה",
+    "filterOracle": "אורקל",
+    "filterTools": "כלים",
+    "statusLive": "זמין",
+    "statusSoon": "בקרוב",
+    "empty": "עדיין אין שער בנתיב זה.",
+    "footerTagline": "הזמנה להתבוננות · 2026",
+    "cards": {
+      "treeOfLife": {
+        "title": "עץ החיים",
+        "description": "עשר הספירות, עשרים ושניים הנתיבים והקליפות בתנועה חיה."
+      },
+      "tarotWaite": {
+        "subcategory": "טארוט ריידר-וייט",
+        "title": "טארוט ריידר-וייט",
+        "description": "78 ארקנות עם התאמות שחר הזהב."
+      },
+      "baralhoCigano": {
+        "subcategory": "חפיסת הצוענים",
+        "title": "חפיסת הצוענים",
+        "description": "36 קלפים וצירופים במסורת לנורמן."
+      },
+      "alchemicalSymbols": {
+        "subcategory": "סמלים אלכימיים",
+        "title": "סמלים אלכימיים",
+        "description": "סימני היסודות, כוכבי הלכת ותהליכי המלאכה הגדולה."
+      }
+    }
+  },
   "ui": {
     "title": "קבלה אינטראקטיבית",
     "life": "חיים",

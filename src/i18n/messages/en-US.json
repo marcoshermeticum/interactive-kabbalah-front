@@ -1,5 +1,45 @@
 {
   "app": { "title": "Interactive Tree of Life" },
+  "portal": {
+    "brand": "Interactive Kabbalah",
+    "navPortals": "Portals",
+    "navJourney": "Journey",
+    "enter": "Enter",
+    "eyebrow": "Spirituality Portal",
+    "heroTitle": "The",
+    "heroEmphasis": "middle path",
+    "heroTitleAfter": "you needed",
+    "heroText": "Interactive maps and tools for your spirituality",
+    "filterAll": "All",
+    "filterKabbalah": "Kabbalah",
+    "filterOracle": "Oracle",
+    "filterTools": "Tools",
+    "statusLive": "Available",
+    "statusSoon": "Coming soon",
+    "empty": "No portal on this path yet.",
+    "footerTagline": "An invitation to contemplation · 2026",
+    "cards": {
+      "treeOfLife": {
+        "title": "Tree of Life",
+        "description": "The 10 Sephirot, 22 paths and the Qliphoth in living motion."
+      },
+      "tarotWaite": {
+        "subcategory": "Rider-Waite Tarot",
+        "title": "Rider-Waite Tarot",
+        "description": "78 arcana with Golden Dawn correspondences."
+      },
+      "baralhoCigano": {
+        "subcategory": "Gypsy Deck",
+        "title": "Gypsy Deck",
+        "description": "36 cards and combinations in the Lenormand tradition."
+      },
+      "alchemicalSymbols": {
+        "subcategory": "Alchemical Symbols",
+        "title": "Alchemical Symbols",
+        "description": "The signs of the elements, planets and processes of the Great Work."
+      }
+    }
+  },
   "ui": {
     "title": "Interactive Kabbalah",
     "life": "Life",
