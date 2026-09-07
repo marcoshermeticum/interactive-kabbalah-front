@@ -188,3 +188,99 @@ body, header, div, button, select, input {
     padding-bottom: 56px;
   }
 }
+
+/* ============================================================ */
+/* === Portal (Porto Lumen) — landing page layout & motion  === */
+/* ============================================================ */
+
+/* The portal page needs to scroll; body has overflow:hidden for the
+   tree canvas, so opt this page's root back into scrolling via its own
+   overflow-y:auto (set inline). This rule ensures the html can scroll. */
+
+/* Header nav — hidden on small screens, flex row on >= 640px */
+.portal-nav {
+  display: none;
+}
+@media (min-width: 640px) {
+  .portal-nav {
+    display: flex;
+  }
+}
+.portal-nav a:hover {
+  color: var(--text-primary);
+}
+
+/* Card grid — 1 / 2 / 3 columns */
+.portal-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .portal-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .portal-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Footer — stacked on mobile, row on >= 640px */
+.portal-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .portal-footer {
+    flex-direction: row;
+  }
+}
+
+/* Card hover interactions */
+.portal-card-img {
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.5s ease;
+}
+.portal-card:hover .portal-card-desc {
+  opacity: 1 !important;
+}
+
+/* Available (colored) cards: zoom + gold glow on hover */
+.portal-card:not(.portal-card-soon):hover .portal-card-img {
+  transform: scale(1.05);
+}
+.portal-card:not(.portal-card-soon):hover .portal-card-glow {
+  opacity: 1 !important;
+}
+
+/* "Coming soon" cards stay grayscale and static — no zoom, no glow. */
+.portal-card-soon .portal-card-glow {
+  display: none;
+}
+
+/* Card entrance */
+@keyframes portal-card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal-card {
+    animation: none !important;
+  }
+}
+
+/* Theme toggle (token variant) — visible on the light parchment header */
+.theme-toggle-token:hover {
+  background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+  color: var(--text-primary) !important;
+}

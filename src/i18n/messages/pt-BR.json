@@ -2,6 +2,46 @@
   "app": {
     "title": "Árvore da Vida Interativa"
   },
+  "portal": {
+    "brand": "Interactive Kabbalah",
+    "navPortals": "Portais",
+    "navJourney": "Jornada",
+    "enter": "Entrar",
+    "eyebrow": "Portal de Espiritualidade",
+    "heroTitle": "O",
+    "heroEmphasis": "caminho do meio",
+    "heroTitleAfter": "que você precisava",
+    "heroText": "Mapas interativos e ferramentas para sua espiritualidade",
+    "filterAll": "Todas",
+    "filterKabbalah": "Kabbalah",
+    "filterOracle": "Óraculo",
+    "filterTools": "Ferramentas",
+    "statusLive": "Disponível",
+    "statusSoon": "Em breve",
+    "empty": "Nenhum portal neste caminho ainda.",
+    "footerTagline": "Um convite à contemplação · 2026",
+    "cards": {
+      "treeOfLife": {
+        "title": "Árvore da Vida",
+        "description": "As 10 Sephirot, 22 caminhos e a Qliphoth em movimento vivo."
+      },
+      "tarotWaite": {
+        "subcategory": "Tarot Rider-Waite",
+        "title": "Tarot Rider-Waite",
+        "description": "78 arcanos com correspondências da Golden Dawn."
+      },
+      "baralhoCigano": {
+        "subcategory": "Baralho Cigano",
+        "title": "Baralho Cigano",
+        "description": "36 cartas e combinações na tradição Lenormand."
+      },
+      "alchemicalSymbols": {
+        "subcategory": "Símbolos Alquímicos",
+        "title": "Símbolos Alquímicos",
+        "description": "Os signos dos elementos, planetas e processos da Grande Obra."
+      }
+    }
+  },
   "ui": {
     "title": "Kabbalah Interativa",
     "life": "Vida",

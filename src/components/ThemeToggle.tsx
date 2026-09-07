@@ -2,7 +2,16 @@
 
 import { useEffect, useState } from 'react';
 
-export default function ThemeToggle() {
+/**
+ * Theme toggle button.
+ *
+ * variant:
+ *  - "overlay" (default): white-on-transparent, for use over the dark
+ *    tree header / dark surfaces.
+ *  - "token": uses the theme tokens (--text-*), so it stays visible on
+ *    the light parchment landing header and adapts to light/dark.
+ */
+export default function ThemeToggle({ variant = 'overlay' }: { variant?: 'overlay' | 'token' }) {
   const [dark, setDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -27,12 +36,15 @@ export default function ThemeToggle() {
     }
   };
 
-  // Render a neutral placeholder until mounted to avoid hydration mismatch
-  // (server renders moon icon, but client may switch to sun icon immediately)
+  const isToken = variant === 'token';
+
   return (
     <button
       onClick={toggle}
-      className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/50 hover:text-white"
+      className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-200 ${
+        isToken ? 'theme-toggle-token' : 'hover:bg-white/10 text-white/50 hover:text-white'
+      }`}
+      style={isToken ? { color: 'var(--text-muted)' } : undefined}
       aria-label="Toggle theme"
       suppressHydrationWarning
     >
