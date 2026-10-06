@@ -20,6 +20,11 @@ export default async function RootLayout({ children, params }: Props) {
       <head>
         <title>Interactive Kabbalah</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4170456120089512"
+          crossOrigin="anonymous"
+        />
         <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
         <link rel="apple-touch-icon" href="/favicon-192.png" />
