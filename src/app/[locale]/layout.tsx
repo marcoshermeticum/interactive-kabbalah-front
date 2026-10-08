@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { getMessages } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
+import MicrosoftClarity from '@/components/MicrosoftClarity';
 import CookieNotice from '@/components/CookieNotice';
 import '../globals.css';
 
@@ -41,6 +42,7 @@ export default async function RootLayout({ children, params }: Props) {
       </head>
       <body className="overflow-hidden touch-manipulation" suppressHydrationWarning>
         <GoogleAnalytics />
+        <MicrosoftClarity />
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
           <CookieNotice />
