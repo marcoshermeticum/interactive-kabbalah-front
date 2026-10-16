@@ -16,6 +16,12 @@ export const routing = defineRouting({
       ja: '/inochi-no-ki',
       he: '/etz-hachaim',
     },
+    '/alchemical-symbols': {
+      'pt-BR': '/simbolos-alquimicos',
+      'en-US': '/alchemical-symbols',
+      ja: '/renkinjutsu-no-kigou',
+      he: '/simbolim-alchemyim',
+    },
   },
 });
 

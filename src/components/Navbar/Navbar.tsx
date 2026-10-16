@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import Search from '@/components/Search/Search';
 import type { SearchResult } from '@/data/searchIndex';
 import ThemeToggle from '@/components/ThemeToggle';
@@ -9,30 +10,28 @@ import LanguageSelector from '@/components/LanguageSelector';
 import NotificationButton from '@/components/Notifications/NotificationButton';
 import NotificationDialog from '@/components/Notifications/NotificationDialog';
 import OrientationGuideDialog from '@/components/Notifications/OrientationGuideDialog';
-import VakinhaCampaignDialog from '@/components/Notifications/VakinhaCampaignDialog';
+import { useVakinhaCampaignDialog } from '@/components/Notifications/VakinhaCampaignProvider';
 import { useNotificationState } from '@/hooks/useNotificationState';
-import { useVakinhaCampaign } from '@/hooks/useVakinhaCampaign';
 import { notifications } from '@/data/notifications';
 
-interface Props {
-  view: 'life' | 'death' | 'both';
-  onViewChange: (view: 'life' | 'death' | 'both') => void;
-  showVeils: boolean;
-  onShowVeilsChange: (v: boolean) => void;
-  showPillars: boolean;
-  onShowPillarsChange: (v: boolean) => void;
-  onSearchSelect?: (result: SearchResult) => void;
-}
+type Props =
+  | {
+      variant: 'catalog';
+    }
+  | {
+      variant?: 'tree';
+      view: 'life' | 'death' | 'both';
+      onViewChange: (view: 'life' | 'death' | 'both') => void;
+      showVeils: boolean;
+      onShowVeilsChange: (v: boolean) => void;
+      showPillars: boolean;
+      onShowPillarsChange: (v: boolean) => void;
+      onSearchSelect?: (result: SearchResult) => void;
+    };
 
-export default function Navbar({
-  view,
-  onViewChange,
-  showVeils,
-  onShowVeilsChange,
-  showPillars,
-  onShowPillarsChange,
-  onSearchSelect,
-}: Props) {
+export default function Navbar(props: Props) {
+  const variant = props.variant ?? 'tree';
+  const treeProps = props.variant === 'catalog' ? null : props;
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [showDonation, setShowDonation] = useState(false);
   const [isNotificationDialogOpen, setIsNotificationDialogOpen] = useState(false);
@@ -42,7 +41,7 @@ export default function Navbar({
 
   const { unreadCount, readIds, markAsRead, isGuideRead, markGuideRead } = useNotificationState(notifications);
 
-  const { isDialogOpen: isVakinhaCampaignOpen, openDialog: openVakinhaCampaign, closeDialog: closeVakinhaCampaign } = useVakinhaCampaign();
+  const { openDialog: openVakinhaCampaign } = useVakinhaCampaignDialog();
 
   const totalUnread = unreadCount + (isGuideRead ? 0 : 1);
 
@@ -83,7 +82,7 @@ export default function Navbar({
         style={{ background: 'var(--header-bg)', borderBottom: '1px solid var(--border)' }}
       >
         {/* Left: Brand */}
-        <div className="flex items-center gap-2 min-w-0">
+        <Link href="/" className="flex items-center gap-2 min-w-0 no-underline">
           <div className="shrink-0 flex items-center justify-center">
             <img src="/mrviniciux.png" alt="" className="h-7 sm:h-8 w-auto object-contain" />
           </div>
@@ -93,16 +92,16 @@ export default function Navbar({
           >
             {ui('title')}
           </h1>
-        </div>
+        </Link>
 
         {/* Center: View Switcher — desktop only */}
-        <nav className="hidden sm:flex items-center rounded-full p-0.5 sm:p-1 shrink-0" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
+        {treeProps && <nav className="hidden sm:flex items-center rounded-full p-0.5 sm:p-1 shrink-0" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
           {(['life', 'death', 'both'] as const).map((v) => (
             <button
               key={v}
-              onClick={() => onViewChange(v)}
+              onClick={() => treeProps.onViewChange(v)}
               className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 font-medium whitespace-nowrap ${
-                view === v
+                treeProps.view === v
                   ? v === 'death'
                     ? 'bg-red-900/40 text-red-200 shadow-sm'
                     : v === 'both'
@@ -115,20 +114,20 @@ export default function Navbar({
               <span className="ml-1">{ui(v)}</span>
             </button>
           ))}
-        </nav>
+        </nav>}
 
         {/* Right: Tools */}
         <div className="flex items-center gap-1 sm:gap-1.5">
-          <Search onSelectResult={onSearchSelect} />
+          {treeProps && <Search onSelectResult={treeProps.onSearchSelect} />}
 
           {/* Desktop tools */}
           <div className="hidden sm:flex items-center gap-1.5">
-            <SettingsPopover
-              showVeils={showVeils}
-              onShowVeilsChange={onShowVeilsChange}
-              showPillars={showPillars}
-              onShowPillarsChange={onShowPillarsChange}
-            />
+            {treeProps && <SettingsPopover
+              showVeils={treeProps.showVeils}
+              onShowVeilsChange={treeProps.onShowVeilsChange}
+              showPillars={treeProps.showPillars}
+              onShowPillarsChange={treeProps.onShowPillarsChange}
+            />}
             <NotificationButton
               unreadCount={totalUnread}
               onClick={() => setIsNotificationDialogOpen(true)}
@@ -138,7 +137,7 @@ export default function Navbar({
             <button
               onClick={() => setShowDonation(!showDonation)}
               className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-amber-300"
-              aria-label="Donate"
+              aria-label={ui('support')}
               title={ui('support')}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
@@ -156,7 +155,7 @@ export default function Navbar({
           <button
             onClick={() => setSidebarOpen(true)}
             className="sm:hidden w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all text-white/50 hover:text-white"
-            aria-label="Menu"
+            aria-label={ui('menu')}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
@@ -181,7 +180,7 @@ export default function Navbar({
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-white/10">
-              <h2 className="text-sm font-semibold text-white/90" style={{ fontFamily: 'var(--font-heading)' }}>Menu</h2>
+              <h2 className="text-sm font-semibold text-white/90" style={{ fontFamily: 'var(--font-heading)' }}>{ui('menu')}</h2>
               <button
                 onClick={() => setSidebarOpen(false)}
                 className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 text-white/50 hover:text-white transition"
@@ -192,19 +191,19 @@ export default function Navbar({
 
             <div className="p-4 space-y-5">
               {/* Settings */}
-              <div>
+              {treeProps && <div>
                 <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('settings')}</p>
                 <div className="space-y-2">
                   <label className="flex items-center justify-between px-1 py-1.5 cursor-pointer">
                     <span className="text-sm text-white/80">{ui('showVeils')}</span>
-                    <ToggleSwitch checked={showVeils} onChange={onShowVeilsChange} />
+                    <ToggleSwitch checked={treeProps.showVeils} onChange={treeProps.onShowVeilsChange} />
                   </label>
                   <label className="flex items-center justify-between px-1 py-1.5 cursor-pointer">
                     <span className="text-sm text-white/80">{ui('showPillars')}</span>
-                    <ToggleSwitch checked={showPillars} onChange={onShowPillarsChange} />
+                    <ToggleSwitch checked={treeProps.showPillars} onChange={treeProps.onShowPillarsChange} />
                   </label>
                 </div>
-              </div>
+              </div>}
 
               {/* Appearance */}
               <div>
@@ -260,16 +259,16 @@ export default function Navbar({
       )}
 
       {/* === MOBILE BOTTOM TAB BAR === */}
-      <nav
+      {treeProps && <nav
         className="sm:hidden fixed bottom-0 inset-x-0 z-50 flex items-center justify-center gap-1 px-4 py-2 safe-area-bottom"
         style={{ background: 'var(--header-bg)', borderTop: '1px solid var(--border)' }}
       >
         {(['life', 'death', 'both'] as const).map((v) => (
           <button
             key={v}
-            onClick={() => onViewChange(v)}
+            onClick={() => treeProps.onViewChange(v)}
             className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-xl transition-all duration-200 ${
-              view === v
+              treeProps.view === v
                 ? v === 'death'
                   ? 'bg-red-900/30 text-red-200'
                   : v === 'both'
@@ -282,7 +281,7 @@ export default function Navbar({
             <span className="text-[10px] font-medium">{ui(v)}</span>
           </button>
         ))}
-      </nav>
+      </nav>}
 
       {/* Notification Dialog */}
       <NotificationDialog
@@ -301,11 +300,6 @@ export default function Navbar({
         onClose={handleGuideClose}
       />
 
-      {/* Vakinha Campaign Dialog */}
-      <VakinhaCampaignDialog
-        isOpen={isVakinhaCampaignOpen}
-        onClose={closeVakinhaCampaign}
-      />
     </>
   );
 }
@@ -349,7 +343,7 @@ function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPill
   const ui = useTranslations('ui');
   return (
     <div className="relative">
-      <button onClick={() => setOpen(!open)} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-white" aria-label="Settings">
+      <button onClick={() => setOpen(!open)} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-white" aria-label={ui('settings')}>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
       {open && (
@@ -394,7 +388,7 @@ function DonationPanel({ onClose }: { onClose: () => void }) {
     <div className="absolute top-14 right-4 z-[600] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-5 w-[280px]">
       <div className="flex items-center justify-between mb-3">
         <h3 className="text-sm font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>Vakinha ☕</h3>
-        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm" aria-label="Close">✕</button>
+        <button onClick={onClose} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-sm" aria-label={ui('close')}>✕</button>
       </div>
       <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">{ui('donate')}</p>
       <a

@@ -284,3 +284,8 @@ body, header, div, button, select, input {
   background: color-mix(in srgb, var(--text-primary) 8%, transparent);
   color: var(--text-primary) !important;
 }
+
+.language-selector-token:hover {
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--text-primary) 20%, var(--border));
+}
