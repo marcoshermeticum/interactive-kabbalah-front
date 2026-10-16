@@ -4,6 +4,9 @@ import { useState, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import ThemeToggle from '@/components/ThemeToggle';
+import LanguageSelector from '@/components/LanguageSelector';
+import { useVakinhaCampaignDialog } from '@/components/Notifications/VakinhaCampaignProvider';
+import { useNavigationLoading } from '@/components/NavigationLoading';
 
 /* ------------------------------------------------------------------ *
  * Portal — Porto Lumen design language
@@ -30,7 +33,7 @@ type PortalCard = {
   hasSubcategory: boolean;
   image: string;
   /** Internal (untranslated) href; the localized Link translates it */
-  href?: '/tree';
+  href?: '/tree' | '/alchemical-symbols';
   status: 'live' | 'soon';
 };
 
@@ -79,7 +82,8 @@ const cards: PortalCard[] = [
     key: 'alchemicalSymbols',
     hasSubcategory: true,
     image: '/landing/hero-chakras.png',
-    status: 'soon',
+    href: '/alchemical-symbols',
+    status: 'live',
   },
 ];
 
@@ -94,6 +98,8 @@ const CONTAINER: CSSProperties = {
 
 export default function Portal() {
   const t = useTranslations('portal');
+  const ui = useTranslations('ui');
+  const { openDialog } = useVakinhaCampaignDialog();
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
 
   const visibleCards =
@@ -158,7 +164,32 @@ export default function Portal() {
           </nav>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <LanguageSelector variant="token" />
             <ThemeToggle variant="token" />
+            <button
+              type="button"
+              onClick={openDialog}
+              aria-label={ui('support')}
+              title={ui('support')}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.4rem',
+                border: '1px solid var(--border)',
+                borderRadius: '999px',
+                padding: '0.45rem 0.7rem',
+                background: 'transparent',
+                color: 'var(--text-muted)',
+                cursor: 'pointer',
+                font: 'inherit',
+                fontSize: '0.8rem',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              <span aria-hidden="true">♥</span>
+              <span className="hidden sm:inline">{ui('vakinhaLink')}</span>
+            </button>
             <Link
               href="/tree"
               style={{
@@ -312,6 +343,7 @@ export default function Portal() {
 function PortalCardView({ card, index }: { card: PortalCard; index: number }) {
   const t = useTranslations('portal');
   const c = useTranslations(`portal.cards.${card.key}`);
+  const showLoading = useNavigationLoading();
 
   const eyebrow = card.hasSubcategory
     ? c('subcategory')
@@ -440,7 +472,7 @@ function PortalCardView({ card, index }: { card: PortalCard; index: number }) {
 
   if (card.status === 'live' && card.href) {
     return (
-      <Link href={card.href} style={{ display: 'block', textDecoration: 'none' }}>
+      <Link href={card.href} onNavigate={showLoading} style={{ display: 'block', textDecoration: 'none' }}>
         {inner}
       </Link>
     );

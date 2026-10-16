@@ -4,6 +4,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import MicrosoftClarity from '@/components/MicrosoftClarity';
 import CookieNotice from '@/components/CookieNotice';
+import { NavigationLoadingProvider } from '@/components/NavigationLoading';
+import { VakinhaCampaignProvider } from '@/components/Notifications/VakinhaCampaignProvider';
 import '../globals.css';
 
 type Props = {
@@ -44,8 +46,12 @@ export default async function RootLayout({ children, params }: Props) {
         <GoogleAnalytics />
         <MicrosoftClarity />
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
-          <CookieNotice />
+          <NavigationLoadingProvider>
+            <VakinhaCampaignProvider>
+              {children}
+              <CookieNotice />
+            </VakinhaCampaignProvider>
+          </NavigationLoadingProvider>
         </NextIntlClientProvider>
       </body>
     </html>

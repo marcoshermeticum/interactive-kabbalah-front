@@ -149,7 +149,7 @@ export default function VakinhaCampaignDialog({ isOpen, onClose }: VakinhaCampai
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[900] flex items-center justify-center">
+    <div className="fixed inset-0 z-[1100] flex items-center justify-center">
       {/* Backdrop overlay */}
       <div
         className="fixed inset-0 bg-black/70 backdrop-blur-sm"
