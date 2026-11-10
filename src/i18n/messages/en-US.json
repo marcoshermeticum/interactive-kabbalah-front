@@ -1,5 +1,26 @@
 {
   "app": { "title": "Interactive Tree of Life" },
+  "tarot": {
+    "backToHome": "← Back to home",
+    "hint": "Hover (or tap) the symbols on the card to reveal their meaning. Click to pin.",
+    "showRegions": "Highlight symbols",
+    "hideRegions": "Hide symbols",
+    "panelEmptyTitle": "Explore the card",
+    "panelEmptyHint": "Hover or tap a symbol on the card to see its meaning here.",
+    "temperance": {
+      "name": "Temperance",
+      "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",
+      "regions": {
+        "crownHalo": { "title": "Solar Crown / Halo", "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence. Temperance acts guided by the light of higher consciousness." },
+        "wings": { "title": "Wings", "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth, spirit and matter." },
+        "triangleSquare": { "title": "Triangle in the Square", "description": "The triangle (fire, spirit) inscribed in the square (matter, the four elements) symbolizes spirit manifested and contained within form — balance between the divine and the material." },
+        "cupsWater": { "title": "The Cups and the Water", "description": "Water flowing between the two cups, often on an impossible diagonal, represents the alchemical fusion of opposites: conscious and unconscious, past and future. The essence of temperance — mixing in the right measure." },
+        "sunMountain": { "title": "Sun, Mountains and the Path", "description": "In the background, the rising sun over the mountains and the winding path point to the journey toward spiritual realization — the distant golden crown as the goal." },
+        "irises": { "title": "Irises", "description": "The yellow irises allude to Iris, messenger of the gods and goddess of the rainbow, linking the divine and human worlds. They reinforce communication and harmony." },
+        "waterFeet": { "title": "The Water at the Feet", "description": "One foot submerged in water (the unconscious, emotion) and the other firm on land (the conscious, the material) show the perfect balance between the two worlds." }
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "Portals",

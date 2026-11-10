@@ -2,6 +2,48 @@
   "app": {
     "title": "Árvore da Vida Interativa"
   },
+  "tarot": {
+    "backToHome": "← Voltar ao início",
+    "hint": "Passe o mouse (ou toque) sobre os símbolos da carta para descobrir seu significado. Clique para fixar.",
+    "showRegions": "Destacar símbolos",
+    "hideRegions": "Ocultar símbolos",
+    "panelEmptyTitle": "Explore a carta",
+    "panelEmptyHint": "Passe o mouse ou toque em um símbolo da carta para ver seu significado aqui.",
+    "temperance": {
+      "name": "A Temperança",
+      "intro": "O anjo da alquimia equilibra as águas da alma entre duas taças, unindo opostos no caminho do meio. Explore cada símbolo da carta.",
+      "regions": {
+        "crownHalo": {
+          "title": "Coroa Solar / Halo",
+          "description": "O disco solar na testa e o halo radiante marcam a iluminação e a presença divina. A Temperança age guiada pela luz da consciência superior."
+        },
+        "wings": {
+          "title": "Asas",
+          "description": "As grandes asas revelam a natureza angelical e a capacidade de transitar entre o céu e a terra, o espírito e a matéria."
+        },
+        "triangleSquare": {
+          "title": "Triângulo no Quadrado",
+          "description": "O triângulo (fogo, espírito) inscrito no quadrado (matéria, os quatro elementos) simboliza o espírito manifestado e contido na forma — equilíbrio entre o divino e o material."
+        },
+        "cupsWater": {
+          "title": "As Taças e a Água",
+          "description": "A água que flui entre as duas taças, muitas vezes na diagonal impossível, representa a fusão alquímica de opostos: consciente e inconsciente, passado e futuro. É a essência da temperança — misturar na medida certa."
+        },
+        "sunMountain": {
+          "title": "Sol, Montanhas e o Caminho",
+          "description": "Ao fundo, o sol nascente sobre as montanhas e o caminho sinuoso indicam a jornada rumo à realização espiritual — a coroa dourada distante como meta a alcançar."
+        },
+        "irises": {
+          "title": "Íris",
+          "description": "As íris amarelas aludem a Íris, a mensageira dos deuses e deusa do arco-íris, ligando o mundo divino ao humano. Reforçam a comunicação e a harmonia."
+        },
+        "waterFeet": {
+          "title": "A Água aos Pés",
+          "description": "Um pé submerso na água (o inconsciente, a emoção) e outro firme na terra (o consciente, o material) mostram o equilíbrio perfeito entre os dois mundos."
+        }
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "Portais",

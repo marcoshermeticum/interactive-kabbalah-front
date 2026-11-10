@@ -1,5 +1,26 @@
 {
   "app": { "title": "עץ החיים האינטראקטיבי" },
+  "tarot": {
+    "backToHome": "← Back to home",
+    "hint": "Hover (or tap) the symbols on the card to reveal their meaning. Click to pin.",
+    "showRegions": "Highlight symbols",
+    "hideRegions": "Hide symbols",
+    "panelEmptyTitle": "Explore the card",
+    "panelEmptyHint": "Hover or tap a symbol on the card to see its meaning here.",
+    "temperance": {
+      "name": "Temperance",
+      "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",
+      "regions": {
+        "crownHalo": { "title": "Solar Crown / Halo", "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence." },
+        "wings": { "title": "Wings", "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth." },
+        "triangleSquare": { "title": "Triangle in the Square", "description": "The triangle inscribed in the square symbolizes spirit manifested and contained within form." },
+        "cupsWater": { "title": "The Cups and the Water", "description": "Water flowing between the two cups represents the alchemical fusion of opposites." },
+        "sunMountain": { "title": "Sun, Mountains and the Path", "description": "The rising sun over the mountains and the winding path point to spiritual realization." },
+        "irises": { "title": "Irises", "description": "The yellow irises allude to Iris, messenger of the gods, linking the divine and human worlds." },
+        "waterFeet": { "title": "The Water at the Feet", "description": "One foot in water and the other on land show the balance between the two worlds." }
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "שערים",
