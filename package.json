@@ -15,8 +15,7 @@
     "test:admin": "npx playwright test admin.spec.ts",
     "test:unit": "vitest --run",
     "install:yarn": "yarn install",
-    "install:npm": "npm install",
-    "prepare": "husky"
+    "install:npm": "npm install"
   },
   "dependencies": {
     "@ant-design/icons": "^6.3.2",
@@ -37,7 +36,6 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "fast-check": "^3.23.2",
-    "husky": "^9.1.7",
     "postcss": "^8.5.4",
     "tailwindcss": "^4.1.8",
     "typescript": "^5.8.3",
