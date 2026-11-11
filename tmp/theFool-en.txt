@@ -1,0 +1,34 @@
+    "theFool": {
+      "name": "The Fool",
+      "intro": "On the edge of the abyss, the eternal beginner sets out with no visible baggage — only faith, instinct and the light that guides him. Explore each symbol of the card.",
+      "regions": {
+        "sun": {
+          "title": "The Radiant Sun",
+          "description": "The sun shines behind the Fool's shoulder: the divine blessing that accompanies whoever dares the leap. Its light is the inner certainty that needs no planning."
+        },
+        "mountains": {
+          "title": "The Snowy Mountains",
+          "description": "The snow-capped peaks in the distance are the heights of spiritual aspiration — the far-off goal the traveler does not even need to face yet; it is enough to walk."
+        },
+        "cliff": {
+          "title": "The Cliff",
+          "description": "The abyss at the edge of the step is the unknown. The Fool does not notice it — or does not mind: faith does not calculate, it trusts. This is the zero point of every journey."
+        },
+        "bundle": {
+          "title": "The Bundle on the Staff",
+          "description": "The colorful bundle hanging from the staff carries the archetypes of the collective unconscious — the heritage every traveler carries without knowing what it holds."
+        },
+        "whiteRose": {
+          "title": "The White Rose",
+          "description": "In his left hand, the white rose is the purity of intention and the untouched innocence: the unblemished principle of every beginning."
+        },
+        "dog": {
+          "title": "The Little White Dog",
+          "description": "The dog leaping at the Fool's feet is faithful instinct — and also a warning: the loyalty of the animal body accompanies, barks and protects, but does not decide the leap."
+        },
+        "feather": {
+          "title": "The Red Feather",
+          "description": "The red feather on his cap recalls the lightness required: vibrant courage, without the weight of certainties."
+        }
+      }
+    }

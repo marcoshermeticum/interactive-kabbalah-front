@@ -1,0 +1,34 @@
+    "theFool": {
+      "name": "O Louco",
+      "intro": "No limiar do abismo, o eterno principiante parte sem bagagem visível — apenas fé, instinto e a luz que o guia. Explore cada símbolo da carta.",
+      "regions": {
+        "sun": {
+          "title": "O Sol Radiante",
+          "description": "O sol brilha por trás do ombro do Louco: a bênção divina que acompanha quem ousa o salto. Sua luz é a certeza interior que dispensa planejamento."
+        },
+        "mountains": {
+          "title": "As Montanhas Geladas",
+          "description": "Os picos nevados ao fundo são as alturas da aspiração espiritual — o objetivo distante que o viajante nem precisa encarar ainda; basta caminhar."
+        },
+        "cliff": {
+          "title": "O Penhasco",
+          "description": "O abismo à beira do passo é o desconhecido. O Louco não o nota — ou não se importa: fé não calcula, confia. É o ponto zero de toda jornada."
+        },
+        "bundle": {
+          "title": "A Tralha no Cajado",
+          "description": "A trouxa colorida pendurada no bastão carrega os arquétipos do inconsciente coletivo — a herança que todo viajante leva sem saber o que contém."
+        },
+        "whiteRose": {
+          "title": "A Rosa Branca",
+          "description": "Na mão esquerda, a rosa branca é a pureza da intenção e a inocência intacta: o princípio sem mácula de cada começo."
+        },
+        "dog": {
+          "title": "O Cãozinho Branco",
+          "description": "O cão que salta aos pés do Louco é o instinto fiel — e também o aviso: a lealdade do corpo animal acompanha, late e protege, mas não decide o salto."
+        },
+        "feather": {
+          "title": "A Pena Vermelha",
+          "description": "A pena vermelha no gorro recorda a leveza necessária: coragem vibrante, sem o peso das certezas."
+        }
+      }
+    }

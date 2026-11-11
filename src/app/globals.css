@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 :root {
   --font-heading: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -180,6 +174,35 @@ body, header, div, button, select, input {
 /* Safe area padding for bottom bar (iOS notch devices) */
 .safe-area-bottom {
   padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+/* === Interactive Tarot === */
+@keyframes tarot-panel-fade {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-tarot-panel {
+  animation: tarot-panel-fade 0.25s ease-out;
+}
+
+/* Soft golden pulse to hint that regions are interactive */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes tarot-hint-pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 0.7; }
+  }
+  .tarot-hint-pulse {
+    animation: tarot-hint-pulse 2.4s ease-in-out infinite;
+  }
+}
+
+/* Horizontal pill carousel — hide scrollbar, keep swipe/scroll on mobile */
+.tarot-pills-scroll {
+  scrollbar-width: none;            /* Firefox */
+  -ms-overflow-style: none;         /* IE/Edge */
+}
+.tarot-pills-scroll::-webkit-scrollbar {
+  display: none;                    /* Chrome/Safari */
 }
 
 /* Mobile bottom bar spacing — prevent content from hiding behind it */

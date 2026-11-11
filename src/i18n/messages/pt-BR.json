@@ -42,6 +42,52 @@
           "description": "Um pé submerso na água (o inconsciente, a emoção) e outro firme na terra (o consciente, o material) mostram o equilíbrio perfeito entre os dois mundos."
         }
       }
+    },
+    "theFool": {
+      "name": "O Louco",
+      "intro": "No limiar do abismo, o eterno principiante parte sem bagagem visível — apenas fé, instinto e a luz que o guia. Explore cada símbolo da carta.",
+      "regions": {
+        "sun": {
+          "title": "O Sol Radiante",
+          "description": "O sol brilha por trás do ombro do Louco: a bênção divina que acompanha quem ousa o salto. Sua luz é a certeza interior que dispensa planejamento."
+        },
+        "mountains": {
+          "title": "As Montanhas Geladas",
+          "description": "Os picos nevados ao fundo são as alturas da aspiração espiritual — o objetivo distante que o viajante nem precisa encarar ainda; basta caminhar."
+        },
+        "cliff": {
+          "title": "O Penhasco",
+          "description": "O abismo à beira do passo é o desconhecido. O Louco não o nota — ou não se importa: fé não calcula, confia. É o ponto zero de toda jornada."
+        },
+        "bundle": {
+          "title": "A Tralha no Cajado",
+          "description": "A trouxa colorida pendurada no bastão carrega os arquétipos do inconsciente coletivo — a herança que todo viajante leva sem saber o que contém."
+        },
+        "whiteRose": {
+          "title": "A Rosa Branca",
+          "description": "Na mão esquerda, a rosa branca é a pureza da intenção e a inocência intacta: o princípio sem mácula de cada começo."
+        },
+        "motleyTunic": {
+          "title": "A Túnica de Arlequim",
+          "description": "O traje em retalhos de muitas cores veste o Louco como um arlequim: cada remendo é uma vida, uma máscara, um papel que ele já experimentou sem se prender a nenhum. A túnica lembra que o mundo é festa e jogo — quem se veste de todas as cores não precisa escolher uma só identidade para partir."
+        },
+        "mismatchedLeggings": {
+          "title": "As Pernas Desiguais",
+          "description": "As duas pernas do Louco não combinam: uma cor de cada lado, uma passada mais longa que a outra. A assimetria é a assinatura de quem caminha antes de estar pronto — o passo torto mantém o movimento, e é o desequilíbrio que o empurra para o desconhecido. Não é descuido: é coragem em trânsito."
+        },
+        "jesterCap": {
+          "title": "O Gorro do Bobo",
+          "description": "O gorro do bobo da corte é a única coroa do Louco: reinar sem trono, sobre nada, a partir do zero. O chapéu ridículo é sabedoria disfarçada — quem aceita ser tolo diante do mundo fica livre para aprender tudo de novo."
+        },
+        "dog": {
+          "title": "O Cãozinho Branco",
+          "description": "O cão que salta aos pés do Louco é o instinto fiel — e também o aviso: a lealdade do corpo animal acompanha, late e protege, mas não decide o salto."
+        },
+        "feather": {
+          "title": "A Pena Vermelha",
+          "description": "A pena vermelha no gorro recorda a leveza necessária: coragem vibrante, sem o peso das certezas."
+        }
+      }
     }
   },
   "portal": {

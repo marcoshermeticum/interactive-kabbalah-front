@@ -32,8 +32,9 @@ export const temperance: TarotCard = {
     {
       id: 'triangle-square',
       icon: '🔺',
-      // The triangle inside a square on the angel's chest.
-      points: '40,46 60,46 60,62 40,62',
+      // The triangle inside a square on the angel's chest. The symbol is a
+      // triangle, so the `triangle` shape maps to it directly.
+      shape: { type: 'triangle', x: 40, y: 46, width: 20, height: 16 },
       i18nKey: 'temperance.regions.triangleSquare',
     },
     {

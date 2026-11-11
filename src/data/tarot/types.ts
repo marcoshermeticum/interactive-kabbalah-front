@@ -7,14 +7,44 @@
  * with the image regardless of screen size.
  */
 
+/**
+ * A simple primitive shape, described by a bounding box in viewBox units.
+ * This is the easy way to define a region — just give a type and a box:
+ *
+ *  - `circle`:    an ellipse filling the box (x, y = top-left corner).
+ *  - `rect`:      a rectangle (optionally rounded via `radius`).
+ *  - `triangle`:  an upward-pointing triangle inscribed in the box.
+ *
+ * All coordinates are in the card's `viewBox` space.
+ */
+export interface TarotShape {
+  type: 'circle' | 'rect' | 'triangle';
+  /** Left edge (x) of the bounding box, in viewBox units. */
+  x: number;
+  /** Top edge (y) of the bounding box, in viewBox units. */
+  y: number;
+  /** Box width, in viewBox units. */
+  width: number;
+  /** Box height, in viewBox units. */
+  height: number;
+  /** Corner radius for `rect` only (viewBox units). Ignored otherwise. */
+  radius?: number;
+}
+
 export interface TarotRegion {
   /** Stable id, unique within the card. */
   id: string;
   /**
-   * SVG polygon points in viewBox coordinate space, e.g. "10,20 30,20 30,40".
-   * Use TarotCard.viewBox as the coordinate system.
+   * Preferred, easy way to define the region: a primitive shape + bounding box.
+   * If provided, `points` is ignored.
    */
-  points: string;
+  shape?: TarotShape;
+  /**
+   * Advanced: free-form SVG polygon points in viewBox coordinate space,
+   * e.g. "10,20 30,20 30,40". Use for organic/irregular areas that a
+   * primitive box can't cover well. Provide this OR `shape`.
+   */
+  points?: string;
   /**
    * i18n key (within the `tarot` namespace) pointing to an object with
    * `title` and `description`, e.g. "temperance.regions.waterFeet".

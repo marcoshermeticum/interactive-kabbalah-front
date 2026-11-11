@@ -20,39 +20,69 @@ export default function TemperancePage() {
           background: 'var(--bg-primary)',
           color: 'var(--text-primary)',
           flex: 1,
-          padding: '2rem 1rem 4rem',
+          padding: '1.5rem 1.25rem 3rem',
         }}
       >
-        <div style={{ maxWidth: '48rem', margin: '0 auto' }}>
+        <div style={{ maxWidth: '60rem', margin: '0 auto', paddingBottom: '2rem' }}>
           <Link
             href="/"
             style={{
-              color: 'var(--gold)',
+              color: 'var(--accent)',
               display: 'inline-block',
-              marginBottom: '1.5rem',
+              marginBottom: '1.25rem',
               textDecoration: 'none',
+              fontSize: '0.9rem',
             }}
           >
             {t('backToHome')}
           </Link>
 
-          <header style={{ marginBottom: '2rem' }}>
+          <header style={{ marginBottom: '1.75rem', textAlign: 'center' }}>
+            <span
+              style={{
+                display: 'inline-block',
+                marginBottom: '0.5rem',
+                padding: '0.25rem 0.85rem',
+                borderRadius: '999px',
+                border: '1px solid var(--border)',
+                color: 'var(--accent)',
+                fontSize: '0.75rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
+            >
+              {t('temperance.name')} · {temperance.number}
+            </span>
             <h1
               style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: 'clamp(2rem, 6vw, 3.25rem)',
                 fontWeight: 500,
                 lineHeight: 1.1,
-                margin: 0,
+                margin: '0 0 0.75rem',
               }}
             >
-              {temperance.number} · {t('temperance.name')}
+              {t('temperance.name')}
             </h1>
-            <p style={{ color: 'var(--text-muted)', lineHeight: 1.6 }}>
+            <p
+              style={{
+                color: 'var(--text-muted)',
+                lineHeight: 1.65,
+                maxWidth: '40rem',
+                margin: '0 auto',
+              }}
+            >
               {t('temperance.intro')}
             </p>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>
-              {t('hint')}
+            <p
+              style={{
+                color: 'var(--text-muted)',
+                fontSize: '0.8rem',
+                marginTop: '0.75rem',
+                opacity: 0.85,
+              }}
+            >
+              💡 {t('hint')}
             </p>
           </header>
 
