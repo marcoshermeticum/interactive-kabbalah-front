@@ -3,9 +3,7 @@
 import { useState, type CSSProperties } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import ThemeToggle from '@/components/ThemeToggle';
-import LanguageSelector from '@/components/LanguageSelector';
-import { useVakinhaCampaignDialog } from '@/components/Notifications/VakinhaCampaignProvider';
+import Navbar from '@/components/Navbar/Navbar';
 import { useNavigationLoading } from '@/components/NavigationLoading';
 
 /* ------------------------------------------------------------------ *
@@ -17,6 +15,9 @@ import { useNavigationLoading } from '@/components/NavigationLoading';
  * All copy comes from the `portal` i18n namespace. Navigation uses the
  * localized next-intl Link, so the internal `/tree` href renders as a
  * translated slug per locale (e.g. /pt-BR/arvore-da-vida).
+ *
+ * The header is the shared <Navbar> (same hamburger menu as every route);
+ * only <main> scrolls, so the bar stays fixed like on the tree/catalog pages.
  *
  * Layout is expressed with inline styles (flex/grid) so the design is
  * deterministic and self-contained, mirroring the static reference.
@@ -99,8 +100,6 @@ const CONTAINER: CSSProperties = {
 
 export default function Portal() {
   const t = useTranslations('portal');
-  const ui = useTranslations('ui');
-  const { openDialog } = useVakinhaCampaignDialog();
   const [activeCategory, setActiveCategory] = useState<CategoryId>('all');
 
   const visibleCards =
@@ -111,108 +110,25 @@ export default function Portal() {
   return (
     <div
       style={{
-        height: '100vh',
+        height: '100dvh',
         display: 'flex',
         flexDirection: 'column',
-        overflowY: 'auto',
-        WebkitOverflowScrolling: 'touch',
+        overflow: 'hidden',
         background: 'var(--bg-primary)',
         color: 'var(--text-primary)',
       }}
     >
-      {/* ===================== Header ===================== */}
-      <header
+      {/* ===================== Header (shared navbar) ===================== */}
+      <Navbar variant="catalog" />
+
+      <main
         style={{
-          position: 'sticky',
-          top: 0,
-          zIndex: 50,
-          backdropFilter: 'blur(8px)',
-          background: 'color-mix(in srgb, var(--bg-primary) 88%, transparent)',
-          borderBottom: '1px solid var(--border)',
+          flex: 1,
+          minHeight: 0,
+          overflowY: 'auto',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
-        <div
-          style={{
-            ...CONTAINER,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingTop: '1.25rem',
-            paddingBottom: '1.25rem',
-            gap: '1rem',
-          }}
-        >
-          <Link
-            href="/"
-            style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none', color: 'inherit' }}
-          >
-            <img src="/mrviniciux.png" alt="" style={{ height: '1.75rem', width: 'auto', objectFit: 'contain' }} />
-            <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 500, letterSpacing: '0.025em' }}>
-              {t('brand')}
-            </span>
-          </Link>
-
-          <nav
-            className="portal-nav"
-            style={{ alignItems: 'center', gap: '2rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}
-          >
-            <Link href="/tree" style={{ color: 'inherit', textDecoration: 'none' }}>
-              {t('navPortals')}
-            </Link>
-            <a href="#portais" style={{ color: 'inherit', textDecoration: 'none' }}>
-              {t('navJourney')}
-            </a>
-          </nav>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <LanguageSelector variant="token" />
-            <ThemeToggle variant="token" />
-            <button
-              type="button"
-              onClick={openDialog}
-              aria-label={ui('support')}
-              title={ui('support')}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '0.4rem',
-                border: '1px solid var(--border)',
-                borderRadius: '999px',
-                padding: '0.45rem 0.7rem',
-                background: 'transparent',
-                color: 'var(--text-muted)',
-                cursor: 'pointer',
-                font: 'inherit',
-                fontSize: '0.8rem',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              <span aria-hidden="true">♥</span>
-              <span className="hidden sm:inline">{ui('vakinhaLink')}</span>
-            </button>
-            <Link
-              href="/tree"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                borderRadius: '999px',
-                padding: '0.5rem 1.1rem',
-                fontSize: '0.875rem',
-                fontWeight: 500,
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-                background: 'var(--header-bg)',
-                color: 'var(--header-text)',
-              }}
-            >
-              {t('enter')}
-            </Link>
-          </div>
-        </div>
-      </header>
-
-      <main style={{ flex: 1 }}>
         {/* ===================== Hero ===================== */}
         <section>
           <div style={{ ...CONTAINER, textAlign: 'center', paddingTop: '4rem', paddingBottom: '3rem' }}>
@@ -322,19 +238,6 @@ export default function Portal() {
           </div>
         </section>
       </main>
-
-      {/* ===================== Footer ===================== */}
-      <footer style={{ borderTop: '1px solid var(--border)' }}>
-        <div
-          className="portal-footer"
-          style={{ ...CONTAINER, paddingTop: '2rem', paddingBottom: '2rem', fontSize: '0.875rem', color: 'var(--text-muted)' }}
-        >
-          <span style={{ fontFamily: 'var(--font-heading)', fontSize: '1.125rem', color: 'var(--text-primary)' }}>
-            {t('brand')}
-          </span>
-          <span>{t('footerTagline')}</span>
-        </div>
-      </footer>
     </div>
   );
 }
