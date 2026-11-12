@@ -17,7 +17,7 @@ painel de leitura (desktop) ou no bottom sheet (mobile).
 | Item | Regra |
 |------|-------|
 | `id` da região | kebab-case, único dentro da carta (ex.: `crown-halo`) |
-| `id` da carta | camelCase, igual à chave do bloco i18n em `tarot` (ex.: `theFool`) — o `InteractiveTarotCard` deriva o `alt` da imagem de `${card.id}.name`; o arquivo de imagem, a pasta da rota e a URL usam kebab-case (`the-fool`) |
+| `id` da carta | camelCase, igual à chave do bloco i18n em `tarot` (ex.: `theFool`) — o `InteractiveTarotCard` deriva o `alt` da imagem de `${card.id}.name`; o arquivo de imagem, o `slug` do catálogo e a URL usam kebab-case (`the-fool`) |
 | Chave i18n | camelCase, relativa ao namespace `tarot`: `<cartaCamelCase>.regions.<regiãoCamelCase>` (ex.: `white-rose` → `theFool.regions.whiteRose` → `tarot.theFool.regions.whiteRose.{title,description}`) |
 | Ícone | emoji exibido no título do painel e na pílula de símbolos |
 | Ordem das regiões | a ordem listada é a sugerida no array `regions`: formas grandes/ao fundo primeiro, detalhes pequenos por último (**o último ganha o clique nas sobreposições**) |
@@ -367,7 +367,7 @@ recalibre a Temperança para `viewBox: { width: 100, height: 172.7 }` e ajuste o
 - [ ] Regiões nesta ordem (fundo → primeiro plano), com `id`, `icon`, `points`, `i18nKey`
 - [ ] Polígonos desenhados (Passo 4) e conferidos com "Destacar símbolos"
 - [ ] Bloco de tradução (`name`, `intro`, `regions.*`) nos **4** idiomas
-- [ ] `src/app/[locale]/tarot/<id>/page.tsx` criado a partir do molde da Temperança
+- [ ] Carta registrada em `src/data/tarot/majorArcana.ts` (entrada no mosaico + `cardData`)
 - [ ] `npx tsc --noEmit` e `npm run build` passam
 
 ### Ordem sugerida de implantação

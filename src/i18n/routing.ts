@@ -24,7 +24,7 @@ export const routing = defineRouting({
     },
     // Tarot catalog. Card URLs use the same untranslated slug in every
     // locale (`/tarot/the-magician`), so only the catalog is registered here.
-    '/tarot-waite': '/tarot-waite',
+    '/tarot': '/tarot',
   },
 });
 

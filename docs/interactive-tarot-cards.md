@@ -18,7 +18,8 @@ Cada carta é composta por quatro peças:
 | **Imagem** | `public/tarot/<id>.jpg` | A arte da carta (raster). |
 | **Dados da carta** | `src/data/tarot/<id>.ts` | Geometria das regiões + referências de texto. |
 | **Traduções** | `src/i18n/messages/*.json` (namespace `tarot`) | Os textos de cada região, por idioma. |
-| **Rota/página** | `src/app/[locale]/tarot/<id>/page.tsx` | A página que exibe a carta. |
+| **Registro no catálogo** | `src/data/tarot/majorArcana.ts` | A entrada do mosaico e o import em `cardData`. |
+| **Rota/página** | `src/app/[locale]/tarot/[id]/page.tsx` | Rota **dinâmica compartilhada** — não crie página por carta. |
 
 O componente `src/components/Tarot/InteractiveTarotCard.tsx` já cuida de toda a
 interação e do visual responsivo. Você **não precisa mexer nele** para adicionar
@@ -377,68 +378,38 @@ mostra a chave crua em vez do texto.
 
 ---
 
-## Passo 6 — Criar a página
+## Passo 6 — Registrar a carta no catálogo
 
-Crie `src/app/[locale]/tarot/<id>/page.tsx`. Copie da Temperança
-(`src/app/[locale]/tarot/temperance/page.tsx`) e troque os três pontos marcados:
+Não existe mais uma página por carta: a rota dinâmica
+`src/app/[locale]/tarot/[id]/page.tsx` renderiza qualquer carta registrada. Falta
+apenas registrar os dados em `src/data/tarot/majorArcana.ts`, em duas partes.
 
-```tsx
-'use client';
+**1. Entrada no mosaico** — adicione o objeto na posição da ordem RWS (o array
+`majorArcana` já contém as 22 cartas; cartas ainda sem arte própria usam o
+arquivo existente em `public/tarot/`):
 
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
-import Navbar from '@/components/Navbar/Navbar';
-import InteractiveTarotCard from '@/components/Tarot/InteractiveTarotCard';
-import { theStar } from '@/data/tarot/the-star';   // (1) importe sua carta
-
-export default function TheStarPage() {              // (2) renomeie o componente
-  const t = useTranslations('tarot');
-
-  return (
-    <div className="flex h-[100dvh] w-full flex-col overflow-hidden">
-      <Navbar variant="catalog" />
-      <main
-        style={{
-          minHeight: 0,
-          overflowY: 'auto',
-          WebkitOverflowScrolling: 'touch',
-          background: 'var(--bg-primary)',
-          color: 'var(--text-primary)',
-          flex: 1,
-          padding: '2rem 1rem 4rem',
-        }}
-      >
-        {/* paddingBottom dá espaço para o bottom sheet no mobile */}
-        <div style={{ maxWidth: '56rem', margin: '0 auto', paddingBottom: '9rem' }}>
-          <Link href="/" style={{ color: 'var(--accent)', display: 'inline-block', marginBottom: '1.25rem', textDecoration: 'none', fontSize: '0.9rem' }}>
-            {t('backToHome')}
-          </Link>
-
-          <header style={{ marginBottom: '1.75rem', textAlign: 'center' }}>
-            <span style={{ display: 'inline-block', marginBottom: '0.5rem', padding: '0.25rem 0.85rem', borderRadius: '999px', border: '1px solid var(--border)', color: 'var(--accent)', fontSize: '0.75rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              {t('theStar.name')} · {theStar.number}    {/* (3) use as chaves da sua carta */}
-            </span>
-            <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(2rem, 6vw, 3.25rem)', fontWeight: 500, lineHeight: 1.1, margin: '0 0 0.75rem' }}>
-              {t('theStar.name')}
-            </h1>
-            <p style={{ color: 'var(--text-muted)', lineHeight: 1.65, maxWidth: '40rem', margin: '0 auto' }}>
-              {t('theStar.intro')}
-            </p>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', marginTop: '0.75rem', opacity: 0.85 }}>
-              💡 {t('hint')}
-            </p>
-          </header>
-
-          <InteractiveTarotCard card={theStar} />
-        </div>
-      </main>
-    </div>
-  );
-}
+```ts
+{ slug: 'the-star', i18nKey: 'theStar', number: 17, roman: 'XVII', image: '/tarot/17_Star.jpg' },
 ```
 
-A rota resultante é `/<locale>/tarot/<id>`, por exemplo:
-`http://localhost:3000/pt-BR/tarot/the-star`.
+**2. Dados interativos** — importe a carta e registre-a em `cardData`. Sem esse
+registro a single mostra o estado "Carta em preparação":
+
+```ts
+import { theStar } from './the-star';
+
+const cardData: Record<string, TarotCard> = {
+  'the-fool': theFool,
+  'the-high-priestess': theHighPriestess,
+  temperance,
+  'the-star': theStar,
+};
+```
+
+O `slug` é o mesmo em todos os idiomas e é o parâmetro `[id]` da URL. A rota
+resultante é `/<locale>/tarot/<slug>` — por exemplo
+`http://localhost:3000/pt-BR/tarot/the-star`. Slugs desconhecidos são
+redirecionados de volta para `/tarot`.
 
 ---
 
@@ -470,7 +441,7 @@ A rota resultante é `/<locale>/tarot/<id>`, por exemplo:
 - [ ] Cada região tem `shape` (forma) **ou** `points` (polígono)
 - [ ] Bloco de tradução adicionado nos **4** arquivos de idioma
 - [ ] `i18nKey` de cada região bate com a estrutura das traduções
-- [ ] `src/app/[locale]/tarot/<id>/page.tsx` criado
+- [ ] Entrada adicionada em `majorArcana` e carta registrada em `cardData`
 - [ ] Testado no navegador com "Destacar símbolos"
 - [ ] `npx tsc --noEmit` e `npm run build` passam
 - [ ] Verificado em todos os idiomas
@@ -495,6 +466,7 @@ A rota resultante é `/<locale>/tarot/<id>`, por exemplo:
 
 - Tipos: `src/data/tarot/types.ts`
 - Exemplo de carta: `src/data/tarot/temperance.ts`
-- Exemplo de página: `src/app/[locale]/tarot/temperance/page.tsx`
+- Catálogo/registro: `src/data/tarot/majorArcana.ts`
+- Rota compartilhada (não criar por carta): `src/app/[locale]/tarot/[id]/page.tsx`
 - Componente (não precisa editar): `src/components/Tarot/InteractiveTarotCard.tsx`
 - Traduções: `src/i18n/messages/{pt-BR,en-US,ja,he}.json` → namespace `tarot`

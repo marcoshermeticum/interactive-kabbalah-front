@@ -39,7 +39,7 @@ export default function TarotCardDetail({ entry }: Props) {
       >
         <div style={{ maxWidth: '60rem', margin: '0 auto', paddingBottom: '2rem' }}>
           <Link
-            href="/tarot-waite"
+            href="/tarot"
             style={{
               color: 'var(--accent)',
               display: 'inline-block',
