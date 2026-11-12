@@ -32,6 +32,8 @@ export default function InteractiveTarotCard({ card }: Props) {
 
   const clearTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const panelRef = useRef<HTMLElement | null>(null);
+  const artworkRef = useRef<HTMLDivElement | null>(null);
+  const pillsRef = useRef<HTMLDivElement | null>(null);
   const pillRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
 
   const setHover = useCallback((id: string) => {
@@ -53,6 +55,37 @@ export default function InteractiveTarotCard({ card }: Props) {
   const toggleSelect = useCallback((id: string) => {
     setSelectedId((cur) => (cur === id ? null : id));
   }, []);
+
+  // Clicking anywhere outside the artwork, the reading panel, or the pills
+  // clears the current selection. Clicks inside those areas keep it, so the
+  // artwork, the meaning text, and the pill row can be used naturally.
+  useEffect(() => {
+    if (!selectedId) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+
+      if (
+        artworkRef.current?.contains(target) ||
+        pillsRef.current?.contains(target) ||
+        panelRef.current?.contains(target)
+      ) {
+        return;
+      }
+
+      setSelectedId(null);
+      setHoverId(null);
+
+      // Drop the focus ring from the pill that was active before the click.
+      const active = document.activeElement;
+      if (active instanceof HTMLElement && pillsRef.current?.contains(active)) {
+        active.blur();
+      }
+    };
+
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [selectedId]);
 
   // On mobile the reading panel sits below the fold; bring it into view on tap.
   useEffect(() => {
@@ -88,7 +121,7 @@ export default function InteractiveTarotCard({ card }: Props) {
           <button
             type="button"
             onClick={() => setShowRegions((v) => !v)}
-            className="min-h-[44px] rounded-full px-6 py-2 text-sm font-medium transition hover:opacity-80"
+            className="min-h-[44px] cursor-pointer rounded-full px-6 py-2 text-sm font-medium transition hover:opacity-80"
             style={{
               color: 'var(--text-muted)',
               border: '1px solid var(--border)',
@@ -107,6 +140,7 @@ export default function InteractiveTarotCard({ card }: Props) {
           }}
         >
           <div
+            ref={artworkRef}
             className="relative w-full overflow-hidden rounded-xl"
             style={{
               aspectRatio: `${width} / ${height}`,
@@ -128,7 +162,7 @@ export default function InteractiveTarotCard({ card }: Props) {
             <div
               className="pointer-events-none absolute inset-0 transition-opacity duration-300"
               style={{
-                background: 'rgba(20, 16, 10, 0.22)',
+                background: 'rgb(20 16 10 / 52%)',
                 opacity: hoverId || selectedId || showRegions ? 0 : 1,
               }}
               aria-hidden
@@ -175,6 +209,7 @@ export default function InteractiveTarotCard({ card }: Props) {
             under the reading panel on desktop (md+). */}
         <div className="w-full">
           <div
+            ref={pillsRef}
             className="tarot-pills-scroll flex snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-px-4 px-4 pb-1 md:flex-wrap md:justify-start md:overflow-visible md:scroll-px-0 md:px-0"
             role="tablist"
             aria-label={t('panelEmptyTitle')}
@@ -190,12 +225,10 @@ export default function InteractiveTarotCard({ card }: Props) {
                   }}
                   type="button"
                   role="tab"
-                  onMouseEnter={() => setHover(region.id)}
-                  onMouseLeave={scheduleClear}
                   onClick={() => toggleSelect(region.id)}
                   aria-pressed={active}
                   aria-selected={active}
-                  className="flex min-h-[44px] shrink-0 snap-center items-center gap-2 whitespace-nowrap rounded-full py-2 text-sm font-medium transition"
+                  className="flex min-h-[44px] shrink-0 cursor-pointer snap-center items-center gap-2 whitespace-nowrap rounded-full py-2 text-sm font-medium transition"
                   style={{
                     paddingLeft: '12px',
                     paddingRight: '12px',
@@ -319,7 +352,7 @@ function RegionShape({
     style: {
       cursor: 'pointer',
       fill: active ? 'rgba(212, 175, 55, 0.30)' : 'rgba(212, 175, 55, 0.16)',
-      stroke: active ? 'rgba(212, 175, 55, 1)' : 'rgb(255 255 255)',
+      stroke: active ? 'rgba(212, 175, 55, 1)' : 'rgb(205 205 205 / 85%)',
       strokeWidth: active ? 0.8 : 0.6,
       strokeDasharray: active ? 'none' : '2.5 2',
       strokeLinejoin: 'round' as const,

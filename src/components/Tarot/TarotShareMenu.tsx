@@ -102,7 +102,7 @@ export default function TarotShareMenu({ cardName, image }: Props) {
         aria-expanded={open}
         aria-label={t('share')}
         title={t('share')}
-        className="flex h-11 w-11 items-center justify-center rounded-full transition hover:opacity-80"
+        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full transition hover:opacity-80"
         style={{
           background: 'var(--bg-secondary)',
           border: '1px solid var(--border)',
@@ -127,7 +127,7 @@ export default function TarotShareMenu({ cardName, image }: Props) {
             type="button"
             role="menuitem"
             onClick={handleShare}
-            className="flex w-full items-center gap-2.5 px-4 py-3 text-left transition hover:opacity-80"
+            className="flex w-full cursor-pointer items-center gap-2.5 px-4 py-3 text-left transition hover:opacity-80"
             style={{ color: 'var(--text-secondary)' }}
           >
             {linkCopied ? <CheckIcon /> : <LinkIcon />}
@@ -142,7 +142,7 @@ export default function TarotShareMenu({ cardName, image }: Props) {
             type="button"
             role="menuitem"
             onClick={handleDownload}
-            className="flex w-full items-center gap-2.5 px-4 py-3 text-left transition hover:opacity-80"
+            className="flex w-full cursor-pointer items-center gap-2.5 px-4 py-3 text-left transition hover:opacity-80"
             style={{ color: 'var(--text-secondary)' }}
           >
             <DownloadIcon />
