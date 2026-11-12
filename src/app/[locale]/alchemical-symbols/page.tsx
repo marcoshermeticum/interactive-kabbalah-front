@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
@@ -7,6 +7,23 @@ import Navbar from '@/components/Navbar/Navbar';
 import { alchemicalSymbols } from '@/data/alchemicalSymbols';
 import { getAlchemicalSymbolName } from '@/data/alchemicalSymbolTranslations';
 import { treeOfLifeCelestialSymbols } from '@/data/treeOfLifeCelestialSymbols';
+import { copyText } from '@/lib/clipboard';
+
+// Four classical elements first (Fire, Air, Water, Earth), then the Quintessence
+const ELEMENT_ORDER = [0x1f702, 0x1f701, 0x1f704, 0x1f703, 0x1f700];
+const elementRank = (codePoint: number) => {
+  const i = ELEMENT_ORDER.indexOf(codePoint);
+  return i === -1 ? ELEMENT_ORDER.length : i;
+};
+
+const GRID_STYLE = {
+  display: 'grid',
+  gap: '0.5rem',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr))',
+  listStyle: 'none',
+  margin: 0,
+  padding: 0,
+} as const;
 
 const UNICODE_CHART_URL = 'https://www.unicode.org/Public/18.0.0/charts/PDF/U1F700.pdf';
 
@@ -34,6 +51,10 @@ export default function AlchemicalSymbolsPage() {
     const searchableText = `${localizedName} ${symbol.name} ${t(symbol.descriptionKey)}`.toLocaleLowerCase(locale);
     return searchableText.includes(normalizedQuery);
   });
+  const elementSymbols = visibleSymbols
+    .filter((s) => ELEMENT_ORDER.includes(s.codePoint))
+    .sort((a, b) => elementRank(a.codePoint) - elementRank(b.codePoint));
+  const otherSymbols = visibleSymbols.filter((s) => !ELEMENT_ORDER.includes(s.codePoint));
   const visibleTreeOfLifeSymbols = treeOfLifeCelestialSymbols.filter((symbol) => {
     const localizedName = t(`treeOfLifeSequence.${symbol.nameKey}`);
     const searchableText = `${symbol.character} ${localizedName} ${t('treeOfLifeSequence.title')} ${t('treeOfLifeSequence.description')}`.toLocaleLowerCase(locale);
@@ -42,11 +63,10 @@ export default function AlchemicalSymbolsPage() {
   const visibleSymbolCount = visibleSymbols.length + visibleTreeOfLifeSymbols.length;
 
   async function copySymbol(codePoint: number, character: string) {
-    try {
-      await navigator.clipboard.writeText(character);
+    if (await copyText(character)) {
       setCopiedCodePoint(codePoint);
       setCopyFailed(false);
-    } catch {
+    } else {
       setCopiedCodePoint(null);
       setCopyFailed(true);
     }
@@ -127,37 +147,43 @@ export default function AlchemicalSymbolsPage() {
 
           {visibleSymbolCount > 0 ? (
             <>
-              {visibleSymbols.length > 0 && (
-            <ul
-              aria-label={t('symbolsList')}
-              style={{
-                display: 'grid',
-                gap: '1rem',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 15rem), 1fr))',
-                listStyle: 'none',
-                margin: 0,
-                padding: 0,
-              }}
-            >
-              {visibleSymbols.map((symbol) => {
-                const copied = copiedCodePoint === symbol.codePoint;
-                const localizedName = getAlchemicalSymbolName(locale, symbol.translationIndex);
-
-                return (
-                  <SymbolCard
-                    key={symbol.codePoint}
-                    codePoint={symbol.codePoint}
-                    character={symbol.character}
-                    localizedName={localizedName}
-                    description={t(symbol.descriptionKey)}
-                    copied={copied}
-                    onCopy={copySymbol}
-                  />
-                );
-              })}
-            </ul>
+              {elementSymbols.length > 0 && (
+                <section aria-labelledby="elements-title" style={{ marginBottom: '1.5rem' }}>
+                  <h2 id="elements-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 500, margin: '0 0 0.75rem' }}>
+                    {t('elements')}
+                  </h2>
+                  <ul aria-label={t('elements')} style={GRID_STYLE}>
+                    {elementSymbols.map((symbol) => (
+                      <SymbolCard
+                        key={symbol.codePoint}
+                        codePoint={symbol.codePoint}
+                        character={symbol.character}
+                        localizedName={getAlchemicalSymbolName(locale, symbol.translationIndex)}
+                        description={t(symbol.descriptionKey)}
+                        copied={copiedCodePoint === symbol.codePoint}
+                        onCopy={copySymbol}
+                        highlight
+                      />
+                    ))}
+                  </ul>
+                </section>
               )}
 
+              {otherSymbols.length > 0 && (
+                <ul aria-label={t('symbolsList')} style={GRID_STYLE}>
+                  {otherSymbols.map((symbol) => (
+                    <SymbolCard
+                      key={symbol.codePoint}
+                      codePoint={symbol.codePoint}
+                      character={symbol.character}
+                      localizedName={getAlchemicalSymbolName(locale, symbol.translationIndex)}
+                      description={t(symbol.descriptionKey)}
+                      copied={copiedCodePoint === symbol.codePoint}
+                      onCopy={copySymbol}
+                    />
+                  ))}
+                </ul>
+              )}
               {visibleTreeOfLifeSymbols.length > 0 && (
                 <section aria-labelledby="tree-of-life-symbols-title" style={{ marginTop: '3rem' }}>
                   <header style={{ marginBottom: '1.25rem' }}>
@@ -168,17 +194,7 @@ export default function AlchemicalSymbolsPage() {
                       {t('treeOfLifeSequence.description')}
                     </p>
                   </header>
-                  <ul
-                    aria-label={t('treeOfLifeSequence.title')}
-                    style={{
-                      display: 'grid',
-                      gap: '1rem',
-                      gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 15rem), 1fr))',
-                      listStyle: 'none',
-                      margin: 0,
-                      padding: 0,
-                    }}
-                  >
+                  <ul aria-label={t('treeOfLifeSequence.title')} style={GRID_STYLE}>
                     {visibleTreeOfLifeSymbols.map((symbol) => {
                       const localizedName = t(`treeOfLifeSequence.${symbol.nameKey}`);
                       return (
@@ -210,23 +226,20 @@ export default function AlchemicalSymbolsPage() {
           role={copyFailed ? 'alert' : 'status'}
           aria-live={copyFailed ? 'assertive' : 'polite'}
           aria-atomic="true"
-          className="fixed bottom-6 left-1/2 z-[60] -translate-x-1/2 rounded-full px-5 py-3 shadow-xl"
+          className="fixed bottom-4 left-1/2 z-[60] -translate-x-1/2 rounded-full px-3 py-1.5 text-xs shadow-lg"
           style={{
             background: copyFailed ? 'var(--header-bg)' : '#166534',
             color: 'white',
           }}
         >
           {copyFailed
-            ? t('copyFailed')
-            : t('copySuccess', {
-                symbol: copiedCodePoint === null ? '' : String.fromCodePoint(copiedCodePoint),
-              })}
+            ? t('copyFailedShort')
+            : `${copiedCodePoint === null ? '' : String.fromCodePoint(copiedCodePoint)} ${t('copied')}`}
         </div>
       )}
     </div>
   );
 }
-
 function SymbolCard({
   codePoint,
   character,
@@ -234,6 +247,7 @@ function SymbolCard({
   description,
   copied,
   onCopy,
+  highlight = false,
 }: {
   codePoint: number;
   character: string;
@@ -241,59 +255,47 @@ function SymbolCard({
   description: string;
   copied: boolean;
   onCopy: (codePoint: number, character: string) => void;
+  highlight?: boolean;
 }) {
   const t = useTranslations('alchemicalCatalog');
 
   return (
-    <li
-      style={{
-        background: 'var(--bg-secondary)',
-        border: '1px solid var(--border)',
-        borderRadius: '1rem',
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '16rem',
-        padding: '1.25rem',
-      }}
-    >
-      <span
-        aria-hidden="true"
-        style={{
-          color: 'var(--gold)',
-          fontFamily: 'serif',
-          fontSize: '3.5rem',
-          lineHeight: 1.2,
-          marginBottom: '0.75rem',
-        }}
-      >
-        {character}
-      </span>
-      <h2 style={{ fontSize: '1rem', lineHeight: 1.4, margin: '0 0 0.5rem' }}>
-        {localizedName}
-      </h2>
-      <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem', margin: '0 0 0.5rem' }}>
-        {description}
-      </p>
-      <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', margin: '0 0 1rem' }}>
-        {t('codePoint')}: U+{codePoint.toString(16).toUpperCase()}
-      </p>
+    <li style={{ display: 'flex' }}>
       <button
         type="button"
         onClick={() => onCopy(codePoint, character)}
         aria-label={t('copySymbol', { name: localizedName })}
+        title={`${description} · U+${codePoint.toString(16).toUpperCase()}`}
         style={{
-          background: 'var(--header-bg)',
-          border: 0,
-          borderRadius: '999px',
-          color: 'var(--header-text)',
+          alignItems: 'center',
+          background: 'var(--bg-secondary)',
+          border: `1px solid ${copied || highlight ? 'var(--gold)' : 'var(--border)'}`,
+          borderRadius: '0.75rem',
+          color: 'var(--text-primary)',
           cursor: 'pointer',
+          display: 'flex',
           font: 'inherit',
-          marginTop: 'auto',
-          padding: '0.65rem 1rem',
+          gap: '0.6rem',
+          padding: '0.5rem 0.65rem',
+          textAlign: 'left',
+          width: '100%',
         }}
       >
-        {copied && <span aria-hidden="true">✓ </span>}
-        {copied ? t('copied') : t('copy')}
+        <span
+          aria-hidden="true"
+          style={{ color: 'var(--gold)', fontFamily: 'serif', fontSize: '1.75rem', lineHeight: 1, minWidth: '1.75rem', textAlign: 'center' }}
+        >
+          {character}
+        </span>
+        <span style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+          <span style={{ fontSize: '0.8rem', lineHeight: 1.25, overflowWrap: 'anywhere' }}>
+            {copied && <span aria-hidden="true">✓ </span>}
+            {localizedName}
+          </span>
+          <span style={{ color: 'var(--text-muted)', fontSize: '0.65rem' }}>
+            U+{codePoint.toString(16).toUpperCase()}
+          </span>
+        </span>
       </button>
     </li>
   );

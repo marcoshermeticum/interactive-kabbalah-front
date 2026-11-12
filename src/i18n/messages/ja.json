@@ -206,17 +206,17 @@
         "description": "10のセフィロト、22の小径、そしてクリフォトが生きて動く。"
       },
       "tarotWaite": {
-        "subcategory": "ライダー・ウェイト・タロット",
+        "subcategory": "オラクル",
         "title": "ライダー・ウェイト・タロット",
         "description": "ゴールデン・ドーンの対応を持つ78枚のアルカナ。"
       },
       "baralhoCigano": {
-        "subcategory": "ジプシーデッキ",
+        "subcategory": "オラクル",
         "title": "ジプシーデッキ",
         "description": "ルノルマンの伝統による36枚のカードと組み合わせ。"
       },
       "alchemicalSymbols": {
-        "subcategory": "錬金術の記号",
+        "subcategory": "ツール",
         "title": "錬金術の記号",
         "description": "元素、惑星、そして大いなる業の過程を表す記号。"
       }
@@ -238,6 +238,7 @@
     "copySuccess": "記号 {symbol} をクリップボードにコピーしました。",
     "copySymbol": "{name}をコピー",
     "copyFailed": "記号をコピーできませんでした。ブラウザーのクリップボード権限を確認して、もう一度お試しください。",
+    "copyFailedShort": "コピーできませんでした。",
     "noResults": "一致する記号がありません。",
     "elements": "元素と基本原理",
     "materials": "物質、材料、調製物",

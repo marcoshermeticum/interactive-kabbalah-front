@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback, ReactNode } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from './TooltipManager';
+import { copyText } from '@/lib/clipboard';
 
 interface Props {
   children: ReactNode;
@@ -114,7 +115,7 @@ export default function Tooltip({ children, content }: Props) {
     const el = tooltipRef.current;
     if (!el) return;
     const text = el.innerText;
-    await navigator.clipboard.writeText(text);
+    if (!(await copyText(text))) return;
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   };

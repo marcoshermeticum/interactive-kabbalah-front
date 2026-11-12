@@ -206,17 +206,17 @@
         "description": "The 10 Sephirot, 22 paths and the Qliphoth in living motion."
       },
       "tarotWaite": {
-        "subcategory": "Rider-Waite Tarot",
+        "subcategory": "Oracle",
         "title": "Rider-Waite Tarot",
         "description": "78 arcana with Golden Dawn correspondences."
       },
       "baralhoCigano": {
-        "subcategory": "Gypsy Deck",
+        "subcategory": "Oracle",
         "title": "Gypsy Deck",
         "description": "36 cards and combinations in the Lenormand tradition."
       },
       "alchemicalSymbols": {
-        "subcategory": "Alchemical Symbols",
+        "subcategory": "Tools",
         "title": "Alchemical Symbols",
         "description": "The signs of the elements, planets and processes of the Great Work."
       }
@@ -238,6 +238,7 @@
     "copySuccess": "{symbol} copied to clipboard.",
     "copySymbol": "Copy {name}",
     "copyFailed": "The symbol could not be copied. Check your browser clipboard permissions and try again.",
+    "copyFailedShort": "Could not copy.",
     "noResults": "No symbols match your search.",
     "elements": "Elements and fundamental principles",
     "materials": "Substances, materials, and preparations",

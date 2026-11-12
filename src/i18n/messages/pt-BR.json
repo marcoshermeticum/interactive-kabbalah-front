@@ -229,17 +229,17 @@
         "description": "As 10 Sephirot, 22 caminhos e a Qliphoth em movimento vivo."
       },
       "tarotWaite": {
-        "subcategory": "Tarot Rider-Waite",
+        "subcategory": "Óraculo",
         "title": "Tarot Rider-Waite",
         "description": "78 arcanos com correspondências da Golden Dawn."
       },
       "baralhoCigano": {
-        "subcategory": "Baralho Cigano",
+        "subcategory": "Óraculo",
         "title": "Baralho Cigano",
         "description": "36 cartas e combinações na tradição Lenormand."
       },
       "alchemicalSymbols": {
-        "subcategory": "Símbolos Alquímicos",
+        "subcategory": "Ferramentas",
         "title": "Símbolos Alquímicos",
         "description": "Os signos dos elementos, planetas e processos da Grande Obra."
       }
@@ -261,6 +261,7 @@
     "copySuccess": "Símbolo {symbol} copiado para a área de transferência.",
     "copySymbol": "Copiar {name}",
     "copyFailed": "Não foi possível copiar o símbolo. Verifique a permissão de acesso à área de transferência do navegador e tente novamente.",
+    "copyFailedShort": "Não foi possível copiar.",
     "noResults": "Nenhum símbolo corresponde à pesquisa.",
     "elements": "Elementos e princípios fundamentais",
     "materials": "Substâncias, materiais e preparações",

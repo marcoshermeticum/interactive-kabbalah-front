@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
@@ -29,6 +29,8 @@ type Props =
       onSearchSelect?: (result: SearchResult) => void;
     };
 
+const BRAND_TITLE = 'Interactive Kabbalah';
+
 export default function Navbar(props: Props) {
   const variant = props.variant ?? 'tree';
   const treeProps = props.variant === 'catalog' ? null : props;
@@ -38,6 +40,7 @@ export default function Navbar(props: Props) {
   const [isGuideOpen, setIsGuideOpen] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const ui = useTranslations('ui');
+  const portal = useTranslations('portal');
 
   const { unreadCount, readIds, markAsRead, isGuideRead, markGuideRead } = useNotificationState(notifications);
 
@@ -94,80 +97,34 @@ export default function Navbar(props: Props) {
           </h1>
         </Link>
 
-        {/* Center: View Switcher — desktop only */}
-        {treeProps && <nav className="hidden sm:flex items-center rounded-full p-0.5 sm:p-1 shrink-0" style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}>
-          {(['life', 'death', 'both'] as const).map((v) => (
-            <button
-              key={v}
-              onClick={() => treeProps.onViewChange(v)}
-              className={`px-3 py-1.5 text-xs rounded-full transition-all duration-200 font-medium whitespace-nowrap ${
-                treeProps.view === v
-                  ? v === 'death'
-                    ? 'bg-red-900/40 text-red-200 shadow-sm'
-                    : v === 'both'
-                      ? 'bg-purple-900/40 text-purple-200 shadow-sm'
-                      : 'bg-white/15 text-white shadow-sm'
-                  : 'text-white/40 hover:text-white/70'
-              }`}
-            >
-              {v === 'life' && '🌳'} {v === 'death' && '💀'} {v === 'both' && '☯'}
-              <span className="ml-1">{ui(v)}</span>
-            </button>
-          ))}
-        </nav>}
-
-        {/* Right: Tools */}
-        <div className="flex items-center gap-1 sm:gap-1.5">
+        {/* Right: logo/title stay left; only notifications, theme, language and menu are always visible */}
+        <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
           {treeProps && <Search onSelectResult={treeProps.onSearchSelect} />}
+          <NotificationButton
+            unreadCount={totalUnread}
+            onClick={() => setIsNotificationDialogOpen(true)}
+          />
+          <ThemeToggle />
+          <LanguageSelector />
 
-          {/* Desktop tools */}
-          <div className="hidden sm:flex items-center gap-1.5">
-            {treeProps && <SettingsPopover
-              showVeils={treeProps.showVeils}
-              onShowVeilsChange={treeProps.onShowVeilsChange}
-              showPillars={treeProps.showPillars}
-              onShowPillarsChange={treeProps.onShowPillarsChange}
-            />}
-            <NotificationButton
-              unreadCount={totalUnread}
-              onClick={() => setIsNotificationDialogOpen(true)}
-            />
-            <ThemeToggle />
-            <LanguageSelector />
-            <button
-              onClick={() => setShowDonation(!showDonation)}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-amber-300"
-              aria-label={ui('support')}
-              title={ui('support')}
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-            </button>
-          </div>
-
-          {/* Desktop social */}
-          <div className="hidden lg:flex items-center gap-1.5 ml-1 pl-2" style={{ borderLeft: '1px solid rgba(255,255,255,0.08)' }}>
-            <SocialLink href="https://github.com/mrviniciux" label="GitHub" icon={<GithubIcon />} />
-            <SocialLink href="https://linkedin.com/in/mrviniciux" label="LinkedIn" icon={<LinkedInIcon />} />
-            <SocialLink href="https://instagram.com/mrviniciux" label="Instagram" icon={<InstagramIcon />} />
-          </div>
-
-          {/* Mobile: sidebar trigger — always visible on mobile */}
+          {/* Hamburger — opens the menu with everything else */}
           <button
             onClick={() => setSidebarOpen(true)}
-            className="sm:hidden w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all text-white/50 hover:text-white"
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all text-white/50 hover:text-white"
             aria-label={ui('menu')}
+            aria-haspopup="dialog"
+            aria-expanded={sidebarOpen}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
         </div>
-
         {/* Donation panel (desktop) */}
         {showDonation && <DonationPanel onClose={() => setShowDonation(false)} />}
       </header>
 
       {/* === MOBILE SIDEBAR — slides from right === */}
       {sidebarOpen && (
-        <div className="fixed inset-0 z-[800] sm:hidden">
+        <div className="fixed inset-0 z-[800]" role="dialog" aria-modal="true" aria-label={ui('menu')}>
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm animate-fadeIn"
@@ -190,6 +147,48 @@ export default function Navbar(props: Props) {
             </div>
 
             <div className="p-4 space-y-5">
+              {/* Pages — same destinations as the landing page */}
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{portal('navPortals')}</p>
+                <nav className="space-y-1">
+                  <Link href="/" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition text-sm text-white/80 no-underline">
+                    <span aria-hidden="true">🏠</span>
+                    <span>{portal('brand')}</span>
+                  </Link>
+                  <Link href="/tree" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition text-sm text-white/80 no-underline">
+                    <span aria-hidden="true">🌳</span>
+                    <span>{portal('filterKabbalah')} - {portal('cards.treeOfLife.title')}</span>
+                  </Link>
+                  <Link href="/tarot" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition text-sm text-white/80 no-underline">
+                    <span aria-hidden="true">🃏</span>
+                    <span>{portal('cards.tarotWaite.title')}</span>
+                  </Link>
+                  <Link href="/alchemical-symbols" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition text-sm text-white/80 no-underline">
+                    <span aria-hidden="true">⚗️</span>
+                    <span>{portal('cards.alchemicalSymbols.title')}</span>
+                  </Link>
+                </nav>
+              </div>
+
+              {/* Tree view (hidden on mobile: the bottom tab bar already has it) */}
+              {treeProps && <div className="hidden sm:block">
+                <div className="grid grid-cols-3 gap-1">
+                  {(['life', 'death', 'both'] as const).map((v) => (
+                    <button
+                      key={v}
+                      onClick={() => { treeProps.onViewChange(v); setSidebarOpen(false); }}
+                      aria-pressed={treeProps.view === v}
+                      className={`flex flex-col items-center gap-0.5 py-2 rounded-xl text-xs transition ${
+                        treeProps.view === v ? 'bg-white/15 text-white' : 'text-white/50 hover:bg-white/5'
+                      }`}
+                    >
+                      <span className="text-lg">{v === 'life' ? '🌳' : v === 'death' ? '💀' : '☯'}</span>
+                      <span>{ui(v)}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>}
+
               {/* Settings */}
               {treeProps && <div>
                 <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('settings')}</p>
@@ -204,31 +203,6 @@ export default function Navbar(props: Props) {
                   </label>
                 </div>
               </div>}
-
-              {/* Appearance */}
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('appearance')}</p>
-                <div className="flex items-center justify-between px-1">
-                  <div className="flex items-center gap-3">
-                    <ThemeToggle />
-                    <span className="text-sm text-white/60">{ui('appearance')}</span>
-                  </div>
-                  <LanguageSelector />
-                </div>
-              </div>
-
-              {/* Notifications */}
-              <div>
-                <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('notifications')}</p>
-                <div className="flex items-center gap-3 px-1">
-                  <NotificationButton
-                    unreadCount={totalUnread}
-                    onClick={() => { setIsNotificationDialogOpen(true); setSidebarOpen(false); }}
-                  />
-                  <span className="text-sm text-white/60">{ui('notifications')}</span>
-                </div>
-              </div>
-
               {/* Links */}
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-white/30 mb-3 font-medium">{ui('links')}</p>
@@ -338,30 +312,6 @@ function SidebarLink({ href, icon, label, subtitle }: { href: string; icon: Reac
   );
 }
 
-function SettingsPopover({ showVeils, onShowVeilsChange, showPillars, onShowPillarsChange }: { showVeils: boolean; onShowVeilsChange: (v: boolean) => void; showPillars: boolean; onShowPillarsChange: (v: boolean) => void }) {
-  const [open, setOpen] = useState(false);
-  const ui = useTranslations('ui');
-  return (
-    <div className="relative">
-      <button onClick={() => setOpen(!open)} className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-all duration-200 text-white/40 hover:text-white" aria-label={ui('settings')}>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-      </button>
-      {open && (
-        <div className="absolute right-0 top-full mt-2 w-[220px] bg-white dark:bg-gray-900 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 p-3 z-[600]">
-          <div className="flex items-center justify-between mb-2">
-            <h3 className="text-xs font-semibold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>{ui('settings')}</h3>
-            <button onClick={() => setOpen(false)} className="text-gray-400 hover:text-gray-600 dark:hover:text-white text-xs">✕</button>
-          </div>
-          <div className="space-y-2">
-            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('showVeils')}</span><input type="checkbox" checked={showVeils} onChange={(e) => onShowVeilsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
-            <label className="flex items-center justify-between cursor-pointer"><span className="text-xs text-gray-700 dark:text-gray-300">{ui('showPillars')}</span><input type="checkbox" checked={showPillars} onChange={(e) => onShowPillarsChange(e.target.checked)} className="w-4 h-4 accent-amber-600 rounded" /></label>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
 const VAKINHA_URL = "https://www.vakinha.com.br/vaquinha/interactive-kabbalah-redesign-e-plataformizacao";
 const VAKINHA_PIX = "6257640@vakinha.com.br";
 
@@ -431,12 +381,6 @@ function DonationPanel({ onClose }: { onClose: () => void }) {
         <p className="text-[10px] text-gray-400 text-center mt-1">{ui('donateThank')}</p>
       </div>
     </div>
-  );
-}
-
-function SocialLink({ href, label, icon }: { href: string; label: string; icon: React.ReactNode }) {
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" className="w-7 h-7 flex items-center justify-center rounded-full text-white/40 hover:text-white hover:bg-white/10 transition-all duration-200" aria-label={label}>{icon}</a>
   );
 }
 

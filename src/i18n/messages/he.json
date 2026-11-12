@@ -206,17 +206,17 @@
         "description": "עשר הספירות, עשרים ושניים הנתיבים והקליפות בתנועה חיה."
       },
       "tarotWaite": {
-        "subcategory": "טארוט ריידר-וייט",
+        "subcategory": "אוֹרַקְל",
         "title": "טארוט ריידר-וייט",
         "description": "78 ארקנות עם התאמות שחר הזהב."
       },
       "baralhoCigano": {
-        "subcategory": "חפיסת הצוענים",
+        "subcategory": "אוֹרַקְל",
         "title": "חפיסת הצוענים",
         "description": "36 קלפים וצירופים במסורת לנורמן."
       },
       "alchemicalSymbols": {
-        "subcategory": "סמלים אלכימיים",
+        "subcategory": "כלים",
         "title": "סמלים אלכימיים",
         "description": "סימני היסודות, כוכבי הלכת ותהליכי המלאכה הגדולה."
       }
@@ -238,6 +238,7 @@
     "copySuccess": "הסמל {symbol} הועתק ללוח.",
     "copySymbol": "העתקת {name}",
     "copyFailed": "לא ניתן להעתיק את הסמל. בדקו את הרשאות הלוח בדפדפן ונסו שוב.",
+    "copyFailedShort": "ההעתקה נכשלה.",
     "noResults": "לא נמצאו סמלים התואמים לחיפוש.",
     "elements": "יסודות ועקרונות יסוד",
     "materials": "חומרים, תרכובות ותכשירים",

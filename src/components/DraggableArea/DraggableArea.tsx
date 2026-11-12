@@ -197,6 +197,21 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
 
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Element;
+
+      // Tooltip action buttons/links float above the canvas and manage their own
+      // clicks. Capturing the pointer here would force us to synthesize a click,
+      // and on touch the browser also emits a native click after the tooltip
+      // closes — hitting the clickable element underneath (e.g. a veil strip).
+      // Let native clicks handle interactive tooltip content; the rest of the
+      // tooltip can still start a pan.
+      if (
+        target.closest(
+          '[data-pinned-tooltip] button, [data-pinned-tooltip] a, [data-pinned-tooltip] input, [data-pinned-tooltip] select, [data-pinned-tooltip] textarea, [data-pinned-tooltip] [role="button"]'
+        )
+      ) {
+        return;
+      }
+
       const isOnInteractive = !!(
         target.closest('[data-tooltip-container]') ||
         target.closest('button') ||
@@ -301,6 +316,9 @@ const DraggableArea = forwardRef<DraggableAreaHandle, { children: ReactNode }>(f
     };
 
     const onPointerUp = (e: PointerEvent) => {
+      // Only handle pointers we actually captured in onPointerDown.
+      if (!pointers.current.has(e.pointerId)) return;
+
       pointers.current.delete(e.pointerId);
       container.releasePointerCapture(e.pointerId);
 

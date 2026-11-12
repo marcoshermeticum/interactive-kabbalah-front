@@ -1,8 +1,8 @@
-'use client';
+﻿'use client';
 
-import { useState, useCallback, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { tooltipManager } from '@/components/Tooltip/TooltipManager';
+import { usePathTooltips } from '@/components/Tooltip/usePathTooltips';
+import PathTooltip from '@/components/Tooltip/PathTooltip';
 import type { QliphothPathDef } from '@/data/qliphothPaths';
 
 type Positions = Record<string, { x: number; y: number }>;
@@ -14,64 +14,19 @@ interface Props {
   paths: QliphothPathDef[];
 }
 
-interface PinnedTooltip {
-  pathNumber: number;
-  pos: { x: number; y: number };
-}
-
 const centralPaths = new Set([13, 25, 32]);
 
 export default function QliphothPaths({ positions, width, height, paths }: Props) {
-  const [hoveredPath, setHoveredPath] = useState<number | null>(null);
-  const [hoverPos, setHoverPos] = useState({ x: 0, y: 0 });
-  const [pinnedTooltips, setPinnedTooltips] = useState<PinnedTooltip[]>([]);
-  const [copiedPath, setCopiedPath] = useState<number | null>(null);
-  const deregisterRefs = useRef<Map<number, () => void>>(new Map());
+  const { rootRef, hovered, pinned, copiedPath, getHitProps, unpin, copy } = usePathTooltips();
+  const hoveredPath = hovered?.pathNumber ?? null;
   const ui = useTranslations('ui');
 
-  const unpinPath = useCallback((pathNumber: number) => {
-    setPinnedTooltips((prev) => prev.filter((t) => t.pathNumber !== pathNumber));
-    const dereg = deregisterRefs.current.get(pathNumber);
-    if (dereg) {
-      dereg();
-      deregisterRefs.current.delete(pathNumber);
-    }
-  }, []);
-
-  const handleMouse = useCallback((e: React.MouseEvent, num: number) => {
-    setHoveredPath(num);
-    setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
-  }, []);
-
-  const handleClick = useCallback((e: React.MouseEvent, num: number) => {
-    const alreadyPinned = pinnedTooltips.some((t) => t.pathNumber === num);
-    if (alreadyPinned) {
-      unpinPath(num);
-    } else {
-      const pos = { x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY };
-      setPinnedTooltips((prev) => [...prev, { pathNumber: num, pos }]);
-      const dereg = tooltipManager.register(() => unpinPath(num));
-      deregisterRefs.current.set(num, dereg);
-    }
-  }, [pinnedTooltips, unpinPath]);
-
-  const handleCopy = async (pathNumber: number) => {
+  const handleCopy = (pathNumber: number) => {
     const p = paths.find((pp) => pp.number === pathNumber);
     if (!p) return;
     const text = `${ui('tunnel')} ${p.number} — ${p.letter} (${p.letterName}) — ${p.sign}\n${p.tunnel}\n${p.meaning}\n${p.from} → ${p.to}\n${ui('latentVirtue')}: ${p.virtue}\n${ui('shadowVice')}: ${p.vice}`;
-    await navigator.clipboard.writeText(text);
-    setCopiedPath(pathNumber);
-    setTimeout(() => setCopiedPath(null), 1500);
+    return copy(pathNumber, text);
   };
-
-  // Cleanup on unmount
-  useEffect(() => {
-    return () => {
-      deregisterRefs.current.forEach((dereg) => dereg());
-      deregisterRefs.current.clear();
-    };
-  }, []);
-
   const renderBar = (path: QliphothPathDef) => {
     const from = positions[path.from];
     const to = positions[path.to];
@@ -86,7 +41,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
     const nodeRadius = 72;
     const actualLength = length - nodeRadius * 2;
     if (actualLength <= 10) return null;
-    const isHovered = hoveredPath === path.number || pinnedTooltips.some((t) => t.pathNumber === path.number);
+    const isHovered = hoveredPath === path.number || pinned.some((t) => t.pathNumber === path.number);
     return (
       <g key={`bar-${path.number}`}>
         <rect x={midX - actualLength / 2 - 2} y={midY - barHeight / 2 - 3} width={actualLength + 4} height={barHeight + 6} rx={6} fill="rgba(0,0,0,0.7)" transform={`rotate(${angle}, ${midX}, ${midY})`} />
@@ -123,7 +78,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
       const step = totalSpan / (items.length - 1);
       const startY = -totalSpan / 2;
       return (
-        <g key={`txt-${path.number}`} className="cursor-pointer" onMouseEnter={(e) => handleMouse(e, path.number)} onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })} onMouseLeave={() => setHoveredPath(null)}>
+        <g key={`txt-${path.number}`}>
           {items.map((item, i) => (
             <text key={i} x={midX} y={midY + startY + step * i} textAnchor="middle" dominantBaseline="central" fill="#ccc" fontSize={item.size} fontWeight={item.bold ? 'bold' : 'normal'} fontFamily="Arial, sans-serif">{item.text}</text>
           ))}
@@ -134,7 +89,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
       const spacing = actualLength * 0.25;
       const xPositions = [-spacing * 1.4, -spacing * 0.45, spacing * 0.45, spacing * 1.4];
       return (
-        <g key={`txt-${path.number}`} transform={`translate(${midX}, ${midY}) rotate(${textAngle})`} className="cursor-pointer" onMouseEnter={(e) => handleMouse(e, path.number)} onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })} onMouseLeave={() => setHoveredPath(null)}>
+        <g key={`txt-${path.number}`} transform={`translate(${midX}, ${midY}) rotate(${textAngle})`}>
           {items.map((item, i) => (
             <text key={i} x={xPositions[i]} y={0} textAnchor="middle" dominantBaseline="central" fill="#ccc" fontSize={item.size} fontWeight={item.bold ? 'bold' : 'normal'} fontFamily="Arial, sans-serif">{item.text}</text>
           ))}
@@ -147,7 +102,7 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
   const fgPaths = paths.filter(p => !centralPaths.has(p.number));
 
   return (
-    <div className="absolute inset-0" style={{ width, height }}>
+    <div ref={rootRef} className="absolute inset-0" style={{ width, height }}>
       <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 0 }}>{bgPaths.map(renderBar)}</svg>
       <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 2 }}>{fgPaths.map(renderBar)}</svg>
       <svg className="absolute inset-0 pointer-events-none" width={width} height={height} viewBox={`0 0 ${width} ${height}`} style={{ zIndex: 12 }}>{paths.map(renderTexts)}</svg>
@@ -172,27 +127,19 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
               transform={`rotate(${angle}, ${midX}, ${midY})`}
               className="cursor-pointer"
               data-path-number={`tunnel-${path.number}`}
-              onMouseEnter={(e) => handleMouse(e, path.number)}
-              onMouseMove={(e) => setHoverPos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY })}
-              onMouseLeave={() => setHoveredPath(null)}
-              onClick={(e) => handleClick(e, path.number)}
+              {...getHitProps(path.number)}
             />
           );
         })}
       </svg>
 
       {/* Pinned tooltips */}
-      {pinnedTooltips.map((pinned) => {
-        const p = paths.find((pp) => pp.number === pinned.pathNumber);
+      {pinned.map((pin) => {
+        const p = paths.find((pp) => pp.number === pin.pathNumber);
         if (!p) return null;
         return (
-          <div
-            key={`pinned-${pinned.pathNumber}`}
-            className="absolute z-[500]"
-            data-pinned-tooltip
-            style={{ left: pinned.pos.x + 20, top: pinned.pos.y - 20 }}
-          >
-            <div className="bg-black/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-red-500/50 whitespace-nowrap select-text max-w-[340px]">
+          <PathTooltip key={`pinned-${pin.pathNumber}`} pos={pin.pos} boundsWidth={width} boundsHeight={height} pinned maxWidth={340}>
+            <div className="bg-black/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-red-500/50 select-text">
               <p className="font-bold text-sm text-red-300">{ui('tunnel')} {p.number} — {p.letter} ({p.letterName}) — {p.sign}</p>
               <p className="text-orange-200 mt-1">🕯️ {p.tunnel}</p>
               <p className="text-white/60 mt-1">{p.meaning}</p>
@@ -202,42 +149,38 @@ export default function QliphothPaths({ positions, width, height, paths }: Props
                 <p className="text-red-300">✧ {ui('shadowVice')}: {p.vice}</p>
               </div>
               <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10">
-                <button onClick={() => handleCopy(pinned.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
-                  {copiedPath === pinned.pathNumber ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
+                <button type="button" onClick={() => handleCopy(pin.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
+                  {copiedPath === pin.pathNumber ? `✓ ${ui('copied')}` : `📋 ${ui('copy')}`}
                 </button>
-                <button onClick={() => unpinPath(pinned.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
+                <button type="button" onClick={() => unpin(pin.pathNumber)} className="text-[10px] px-2 py-1 bg-white/10 hover:bg-white/20 rounded transition">
                   ✕ {ui('close')}
                 </button>
               </div>
             </div>
-          </div>
+          </PathTooltip>
         );
       })}
 
-      {/* Hover tooltip */}
-      {hoveredPath !== null && !pinnedTooltips.some((t) => t.pathNumber === hoveredPath) && (
-        <div className="absolute z-[490] pointer-events-none" style={{ left: hoverPos.x + 20, top: hoverPos.y - 20 }}>
-          <div className="bg-black/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-red-900/30 whitespace-nowrap select-text max-w-[340px]">
-            {(() => {
-              const p = paths.find((pp) => pp.number === hoveredPath);
-              if (!p) return null;
-              return (
-                <>
-                  <p className="font-bold text-sm text-red-300">{ui('tunnel')} {p.number} — {p.letter} ({p.letterName}) — {p.sign}</p>
-                  <p className="text-orange-200 mt-1">🕯️ {p.tunnel}</p>
-                  <p className="text-white/60 mt-1">{p.meaning}</p>
-                  <p className="text-white/50 text-[10px] mt-1">{p.from} → {p.to}</p>
-                  <div className="mt-2 pt-1 border-t border-white/10">
-                    <p className="text-green-300">✦ {ui('latentVirtue')}: {p.virtue}</p>
-                    <p className="text-red-300">✧ {ui('shadowVice')}: {p.vice}</p>
-                  </div>
-                </>
-              );
-            })()}
-          </div>
-          <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>
-        </div>
-      )}
+      {/* Hover tooltip — mouse preview only (not shown on touch or when already pinned) */}
+      {hovered && !pinned.some((t) => t.pathNumber === hovered.pathNumber) && (() => {
+        const p = paths.find((pp) => pp.number === hovered.pathNumber);
+        if (!p) return null;
+        return (
+          <PathTooltip pos={hovered.pos} boundsWidth={width} boundsHeight={height} maxWidth={340}>
+            <div className="bg-black/95 backdrop-blur text-white text-xs rounded-lg px-4 py-3 shadow-2xl border border-red-900/30 select-text">
+              <p className="font-bold text-sm text-red-300">{ui('tunnel')} {p.number} — {p.letter} ({p.letterName}) — {p.sign}</p>
+              <p className="text-orange-200 mt-1">🕯️ {p.tunnel}</p>
+              <p className="text-white/60 mt-1">{p.meaning}</p>
+              <p className="text-white/50 text-[10px] mt-1">{p.from} → {p.to}</p>
+              <div className="mt-2 pt-1 border-t border-white/10">
+                <p className="text-green-300">✦ {ui('latentVirtue')}: {p.virtue}</p>
+                <p className="text-red-300">✧ {ui('shadowVice')}: {p.vice}</p>
+              </div>
+            </div>
+            <p className="text-center text-[9px] text-white/40 mt-1">{ui('clickToPin')}</p>
+          </PathTooltip>
+        );
+      })()}
     </div>
   );
 }

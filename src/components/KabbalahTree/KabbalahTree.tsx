@@ -49,8 +49,11 @@ export default function KabbalahTree({ showVeils = true, showPillars = true }: {
       {/* Connection paths (drawn behind) */}
       <TreePaths positions={positions} width={TREE_WIDTH} height={TREE_HEIGHT} />
 
-      {/* Sephirot nodes — single container so tooltips share one stacking context */}
-      <div className="absolute inset-0 z-[15]" style={{ pointerEvents: 'none' }}>
+      {/* Sephirot nodes — single container so tooltips share one stacking context.
+          Must sit ABOVE the ornament hit areas (z-20) so an open tooltip is the
+          actual click target; otherwise clicks on the tooltip would fall through
+          to the transparent veil/Ain Soph strips underneath. */}
+      <div className="absolute inset-0 z-[30]" style={{ pointerEvents: 'none' }}>
         {Object.entries(positions).map(([id, pos]) => (
           <div
             key={id}

@@ -1,8 +1,9 @@
-'use client';
+﻿'use client';
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { tooltipManager } from '@/components/Tooltip/TooltipManager';
+import { copyText } from '@/lib/clipboard';
 
 interface Props {
   width: number;
@@ -31,37 +32,50 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
   const pillarBottomY = height - 80;
   const pillarW = 52;
 
+  const pinnedRef = useRef<PinnedOrnament[]>([]);
+  const lastClick = useRef<{ id: string; time: number }>({ id: '', time: 0 });
+
   const unpinOrnament = useCallback((id: string) => {
-    setPinnedOrnaments((prev) => prev.filter((t) => t.id !== id));
+    pinnedRef.current = pinnedRef.current.filter((t) => t.id !== id);
+    setPinnedOrnaments(pinnedRef.current);
     const dereg = deregisterRefs.current.get(id);
     if (dereg) { dereg(); deregisterRefs.current.delete(id); }
   }, []);
 
+  // Position in the tree's own coordinate space (compensates pan/zoom scale)
   const getLocalPos = useCallback((e: React.MouseEvent) => {
-    const parent = containerRef.current;
-    if (!parent) return { x: e.clientX, y: e.clientY };
-    const rect = parent.getBoundingClientRect();
-    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    const el = containerRef.current;
+    if (!el) return { x: e.clientX, y: e.clientY };
+    const rect = el.getBoundingClientRect();
+    const sx = el.offsetWidth ? rect.width / el.offsetWidth : 1;
+    const sy = el.offsetHeight ? rect.height / el.offsetHeight : 1;
+    return { x: (e.clientX - rect.left) / (sx || 1), y: (e.clientY - rect.top) / (sy || 1) };
   }, []);
 
   const handleMouseMove = useCallback((e: React.MouseEvent, id: string) => {
+    // Ignore emulated mouse events from touch: hover previews are mouse-only
+    if (performance.now() - lastClick.current.time < 700) return;
     setHoveredId(id);
     setHoverPos(getLocalPos(e));
   }, [getLocalPos]);
 
   const handleClick = useCallback((e: React.MouseEvent, id: string) => {
     e.stopPropagation();
-    const alreadyPinned = pinnedOrnaments.some((t) => t.id === id);
-    if (alreadyPinned) {
-      unpinOrnament(id);
-    } else {
-      const pos = getLocalPos(e);
-      setPinnedOrnaments((prev) => [...prev, { id, pos }]);
-      const dereg = tooltipManager.register(() => unpinOrnament(id));
-      deregisterRefs.current.set(id, dereg);
-    }
-  }, [pinnedOrnaments, unpinOrnament, getLocalPos]);
+    // On touch the tap can arrive twice (synthetic click from DraggableArea +
+    // native click). Ignore the repeat, otherwise it opens and closes at once.
+    const now = performance.now();
+    if (lastClick.current.id === id && now - lastClick.current.time < 450) return;
+    lastClick.current = { id, time: now };
 
+    setHoveredId(null);
+    if (pinnedRef.current.some((t) => t.id === id)) {
+      unpinOrnament(id);
+      return;
+    }
+    pinnedRef.current = [...pinnedRef.current, { id, pos: getLocalPos(e) }];
+    setPinnedOrnaments(pinnedRef.current);
+    deregisterRefs.current.set(id, tooltipManager.register(() => unpinOrnament(id)));
+  }, [unpinOrnament, getLocalPos]);
   const handleCopy = async (id: string) => {
     let text = '';
     if (id.startsWith('pillar-')) {
@@ -75,7 +89,7 @@ export default function TreeOrnaments({ width, height, showVeils = true, showPil
       text = `${t(`ainSoph.${key}.name`)} (${t(`ainSoph.${key}.subtitle`)})\n${t(`ainSoph.${key}.description`)}\n\nGolden Dawn: ${t(`ainSoph.${key}.goldenDawn`)}`;
     }
     if (!text) return;
-    await navigator.clipboard.writeText(text);
+    if (!(await copyText(text))) return;
     setCopiedId(id);
     setTimeout(() => setCopiedId(null), 1500);
   };
