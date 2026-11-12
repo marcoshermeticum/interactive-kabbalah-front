@@ -90,6 +90,84 @@
       }
     }
   },
+  "tarotWaite": {
+    "backToPortal": "← Voltar ao portal",
+    "backToCatalog": "← Voltar ao catálogo",
+    "eyebrow": "22 arcanos maiores",
+    "title": "Tarot Rider-Waite",
+    "subtitle": "Os 22 arcanos maiores do Tarot Rider-Waite. Toque em uma carta para explorar seus símbolos e correspondências.",
+    "soonBadge": "Em breve",
+    "comingSoonTitle": "Carta em preparação",
+    "comingSoonText": "As regiões interativas desta carta ainda estão sendo desenhadas. Volte em breve para explorá-la símbolo por símbolo.",
+    "cards": {
+      "theFool": {
+        "name": "O Louco"
+      },
+      "theMagician": {
+        "name": "O Mago"
+      },
+      "theHighPriestess": {
+        "name": "A Sacerdotisa"
+      },
+      "theEmpress": {
+        "name": "A Imperatriz"
+      },
+      "theEmperor": {
+        "name": "O Imperador"
+      },
+      "theHierophant": {
+        "name": "O Hierofante"
+      },
+      "theLovers": {
+        "name": "Os Enamorados"
+      },
+      "theChariot": {
+        "name": "O Carro"
+      },
+      "strength": {
+        "name": "A Força"
+      },
+      "theHermit": {
+        "name": "O Eremita"
+      },
+      "wheelOfFortune": {
+        "name": "A Roda da Fortuna"
+      },
+      "justice": {
+        "name": "A Justiça"
+      },
+      "theHangedMan": {
+        "name": "O Enforcado"
+      },
+      "death": {
+        "name": "A Morte"
+      },
+      "temperance": {
+        "name": "A Temperança"
+      },
+      "theDevil": {
+        "name": "O Diabo"
+      },
+      "theTower": {
+        "name": "A Torre"
+      },
+      "theStar": {
+        "name": "A Estrela"
+      },
+      "theMoon": {
+        "name": "A Lua"
+      },
+      "theSun": {
+        "name": "O Sol"
+      },
+      "judgement": {
+        "name": "O Julgamento"
+      },
+      "theWorld": {
+        "name": "O Mundo"
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "Portais",

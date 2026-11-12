@@ -15,9 +15,10 @@ interface Props {
  * Artwork is a raster image inside a padded frame, with a transparent SVG
  * overlay of polygonal regions. Selecting a region (hover/focus on desktop,
  * tap on mobile) reveals its meaning in a reading panel:
- *  - Desktop (md+): a sticky side panel beside the card.
- *  - Mobile: the same panel rendered in normal flow below the symbol pills,
- *    so nothing overlays the page or collides with fixed banners.
+ *  - Desktop (md+): a side panel beside the card, with the symbol pills
+ *    listed underneath it.
+ *  - Mobile: card → pills → panel, all in normal flow so nothing overlays
+ *    the page or collides with fixed banners.
  *
  * A row of symbol "pills" lets users discover and jump between regions by
  * keyboard or touch, independent of pixel-hunting on the image.
@@ -66,16 +67,23 @@ export default function InteractiveTarotCard({ card }: Props) {
 
   // Keep the active pill scrolled into view in the horizontal carousel, so a
   // region triggered by clicking the artwork always highlights its pill.
+  // Only the mobile carousel scrolls; on desktop the pills wrap in place.
   useEffect(() => {
     if (!shownId) return;
     const el = pillRefs.current.get(shownId);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (!el) return;
+    const mobile = window.matchMedia('(max-width: 767px)').matches;
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: mobile ? 'center' : 'nearest',
+    });
   }, [shownId]);
 
   return (
     <div className="grid w-full items-start justify-center gap-6 md:grid-cols-[minmax(0,26rem)_minmax(0,20rem)] md:gap-8">
-      {/* ─── Card column: framed artwork + pills + toggle ─── */}
-      <section className="mx-auto w-full max-w-[320px] sm:max-w-[360px] md:max-w-none">
+      {/* ─── Card column: toggle + framed artwork ─── */}
+      <section className="mx-auto w-full max-w-[320px] sm:max-w-[360px] md:col-start-1 md:row-start-1 md:max-w-none">
         <div className="pb-4 flex justify-center">
           <button
             type="button"
@@ -152,56 +160,59 @@ export default function InteractiveTarotCard({ card }: Props) {
             </svg>
           </div>
         </div>
-
-        {/* Symbol pills — horizontal swipeable carousel on mobile, wrapped
-            and centered on desktop. The active pill auto-scrolls into view. */}
-        <div
-          className="tarot-pills-scroll mt-5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-px-4 px-4 pb-1 md:flex-wrap md:justify-center md:overflow-visible md:scroll-px-0 md:px-0"
-          role="tablist"
-          aria-label={t('panelEmptyTitle')}
-        >
-          {card.regions.map((region) => {
-            const active = region.id === shownId;
-            return (
-              <button
-                key={region.id}
-                ref={(el) => {
-                  if (el) pillRefs.current.set(region.id, el);
-                  else pillRefs.current.delete(region.id);
-                }}
-                type="button"
-                role="tab"
-                onMouseEnter={() => setHover(region.id)}
-                onMouseLeave={scheduleClear}
-                onClick={() => toggleSelect(region.id)}
-                aria-pressed={active}
-                aria-selected={active}
-                className="flex min-h-[44px] shrink-0 snap-center items-center gap-2 whitespace-nowrap rounded-full py-2 text-sm font-medium transition"
-                style={{
-                  paddingLeft: '12px',
-                  paddingRight: '12px',
-                  background: active ? 'var(--gold)' : 'var(--bg-secondary)',
-                  color: active ? '#1c1917' : 'var(--text-secondary)',
-                  border: `1px solid ${active ? 'var(--gold)' : 'var(--border)'}`,
-                  boxShadow: active ? 'var(--shadow-md)' : 'none',
-                }}
-              >
-                {region.icon && <span aria-hidden>{region.icon}</span>}
-                <span>{t(`${region.i18nKey}.title`)}</span>
-              </button>
-            );
-          })}
-        </div>
       </section>
 
-      {/* ─── Reading panel: sticky side on desktop, in-flow below on mobile ─── */}
-      <aside
-        ref={panelRef}
-        className="mx-auto w-full max-w-[320px] sm:max-w-[360px] md:sticky md:top-6 md:max-w-none"
-        aria-live="polite"
-      >
-        <PanelCard region={shownRegion} t={t} />
-      </aside>
+      {/* ─── Right column (md+): reading panel stacked above the symbol
+             pills. On mobile it becomes pills → panel in normal flow, so it
+             still reads as card → pills → meaning. ─── */}
+      <div className="mx-auto flex w-full max-w-[320px] flex-col-reverse gap-6 sm:max-w-[360px] md:col-start-2 md:row-start-1 md:block md:max-w-none md:space-y-6">
+        {/* Reading panel: beside the card on desktop, in-flow below on mobile */}
+        <aside ref={panelRef} className="w-full" aria-live="polite">
+          <PanelCard region={shownRegion} t={t} />
+        </aside>
+
+        {/* Symbol pills: below the card on mobile (horizontal carousel),
+            under the reading panel on desktop (md+). */}
+        <div className="w-full">
+          <div
+            className="tarot-pills-scroll flex snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-px-4 px-4 pb-1 md:flex-wrap md:justify-start md:overflow-visible md:scroll-px-0 md:px-0"
+            role="tablist"
+            aria-label={t('panelEmptyTitle')}
+          >
+            {card.regions.map((region) => {
+              const active = region.id === shownId;
+              return (
+                <button
+                  key={region.id}
+                  ref={(el) => {
+                    if (el) pillRefs.current.set(region.id, el);
+                    else pillRefs.current.delete(region.id);
+                  }}
+                  type="button"
+                  role="tab"
+                  onMouseEnter={() => setHover(region.id)}
+                  onMouseLeave={scheduleClear}
+                  onClick={() => toggleSelect(region.id)}
+                  aria-pressed={active}
+                  aria-selected={active}
+                  className="flex min-h-[44px] shrink-0 snap-center items-center gap-2 whitespace-nowrap rounded-full py-2 text-sm font-medium transition"
+                  style={{
+                    paddingLeft: '12px',
+                    paddingRight: '12px',
+                    background: active ? 'var(--gold)' : 'var(--bg-secondary)',
+                    color: active ? '#1c1917' : 'var(--text-secondary)',
+                    border: `1px solid ${active ? 'var(--gold)' : 'var(--border)'}`,
+                    boxShadow: active ? 'var(--shadow-md)' : 'none',
+                  }}
+                >
+                  {region.icon && <span aria-hidden>{region.icon}</span>}
+                  <span>{t(`${region.i18nKey}.title`)}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

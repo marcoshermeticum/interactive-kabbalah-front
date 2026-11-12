@@ -67,6 +67,84 @@
       }
     }
   },
+  "tarotWaite": {
+    "backToPortal": "← חזרה לפורטל",
+    "backToCatalog": "← חזרה לקטלוג",
+    "eyebrow": "22 הארקנה הגדולה",
+    "title": "טארוט ריידר-וייט",
+    "subtitle": "22 הארקנה הגדולה של טארוט ריידר-וייט. הקישו על קלף כדי לחקור את סמליו והתאמותיו.",
+    "soonBadge": "בקרוב",
+    "comingSoonTitle": "הקלף בהכנה",
+    "comingSoonText": "האזורים האינטראקטיביים של קלף זה עדיין בעבודה. חזרו בקרוב כדי לחקור אותו סמל אחר סמל.",
+    "cards": {
+      "theFool": {
+        "name": "השוטה"
+      },
+      "theMagician": {
+        "name": "הקוסם"
+      },
+      "theHighPriestess": {
+        "name": "הכוהנת הגדולה"
+      },
+      "theEmpress": {
+        "name": "הקיסרית"
+      },
+      "theEmperor": {
+        "name": "הקיסר"
+      },
+      "theHierophant": {
+        "name": "ההירופנט"
+      },
+      "theLovers": {
+        "name": "האוהבים"
+      },
+      "theChariot": {
+        "name": "המרכבה"
+      },
+      "strength": {
+        "name": "הכוח"
+      },
+      "theHermit": {
+        "name": "הנזיר"
+      },
+      "wheelOfFortune": {
+        "name": "גלגל המזל"
+      },
+      "justice": {
+        "name": "הצדק"
+      },
+      "theHangedMan": {
+        "name": "התלוי"
+      },
+      "death": {
+        "name": "המוות"
+      },
+      "temperance": {
+        "name": "המתינות"
+      },
+      "theDevil": {
+        "name": "השטן"
+      },
+      "theTower": {
+        "name": "המגדל"
+      },
+      "theStar": {
+        "name": "הכוכב"
+      },
+      "theMoon": {
+        "name": "הירח"
+      },
+      "theSun": {
+        "name": "השמש"
+      },
+      "judgement": {
+        "name": "הדין"
+      },
+      "theWorld": {
+        "name": "העולם"
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "שערים",

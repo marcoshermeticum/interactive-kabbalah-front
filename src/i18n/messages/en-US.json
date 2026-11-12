@@ -67,6 +67,84 @@
       }
     }
   },
+  "tarotWaite": {
+    "backToPortal": "← Back to the portal",
+    "backToCatalog": "← Back to the catalog",
+    "eyebrow": "22 major arcana",
+    "title": "Rider-Waite Tarot",
+    "subtitle": "The 22 major arcana of the Rider-Waite Tarot. Tap a card to explore its symbols and correspondences.",
+    "soonBadge": "Soon",
+    "comingSoonTitle": "Card in preparation",
+    "comingSoonText": "The interactive regions for this card are still being drawn. Check back soon to explore it symbol by symbol.",
+    "cards": {
+      "theFool": {
+        "name": "The Fool"
+      },
+      "theMagician": {
+        "name": "The Magician"
+      },
+      "theHighPriestess": {
+        "name": "The High Priestess"
+      },
+      "theEmpress": {
+        "name": "The Empress"
+      },
+      "theEmperor": {
+        "name": "The Emperor"
+      },
+      "theHierophant": {
+        "name": "The Hierophant"
+      },
+      "theLovers": {
+        "name": "The Lovers"
+      },
+      "theChariot": {
+        "name": "The Chariot"
+      },
+      "strength": {
+        "name": "Strength"
+      },
+      "theHermit": {
+        "name": "The Hermit"
+      },
+      "wheelOfFortune": {
+        "name": "Wheel of Fortune"
+      },
+      "justice": {
+        "name": "Justice"
+      },
+      "theHangedMan": {
+        "name": "The Hanged Man"
+      },
+      "death": {
+        "name": "Death"
+      },
+      "temperance": {
+        "name": "Temperance"
+      },
+      "theDevil": {
+        "name": "The Devil"
+      },
+      "theTower": {
+        "name": "The Tower"
+      },
+      "theStar": {
+        "name": "The Star"
+      },
+      "theMoon": {
+        "name": "The Moon"
+      },
+      "theSun": {
+        "name": "The Sun"
+      },
+      "judgement": {
+        "name": "Judgement"
+      },
+      "theWorld": {
+        "name": "The World"
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "Portals",

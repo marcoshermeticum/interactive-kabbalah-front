@@ -33,7 +33,7 @@ type PortalCard = {
   hasSubcategory: boolean;
   image: string;
   /** Internal (untranslated) href; the localized Link translates it */
-  href?: '/tree' | '/alchemical-symbols';
+  href?: '/tree' | '/alchemical-symbols' | '/tarot-waite';
   status: 'live' | 'soon';
 };
 
@@ -64,7 +64,8 @@ const cards: PortalCard[] = [
     key: 'tarotWaite',
     hasSubcategory: true,
     image: '/landing/hero-tarot.png',
-    status: 'soon',
+    href: '/tarot-waite',
+    status: 'live',
   },
   // Óraculo → Baralho Cigano
   {

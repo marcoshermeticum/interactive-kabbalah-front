@@ -67,6 +67,84 @@
       }
     }
   },
+  "tarotWaite": {
+    "backToPortal": "← ポータルに戻る",
+    "backToCatalog": "← カタログに戻る",
+    "eyebrow": "22の大アルカナ",
+    "title": "ライダー・ウェイト・タロット",
+    "subtitle": "ライダー・ウェイト・タロットの22枚の大アルカナ。カードをタップして、象徴と対応を探求しましょう。",
+    "soonBadge": "近日公開",
+    "comingSoonTitle": "カード準備中",
+    "comingSoonText": "このカードのインタラクティブ領域は現在制作中です。もうすぐ、象徴ごとに探索できるようになります。",
+    "cards": {
+      "theFool": {
+        "name": "愚者"
+      },
+      "theMagician": {
+        "name": "魔術師"
+      },
+      "theHighPriestess": {
+        "name": "女教皇"
+      },
+      "theEmpress": {
+        "name": "女帝"
+      },
+      "theEmperor": {
+        "name": "皇帝"
+      },
+      "theHierophant": {
+        "name": "教皇"
+      },
+      "theLovers": {
+        "name": "恋人"
+      },
+      "theChariot": {
+        "name": "戦車"
+      },
+      "strength": {
+        "name": "力"
+      },
+      "theHermit": {
+        "name": "隠者"
+      },
+      "wheelOfFortune": {
+        "name": "運命の輪"
+      },
+      "justice": {
+        "name": "正義"
+      },
+      "theHangedMan": {
+        "name": "吊るされた男"
+      },
+      "death": {
+        "name": "死神"
+      },
+      "temperance": {
+        "name": "節制"
+      },
+      "theDevil": {
+        "name": "悪魔"
+      },
+      "theTower": {
+        "name": "塔"
+      },
+      "theStar": {
+        "name": "星"
+      },
+      "theMoon": {
+        "name": "月"
+      },
+      "theSun": {
+        "name": "太陽"
+      },
+      "judgement": {
+        "name": "審判"
+      },
+      "theWorld": {
+        "name": "世界"
+      }
+    }
+  },
   "portal": {
     "brand": "Interactive Kabbalah",
     "navPortals": "ポータル",
