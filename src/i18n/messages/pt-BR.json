@@ -9,6 +9,40 @@
     "hideRegions": "Ocultar símbolos",
     "panelEmptyTitle": "Explore a carta",
     "panelEmptyHint": "Passe o mouse ou toque em um símbolo da carta para ver seu significado aqui.",
+    "theHighPriestess": {
+      "name": "A Sacerdotisa",
+      "intro": "Guardiã do santuário atrás do véu, a Sacerdotisa é a memória silenciosa entre as duas colunas do Templo. Explore cada símbolo da carta.",
+      "regions": {
+        "pillars": {
+          "title": "As Colunas B e J",
+          "description": "Boaz e Jachin, as mesmas colunas do Templo de Salomão e da Árvore da Vida: severidade e misericórdia, as polaridades que ela equilibra sem escolher."
+        },
+        "veilPomegranates": {
+          "title": "O Véu com Romãs",
+          "description": "O véu bordado de romãs e palmeiras esconde o sanctum: o conhecimento só se revela a quem atravessa — não a quem espia. As romãs remetem a Perséfone e aos mundos subterrâneos."
+        },
+        "water": {
+          "title": "O Mar Atrás do Véu",
+          "description": "Entre as colunas, além do véu, estende-se o oceano: o inconsciente coletivo, matriz de toda forma ainda não manifestada."
+        },
+        "scroll": {
+          "title": "O Pergaminho de TORA",
+          "description": "Parcialmente oculto em seu regaço, o rolo da Lei repousa: a sabedoria existe, mas permanece velada — intuição antes de letra."
+        },
+        "crown": {
+          "title": "A Coroa Lunar",
+          "description": "Os chifres em crescente abraçam o disco solar: a Sacerdotisa une Lua e Sol, recepção e radiação, no mesmo gesto de Hathor."
+        },
+        "solarCross": {
+          "title": "A Cruz Solar no Peito",
+          "description": "A cruz de braços iguais sobre o coração: o eixo do equilíbrio entre os opostos, o ponto quieto do centro."
+        },
+        "crescentMoon": {
+          "title": "A Lua aos Seus Pés",
+          "description": "O crescente lunar sob suas vestes: tudo aqui é regido pela Lua — ciclos, marés, o inconsciente e o feminino profundo."
+        }
+      }
+    },
     "temperance": {
       "name": "A Temperança",
       "intro": "O anjo da alquimia equilibra as águas da alma entre duas taças, unindo opostos no caminho do meio. Explore cada símbolo da carta.",

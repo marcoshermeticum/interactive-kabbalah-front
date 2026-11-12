@@ -7,6 +7,40 @@
     "hideRegions": "Hide symbols",
     "panelEmptyTitle": "Explore the card",
     "panelEmptyHint": "Hover or tap a symbol on the card to see its meaning here.",
+    "theHighPriestess": {
+      "name": "הכוהנת הגדולה",
+      "intro": "שומרת המקדש שמאחורי הלוט, הכוהנת הגדולה היא הזיכרון השקט בין שני עמודי המקדש. חקרו כל סמל בקלף.",
+      "regions": {
+        "pillars": {
+          "title": "העמודים ב' ו־י'",
+          "description": "בועז ויכין, אותם עמודים של מקדש שלמה ושל עץ החיים: חומרה ורחמים — הניגודים שהיא מאזנת בלי לבחור."
+        },
+        "veilPomegranates": {
+          "title": "הלוט עם הרימונים",
+          "description": "הלוט הרקום ברימונים ובדקלים מסתיר את קודש הקודשים: הידע נגלה רק למי שחוצה אותו — ולא למי שמציץ. הרימונים מרמזים לפרספונה ולעולמות התחתונים."
+        },
+        "water": {
+          "title": "הים שמאחורי הלוט",
+          "description": "בין העמודים, מעבר ללוט, משתרע האוקיינוס: הלא־מודע הקולקטיבי, הרחם של כל צורה שעוד לא התגשמה."
+        },
+        "scroll": {
+          "title": "מגילת התורה",
+          "description": "חלקית מוסתרת בחיקה נחה מגילת החוק: החוכמה קיימת, אך נשארת רעולה — אינטואיציה לפני האות."
+        },
+        "crown": {
+          "title": "הכתר הירחי",
+          "description": "קרני הסהר חובקות את גלגל החמה: הכוהנת הגדולה מאחדת ירח ושמש, קליטה והקרנה, באותה תנועה של חתחור."
+        },
+        "solarCross": {
+          "title": "הצלב השמשי על החזה",
+          "description": "הצלב שווה הזרועות על ליבה: ציר האיזון בין הניגודים, הנקודה השקטה של המרכז."
+        },
+        "crescentMoon": {
+          "title": "הירח לרגליה",
+          "description": "הסהר הירחי מתחת לגלימותיה: הכול כאן כפוף לירח — מחזורים, גאות ושפל, הלא־מודע והנשי העמוק."
+        }
+      }
+    },
     "temperance": {
       "name": "Temperance",
       "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",

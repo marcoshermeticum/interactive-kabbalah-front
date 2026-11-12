@@ -7,6 +7,40 @@
     "hideRegions": "Hide symbols",
     "panelEmptyTitle": "Explore the card",
     "panelEmptyHint": "Hover or tap a symbol on the card to see its meaning here.",
+    "theHighPriestess": {
+      "name": "The High Priestess",
+      "intro": "Guardian of the sanctuary behind the veil, the High Priestess is the silent memory between the two pillars of the Temple. Explore each symbol of the card.",
+      "regions": {
+        "pillars": {
+          "title": "The Pillars B and J",
+          "description": "Boaz and Jachin, the same pillars of Solomon's Temple and of the Tree of Life: severity and mercy, the polarities she balances without choosing."
+        },
+        "veilPomegranates": {
+          "title": "The Veil with Pomegranates",
+          "description": "The veil embroidered with pomegranates and palms hides the sanctum: knowledge reveals itself only to those who pass through — not to those who peep. The pomegranates evoke Persephone and the underworlds."
+        },
+        "water": {
+          "title": "The Sea Behind the Veil",
+          "description": "Between the pillars, beyond the veil, stretches the ocean: the collective unconscious, the matrix of every form not yet manifested."
+        },
+        "scroll": {
+          "title": "The TORA Scroll",
+          "description": "Partly hidden in her lap, the scroll of the Law rests: wisdom exists, but remains veiled — intuition before letter."
+        },
+        "crown": {
+          "title": "The Lunar Crown",
+          "description": "The crescent horns embrace the solar disc: the High Priestess unites Moon and Sun, reception and radiation, in the same gesture of Hathor."
+        },
+        "solarCross": {
+          "title": "The Solar Cross on Her Chest",
+          "description": "The equal-armed cross over her heart: the axis of balance between opposites, the still point of the center."
+        },
+        "crescentMoon": {
+          "title": "The Moon at Her Feet",
+          "description": "The lunar crescent beneath her robes: everything here is governed by the Moon — cycles, tides, the unconscious and the deep feminine."
+        }
+      }
+    },
     "temperance": {
       "name": "Temperance",
       "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",

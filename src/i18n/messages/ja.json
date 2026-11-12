@@ -7,6 +7,40 @@
     "hideRegions": "Hide symbols",
     "panelEmptyTitle": "Explore the card",
     "panelEmptyHint": "Hover or tap a symbol on the card to see its meaning here.",
+    "theHighPriestess": {
+      "name": "女教皇",
+      "intro": "ヴェールの向こうの聖域を守る女教皇は、神殿の二本の柱の間にたたずむ静かな記憶です。カードの象徴を一つずつ探求しましょう。",
+      "regions": {
+        "pillars": {
+          "title": "BとJの二本の柱",
+          "description": "ボアズとヤキン。ソロモン神殿と生命の樹の柱でもある二本は、厳格と慈悲という二つの極性を、彼女は選ぶことなく調和させます。"
+        },
+        "veilPomegranates": {
+          "title": "ざくろのヴェール",
+          "description": "ざくろと棕櫚で刺繍されたヴェールは至聖所を隠します。知識は通り抜ける者にのみ開かれ、覗き見る者には与えられません。ざくろはペルセポネと冥界を想わせます。"
+        },
+        "water": {
+          "title": "ヴェールの向こうの海",
+          "description": "柱の間、ヴェールの彼方には海が広がります。集合的無意識、まだ現れていないすべての形の母胎です。"
+        },
+        "scroll": {
+          "title": "TORAの巻物",
+          "description": "膝の上に半ば隠れて、法の巻物が横たわります。知恵は存在しますが、ヴェールに包まれたまま——文字より先に直観があります。"
+        },
+        "crown": {
+          "title": "月の冠",
+          "description": "三日月の角が太陽の円盤を抱き込みます。女教皇は月と太陽、受容と放射を、ハトホルの同じ仕草のうちに結びつけます。"
+        },
+        "solarCross": {
+          "title": "胸の太陽十字",
+          "description": "心の上に描かれた等臂十字は、対立するものの間の均衡の軸、中心の静かな点を表します。"
+        },
+        "crescentMoon": {
+          "title": "足元の月",
+          "description": "衣の下に横たわる三日月。ここではすべてが月に支配されています——周期、潮の満ち引き、無意識、そして深い女性性。"
+        }
+      }
+    },
     "temperance": {
       "name": "Temperance",
       "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",

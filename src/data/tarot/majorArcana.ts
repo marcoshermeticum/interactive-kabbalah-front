@@ -1,5 +1,6 @@
 import type { TarotCard } from './types';
 import { theFool } from './the-fool';
+import { theHighPriestess } from './the-high-priestess';
 import { temperance } from './temperance';
 
 /**
@@ -56,6 +57,7 @@ export const majorArcana: MajorArcanaEntry[] = [
  */
 const cardData: Record<string, TarotCard> = {
   'the-fool': theFool,
+  'the-high-priestess': theHighPriestess,
   temperance,
 };
 
