@@ -11,9 +11,13 @@
       "name": "The High Priestess",
       "intro": "Guardian of the sanctuary behind the veil, the High Priestess is the silent memory between the two pillars of the Temple. Explore each symbol of the card.",
       "regions": {
-        "pillars": {
-          "title": "The Pillars B and J",
-          "description": "Boaz and Jachin, the same pillars of Solomon's Temple and of the Tree of Life: severity and mercy, the polarities she balances without choosing."
+        "pillarB": {
+          "title": "The Pillar B (Boaz)",
+          "description": "The black pillar of Boaz represents severity, contraction and form. It is the principle that delimits and gives structure, without which no manifestation can exist."
+        },
+        "pillarJ": {
+          "title": "The Pillar J (Jachin)",
+          "description": "The white pillar of Jachin represents mercy, expansion and force. It is the principle that gives and expands, making room for life to flourish."
         },
         "veilPomegranates": {
           "title": "The Veil with Pomegranates",

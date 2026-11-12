@@ -13,9 +13,13 @@
       "name": "A Sacerdotisa",
       "intro": "Guardiã do santuário atrás do véu, a Sacerdotisa é a memória silenciosa entre as duas colunas do Templo. Explore cada símbolo da carta.",
       "regions": {
-        "pillars": {
-          "title": "As Colunas B e J",
-          "description": "Boaz e Jachin, as mesmas colunas do Templo de Salomão e da Árvore da Vida: severidade e misericórdia, as polaridades que ela equilibra sem escolher."
+        "pillarB": {
+          "title": "A Coluna B (Boaz)",
+          "description": "A coluna negra de Boaz representa a severidade, a contração e a forma. É o princípio que delimita e dá estrutura, sem o qual nenhuma manifestação pode existir."
+        },
+        "pillarJ": {
+          "title": "A Coluna J (Jachin)",
+          "description": "A coluna branca de Jachin representa a misericórdia, a expansão e a força. É o princípio que doa e amplia, abrindo espaço para que a vida floresça."
         },
         "veilPomegranates": {
           "title": "O Véu com Romãs",

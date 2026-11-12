@@ -53,7 +53,7 @@ dados é camelCase (`theFool`) para bater com a chave i18n:
 |---|-----------|-----------|------|:-------:|
 | 0 | O Louco | The Fool | `the-fool` | 7 |
 | I | O Mago | The Magician | `the-magician` | 6 |
-| II | A Sacerdotisa | The High Priestess | `the-high-priestess` | 7 |
+| II | A Sacerdotisa | The High Priestess | `the-high-priestess` | 8 |
 | III | A Imperatriz | The Empress | `the-empress` | 6 |
 | IV | O Imperador | The Emperor | `the-emperor` | 6 |
 | V | O Hierofante | The Hierophant | `the-hierophant` | 6 |
@@ -110,7 +110,8 @@ Total: **128 regiões** novas + 7 da Temperança já implementada.
 
 | `id` | Ícone | `title` | `description` |
 |------|-------|---------|---------------|
-| `pillars` | 🏛️ | As Colunas B e J | Boaz e Jachin, as mesmas colunas do Templo de Salomão e da Árvore da Vida: severidade e misericórdia, as polaridades que ela equilibra sem escolher. |
+| `pillar-b` | 🏛️ | A Coluna B (Boaz) | A coluna negra de Boaz representa a severidade, a contração e a forma. É o princípio que delimita e dá estrutura, sem o qual nenhuma manifestação pode existir. |
+| `pillar-j` | 🏛️ | A Coluna J (Jachin) | A coluna branca de Jachin representa a misericórdia, a expansão e a força. É o princípio que doa e amplia, abrindo espaço para que a vida floresça. |
 | `veil-pomegranates` | 🍈 | O Véu com Romãs | O véu bordado de romãs e palmeiras esconde o sanctum: o conhecimento só se revela a quem atravessa — não a quem espia. As romãs remetem a Perséfone e aos mundos subterrâneos. |
 | `water` | 🌊 | O Mar Atrás do Véu | Entre as colunas, além do véu, estende-se o oceano: o inconsciente coletivo, matriz de toda forma ainda não manifestada. |
 | `scroll` | 📜 | O Pergaminho de TORA | Parcialmente oculto em seu regaço, o rolo da Lei repousa: a sabedoria existe, mas permanece velada — intuição antes de letra. |
