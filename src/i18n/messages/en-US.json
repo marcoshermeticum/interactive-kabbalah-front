@@ -249,6 +249,7 @@
     "processes": "Alchemical operations and processes",
     "equipment": "Vessels and laboratory equipment",
     "timeAndMeasures": "Time and measurement symbols",
+    "otherSymbols": "Other symbols",
     "treeOfLifeSequence": {
       "title": "Celestial Symbols of the Tree of Life",
       "description": "An additional sequence of symbols associated with the Tree of Life, separate from the 116 symbols in the Unicode Alchemical Symbols block.",

@@ -249,6 +249,7 @@
     "processes": "錬金術の操作と工程",
     "equipment": "容器と実験器具",
     "timeAndMeasures": "時間と計量の記号",
+    "otherSymbols": "その他のシンボル",
     "treeOfLifeSequence": {
       "title": "生命の樹の天体記号",
       "description": "生命の樹に関連する追加の記号一覧です。Unicode錬金術記号ブロックの116個とは別に掲載しています。",

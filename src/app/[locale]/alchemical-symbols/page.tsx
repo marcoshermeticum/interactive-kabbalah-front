@@ -148,7 +148,7 @@ export default function AlchemicalSymbolsPage() {
           {visibleSymbolCount > 0 ? (
             <>
               {elementSymbols.length > 0 && (
-                <section aria-labelledby="elements-title" style={{ marginBottom: '1.5rem' }}>
+                <section aria-labelledby="elements-title" style={{ marginBottom: '2.5rem' }}>
                   <h2 id="elements-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 500, margin: '0 0 0.75rem' }}>
                     {t('elements')}
                   </h2>
@@ -169,23 +169,8 @@ export default function AlchemicalSymbolsPage() {
                 </section>
               )}
 
-              {otherSymbols.length > 0 && (
-                <ul aria-label={t('symbolsList')} style={GRID_STYLE}>
-                  {otherSymbols.map((symbol) => (
-                    <SymbolCard
-                      key={symbol.codePoint}
-                      codePoint={symbol.codePoint}
-                      character={symbol.character}
-                      localizedName={getAlchemicalSymbolName(locale, symbol.translationIndex)}
-                      description={t(symbol.descriptionKey)}
-                      copied={copiedCodePoint === symbol.codePoint}
-                      onCopy={copySymbol}
-                    />
-                  ))}
-                </ul>
-              )}
               {visibleTreeOfLifeSymbols.length > 0 && (
-                <section aria-labelledby="tree-of-life-symbols-title" style={{ marginTop: '3rem' }}>
+                <section aria-labelledby="tree-of-life-symbols-title" style={{ marginBottom: '2.5rem' }}>
                   <header style={{ marginBottom: '1.25rem' }}>
                     <h2 id="tree-of-life-symbols-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.75rem', fontWeight: 500, margin: '0 0 0.5rem' }}>
                       {t('treeOfLifeSequence.title')}
@@ -209,6 +194,27 @@ export default function AlchemicalSymbolsPage() {
                         />
                       );
                     })}
+                  </ul>
+                </section>
+              )}
+
+              {otherSymbols.length > 0 && (
+                <section aria-labelledby="other-symbols-title">
+                  <h2 id="other-symbols-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '1.25rem', fontWeight: 500, margin: '0 0 0.75rem' }}>
+                    {t('otherSymbols')}
+                  </h2>
+                  <ul aria-label={t('otherSymbols')} style={GRID_STYLE}>
+                    {otherSymbols.map((symbol) => (
+                      <SymbolCard
+                        key={symbol.codePoint}
+                        codePoint={symbol.codePoint}
+                        character={symbol.character}
+                        localizedName={getAlchemicalSymbolName(locale, symbol.translationIndex)}
+                        description={t(symbol.descriptionKey)}
+                        copied={copiedCodePoint === symbol.codePoint}
+                        onCopy={copySymbol}
+                      />
+                    ))}
                   </ul>
                 </section>
               )}
