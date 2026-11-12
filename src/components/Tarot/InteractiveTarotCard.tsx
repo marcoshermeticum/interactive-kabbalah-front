@@ -352,7 +352,7 @@ function RegionShape({
     style: {
       cursor: 'pointer',
       fill: active ? 'rgba(212, 175, 55, 0.30)' : 'rgba(212, 175, 55, 0.16)',
-      stroke: active ? 'rgba(212, 175, 55, 1)' : 'rgb(205 205 205 / 85%)',
+      stroke: active ? 'rgba(212, 175, 55, 1)' : 'white',
       strokeWidth: active ? 0.8 : 0.6,
       strokeDasharray: active ? 'none' : '2.5 2',
       strokeLinejoin: 'round' as const,

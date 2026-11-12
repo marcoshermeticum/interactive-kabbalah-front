@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar/Navbar';
 import InteractiveTarotCard from '@/components/Tarot/InteractiveTarotCard';
+import TarotRegionEditor from '@/components/Tarot/TarotRegionEditor';
 import TarotShareMenu from '@/components/Tarot/TarotShareMenu';
 import { getTarotCard, type MajorArcanaEntry } from '@/data/tarot/majorArcana';
 
@@ -23,6 +25,12 @@ export default function TarotCardDetail({ entry }: Props) {
 
   const card = getTarotCard(entry.slug);
   const name = tc(`${entry.i18nKey}.name`);
+
+  // Region editor is a development tool. It can also be enabled in a
+  // production build with NEXT_PUBLIC_TAROT_EDITOR=1.
+  const editorAvailable =
+    process.env.NODE_ENV !== 'production' || process.env.NEXT_PUBLIC_TAROT_EDITOR === '1';
+  const [editorOpen, setEditorOpen] = useState(false);
 
   return (
     <div className="flex h-[100dvh] w-full flex-col overflow-hidden">
@@ -58,7 +66,26 @@ export default function TarotCardDetail({ entry }: Props) {
             >
               {t('backToCatalog')}
             </Link>
-            <TarotShareMenu cardName={name} image={entry.image} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              {card && editorAvailable && (
+                <button
+                  type="button"
+                  onClick={() => setEditorOpen((open) => !open)}
+                  style={{
+                    cursor: 'pointer',
+                    padding: '0.35rem 0.8rem',
+                    borderRadius: '999px',
+                    fontSize: '0.8rem',
+                    color: editorOpen ? '#1c1917' : 'var(--text-muted)',
+                    background: editorOpen ? 'var(--gold)' : 'var(--bg-secondary)',
+                    border: '1px solid var(--border)',
+                  }}
+                >
+                  {editorOpen ? '✕ Fechar editor' : '🎯 Posicionar destaques'}
+                </button>
+              )}
+              <TarotShareMenu cardName={name} image={entry.image} />
+            </div>
           </div>
 
           <header style={{ marginBottom: '1.75rem', textAlign: 'center' }}>
@@ -100,22 +127,28 @@ export default function TarotCardDetail({ entry }: Props) {
                 >
                   {tTarot(`${entry.i18nKey}.intro`)}
                 </p>
-                <p
-                  style={{
-                    color: 'var(--text-muted)',
-                    fontSize: '0.8rem',
-                    marginTop: '0.75rem',
-                    opacity: 0.85,
-                  }}
-                >
-                  💡 {tTarot('hint')}
-                </p>
+                {!editorOpen && (
+                  <p
+                    style={{
+                      color: 'var(--text-muted)',
+                      fontSize: '0.8rem',
+                      marginTop: '0.75rem',
+                      opacity: 0.85,
+                    }}
+                  >
+                    💡 {tTarot('hint')}
+                  </p>
+                )}
               </>
             ) : null}
           </header>
 
           {card ? (
-            <InteractiveTarotCard card={card} />
+            editorOpen && editorAvailable ? (
+              <TarotRegionEditor card={card} />
+            ) : (
+              <InteractiveTarotCard card={card} />
+            )
           ) : (
             <div
               style={{

@@ -130,6 +130,66 @@
           "description": "A pena vermelha no gorro recorda a leveza necessária: coragem vibrante, sem o peso das certezas."
         }
       }
+    },
+    "theMagician": {
+      "name": "O Mago",
+      "intro": "Como acima, embaixo: o Mago é o canal entre o céu e a terra, com todas as ferramentas da criação ao seu alcance. Explore cada símbolo da carta.",
+      "regions": {
+        "infinity": {
+          "title": "O Símbolo do Infinito",
+          "description": "A lemniscata vertical sobre a cabeça é a chave do arcano: mente ilimitada, o domínio completo do vocabulário da criação."
+        },
+        "wand": {
+          "title": "A Varinha Erguida",
+          "description": "A haste erguida na mão direita capta a força divina; o Mago não a possui, apenas a conduz."
+        },
+        "pointingHand": {
+          "title": "A Mão que Aponta a Terra",
+          "description": "O dedo da mão livre aponta ao chão: o princípio hermético 'como acima, embaixo' — toda inspiração deve encarnar na matéria."
+        },
+        "tableTools": {
+          "title": "A Mesa e os Quatro Naipes",
+          "description": "Sobre a mesa, copa, espada, bastão e pantáculo: os quatro elementos — emoção, mente, vontade e corpo — as ferramentas da manifestação."
+        },
+        "roseGarden": {
+          "title": "O Jardim de Rosas",
+          "description": "Rosas e lírios florescem diante da mesa: desejo e pureza cultivados lado a lado — a matéria já transmutada em paraíso."
+        },
+        "serpentBelt": {
+          "title": "O Cinto-Serpente",
+          "description": "A serpente que morde a própria cauda (ouroboros) na cintura: eternidade e autorregeneração — o poder retido em círculo fechado."
+        }
+      }
+    },
+    "theEmpress": {
+      "name": "A Imperatriz",
+      "intro": "Soberana da natureza fecunda, a Imperatriz reina sobre o trigo, as águas e tudo o que floresce. Explore cada símbolo da carta.",
+      "regions": {
+        "starCrown": {
+          "title": "A Coroa de Doze Estrelas",
+          "description": "Doze estrelas: o zodíaco completo — ela governa o tempo cíclico das estações e das gestações."
+        },
+        "venusShield": {
+          "title": "O Escudo de Vênus",
+          "description": "O escudo em forma de coração com o símbolo de Vênus: o amor como fundação — beleza, afeição e magnetismo vital."
+        },
+        "scepter": {
+          "title": "O Cetro",
+          "description": "O cetro encimado pelo globo: autoridade suave sobre o mundo das formas — sua mão nem precisa segurá-lo com força."
+        },
+        "wheatField": {
+          "title": "O Campo de Trigo",
+          "description": "O trigal maduro aos pés do trono: Deméter e a abundância da Mãe — o trabalho que frutifica sem pressa."
+        },
+        "pomegranateRobe": {
+          "title": "As Romãs do Manto",
+          "description": "O vestido estampado de romãs (ecoando o véu da Sacerdotisa): fertilidade, muitos filhos, muitas sementes — a multiplicação do uno."
+        },
+        "riverTrees": {
+          "title": "O Rio e as Árvores",
+          "description": "Ao fundo, a cachoeira e o bosque: a vida fluindo sem represa — a natureza que se renova dentro do próprio ritmo."
+        }
+      }
     }
   },
   "tarotWaite": {

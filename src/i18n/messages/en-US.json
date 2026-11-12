@@ -107,6 +107,66 @@
           "description": "The red feather on his cap recalls the lightness required: vibrant courage, without the weight of certainties."
         }
       }
+    },
+    "theMagician": {
+      "name": "The Magician",
+      "intro": "As above, so below: the Magician is the channel between heaven and earth, with every tool of creation within reach. Explore each symbol of the card.",
+      "regions": {
+        "infinity": {
+          "title": "The Infinity Symbol",
+          "description": "The vertical lemniscate above his head is the key to the arcana: an unlimited mind, complete command of the vocabulary of creation."
+        },
+        "wand": {
+          "title": "The Raised Wand",
+          "description": "The wand raised in his right hand draws down divine force; the Magician does not own it, he only conducts it."
+        },
+        "pointingHand": {
+          "title": "The Hand Pointing Down",
+          "description": "His free hand points to the earth: the hermetic principle 'as above, so below' — every inspiration must become flesh in matter."
+        },
+        "tableTools": {
+          "title": "The Table and the Four Suits",
+          "description": "On the table lie cup, sword, wand and pentacle: the four elements — emotion, mind, will and body — the tools of manifestation."
+        },
+        "roseGarden": {
+          "title": "The Rose Garden",
+          "description": "Roses and lilies bloom before the table: desire and purity cultivated side by side — matter already transmuted into paradise."
+        },
+        "serpentBelt": {
+          "title": "The Serpent Belt",
+          "description": "The serpent biting its own tail (ouroboros) at his waist: eternity and self-renewal — power held within a closed circle."
+        }
+      }
+    },
+    "theEmpress": {
+      "name": "The Empress",
+      "intro": "Sovereign of fertile nature, the Empress reigns over wheat, waters and all that blooms. Explore each symbol of the card.",
+      "regions": {
+        "starCrown": {
+          "title": "The Crown of Twelve Stars",
+          "description": "Twelve stars: the complete zodiac — she governs the cyclical time of seasons and gestations."
+        },
+        "venusShield": {
+          "title": "The Shield of Venus",
+          "description": "The heart-shaped shield bearing the symbol of Venus: love as foundation — beauty, affection and vital magnetism."
+        },
+        "scepter": {
+          "title": "The Scepter",
+          "description": "The globe-topped scepter: gentle authority over the world of forms — her hand does not even need to grip it tightly."
+        },
+        "wheatField": {
+          "title": "The Wheat Field",
+          "description": "The ripe wheat at the foot of the throne: Demeter and the abundance of the Mother — work that bears fruit without haste."
+        },
+        "pomegranateRobe": {
+          "title": "The Pomegranates of Her Robe",
+          "description": "The dress patterned with pomegranates (echoing the High Priestess's veil): fertility, many children, many seeds — the multiplication of the one."
+        },
+        "riverTrees": {
+          "title": "The River and the Trees",
+          "description": "In the background, the waterfall and the forest: life flowing without a dam — nature renewing itself within its own rhythm."
+        }
+      }
     }
   },
   "tarotWaite": {

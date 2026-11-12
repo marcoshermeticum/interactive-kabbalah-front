@@ -5,13 +5,20 @@ Uma carta interativa é uma **arte raster (JPG/PNG)** com um **overlay SVG trans
 por cima, onde cada região clicável (água, taças, anjo, etc.) revela um texto
 explicativo num painel lateral.
 
-Usamos a carta **A Temperança** como referência viva ao longo do guia.
+Usamos a carta **A Temperança** como referência de estrutura e **O Mago** como
+exemplo de carta com regiões no formato `shape`, ajustadas pelo **editor visual**
+(passo 4).
+
+> **Atalho:** `npm run tarot:new` gera o esqueleto da carta — dados, traduções
+> nos 4 idiomas e registro no catálogo — a partir de um assistente no terminal.
+> Veja [new-tarot-card-cli.md](./new-tarot-card-cli.md). Este guia continua sendo
+> a referência manual, e o posicionamento das regiões segue no passo 4.
 
 ---
 
 ## Visão geral da arquitetura
 
-Cada carta é composta por quatro peças:
+Cada carta é composta por cinco peças:
 
 | Peça | Onde fica | O que é |
 |------|-----------|---------|
@@ -35,6 +42,10 @@ cartas novas. Ele entrega:
   "caçar pixel" na imagem.
 - **Destaque sutil:** por padrão as regiões têm um contorno dourado tracejado com
   leve pulsação; o botão "Destacar símbolos" realça todas de uma vez.
+
+Para **posicionar** as regiões, a single também tem um **editor visual**
+(botão "🎯 Posicionar destaques", disponível em desenvolvimento) — veja o
+passo 4. Ele não altera o componente; só gera o JSON para o arquivo de dados.
 
 > **Atenção ao layout da página:** como no mobile o bottom sheet fica fixo na
 > base, a `<div>` que envolve o conteúdo da página usa `paddingBottom: '9rem'`
@@ -105,7 +116,7 @@ import type { TarotCard } from './types';
  * viewBox 100 x 165 para a proporção ~600x990 da arte.
  */
 export const theStar: TarotCard = {
-  id: 'the-star',            // kebab-case, único; usado na rota e nas chaves i18n
+  id: 'theStar',             // camelCase, igual ao bloco de traduções
   number: 17,                // número do arcano maior (0–21)
   name: 'The Star',          // nome canônico em inglês (fallback)
   image: '/tarot/the-star.jpg',
@@ -134,8 +145,9 @@ export const theStar: TarotCard = {
 
 A definição canônica está em `src/data/tarot/types.ts`:
 
-- `id` — identificador em kebab-case. Precisa bater com o nome do arquivo, o
-  segmento da rota e o prefixo das chaves i18n (ver passo 5).
+- `id` — identificador em camelCase. É o prefixo das chaves i18n e o nome
+  exibido como fallback de acessibilidade (`tarot.<id>.name`). O slug da rota
+  (kebab-case) fica no catálogo, no passo 6.
 - `number` — número do arcano (0–21).
 - `name` — nome em inglês, usado como fallback de acessibilidade.
 - `image` — caminho público da imagem.
@@ -187,22 +199,121 @@ primitiva já resolve. Só caia no `points` quando a área for realmente irregul
 
 ---
 
-## Passo 4 — Posicionar as regiões
+## Passo 4 — Posicionar as regiões (editor visual)
 
 Primeiro decida: **forma primitiva** ou **polígono livre**?
 
 - **Forma (`shape`)** — preferível. Para símbolos compactos (sol, moeda, cálice,
   triângulo, janela), informe `type` + caixa `{ x, y, width, height }`. Veja a
-  seção "Formas" no passo 3. Para descobrir a caixa, use o mapa de cores abaixo e
-  leia os limites mín/máx de x e y do símbolo.
+  seção "Formas" no passo 3.
 - **Polígono (`points`)** — para áreas orgânicas/irregulares (água, asas,
   montanhas) que uma caixa não cobre bem.
 
-Em ambos os casos, chutar coordenadas "no olho" leva a destaques desalinhados.
-Use o **mapa de cores** abaixo para acertar de primeira — é o método recomendado,
-inclusive para IAs.
+Acertar a posição "no olho" leva a destaques desalinhados. Para isso existe um
+**editor visual** embutido na single da carta: você arrasta as regiões sobre a
+arte, ajusta com precisão e copia o resultado de volta para o arquivo de dados.
 
-### Método recomendado: mapa de cores (assertivo)
+> **Pré-requisito:** a carta precisa estar registrada em `cardData`
+> (`src/data/tarot/majorArcana.ts`, passo 6). Sem esse registro a single mostra
+> "Carta em preparação" e o botão do editor não aparece. Na primeira montagem,
+> registre a carta com caixas provisórias e refine depois.
+
+### Usando o editor — passo a passo
+
+1. **Crie o arquivo de dados** (`src/data/tarot/<id>.ts`) com **todas** as regiões
+   já declaradas — `id`, `icon` e `i18nKey` de cada uma — e uma forma aproximada
+   (`shape`) ou os `points`. O editor **não cria nem remove** regiões; ele ajusta
+   as que já existem no arquivo.
+2. **Registre a carta** em `src/data/tarot/majorArcana.ts` (passo 6).
+3. Rode o servidor:
+   ```
+   npm run dev
+   ```
+4. Abra `http://localhost:3000/pt-BR/tarot/<slug>` — por exemplo
+   `http://localhost:3000/pt-BR/tarot/the-magician`.
+5. Clique em **"🎯 Posicionar destaques"** no topo da página, ao lado do menu de
+   compartilhar. O botão vira **"✕ Fechar editor"** e a arte entra no modo de
+   edição.
+6. **Selecione uma região** clicando na pílula com o `id` (painel direito) ou no
+   próprio contorno sobre a arte. A pílula e o contorno ficam dourados.
+7. **Ajuste** com os controles abaixo e repita para todas as regiões.
+
+   | Ação | Como |
+   |------|------|
+   | Mover | Arraste o corpo da região sobre a arte |
+   | Redimensionar | Arraste uma das 8 alças douradas (cantos e lados) |
+   | Precisão numérica | Edite **X**, **Y**, **W**, **H** (passo 0,1, em unidades do `viewBox`) |
+   | Ajuste fino | Setas movem 0,5; **Shift** + setas movem 2 |
+   | Trocar a forma | Botões **rect** / **circle** / **triangle** |
+   | Grade de referência | Checkbox **grade** (linha a cada 10; mais forte a cada 50) |
+   | Descartar ajustes | **Restaurar** volta ao estado salvo no arquivo |
+
+8. **Copie o resultado:** **"Copiar JSON"** coloca o array `regions` completo na
+   área de transferência. O mesmo conteúdo aparece no campo de texto read-only
+   abaixo — dá para selecionar e copiar manualmente.
+9. **Cole no arquivo de dados**, substituindo todo o array `regions` existente:
+   ```ts
+     regions: [
+       {
+         id: 'infinity',
+         icon: '♾️',
+         shape: { type: 'rect', x: 38, y: 30.5, width: 18, height: 7 },
+         i18nKey: 'theMagician.regions.infinity',
+       },
+     ],
+   ```
+10. Feche e reabra o editor (ou recarregue a página) para conferir que o que está
+    salvo é igual ao que você ajustou. As mudanças do editor vivem **só no
+    navegador** até você colar o JSON no arquivo.
+11. Clique em **"✕ Fechar editor"** e faça a conferência final com
+    **"Destacar símbolos"** (passo 7).
+
+### Sistema de coordenadas
+
+- A origem é o **canto superior-esquerdo** da arte: `x` cresce para a direita e
+  `y` cresce para baixo.
+- Valores em unidades do `viewBox` — largura sempre `100`, altura conforme a
+  proporção da imagem (ex.: `166,7` para 1086×1810). **A altura não é 100.**
+- O editor arredonda para 0,1, impede que a região saia do `viewBox` e respeita
+  um tamanho mínimo de 2 unidades.
+- O SVG usa `preserveAspectRatio="none"` e o contêiner tem a mesma proporção do
+  `viewBox`, então o alinhamento vale em qualquer tamanho de tela.
+
+### Limitações do editor
+
+- **Polígonos (`points`) são somente leitura.** Regiões poligonais aparecem com
+  a caixa envolvente e a mensagem "Região poligonal — edite os `points`
+  manualmente." Para esses casos, use o mapa de cores abaixo.
+- Não cria, apaga, renomeia nem reordena regiões — `id`, `icon`, `i18nKey` e a
+  ordem do array são editados no arquivo.
+- Não salva nada automaticamente; **Restaurar** ou recarregar a página descarta
+  os ajustes ainda não copiados.
+- O botão do editor fica oculto em produção. Para habilitá-lo numa build, defina
+  `NEXT_PUBLIC_TAROT_EDITOR=1` **no momento do build** (o valor é embutido no
+  bundle):
+  ```
+  NEXT_PUBLIC_TAROT_EDITOR=1 npm run build
+  ```
+
+### Círculo, retângulo e triângulo
+
+A forma é só a caixa + o `type`; o editor não muda a geometria do símbolo.
+
+- `circle` preenche a caixa como **elipse** — para um círculo perfeito, deixe
+  `width = height`.
+- `triangle` sempre aponta para cima; para outra orientação, use `points`.
+- `rect` aceita `radius` para arredondar cantos (não editável no editor; ajuste
+  no arquivo).
+
+Posicione primeiro com o editor e só depois decida se o símbolo pede uma forma
+diferente. Exemplos: Sol do Louco → `circle` (`src/data/tarot/the-fool.ts`);
+triângulo da Temperança → `triangle` (`src/data/tarot/temperance.ts`); O Mago usa
+`rect` em todas as regiões (`src/data/tarot/the-magician.ts`).
+
+### Método alternativo: mapa de cores (posição inicial e polígonos)
+
+Use o mapa de cores quando precisar de um **ponto de partida** para as caixas —
+ou quando o símbolo exigir um **polígono**, que o editor só exibe, não edita.
 
 A ideia: reduzir a imagem para a grade do `viewBox` e classificar cada célula por
 cor dominante, gerando um "mapa ASCII" legível onde cada símbolo tem uma cor
@@ -288,28 +399,34 @@ node scripts/tarot-color-map.mjs public/tarot/the-fool.jpg 100 166.7 zoom 4 106 
 > símbolo não tiver cor distinta (ex.: um detalhe branco sobre fundo claro), use
 > `zoom` na região aproximada e procure a transição de classe (`W`→`k`).
 
-### Método alternativo (sem script)
+### Sem editor e sem mapa de cores
 
-Se não puder rodar o script, abra a imagem num editor que mostre coordenadas do
-cursor (Figma, Inkscape, GIMP). Trabalhe em porcentagem (largura = `100`, altura
-= valor do `viewBox`) e converta cada ponto:
+Se não puder usar o editor nem rodar o script, abra a imagem num programa que
+mostre coordenadas do cursor (Figma, Inkscape, GIMP). Trabalhe em porcentagem
+(largura = `100`, altura = valor do `viewBox`) e converta cada ponto:
 
 ```
 x = (xPx / larguraPx) × 100
 y = (yPx / alturaPx) × viewBoxHeight
 ```
 
-### Ajuste fino no navegador
+### Conferência final no navegador
 
-Depois de montar tudo e rodar a página (passo 6), clique no botão
-**"Destacar símbolos"**: todas as regiões aparecem em dourado sobre a arte. Assim
-você confere o alinhamento e corrige os `points` até encaixar.
+Com as coordenadas salvas no arquivo, clique em **"Destacar símbolos"**: todas as
+regiões aparecem em dourado sobre a arte. Se alguma estiver deslocada, reabra o
+editor, ajuste e copie o JSON de novo. Para retoques finos de polígonos, edite os
+`points` no arquivo e recarregue.
 
 ### Dicas
 
 - Polígonos podem se sobrepor levemente; o que estiver **por último** na lista
   `regions` ganha o clique na área sobreposta. Ordene os menores/mais específicos
   por último.
+- Comece pelo editor com as regiões grandes (cenário, chão, mesa) e deixe as
+  pequenas (mãos, símbolos soltos) para o fim — elas dependem das outras como
+  referência.
+- O editor exporta as regiões **na ordem do arquivo**. Para mudar quem ganha a
+  sobreposição, reordene o array no `.ts` (o editor não reordena).
 - Formas orgânicas (água, asas) não precisam seguir a borda exata — um contorno
   envolvente basta.
 - Mantenha de 5 a 8 regiões por carta. Muitas regiões pequenas ficam difíceis de
@@ -420,15 +537,20 @@ redirecionados de volta para `/tarot`.
    npm run dev
    ```
 2. Acesse `http://localhost:3000/pt-BR/tarot/<id>`.
-3. Clique em **"Destacar símbolos"** e confira o alinhamento dos polígonos.
-   Ajuste os `points` em `src/data/tarot/<id>.ts` conforme necessário.
+3. Clique em **"Destacar símbolos"** e confira o alinhamento das regiões. Se algo
+   estiver fora do lugar, abra o editor (**"🎯 Posicionar destaques"**), ajuste,
+   copie o JSON de volta para `src/data/tarot/<id>.ts` e recarregue.
 4. Passe o mouse por cada região e confirme que o painel mostra o texto certo.
-5. Valide os tipos e a build:
+   Confira também pelas **pílulas de símbolos** — cada uma deve selecionar a
+   região correspondente.
+5. Estreite a janela (ou abra no celular) e toque numa região: o *bottom sheet*
+   deve abrir com o mesmo texto, sem esconder o rodapé.
+6. Valide os tipos e a build:
    ```
    npx tsc --noEmit
    npm run build
    ```
-6. Teste os outros idiomas trocando o locale na URL (`/en-US/tarot/<id>`, etc.)
+7. Teste os outros idiomas trocando o locale na URL (`/en-US/tarot/<id>`, etc.)
    para garantir que não falta nenhuma chave de tradução.
 
 ---
@@ -439,6 +561,8 @@ redirecionados de volta para `/tarot`.
 - [ ] `viewBox` calculado a partir da proporção da imagem
 - [ ] `src/data/tarot/<id>.ts` criado, exportando um `TarotCard`
 - [ ] Cada região tem `shape` (forma) **ou** `points` (polígono)
+- [ ] Regiões alinhadas no **editor visual** ("🎯 Posicionar destaques")
+- [ ] JSON copiado do editor e colado no array `regions` do arquivo
 - [ ] Bloco de tradução adicionado nos **4** arquivos de idioma
 - [ ] `i18nKey` de cada região bate com a estrutura das traduções
 - [ ] Entrada adicionada em `majorArcana` e carta registrada em `cardData`
@@ -454,6 +578,10 @@ redirecionados de volta para `/tarot`.
 |---------|----------------|---------|
 | Painel mostra `theStar.regions.star.title` cru | `i18nKey` não bate com o JSON | Confira o caminho relativo ao namespace `tarot` e o camelCase do id |
 | Página quebra em `/en-US` mas funciona em `/pt-BR` | Faltou a chave no idioma | Replique o bloco nos 4 arquivos de idioma |
+| Botão **"🎯 Posicionar destaques"** não aparece | Build de produção ou carta sem `cardData` | Use `npm run dev`, registre a carta (passo 6) ou builde com `NEXT_PUBLIC_TAROT_EDITOR=1` |
+| Arrastar no editor não move a região | A região é um polígono (`points`) | Polígonos são read-only no editor; edite os `points` no arquivo |
+| Ajustes do editor somem ao recarregar | O JSON não foi copiado/colado no arquivo | Use **"Copiar JSON"**, substitua `regions` e recarregue |
+| Carta continua desalinhada depois de colar o JSON | Arquivo não salvo ou página não recarregada | Salve o `.ts`, feche/reabra o editor e confira |
 | Polígono no lugar errado | Coordenadas fora do `viewBox` | Reveja a conversão px → viewBox; lembre que a altura não é 100 |
 | Imagem distorcida | Proporção do `viewBox` ≠ da imagem | Recalcule `height = 100 × alturaPx / larguraPx` |
 | Região não clica | Outra forma/polígono por cima | Reordene em `regions` (o último vence a sobreposição) |
@@ -465,8 +593,12 @@ redirecionados de volta para `/tarot`.
 ## Arquivos de referência
 
 - Tipos: `src/data/tarot/types.ts`
-- Exemplo de carta: `src/data/tarot/temperance.ts`
+- Exemplo de carta (polígonos): `src/data/tarot/temperance.ts`
+- Exemplo de carta (formas ajustadas no editor): `src/data/tarot/the-magician.ts`
+- Editor visual de destaques: `src/components/Tarot/TarotRegionEditor.tsx`
+- Botão do editor na single: `src/app/[locale]/tarot/[id]/TarotCardDetail.tsx`
 - Catálogo/registro: `src/data/tarot/majorArcana.ts`
 - Rota compartilhada (não criar por carta): `src/app/[locale]/tarot/[id]/page.tsx`
 - Componente (não precisa editar): `src/components/Tarot/InteractiveTarotCard.tsx`
 - Traduções: `src/i18n/messages/{pt-BR,en-US,ja,he}.json` → namespace `tarot`
+- Mapa de cores (opcional): `scripts/tarot-color-map.mjs`
