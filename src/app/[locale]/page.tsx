@@ -69,14 +69,14 @@ const cards: PortalCard[] = [
     status: 'live',
   },
   // Óraculo → Baralho Cigano
-  {
-    id: 'baralho-cigano',
-    category: 'oraculo',
-    key: 'baralhoCigano',
-    hasSubcategory: true,
-    image: '/landing/hero-daemons.png',
-    status: 'soon',
-  },
+  // {
+  //   id: 'baralho-cigano',
+  //   category: 'oraculo',
+  //   key: 'baralhoCigano',
+  //   hasSubcategory: true,
+  //   image: '/landing/hero-daemons.png',
+  //   status: 'soon',
+  // },
   // Ferramentas → Símbolos Alquímicos
   {
     id: 'alchemical-symbols',
