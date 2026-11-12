@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar/Navbar';
 import InteractiveTarotCard from '@/components/Tarot/InteractiveTarotCard';
+import TarotShareMenu from '@/components/Tarot/TarotShareMenu';
 import { getTarotCard, type MajorArcanaEntry } from '@/data/tarot/majorArcana';
 
 type Props = {
@@ -38,18 +39,27 @@ export default function TarotCardDetail({ entry }: Props) {
         }}
       >
         <div style={{ maxWidth: '60rem', margin: '0 auto', paddingBottom: '2rem' }}>
-          <Link
-            href="/tarot"
+          <div
             style={{
-              color: 'var(--accent)',
-              display: 'inline-block',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '1rem',
               marginBottom: '1.25rem',
-              textDecoration: 'none',
-              fontSize: '0.9rem',
             }}
           >
-            {t('backToCatalog')}
-          </Link>
+            <Link
+              href="/tarot"
+              style={{
+                color: 'var(--accent)',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+              }}
+            >
+              {t('backToCatalog')}
+            </Link>
+            <TarotShareMenu cardName={name} image={entry.image} />
+          </div>
 
           <header style={{ marginBottom: '1.75rem', textAlign: 'center' }}>
             <span

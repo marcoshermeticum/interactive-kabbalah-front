@@ -9,6 +9,10 @@
     "hideRegions": "Ocultar símbolos",
     "panelEmptyTitle": "Explore a carta",
     "panelEmptyHint": "Passe o mouse ou toque em um símbolo da carta para ver seu significado aqui.",
+    "share": "Compartilhar",
+    "shareLink": "Compartilhar link",
+    "downloadImage": "Baixar imagem",
+    "linkCopied": "Link copiado!",
     "theHighPriestess": {
       "name": "A Sacerdotisa",
       "intro": "Guardiã do santuário atrás do véu, a Sacerdotisa é a memória silenciosa entre as duas colunas do Templo. Explore cada símbolo da carta.",

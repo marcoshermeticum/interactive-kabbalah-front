@@ -7,6 +7,10 @@
     "hideRegions": "Hide symbols",
     "panelEmptyTitle": "Explore the card",
     "panelEmptyHint": "Hover or tap a symbol on the card to see its meaning here.",
+    "share": "Share",
+    "shareLink": "Share link",
+    "downloadImage": "Download image",
+    "linkCopied": "Link copied!",
     "theHighPriestess": {
       "name": "The High Priestess",
       "intro": "Guardian of the sanctuary behind the veil, the High Priestess is the silent memory between the two pillars of the Temple. Explore each symbol of the card.",
