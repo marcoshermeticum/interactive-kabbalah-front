@@ -18,43 +18,31 @@ export const strength: TarotCard = {
     {
       id: 'infinity',
       icon: '♾️',
-      // TODO: position — placeholder box, replace with the editor output.
-      shape: { type: 'rect', x: 6, y: 8, width: 14, height: 10 },
+      shape: { type: 'circle', x: 8.9, y: 25, width: 21.3, height: 16.4 },
       i18nKey: 'strength.regions.infinity',
     },
     {
       id: 'lion-mouth',
       icon: '🦁',
-      // TODO: position — placeholder box, replace with the editor output.
-      shape: { type: 'rect', x: 23, y: 8, width: 14, height: 10 },
+      shape: { type: 'circle', x: 27.7, y: 80.3, width: 17.7, height: 15.7 },
       i18nKey: 'strength.regions.lionMouth',
     },
     {
       id: 'rose-garland',
       icon: '🌹',
-      // TODO: position — placeholder box, replace with the editor output.
-      shape: { type: 'rect', x: 40, y: 8, width: 14, height: 10 },
+      shape: { type: 'rect', x: 12.2, y: 38.1, width: 23.4, height: 8.9 },
       i18nKey: 'strength.regions.roseGarland',
-    },
-    {
-      id: 'red-ribbon',
-      icon: '🎗️',
-      // TODO: position — placeholder box, replace with the editor output.
-      shape: { type: 'rect', x: 57, y: 8, width: 14, height: 10 },
-      i18nKey: 'strength.regions.redRibbon',
     },
     {
       id: 'white-robe',
       icon: '👗',
-      // TODO: position — placeholder box, replace with the editor output.
-      shape: { type: 'rect', x: 74, y: 8, width: 14, height: 10 },
+      shape: { type: 'rect', x: 29.9, y: 57.6, width: 14, height: 10 },
       i18nKey: 'strength.regions.whiteRobe',
     },
     {
       id: 'mountains',
       icon: '⛰️',
-      // TODO: position — placeholder box, replace with the editor output.
-      shape: { type: 'rect', x: 6, y: 21, width: 14, height: 10 },
+      shape: { type: 'triangle', x: 5, y: 106.1, width: 18, height: 13.7 },
       i18nKey: 'strength.regions.mountains',
     },
   ],
