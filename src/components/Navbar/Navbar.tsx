@@ -87,14 +87,12 @@ export default function Navbar(props: Props) {
         {/* Left: Brand */}
         <Link href="/" className="flex items-center gap-2 min-w-0 no-underline">
           <div className="shrink-0 flex items-center justify-center">
-            <img src="/mrviniciux.png" alt="" className="h-7 sm:h-8 w-auto object-contain" />
+            <img src="/mrviniciux-sm.png" alt="" width={240} height={160} className="h-7 sm:h-8 w-auto object-contain" />
           </div>
-          <h1
+          <span
             className="text-sm sm:text-base md:text-lg font-semibold tracking-tight truncate"
             style={{ fontFamily: 'var(--font-heading)', color: 'var(--header-text)' }}
-          >
-            {ui('title')}
-          </h1>
+          >{BRAND_TITLE}</span>
         </Link>
 
         {/* Center: view switcher — desktop only, centered with the tree canvas */}

@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { redirect } from '@/i18n/routing';
 import type { Locale } from '@/i18n/routing';
@@ -28,12 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const tc = await getTranslations({ locale: current, namespace: 'tarotWaite.cards' });
   const ts = await getTranslations({ locale: current, namespace: 'seo.card' });
-  const ttarot = await getTranslations({ locale: current, namespace: 'tarot' });
 
   const name = tc(`${entry.i18nKey}.name`);
   const title = ts('title', { name, roman: entry.roman });
-  const intro = ttarot.has(`${entry.i18nKey}.intro`)
-    ? ttarot(`${entry.i18nKey}.intro`)
+  const intro = tc.has(`${entry.i18nKey}.summary`)
+    ? tc(`${entry.i18nKey}.summary`)
     : ts('description', { name, roman: entry.roman, number: entry.number });
   const description = clampText(intro);
 
@@ -73,14 +72,13 @@ export default async function TarotCardPage({ params }: Props) {
 
   const tc = await getTranslations({ locale: current, namespace: 'tarotWaite.cards' });
   const ts = await getTranslations({ locale: current, namespace: 'seo.card' });
-  const ttarot = await getTranslations({ locale: current, namespace: 'tarot' });
   const tnav = await getTranslations({ locale: current, namespace: 'seo' });
   const tt = await getTranslations({ locale: current, namespace: 'seo.tarot' });
 
   const name = tc(`${entry.i18nKey}.name`);
   const url = absoluteUrl(cardPath(current, entry.slug));
-  const intro = ttarot.has(`${entry.i18nKey}.intro`)
-    ? ttarot(`${entry.i18nKey}.intro`)
+  const intro = tc.has(`${entry.i18nKey}.summary`)
+    ? tc(`${entry.i18nKey}.summary`)
     : ts('description', { name, roman: entry.roman, number: entry.number });
 
   const jsonLd = {

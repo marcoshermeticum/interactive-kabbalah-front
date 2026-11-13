@@ -1,6 +1,7 @@
-'use client';
+﻿'use client';
 
 import { useState, type CSSProperties } from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import Navbar from '@/components/Navbar/Navbar';
@@ -139,7 +140,7 @@ export default function Portal() {
                 fontWeight: 500,
                 textTransform: 'uppercase',
                 letterSpacing: '0.35em',
-                color: 'var(--gold)',
+                color: 'var(--gold-text)',
               }}
             >
               {t('eyebrow')}
@@ -155,7 +156,7 @@ export default function Portal() {
               }}
             >
               {t('heroTitle')}{' '}
-              <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>{t('heroEmphasis')}</em>{' '}
+              <em style={{ color: 'var(--gold-text)', fontStyle: 'italic' }}>{t('heroEmphasis')}</em>{' '}
               {t('heroTitleAfter')}
             </h1>
             <p
@@ -271,16 +272,14 @@ function PortalCardView({ card, index }: { card: PortalCard; index: number }) {
         animationDelay: `${index * 80}ms`,
       }}
     >
-      <img
+      <Image
         src={card.image}
         alt={c('title')}
-        loading="lazy"
+        fill
+        sizes="(max-width: 640px) 100vw, (max-width: 1152px) 33vw, 384px"
+        priority={index === 0}
         className="portal-card-img"
         style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
           objectFit: 'cover',
           // "Coming soon" cards are desaturated; only the available
           // Tree of Life stays in full color.

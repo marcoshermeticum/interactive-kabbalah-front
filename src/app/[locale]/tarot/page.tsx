@@ -1,5 +1,6 @@
-'use client';
+﻿'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import type { Pathnames } from '@/i18n/routing';
@@ -118,16 +119,14 @@ export default function TarotWaitePage() {
                       animationDelay: `${Math.min(index * 40, 600)}ms`,
                     }}
                   >
-                    <img
+                    <Image
                       src={card.image}
                       alt={tc(`${card.i18nKey}.name`)}
-                      loading="lazy"
+                      fill
+                      sizes="(max-width: 640px) 45vw, 200px"
+                      priority={index < 4}
                       className="portal-card-img"
                       style={{
-                        position: 'absolute',
-                        inset: 0,
-                        width: '100%',
-                        height: '100%',
                         objectFit: 'cover',
                         filter: available ? 'none' : 'grayscale(1)',
                       }}

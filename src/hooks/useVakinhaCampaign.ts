@@ -29,8 +29,11 @@ export interface UseVakinhaCampaignReturn {
 export function useVakinhaCampaign(): UseVakinhaCampaignReturn {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  // On mount: check localStorage and auto-show if not dismissed
+  // On mount: check localStorage and auto-show if not dismissed.
+  // Crawlers never see the popup: it would otherwise become the page content
+  // Google picks for the result snippet instead of the meta description.
   useEffect(() => {
+    if (/bot|crawl|spider|slurp|lighthouse|headless/i.test(navigator.userAgent)) return;
     const dismissed = safeGetItem(STORAGE_KEY_DISMISSED);
     if (dismissed !== 'true') {
       setIsDialogOpen(true);

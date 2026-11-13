@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
+﻿import { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
+import { EB_Garamond, Inter } from 'next/font/google';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
@@ -19,6 +20,21 @@ import {
   siteUrl,
 } from '@/lib/seo';
 import '../globals.css';
+
+const garamond = EB_Garamond({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-garamond',
+});
+
+const inter = Inter({
+  subsets: ['latin', 'latin-ext'],
+  weight: ['300', '400', '500', '600'],
+  display: 'swap',
+  variable: '--font-inter',
+});
 
 type Props = {
   children: ReactNode;
@@ -86,8 +102,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#fff9eb' },
     { media: '(prefers-color-scheme: dark)', color: '#0f0e0c' },
@@ -122,7 +136,7 @@ export default async function RootLayout({ children, params }: Props) {
   };
 
   return (
-    <html lang={locale} dir={dir} suppressHydrationWarning>
+    <html lang={locale} dir={dir} className={`${garamond.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -133,9 +147,6 @@ export default async function RootLayout({ children, params }: Props) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4170456120089512"
           crossOrigin="anonymous"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <script defer src="https://cloud.umami.is/script.js" data-website-id="2a693d97-8387-4b71-bf4d-20cdfaf00a9c"></script>
         {/* Inline theme script — applies dark class before paint to avoid flash/hydration mismatch */}
         <script

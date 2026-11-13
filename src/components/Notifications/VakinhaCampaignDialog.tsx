@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -149,7 +149,8 @@ export default function VakinhaCampaignDialog({ isOpen, onClose }: VakinhaCampai
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[1100] flex items-center justify-center">
+    // data-nosnippet keeps this campaign copy out of Google result snippets.
+    <div className="fixed inset-0 z-[1100] flex items-center justify-center" data-nosnippet>
       {/* Backdrop overlay */}
       <div
         className="fixed inset-0 bg-black/70 backdrop-blur-sm"
@@ -208,7 +209,7 @@ export default function VakinhaCampaignDialog({ isOpen, onClose }: VakinhaCampai
         <div className="flex flex-col items-center gap-5">
           {/* Decorative symbol */}
           <img
-            src="/mrviniciux.png"
+            src="/mrviniciux-sm.png"
             alt=""
             className="h-12 w-auto"
             style={{ filter: 'drop-shadow(0 0 12px rgba(245, 158, 11, 0.4))' }}

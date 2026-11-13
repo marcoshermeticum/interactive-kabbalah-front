@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useCallback } from 'react';
+import { useTranslations } from 'next-intl';
 import Navbar from '@/components/Navbar/Navbar';
 import DraggableArea, { DraggableAreaHandle } from '@/components/DraggableArea/DraggableArea';
 import KabbalahTree from '@/components/KabbalahTree/KabbalahTree';
@@ -23,6 +24,7 @@ type View = 'life' | 'death' | 'both';
  * Search results are focused via the DraggableArea imperative handle.
  */
 export default function TreeExperience() {
+  const seo = useTranslations('seo.tree');
   const [view, setView] = useState<View>('life');
   const [showVeils, setShowVeils] = useState(true);
   const [showPillars, setShowPillars] = useState(true);
@@ -71,13 +73,14 @@ export default function TreeExperience() {
         onSearchSelect={handleSearchSelect}
       />
 
-      <div className="flex-1 relative min-h-0">
+      <main className="flex-1 relative min-h-0">
+        <h1 className="sr-only">{seo('title')}</h1>
         <DraggableArea key={fitKey} ref={draggableRef}>
           {view === 'life' && <KabbalahTree showVeils={showVeils} showPillars={showPillars} />}
           {view === 'death' && <QliphothTree />}
           {view === 'both' && <CombinedTree />}
         </DraggableArea>
-      </div>
+      </main>
     </div>
   );
 }

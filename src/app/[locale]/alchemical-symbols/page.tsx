@@ -90,7 +90,7 @@ export default function AlchemicalSymbolsPage() {
           <Link
             href="/"
             style={{
-              color: 'var(--gold)',
+              color: 'var(--gold-text)',
               display: 'inline-block',
               marginBottom: '2rem',
               textDecoration: 'none',

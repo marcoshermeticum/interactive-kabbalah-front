@@ -174,7 +174,7 @@ export default function TarotCardDetail({ entry }: Props) {
             >
               <li style={chipStyle}>
                 <span style={chipLabelStyle}>{tCorr('path')}</span>
-                <span style={{ color: 'var(--gold)' }}>{corr.path}</span>
+                <span style={{ color: 'var(--gold-text)' }}>{corr.path}</span>
               </li>
               {correspondences.map((item) => (
                 <li key={item.label} style={chipStyle}>
