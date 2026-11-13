@@ -1,4 +1,32 @@
 {
+  "seo": {
+    "siteName": "Interactive Kabbalah",
+    "titleTemplate": "%s · Interactive Kabbalah",
+    "defaultTitle": "Interactive Kabbalah — Kabbalah, tarot e alquimia em mapas",
+    "defaultDescription": "Árvore da Vida, tarot Rider-Waite e símbolos alquímicos em mapas que respondem ao toque. Um estudo aberto, no seu ritmo e sem cadastro.",
+    "keywords": "cabala, kabbalah, árvore da vida, sephirot, tarot rider-waite, alquimia, símbolos alquímicos",
+    "tree": {
+      "title": "Árvore da Vida interativa",
+      "description": "Dez Sephirot, 22 caminhos e a Qliphoth num só mapa. Toque em cada esfera para ver nomes divinos, correspondências e o texto de cada caminho.",
+      "keywords": "árvore da vida, cabala, sephirot, qliphoth, 22 caminhos, correspondências cabalísticas"
+    },
+    "tarot": {
+      "title": "Tarot Rider-Waite interativo",
+      "description": "Os 22 arcanos maiores, carta por carta, com a arte de Pamela Colman Smith e leituras símbolo a símbolo.",
+      "keywords": "tarot, rider-waite, arcanos maiores, tarot interativo, pamela colman smith"
+    },
+    "alchemicalSymbols": {
+      "title": "Símbolos Alquímicos",
+      "description": "Elementos, planetas e os processos da Grande Obra num catálogo visual, com o significado de cada signo e seu lugar no trabalho alquímico.",
+      "keywords": "alquimia, símbolos alquímicos, grande obra, elementos, planetas"
+    },
+    "card": {
+      "description": "Arcano {roman} do Tarot Rider-Waite — a arte, os símbolos e as correspondências de {name}.",
+      "keywords": "{name}, tarot, rider-waite, arcano {number}",
+      "title": "{name} — Arcano {roman}"
+    },
+    "breadcrumbHome": "Início"
+  },
   "app": {
     "title": "Árvore da Vida Interativa"
   },

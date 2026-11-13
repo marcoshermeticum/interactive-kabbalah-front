@@ -5,7 +5,7 @@ import '../globals.css';
 
 export const metadata = {
   title: 'Admin — Interactive Kabbalah',
-  robots: 'noindex, nofollow',
+  robots: { index: false, follow: false },
 };
 
 export default function AdminLayout({ children }: { children: ReactNode }) {

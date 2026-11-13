@@ -1,5 +1,35 @@
 {
-  "app": { "title": "Interactive Tree of Life" },
+  "seo": {
+    "siteName": "Interactive Kabbalah",
+    "titleTemplate": "%s · Interactive Kabbalah",
+    "defaultTitle": "Interactive Kabbalah — Kabbalah, tarot and alchemy as maps",
+    "defaultDescription": "The Tree of Life, the Rider-Waite tarot and alchemical symbols as maps that answer to touch. Open study, at your own pace, no sign-up.",
+    "keywords": "kabbalah, tree of life, sephirot, rider-waite tarot, alchemy, alchemical symbols",
+    "tree": {
+      "title": "Interactive Tree of Life",
+      "description": "Ten Sephirot, 22 paths and the Qliphoth on a single map. Tap any sphere for divine names, correspondences and the text of each path.",
+      "keywords": "tree of life, kabbalah, sephirot, qliphoth, 22 paths, kabbalistic correspondences"
+    },
+    "tarot": {
+      "title": "Interactive Rider-Waite Tarot",
+      "description": "The 22 major arcana, card by card, with Pamela Colman Smith's art and readings symbol by symbol.",
+      "keywords": "tarot, rider-waite, major arcana, interactive tarot, pamela colman smith"
+    },
+    "alchemicalSymbols": {
+      "title": "Alchemical Symbols",
+      "description": "Elements, planets and the processes of the Great Work in a visual catalogue, with the meaning of each sign and its place in the work.",
+      "keywords": "alchemy, alchemical symbols, great work, elements, planets"
+    },
+    "card": {
+      "description": "Major arcana {roman} of the Rider-Waite tarot — the art, the symbols and the correspondences of {name}.",
+      "keywords": "{name}, tarot, rider-waite, arcana {number}",
+      "title": "{name} — Major Arcana {roman}"
+    },
+    "breadcrumbHome": "Home"
+  },
+  "app": {
+    "title": "Interactive Tree of Life"
+  },
   "tarot": {
     "backToHome": "← Back to home",
     "hint": "Hover (or tap) the symbols on the card to reveal their meaning. Click to pin.",
@@ -53,13 +83,34 @@
       "name": "Temperance",
       "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",
       "regions": {
-        "crownHalo": { "title": "Solar Crown / Halo", "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence. Temperance acts guided by the light of higher consciousness." },
-        "wings": { "title": "Wings", "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth, spirit and matter." },
-        "triangleSquare": { "title": "Triangle in the Square", "description": "The triangle (fire, spirit) inscribed in the square (matter, the four elements) symbolizes spirit manifested and contained within form — balance between the divine and the material." },
-        "cupsWater": { "title": "The Cups and the Water", "description": "Water flowing between the two cups, often on an impossible diagonal, represents the alchemical fusion of opposites: conscious and unconscious, past and future. The essence of temperance — mixing in the right measure." },
-        "sunMountain": { "title": "Sun, Mountains and the Path", "description": "In the background, the rising sun over the mountains and the winding path point to the journey toward spiritual realization — the distant golden crown as the goal." },
-        "irises": { "title": "Irises", "description": "The yellow irises allude to Iris, messenger of the gods and goddess of the rainbow, linking the divine and human worlds. They reinforce communication and harmony." },
-        "waterFeet": { "title": "The Water at the Feet", "description": "One foot submerged in water (the unconscious, emotion) and the other firm on land (the conscious, the material) show the perfect balance between the two worlds." }
+        "crownHalo": {
+          "title": "Solar Crown / Halo",
+          "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence. Temperance acts guided by the light of higher consciousness."
+        },
+        "wings": {
+          "title": "Wings",
+          "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth, spirit and matter."
+        },
+        "triangleSquare": {
+          "title": "Triangle in the Square",
+          "description": "The triangle (fire, spirit) inscribed in the square (matter, the four elements) symbolizes spirit manifested and contained within form — balance between the divine and the material."
+        },
+        "cupsWater": {
+          "title": "The Cups and the Water",
+          "description": "Water flowing between the two cups, often on an impossible diagonal, represents the alchemical fusion of opposites: conscious and unconscious, past and future. The essence of temperance — mixing in the right measure."
+        },
+        "sunMountain": {
+          "title": "Sun, Mountains and the Path",
+          "description": "In the background, the rising sun over the mountains and the winding path point to the journey toward spiritual realization — the distant golden crown as the goal."
+        },
+        "irises": {
+          "title": "Irises",
+          "description": "The yellow irises allude to Iris, messenger of the gods and goddess of the rainbow, linking the divine and human worlds. They reinforce communication and harmony."
+        },
+        "waterFeet": {
+          "title": "The Water at the Feet",
+          "description": "One foot submerged in water (the unconscious, emotion) and the other firm on land (the conscious, the material) show the perfect balance between the two worlds."
+        }
       }
     },
     "theFool": {
@@ -401,164 +452,558 @@
     "seeLess": "See less"
   },
   "kether": {
-    "world": { "title": "Atziluth", "aspect": "Omnipresence" },
-    "regent": { "title": "Seraphim", "name": "Metatron", "defect": " " },
-    "sephirot": { "name": "Kether", "valor": "Crown" },
-    "archetypes": ["God the Father", "Brahma", "The Ancient of Days", "Ein Sof"],
-    "minorArcana": ["Ace of Wands (root of fire)", "Ace of Cups (root of water)", "Ace of Swords (root of air)", "Ace of Pentacles (root of earth)"],
+    "world": {
+      "title": "Atziluth",
+      "aspect": "Omnipresence"
+    },
+    "regent": {
+      "title": "Seraphim",
+      "name": "Metatron",
+      "defect": " "
+    },
+    "sephirot": {
+      "name": "Kether",
+      "valor": "Crown"
+    },
+    "archetypes": [
+      "God the Father",
+      "Brahma",
+      "The Ancient of Days",
+      "Ein Sof"
+    ],
+    "minorArcana": [
+      "Ace of Wands (root of fire)",
+      "Ace of Cups (root of water)",
+      "Ace of Swords (root of air)",
+      "Ace of Pentacles (root of earth)"
+    ],
     "planetName": "Neptune",
     "correspondences": {
-      "animals": ["swan", "dove", "falcon"],
-      "stones": ["diamond", "rock crystal"],
-      "bodyParts": ["skull", "top of head", "pineal gland"]
+      "animals": [
+        "swan",
+        "dove",
+        "falcon"
+      ],
+      "stones": [
+        "diamond",
+        "rock crystal"
+      ],
+      "bodyParts": [
+        "skull",
+        "top of head",
+        "pineal gland"
+      ]
     }
   },
   "chokmah": {
-    "world": { "title": "Atziluth", "aspect": "Omnipotence" },
-    "regent": { "title": "Cherubim", "name": "Raziel", "defect": "Tyranny" },
-    "sephirot": { "name": "Chokmah", "valor": "Wisdom" },
-    "archetypes": ["Zeus", "Odin", "Shiva", "The Celestial Father"],
-    "minorArcana": ["2 of Wands (dominion)", "2 of Cups (love)", "2 of Swords (peace restored)", "2 of Pentacles (harmonious change)"],
+    "world": {
+      "title": "Atziluth",
+      "aspect": "Omnipotence"
+    },
+    "regent": {
+      "title": "Cherubim",
+      "name": "Raziel",
+      "defect": "Tyranny"
+    },
+    "sephirot": {
+      "name": "Chokmah",
+      "valor": "Wisdom"
+    },
+    "archetypes": [
+      "Zeus",
+      "Odin",
+      "Shiva",
+      "The Celestial Father"
+    ],
+    "minorArcana": [
+      "2 of Wands (dominion)",
+      "2 of Cups (love)",
+      "2 of Swords (peace restored)",
+      "2 of Pentacles (harmonious change)"
+    ],
     "planetName": "Uranus",
     "correspondences": {
-      "animals": ["phallus", "lynx", "condor"],
-      "stones": ["turquoise", "star ruby"],
-      "bodyParts": ["left side of face", "right brain hemisphere"]
+      "animals": [
+        "phallus",
+        "lynx",
+        "condor"
+      ],
+      "stones": [
+        "turquoise",
+        "star ruby"
+      ],
+      "bodyParts": [
+        "left side of face",
+        "right brain hemisphere"
+      ]
     }
   },
   "binah": {
-    "world": { "title": "Briah", "aspect": "Omniscience" },
-    "regent": { "title": "Thrones", "name": "Tzafquiel", "defect": "Greed" },
-    "sephirot": { "name": "Binah", "valor": "Understanding" },
-    "archetypes": ["Virgin Mary", "Isis", "Kali", "The Great Mother"],
-    "minorArcana": ["3 of Wands (established virtue)", "3 of Cups (abundance)", "3 of Swords (sorrow)", "3 of Pentacles (material work)"],
+    "world": {
+      "title": "Briah",
+      "aspect": "Omniscience"
+    },
+    "regent": {
+      "title": "Thrones",
+      "name": "Tzafquiel",
+      "defect": "Greed"
+    },
+    "sephirot": {
+      "name": "Binah",
+      "valor": "Understanding"
+    },
+    "archetypes": [
+      "Virgin Mary",
+      "Isis",
+      "Kali",
+      "The Great Mother"
+    ],
+    "minorArcana": [
+      "3 of Wands (established virtue)",
+      "3 of Cups (abundance)",
+      "3 of Swords (sorrow)",
+      "3 of Pentacles (material work)"
+    ],
     "planetName": "Saturn",
     "correspondences": {
-      "animals": ["bee", "woman", "owl"],
-      "stones": ["pearl", "sapphire", "star onyx"],
-      "bodyParts": ["right side of face", "left brain hemisphere", "womb"]
+      "animals": [
+        "bee",
+        "woman",
+        "owl"
+      ],
+      "stones": [
+        "pearl",
+        "sapphire",
+        "star onyx"
+      ],
+      "bodyParts": [
+        "right side of face",
+        "left brain hemisphere",
+        "womb"
+      ]
     }
   },
   "daath": {
-    "regent": { "title": "", "name": "", "defect": "" },
-    "sephirot": { "name": "Daath", "valor": "Knowledge" },
-    "archetypes": ["The Abyss", "Choronzon", "The Crossing"],
+    "regent": {
+      "title": "",
+      "name": "",
+      "defect": ""
+    },
+    "sephirot": {
+      "name": "Daath",
+      "valor": "Knowledge"
+    },
+    "archetypes": [
+      "The Abyss",
+      "Choronzon",
+      "The Crossing"
+    ],
     "minorArcana": [],
     "planetName": "Pluto",
     "correspondences": {
-      "animals": ["serpent", "dragon", "chameleon"],
-      "stones": ["moldavite", "labradorite", "obsidian"],
-      "bodyParts": ["throat", "nape", "neck"]
+      "animals": [
+        "serpent",
+        "dragon",
+        "chameleon"
+      ],
+      "stones": [
+        "moldavite",
+        "labradorite",
+        "obsidian"
+      ],
+      "bodyParts": [
+        "throat",
+        "nape",
+        "neck"
+      ]
     }
   },
   "chesed": {
-    "regent": { "title": "Dominions", "name": "Tzadkiel", "defect": "Tyranny" },
-    "sephirot": { "name": "Chesed", "valor": "Mercy" },
-    "archetypes": ["Jupiter", "Poseidon", "Oxalá", "King Solomon"],
-    "minorArcana": ["4 of Wands (completion)", "4 of Cups (luxury)", "4 of Swords (rest)", "4 of Pentacles (earthly power)"],
+    "regent": {
+      "title": "Dominions",
+      "name": "Tzadkiel",
+      "defect": "Tyranny"
+    },
+    "sephirot": {
+      "name": "Chesed",
+      "valor": "Mercy"
+    },
+    "archetypes": [
+      "Jupiter",
+      "Poseidon",
+      "Oxalá",
+      "King Solomon"
+    ],
+    "minorArcana": [
+      "4 of Wands (completion)",
+      "4 of Cups (luxury)",
+      "4 of Swords (rest)",
+      "4 of Pentacles (earthly power)"
+    ],
     "planetName": "Jupiter",
     "correspondences": {
-      "animals": ["unicorn", "horse", "eagle"],
-      "stones": ["sapphire", "amethyst", "lapis lazuli"],
-      "bodyParts": ["left arm", "left shoulder"]
+      "animals": [
+        "unicorn",
+        "horse",
+        "eagle"
+      ],
+      "stones": [
+        "sapphire",
+        "amethyst",
+        "lapis lazuli"
+      ],
+      "bodyParts": [
+        "left arm",
+        "left shoulder"
+      ]
     }
   },
   "gevurah": {
-    "regent": { "title": "Powers", "name": "Camael", "defect": "Cruelty" },
-    "sephirot": { "name": "Gevurah", "valor": "Strength" },
-    "archetypes": ["Ares", "Thor", "Ogum", "Durga"],
-    "minorArcana": ["5 of Wands (strife)", "5 of Cups (loss in pleasure)", "5 of Swords (defeat)", "5 of Pentacles (material trouble)"],
+    "regent": {
+      "title": "Powers",
+      "name": "Camael",
+      "defect": "Cruelty"
+    },
+    "sephirot": {
+      "name": "Gevurah",
+      "valor": "Strength"
+    },
+    "archetypes": [
+      "Ares",
+      "Thor",
+      "Ogum",
+      "Durga"
+    ],
+    "minorArcana": [
+      "5 of Wands (strife)",
+      "5 of Cups (loss in pleasure)",
+      "5 of Swords (defeat)",
+      "5 of Pentacles (material trouble)"
+    ],
     "planetName": "Mars",
     "correspondences": {
-      "animals": ["basilisk", "wolf", "warhorse", "scorpion"],
-      "stones": ["ruby", "garnet", "bloodstone"],
-      "bodyParts": ["right arm", "right shoulder"]
+      "animals": [
+        "basilisk",
+        "wolf",
+        "warhorse",
+        "scorpion"
+      ],
+      "stones": [
+        "ruby",
+        "garnet",
+        "bloodstone"
+      ],
+      "bodyParts": [
+        "right arm",
+        "right shoulder"
+      ]
     }
   },
   "tiferet": {
-    "regent": { "title": "Virtues", "name": "Raphael", "defect": "Pride" },
-    "sephirot": { "name": "Tiferet", "valor": "Beauty" },
-    "archetypes": ["Jesus Christ", "Neo (Matrix)", "Osiris", "Oxalá", "Buddha", "Krishna"],
-    "minorArcana": ["6 of Wands (victory)", "6 of Cups (joy)", "6 of Swords (science)", "6 of Pentacles (material success)"],
+    "regent": {
+      "title": "Virtues",
+      "name": "Raphael",
+      "defect": "Pride"
+    },
+    "sephirot": {
+      "name": "Tiferet",
+      "valor": "Beauty"
+    },
+    "archetypes": [
+      "Jesus Christ",
+      "Neo (Matrix)",
+      "Osiris",
+      "Oxalá",
+      "Buddha",
+      "Krishna"
+    ],
+    "minorArcana": [
+      "6 of Wands (victory)",
+      "6 of Cups (joy)",
+      "6 of Swords (science)",
+      "6 of Pentacles (material success)"
+    ],
     "planetName": "Sun",
     "correspondences": {
-      "animals": ["lion", "phoenix", "spider", "pelican"],
-      "stones": ["topaz", "yellow diamond", "tiger's eye"],
-      "bodyParts": ["heart", "chest", "solar plexus"]
+      "animals": [
+        "lion",
+        "phoenix",
+        "spider",
+        "pelican"
+      ],
+      "stones": [
+        "topaz",
+        "yellow diamond",
+        "tiger's eye"
+      ],
+      "bodyParts": [
+        "heart",
+        "chest",
+        "solar plexus"
+      ]
     }
   },
   "netzach": {
-    "regent": { "title": "Principalities", "name": "Haniel", "defect": "Lust" },
-    "sephirot": { "name": "Netzach", "valor": "Eternity" },
-    "archetypes": ["Aphrodite", "Oxum", "Freya", "Lakshmi"],
-    "minorArcana": ["7 of Wands (valor)", "7 of Cups (illusory success)", "7 of Swords (instability)", "7 of Pentacles (failure)"],
+    "regent": {
+      "title": "Principalities",
+      "name": "Haniel",
+      "defect": "Lust"
+    },
+    "sephirot": {
+      "name": "Netzach",
+      "valor": "Eternity"
+    },
+    "archetypes": [
+      "Aphrodite",
+      "Oxum",
+      "Freya",
+      "Lakshmi"
+    ],
+    "minorArcana": [
+      "7 of Wands (valor)",
+      "7 of Cups (illusory success)",
+      "7 of Swords (instability)",
+      "7 of Pentacles (failure)"
+    ],
     "planetName": "Venus",
     "correspondences": {
-      "animals": ["dove", "lynx", "sparrow", "swan"],
-      "stones": ["emerald", "green tourmaline", "rose quartz"],
-      "bodyParts": ["right hip", "right kidney", "reproductive organs"]
+      "animals": [
+        "dove",
+        "lynx",
+        "sparrow",
+        "swan"
+      ],
+      "stones": [
+        "emerald",
+        "green tourmaline",
+        "rose quartz"
+      ],
+      "bodyParts": [
+        "right hip",
+        "right kidney",
+        "reproductive organs"
+      ]
     }
   },
   "hod": {
-    "regent": { "title": "Archangels", "name": "Michael", "defect": "Envy" },
-    "sephirot": { "name": "Hod", "valor": "Glory" },
-    "archetypes": ["Hermes", "Thoth", "Exu", "Ganesha"],
-    "minorArcana": ["8 of Wands (swiftness)", "8 of Cups (abandoned success)", "8 of Swords (interference)", "8 of Pentacles (prudence)"],
+    "regent": {
+      "title": "Archangels",
+      "name": "Michael",
+      "defect": "Envy"
+    },
+    "sephirot": {
+      "name": "Hod",
+      "valor": "Glory"
+    },
+    "archetypes": [
+      "Hermes",
+      "Thoth",
+      "Exu",
+      "Ganesha"
+    ],
+    "minorArcana": [
+      "8 of Wands (swiftness)",
+      "8 of Cups (abandoned success)",
+      "8 of Swords (interference)",
+      "8 of Pentacles (prudence)"
+    ],
     "planetName": "Mercury",
     "correspondences": {
-      "animals": ["monkey", "ibis", "fox", "winged serpent"],
-      "stones": ["opal", "agate", "moonstone"],
-      "bodyParts": ["left hip", "left kidney", "legs"]
+      "animals": [
+        "monkey",
+        "ibis",
+        "fox",
+        "winged serpent"
+      ],
+      "stones": [
+        "opal",
+        "agate",
+        "moonstone"
+      ],
+      "bodyParts": [
+        "left hip",
+        "left kidney",
+        "legs"
+      ]
     }
   },
   "yesod": {
-    "regent": { "title": "Angels", "name": "Gabriel", "defect": "Laziness" },
-    "sephirot": { "name": "Yesod", "valor": "Foundation" },
-    "archetypes": ["Diana", "Yemanjá", "Selene", "The Unconscious"],
-    "minorArcana": ["9 of Wands (great strength)", "9 of Cups (material happiness)", "9 of Swords (cruelty)", "9 of Pentacles (material gain)"],
+    "regent": {
+      "title": "Angels",
+      "name": "Gabriel",
+      "defect": "Laziness"
+    },
+    "sephirot": {
+      "name": "Yesod",
+      "valor": "Foundation"
+    },
+    "archetypes": [
+      "Diana",
+      "Yemanjá",
+      "Selene",
+      "The Unconscious"
+    ],
+    "minorArcana": [
+      "9 of Wands (great strength)",
+      "9 of Cups (material happiness)",
+      "9 of Swords (cruelty)",
+      "9 of Pentacles (material gain)"
+    ],
     "planetName": "Moon",
     "correspondences": {
-      "animals": ["elephant", "hare", "toad", "dolphin"],
-      "stones": ["quartz", "selenite", "moonstone"],
-      "bodyParts": ["genitals", "reproductive system", "bladder"]
+      "animals": [
+        "elephant",
+        "hare",
+        "toad",
+        "dolphin"
+      ],
+      "stones": [
+        "quartz",
+        "selenite",
+        "moonstone"
+      ],
+      "bodyParts": [
+        "genitals",
+        "reproductive system",
+        "bladder"
+      ]
     }
   },
   "malkuth": {
-    "world": { "title": "Assiah", "aspect": "Material World" },
-    "regent": { "title": "Cherubim", "name": "Sandalphon", "defect": "" },
-    "sephirot": { "name": "Malkuth", "valor": "Kingdom" },
-    "archetypes": ["Gaia", "Persephone", "The Bride", "Nanã"],
-    "minorArcana": ["10 of Wands (oppression)", "10 of Cups (satiety)", "10 of Swords (ruin)", "10 of Pentacles (wealth)"],
+    "world": {
+      "title": "Assiah",
+      "aspect": "Material World"
+    },
+    "regent": {
+      "title": "Cherubim",
+      "name": "Sandalphon",
+      "defect": ""
+    },
+    "sephirot": {
+      "name": "Malkuth",
+      "valor": "Kingdom"
+    },
+    "archetypes": [
+      "Gaia",
+      "Persephone",
+      "The Bride",
+      "Nanã"
+    ],
+    "minorArcana": [
+      "10 of Wands (oppression)",
+      "10 of Cups (satiety)",
+      "10 of Swords (ruin)",
+      "10 of Pentacles (wealth)"
+    ],
     "planetName": "Earth",
     "correspondences": {
-      "animals": ["ox", "sphinx", "cow", "bull"],
-      "stones": ["rock crystal", "onyx", "sea salt"],
-      "bodyParts": ["feet", "anus", "entire body"]
+      "animals": [
+        "ox",
+        "sphinx",
+        "cow",
+        "bull"
+      ],
+      "stones": [
+        "rock crystal",
+        "onyx",
+        "sea salt"
+      ],
+      "bodyParts": [
+        "feet",
+        "anus",
+        "entire body"
+      ]
     }
   },
   "paths": {
-    "11": { "arcane": "0 - The Fool", "meaning": "Air / Spirit" },
-    "12": { "arcane": "I - The Magician", "meaning": "Mercury" },
-    "13": { "arcane": "II - The High Priestess", "meaning": "Moon" },
-    "14": { "arcane": "III - The Empress", "meaning": "Venus" },
-    "15": { "arcane": "IV - The Emperor", "meaning": "Aries" },
-    "16": { "arcane": "V - The Hierophant", "meaning": "Taurus" },
-    "17": { "arcane": "VI - The Lovers", "meaning": "Gemini" },
-    "18": { "arcane": "VII - The Chariot", "meaning": "Cancer" },
-    "19": { "arcane": "VIII - Strength", "meaning": "Leo" },
-    "20": { "arcane": "IX - The Hermit", "meaning": "Virgo" },
-    "21": { "arcane": "X - Wheel of Fortune", "meaning": "Jupiter" },
-    "22": { "arcane": "XI - Justice", "meaning": "Libra" },
-    "23": { "arcane": "XII - The Hanged Man", "meaning": "Water" },
-    "24": { "arcane": "XIII - Death", "meaning": "Scorpio" },
-    "25": { "arcane": "XIV - Temperance", "meaning": "Sagittarius" },
-    "26": { "arcane": "XV - The Devil", "meaning": "Capricorn" },
-    "27": { "arcane": "XVI - The Tower", "meaning": "Mars" },
-    "28": { "arcane": "XVII - The Star", "meaning": "Aquarius" },
-    "29": { "arcane": "XVIII - The Moon", "meaning": "Pisces" },
-    "30": { "arcane": "XIX - The Sun", "meaning": "Sun" },
-    "31": { "arcane": "XX - Judgement", "meaning": "Fire" },
-    "32": { "arcane": "XXI - The World", "meaning": "Saturn" }
+    "11": {
+      "arcane": "0 - The Fool",
+      "meaning": "Air / Spirit"
+    },
+    "12": {
+      "arcane": "I - The Magician",
+      "meaning": "Mercury"
+    },
+    "13": {
+      "arcane": "II - The High Priestess",
+      "meaning": "Moon"
+    },
+    "14": {
+      "arcane": "III - The Empress",
+      "meaning": "Venus"
+    },
+    "15": {
+      "arcane": "IV - The Emperor",
+      "meaning": "Aries"
+    },
+    "16": {
+      "arcane": "V - The Hierophant",
+      "meaning": "Taurus"
+    },
+    "17": {
+      "arcane": "VI - The Lovers",
+      "meaning": "Gemini"
+    },
+    "18": {
+      "arcane": "VII - The Chariot",
+      "meaning": "Cancer"
+    },
+    "19": {
+      "arcane": "VIII - Strength",
+      "meaning": "Leo"
+    },
+    "20": {
+      "arcane": "IX - The Hermit",
+      "meaning": "Virgo"
+    },
+    "21": {
+      "arcane": "X - Wheel of Fortune",
+      "meaning": "Jupiter"
+    },
+    "22": {
+      "arcane": "XI - Justice",
+      "meaning": "Libra"
+    },
+    "23": {
+      "arcane": "XII - The Hanged Man",
+      "meaning": "Water"
+    },
+    "24": {
+      "arcane": "XIII - Death",
+      "meaning": "Scorpio"
+    },
+    "25": {
+      "arcane": "XIV - Temperance",
+      "meaning": "Sagittarius"
+    },
+    "26": {
+      "arcane": "XV - The Devil",
+      "meaning": "Capricorn"
+    },
+    "27": {
+      "arcane": "XVI - The Tower",
+      "meaning": "Mars"
+    },
+    "28": {
+      "arcane": "XVII - The Star",
+      "meaning": "Aquarius"
+    },
+    "29": {
+      "arcane": "XVIII - The Moon",
+      "meaning": "Pisces"
+    },
+    "30": {
+      "arcane": "XIX - The Sun",
+      "meaning": "Sun"
+    },
+    "31": {
+      "arcane": "XX - Judgement",
+      "meaning": "Fire"
+    },
+    "32": {
+      "arcane": "XXI - The World",
+      "meaning": "Saturn"
+    }
   },
   "ornaments": {
     "veils": {

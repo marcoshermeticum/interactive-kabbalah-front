@@ -1,5 +1,35 @@
 {
-  "app": { "title": "生命の樹インタラクティブ" },
+  "seo": {
+    "siteName": "Interactive Kabbalah",
+    "titleTemplate": "%s · Interactive Kabbalah",
+    "defaultTitle": "Interactive Kabbalah — カバラ・タロット・錬金術のインタラクティブ図",
+    "defaultDescription": "生命の樹、ライダー版タロット、錬金術の象徴を、触れて読み解くインタラクティブな図で。登録なしで、自分のペースで学べます。",
+    "keywords": "カバラ, 生命の樹, セフィロト, ライダー版タロット, タロット, 錬金術, 象徴",
+    "tree": {
+      "title": "生命の樹（セフィロト）インタラクティブ",
+      "description": "10のセフィラ、22の小径、クリフォトをひとつの図に。球をタップすると、神名・対応表・小径の解説が読めます。",
+      "keywords": "生命の樹, カバラ, セフィロト, クリフォト, 22の小径, 対応表"
+    },
+    "tarot": {
+      "title": "ライダー版タロット インタラクティブ",
+      "description": "大アルカナ22枚を一枚ずつ。パメラ・コールマン・スミスの絵から、象徴と対応を読み解きます。",
+      "keywords": "タロット, ライダー版タロット, 大アルカナ, 象徴, パメラ・コールマン・スミス"
+    },
+    "alchemicalSymbols": {
+      "title": "錬金術の象徴",
+      "description": "四大元素、惑星、大いなる業の過程を視覚的なカタログに。各記号の意味と、業の中での位置をたどれます。",
+      "keywords": "錬金術, 象徴, 大いなる業, 四大元素, 惑星"
+    },
+    "card": {
+      "description": "ライダー版タロットの大アルカナ{roman}。{name}の絵、象徴、対応を読み解きます。",
+      "keywords": "{name}, タロット, ライダー版タロット, 大アルカナ, {number}",
+      "title": "{name} — 大アルカナ {roman}"
+    },
+    "breadcrumbHome": "ホーム"
+  },
+  "app": {
+    "title": "生命の樹インタラクティブ"
+  },
   "tarot": {
     "backToHome": "← Back to home",
     "hint": "Hover (or tap) the symbols on the card to reveal their meaning. Click to pin.",
@@ -53,13 +83,34 @@
       "name": "Temperance",
       "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",
       "regions": {
-        "crownHalo": { "title": "Solar Crown / Halo", "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence." },
-        "wings": { "title": "Wings", "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth." },
-        "triangleSquare": { "title": "Triangle in the Square", "description": "The triangle inscribed in the square symbolizes spirit manifested and contained within form." },
-        "cupsWater": { "title": "The Cups and the Water", "description": "Water flowing between the two cups represents the alchemical fusion of opposites." },
-        "sunMountain": { "title": "Sun, Mountains and the Path", "description": "The rising sun over the mountains and the winding path point to spiritual realization." },
-        "irises": { "title": "Irises", "description": "The yellow irises allude to Iris, messenger of the gods, linking the divine and human worlds." },
-        "waterFeet": { "title": "The Water at the Feet", "description": "One foot in water and the other on land show the balance between the two worlds." }
+        "crownHalo": {
+          "title": "Solar Crown / Halo",
+          "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence."
+        },
+        "wings": {
+          "title": "Wings",
+          "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth."
+        },
+        "triangleSquare": {
+          "title": "Triangle in the Square",
+          "description": "The triangle inscribed in the square symbolizes spirit manifested and contained within form."
+        },
+        "cupsWater": {
+          "title": "The Cups and the Water",
+          "description": "Water flowing between the two cups represents the alchemical fusion of opposites."
+        },
+        "sunMountain": {
+          "title": "Sun, Mountains and the Path",
+          "description": "The rising sun over the mountains and the winding path point to spiritual realization."
+        },
+        "irises": {
+          "title": "Irises",
+          "description": "The yellow irises allude to Iris, messenger of the gods, linking the divine and human worlds."
+        },
+        "waterFeet": {
+          "title": "The Water at the Feet",
+          "description": "One foot in water and the other on land show the balance between the two worlds."
+        }
       }
     },
     "theFool": {
@@ -401,164 +452,558 @@
     "seeLess": "閉じる"
   },
   "kether": {
-    "world": { "title": "アツィルト", "aspect": "遍在" },
-    "regent": { "title": "セラフィム", "name": "メタトロン", "defect": " " },
-    "sephirot": { "name": "ケテル", "valor": "王冠" },
-    "archetypes": ["父なる神", "ブラフマー", "日の老いたる者", "エイン・ソフ"],
-    "minorArcana": ["ワンドのエース（火の根源）", "カップのエース（水の根源）", "ソードのエース（風の根源）", "ペンタクルのエース（地の根源）"],
+    "world": {
+      "title": "アツィルト",
+      "aspect": "遍在"
+    },
+    "regent": {
+      "title": "セラフィム",
+      "name": "メタトロン",
+      "defect": " "
+    },
+    "sephirot": {
+      "name": "ケテル",
+      "valor": "王冠"
+    },
+    "archetypes": [
+      "父なる神",
+      "ブラフマー",
+      "日の老いたる者",
+      "エイン・ソフ"
+    ],
+    "minorArcana": [
+      "ワンドのエース（火の根源）",
+      "カップのエース（水の根源）",
+      "ソードのエース（風の根源）",
+      "ペンタクルのエース（地の根源）"
+    ],
     "planetName": "海王星",
     "correspondences": {
-      "animals": ["白鳥", "鳩", "鷹"],
-      "stones": ["ダイヤモンド", "水晶"],
-      "bodyParts": ["頭蓋骨", "頭頂", "松果体"]
+      "animals": [
+        "白鳥",
+        "鳩",
+        "鷹"
+      ],
+      "stones": [
+        "ダイヤモンド",
+        "水晶"
+      ],
+      "bodyParts": [
+        "頭蓋骨",
+        "頭頂",
+        "松果体"
+      ]
     }
   },
   "chokmah": {
-    "world": { "title": "アツィルト", "aspect": "全能" },
-    "regent": { "title": "ケルビム", "name": "ラジエル", "defect": "暴政" },
-    "sephirot": { "name": "コクマー", "valor": "知恵" },
-    "archetypes": ["ゼウス", "オーディン", "シヴァ", "天の父"],
-    "minorArcana": ["ワンドの2（支配）", "カップの2（愛）", "ソードの2（回復した平和）", "ペンタクルの2（調和的変化）"],
+    "world": {
+      "title": "アツィルト",
+      "aspect": "全能"
+    },
+    "regent": {
+      "title": "ケルビム",
+      "name": "ラジエル",
+      "defect": "暴政"
+    },
+    "sephirot": {
+      "name": "コクマー",
+      "valor": "知恵"
+    },
+    "archetypes": [
+      "ゼウス",
+      "オーディン",
+      "シヴァ",
+      "天の父"
+    ],
+    "minorArcana": [
+      "ワンドの2（支配）",
+      "カップの2（愛）",
+      "ソードの2（回復した平和）",
+      "ペンタクルの2（調和的変化）"
+    ],
     "planetName": "天王星",
     "correspondences": {
-      "animals": ["男根", "オオヤマネコ", "コンドル"],
-      "stones": ["トルコ石", "スタールビー"],
-      "bodyParts": ["顔の左側", "右脳半球"]
+      "animals": [
+        "男根",
+        "オオヤマネコ",
+        "コンドル"
+      ],
+      "stones": [
+        "トルコ石",
+        "スタールビー"
+      ],
+      "bodyParts": [
+        "顔の左側",
+        "右脳半球"
+      ]
     }
   },
   "binah": {
-    "world": { "title": "ブリアー", "aspect": "全知" },
-    "regent": { "title": "トロネス", "name": "ツァフキエル", "defect": "貪欲" },
-    "sephirot": { "name": "ビナー", "valor": "理解" },
-    "archetypes": ["聖母マリア", "イシス", "カーリー", "偉大なる母"],
-    "minorArcana": ["ワンドの3（確立された美徳）", "カップの3（豊穣）", "ソードの3（悲しみ）", "ペンタクルの3（物質的労働）"],
+    "world": {
+      "title": "ブリアー",
+      "aspect": "全知"
+    },
+    "regent": {
+      "title": "トロネス",
+      "name": "ツァフキエル",
+      "defect": "貪欲"
+    },
+    "sephirot": {
+      "name": "ビナー",
+      "valor": "理解"
+    },
+    "archetypes": [
+      "聖母マリア",
+      "イシス",
+      "カーリー",
+      "偉大なる母"
+    ],
+    "minorArcana": [
+      "ワンドの3（確立された美徳）",
+      "カップの3（豊穣）",
+      "ソードの3（悲しみ）",
+      "ペンタクルの3（物質的労働）"
+    ],
     "planetName": "土星",
     "correspondences": {
-      "animals": ["蜜蜂", "女性", "梟"],
-      "stones": ["真珠", "サファイア", "スターオニキス"],
-      "bodyParts": ["顔の右側", "左脳半球", "子宮"]
+      "animals": [
+        "蜜蜂",
+        "女性",
+        "梟"
+      ],
+      "stones": [
+        "真珠",
+        "サファイア",
+        "スターオニキス"
+      ],
+      "bodyParts": [
+        "顔の右側",
+        "左脳半球",
+        "子宮"
+      ]
     }
   },
   "daath": {
-    "regent": { "title": "", "name": "", "defect": "" },
-    "sephirot": { "name": "ダアト", "valor": "知識" },
-    "archetypes": ["深淵", "コロンゾン", "渡り"],
+    "regent": {
+      "title": "",
+      "name": "",
+      "defect": ""
+    },
+    "sephirot": {
+      "name": "ダアト",
+      "valor": "知識"
+    },
+    "archetypes": [
+      "深淵",
+      "コロンゾン",
+      "渡り"
+    ],
     "minorArcana": [],
     "planetName": "冥王星",
     "correspondences": {
-      "animals": ["蛇", "龍", "カメレオン"],
-      "stones": ["モルダバイト", "ラブラドライト", "黒曜石"],
-      "bodyParts": ["喉", "うなじ", "首"]
+      "animals": [
+        "蛇",
+        "龍",
+        "カメレオン"
+      ],
+      "stones": [
+        "モルダバイト",
+        "ラブラドライト",
+        "黒曜石"
+      ],
+      "bodyParts": [
+        "喉",
+        "うなじ",
+        "首"
+      ]
     }
   },
   "chesed": {
-    "regent": { "title": "ドミニオンズ", "name": "ツァドキエル", "defect": "暴政" },
-    "sephirot": { "name": "ケセド", "valor": "慈悲" },
-    "archetypes": ["ユピテル", "ポセイドン", "オシャラ", "ソロモン王"],
-    "minorArcana": ["ワンドの4（完成）", "カップの4（贅沢）", "ソードの4（休息）", "ペンタクルの4（地上の力）"],
+    "regent": {
+      "title": "ドミニオンズ",
+      "name": "ツァドキエル",
+      "defect": "暴政"
+    },
+    "sephirot": {
+      "name": "ケセド",
+      "valor": "慈悲"
+    },
+    "archetypes": [
+      "ユピテル",
+      "ポセイドン",
+      "オシャラ",
+      "ソロモン王"
+    ],
+    "minorArcana": [
+      "ワンドの4（完成）",
+      "カップの4（贅沢）",
+      "ソードの4（休息）",
+      "ペンタクルの4（地上の力）"
+    ],
     "planetName": "木星",
     "correspondences": {
-      "animals": ["ユニコーン", "馬", "鷲"],
-      "stones": ["サファイア", "アメジスト", "ラピスラズリ"],
-      "bodyParts": ["左腕", "左肩"]
+      "animals": [
+        "ユニコーン",
+        "馬",
+        "鷲"
+      ],
+      "stones": [
+        "サファイア",
+        "アメジスト",
+        "ラピスラズリ"
+      ],
+      "bodyParts": [
+        "左腕",
+        "左肩"
+      ]
     }
   },
   "gevurah": {
-    "regent": { "title": "パワーズ", "name": "カマエル", "defect": "残忍" },
-    "sephirot": { "name": "ゲブラー", "valor": "力" },
-    "archetypes": ["アレス", "トール", "オグン", "ドゥルガー"],
-    "minorArcana": ["ワンドの5（闘争）", "カップの5（快楽の喪失）", "ソードの5（敗北）", "ペンタクルの5（物質的困難）"],
+    "regent": {
+      "title": "パワーズ",
+      "name": "カマエル",
+      "defect": "残忍"
+    },
+    "sephirot": {
+      "name": "ゲブラー",
+      "valor": "力"
+    },
+    "archetypes": [
+      "アレス",
+      "トール",
+      "オグン",
+      "ドゥルガー"
+    ],
+    "minorArcana": [
+      "ワンドの5（闘争）",
+      "カップの5（快楽の喪失）",
+      "ソードの5（敗北）",
+      "ペンタクルの5（物質的困難）"
+    ],
     "planetName": "火星",
     "correspondences": {
-      "animals": ["バジリスク", "狼", "軍馬", "蠍"],
-      "stones": ["ルビー", "ガーネット", "ブラッドストーン"],
-      "bodyParts": ["右腕", "右肩"]
+      "animals": [
+        "バジリスク",
+        "狼",
+        "軍馬",
+        "蠍"
+      ],
+      "stones": [
+        "ルビー",
+        "ガーネット",
+        "ブラッドストーン"
+      ],
+      "bodyParts": [
+        "右腕",
+        "右肩"
+      ]
     }
   },
   "tiferet": {
-    "regent": { "title": "ヴァーチューズ", "name": "ラファエル", "defect": "傲慢" },
-    "sephirot": { "name": "ティフェレト", "valor": "美" },
-    "archetypes": ["イエス・キリスト", "ネオ（マトリックス）", "オシリス", "オシャラ", "仏陀", "クリシュナ"],
-    "minorArcana": ["ワンドの6（勝利）", "カップの6（喜び）", "ソードの6（科学）", "ペンタクルの6（物質的成功）"],
+    "regent": {
+      "title": "ヴァーチューズ",
+      "name": "ラファエル",
+      "defect": "傲慢"
+    },
+    "sephirot": {
+      "name": "ティフェレト",
+      "valor": "美"
+    },
+    "archetypes": [
+      "イエス・キリスト",
+      "ネオ（マトリックス）",
+      "オシリス",
+      "オシャラ",
+      "仏陀",
+      "クリシュナ"
+    ],
+    "minorArcana": [
+      "ワンドの6（勝利）",
+      "カップの6（喜び）",
+      "ソードの6（科学）",
+      "ペンタクルの6（物質的成功）"
+    ],
     "planetName": "太陽",
     "correspondences": {
-      "animals": ["獅子", "不死鳥", "蜘蛛", "ペリカン"],
-      "stones": ["トパーズ", "イエローダイヤモンド", "タイガーアイ"],
-      "bodyParts": ["心臓", "胸", "太陽神経叢"]
+      "animals": [
+        "獅子",
+        "不死鳥",
+        "蜘蛛",
+        "ペリカン"
+      ],
+      "stones": [
+        "トパーズ",
+        "イエローダイヤモンド",
+        "タイガーアイ"
+      ],
+      "bodyParts": [
+        "心臓",
+        "胸",
+        "太陽神経叢"
+      ]
     }
   },
   "netzach": {
-    "regent": { "title": "プリンシパリティーズ", "name": "ハニエル", "defect": "色欲" },
-    "sephirot": { "name": "ネツァク", "valor": "永遠" },
-    "archetypes": ["アフロディーテ", "オシュン", "フレイヤ", "ラクシュミー"],
-    "minorArcana": ["ワンドの7（勇気）", "カップの7（幻想的成功）", "ソードの7（不安定）", "ペンタクルの7（失敗）"],
+    "regent": {
+      "title": "プリンシパリティーズ",
+      "name": "ハニエル",
+      "defect": "色欲"
+    },
+    "sephirot": {
+      "name": "ネツァク",
+      "valor": "永遠"
+    },
+    "archetypes": [
+      "アフロディーテ",
+      "オシュン",
+      "フレイヤ",
+      "ラクシュミー"
+    ],
+    "minorArcana": [
+      "ワンドの7（勇気）",
+      "カップの7（幻想的成功）",
+      "ソードの7（不安定）",
+      "ペンタクルの7（失敗）"
+    ],
     "planetName": "金星",
     "correspondences": {
-      "animals": ["鳩", "オオヤマネコ", "雀", "白鳥"],
-      "stones": ["エメラルド", "グリーントルマリン", "ローズクォーツ"],
-      "bodyParts": ["右腰", "右腎臓", "生殖器官"]
+      "animals": [
+        "鳩",
+        "オオヤマネコ",
+        "雀",
+        "白鳥"
+      ],
+      "stones": [
+        "エメラルド",
+        "グリーントルマリン",
+        "ローズクォーツ"
+      ],
+      "bodyParts": [
+        "右腰",
+        "右腎臓",
+        "生殖器官"
+      ]
     }
   },
   "hod": {
-    "regent": { "title": "大天使", "name": "ミカエル", "defect": "嫉妬" },
-    "sephirot": { "name": "ホド", "valor": "栄光" },
-    "archetypes": ["ヘルメス", "トート", "エシュ", "ガネーシャ"],
-    "minorArcana": ["ワンドの8（迅速）", "カップの8（放棄された成功）", "ソードの8（干渉）", "ペンタクルの8（慎重）"],
+    "regent": {
+      "title": "大天使",
+      "name": "ミカエル",
+      "defect": "嫉妬"
+    },
+    "sephirot": {
+      "name": "ホド",
+      "valor": "栄光"
+    },
+    "archetypes": [
+      "ヘルメス",
+      "トート",
+      "エシュ",
+      "ガネーシャ"
+    ],
+    "minorArcana": [
+      "ワンドの8（迅速）",
+      "カップの8（放棄された成功）",
+      "ソードの8（干渉）",
+      "ペンタクルの8（慎重）"
+    ],
     "planetName": "水星",
     "correspondences": {
-      "animals": ["猿", "トキ", "狐", "翼のある蛇"],
-      "stones": ["オパール", "瑪瑙", "ムーンストーン"],
-      "bodyParts": ["左腰", "左腎臓", "脚"]
+      "animals": [
+        "猿",
+        "トキ",
+        "狐",
+        "翼のある蛇"
+      ],
+      "stones": [
+        "オパール",
+        "瑪瑙",
+        "ムーンストーン"
+      ],
+      "bodyParts": [
+        "左腰",
+        "左腎臓",
+        "脚"
+      ]
     }
   },
   "yesod": {
-    "regent": { "title": "天使", "name": "ガブリエル", "defect": "怠惰" },
-    "sephirot": { "name": "イェソド", "valor": "基盤" },
-    "archetypes": ["ディアナ", "イェマンジャー", "セレーネ", "無意識"],
-    "minorArcana": ["ワンドの9（大いなる力）", "カップの9（物質的幸福）", "ソードの9（残酷）", "ペンタクルの9（物質的利益）"],
+    "regent": {
+      "title": "天使",
+      "name": "ガブリエル",
+      "defect": "怠惰"
+    },
+    "sephirot": {
+      "name": "イェソド",
+      "valor": "基盤"
+    },
+    "archetypes": [
+      "ディアナ",
+      "イェマンジャー",
+      "セレーネ",
+      "無意識"
+    ],
+    "minorArcana": [
+      "ワンドの9（大いなる力）",
+      "カップの9（物質的幸福）",
+      "ソードの9（残酷）",
+      "ペンタクルの9（物質的利益）"
+    ],
     "planetName": "月",
     "correspondences": {
-      "animals": ["象", "野兎", "蛙", "イルカ"],
-      "stones": ["水晶", "セレナイト", "ムーンストーン"],
-      "bodyParts": ["性器", "生殖器系", "膀胱"]
+      "animals": [
+        "象",
+        "野兎",
+        "蛙",
+        "イルカ"
+      ],
+      "stones": [
+        "水晶",
+        "セレナイト",
+        "ムーンストーン"
+      ],
+      "bodyParts": [
+        "性器",
+        "生殖器系",
+        "膀胱"
+      ]
     }
   },
   "malkuth": {
-    "world": { "title": "アッシャー", "aspect": "物質世界" },
-    "regent": { "title": "ケルビム", "name": "サンダルフォン", "defect": "" },
-    "sephirot": { "name": "マルクト", "valor": "王国" },
-    "archetypes": ["ガイア", "ペルセポネ", "花嫁", "ナナ"],
-    "minorArcana": ["ワンドの10（抑圧）", "カップの10（満足）", "ソードの10（破滅）", "ペンタクルの10（富）"],
+    "world": {
+      "title": "アッシャー",
+      "aspect": "物質世界"
+    },
+    "regent": {
+      "title": "ケルビム",
+      "name": "サンダルフォン",
+      "defect": ""
+    },
+    "sephirot": {
+      "name": "マルクト",
+      "valor": "王国"
+    },
+    "archetypes": [
+      "ガイア",
+      "ペルセポネ",
+      "花嫁",
+      "ナナ"
+    ],
+    "minorArcana": [
+      "ワンドの10（抑圧）",
+      "カップの10（満足）",
+      "ソードの10（破滅）",
+      "ペンタクルの10（富）"
+    ],
     "planetName": "地球",
     "correspondences": {
-      "animals": ["牛", "スフィンクス", "雌牛", "雄牛"],
-      "stones": ["水晶", "オニキス", "海塩"],
-      "bodyParts": ["足", "肛門", "全身"]
+      "animals": [
+        "牛",
+        "スフィンクス",
+        "雌牛",
+        "雄牛"
+      ],
+      "stones": [
+        "水晶",
+        "オニキス",
+        "海塩"
+      ],
+      "bodyParts": [
+        "足",
+        "肛門",
+        "全身"
+      ]
     }
   },
   "paths": {
-    "11": { "arcane": "0 - 愚者", "meaning": "空気 / 精神" },
-    "12": { "arcane": "I - 魔術師", "meaning": "水星" },
-    "13": { "arcane": "II - 女教皇", "meaning": "月" },
-    "14": { "arcane": "III - 女帝", "meaning": "金星" },
-    "15": { "arcane": "IV - 皇帝", "meaning": "牡羊座" },
-    "16": { "arcane": "V - 法王", "meaning": "牡牛座" },
-    "17": { "arcane": "VI - 恋人", "meaning": "双子座" },
-    "18": { "arcane": "VII - 戦車", "meaning": "蟹座" },
-    "19": { "arcane": "VIII - 力", "meaning": "獅子座" },
-    "20": { "arcane": "IX - 隠者", "meaning": "乙女座" },
-    "21": { "arcane": "X - 運命の輪", "meaning": "木星" },
-    "22": { "arcane": "XI - 正義", "meaning": "天秤座" },
-    "23": { "arcane": "XII - 吊るされた男", "meaning": "水" },
-    "24": { "arcane": "XIII - 死神", "meaning": "蠍座" },
-    "25": { "arcane": "XIV - 節制", "meaning": "射手座" },
-    "26": { "arcane": "XV - 悪魔", "meaning": "山羊座" },
-    "27": { "arcane": "XVI - 塔", "meaning": "火星" },
-    "28": { "arcane": "XVII - 星", "meaning": "水瓶座" },
-    "29": { "arcane": "XVIII - 月", "meaning": "魚座" },
-    "30": { "arcane": "XIX - 太陽", "meaning": "太陽" },
-    "31": { "arcane": "XX - 審判", "meaning": "火" },
-    "32": { "arcane": "XXI - 世界", "meaning": "土星" }
+    "11": {
+      "arcane": "0 - 愚者",
+      "meaning": "空気 / 精神"
+    },
+    "12": {
+      "arcane": "I - 魔術師",
+      "meaning": "水星"
+    },
+    "13": {
+      "arcane": "II - 女教皇",
+      "meaning": "月"
+    },
+    "14": {
+      "arcane": "III - 女帝",
+      "meaning": "金星"
+    },
+    "15": {
+      "arcane": "IV - 皇帝",
+      "meaning": "牡羊座"
+    },
+    "16": {
+      "arcane": "V - 法王",
+      "meaning": "牡牛座"
+    },
+    "17": {
+      "arcane": "VI - 恋人",
+      "meaning": "双子座"
+    },
+    "18": {
+      "arcane": "VII - 戦車",
+      "meaning": "蟹座"
+    },
+    "19": {
+      "arcane": "VIII - 力",
+      "meaning": "獅子座"
+    },
+    "20": {
+      "arcane": "IX - 隠者",
+      "meaning": "乙女座"
+    },
+    "21": {
+      "arcane": "X - 運命の輪",
+      "meaning": "木星"
+    },
+    "22": {
+      "arcane": "XI - 正義",
+      "meaning": "天秤座"
+    },
+    "23": {
+      "arcane": "XII - 吊るされた男",
+      "meaning": "水"
+    },
+    "24": {
+      "arcane": "XIII - 死神",
+      "meaning": "蠍座"
+    },
+    "25": {
+      "arcane": "XIV - 節制",
+      "meaning": "射手座"
+    },
+    "26": {
+      "arcane": "XV - 悪魔",
+      "meaning": "山羊座"
+    },
+    "27": {
+      "arcane": "XVI - 塔",
+      "meaning": "火星"
+    },
+    "28": {
+      "arcane": "XVII - 星",
+      "meaning": "水瓶座"
+    },
+    "29": {
+      "arcane": "XVIII - 月",
+      "meaning": "魚座"
+    },
+    "30": {
+      "arcane": "XIX - 太陽",
+      "meaning": "太陽"
+    },
+    "31": {
+      "arcane": "XX - 審判",
+      "meaning": "火"
+    },
+    "32": {
+      "arcane": "XXI - 世界",
+      "meaning": "土星"
+    }
   },
   "ornaments": {
     "veils": {

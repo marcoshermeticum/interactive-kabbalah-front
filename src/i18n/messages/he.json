@@ -1,5 +1,35 @@
 {
-  "app": { "title": "עץ החיים האינטראקטיבי" },
+  "seo": {
+    "siteName": "Interactive Kabbalah",
+    "titleTemplate": "%s · Interactive Kabbalah",
+    "defaultTitle": "Interactive Kabbalah — קבלה, טארוט ואלכימיה כמפות",
+    "defaultDescription": "עץ החיים, הטארוט של ריידר־וייט וסמלי האלכימיה כמפות שמגיבות למגע. לימוד פתוח, בקצב שלכם, בלי הרשמה.",
+    "keywords": "קבלה, עץ החיים, ספירות, טארוט, ריידר־וייט, אלכימיה, סמלים אלכימיים",
+    "tree": {
+      "title": "עץ החיים האינטראקטיבי",
+      "description": "עשר ספירות, עשרים ושניים שבילים והקליפות במפה אחת. הקישו על כל ספירה כדי לקרוא שמות אלוהיים, התאמות והסבר לכל שביל.",
+      "keywords": "עץ החיים, קבלה, ספירות, קליפות, עשרים ושניים שבילים, התאמות"
+    },
+    "tarot": {
+      "title": "טארוט ריידר־וייט אינטראקטיבי",
+      "description": "עשרים ושתיים הארקנה הגדולות, קלף אחר קלף, עם האיורים של פמלה קולמן סמית וקריאה סמל אחר סמל.",
+      "keywords": "טארוט, ריידר־וייט, ארקנה גדולה, סמלים, פמלה קולמן סמית"
+    },
+    "alchemicalSymbols": {
+      "title": "סמלים אלכימיים",
+      "description": "יסודות, כוכבי לכת ותהליכי העבודה הגדולה בקטלוג חזותי, עם משמעותו של כל סמל ומקומו בעבודה.",
+      "keywords": "אלכימיה, סמלים אלכימיים, העבודה הגדולה, יסודות, כוכבי לכת"
+    },
+    "card": {
+      "description": "ארקנה {roman} בטארוט ריידר־וייט — האיור, הסמלים וההתאמות של {name}.",
+      "keywords": "{name}, טארוט, ריידר־וייט, ארקנה, {number}",
+      "title": "{name} — הארקנה הגדולה {roman}"
+    },
+    "breadcrumbHome": "דף הבית"
+  },
+  "app": {
+    "title": "עץ החיים האינטראקטיבי"
+  },
   "tarot": {
     "backToHome": "← Back to home",
     "hint": "Hover (or tap) the symbols on the card to reveal their meaning. Click to pin.",
@@ -53,13 +83,34 @@
       "name": "Temperance",
       "intro": "The angel of alchemy balances the waters of the soul between two cups, uniting opposites on the middle path. Explore each symbol of the card.",
       "regions": {
-        "crownHalo": { "title": "Solar Crown / Halo", "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence." },
-        "wings": { "title": "Wings", "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth." },
-        "triangleSquare": { "title": "Triangle in the Square", "description": "The triangle inscribed in the square symbolizes spirit manifested and contained within form." },
-        "cupsWater": { "title": "The Cups and the Water", "description": "Water flowing between the two cups represents the alchemical fusion of opposites." },
-        "sunMountain": { "title": "Sun, Mountains and the Path", "description": "The rising sun over the mountains and the winding path point to spiritual realization." },
-        "irises": { "title": "Irises", "description": "The yellow irises allude to Iris, messenger of the gods, linking the divine and human worlds." },
-        "waterFeet": { "title": "The Water at the Feet", "description": "One foot in water and the other on land show the balance between the two worlds." }
+        "crownHalo": {
+          "title": "Solar Crown / Halo",
+          "description": "The solar disc on the brow and the radiant halo mark illumination and the divine presence."
+        },
+        "wings": {
+          "title": "Wings",
+          "description": "The great wings reveal the angelic nature and the ability to move between heaven and earth."
+        },
+        "triangleSquare": {
+          "title": "Triangle in the Square",
+          "description": "The triangle inscribed in the square symbolizes spirit manifested and contained within form."
+        },
+        "cupsWater": {
+          "title": "The Cups and the Water",
+          "description": "Water flowing between the two cups represents the alchemical fusion of opposites."
+        },
+        "sunMountain": {
+          "title": "Sun, Mountains and the Path",
+          "description": "The rising sun over the mountains and the winding path point to spiritual realization."
+        },
+        "irises": {
+          "title": "Irises",
+          "description": "The yellow irises allude to Iris, messenger of the gods, linking the divine and human worlds."
+        },
+        "waterFeet": {
+          "title": "The Water at the Feet",
+          "description": "One foot in water and the other on land show the balance between the two worlds."
+        }
       }
     },
     "theFool": {
@@ -401,164 +452,558 @@
     "seeLess": "ראה פחות"
   },
   "kether": {
-    "world": { "title": "אצילות", "aspect": "נוכחות אינסופית" },
-    "regent": { "title": "שרפים", "name": "מטטרון", "defect": " " },
-    "sephirot": { "name": "כתר", "valor": "כתר" },
-    "archetypes": ["האל האב", "ברהמא", "עתיק יומין", "אין סוף"],
-    "minorArcana": ["אס של שרביטים (שורש האש)", "אס של גביעים (שורש המים)", "אס של חרבות (שורש האוויר)", "אס של מטבעות (שורש הארץ)"],
+    "world": {
+      "title": "אצילות",
+      "aspect": "נוכחות אינסופית"
+    },
+    "regent": {
+      "title": "שרפים",
+      "name": "מטטרון",
+      "defect": " "
+    },
+    "sephirot": {
+      "name": "כתר",
+      "valor": "כתר"
+    },
+    "archetypes": [
+      "האל האב",
+      "ברהמא",
+      "עתיק יומין",
+      "אין סוף"
+    ],
+    "minorArcana": [
+      "אס של שרביטים (שורש האש)",
+      "אס של גביעים (שורש המים)",
+      "אס של חרבות (שורש האוויר)",
+      "אס של מטבעות (שורש הארץ)"
+    ],
     "planetName": "נפטון",
     "correspondences": {
-      "animals": ["ברבור", "יונה", "בז"],
-      "stones": ["יהלום", "גביש סלע"],
-      "bodyParts": ["גולגולת", "קודקוד", "בלוטת האצטרובל"]
+      "animals": [
+        "ברבור",
+        "יונה",
+        "בז"
+      ],
+      "stones": [
+        "יהלום",
+        "גביש סלע"
+      ],
+      "bodyParts": [
+        "גולגולת",
+        "קודקוד",
+        "בלוטת האצטרובל"
+      ]
     }
   },
   "chokmah": {
-    "world": { "title": "אצילות", "aspect": "כל-יכולת" },
-    "regent": { "title": "כרובים", "name": "רזיאל", "defect": "עריצות" },
-    "sephirot": { "name": "חכמה", "valor": "חכמה" },
-    "archetypes": ["זאוס", "אודין", "שיווה", "האב השמימי"],
-    "minorArcana": ["2 של שרביטים (שליטה)", "2 של גביעים (אהבה)", "2 של חרבות (שלום משוחזר)", "2 של מטבעות (שינוי הרמוני)"],
+    "world": {
+      "title": "אצילות",
+      "aspect": "כל-יכולת"
+    },
+    "regent": {
+      "title": "כרובים",
+      "name": "רזיאל",
+      "defect": "עריצות"
+    },
+    "sephirot": {
+      "name": "חכמה",
+      "valor": "חכמה"
+    },
+    "archetypes": [
+      "זאוס",
+      "אודין",
+      "שיווה",
+      "האב השמימי"
+    ],
+    "minorArcana": [
+      "2 של שרביטים (שליטה)",
+      "2 של גביעים (אהבה)",
+      "2 של חרבות (שלום משוחזר)",
+      "2 של מטבעות (שינוי הרמוני)"
+    ],
     "planetName": "אורנוס",
     "correspondences": {
-      "animals": ["פאלוס", "שונר", "קונדור"],
-      "stones": ["טורקיז", "רובי כוכב"],
-      "bodyParts": ["צד שמאל של הפנים", "המיספרה ימנית של המוח"]
+      "animals": [
+        "פאלוס",
+        "שונר",
+        "קונדור"
+      ],
+      "stones": [
+        "טורקיז",
+        "רובי כוכב"
+      ],
+      "bodyParts": [
+        "צד שמאל של הפנים",
+        "המיספרה ימנית של המוח"
+      ]
     }
   },
   "binah": {
-    "world": { "title": "בריאה", "aspect": "כל-ידיעה" },
-    "regent": { "title": "כסאות", "name": "צפקיאל", "defect": "קמצנות" },
-    "sephirot": { "name": "בינה", "valor": "הבנה" },
-    "archetypes": ["מריה הבתולה", "איזיס", "קאלי", "האם הגדולה"],
-    "minorArcana": ["3 של שרביטים (מעלה מבוססת)", "3 של גביעים (שפע)", "3 של חרבות (צער)", "3 של מטבעות (עבודה חומרית)"],
+    "world": {
+      "title": "בריאה",
+      "aspect": "כל-ידיעה"
+    },
+    "regent": {
+      "title": "כסאות",
+      "name": "צפקיאל",
+      "defect": "קמצנות"
+    },
+    "sephirot": {
+      "name": "בינה",
+      "valor": "הבנה"
+    },
+    "archetypes": [
+      "מריה הבתולה",
+      "איזיס",
+      "קאלי",
+      "האם הגדולה"
+    ],
+    "minorArcana": [
+      "3 של שרביטים (מעלה מבוססת)",
+      "3 של גביעים (שפע)",
+      "3 של חרבות (צער)",
+      "3 של מטבעות (עבודה חומרית)"
+    ],
     "planetName": "שבתאי",
     "correspondences": {
-      "animals": ["דבורה", "אישה", "ינשוף"],
-      "stones": ["פנינה", "ספיר", "אוניקס כוכב"],
-      "bodyParts": ["צד ימין של הפנים", "המיספרה שמאלית של המוח", "רחם"]
+      "animals": [
+        "דבורה",
+        "אישה",
+        "ינשוף"
+      ],
+      "stones": [
+        "פנינה",
+        "ספיר",
+        "אוניקס כוכב"
+      ],
+      "bodyParts": [
+        "צד ימין של הפנים",
+        "המיספרה שמאלית של המוח",
+        "רחם"
+      ]
     }
   },
   "daath": {
-    "regent": { "title": "", "name": "", "defect": "" },
-    "sephirot": { "name": "דעת", "valor": "דעת" },
-    "archetypes": ["התהום", "כורונזון", "המעבר"],
+    "regent": {
+      "title": "",
+      "name": "",
+      "defect": ""
+    },
+    "sephirot": {
+      "name": "דעת",
+      "valor": "דעת"
+    },
+    "archetypes": [
+      "התהום",
+      "כורונזון",
+      "המעבר"
+    ],
     "minorArcana": [],
     "planetName": "פלוטו",
     "correspondences": {
-      "animals": ["נחש", "דרקון", "זיקית"],
-      "stones": ["מולדביט", "לברדוריט", "אובסידיאן"],
-      "bodyParts": ["גרון", "עורף", "צוואר"]
+      "animals": [
+        "נחש",
+        "דרקון",
+        "זיקית"
+      ],
+      "stones": [
+        "מולדביט",
+        "לברדוריט",
+        "אובסידיאן"
+      ],
+      "bodyParts": [
+        "גרון",
+        "עורף",
+        "צוואר"
+      ]
     }
   },
   "chesed": {
-    "regent": { "title": "שלטונות", "name": "צדקיאל", "defect": "עריצות" },
-    "sephirot": { "name": "חסד", "valor": "חסד" },
-    "archetypes": ["יופיטר", "פוסיידון", "אושלה", "שלמה המלך"],
-    "minorArcana": ["4 של שרביטים (השלמה)", "4 של גביעים (מותרות)", "4 של חרבות (מנוחה)", "4 של מטבעות (כוח ארצי)"],
+    "regent": {
+      "title": "שלטונות",
+      "name": "צדקיאל",
+      "defect": "עריצות"
+    },
+    "sephirot": {
+      "name": "חסד",
+      "valor": "חסד"
+    },
+    "archetypes": [
+      "יופיטר",
+      "פוסיידון",
+      "אושלה",
+      "שלמה המלך"
+    ],
+    "minorArcana": [
+      "4 של שרביטים (השלמה)",
+      "4 של גביעים (מותרות)",
+      "4 של חרבות (מנוחה)",
+      "4 של מטבעות (כוח ארצי)"
+    ],
     "planetName": "צדק",
     "correspondences": {
-      "animals": ["חד-קרן", "סוס", "נשר"],
-      "stones": ["ספיר", "אמטיסט", "לאפיס לזולי"],
-      "bodyParts": ["זרוע שמאל", "כתף שמאל"]
+      "animals": [
+        "חד-קרן",
+        "סוס",
+        "נשר"
+      ],
+      "stones": [
+        "ספיר",
+        "אמטיסט",
+        "לאפיס לזולי"
+      ],
+      "bodyParts": [
+        "זרוע שמאל",
+        "כתף שמאל"
+      ]
     }
   },
   "gevurah": {
-    "regent": { "title": "גבורות", "name": "כמאל", "defect": "אכזריות" },
-    "sephirot": { "name": "גבורה", "valor": "גבורה" },
-    "archetypes": ["ארס", "ת׳ור", "אוגון", "דורגה"],
-    "minorArcana": ["5 של שרביטים (מאבק)", "5 של גביעים (אובדן בהנאה)", "5 של חרבות (תבוסה)", "5 של מטבעות (דאגה חומרית)"],
+    "regent": {
+      "title": "גבורות",
+      "name": "כמאל",
+      "defect": "אכזריות"
+    },
+    "sephirot": {
+      "name": "גבורה",
+      "valor": "גבורה"
+    },
+    "archetypes": [
+      "ארס",
+      "ת׳ור",
+      "אוגון",
+      "דורגה"
+    ],
+    "minorArcana": [
+      "5 של שרביטים (מאבק)",
+      "5 של גביעים (אובדן בהנאה)",
+      "5 של חרבות (תבוסה)",
+      "5 של מטבעות (דאגה חומרית)"
+    ],
     "planetName": "מאדים",
     "correspondences": {
-      "animals": ["בזיליסק", "זאב", "סוס מלחמה", "עקרב"],
-      "stones": ["רובי", "גרנט", "אבן דם"],
-      "bodyParts": ["זרוע ימין", "כתף ימין"]
+      "animals": [
+        "בזיליסק",
+        "זאב",
+        "סוס מלחמה",
+        "עקרב"
+      ],
+      "stones": [
+        "רובי",
+        "גרנט",
+        "אבן דם"
+      ],
+      "bodyParts": [
+        "זרוע ימין",
+        "כתף ימין"
+      ]
     }
   },
   "tiferet": {
-    "regent": { "title": "מעלות", "name": "רפאל", "defect": "גאווה" },
-    "sephirot": { "name": "תפארת", "valor": "תפארת" },
-    "archetypes": ["ישוע המשיח", "ניאו (מטריקס)", "אוזיריס", "אושלה", "בודהא", "קרישנה"],
-    "minorArcana": ["6 של שרביטים (ניצחון)", "6 של גביעים (שמחה)", "6 של חרבות (מדע)", "6 של מטבעות (הצלחה חומרית)"],
+    "regent": {
+      "title": "מעלות",
+      "name": "רפאל",
+      "defect": "גאווה"
+    },
+    "sephirot": {
+      "name": "תפארת",
+      "valor": "תפארת"
+    },
+    "archetypes": [
+      "ישוע המשיח",
+      "ניאו (מטריקס)",
+      "אוזיריס",
+      "אושלה",
+      "בודהא",
+      "קרישנה"
+    ],
+    "minorArcana": [
+      "6 של שרביטים (ניצחון)",
+      "6 של גביעים (שמחה)",
+      "6 של חרבות (מדע)",
+      "6 של מטבעות (הצלחה חומרית)"
+    ],
     "planetName": "שמש",
     "correspondences": {
-      "animals": ["אריה", "עוף החול", "עכביש", "שקנאי"],
-      "stones": ["טופז", "יהלום צהוב", "עין הנמר"],
-      "bodyParts": ["לב", "חזה", "מקלעת השמש"]
+      "animals": [
+        "אריה",
+        "עוף החול",
+        "עכביש",
+        "שקנאי"
+      ],
+      "stones": [
+        "טופז",
+        "יהלום צהוב",
+        "עין הנמר"
+      ],
+      "bodyParts": [
+        "לב",
+        "חזה",
+        "מקלעת השמש"
+      ]
     }
   },
   "netzach": {
-    "regent": { "title": "נסיכויות", "name": "הניאל", "defect": "תאווה" },
-    "sephirot": { "name": "נצח", "valor": "נצח" },
-    "archetypes": ["אפרודיטה", "אושון", "פרייה", "לקשמי"],
-    "minorArcana": ["7 של שרביטים (אומץ)", "7 של גביעים (הצלחה מדומה)", "7 של חרבות (חוסר יציבות)", "7 של מטבעות (כישלון)"],
+    "regent": {
+      "title": "נסיכויות",
+      "name": "הניאל",
+      "defect": "תאווה"
+    },
+    "sephirot": {
+      "name": "נצח",
+      "valor": "נצח"
+    },
+    "archetypes": [
+      "אפרודיטה",
+      "אושון",
+      "פרייה",
+      "לקשמי"
+    ],
+    "minorArcana": [
+      "7 של שרביטים (אומץ)",
+      "7 של גביעים (הצלחה מדומה)",
+      "7 של חרבות (חוסר יציבות)",
+      "7 של מטבעות (כישלון)"
+    ],
     "planetName": "נוגה",
     "correspondences": {
-      "animals": ["יונה", "שונר", "דרור", "ברבור"],
-      "stones": ["אזמרגד", "טורמלין ירוק", "קוורץ ורוד"],
-      "bodyParts": ["ירך ימין", "כליה ימנית", "איברי הרבייה"]
+      "animals": [
+        "יונה",
+        "שונר",
+        "דרור",
+        "ברבור"
+      ],
+      "stones": [
+        "אזמרגד",
+        "טורמלין ירוק",
+        "קוורץ ורוד"
+      ],
+      "bodyParts": [
+        "ירך ימין",
+        "כליה ימנית",
+        "איברי הרבייה"
+      ]
     }
   },
   "hod": {
-    "regent": { "title": "מלאכים ראשיים", "name": "מיכאל", "defect": "קנאה" },
-    "sephirot": { "name": "הוד", "valor": "הוד" },
-    "archetypes": ["הרמס", "תות", "אשו", "גנשה"],
-    "minorArcana": ["8 של שרביטים (מהירות)", "8 של גביעים (הצלחה נטושה)", "8 של חרבות (הפרעה)", "8 של מטבעות (זהירות)"],
+    "regent": {
+      "title": "מלאכים ראשיים",
+      "name": "מיכאל",
+      "defect": "קנאה"
+    },
+    "sephirot": {
+      "name": "הוד",
+      "valor": "הוד"
+    },
+    "archetypes": [
+      "הרמס",
+      "תות",
+      "אשו",
+      "גנשה"
+    ],
+    "minorArcana": [
+      "8 של שרביטים (מהירות)",
+      "8 של גביעים (הצלחה נטושה)",
+      "8 של חרבות (הפרעה)",
+      "8 של מטבעות (זהירות)"
+    ],
     "planetName": "כוכב חמה",
     "correspondences": {
-      "animals": ["קוף", "איביס", "שועל", "נחש מכונף"],
-      "stones": ["אופל", "אגת", "אבן ירח"],
-      "bodyParts": ["ירך שמאל", "כליה שמאלית", "רגליים"]
+      "animals": [
+        "קוף",
+        "איביס",
+        "שועל",
+        "נחש מכונף"
+      ],
+      "stones": [
+        "אופל",
+        "אגת",
+        "אבן ירח"
+      ],
+      "bodyParts": [
+        "ירך שמאל",
+        "כליה שמאלית",
+        "רגליים"
+      ]
     }
   },
   "yesod": {
-    "regent": { "title": "מלאכים", "name": "גבריאל", "defect": "עצלנות" },
-    "sephirot": { "name": "יסוד", "valor": "יסוד" },
-    "archetypes": ["דיאנה", "ימנג׳ה", "סלנה", "הלא-מודע"],
-    "minorArcana": ["9 של שרביטים (כוח גדול)", "9 של גביעים (אושר חומרי)", "9 של חרבות (אכזריות)", "9 של מטבעות (רווח חומרי)"],
+    "regent": {
+      "title": "מלאכים",
+      "name": "גבריאל",
+      "defect": "עצלנות"
+    },
+    "sephirot": {
+      "name": "יסוד",
+      "valor": "יסוד"
+    },
+    "archetypes": [
+      "דיאנה",
+      "ימנג׳ה",
+      "סלנה",
+      "הלא-מודע"
+    ],
+    "minorArcana": [
+      "9 של שרביטים (כוח גדול)",
+      "9 של גביעים (אושר חומרי)",
+      "9 של חרבות (אכזריות)",
+      "9 של מטבעות (רווח חומרי)"
+    ],
     "planetName": "ירח",
     "correspondences": {
-      "animals": ["פיל", "ארנבת", "צפרדע", "דולפין"],
-      "stones": ["קוורץ", "סלניט", "אבן ירח"],
-      "bodyParts": ["איברי מין", "מערכת הרבייה", "שלפוחית השתן"]
+      "animals": [
+        "פיל",
+        "ארנבת",
+        "צפרדע",
+        "דולפין"
+      ],
+      "stones": [
+        "קוורץ",
+        "סלניט",
+        "אבן ירח"
+      ],
+      "bodyParts": [
+        "איברי מין",
+        "מערכת הרבייה",
+        "שלפוחית השתן"
+      ]
     }
   },
   "malkuth": {
-    "world": { "title": "עשייה", "aspect": "העולם הגשמי" },
-    "regent": { "title": "כרובים", "name": "סנדלפון", "defect": "" },
-    "sephirot": { "name": "מלכות", "valor": "מלכות" },
-    "archetypes": ["גאיה", "פרספונה", "הכלה", "ננא"],
-    "minorArcana": ["10 של שרביטים (דיכוי)", "10 של גביעים (שובע)", "10 של חרבות (חורבן)", "10 של מטבעות (עושר)"],
+    "world": {
+      "title": "עשייה",
+      "aspect": "העולם הגשמי"
+    },
+    "regent": {
+      "title": "כרובים",
+      "name": "סנדלפון",
+      "defect": ""
+    },
+    "sephirot": {
+      "name": "מלכות",
+      "valor": "מלכות"
+    },
+    "archetypes": [
+      "גאיה",
+      "פרספונה",
+      "הכלה",
+      "ננא"
+    ],
+    "minorArcana": [
+      "10 של שרביטים (דיכוי)",
+      "10 של גביעים (שובע)",
+      "10 של חרבות (חורבן)",
+      "10 של מטבעות (עושר)"
+    ],
     "planetName": "כדור הארץ",
     "correspondences": {
-      "animals": ["שור", "ספינקס", "פרה", "שור זכר"],
-      "stones": ["גביש סלע", "אוניקס", "מלח ים"],
-      "bodyParts": ["כפות רגליים", "פי הטבעת", "הגוף כולו"]
+      "animals": [
+        "שור",
+        "ספינקס",
+        "פרה",
+        "שור זכר"
+      ],
+      "stones": [
+        "גביש סלע",
+        "אוניקס",
+        "מלח ים"
+      ],
+      "bodyParts": [
+        "כפות רגליים",
+        "פי הטבעת",
+        "הגוף כולו"
+      ]
     }
   },
   "paths": {
-    "11": { "arcane": "0 - השוטה", "meaning": "אוויר / רוח" },
-    "12": { "arcane": "I - הקוסם", "meaning": "כוכב חמה" },
-    "13": { "arcane": "II - הכוהנת הגדולה", "meaning": "ירח" },
-    "14": { "arcane": "III - הקיסרית", "meaning": "נוגה" },
-    "15": { "arcane": "IV - הקיסר", "meaning": "טלה" },
-    "16": { "arcane": "V - ההיירופנט", "meaning": "שור" },
-    "17": { "arcane": "VI - האוהבים", "meaning": "תאומים" },
-    "18": { "arcane": "VII - המרכבה", "meaning": "סרטן" },
-    "19": { "arcane": "VIII - הכוח", "meaning": "אריה" },
-    "20": { "arcane": "IX - הנזיר", "meaning": "בתולה" },
-    "21": { "arcane": "X - גלגל המזל", "meaning": "צדק" },
-    "22": { "arcane": "XI - הצדק", "meaning": "מאזניים" },
-    "23": { "arcane": "XII - התלוי", "meaning": "מים" },
-    "24": { "arcane": "XIII - המוות", "meaning": "עקרב" },
-    "25": { "arcane": "XIV - המתינות", "meaning": "קשת" },
-    "26": { "arcane": "XV - השטן", "meaning": "גדי" },
-    "27": { "arcane": "XVI - המגדל", "meaning": "מאדים" },
-    "28": { "arcane": "XVII - הכוכב", "meaning": "דלי" },
-    "29": { "arcane": "XVIII - הירח", "meaning": "דגים" },
-    "30": { "arcane": "XIX - השמש", "meaning": "שמש" },
-    "31": { "arcane": "XX - המשפט", "meaning": "אש" },
-    "32": { "arcane": "XXI - העולם", "meaning": "שבתאי" }
+    "11": {
+      "arcane": "0 - השוטה",
+      "meaning": "אוויר / רוח"
+    },
+    "12": {
+      "arcane": "I - הקוסם",
+      "meaning": "כוכב חמה"
+    },
+    "13": {
+      "arcane": "II - הכוהנת הגדולה",
+      "meaning": "ירח"
+    },
+    "14": {
+      "arcane": "III - הקיסרית",
+      "meaning": "נוגה"
+    },
+    "15": {
+      "arcane": "IV - הקיסר",
+      "meaning": "טלה"
+    },
+    "16": {
+      "arcane": "V - ההיירופנט",
+      "meaning": "שור"
+    },
+    "17": {
+      "arcane": "VI - האוהבים",
+      "meaning": "תאומים"
+    },
+    "18": {
+      "arcane": "VII - המרכבה",
+      "meaning": "סרטן"
+    },
+    "19": {
+      "arcane": "VIII - הכוח",
+      "meaning": "אריה"
+    },
+    "20": {
+      "arcane": "IX - הנזיר",
+      "meaning": "בתולה"
+    },
+    "21": {
+      "arcane": "X - גלגל המזל",
+      "meaning": "צדק"
+    },
+    "22": {
+      "arcane": "XI - הצדק",
+      "meaning": "מאזניים"
+    },
+    "23": {
+      "arcane": "XII - התלוי",
+      "meaning": "מים"
+    },
+    "24": {
+      "arcane": "XIII - המוות",
+      "meaning": "עקרב"
+    },
+    "25": {
+      "arcane": "XIV - המתינות",
+      "meaning": "קשת"
+    },
+    "26": {
+      "arcane": "XV - השטן",
+      "meaning": "גדי"
+    },
+    "27": {
+      "arcane": "XVI - המגדל",
+      "meaning": "מאדים"
+    },
+    "28": {
+      "arcane": "XVII - הכוכב",
+      "meaning": "דלי"
+    },
+    "29": {
+      "arcane": "XVIII - הירח",
+      "meaning": "דגים"
+    },
+    "30": {
+      "arcane": "XIX - השמש",
+      "meaning": "שמש"
+    },
+    "31": {
+      "arcane": "XX - המשפט",
+      "meaning": "אש"
+    },
+    "32": {
+      "arcane": "XXI - העולם",
+      "meaning": "שבתאי"
+    }
   },
   "ornaments": {
     "veils": {
