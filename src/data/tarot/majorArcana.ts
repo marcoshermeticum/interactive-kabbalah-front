@@ -10,6 +10,7 @@ import { theChariot } from './the-chariot';
 import { strength } from './strength';
 import { theHermit } from './the-hermit';
 import { theLovers } from './the-lovers';
+import { wheelOfFortune } from './wheel-of-fortune';
 
 /**
  * Catalog of the 22 Rider-Waite major arcana, in RWS order.
@@ -101,6 +102,7 @@ const cardData: Record<string, TarotCard> = {
   'strength': strength,
   'the-hermit': theHermit,
   'the-lovers': theLovers,
+  'wheel-of-fortune': wheelOfFortune,
 };
 
 export function getMajorArcana(slug: string): MajorArcanaEntry | undefined {

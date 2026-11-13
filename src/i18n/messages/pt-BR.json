@@ -394,6 +394,48 @@
           "description": "O pico distante entre os dois: a união como escalada — o objetivo sublime que se alcança a dois, nunca sozinho."
         }
       }
+    },
+    "wheelOfFortune": {
+      "name": "A Roda da Fortuna",
+      "intro": "O eixo imóvel do eterno retorno: sobe Anúbis, desce Tífon — e a Esfinge espera no topo com a resposta.",
+      "regions": {
+        "angel": {
+          "title": "O Anjo — Mateus",
+          "description": "No canto superior esquerdo, o anjo lê o seu livro: o Homem de Aquário, o ar fixo da inteligência. Em Mateus, a genealogia que une céu e terra — a consciência que contempla o giro e reconhece nele a mão divina."
+        },
+        "eagle": {
+          "title": "A Águia — João",
+          "description": "No alto à direita, a águia pousa sobre o livro: o Escorpião, água fixa, o olho que vê o invisível. Em João, o Verbo que era no princípio — a visão que atravessa a morte e sobe acima do próprio girar."
+        },
+        "bull": {
+          "title": "O Touro — Lucas",
+          "description": "Embaixo à esquerda, o touro repousa com o livro aberto: o Touro, terra fixa, a força mansa que sustenta. Em Lucas, o sacrifício e o trabalho — a matéria fértil onde a roda encontra o chão para girar."
+        },
+        "lion": {
+          "title": "O Leão — Marcos",
+          "description": "Embaixo à direita, o leão guarda o livro: o Leão, fogo fixo, o coração que ruge. Em Marcos, a coragem e o Reino — o fogo que impulsiona o giro e não se deixa apagar."
+        },
+        "wheelLetters": {
+          "title": "As Letras da Roda",
+          "description": "TARO (ou ROTA, TORAT) entremeada às letras hebraicas Yod-Heh-Vav-Heh: a Lei que gira — o Nome divino que vira mundo, o mundo que, girado, vira Nome outra vez."
+        },
+        "alchemicalRim": {
+          "title": "O Aro Alquímico",
+          "description": "Enxofre, mercúrio, água e sal nos quadrantes externos: a roda é o próprio ateliê da Grande Obra — transmutação contínua."
+        },
+        "sphinx": {
+          "title": "A Esfinge no Topo",
+          "description": "Imóvel no ponto mais alto, com a espada erguida: o enigma e o equilíbrio — a única criatura que não sobe nem desce, porque já é o eixo."
+        },
+        "anubis": {
+          "title": "Anúbis Ascendente",
+          "description": "O psicopompo egípcio sobe com a roda: a evolução — a alma que sobe de giro em giro, guiada pelo que soube honrar."
+        },
+        "serpentTyphon": {
+          "title": "A Serpente Tífon",
+          "description": "Desce em espiral: a involução, o arrasto da matéria — toda subida tem seu contrapeso descendo."
+        }
+      }
     }
   },
   "tarotWaite": {

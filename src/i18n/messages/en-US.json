@@ -394,6 +394,48 @@
           "description": "The distant peak between the two: union as ascent — the sublime goal reached by two, never alone."
         }
       }
+    },
+    "wheelOfFortune": {
+      "name": "Wheel of Fortune",
+      "intro": "The still axis of eternal return: Anubis rises, Typhon descends — and the Sphinx waits at the top with the answer.",
+      "regions": {
+        "angel": {
+          "title": "The Angel — Matthew",
+          "description": "In the upper left corner, the angel reads its book: the Man of Aquarius, the fixed air of intelligence. In Matthew, the genealogy that joins heaven and earth — the consciousness that contemplates the turning and recognizes the divine hand within it."
+        },
+        "eagle": {
+          "title": "The Eagle — John",
+          "description": "At the upper right, the eagle perches on the book: Scorpio, fixed water, the eye that sees the invisible. In John, the Word that was in the beginning — the vision that passes through death and rises above the turning itself."
+        },
+        "bull": {
+          "title": "The Ox — Luke",
+          "description": "At the lower left, the ox rests with its book open: Taurus, fixed earth, the gentle strength that sustains. In Luke, sacrifice and labor — the fertile matter where the wheel finds ground to turn."
+        },
+        "lion": {
+          "title": "The Lion — Mark",
+          "description": "At the lower right, the lion guards the book: Leo, fixed fire, the heart that roars. In Mark, courage and the Kingdom — the fire that drives the turning and refuses to be extinguished."
+        },
+        "wheelLetters": {
+          "title": "The Letters of the Wheel",
+          "description": "TARO (or ROTA, TORAT) interwoven with the Hebrew letters Yod-Heh-Vav-Heh: the Law that turns — the divine Name that becomes world, the world that, turned, becomes Name again."
+        },
+        "alchemicalRim": {
+          "title": "The Alchemical Rim",
+          "description": "Sulfur, mercury, water and salt in the outer quadrants: the wheel is the workshop of the Great Work itself — continuous transmutation."
+        },
+        "sphinx": {
+          "title": "The Sphinx at the Top",
+          "description": "Motionless at the highest point, sword raised: the riddle and the balance — the only creature that neither rises nor falls, because it is already the axis."
+        },
+        "anubis": {
+          "title": "Anubis Ascending",
+          "description": "The Egyptian psychopomp climbs with the wheel: evolution — the soul rising turn by turn, guided by what it learned to honor."
+        },
+        "serpentTyphon": {
+          "title": "The Serpent Typhon",
+          "description": "Descending in a spiral: involution, the drag of matter — every ascent has its counterweight going down."
+        }
+      }
     }
   },
   "tarotWaite": {
