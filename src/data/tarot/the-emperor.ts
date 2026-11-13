@@ -36,7 +36,7 @@ export const theEmperor: TarotCard = {
     {
       id: 'armor',
       icon: '🛡️',
-      shape: { type: 'triangle', x: 37.9, y: 60.7, width: 26.5, height: 24.9 },
+      shape: { type: 'triangle', x: 40.2, y: 106.5, width: 26.5, height: 24.9 },
       i18nKey: 'theEmperor.regions.armor',
     },
     {
