@@ -364,6 +364,36 @@
           "description": "A barba branca e o olhar baixo: a idade que não pesa — tempo destilado em compreensão, o silêncio como língua materna."
         }
       }
+    },
+    "theLovers": {
+      "name": "Os Enamorados",
+      "intro": "Sob a bênção de Rafael, a alma escolhe: a árvore em chamas e a árvore da serpente, o homem e a mulher, o desejo e a consciência.",
+      "regions": {
+        "angel": {
+          "title": "O Anjo Rafael",
+          "description": "De asas abertas, Rafael — \"Deus cura\" — preside a união: o amor como força regeneradora e escolha consciente, não anseio cego."
+        },
+        "sun": {
+          "title": "O Sol",
+          "description": "O disco dourado atrás do anjo: a verdade que ilumina toda união autêntica — nada a esconder sob a luz plena."
+        },
+        "flamingTree": {
+          "title": "A Árvore em Chamas",
+          "description": "Atrás do homem, a árvore flamejante é o zelo da vontade: o fogo yang, a paixão que ilumina e devora."
+        },
+        "serpentTree": {
+          "title": "A Árvore da Serpente",
+          "description": "Atrás da mulher, a árvore do conhecimento com a serpente enroscada: a sabedoria recebida, o magnetismo yin — o desejo que seduz à experiência."
+        },
+        "couple": {
+          "title": "O Homem e a Mulher",
+          "description": "Ele olha para ela; ela, para o anjo: consciência voltada ao inconsciente, inconsciente voltado ao espírito — o triângulo de toda relação transformadora."
+        },
+        "mountain": {
+          "title": "A Montanha",
+          "description": "O pico distante entre os dois: a união como escalada — o objetivo sublime que se alcança a dois, nunca sozinho."
+        }
+      }
     }
   },
   "tarotWaite": {

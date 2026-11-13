@@ -364,6 +364,36 @@
           "description": "The white beard and the lowered gaze: an age that does not weigh — time distilled into understanding, silence as his mother tongue."
         }
       }
+    },
+    "theLovers": {
+      "name": "The Lovers",
+      "intro": "Under Raphael's blessing, the soul chooses: the flaming tree and the serpent's tree, the man and the woman, desire and consciousness.",
+      "regions": {
+        "angel": {
+          "title": "The Angel Raphael",
+          "description": "With wings spread, Raphael — \"God heals\" — presides over the union: love as a regenerative force and a conscious choice, not blind yearning."
+        },
+        "sun": {
+          "title": "The Sun",
+          "description": "The golden disc behind the angel: the truth that illuminates every authentic union — nothing to hide beneath the full light."
+        },
+        "flamingTree": {
+          "title": "The Flaming Tree",
+          "description": "Behind the man, the blazing tree is the zeal of the will: the yang fire, the passion that illuminates and devours."
+        },
+        "serpentTree": {
+          "title": "The Tree of the Serpent",
+          "description": "Behind the woman, the tree of knowledge with the serpent coiled around it: received wisdom, yin magnetism — the desire that seduces into experience."
+        },
+        "couple": {
+          "title": "The Man and the Woman",
+          "description": "He looks at her; she looks at the angel: consciousness turned toward the unconscious, the unconscious turned toward spirit — the triangle of every transforming relationship."
+        },
+        "mountain": {
+          "title": "The Mountain",
+          "description": "The distant peak between the two: union as ascent — the sublime goal reached by two, never alone."
+        }
+      }
     }
   },
   "tarotWaite": {
