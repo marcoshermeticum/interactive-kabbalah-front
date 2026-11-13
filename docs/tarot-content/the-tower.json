@@ -1,0 +1,133 @@
+{
+  "slug": "the-tower",
+  "number": 16,
+  "image": "/tarot/16_Tower.jpg",
+  "regions": [
+    {
+      "id": "tower-crag",
+      "icon": "🗼"
+    },
+    {
+      "id": "lightning",
+      "icon": "⚡"
+    },
+    {
+      "id": "falling-crown",
+      "icon": "👑"
+    },
+    {
+      "id": "falling-figures",
+      "icon": "🙇"
+    },
+    {
+      "id": "flames-yods",
+      "icon": "🔥"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Torre",
+      "intro": "O raio que derruba a coroa falsa: ninguém cai da Torre por acaso — cai de si mesmo.",
+      "regions": {
+        "tower-crag": {
+          "title": "A Torre no Rochedo",
+          "description": "Sobre a rocha nua, sem alicerces visíveis: a estrutura que se julgava eterna — construída sobre o que não se via; cai quando o invisível se move."
+        },
+        "lightning": {
+          "title": "O Raio",
+          "description": "Desce exatamente pela coroa da torre: a intervenção súbita — a verdade que não pede licença e atinge primeiro o que estava mais alto porque estava mais falso."
+        },
+        "falling-crown": {
+          "title": "A Coroa que Cai",
+          "description": "Despregada do alto da torre, ainda em queda: todo poder fundado no erro se decora com o que não pode sustentar — a autoridade desabando junto com a estrutura."
+        },
+        "falling-figures": {
+          "title": "Os Dois que Caem",
+          "description": "De cabeça para baixo, como o Enforcado — mas sem halo e sem escolha: aqui a rendição não foi voluntária; o despertar chegou como terremoto."
+        },
+        "flames-yods": {
+          "title": "Os Yods de Fogo",
+          "description": "22 línguas de fogo em forma da letra hebraica Yod: a semente divina espalhada na ruína — o mesmo fogo que derruba a Torre semeia o alfabeto da reconstrução (22 letras, 22 caminhos)."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Tower",
+      "intro": "The lightning bolt that strikes down the false crown: no one falls from the Tower by chance — each falls from himself.",
+      "regions": {
+        "tower-crag": {
+          "title": "The Tower on the Crag",
+          "description": "Upon the bare rock, with no foundations in sight: the structure believed eternal — built on what was unseen, it falls when the unseen shifts."
+        },
+        "lightning": {
+          "title": "The Lightning",
+          "description": "It descends exactly through the crown of the tower: sudden intervention — truth that asks no leave and strikes first what stood highest, because it rested on the falsest ground."
+        },
+        "falling-crown": {
+          "title": "The Falling Crown",
+          "description": "Torn from the top of the tower, still in its fall: every power founded on error adorns itself with what it cannot sustain — authority collapsing along with the structure."
+        },
+        "falling-figures": {
+          "title": "The Two Who Fall",
+          "description": "Head over heels, like the Hanged Man — but without halo and without choice: here surrender was not voluntary; awakening arrived as an earthquake."
+        },
+        "flames-yods": {
+          "title": "The Yods of Fire",
+          "description": "Twenty-two tongues of fire shaped like the Hebrew letter Yod: the divine seed scattered through the ruin — the same fire that topples the Tower sows the alphabet of rebuilding (22 letters, 22 paths)."
+        }
+      }
+    },
+    "ja": {
+      "name": "塔",
+      "intro": "偽りの王冠を打ち落とす稲妻。塔から落ちる者は偶然ではなく、それぞれが自分自身から落ちるのです。",
+      "regions": {
+        "tower-crag": {
+          "title": "岩の上の塔",
+          "description": "むき出しの岩の上、見える土台もなく建つ塔——永遠と信じられた構造は、見えないものの上に築かれ、それが揺らぐとき崩れ落ちます。"
+        },
+        "lightning": {
+          "title": "稲妻",
+          "description": "塔の王冠を正確に貫いて落ちる雷——突然の介入です。許可を求めない真実は、最も高く立っていたもの、すなわち最も偽りの地にあったものを最初に撃ちます。"
+        },
+        "falling-crown": {
+          "title": "落ちる王冠",
+          "description": "塔の頂から外れ、いまも落ちつづける王冠。誤りに基づく権力は、支えきれないもので身を飾り——権威は構造もろとも崩れ去ります。"
+        },
+        "falling-figures": {
+          "title": "落ちる二人",
+          "description": "逆さになって落ちる姿は「吊るされた男」のようですが、後光も選択もありません。ここでの降伏は自ら選んだものではなく、目覚めは地震として訪れたのです。"
+        },
+        "flames-yods": {
+          "title": "炎のヨッド",
+          "description": "ヘブライ文字ヨッドの形をした二十二の炎——廃墟に散らばる神の種。塔を倒すのと同じ火が、再建のアルファベットを蒔きます（二十二の文字、二十二の道）。"
+        }
+      }
+    },
+    "he": {
+      "name": "המגדל",
+      "intro": "הברק המפיל את הכתר הכוזב: איש אינו נופל מהמגדל במקרה — כל אחד נופל מעצמו.",
+      "regions": {
+        "tower-crag": {
+          "title": "המגדל על הצוק",
+          "description": "על הסלע החשוף, בלי יסודות נראים לעין: המבנה שנחשב לנצחי — בנוי על מה שלא נראה, והוא נופל כשהנעלם זז."
+        },
+        "lightning": {
+          "title": "הברק",
+          "description": "הוא יורד בדיוק דרך כתר המגדל: התערבות פתאומית — האמת שאינה מבקשת רשות ופוגעת קודם במה שעמד גבוה ביותר, מפני שעמד על הקרקע הכוזבת ביותר."
+        },
+        "falling-crown": {
+          "title": "הכתר הנופל",
+          "description": "נתלש מראש המגדל ועודו נופל: כל כוח המבוסס על טעות מתעטר במה שאינו יכול להחזיק — הסמכות קורסת יחד עם המבנה."
+        },
+        "falling-figures": {
+          "title": "שני הנופלים",
+          "description": "הפוכים כלפי מטה, כמו התלוי — אך בלי הילה ובלי בחירה: כאן הכניעה לא הייתה מרצון; ההתעוררות הגיעה כרעידת אדמה."
+        },
+        "flames-yods": {
+          "title": "יודי האש",
+          "description": "עשרים ושתיים לשונות אש בצורת האות יו״ד: הזרע האלוהי המתפזר בחורבות — אותה אש שמפילה את המגדל זורעת את אלפבית הבנייה מחדש (22 אותיות, 22 נתיבות)."
+        }
+      }
+    }
+  }
+}

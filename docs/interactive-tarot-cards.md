@@ -9,8 +9,10 @@ Usamos a carta **A Temperança** como referência de estrutura e **O Mago** como
 exemplo de carta com regiões no formato `shape`, ajustadas pelo **editor visual**
 (passo 4).
 
-> **Atalho:** `npm run tarot:new` gera o esqueleto da carta — dados, traduções
-> nos 4 idiomas e registro no catálogo — a partir de um assistente no terminal.
+> **Atalho:** `npm run tarot:new` abre um menu com as cartas pendentes e gera o
+> esqueleto completo — dados, traduções nos 4 idiomas e registro no catálogo —
+> a partir de `docs/tarot-content/<slug>.json`, sem pedir nenhum texto.
+> `npm run tarot:new -- --card <slug|número>` faz o mesmo direto pelo slug.
 > Veja [new-tarot-card-cli.md](./new-tarot-card-cli.md). Este guia continua sendo
 > a referência manual, e o posicionamento das regiões segue no passo 4.
 

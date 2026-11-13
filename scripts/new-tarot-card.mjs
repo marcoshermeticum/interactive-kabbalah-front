@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import readline from 'node:readline/promises';
@@ -10,6 +10,8 @@ const ROOT = path.resolve(SCRIPT_DIR, '..');
 const TAROT_DIR = path.join(ROOT, 'src/data/tarot');
 const MESSAGES_DIR = path.join(ROOT, 'src/i18n/messages');
 const CATALOG_FILE = path.join(TAROT_DIR, 'majorArcana.ts');
+const DOC_FILE = path.join(ROOT, 'docs/tarot-major-arcana-regions.md');
+const CONTENT_DIR = path.join(ROOT, 'docs/tarot-content');
 const LOCALES = ['pt-BR', 'en-US', 'ja', 'he'];
 const ROMAN = [
   '0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
@@ -35,14 +37,29 @@ async function main() {
   let rawConfig;
   if (args.config) {
     rawConfig = readJson(args.config);
+  } else if (args.card) {
+    rawConfig = configFromCard(args.card);
+  } else if (args.fromDoc) {
+    rawConfig = configFromDocOrContent(args.fromDoc);
   } else {
     if (!process.stdin.isTTY) {
-      throw new Error('O modo interativo precisa de um terminal. Use --config <arquivo> para automação.');
+      throw new Error(
+        'O modo interativo precisa de um terminal. Use --card <slug|número> ou --config <arquivo>.'
+      );
     }
-    rawConfig = await promptConfig();
-    if (!rawConfig) {
-      console.log('Cancelado.');
+    const cards = contentCards();
+    const pending = pendingContentCards();
+    if (!cards.length) {
+      rawConfig = await promptConfig();
+      if (!rawConfig) {
+        console.log('Cancelado.');
+        return;
+      }
+    } else if (!pending.length) {
+      console.log('Nenhuma carta pendente: todas as cartas de docs/tarot-content já estão implementadas.');
       return;
+    } else {
+      rawConfig = configFromContent(await promptContentCard(pending));
     }
   }
 
@@ -53,7 +70,7 @@ async function main() {
 // ─── CLI args ────────────────────────────────────────────────────────────────
 
 function parseArgs(argv) {
-  const args = { help: false, dryRun: false, config: null };
+  const args = { help: false, dryRun: false, config: null, fromDoc: null, card: null };
 
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
@@ -62,6 +79,14 @@ function parseArgs(argv) {
     else if (arg === '--config') {
       args.config = argv[i + 1];
       if (!args.config) throw new Error('--config exige o caminho de um arquivo JSON.');
+      i += 1;
+    } else if (arg === '--card') {
+      args.card = argv[i + 1];
+      if (!args.card) throw new Error('--card exige o slug ou o número da carta.');
+      i += 1;
+    } else if (arg === '--from-doc') {
+      args.fromDoc = argv[i + 1];
+      if (!args.fromDoc) throw new Error('--from-doc exige o slug da carta.');
       i += 1;
     } else {
       throw new Error(`Argumento desconhecido: ${arg}`);
@@ -73,23 +98,38 @@ function parseArgs(argv) {
 
 function printHelp() {
   console.log(`
-Cria o esqueleto de uma carta de Tarot interativa.
+Cria o esqueleto de uma carta de Tarot interativa a partir de docs/tarot-content.
 
 Uso:
-  npm run tarot:new
+  npm run tarot:new                    # menu das cartas pendentes
+  npm run tarot:new -- --card the-star # cria direto pelo slug ou número
+  npm run tarot:new -- --from-doc the-star
   npm run tarot:new -- --config caminho.json
   npm run tarot:new -- --dry-run
 
 Flags:
-  --config <arquivo>  Cria a carta a partir de um JSON, sem prompts.
-  --dry-run, -n       Valida e mostra o que seria criado, sem gravar.
-  --help, -h          Mostra esta ajuda.
+  --card <slug|número>  Cria a carta usando docs/tarot-content/<slug>.json,
+                        sem nenhum prompt de texto.
+  --from-doc <slug>     Usa o conteúdo em docs/tarot-content quando existir;
+                        senão importa do documento de regiões (traduções
+                        viram placeholder em pt-BR).
+  --config <arquivo>    Cria a carta a partir de um JSON no formato completo.
+  --dry-run, -n         Valida e mostra o que seria criado, sem gravar.
+  --help, -h            Mostra esta ajuda.
+
+Conteúdo multilíngue:
+  Os textos (nome, intro e cada região em pt-BR, en-US, ja e he) ficam em
+  docs/tarot-content/<slug>.json. O script não pergunta título nem descrição:
+  ele lê tudo de lá e preenche os 4 arquivos de idioma.
 
 O comando gera:
   • src/data/tarot/<slug>.ts com as regiões em caixas provisórias
   • bloco tarot.<camel> nos 4 arquivos de idioma
   • import e entrada em cardData (majorArcana.ts)
   • entrada no mosaico, se a carta ainda não estiver no catálogo
+
+A rota /[locale]/tarot/<slug> é dinâmica e passa a funcionar sozinha assim que
+o catálogo é atualizado — não há arquivo de rota para criar.
 
 Ele NÃO posiciona as regiões. Depois de criar, abra a single e use
 "🎯 Posicionar destaques" para ajustar e copiar o JSON.
@@ -126,58 +166,88 @@ async function promptConfig() {
 
     const camel = toCamel(slug);
     const names = readLocaleNames(camel);
-    const name = await askDefault(rl, 'Nome em inglês', names['en-US'] || titleCase(slug));
-    const number = await askNumber(rl, 'Número do arcano (0–21)', entry?.number ?? 0);
+    const docEntry = parseDocCard(slug);
+    let imported = null;
 
-    let imageInput;
-    while (true) {
-      imageInput = await askDefault(
-        rl,
-        'Imagem (JPG/PNG)',
-        entry?.image || `/tarot/${slug}.jpg`
+    if (docEntry && docEntry.regions.length) {
+      console.log(
+        `\nDocumento: "${docEntry.ptName || slug}" — ${docEntry.regions.length} regiões em docs/tarot-major-arcana-regions.md.`
       );
+      if (await askYesNo(rl, 'Importar nome, intro, ícones e textos do documento?', true)) {
+        imported = docEntry;
+      }
+    }
+
+    const name =
+      imported?.enName || (await askDefault(rl, 'Nome em inglês', names['en-US'] || titleCase(slug)));
+    const number =
+      imported?.number ?? (await askNumber(rl, 'Número do arcano (0–21)', entry?.number ?? 0));
+
+    const docImage = imported ? findArtworkFor(slug) : null;
+    let imageInput = docImage;
+    while (!imageInput) {
+      const answer = await askDefault(rl, 'Imagem (JPG/PNG)', entry?.image || `/tarot/${slug}.jpg`);
       try {
-        resolveImage(imageInput);
-        break;
+        resolveImage(answer);
+        imageInput = answer;
       } catch (error) {
         console.log(`✖ ${error.message}`);
       }
     }
 
-    console.log('\nRegiões — os textos abaixo são o conteúdo do painel em pt-BR.');
-    const regions = [];
+    let regions;
+    if (imported) {
+      regions = imported.regions;
+      console.log(
+        `\nRegiões importadas (${regions.length}): ${regions.map((region) => region.id).join(', ')}`
+      );
+    } else {
+      console.log(
+        '\nRegiões — os textos abaixo são o conteúdo do painel em pt-BR.\n' +
+          'Título e descrição são obrigatórios; Enter no título descarta a região.'
+      );
+      regions = [];
 
-    while (true) {
-      const suffix = regions.length ? ' (Enter para concluir)' : '';
-      const id = (await rl.question(`Região ${regions.length + 1} — id kebab-case${suffix}: `)).trim();
+      while (true) {
+        const suffix = regions.length ? ' (Enter para concluir)' : '';
+        const id = (await rl.question(`Região ${regions.length + 1} — id kebab-case${suffix}: `)).trim();
 
-      if (!id) {
-        if (!regions.length) {
-          console.log('✖ Informe pelo menos uma região.');
+        if (!id) {
+          if (!regions.length) {
+            console.log('✖ Informe pelo menos uma região.');
+            continue;
+          }
+          break;
+        }
+
+        try {
+          assertRegionIdFormat(id);
+          if (regions.some((region) => region.id === id)) {
+            throw new Error(`Região duplicada: ${id}.`);
+          }
+        } catch (error) {
+          console.log(`✖ ${error.message}`);
           continue;
         }
-        break;
-      }
 
-      try {
-        assertRegionIdFormat(id);
-        if (regions.some((region) => region.id === id)) {
-          throw new Error(`Região duplicada: ${id}.`);
+        const icon = (await rl.question('Ícone (emoji, opcional): ')).trim();
+        const title = (await rl.question('Título (pt-BR): ')).trim();
+        if (!title) {
+          console.log('Região descartada.');
+          continue;
         }
-      } catch (error) {
-        console.log(`✖ ${error.message}`);
-        continue;
-      }
+        const description = (await rl.question('Descrição (pt-BR): ')).trim();
+        if (!description) {
+          console.log('Região descartada (descrição vazia).');
+          continue;
+        }
 
-      const icon = (await rl.question('Ícone (emoji, opcional): ')).trim();
-      const title = await askRequired(rl, 'Título (pt-BR)');
-      const description = await askRequired(rl, 'Descrição (pt-BR)');
+        regions.push({ id, icon: icon || undefined, title, description });
 
-      regions.push({ id, icon: icon || undefined, title, description });
-
-      if (regions.length >= MAX_REGIONS_HARD) {
-        console.log(`Limite de ${MAX_REGIONS_HARD} regiões atingido.`);
-        break;
+        if (regions.length >= MAX_REGIONS_HARD) {
+          console.log(`Limite de ${MAX_REGIONS_HARD} regiões atingido.`);
+          break;
+        }
       }
     }
 
@@ -187,8 +257,11 @@ async function promptConfig() {
       );
     }
 
-    const ptName = await askDefault(rl, 'Nome em pt-BR', names['pt-BR'] || name);
-    const ptIntro = await askRequired(rl, 'Intro em pt-BR');
+    const ptName =
+      imported?.ptName || (await askDefault(rl, 'Nome em pt-BR', names['pt-BR'] || name));
+    const ptIntro =
+      imported?.intro ||
+      (await askDefault(rl, 'Intro em pt-BR', 'Explore cada símbolo da carta.'));
 
     const locales = {
       'pt-BR': {
@@ -209,30 +282,33 @@ async function promptConfig() {
 
     const fillTranslations = await askYesNo(
       rl,
-      'Preencher en-US, ja e he agora? (senão usará pt-BR como placeholder)',
+      'Preencher as traduções agora? (não = pt-BR como placeholder, editável depois)',
       false
     );
 
+    const placeholderLocale = (locale) => ({
+      name: locale === 'en-US' ? name : names[locale] || name,
+      intro: ptIntro,
+      regions: cloneRegions(locales['pt-BR'].regions, false),
+    });
+
     for (const locale of LOCALES.slice(1)) {
-      if (!fillTranslations) {
-        locales[locale] = {
-          name: locale === 'en-US' ? name : names[locale] || name,
-          intro: ptIntro,
-          regions: cloneRegions(locales['pt-BR'].regions, false),
-        };
+      if (!fillTranslations || !(await askYesNo(rl, `Preencher ${locale}?`, true))) {
+        locales[locale] = placeholderLocale(locale);
         continue;
       }
 
       console.log(`\n[${locale}]`);
       const localeName = await askDefault(rl, 'Nome', names[locale] || name);
-      const localeIntro = await askRequired(rl, 'Intro');
+      const localeIntro = await askFallback(rl, 'Intro', ptIntro);
       const localeRegions = {};
 
-      for (const region of regions) {
-        console.log(`— ${region.id}`);
+      for (let index = 0; index < regions.length; index += 1) {
+        const region = regions[index];
+        console.log(`— ${region.id} (${index + 1}/${regions.length})`);
         localeRegions[region.id] = {
-          title: await askRequired(rl, '  Título'),
-          description: await askRequired(rl, '  Descrição'),
+          title: await askFallback(rl, '  Título', region.title),
+          description: await askFallback(rl, '  Descrição', region.description),
         };
       }
 
@@ -243,6 +319,7 @@ async function promptConfig() {
     console.log('\nResumo:');
     console.log(`  ${ptName} (${name}) — ${ROMAN[number]} (${number})`);
     console.log(`  slug: ${slug} · id i18n: ${camel}`);
+    if (imported) console.log('  fonte: docs/tarot-major-arcana-regions.md');
     console.log(`  imagem: ${imageInput}`);
     console.log(`  regiões: ${regions.map((region) => region.id).join(', ')}`);
 
@@ -266,12 +343,10 @@ function askDefault(rl, label, defaultValue) {
   return rl.question(`${label} [${defaultValue}]: `).then((answer) => answer.trim() || defaultValue);
 }
 
-async function askRequired(rl, label) {
-  while (true) {
-    const answer = (await rl.question(`${label}: `)).trim();
-    if (answer) return answer;
-    console.log('✖ Este campo é obrigatório.');
-  }
+function askFallback(rl, label, fallback) {
+  return rl
+    .question(`${label} (Enter = texto em pt-BR): `)
+    .then((answer) => answer.trim() || fallback);
 }
 
 async function askNumber(rl, label, defaultValue) {
@@ -301,6 +376,387 @@ function cloneRegions(regions, withIcons) {
       },
     ])
   );
+}
+
+// ─── Regions document ───────────────────────────────────────────────────────
+
+function parseDocCard(slug) {
+  if (!existsSync(DOC_FILE)) return null;
+
+  const raw = readFileSync(DOC_FILE, 'utf8');
+  const heading = new RegExp('^##\\s+[^\\n(]*\\(`' + escapeRegExp(slug) + '`\\)\\s*$', 'm');
+  const match = heading.exec(raw);
+  if (!match) return null;
+
+  const rest = raw.slice(match.index + match[0].length);
+  const nextHeading = rest.search(/^## /m);
+  const section = nextHeading === -1 ? rest : rest.slice(0, nextHeading);
+
+  const meta = /\*\*`name`:\*\*\s*"([^"]+)"\s*·\s*\*\*`intro`:\*\*\s*"(.*)"/.exec(section);
+  const summary = new RegExp(
+    '^\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*([^|]+?)\\s*\\|\\s*`' +
+      escapeRegExp(slug) +
+      '`\\s*\\|',
+    'm'
+  ).exec(raw);
+
+  const regions = [];
+  for (const line of section.split(/\r?\n/)) {
+    const row = /^\|\s*`([a-z0-9-]+)`\s*\|\s*([^|]*?)\s*\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|\s*$/.exec(line);
+    if (!row || row[3].trim().startsWith('`')) continue;
+    regions.push({
+      id: row[1],
+      icon: row[2] || undefined,
+      title: row[3].trim(),
+      description: row[4].trim(),
+    });
+  }
+
+  return {
+    slug,
+    ptName: meta ? meta[1].trim() : null,
+    enName: summary ? summary[3].trim() : null,
+    intro: meta ? meta[2].trim() : null,
+    number: summary ? parseArcanaNumber(summary[1]) : null,
+    regions,
+  };
+}
+
+function parseArcanaNumber(value) {
+  const trimmed = value.trim();
+  if (/^\d+$/.test(trimmed)) {
+    const parsed = Number(trimmed);
+    return parsed >= 0 && parsed <= 21 ? parsed : null;
+  }
+  const index = ROMAN.indexOf(trimmed.toUpperCase());
+  return index === -1 ? null : index;
+}
+
+function findArtworkFor(slug) {
+  if (!existsSync(DOC_FILE)) return null;
+
+  const raw = readFileSync(DOC_FILE, 'utf8');
+  const pairs = /`([^`]+\.(?:jpe?g|png))`\s*\|\s*`([^`]+\.(?:jpe?g|png))`/gi;
+  const renamed = {};
+  let match;
+
+  while ((match = pairs.exec(raw))) {
+    renamed[match[2].toLowerCase()] = match[1];
+  }
+
+  const candidates = [];
+  if (renamed[`${slug}.jpg`]) candidates.push(renamed[`${slug}.jpg`]);
+  candidates.push(`${slug}.jpg`, `${slug}.png`);
+
+  for (const file of candidates) {
+    if (existsSync(path.join(ROOT, 'public/tarot', file))) return `/tarot/${file}`;
+  }
+
+  return null;
+}
+
+function configFromDoc(slug) {
+  assertSlugFormat(slug);
+
+  const doc = parseDocCard(slug);
+  if (!doc) {
+    throw new Error(`Não encontrei a carta "${slug}" em docs/tarot-major-arcana-regions.md.`);
+  }
+  if (!doc.regions.length) {
+    throw new Error(`A seção de "${slug}" não tem uma tabela de regiões no documento.`);
+  }
+  if (doc.number === null) {
+    throw new Error(`Não encontrei o número de "${slug}" na tabela-resumo do documento.`);
+  }
+
+  const image = findArtworkFor(slug);
+  if (!image) {
+    throw new Error(
+      `Imagem não encontrada para "${slug}": adicione a arte em public/tarot/${slug}.jpg ou use o modo interativo.`
+    );
+  }
+
+  const camel = toCamel(slug);
+  const names = readLocaleNames(camel);
+  const enName = doc.enName || names['en-US'] || titleCase(slug);
+  const ptName = doc.ptName || enName;
+  const intro = doc.intro || 'Explore cada símbolo da carta.';
+  const ptRegions = Object.fromEntries(
+    doc.regions.map((region) => [
+      region.id,
+      {
+        ...(region.icon ? { icon: region.icon } : {}),
+        title: region.title,
+        description: region.description,
+      },
+    ])
+  );
+
+  const locales = {
+    'pt-BR': { name: ptName, intro, regions: ptRegions },
+  };
+
+  for (const locale of LOCALES.slice(1)) {
+    locales[locale] = {
+      name: locale === 'en-US' ? enName : names[locale] || enName,
+      intro,
+      regions: cloneRegions(ptRegions, false),
+    };
+  }
+
+  return { slug, name: enName, number: doc.number, image, locales, meta: { placeholders: true } };
+}
+
+// ─── Content store (docs/tarot-content) ─────────────────────────────────────
+
+function contentFiles() {
+  if (!existsSync(CONTENT_DIR)) return [];
+
+  return readdirSync(CONTENT_DIR)
+    .filter((file) => file.endsWith('.json'))
+    .map((file) => path.join(CONTENT_DIR, file));
+}
+
+function contentCards() {
+  return contentFiles()
+    .map((file) => {
+      let content;
+      try {
+        content = JSON.parse(readFileSync(file, 'utf8'));
+      } catch (error) {
+        return {
+          content: { slug: path.basename(file, '.json') },
+          file,
+          problems: [`${relative(file)}: JSON inválido (${error.message}).`],
+        };
+      }
+      return { content, file, problems: contentProblems(content, file) };
+    })
+    .sort((a, b) => (a.content.number ?? 99) - (b.content.number ?? 99));
+}
+
+function contentProblems(content, file) {
+  const where = relative(file);
+  const problems = [];
+  const fail = (message) => problems.push(`${where}: ${message}`);
+
+  if (!content || typeof content !== 'object' || Array.isArray(content)) {
+    return [`${where}: o conteúdo precisa ser um objeto JSON.`];
+  }
+
+  if (typeof content.slug !== 'string' || !KEBAB.test(content.slug)) {
+    fail('"slug" precisa ser um texto em kebab-case.');
+  }
+  if (!Number.isInteger(content.number) || content.number < 0 || content.number > 21) {
+    fail('"number" precisa ser um inteiro entre 0 e 21.');
+  }
+  if (typeof content.image !== 'string' || !content.image.trim()) {
+    fail('"image" precisa apontar para a arte (ex.: /tarot/the-star.jpg).');
+  }
+  if (!Array.isArray(content.regions) || !content.regions.length) {
+    fail('"regions" precisa listar pelo menos uma região com id kebab-case.');
+    return problems;
+  }
+
+  const ids = new Set();
+  for (const region of content.regions) {
+    if (!region || typeof region.id !== 'string' || !KEBAB.test(region.id)) {
+      fail(`região sem id kebab-case em "regions": ${JSON.stringify(region)}.`);
+      continue;
+    }
+    if (ids.has(region.id)) fail(`região duplicada em "regions": ${region.id}.`);
+    ids.add(region.id);
+    if (region.icon !== undefined && typeof region.icon !== 'string') {
+      fail(`o ícone da região ${region.id} precisa ser texto.`);
+    }
+  }
+  if (problems.length) return problems;
+
+  if (!content.locales || typeof content.locales !== 'object' || Array.isArray(content.locales)) {
+    fail('falta o objeto "locales".');
+    return problems;
+  }
+
+  for (const locale of LOCALES) {
+    const data = content.locales[locale];
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+      fail(`falta locales["${locale}"].`);
+      continue;
+    }
+    if (typeof data.name !== 'string' || !data.name.trim()) fail(`falta locales["${locale}"].name.`);
+    if (typeof data.intro !== 'string' || !data.intro.trim()) {
+      fail(`falta locales["${locale}"].intro.`);
+    }
+    if (!data.regions || typeof data.regions !== 'object' || Array.isArray(data.regions)) {
+      fail(`falta locales["${locale}"].regions.`);
+      continue;
+    }
+
+    for (const id of ids) {
+      const entry = data.regions[id];
+      if (!entry) {
+        fail(`falta a região ${id} em locales["${locale}"].regions.`);
+        continue;
+      }
+      if (typeof entry.title !== 'string' || !entry.title.trim()) {
+        fail(`falta o título de ${id} em ${locale}.`);
+      }
+      if (typeof entry.description !== 'string' || !entry.description.trim()) {
+        fail(`falta a descrição de ${id} em ${locale}.`);
+      }
+    }
+
+    const extra = Object.keys(data.regions).filter((id) => !ids.has(id));
+    if (extra.length) fail(`regiões extras em locales["${locale}"].regions: ${extra.join(', ')}.`);
+  }
+
+  return problems;
+}
+
+function isImplemented(slug) {
+  if (existsSync(path.join(TAROT_DIR, `${slug}.ts`))) return true;
+  const catalog = readFileSync(CATALOG_FILE, 'utf8');
+  return new RegExp(`['"]${escapeRegExp(slug)}['"]\\s*:`).test(catalog);
+}
+
+function pendingContentCards() {
+  return contentCards().filter(
+    (item) => typeof item.content.slug === 'string' && !isImplemented(item.content.slug)
+  );
+}
+
+function describeContent(item) {
+  const content = item.content;
+  const name = content.locales?.['pt-BR']?.name || content.slug;
+  return `${ROMAN[content.number] || '?'} · ${name} — ${content.slug}`;
+}
+
+async function promptContentCard(pending) {
+  const ready = pending.filter((item) => !item.problems.length);
+  const blocked = pending.filter((item) => item.problems.length);
+
+  if (!ready.length) {
+    const details = blocked.flatMap((item) => item.problems).join('\n  ');
+    throw new Error(
+      `Nenhuma carta pendente está com o conteúdo completo.\n  ${details}\n` +
+        'Preencha nome, intro e textos das regiões em pt-BR, en-US, ja e he em docs/tarot-content/.'
+    );
+  }
+
+  if (ready.length === 1) {
+    console.log(`\n▸ Carta selecionada: ${describeContent(ready[0])}`);
+    return ready[0].content;
+  }
+
+  console.log('\nCartas pendentes em docs/tarot-content:');
+  ready.forEach((item, index) => console.log(`  ${index + 1}) ${describeContent(item)}`));
+  if (blocked.length) {
+    console.log(
+      `\nFora da lista até completar as traduções: ${blocked.map((item) => item.content.slug).join(', ')}.`
+    );
+  }
+
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  rl.on('SIGINT', () => {
+    rl.close();
+    process.exit(130);
+  });
+
+  try {
+    while (true) {
+      const answer = (await rl.question('\nEscolha a carta (número ou slug) [1]: ')).trim();
+      if (!answer) return ready[0].content;
+
+      if (/^\d+$/.test(answer)) {
+        const item = ready[Number(answer) - 1];
+        if (item) return item.content;
+      } else {
+        const item = ready.find((entry) => entry.content.slug === answer.toLowerCase());
+        if (item) return item.content;
+      }
+
+      console.log(`✖ Escolha inválida: use um número de 1 a ${ready.length} ou o slug da carta.`);
+    }
+  } finally {
+    rl.close();
+  }
+}
+
+function configFromContent(content) {
+  const locales = {};
+
+  for (const locale of LOCALES) {
+    const data = content.locales[locale];
+    locales[locale] = {
+      name: data.name.trim(),
+      intro: data.intro.trim(),
+      regions: Object.fromEntries(
+        content.regions.map((region) => {
+          const entry = data.regions[region.id];
+          const text = { title: entry.title.trim(), description: entry.description.trim() };
+          if (locale === 'pt-BR' && region.icon) text.icon = region.icon;
+          return [region.id, text];
+        })
+      ),
+    };
+  }
+
+  return {
+    slug: content.slug,
+    name: content.locales['en-US'].name.trim(),
+    number: content.number,
+    image: content.image,
+    locales,
+  };
+}
+
+function contentCardBy(identifier) {
+  const value = String(identifier).trim();
+  const cards = contentCards();
+  let card;
+
+  if (/^\d+$/.test(value)) {
+    const number = Number(value);
+    card = cards.find((item) => item.content.number === number);
+    if (!card) {
+      throw new Error(`Não encontrei uma carta com o número ${number} em docs/tarot-content.`);
+    }
+  } else {
+    const slug = value.toLowerCase();
+    card = cards.find((item) => item.content.slug === slug);
+    if (!card) {
+      throw new Error(
+        `Não encontrei docs/tarot-content/${slug}.json. Use --from-doc ${slug} para montar a partir do documento.`
+      );
+    }
+  }
+
+  return card;
+}
+
+function configFromCard(identifier) {
+  const card = contentCardBy(identifier);
+  const { content, file, problems } = card;
+
+  if (problems.length) {
+    throw new Error(`O conteúdo de ${relative(file)} está incompleto:\n  ${problems.join('\n  ')}`);
+  }
+  if (isImplemented(content.slug)) {
+    throw new Error(
+      `A carta "${content.slug}" já está implementada (${relative(path.join(TAROT_DIR, `${content.slug}.ts`))} ou cardData).`
+    );
+  }
+
+  return configFromContent(content);
+}
+
+function configFromDocOrContent(slug) {
+  assertSlugFormat(slug);
+
+  if (existsSync(path.join(CONTENT_DIR, `${slug}.json`))) {
+    return configFromCard(slug);
+  }
+  return configFromDoc(slug);
 }
 
 // ─── Validation / planning ───────────────────────────────────────────────────
@@ -573,6 +1029,7 @@ function applyPlan(plan, dryRun) {
   console.log(`  ~ ${LOCALES.map((locale) => `src/i18n/messages/${locale}.json`).join(', ')}`);
   console.log(`  ~ ${relative(catalogFile)} (import + cardData)`);
   if (!plan.catalogEntry) console.log(`  ~ ${relative(catalogFile)} (nova entrada no mosaico)`);
+  console.log(`  ✓ rota pronta: /pt-BR/tarot/${plan.slug} (página dinâmica, nada a registrar)`);
 
   for (const warning of plan.warnings) console.log(`\n⚠ ${warning}`);
 

@@ -4,11 +4,14 @@ Cria o **esqueleto completo** de uma carta de Tarot interativa: arquivo de dados
 com as regiões em caixas provisórias, bloco de traduções nos quatro idiomas e
 registro no catálogo (`majorArcana.ts`).
 
-Ele automatiza os passos 1, 3, 5 e 6 do [guia manual](./interactive-tarot-cards.md)
-e deixa o passo 4 (posicionar as regiões) para o **editor visual** no navegador.
+**O script não pergunta nome, intro, título nem descrição.** Todo o conteúdo
+multilíngue fica em [`docs/tarot-content/<slug>.json`](#conteúdo-multilíngue-docstarot-content)
+— pt-BR, en-US, ja e he — e o comando apenas lê esse arquivo e gera o código.
+
+O fluxo completo é:
 
 ```
-npm run tarot:new
+npm run tarot:new  →  escolher a carta  →  arquivos gerados  →  posicionar destaques
 ```
 
 ---
@@ -17,23 +20,31 @@ npm run tarot:new
 
 | Faz | Não faz |
 |-----|---------|
+| Lê todo o conteúdo de `docs/tarot-content/<slug>.json`. | Não pergunta título, descrição, intro ou nome. |
 | Cria `src/data/tarot/<slug>.ts` com as regiões em grade provisória. | Não posiciona as regiões na arte. |
-| Insere o bloco `tarot.<camel>` nos 4 arquivos de idioma. | Não traduz o texto — em modo rápido, copia o pt-BR como placeholder. |
+| Insere o bloco `tarot.<camel>` nos 4 arquivos de idioma. | Não traduz: as 4 línguas já precisam estar preenchidas no JSON. |
 | Adiciona import e entrada em `cardData`. | Não baixa nem move a imagem (ela já precisa existir em `public/tarot/`). |
-| Adiciona a entrada no mosaico, se ainda não existir. | Não cria página/rota (a rota é dinâmica e compartilhada). |
-| Calcula o `viewBox` a partir das dimensões reais do JPG/PNG. | Não ajusta o enquadramento nem o `viewBox` além da proporção. |
+| Adiciona a entrada no mosaico, se ainda não existir. | Não altera o documento de regiões. |
+| Calcula o `viewBox` a partir das dimensões reais do JPG/PNG. | Não ajusta o enquadramento além da proporção. |
+| Deixa a rota `/[locale]/tarot/<slug>` funcionando (é dinâmica). | — |
 
 Depois de criar, o posicionamento é feito com o botão **"🎯 Posicionar
 destaques"** na própria single e o JSON exportado é colado de volta no arquivo
 de dados — exatamente como no passo 4 do guia manual.
 
+> **Rota:** não existe arquivo de rota por carta. A página
+> [`src/app/[locale]/tarot/[id]/page.tsx`](../src/app/[locale]/tarot/[id]/page.tsx)
+> resolve qualquer slug pelo catálogo, então a carta já abre em
+> `/pt-BR/tarot/<slug>` assim que o comando termina.
+
 ---
 
 ## Pré-requisitos
 
-1. A arte já está em `public/tarot/` (`.jpg` ou `.png`).
-2. A carta existe no mosaico (`majorArcana`) **ou** o número escolhido está livre.
-3. Rode o comando na raiz do projeto.
+1. O conteúdo está em `docs/tarot-content/<slug>.json`, completo nos 4 idiomas.
+2. A arte já está em `public/tarot/` (`.jpg` ou `.png`).
+3. A carta existe no mosaico (`majorArcana`) **ou** o número escolhido está livre.
+4. Rode o comando na raiz do projeto.
 
 O comando aceita o caminho da imagem como `/tarot/17_Star.jpg`,
 `public/tarot/17_Star.jpg` ou `tarot/17_Star.jpg` — normaliza para o caminho
@@ -41,65 +52,132 @@ público `/tarot/17_Star.jpg`.
 
 ---
 
-## Uso interativo (recomendado)
+## Conteúdo multilíngue (`docs/tarot-content`)
+
+Cada carta tem um arquivo JSON com a estrutura abaixo. É a **única fonte de
+texto** do comando:
+
+```jsonc
+{
+  "slug": "the-star",              // kebab-case, igual ao nome do arquivo
+  "number": 17,                    // inteiro 0–21 — vira o romano automaticamente
+  "image": "/tarot/17_Star.jpg",   // precisa existir em public/
+  "regions": [                     // ordem = fundo → frente (a última vence o clique)
+    { "id": "great-star", "icon": "⭐" },
+    { "id": "seven-stars", "icon": "✨" }
+    // ...
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Estrela",
+      "intro": "Sob o céu noturno...",
+      "regions": {
+        "great-star": { "title": "A Grande Estrela", "description": "Oito raios..." }
+      }
+    },
+    "en-US": { "name": "The Star", "intro": "...", "regions": { "great-star": { "title": "...", "description": "..." } } },
+    "ja":    { "name": "星",       "intro": "...", "regions": { "great-star": { "title": "...", "description": "..." } } },
+    "he":    { "name": "הכוכב",    "intro": "...", "regions": { "great-star": { "title": "...", "description": "..." } } }
+  }
+}
+```
+
+Regras validadas antes de gerar qualquer arquivo:
+
+- `slug`, `number` e `image` obrigatórios; `image` precisa existir.
+- `regions` é uma lista ordenada de `{ id, icon }`; os ids são kebab-case,
+  únicos, e definem a ordem das regiões na carta.
+- Os quatro idiomas são obrigatórios, com `name`, `intro` e **todas** as regiões
+  da lista — cada uma com `title` e `description` não vazios.
+- As chaves de região no JSON de idioma são camelCase (`great-star` →
+  `greatStar`); o script faz a conversão.
+- Os ícones ficam no topo (`regions[].icon`), não por idioma.
+
+O documento [`tarot-major-arcana-regions.md`](./tarot-major-arcana-regions.md)
+continua sendo a referência dos símbolos em pt-BR; os arquivos de
+`docs/tarot-content/` acrescentam as traduções e os nomes nos 4 idiomas.
+
+---
+
+## Uso interativo — menu de cartas pendentes
 
 ```bash
 npm run tarot:new
 ```
 
-O assistente pergunta, em ordem:
+O comando lista apenas as cartas que ainda **não** têm arquivo de dados nem
+entrada em `cardData`:
 
 ```
-Slug da carta (kebab-case, ex.: the-star): the-star
-Nome em inglês [The Star]:
-Número do arcano (0–21) [17]:
-Imagem (JPG/PNG) [/tarot/17_Star.jpg]:
+Cartas pendentes em docs/tarot-content:
+  1) IV · O Imperador — the-emperor
+  2) V · O Hierofante — the-hierophant
+  3) VI · Os Enamorados — the-lovers
+  ...
 
-Regiões — os textos abaixo são o conteúdo do painel em pt-BR.
-Região 1 — id kebab-case: star
-Ícone (emoji, opcional): ⭐
-Título (pt-BR): A Grande Estrela
-Descrição (pt-BR): Oito raios: a estrela de oito pontas é a luz que guia...
-
-Região 2 — id kebab-case (Enter para concluir): water
-Ícone (emoji, opcional): 💧
-Título (pt-BR): As Águas
-Descrição (pt-BR): A água derramada na terra e no lago...
-
-Região 3 — id kebab-case (Enter para concluir):
+Escolha a carta (número ou slug) [1]:
 ```
 
-Detalhes:
-
-- **Slug:** kebab-case, minúsculas e hífens. Vira o nome do arquivo, a chave de
-  rota e a chave do `cardData`. O id i18n é o camelCase dele (`theStar`).
-- **Nome em inglês:** usado como `name` no arquivo de dados e como fallback do
-  nome em `en-US`. Se a carta já estiver no `tarotWaite.cards`, o assistente
-  sugere o nome existente.
-- **Número:** inteiro de 0 a 21; o romano (`XVII`) é derivado automaticamente.
-  Se a carta já está no catálogo, o número precisa bater com o do catálogo.
-- **Imagem:** precisa existir; as dimensões são lidas do próprio arquivo (sem
-  dependências externas) e o `viewBox` é calculado como
-  `{ width: 100, height: 100 * altura / largura }`.
-- **Regiões:** uma por vez. `Enter` com o id vazio encerra (é preciso pelo menos
-  uma). O guia recomenda de **5 a 8**; fora disso o assistente avisa, mas
-  aceita até 12. O ícone é opcional.
-- **Nome/intro em pt-BR:** o nome sugere o que existir em `tarotWaite`.
-- **Traduções:** ao final, ele pergunta se você quer preencher `en-US`, `ja` e
-  `he` agora. Se responder **não** (padrão), os títulos e descrições em pt-BR
-  são copiados como placeholder (os nomes localizados do `tarotWaite` são
-  preservados, quando existirem) e um aviso fica registrado.
-- **Confirmação:** mostra o resumo e só grava depois de `Criar a carta com
-  esses dados? [S/n]`.
+- `Enter` escolhe a primeira; também aceita o número da lista ou o slug.
+  Entradas inválidas são recusadas com uma mensagem — sem reiniciar o menu.
+- Se houver **exatamente uma** carta pendente, ela é selecionada sozinha,
+  sem prompt.
+- Cartas com conteúdo incompleto (algum idioma ou região vazio) ficam **fora da
+  lista** e são mencionadas abaixo dela. O erro só aparece se todas estiverem
+  incompletas, apontando o arquivo e os campos que faltam.
+- Se todas as cartas do documento já estiverem implementadas:
+  `Nenhuma carta pendente: todas as cartas de docs/tarot-content já estão implementadas.`
 
 > O modo interativo exige um terminal real (TTY). Em scripts/CI, use
-> `--config`.
+> `--card <slug>`.
 
 ---
 
-## Uso com JSON (`--config`)
+## Criar direto por slug ou número (`--card`)
 
-Para automação ou para preparar o conteúdo fora do terminal:
+```bash
+npm run tarot:new -- --card the-star
+npm run tarot:new -- --card 17
+npm run tarot:new -- --card the-star --dry-run
+```
+
+Lê `docs/tarot-content/the-star.json` e gera os arquivos sem abrir nenhum
+prompt. Aceita o slug ou o número do arcano. Se a carta já estiver implementada,
+o comando avisa em vez de sobrescrever.
+
+---
+
+## Importar do documento de regiões (`--from-doc`)
+
+```bash
+npm run tarot:new -- --from-doc the-star
+```
+
+- Se existir `docs/tarot-content/<slug>.json`, o comando usa esse conteúdo
+  completo — o mesmo caminho do `--card`.
+- Se **não** existir, ele lê a seção `## XVII · A Estrela (\`the-star\`)` de
+  [`docs/tarot-major-arcana-regions.md`](./tarot-major-arcana-regions.md):
+  nome pt-BR, intro, número e nome em inglês (tabela-resumo), regiões na ordem
+  da tabela e imagem (pelo mapa de renomeação). Como o documento só tem pt-BR,
+  as outras três línguas recebem o texto em português como placeholder e o
+  aviso de revisão é exibido.
+
+Use `--dry-run` para conferir a leitura antes de gravar.
+
+Limitações do modo só-documento:
+
+- A carta precisa ter uma seção com tabela de regiões no documento (a
+  Temperança, por exemplo, ainda não tem — use `--config`).
+- A imagem precisa existir em `public/tarot/` com o nome do mapa ou `<slug>.jpg`.
+- O documento não tem coordenadas — as caixas continuam provisórias até você
+  passar pelo editor (passo 4).
+
+---
+
+## Uso com JSON completo (`--config`)
+
+Para automação ou para gerar a carta a partir de um JSON avulso no formato
+"resolvido" (nome por idioma + regiões já por locale):
 
 ```bash
 npm run tarot:new -- --config caminho/da/carta.json
@@ -198,8 +276,10 @@ Regras de validação:
 
 | Flag | O que faz |
 |------|-----------|
-| *(nenhuma)* | Modo interativo no terminal. |
-| `--config <arquivo>` | Lê a carta de um JSON e não abre prompts. |
+| *(nenhuma)* | Menu das cartas pendentes em `docs/tarot-content` (TTY). |
+| `--card <slug\|número>` | Cria a carta direto do conteúdo, sem prompts. |
+| `--from-doc <slug>` | Usa o conteúdo do JSON quando existir; senão importa do documento de regiões. |
+| `--config <arquivo>` | Lê a carta de um JSON completo e não abre prompts. |
 | `--dry-run`, `-n` | Valida tudo e mostra os arquivos que seriam alterados + o conteúdo do arquivo de dados, **sem gravar nada**. |
 | `--help`, `-h` | Mostra a ajuda. |
 
@@ -223,25 +303,25 @@ export const theStar: TarotCard = {
   viewBox: { width: 100, height: 166.7 },
   regions: [
     {
-      id: 'star',
+      id: 'great-star',
       icon: '⭐',
       // TODO: position — placeholder box, replace with the editor output.
       shape: { type: 'rect', x: 6, y: 8, width: 14, height: 10 },
-      i18nKey: 'theStar.regions.star',
+      i18nKey: 'theStar.regions.greatStar',
     },
     // ...
   ],
 };
 ```
 
-A ordem das regiões é a ordem informada e vale como **fundo → frente**: em
+A ordem das regiões é a ordem do JSON e vale como **fundo → frente**: em
 sobreposições, a última região vence o clique.
 
 ### 2. `src/i18n/messages/{pt-BR,en-US,ja,he}.json`
 
 Insere `tarot.<camel>` imediatamente antes de `"tarotWaite"`, preservando a
 formatação e o tipo de quebra de linha (LF/CRLF) do arquivo. As chaves de
-região no JSON são camelCase (`starCrown`, `riverTrees`), e o conteúdo é
+região no JSON são camelCase (`greatStar`, `sevenStars`), e o conteúdo é
 validado com `JSON.parse` antes de qualquer gravação.
 
 ### 3. `src/data/tarot/majorArcana.ts`
@@ -254,6 +334,13 @@ validado com `JSON.parse` antes de qualquer gravação.
   diferente (com aviso).
 
 Todas as alterações no catálogo são verificadas antes de gravar.
+
+### 4. Rota
+
+Nada a fazer: a página dinâmica
+[`src/app/[locale]/tarot/[id]/page.tsx`](../src/app/[locale]/tarot/[id]/page.tsx)
+consulta o catálogo e passa a servir `/pt-BR/tarot/<slug>` (e os demais locales)
+automaticamente. O comando imprime a rota pronta no final.
 
 ---
 
@@ -269,10 +356,10 @@ O próprio comando imprime esta lista:
 
 Passo 3 e 4 em detalhe: [guia manual, passo 4](./interactive-tarot-cards.md#passo-4--posicionar-as-regiões-editor-visual).
 
-> ⚠ **Placeholders:** se você respondeu "não" para preencher as traduções (ou
-> não definiu `meta.placeholders: false` no JSON), `en-US`, `ja` e `he` estarão
-> com o texto em português. O comando avisa, mas não impede a criação — revise
-> os três arquivos antes de publicar.
+> ⚠ **Placeholders:** só acontecem no modo `--from-doc` sem JSON de conteúdo.
+> Nesse caso `en-US`, `ja` e `he` ficam com o texto em português, o comando
+> avisa, mas não impede a criação — revise os três arquivos antes de publicar.
+> No fluxo normal (`--card`/menu) isso não ocorre: o JSON exige as 4 línguas.
 
 ---
 
@@ -280,7 +367,16 @@ Passo 3 e 4 em detalhe: [guia manual, passo 4](./interactive-tarot-cards.md#pass
 
 | Mensagem | Causa / solução |
 |----------|-----------------|
-| `Imagem não encontrada: /tarot/x.jpg (procurada em ...)` | Coloque a arte em `public/tarot/` ou corrija o caminho. |
+| `Não encontrei docs/tarot-content/<slug>.json...` | O arquivo de conteúdo não existe — crie-o ou use `--from-doc`. |
+| `O conteúdo de docs/tarot-content/<slug>.json está incompleto:` | Preencha os campos listados (idioma/região) antes de rodar. |
+| `A carta "<slug>" já está implementada...` | A carta já tem arquivo de dados ou `cardData`; edite o código existente. |
+| `Nenhuma carta pendente está com o conteúdo completo.` | Todos os rascunhos têm traduções faltando; complete um arquivo. |
+| `Nenhuma carta pendente: todas as cartas...` | Não há nada para criar — o catálogo já cobre todo o conteúdo. |
+| `Imagem não encontrada: /tarot/x.jpg (procurada em ...)` | Coloque a arte em `public/tarot/` ou corrija `image` no JSON. |
+| `Não encontrei a carta "<slug>" em docs/tarot-major-arcana-regions.md.` | `--from-doc` não achou a seção e não há JSON de conteúdo — confira a grafia. |
+| `A seção de "<slug>" não tem uma tabela de regiões no documento.` | Adicione a tabela ou use `--config`. |
+| `Não encontrei o número de "<slug>" na tabela-resumo do documento.` | Inclua ou corrija a linha da carta na tabela-resumo. |
+| `Imagem não encontrada para "<slug>"...` | O mapa de renomeação não resolveu; adicione `public/tarot/<slug>.jpg` ou use `--config`. |
 | `Slug inválido: "The-Star"` | Use kebab-case: `the-star`. |
 | `O arquivo src/data/tarot/<slug>.ts já existe.` | A carta já foi criada; edite o arquivo existente. |
 | `A carta "<slug>" já está registrada em cardData.` | Remova a entrada antiga ou use outro slug. |
@@ -290,7 +386,7 @@ Passo 3 e 4 em detalhe: [guia manual, passo 4](./interactive-tarot-cards.md#pass
 | `O catálogo usa i18nKey "..." para "<slug>", mas o esperado é "..."` | O `i18nKey` do mosaico precisa ser o camelCase do slug. |
 | `O catálogo associa "<slug>" ao número N...` | O número informado precisa bater com a entrada existente. |
 | `O número N já pertence a "<outra>" no catálogo.` | Escolha o número correto da carta. |
-| `O modo interativo precisa de um terminal.` | Rode direto no terminal ou use `--config`. |
+| `O modo interativo precisa de um terminal.` | Rode direto no terminal ou use `--card <slug>`. |
 | `Argumento desconhecido: --x` | Confira as flags; use `--help`. |
 
 ---
@@ -299,6 +395,9 @@ Passo 3 e 4 em detalhe: [guia manual, passo 4](./interactive-tarot-cards.md#pass
 
 - [Guia manual](./interactive-tarot-cards.md) — referência completa da
   arquitetura, do `viewBox`, do catálogo e do posicionamento das regiões.
+- [Catálogo de regiões](./tarot-major-arcana-regions.md) — fonte dos símbolos em
+  pt-BR e resumo das 22 cartas.
+- `docs/tarot-content/` — fonte multilíngue consumida pelo `--card` e pelo menu.
 - `scripts/new-tarot-card.mjs` — implementação do assistente.
 - `scripts/tarot-color-map.mjs` — mapa de cores para estimar posições iniciais e
   desenhar polígonos (alternativa ao editor).

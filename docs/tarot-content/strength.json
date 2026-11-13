@@ -1,0 +1,153 @@
+{
+  "slug": "strength",
+  "number": 8,
+  "image": "/tarot/08_Strength.jpg",
+  "regions": [
+    {
+      "id": "infinity",
+      "icon": "♾️"
+    },
+    {
+      "id": "lion-mouth",
+      "icon": "🦁"
+    },
+    {
+      "id": "rose-garland",
+      "icon": "🌹"
+    },
+    {
+      "id": "red-ribbon",
+      "icon": "🎗️"
+    },
+    {
+      "id": "white-robe",
+      "icon": "👗"
+    },
+    {
+      "id": "mountains",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Força",
+      "intro": "Não a força que subjuga: a que domestica pela doçura — rosas onde haveriam correntes.",
+      "regions": {
+        "infinity": {
+          "title": "O Infinito sobre a Cabeça",
+          "description": "A mesma lemniscata do Mago, agora na fronte da mulher: força espiritual — o poder que vem do alto, não do músculo."
+        },
+        "lion-mouth": {
+          "title": "A Boca do Leão",
+          "description": "Os dedos entrelaçados às mandíbulas do leão: o instinto bruto não é espancado, é abraçado — o ego animal domado pela firmeza afetuosa."
+        },
+        "rose-garland": {
+          "title": "A Guirlanda de Rosas",
+          "description": "As rosas coroam sua cabeça e cintura: os vínculos aqui são de beleza — o desejo (vermelho) transformado em ornamento consciente."
+        },
+        "red-ribbon": {
+          "title": "O Laço Vermelho",
+          "description": "A faixa vermelha à cintura: o apetite não é eliminado na domesticação — apenas amarrado com laço gracioso."
+        },
+        "white-robe": {
+          "title": "A Veste Branca",
+          "description": "A túnica simples: pureza de intenção — nada a defender, nenhuma armadura; a coragem desarmada."
+        },
+        "mountains": {
+          "title": "As Montanhas ao Fundo",
+          "description": "O horizonte de picos ao fundo: a tarefa é longa — a domesticação do leão é prática diária, não evento único."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Strength",
+      "intro": "Not the strength that subjugates, but the one that tames by gentleness — roses where there would be chains.",
+      "regions": {
+        "infinity": {
+          "title": "The Infinity Above Her Head",
+          "description": "The same lemniscate worn by the Magician, now on the woman's brow: spiritual strength — the power that comes from above, not from muscle."
+        },
+        "lion-mouth": {
+          "title": "The Lion's Mouth",
+          "description": "Her fingers intertwined with the lion's jaws: raw instinct is not beaten down but embraced — the animal ego tamed by affectionate firmness."
+        },
+        "rose-garland": {
+          "title": "The Garland of Roses",
+          "description": "Roses crown her head and waist: the bonds here are bonds of beauty — desire (red) transformed into conscious adornment."
+        },
+        "red-ribbon": {
+          "title": "The Red Ribbon",
+          "description": "The red sash at her waist: appetite is not eliminated in the taming — only tied in a graceful bow."
+        },
+        "white-robe": {
+          "title": "The White Robe",
+          "description": "The simple tunic: purity of intention — nothing to defend, no armor; courage unarmed."
+        },
+        "mountains": {
+          "title": "The Mountains Behind",
+          "description": "The horizon of peaks in the background: the task is long — taming the lion is daily practice, not a single event."
+        }
+      }
+    },
+    "ja": {
+      "name": "力",
+      "intro": "屈服させる力ではなく、優しさによって馴らす力——鎖があるべきところにバラを。",
+      "regions": {
+        "infinity": {
+          "title": "頭上に浮かぶ無限",
+          "description": "魔術師と同じレムニスケート（∞）が、今は女性の額の上に。霊的な力——筋肉ではなく、高みから来る力です。"
+        },
+        "lion-mouth": {
+          "title": "獅子の口",
+          "description": "指を獅子の顎に絡めて。荒々しい本能は打ちのめされるのではなく抱きしめられます——動物の自我は、愛情ある強さによって馴らされるのです。"
+        },
+        "rose-garland": {
+          "title": "バラの花輪",
+          "description": "バラが頭と腰を飾ります。ここでの結びつきは美によるもの——欲望（赤）が意識された装いへと変容しています。"
+        },
+        "red-ribbon": {
+          "title": "赤いリボン",
+          "description": "腰に結ばれた赤い帯。馴らすことは食欲を消すことではなく、優雅なリボンで結ぶだけのことです。"
+        },
+        "white-robe": {
+          "title": "白い衣",
+          "description": "簡素なチュニックは純粋な意図の象徴——守るべきものも鎧もなく、ただ武具を持たない勇気があります。"
+        },
+        "mountains": {
+          "title": "遠くの山々",
+          "description": "背後に連なる峰の地平線。この仕事は長く続きます——獅子を馴らすことは一度の出来事ではなく、日々の実践なのです。"
+        }
+      }
+    },
+    "he": {
+      "name": "הכוח",
+      "intro": "לא הכוח שמשתלט, אלא זה שמאלף ברוך — ורדים במקום שבו היו שלשלאות.",
+      "regions": {
+        "infinity": {
+          "title": "האינסוף מעל ראשה",
+          "description": "אותו למניסקט של הקוסם, עכשיו על מצחה של האישה: כוח רוחני — הכוח שבא מלמעלה, לא מן השריר."
+        },
+        "lion-mouth": {
+          "title": "פי האריה",
+          "description": "אצבעותיה שלובות בלסתות האריה: האינסטינקט הפראי אינו מוכה אלא מחובק — האגו החייתי מאולף בעוצמה אוהבת."
+        },
+        "rose-garland": {
+          "title": "זר הוורדים",
+          "description": "ורדים מכתירים את ראשה ומותניה: הקשרים כאן הם של יופי — התשוקה (האדומה) הופכת לעדי מודע."
+        },
+        "red-ribbon": {
+          "title": "הסרט האדום",
+          "description": "החגורה האדומה במותניה: התיאבון אינו מתבטל באילוף — הוא רק נקשר בקשר חינני."
+        },
+        "white-robe": {
+          "title": "הגלימה הלבנה",
+          "description": "הכתונת הפשוטה: טוהר הכוונה — אין מה להגן עליו, אין שריון; אומץ בלי נשק."
+        },
+        "mountains": {
+          "title": "ההרים ברקע",
+          "description": "אופק הפסגות ברקע: המלאכה ארוכה — אילוף האריה הוא תרגול יומיומי, ולא מאורע חד-פעמי."
+        }
+      }
+    }
+  }
+}

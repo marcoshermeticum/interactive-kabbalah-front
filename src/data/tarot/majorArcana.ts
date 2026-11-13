@@ -4,6 +4,7 @@ import { theMagician } from './the-magician';
 import { theHighPriestess } from './the-high-priestess';
 import { theEmpress } from './the-empress';
 import { temperance } from './temperance';
+import { theEmperor } from './the-emperor';
 
 /**
  * Catalog of the 22 Rider-Waite major arcana, in RWS order.
@@ -63,6 +64,7 @@ const cardData: Record<string, TarotCard> = {
   'the-high-priestess': theHighPriestess,
   'the-empress': theEmpress,
   temperance,
+  'the-emperor': theEmperor,
 };
 
 export function getMajorArcana(slug: string): MajorArcanaEntry | undefined {

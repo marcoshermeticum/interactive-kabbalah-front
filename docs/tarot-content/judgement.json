@@ -1,0 +1,133 @@
+{
+  "slug": "judgement",
+  "number": 20,
+  "image": "/tarot/20_Judgement.jpg",
+  "regions": [
+    {
+      "id": "angel-trumpet",
+      "icon": "🎺"
+    },
+    {
+      "id": "flag-cross",
+      "icon": "✝️"
+    },
+    {
+      "id": "risen-family",
+      "icon": "🙋"
+    },
+    {
+      "id": "coffins",
+      "icon": "⚰️"
+    },
+    {
+      "id": "sea-mountains",
+      "icon": "🌊"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Julgamento",
+      "intro": "A trombeta soa sobre os caixões abertos: ressuscitar é lembrar de onde se veio.",
+      "regions": {
+        "angel-trumpet": {
+          "title": "O Anjo e a Trombeta",
+          "description": "O som que desperta os mortos: o chamado — não ameaça, convoca; a mesma nota que é terror para a estrutura é alvorada para a alma."
+        },
+        "flag-cross": {
+          "title": "O Estandarte na Trombeta",
+          "description": "A bandeira com a cruz presa ao instrumento: a mensagem que desce — o eixo entre céu e terra por onde a ressurreição trafega."
+        },
+        "risen-family": {
+          "title": "Os que Ressuscitam",
+          "description": "Homem, mulher e criança erguem-se dos caixões de braços abertos: memória, acolhimento e recomeço — o eu inteiro saindo da velha forma como quem sai de uma cama antiga."
+        },
+        "coffins": {
+          "title": "Os Caixões Flutuantes",
+          "description": "Sobre a água, abertos, não afundam: o passado que serviu de berço vira casca — a velha forma respeitada por tudo o que permitiu, e deixada para trás com gratidão."
+        },
+        "sea-mountains": {
+          "title": "O Mar e as Montanhas",
+          "description": "Ao fundo, o inconsciente (mar) e a jornada por vir (montanhas): o despertar não é o fim — é a partida de novo, agora com os olhos abertos."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Judgement",
+      "intro": "The trumpet sounds over the open coffins: to rise again is to remember where you came from.",
+      "regions": {
+        "angel-trumpet": {
+          "title": "The Angel and the Trumpet",
+          "description": "The sound that wakes the dead: the call — no threat, a summons; the same note that is terror to the old structure is dawn to the soul."
+        },
+        "flag-cross": {
+          "title": "The Banner on the Trumpet",
+          "description": "The flag bearing the cross, fixed to the instrument: the message that descends — the axis between heaven and earth along which resurrection travels."
+        },
+        "risen-family": {
+          "title": "Those Who Rise",
+          "description": "Man, woman and child rise from the coffins with open arms: memory, welcome and new beginning — the whole self leaving the old form as one leaves an old bed."
+        },
+        "coffins": {
+          "title": "The Floating Coffins",
+          "description": "On the water, open, they do not sink: the past that served as a cradle becomes a shell — the old form honored for all it allowed, and left behind with gratitude."
+        },
+        "sea-mountains": {
+          "title": "The Sea and the Mountains",
+          "description": "In the background, the unconscious (sea) and the journey to come (mountains): awakening is not the end — it is setting out again, now with open eyes."
+        }
+      }
+    },
+    "ja": {
+      "name": "審判",
+      "intro": "開いた棺の上にトランペットが響きます。復活とは、自分がどこから来たのかを思い出すことです。",
+      "regions": {
+        "angel-trumpet": {
+          "title": "天使とトランペット",
+          "description": "死者を目覚めさせる音、すなわち呼び声。それは脅しではなく招きです——古い構造にとって恐怖となる同じ音が、魂にとっては夜明けとなります。"
+        },
+        "flag-cross": {
+          "title": "トランペットの旗",
+          "description": "十字の描かれた旗が楽器に結ばれています。降りてくるメッセージ——復活が行き交う、天と地をつなぐ軸です。"
+        },
+        "risen-family": {
+          "title": "復活する者たち",
+          "description": "男性も女性も子どもも、棺から両腕を広げて立ち上がります。記憶、受容、そして新たな始まり——古い寝床を抜け出すように、自己の全体が古い形から出ていくのです。"
+        },
+        "coffins": {
+          "title": "浮かぶ棺",
+          "description": "水面に浮かぶ開いた棺は、沈みません。ゆりかごとなった過去は殻となります——許したすべてへの敬意を込めて、古い形は感謝とともに後に残されるのです。"
+        },
+        "sea-mountains": {
+          "title": "海と山",
+          "description": "背景に広がる海は無意識、山はこれからの旅。目覚めは終わりではなく——いま目を開いたまま、ふたたび出発することです。"
+        }
+      }
+    },
+    "he": {
+      "name": "הדין",
+      "intro": "החצוצרה נשמעת מעל הארונות הפתוחים: לקום לתחייה פירושו לזכור מאין באת.",
+      "regions": {
+        "angel-trumpet": {
+          "title": "המלאך והחצוצרה",
+          "description": "הצליל המעיר את המתים: הקריאה — לא איום, אלא זימון; אותו צליל שהוא אימה למבנה הוא שחר לנשמה."
+        },
+        "flag-cross": {
+          "title": "הדגל שעל החצוצרה",
+          "description": "הדגל הנושא את הצלב, הקשור אל הכלי: המסר היורד — הציר שבין שמיים לארץ, שדרכו עוברת התחייה."
+        },
+        "risen-family": {
+          "title": "הקמים לתחייה",
+          "description": "איש, אישה וילד מתרוממים מן הארונות בזרועות פתוחות: זיכרון, קבלה והתחלה חדשה — האני השלם יוצא מן הצורה הישנה כמו מי שקם ממיטה ישנה."
+        },
+        "coffins": {
+          "title": "הארונות הצפים",
+          "description": "על המים, פתוחים, הם אינם שוקעים: העבר ששימש עריסה הופך לקליפה — הצורה הישנה מכובדת על כל מה שאפשרה, ונעזבת מאחור בתודה."
+        },
+        "sea-mountains": {
+          "title": "הים וההרים",
+          "description": "ברקע, הלא־מודע (הים) והמסע שעוד יבוא (ההרים): ההתעוררות אינה הסוף — היא יציאה לדרך מחדש, והפעם בעיניים פקוחות."
+        }
+      }
+    }
+  }
+}

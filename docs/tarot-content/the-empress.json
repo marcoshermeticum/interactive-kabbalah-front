@@ -1,0 +1,153 @@
+{
+  "slug": "the-empress",
+  "number": 3,
+  "image": "/tarot/03_Empress.jpg",
+  "regions": [
+    {
+      "id": "star-crown",
+      "icon": "👑"
+    },
+    {
+      "id": "venus-shield",
+      "icon": "♀️"
+    },
+    {
+      "id": "scepter",
+      "icon": "🪄"
+    },
+    {
+      "id": "wheat-field",
+      "icon": "🌾"
+    },
+    {
+      "id": "pomegranate-robe",
+      "icon": "🍈"
+    },
+    {
+      "id": "river-trees",
+      "icon": "🏞️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Imperatriz",
+      "intro": "Soberana da natureza fecunda, a Imperatriz reina sobre o trigo, as águas e tudo o que floresce. Explore cada símbolo da carta.",
+      "regions": {
+        "star-crown": {
+          "title": "A Coroa de Doze Estrelas",
+          "description": "Doze estrelas: o zodíaco completo — ela governa o tempo cíclico das estações e das gestações."
+        },
+        "venus-shield": {
+          "title": "O Escudo de Vênus",
+          "description": "O escudo em forma de coração com o símbolo de Vênus: o amor como fundação — beleza, afeição e magnetismo vital."
+        },
+        "scepter": {
+          "title": "O Cetro",
+          "description": "O cetro encimado pelo globo: autoridade suave sobre o mundo das formas — sua mão nem precisa segurá-lo com força."
+        },
+        "wheat-field": {
+          "title": "O Campo de Trigo",
+          "description": "O trigal maduro aos pés do trono: Deméter e a abundância da Mãe — o trabalho que frutifica sem pressa."
+        },
+        "pomegranate-robe": {
+          "title": "As Romãs do Manto",
+          "description": "O vestido estampado de romãs (ecoando o véu da Sacerdotisa): fertilidade, muitos filhos, muitas sementes — a multiplicação do uno."
+        },
+        "river-trees": {
+          "title": "O Rio e as Árvores",
+          "description": "Ao fundo, a cachoeira e o bosque: a vida fluindo sem represa — a natureza que se renova dentro do próprio ritmo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Empress",
+      "intro": "Sovereign of fertile nature, the Empress reigns over wheat, waters and all that blooms. Explore each symbol of the card.",
+      "regions": {
+        "star-crown": {
+          "title": "The Crown of Twelve Stars",
+          "description": "Twelve stars: the complete zodiac — she governs the cyclical time of seasons and gestations."
+        },
+        "venus-shield": {
+          "title": "The Shield of Venus",
+          "description": "The heart-shaped shield bearing the symbol of Venus: love as foundation — beauty, affection and vital magnetism."
+        },
+        "scepter": {
+          "title": "The Scepter",
+          "description": "The globe-topped scepter: gentle authority over the world of forms — her hand does not even need to grip it tightly."
+        },
+        "wheat-field": {
+          "title": "The Wheat Field",
+          "description": "The ripe wheat at the foot of the throne: Demeter and the abundance of the Mother — work that bears fruit without haste."
+        },
+        "pomegranate-robe": {
+          "title": "The Pomegranates of Her Robe",
+          "description": "The dress patterned with pomegranates (echoing the High Priestess's veil): fertility, many children, many seeds — the multiplication of the one."
+        },
+        "river-trees": {
+          "title": "The River and the Trees",
+          "description": "In the background, the waterfall and the forest: life flowing without a dam — nature renewing itself within its own rhythm."
+        }
+      }
+    },
+    "ja": {
+      "name": "女帝",
+      "intro": "豊かな自然の女王である女帝は、麦、水、そして花開くすべてのものを統べています。カードの象徴を一つずつ探求しましょう。",
+      "regions": {
+        "star-crown": {
+          "title": "十二の星の冠",
+          "description": "十二の星は完全な黄道十二宮。彼女は季節と妊娠という循環する時間を支配します。"
+        },
+        "venus-shield": {
+          "title": "ヴィーナスの盾",
+          "description": "ヴィーナスの記号が刻まれたハート形の盾。愛を基盤とすること——美、慈しみ、そして生命の磁力。"
+        },
+        "scepter": {
+          "title": "王笏",
+          "description": "球体をいただく王笏。形ある世界への穏やかな権威——その手は強く握る必要さえありません。"
+        },
+        "wheat-field": {
+          "title": "麦畑",
+          "description": "玉座の足元に実った麦。デメテルと母なる豊穣——急ぐことなく実を結ぶ仕事。"
+        },
+        "pomegranate-robe": {
+          "title": "衣のざくろ",
+          "description": "ざくろ模様の衣（女教皇のヴェールと呼応します）。多産、多くの子、多くの種——一なるものの増殖。"
+        },
+        "river-trees": {
+          "title": "川と木々",
+          "description": "背景の滝と森。せき止められることなく流れる生命——自らのリズムのうちに更新される自然。"
+        }
+      }
+    },
+    "he": {
+      "name": "הקיסרית",
+      "intro": "הקיסרית, ריבונית הטבע הפורה, מולכת על החיטה, המים וכל מה שפורח. גלו כל אחד מסמלי הקלף.",
+      "regions": {
+        "star-crown": {
+          "title": "כתר שנים־עשר הכוכבים",
+          "description": "שנים־עשר כוכבים: גלגל המזלות השלם — היא מושלת בזמן המחזורי של העונות וההריונות."
+        },
+        "venus-shield": {
+          "title": "מגן ונוס",
+          "description": "המגן בצורת לב הנושא את סמל ונוס: אהבה כיסוד — יופי, חיבה ומגנטיות חיונית."
+        },
+        "scepter": {
+          "title": "השרביט",
+          "description": "השרביט שמוכתר בכדור: סמכות עדינה על עולם הצורות — ידה אפילו אינה צריכה לאחוז בו בחוזקה."
+        },
+        "wheat-field": {
+          "title": "שדה החיטה",
+          "description": "החיטה הבשלה למרגלות הכס: דמטר ושפע האם — עבודה שמניבה פרי בלי חיפזון."
+        },
+        "pomegranate-robe": {
+          "title": "רימוני הגלימה",
+          "description": "השמלה המעוטרת ברימונים (מהדהדת את לוט הכוהנת הגדולה): פוריות, ילדים רבים, זרעים רבים — ההתרבות של האחד."
+        },
+        "river-trees": {
+          "title": "הנהר והעצים",
+          "description": "ברקע, המפל והיער: חיים זורמים בלי סכר — הטבע המתחדש בתוך הקצב של עצמו."
+        }
+      }
+    }
+  }
+}

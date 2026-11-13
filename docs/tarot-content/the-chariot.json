@@ -1,0 +1,153 @@
+{
+  "slug": "the-chariot",
+  "number": 7,
+  "image": "/tarot/07_Chariot.jpg",
+  "regions": [
+    {
+      "id": "starry-canopy",
+      "icon": "🌌"
+    },
+    {
+      "id": "sphinxes",
+      "icon": "🗿"
+    },
+    {
+      "id": "winged-sun",
+      "icon": "☀️"
+    },
+    {
+      "id": "shoulder-moons",
+      "icon": "🌙"
+    },
+    {
+      "id": "city-walls",
+      "icon": "🏰"
+    },
+    {
+      "id": "square-emblem",
+      "icon": "🔷"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Carro",
+      "intro": "Vencedor sereno de batalhas passadas, o auriga conduz esfinges opostas sem rédeas — apenas pela vontade.",
+      "regions": {
+        "starry-canopy": {
+          "title": "O Dossel Estrelado",
+          "description": "O céu tecido que cobre o carro: proteção celestial e os destinos — os astros que acompanham quem se move com propósito."
+        },
+        "sphinxes": {
+          "title": "As Esfinges Branca e Preta",
+          "description": "As forças opostas que o auriga não doma pela força, mas orquestra pela direção: sem rédeas, a intenção governa."
+        },
+        "winged-sun": {
+          "title": "O Disco Solar Alado",
+          "description": "O emblema egípcio à frente do carro: o coração elevado — a vitória de quem já dominou a si antes de vencer o mundo."
+        },
+        "shoulder-moons": {
+          "title": "As Luas nos Ombros",
+          "description": "Os crescentes nas espáduas: intuição e receptividade viajando junto à determinação — o lunar a serviço do solar."
+        },
+        "city-walls": {
+          "title": "A Cidade à Retaguarda",
+          "description": "As muralhas ficaram para trás: o que foi conquistado já está atrás; o Carro avança por terreno aberto — novos desafios, sem muros."
+        },
+        "square-emblem": {
+          "title": "O Quadrado no Peito",
+          "description": "O símbolo quadrado sobre o peito: a vontade quadrada — quatro elementos, quatro direções — firmeza geométrica no centro da ação."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Chariot",
+      "intro": "A serene victor of battles past, the charioteer drives opposing sphinxes without reins — by will alone.",
+      "regions": {
+        "starry-canopy": {
+          "title": "The Starry Canopy",
+          "description": "The woven sky that roofs the chariot: celestial protection and destinies — the stars that accompany those who move with purpose."
+        },
+        "sphinxes": {
+          "title": "The White and Black Sphinxes",
+          "description": "The opposing forces the charioteer does not tame by force but orchestrates by direction: without reins, intention governs."
+        },
+        "winged-sun": {
+          "title": "The Winged Solar Disc",
+          "description": "The Egyptian emblem at the front of the chariot: the uplifted heart — the victory of one who has mastered himself before conquering the world."
+        },
+        "shoulder-moons": {
+          "title": "The Moons on His Shoulders",
+          "description": "The crescents on his shoulder plates: intuition and receptivity traveling alongside determination — the lunar in the service of the solar."
+        },
+        "city-walls": {
+          "title": "The City Behind",
+          "description": "The walls are left behind: what has been conquered already lies at the rear; the Chariot advances through open ground — new challenges, without walls."
+        },
+        "square-emblem": {
+          "title": "The Square on His Chest",
+          "description": "The square symbol on his breastplate: the squared will — four elements, four directions — geometric firmness at the center of action."
+        }
+      }
+    },
+    "ja": {
+      "name": "戦車",
+      "intro": "過ぎた戦いの静かな勝者。御者は手綱を持たずに、対立する二頭のスフィンクスを——ただ意志のみで導きます。",
+      "regions": {
+        "starry-canopy": {
+          "title": "星空の天蓋",
+          "description": "戦車を覆う織り上げられた天空。天の加護と運命——目的をもって進む者に寄り添う星辰です。"
+        },
+        "sphinxes": {
+          "title": "白と黒のスフィンクス",
+          "description": "御者は対立する力を力で従わせるのではなく、方向によって調和させます。手綱がなくとも、意図が統べるのです。"
+        },
+        "winged-sun": {
+          "title": "翼ある太陽円盤",
+          "description": "戦車の正面に掲げられたエジプトの象徴。高められた心——世界を制する前に、すでに自分自身を制した者の勝利です。"
+        },
+        "shoulder-moons": {
+          "title": "肩の月",
+          "description": "肩当てに描かれた三日月。直観と受容が決意とともに旅をします——月なるものが太陽なるものに仕えているのです。"
+        },
+        "city-walls": {
+          "title": "後方の都",
+          "description": "城壁はすでに背後にあります。征服したものは後ろに残り、戦車は開けた地へ進みます——壁のない新たな挑戦へ。"
+        },
+        "square-emblem": {
+          "title": "胸の四角",
+          "description": "胸甲の上の四角いしるし。四角形の意志——四つの元素、四つの方角——行動の中心にある幾何学的な堅固さです。"
+        }
+      }
+    },
+    "he": {
+      "name": "המרכבה",
+      "intro": "מנצח שליו של קרבות עבר, רוכב המרכבה מוליך ספינקסים מנוגדים בלי רסן — רק בכוח הרצון.",
+      "regions": {
+        "starry-canopy": {
+          "title": "חופת הכוכבים",
+          "description": "השמיים הארוגים המכסים את המרכבה: הגנה שמימית וגורלות — הכוכבים שמלווים את מי שנע בתכלית."
+        },
+        "sphinxes": {
+          "title": "הספינקס הלבן והשחור",
+          "description": "הכוחות המנוגדים שרוכב המרכבה אינו מאלף בכוח אלא מכוון אותם: בלי רסן, הכוונה היא שמוליכה."
+        },
+        "winged-sun": {
+          "title": "גלגל השמש המכונף",
+          "description": "הסמל המצרי בחזית המרכבה: הלב המורם — ניצחונו של מי שכבש את עצמו לפני שכבש את העולם."
+        },
+        "shoulder-moons": {
+          "title": "הירחים על הכתפיים",
+          "description": "הסהרות על כתפותיו: אינטואיציה ופתיחות הנוסעות לצד הנחישות — הירחי בשירות השמשי."
+        },
+        "city-walls": {
+          "title": "העיר מאחור",
+          "description": "החומות נותרו מאחור: מה שנכבש כבר נמצא בעורף; המרכבה ממשיכה בשטח פתוח — אתגרים חדשים, בלי חומות."
+        },
+        "square-emblem": {
+          "title": "הריבוע על החזה",
+          "description": "הסמל המרובע על שריון החזה: הרצון המרובע — ארבעה יסודות, ארבע רוחות — איתנות גיאומטרית במרכז הפעולה."
+        }
+      }
+    }
+  }
+}

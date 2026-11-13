@@ -1,0 +1,153 @@
+{
+  "slug": "the-hierophant",
+  "number": 5,
+  "image": "/tarot/05_Hierophant.jpg",
+  "regions": [
+    {
+      "id": "triple-crown",
+      "icon": "👑"
+    },
+    {
+      "id": "triple-cross",
+      "icon": "✝️"
+    },
+    {
+      "id": "crossed-keys",
+      "icon": "🔑"
+    },
+    {
+      "id": "blessing-hand",
+      "icon": "🖐️"
+    },
+    {
+      "id": "acolytes",
+      "icon": "👥"
+    },
+    {
+      "id": "pillars",
+      "icon": "🏛️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Hierofante",
+      "intro": "O sacerdote da tradição: entre as colunas do templo, ele abençoa e guarda as chaves do mistério instituído.",
+      "regions": {
+        "triple-crown": {
+          "title": "A Coroa Tripla",
+          "description": "As três faixas da tiara: os três mundos — físico, mental e espiritual — sob uma só autoridade; papa, imperador e deus num só ofício."
+        },
+        "triple-cross": {
+          "title": "A Cruz Tripla",
+          "description": "O báculo de três travessas: a bênção desce por todos os níveis da existência, do céu à terra."
+        },
+        "crossed-keys": {
+          "title": "As Chaves Cruzadas",
+          "description": "De ouro e de prata, sol e lua: as chaves que abrem os mistérios exteriores e interiores — o exotérico e o esotérico postos em cruz."
+        },
+        "blessing-hand": {
+          "title": "A Mão em Bênção",
+          "description": "Os dois dedos erguidos: o gesto de ensinar e abençoar — a doutrina transmitida de mão em mão, de geração em geração."
+        },
+        "acolytes": {
+          "title": "Os Dois Monges",
+          "description": "Os iniciados tonsurados, de mantos bordados — obediência e devoção: a tradição só existe porque há quem a receba."
+        },
+        "pillars": {
+          "title": "As Colunas do Templo",
+          "description": "Diferentes das da Sacerdotisa (J e B), estas pertencem ao estabelecido: a igreja visível, a estrutura que sustenta o sagrado na matéria."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Hierophant",
+      "intro": "The priest of tradition: between the temple columns, he blesses and keeps the keys of the established mystery.",
+      "regions": {
+        "triple-crown": {
+          "title": "The Triple Crown",
+          "description": "The three bands of the tiara: the three worlds — physical, mental and spiritual — under a single authority; pope, emperor and god in one office."
+        },
+        "triple-cross": {
+          "title": "The Triple Cross",
+          "description": "The staff with three crossbars: blessing descends through every level of existence, from heaven to earth."
+        },
+        "crossed-keys": {
+          "title": "The Crossed Keys",
+          "description": "Of gold and silver, sun and moon: the keys that open the outer and inner mysteries — the exoteric and the esoteric set in a cross."
+        },
+        "blessing-hand": {
+          "title": "The Hand in Blessing",
+          "description": "The two raised fingers: the gesture of teaching and blessing — doctrine handed down from hand to hand, from generation to generation."
+        },
+        "acolytes": {
+          "title": "The Two Monks",
+          "description": "The tonsured initiates in embroidered cloaks — obedience and devotion: tradition exists only because there are those who receive it."
+        },
+        "pillars": {
+          "title": "The Temple Pillars",
+          "description": "Unlike those of the High Priestess (J and B), these belong to the established: the visible church, the structure that sustains the sacred in matter."
+        }
+      }
+    },
+    "ja": {
+      "name": "教皇",
+      "intro": "伝統の祭司。神殿の柱の間に立ち、彼は制定された神秘の鍵を祝福し、守り続けます。",
+      "regions": {
+        "triple-crown": {
+          "title": "三重冠",
+          "description": "冠の三つの帯は三つの世界——肉体、精神、霊——を一つの権威のもとに置きます。教皇、皇帝、そして神が一つの職務に重なるのです。"
+        },
+        "triple-cross": {
+          "title": "三重十字",
+          "description": "三本の横木を持つ杖。祝福は天から地へ、存在のあらゆる階層を下っていきます。"
+        },
+        "crossed-keys": {
+          "title": "交差した鍵",
+          "description": "金と銀、太陽と月。外なる神秘と内なる神秘を開く鍵——表の教えと秘儀とが十字に組み合わされています。"
+        },
+        "blessing-hand": {
+          "title": "祝福の手",
+          "description": "二本の上げられた指は、教え、そして祝福する仕草。教義は手から手へ、世代から世代へと受け継がれていきます。"
+        },
+        "acolytes": {
+          "title": "二人の修道士",
+          "description": "剃髪された二人の入門者、刺繍の施された外套。服従と帰依——伝統は、それを受け取る者がいるからこそ存在します。"
+        },
+        "pillars": {
+          "title": "神殿の柱",
+          "description": "女教皇の柱（JとB）とは異なり、こちらは制度化されたものに属します。目に見える教会、聖なるものを物質のうちに支える構造です。"
+        }
+      }
+    },
+    "he": {
+      "name": "ההירופנט",
+      "intro": "כוהן המסורת: בין עמודי המקדש הוא מברך ושומר על מפתחות הסוד הממוסד.",
+      "regions": {
+        "triple-crown": {
+          "title": "הכתר המשולש",
+          "description": "שלושת פסי המצנפת: שלושת העולמות — הפיזי, הנפשי והרוחני — תחת סמכות אחת; אפיפיור, קיסר ואל במשרה אחת."
+        },
+        "triple-cross": {
+          "title": "הצלב המשולש",
+          "description": "המטה בעל שלוש הזרועות: הברכה יורדת בכל רמות הקיום, מן השמיים ועד הארץ."
+        },
+        "crossed-keys": {
+          "title": "המפתחות המוצלבות",
+          "description": "של זהב ושל כסף, שמש וירח: המפתחות שפותחים את הסודות החיצוניים והפנימיים — הנגלה והנסתר מוצבים בצורת צלב."
+        },
+        "blessing-hand": {
+          "title": "היד המברכת",
+          "description": "שתי האצבעות המורמות: מחוות ההוראה והברכה — התורה הנמסרת מיד ליד, מדור לדור."
+        },
+        "acolytes": {
+          "title": "שני הנזירים",
+          "description": "המתחילים שגולח שערם, עטופים בגלימות רקומות — ציות ומסירות: המסורת קיימת רק משום שיש מי שמקבל אותה."
+        },
+        "pillars": {
+          "title": "עמודי המקדש",
+          "description": "שלא כעמודיה של הכוהנת הגדולה (י' ו־ב'), אלה שייכים לממוסד: הכנסייה הנראית לעין, המבנה שמחזיק את הקודש בחומר."
+        }
+      }
+    }
+  }
+}

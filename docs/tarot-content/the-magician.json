@@ -1,0 +1,153 @@
+{
+  "slug": "the-magician",
+  "number": 1,
+  "image": "/tarot/01_Magician.jpg",
+  "regions": [
+    {
+      "id": "infinity",
+      "icon": "♾️"
+    },
+    {
+      "id": "wand",
+      "icon": "🪄"
+    },
+    {
+      "id": "pointing-hand",
+      "icon": "🖐️"
+    },
+    {
+      "id": "table-tools",
+      "icon": "♠️"
+    },
+    {
+      "id": "rose-garden",
+      "icon": "🌹"
+    },
+    {
+      "id": "serpent-belt",
+      "icon": "🐍"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Mago",
+      "intro": "Como acima, embaixo: o Mago é o canal entre o céu e a terra, com todas as ferramentas da criação ao seu alcance. Explore cada símbolo da carta.",
+      "regions": {
+        "infinity": {
+          "title": "O Símbolo do Infinito",
+          "description": "A lemniscata vertical sobre a cabeça é a chave do arcano: mente ilimitada, o domínio completo do vocabulário da criação."
+        },
+        "wand": {
+          "title": "A Varinha Erguida",
+          "description": "A haste erguida na mão direita capta a força divina; o Mago não a possui, apenas a conduz."
+        },
+        "pointing-hand": {
+          "title": "A Mão que Aponta a Terra",
+          "description": "O dedo da mão livre aponta ao chão: o princípio hermético 'como acima, embaixo' — toda inspiração deve encarnar na matéria."
+        },
+        "table-tools": {
+          "title": "A Mesa e os Quatro Naipes",
+          "description": "Sobre a mesa, copa, espada, bastão e pantáculo: os quatro elementos — emoção, mente, vontade e corpo — as ferramentas da manifestação."
+        },
+        "rose-garden": {
+          "title": "O Jardim de Rosas",
+          "description": "Rosas e lírios florescem diante da mesa: desejo e pureza cultivados lado a lado — a matéria já transmutada em paraíso."
+        },
+        "serpent-belt": {
+          "title": "O Cinto-Serpente",
+          "description": "A serpente que morde a própria cauda (ouroboros) na cintura: eternidade e autorregeneração — o poder retido em círculo fechado."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Magician",
+      "intro": "As above, so below: the Magician is the channel between heaven and earth, with every tool of creation within reach. Explore each symbol of the card.",
+      "regions": {
+        "infinity": {
+          "title": "The Infinity Symbol",
+          "description": "The vertical lemniscate above his head is the key to the arcana: an unlimited mind, complete command of the vocabulary of creation."
+        },
+        "wand": {
+          "title": "The Raised Wand",
+          "description": "The wand raised in his right hand draws down divine force; the Magician does not own it, he only conducts it."
+        },
+        "pointing-hand": {
+          "title": "The Hand Pointing Down",
+          "description": "His free hand points to the earth: the hermetic principle 'as above, so below' — every inspiration must become flesh in matter."
+        },
+        "table-tools": {
+          "title": "The Table and the Four Suits",
+          "description": "On the table lie cup, sword, wand and pentacle: the four elements — emotion, mind, will and body — the tools of manifestation."
+        },
+        "rose-garden": {
+          "title": "The Rose Garden",
+          "description": "Roses and lilies bloom before the table: desire and purity cultivated side by side — matter already transmuted into paradise."
+        },
+        "serpent-belt": {
+          "title": "The Serpent Belt",
+          "description": "The serpent biting its own tail (ouroboros) at his waist: eternity and self-renewal — power held within a closed circle."
+        }
+      }
+    },
+    "ja": {
+      "name": "魔術師",
+      "intro": "上にあるものは下にあるもの。魔術師は天と地をつなぐ通路であり、創造の道具すべてを手の届くところに置いています。カードのひとつひとつのシンボルを探ってみましょう。",
+      "regions": {
+        "infinity": {
+          "title": "無限のシンボル",
+          "description": "頭上に垂直に描かれたレムニスケート（∞）はこのアルカナの鍵です。無限の精神、創造の語彙を完全に操る力。"
+        },
+        "wand": {
+          "title": "掲げたワンド",
+          "description": "右手に掲げたワンドは神の力を引き寄せます。魔術師はそれを所有するのではなく、ただ導くのです。"
+        },
+        "pointing-hand": {
+          "title": "地を指す手",
+          "description": "自由なほうの手は地面を指さしています。ヘルメス主義の原則「上にあるものは下にあるもの」——すべての霊感は物質のうちに具現化されねばなりません。"
+        },
+        "table-tools": {
+          "title": "机と四つのスート",
+          "description": "机の上には聖杯、剣、ワンド、ペンタクル。四大元素——感情、精神、意志、身体——すなわち顕現の道具です。"
+        },
+        "rose-garden": {
+          "title": "バラの庭",
+          "description": "机の前にバラとユリが咲いています。欲望と純粋さが並んで育まれ、物質はすでに楽園へと変容しています。"
+        },
+        "serpent-belt": {
+          "title": "蛇のベルト",
+          "description": "腰に巻かれた、自らの尾を噛む蛇（ウロボロス）。永遠と自己再生——閉じた円環のうちに保たれた力です。"
+        }
+      }
+    },
+    "he": {
+      "name": "הקוסם",
+      "intro": "כמו למעלה כך למטה: הקוסם הוא הצינור בין השמיים לארץ, וכל כלי הבריאה נמצאים בהישג ידו. גלו כל אחד מסמלי הקלף.",
+      "regions": {
+        "infinity": {
+          "title": "סמל האינסוף",
+          "description": "הלמניסקט האנכי מעל ראשו הוא מפתח הארקנה: תודעה בלתי מוגבלת, שליטה מלאה באוצר המילים של הבריאה."
+        },
+        "wand": {
+          "title": "המטה המורם",
+          "description": "המטה המורם בידו הימנית קולט את הכוח האלוהי; הקוסם אינו מחזיק בו, הוא רק מוליך אותו."
+        },
+        "pointing-hand": {
+          "title": "היד המצביעה מטה",
+          "description": "ידו החופשית מצביעה אל האדמה: העיקרון ההרמטי 'כמו למעלה כך למטה' — כל השראה חייבת להתגשם בחומר."
+        },
+        "table-tools": {
+          "title": "השולחן וארבעת הבתים",
+          "description": "על השולחן מונחים גביע, חרב, מטה ופנטקל: ארבעת היסודות — רגש, תודעה, רצון וגוף — כלי ההתגשמות."
+        },
+        "rose-garden": {
+          "title": "גן הוורדים",
+          "description": "ורדים ושושנים לבנות פורחים לפני השולחן: תשוקה וטוהר גדלים זה לצד זה — החומר שכבר עבר טרנספורמציה לגן עדן."
+        },
+        "serpent-belt": {
+          "title": "חגורת הנחש",
+          "description": "הנחש הנושך את זנבו (אורובורוס) במותניו: נצח והתחדשות עצמית — כוח הכלוא במעגל סגור."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "slug": "the-moon",
+  "number": 18,
+  "image": "/tarot/18_Moon.jpg",
+  "regions": [
+    {
+      "id": "moon-face",
+      "icon": "🌙"
+    },
+    {
+      "id": "dew-drops",
+      "icon": "💧"
+    },
+    {
+      "id": "dog-wolf",
+      "icon": "🐺"
+    },
+    {
+      "id": "crayfish",
+      "icon": "🦞"
+    },
+    {
+      "id": "two-towers",
+      "icon": "🗼"
+    },
+    {
+      "id": "winding-path",
+      "icon": "➰"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Lua",
+      "intro": "No caminho entre duas torres, o que sobe do lago ainda não tem nome: cão, lobo e lagostim respondem ao mesmo silêncio.",
+      "regions": {
+        "moon-face": {
+          "title": "A Lua com Rosto",
+          "description": "O disco com semblante, entre raios retos e ondulados: a luz emprestada, cambiante — a verdade lunar muda de fase conforme quem olha."
+        },
+        "dew-drops": {
+          "title": "As Gotas de Orvalho",
+          "description": "Caem do céu à terra: inspiração e intuição — o orvalho que só se recolhe de madrugada, em silêncio."
+        },
+        "dog-wolf": {
+          "title": "O Cão e o Lobo",
+          "description": "O doméstico e o selvagem uivam para a mesma Lua: a natureza treinada e a natureza intacta reagem ao que não controlam — revelam-se na noite."
+        },
+        "crayfish": {
+          "title": "O Lagostim",
+          "description": "Emergindo do lago, entre as águas e o caminho: o fundo mais antigo do inconsciente — os medos primitivos, couraçados, que só sobem quando a luz diminui."
+        },
+        "two-towers": {
+          "title": "As Duas Torres",
+          "description": "A entrada do desconhecido: portais incompletos — a passagem entre o conhecido e o jamais mapeado; o caminho segue entre elas, não por fora."
+        },
+        "winding-path": {
+          "title": "O Caminho Sinuoso",
+          "description": "Sobe, vira, some e reaparece: a jornada noturna não é linha reta — atravessa-se confiando em quem desenhou a trilha assim."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Moon",
+      "intro": "On the path between two towers, what rises from the lake has no name yet: dog, wolf and crayfish answer to the same silence.",
+      "regions": {
+        "moon-face": {
+          "title": "The Moon with a Face",
+          "description": "The disc with a countenance, between straight and wavy rays: borrowed, shifting light — lunar truth changes phase according to who looks at it."
+        },
+        "dew-drops": {
+          "title": "The Drops of Dew",
+          "description": "They fall from sky to earth: inspiration and intuition — the dew that is gathered only at dawn, in silence."
+        },
+        "dog-wolf": {
+          "title": "The Dog and the Wolf",
+          "description": "The tame and the wild howl at the same Moon: trained nature and untouched nature react to what they cannot control — they reveal themselves in the night."
+        },
+        "crayfish": {
+          "title": "The Crayfish",
+          "description": "Emerging from the lake, between the waters and the path: the oldest floor of the unconscious — the primitive, armored fears that rise only when the light dims."
+        },
+        "two-towers": {
+          "title": "The Two Towers",
+          "description": "The gateway to the unknown: unfinished portals — the passage between the known and the never-mapped; the path runs between them, not around them."
+        },
+        "winding-path": {
+          "title": "The Winding Path",
+          "description": "It climbs, turns, vanishes and reappears: the night journey is no straight line — you cross it by trusting whoever drew the trail this way."
+        }
+      }
+    },
+    "ja": {
+      "name": "月",
+      "intro": "二本の塔のあいだの道で、湖から昇ってくるものはまだ名を持ちません。犬も狼もザリガニも、同じ沈黙に応えています。",
+      "regions": {
+        "moon-face": {
+          "title": "顔のある月",
+          "description": "まっすぐな光線と波打つ光線のあいだに浮かぶ、顔を持つ円盤。借り物の、移ろう光——月の真実は、見る者によって満ち欠けします。"
+        },
+        "dew-drops": {
+          "title": "露のしずく",
+          "description": "天から地へと落ちる、霊感と直観——夜明けにだけ、静かに集められる露です。"
+        },
+        "dog-wolf": {
+          "title": "犬と狼",
+          "description": "飼いならされたものと野生のものが、同じ月に向かって遠吠えします。訓練された自然と手つかずの自然が、制御できないものに反応し——夜にこそ姿を現すのです。"
+        },
+        "crayfish": {
+          "title": "ザリガニ",
+          "description": "水と道のあいだで池から這い上がる、無意識の最も古い底。原始的な恐怖は鎧をまとい、光が弱まるときにだけ浮かび上がります。"
+        },
+        "two-towers": {
+          "title": "二本の塔",
+          "description": "未知への入口に立つ、完成されていない門。既知と、いまだ地図にないものとのあいだの通路です——道は外側ではなく、二本の塔のあいだを通ります。"
+        },
+        "winding-path": {
+          "title": "曲がりくねる道",
+          "description": "登り、曲がり、消えてはまた現れます。夜の旅は直線ではありません——この道をこう描いたものを信じて、歩み抜くのです。"
+        }
+      }
+    },
+    "he": {
+      "name": "הירח",
+      "intro": "על השביל שבין שני המגדלים, מה שעולה מן האגם עוד אין לו שם: כלב, זאב וסרטן הנהרות עונים לאותה שתיקה.",
+      "regions": {
+        "moon-face": {
+          "title": "הירח בעל הפנים",
+          "description": "הגלגל בעל הפנים, בין קרניים ישרות וגליות: אור שאול ומשתנה — אמיתת הירח מחליפה מופע לפי מי שמביט בה."
+        },
+        "dew-drops": {
+          "title": "טיפות הטל",
+          "description": "הן נופלות מן השמיים אל הארץ: השראה ואינטואיציה — הטל שנאסף רק עם שחר, בדממה."
+        },
+        "dog-wolf": {
+          "title": "הכלב והזאב",
+          "description": "המבוית והפראי מייללים אל אותו ירח: הטבע המאולף והטבע הבתולי מגיבים למה שאינם שולטים בו — והם נגלים בלילה."
+        },
+        "crayfish": {
+          "title": "סרטן הנהרות",
+          "description": "עולה מן האגם, בין המים אל השביל: הקרקעית הקדומה ביותר של הלא־מודע — הפחדים הקדמונים, עטויי השריון, שעולים רק כשהאור נחלש."
+        },
+        "two-towers": {
+          "title": "שני המגדלים",
+          "description": "השער אל הלא־נודע: שערים בלתי שלמים — המעבר בין המוכר לבין מה שלא מופה מעולם; השביל עובר ביניהם, ולא מסביבם."
+        },
+        "winding-path": {
+          "title": "השביל המתפתל",
+          "description": "עולה, מתעקל, נעלם וחוזר ומופיע: מסע הלילה אינו קו ישר — חוצים אותו מתוך אמון במי ששרטט את השביל כך."
+        }
+      }
+    }
+  }
+}

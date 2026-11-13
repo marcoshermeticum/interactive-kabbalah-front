@@ -1,0 +1,173 @@
+{
+  "slug": "the-fool",
+  "number": 0,
+  "image": "/tarot/the-fool.jpg",
+  "regions": [
+    {
+      "id": "sun",
+      "icon": "☀️"
+    },
+    {
+      "id": "mountains",
+      "icon": "🏔️"
+    },
+    {
+      "id": "cliff",
+      "icon": "🪨"
+    },
+    {
+      "id": "bundle",
+      "icon": "🎒"
+    },
+    {
+      "id": "white-rose",
+      "icon": "🌹"
+    },
+    {
+      "id": "dog",
+      "icon": "🐕"
+    },
+    {
+      "id": "feather",
+      "icon": "🪶"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Louco",
+      "intro": "No limiar do abismo, o eterno principiante parte sem bagagem visível — apenas fé, instinto e a luz que o guia. Explore cada símbolo da carta.",
+      "regions": {
+        "sun": {
+          "title": "O Sol Radiante",
+          "description": "O sol brilha por trás do ombro do Louco: a bênção divina que acompanha quem ousa o salto. Sua luz é a certeza interior que dispensa planejamento."
+        },
+        "mountains": {
+          "title": "As Montanhas Geladas",
+          "description": "Os picos nevados ao fundo são as alturas da aspiração espiritual — o objetivo distante que o viajante nem precisa encarar ainda; basta caminhar."
+        },
+        "cliff": {
+          "title": "O Penhasco",
+          "description": "O abismo à beira do passo é o desconhecido. O Louco não o nota — ou não se importa: fé não calcula, confia. É o ponto zero de toda jornada."
+        },
+        "bundle": {
+          "title": "A Tralha no Cajado",
+          "description": "A trouxa colorida pendurada no bastão carrega os arquétipos do inconsciente coletivo — a herança que todo viajante leva sem saber o que contém."
+        },
+        "white-rose": {
+          "title": "A Rosa Branca",
+          "description": "Na mão esquerda, a rosa branca é a pureza da intenção e a inocência intacta: o princípio sem mácula de cada começo."
+        },
+        "dog": {
+          "title": "O Cãozinho Branco",
+          "description": "O cão que salta aos pés do Louco é o instinto fiel — e também o aviso: a lealdade do corpo animal acompanha, late e protege, mas não decide o salto."
+        },
+        "feather": {
+          "title": "A Pena Vermelha",
+          "description": "A pena vermelha no gorro recorda a leveza necessária: coragem vibrante, sem o peso das certezas."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Fool",
+      "intro": "On the edge of the abyss, the eternal beginner sets out with no visible baggage — only faith, instinct and the light that guides him. Explore each symbol of the card.",
+      "regions": {
+        "sun": {
+          "title": "The Radiant Sun",
+          "description": "The sun shines behind the Fool's shoulder: the divine blessing that accompanies whoever dares the leap. Its light is the inner certainty that needs no planning."
+        },
+        "mountains": {
+          "title": "The Snowy Mountains",
+          "description": "The snow-capped peaks in the distance are the heights of spiritual aspiration — the far-off goal the traveler does not even need to face yet; it is enough to walk."
+        },
+        "cliff": {
+          "title": "The Cliff",
+          "description": "The abyss at the edge of the step is the unknown. The Fool does not notice it — or does not mind: faith does not calculate, it trusts. This is the zero point of every journey."
+        },
+        "bundle": {
+          "title": "The Bundle on the Staff",
+          "description": "The colorful bundle hanging from the staff carries the archetypes of the collective unconscious — the heritage every traveler carries without knowing what it holds."
+        },
+        "white-rose": {
+          "title": "The White Rose",
+          "description": "In his left hand, the white rose is the purity of intention and the untouched innocence: the unblemished principle of every beginning."
+        },
+        "dog": {
+          "title": "The Little White Dog",
+          "description": "The dog leaping at the Fool's feet is faithful instinct — and also a warning: the loyalty of the animal body accompanies, barks and protects, but does not decide the leap."
+        },
+        "feather": {
+          "title": "The Red Feather",
+          "description": "The red feather on his cap recalls the lightness required: vibrant courage, without the weight of certainties."
+        }
+      }
+    },
+    "ja": {
+      "name": "愚者",
+      "intro": "深淵の縁に立つ永遠の初心者は、目に見える荷物を持たずに旅立ちます——あるのは信仰と本能、そして彼を導く光だけ。カードのひとつひとつのシンボルを探ってみましょう。",
+      "regions": {
+        "sun": {
+          "title": "輝く太陽",
+          "description": "太陽は愚者の肩越しに輝いています。飛躍をあえてする者に寄り添う神の祝福です。その光は、綿密な計画を必要としない内なる確信そのものです。"
+        },
+        "mountains": {
+          "title": "雪の山々",
+          "description": "遠くにそびえる雪の峰は、霊的高みへの憧れの象徴。旅人がまだ向き合う必要のない遠い目標です——ただ歩き続ければ十分なのです。"
+        },
+        "cliff": {
+          "title": "断崖",
+          "description": "一歩先に待つ深淵は、未知そのもの。愚者はそれに気づいていない——あるいは気に留めていない。信仰は計算せず、信頼します。あらゆる旅の原点ゼロです。"
+        },
+        "bundle": {
+          "title": "杖に吊るされた荷物",
+          "description": "杖に吊るされた色とりどりの袋には、集合的無意識の原型が詰められています。すべての旅人が、中身を知らぬままに担いでいく遺産です。"
+        },
+        "white-rose": {
+          "title": "白いバラ",
+          "description": "左手に持つ白いバラは、純粋な意図と傷ついていない無垢の象徴。あらゆる始まりの、汚れなき原理です。"
+        },
+        "dog": {
+          "title": "白い子犬",
+          "description": "愚者の足元に飛びかかる犬は、忠実な本能——そして警告でもあります。動物の身体の忠誠心は寄り添い、吠え、守りますが、飛躍を決めることはありません。"
+        },
+        "feather": {
+          "title": "赤い羽根",
+          "description": "帽子の赤い羽根は、必要とされる軽やかさを思い出させます。確信の重みを脱ぎ捨てた、鮮やかな勇気の証です。"
+        }
+      }
+    },
+    "he": {
+      "name": "השוטה",
+      "intro": "על סף התהום, המתחיל הנצחי יוצא לדרך בלי מטען נראה לעין — רק אמונה, אינסטינקט והאור שמנחה אותו. גלו כל אחד מסמלי הקלף.",
+      "regions": {
+        "sun": {
+          "title": "השמש הזוהרת",
+          "description": "השמש זורחת מאחורי כתפו של השוטה: הברכה האלוהית שמלווה את מי שמעז לקפוץ. אורה הוא הוודאות הפנימית שאינה זקוקה לתכנון."
+        },
+        "mountains": {
+          "title": "ההרים המושלגים",
+          "description": "הפסגות המושלגות ברקע הן פסגות השאיפה הרוחנית — היעד הרחוק שההולך בדרך אפילו לא צריך להביט בו עדיין; די לו ללכת."
+        },
+        "cliff": {
+          "title": "הצוק",
+          "description": "התהום שבקצה הצעד היא הלא-נודע. השוטה אינו מבחין בה — או שלא איכפת לו: האמונה אינה מחשבת, היא בוטחת. זו נקודת האפס של כל מסע."
+        },
+        "bundle": {
+          "title": "הצרור על המקל",
+          "description": "הצרור הצבעוני התלוי על המקל נושא את הארכיטיפים של הלא-מודע הקולקטיבי — המורשת שכל הולך בדרך נושא עמו בלי לדעת מה טמון בה."
+        },
+        "white-rose": {
+          "title": "הוורד הלבן",
+          "description": "בידו השמאלית, הוורד הלבן הוא טוהר הכוונה והתמימות שלא נפגעה: העיקרון החף מכתם של כל התחלה."
+        },
+        "dog": {
+          "title": "הכלב הלבן הקטן",
+          "description": "הכלב המזנק לרגלי השוטה הוא האינסטינקט הנאמן — וגם האזהרה: נאמנות הגוף החייתי מלווה, נובחת ומגינה, אך אינה מחליטה על הקפיצה."
+        },
+        "feather": {
+          "title": "הנוצרה האדומה",
+          "description": "הנוצרה האדומה בכובע מזכירה את הקלילות הנדרשת: אומץ לוהט, בלי משקלן של הוודאויות."
+        }
+      }
+    }
+  }
+}

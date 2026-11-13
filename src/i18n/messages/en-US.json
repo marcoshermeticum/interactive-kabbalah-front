@@ -167,6 +167,36 @@
           "description": "In the background, the waterfall and the forest: life flowing without a dam — nature renewing itself within its own rhythm."
         }
       }
+    },
+    "theEmperor": {
+      "name": "The Emperor",
+      "intro": "The archetype of the Father: structure, law and iron will enthroned upon power.",
+      "regions": {
+        "ramHeads": {
+          "title": "The Rams of the Throne",
+          "description": "The rams' heads carved into the arms of the throne: Aries and Mars — the initiating force, the impulse that opens every new cycle."
+        },
+        "ankh": {
+          "title": "The Ankh Scepter",
+          "description": "The ankh cross is the life the Emperor grants and sustains: his power exists to organize and preserve existence, not to destroy it."
+        },
+        "orb": {
+          "title": "The Orb",
+          "description": "In his left hand, the globe of dominion: the world under conscious control — complete vision, government from afar."
+        },
+        "armor": {
+          "title": "The Armor Beneath the Mantle",
+          "description": "Under the red robes, the breastplate: the ruler remains a warrior within even when serene without — the rigidity that protects and also imprisons."
+        },
+        "beardCrown": {
+          "title": "The Beard and the Crown",
+          "description": "The long white beard is the wisdom accumulated by time; the golden crown, the right to command inherited from experience — not from whim."
+        },
+        "mountains": {
+          "title": "The Arid Mountains",
+          "description": "The rocky desert in the background: the realm of form in its driest, most defined state — clear limits, without dissolution."
+        }
+      }
     }
   },
   "tarotWaite": {

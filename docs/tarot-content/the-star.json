@@ -1,0 +1,153 @@
+{
+  "slug": "the-star",
+  "number": 17,
+  "image": "/tarot/17_Star.jpg",
+  "regions": [
+    {
+      "id": "great-star",
+      "icon": "⭐"
+    },
+    {
+      "id": "seven-stars",
+      "icon": "✨"
+    },
+    {
+      "id": "two-jugs",
+      "icon": "🫗"
+    },
+    {
+      "id": "ibis",
+      "icon": "🐦"
+    },
+    {
+      "id": "pool",
+      "icon": "💦"
+    },
+    {
+      "id": "horizon",
+      "icon": "🌱"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Estrela",
+      "intro": "Depois da tempestade, o céu se abre: a Donadora despeja suas águas sobre a terra e sobre o lago.",
+      "regions": {
+        "great-star": {
+          "title": "A Grande Estrela",
+          "description": "A estrela maior de oito raios: a esperança que não depende de circunstância — Vênus, a estrela da manhã, que anuncia o Sol sem ser o Sol."
+        },
+        "seven-stars": {
+          "title": "As Sete Estrelas Menores",
+          "description": "Sete pequenos sóis ao redor: os sete chakras, os sete planetas clássicos — a hierarquia intermediária entre você e a Grande Estrela."
+        },
+        "two-jugs": {
+          "title": "Os Dois Jarros",
+          "description": "A água vertida em duas direções — sobre a terra (o corpo, o prático) e sobre o lago (a alma, o inconsciente): nutrir os dois mundos com a mesma fonte."
+        },
+        "ibis": {
+          "title": "O Íbis na Árvore",
+          "description": "A ave de Thoth à beira da água: o pensamento que se renova — após a purificação da Torre, o primeiro pássaro a voltar é a reflexão serena."
+        },
+        "pool": {
+          "title": "O Lago",
+          "description": "A água parada que recebe: o inconsciente reabastecido — a psique que não pede para entender, apenas para ser banhada."
+        },
+        "horizon": {
+          "title": "A Terra e o Horizonte",
+          "description": "O chão e o limite do céu: a promessa de integração — o que desceu do alto vai crescer no chão; esperança que vira planta."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Star",
+      "intro": "After the storm the sky opens: the Giver pours her waters over the earth and over the lake.",
+      "regions": {
+        "great-star": {
+          "title": "The Great Star",
+          "description": "The larger star with eight rays: hope that does not depend on circumstance — Venus, the morning star, announcing the Sun without being the Sun."
+        },
+        "seven-stars": {
+          "title": "The Seven Smaller Stars",
+          "description": "Seven little suns around her: the seven chakras, the seven classical planets — the intermediate hierarchy between you and the Great Star."
+        },
+        "two-jugs": {
+          "title": "The Two Jugs",
+          "description": "Water poured in two directions — onto the land (the body, the practical) and into the lake (the soul, the unconscious): feeding both worlds from the same source."
+        },
+        "ibis": {
+          "title": "The Ibis in the Tree",
+          "description": "The bird of Thoth at the water's edge: thought renewing itself — after the purification of the Tower, the first bird to return is serene reflection."
+        },
+        "pool": {
+          "title": "The Pool",
+          "description": "The still water that receives: the unconscious replenished — the psyche that does not ask to understand, only to be bathed."
+        },
+        "horizon": {
+          "title": "The Earth and the Horizon",
+          "description": "The ground and the limit of the sky: the promise of integration — what descended from above will grow in the soil; hope that becomes a plant."
+        }
+      }
+    },
+    "ja": {
+      "name": "星",
+      "intro": "嵐のあと、空がひらきます。授け与える者が、大地と湖へと水を注いでいます。",
+      "regions": {
+        "great-star": {
+          "title": "大いなる星",
+          "description": "八つの光を放つ大きな星は、状況に左右されない希望——明けの明星ヴィーナスは、太陽そのものではなく、太陽を告げ知らせます。"
+        },
+        "seven-stars": {
+          "title": "七つの小さな星",
+          "description": "周囲に並ぶ七つの小さな太陽は、七つのチャクラ、七つの古典惑星——あなたと大いなる星とを結ぶ中間の階梯です。"
+        },
+        "two-jugs": {
+          "title": "二つの水差し",
+          "description": "水は二つの方向へ注がれます。大地へ（身体、実践）、湖へ（魂、無意識）——同じ源から二つの世界を養うのです。"
+        },
+        "ibis": {
+          "title": "木の上のトキ",
+          "description": "水辺にたたずむトトの鳥は、新たになる思考。塔の浄化を経て、最初に戻ってくる鳥は静かな省察なのです。"
+        },
+        "pool": {
+          "title": "湖",
+          "description": "受けとめる静かな水——満たされなおす無意識。理解を求めず、ただ浸されることを願う心です。"
+        },
+        "horizon": {
+          "title": "大地と地平線",
+          "description": "地面と空の境目は、統合の約束です。上から降りたものは大地に根づき、希望は植物となって育ちます。"
+        }
+      }
+    },
+    "he": {
+      "name": "הכוכב",
+      "intro": "אחרי הסערה נפתחים השמיים: הנותנת שופכת מימיה על האדמה ועל האגם.",
+      "regions": {
+        "great-star": {
+          "title": "הכוכב הגדול",
+          "description": "הכוכב הגדול בעל שמונת הקרניים: תקווה שאינה תלויה בנסיבות — ונוס, כוכב הבוקר, המבשר את השמש בלי להיות השמש."
+        },
+        "seven-stars": {
+          "title": "שבעת הכוכבים הקטנים",
+          "description": "שבע שמשות קטנות סביבה: שבע הצ'אקרות, שבעת כוכבי הלכת הקלאסיים — ההיררכיה המתווכת בין האדם לכוכב הגדול."
+        },
+        "two-jugs": {
+          "title": "שני הכדים",
+          "description": "המים נשפכים לשני כיוונים — אל האדמה (הגוף, המעשה) ואל האגם (הנשמה, הלא־מודע): הזנה של שני העולמות ממקור אחד."
+        },
+        "ibis": {
+          "title": "האיביס בעץ",
+          "description": "ציפורו של תחות על שפת המים: המחשבה המתחדשת — אחרי הטיהור של המגדל, הציפור הראשונה החוזרת היא ההתבוננות השקטה."
+        },
+        "pool": {
+          "title": "האגם",
+          "description": "המים הדוממים שמקבלים: הלא־מודע שמתמלא מחדש — הנפש שאינה מבקשת להבין, רק להירחץ."
+        },
+        "horizon": {
+          "title": "האדמה והאופק",
+          "description": "הקרקע וגבול השמיים: הבטחת האיחוד — מה שירד מלמעלה יצמח באדמה; תקווה שהופכת לצמח."
+        }
+      }
+    }
+  }
+}

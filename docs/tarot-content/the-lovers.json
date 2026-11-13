@@ -1,0 +1,153 @@
+{
+  "slug": "the-lovers",
+  "number": 6,
+  "image": "/tarot/06_Lovers.jpg",
+  "regions": [
+    {
+      "id": "angel",
+      "icon": "👼"
+    },
+    {
+      "id": "sun",
+      "icon": "☀️"
+    },
+    {
+      "id": "flaming-tree",
+      "icon": "🔥"
+    },
+    {
+      "id": "serpent-tree",
+      "icon": "🐍"
+    },
+    {
+      "id": "couple",
+      "icon": "👫"
+    },
+    {
+      "id": "mountain",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Os Enamorados",
+      "intro": "Sob a bênção de Rafael, a alma escolhe: a árvore em chamas e a árvore da serpente, o homem e a mulher, o desejo e a consciência.",
+      "regions": {
+        "angel": {
+          "title": "O Anjo Rafael",
+          "description": "De asas abertas, Rafael — \"Deus cura\" — preside a união: o amor como força regeneradora e escolha consciente, não anseio cego."
+        },
+        "sun": {
+          "title": "O Sol",
+          "description": "O disco dourado atrás do anjo: a verdade que ilumina toda união autêntica — nada a esconder sob a luz plena."
+        },
+        "flaming-tree": {
+          "title": "A Árvore em Chamas",
+          "description": "Atrás do homem, a árvore flamejante é o zelo da vontade: o fogo yang, a paixão que ilumina e devora."
+        },
+        "serpent-tree": {
+          "title": "A Árvore da Serpente",
+          "description": "Atrás da mulher, a árvore do conhecimento com a serpente enroscada: a sabedoria recebida, o magnetismo yin — o desejo que seduz à experiência."
+        },
+        "couple": {
+          "title": "O Homem e a Mulher",
+          "description": "Ele olha para ela; ela, para o anjo: consciência voltada ao inconsciente, inconsciente voltado ao espírito — o triângulo de toda relação transformadora."
+        },
+        "mountain": {
+          "title": "A Montanha",
+          "description": "O pico distante entre os dois: a união como escalada — o objetivo sublime que se alcança a dois, nunca sozinho."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Lovers",
+      "intro": "Under Raphael's blessing, the soul chooses: the flaming tree and the serpent's tree, the man and the woman, desire and consciousness.",
+      "regions": {
+        "angel": {
+          "title": "The Angel Raphael",
+          "description": "With wings spread, Raphael — \"God heals\" — presides over the union: love as a regenerative force and a conscious choice, not blind yearning."
+        },
+        "sun": {
+          "title": "The Sun",
+          "description": "The golden disc behind the angel: the truth that illuminates every authentic union — nothing to hide beneath the full light."
+        },
+        "flaming-tree": {
+          "title": "The Flaming Tree",
+          "description": "Behind the man, the blazing tree is the zeal of the will: the yang fire, the passion that illuminates and devours."
+        },
+        "serpent-tree": {
+          "title": "The Tree of the Serpent",
+          "description": "Behind the woman, the tree of knowledge with the serpent coiled around it: received wisdom, yin magnetism — the desire that seduces into experience."
+        },
+        "couple": {
+          "title": "The Man and the Woman",
+          "description": "He looks at her; she looks at the angel: consciousness turned toward the unconscious, the unconscious turned toward spirit — the triangle of every transforming relationship."
+        },
+        "mountain": {
+          "title": "The Mountain",
+          "description": "The distant peak between the two: union as ascent — the sublime goal reached by two, never alone."
+        }
+      }
+    },
+    "ja": {
+      "name": "恋人",
+      "intro": "ラファエルの祝福のもと、魂は選びます。炎の樹と蛇の樹、男と女、欲望と意識。",
+      "regions": {
+        "angel": {
+          "title": "天使ラファエル",
+          "description": "翼を広げたラファエル——「神は癒す」——が結び合いを見守ります。愛は再生をもたらす力であり、盲目的な憧れではなく意識的な選択なのです。"
+        },
+        "sun": {
+          "title": "太陽",
+          "description": "天使の背後に輝く黄金の円盤は、真実の結びつきを照らす真理。すべてを光の下に置き、何ひとつ隠すものはありません。"
+        },
+        "flaming-tree": {
+          "title": "炎の樹",
+          "description": "男の背後に燃え立つ樹は、意志の熱情。陽の火、照らし、そして飲み尽くす情熱です。"
+        },
+        "serpent-tree": {
+          "title": "蛇の樹",
+          "description": "女の背後、蛇が巻きつく知識の樹。受け取られた知恵、陰の磁力——経験へと誘う欲望です。"
+        },
+        "couple": {
+          "title": "男と女",
+          "description": "男は女を見つめ、女は天使を見つめます。意識は無意識へ、無意識は霊へと向かう——人を変容させるあらゆる関係の三角形です。"
+        },
+        "mountain": {
+          "title": "山",
+          "description": "二人の間に遠くそびえる峰。結びつきは登攀であり、二人でなければ決して届かない崇高な目標です。"
+        }
+      }
+    },
+    "he": {
+      "name": "האוהבים",
+      "intro": "בברכתו של רפאל, הנשמה בוחרת: העץ הבוער ועץ הנחש, האיש והאישה, התשוקה והתודעה.",
+      "regions": {
+        "angel": {
+          "title": "המלאך רפאל",
+          "description": "בכנפיים פרושות, רפאל — \"אלוהים מרפא\" — עומד בראש האיחוד: אהבה ככוח מרפא וכבחירה מודעת, ולא כגעגוע עיוור."
+        },
+        "sun": {
+          "title": "השמש",
+          "description": "גלגל הזהב מאחורי המלאך: האמת שמאירה כל איחוד אמיתי — אין מה להסתיר תחת האור השלם."
+        },
+        "flaming-tree": {
+          "title": "העץ הבוער",
+          "description": "מאחורי האיש, העץ הלוהט הוא קנאות הרצון: אש היאנג, התשוקה שמאירה וגם טורפת."
+        },
+        "serpent-tree": {
+          "title": "עץ הנחש",
+          "description": "מאחורי האישה, עץ הדעת עם הנחש הכרוך סביבו: החוכמה המתקבלת, המגנטיות של היאין — התשוקה שמפתה אל הניסיון."
+        },
+        "couple": {
+          "title": "האיש והאישה",
+          "description": "הוא מביט בה, היא מביטה במלאך: התודעה פונה אל הלא־מודע, הלא־מודע פונה אל הרוח — המשולש של כל קשר מחולל."
+        },
+        "mountain": {
+          "title": "ההר",
+          "description": "הפסגה הרחוקה בין השניים: האיחוד כעלייה — היעד הנשגב שמושג בשניים, ולעולם לא לבד."
+        }
+      }
+    }
+  }
+}

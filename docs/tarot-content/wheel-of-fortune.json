@@ -1,0 +1,153 @@
+{
+  "slug": "wheel-of-fortune",
+  "number": 10,
+  "image": "/tarot/10_Wheel_of_Fortune.jpg",
+  "regions": [
+    {
+      "id": "four-creatures",
+      "icon": "📖"
+    },
+    {
+      "id": "wheel-letters",
+      "icon": "🔤"
+    },
+    {
+      "id": "alchemical-rim",
+      "icon": "⚗️"
+    },
+    {
+      "id": "sphinx",
+      "icon": "🗿"
+    },
+    {
+      "id": "anubis",
+      "icon": "🐕"
+    },
+    {
+      "id": "serpent-typhon",
+      "icon": "🐍"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Roda da Fortuna",
+      "intro": "O eixo imóvel do eterno retorno: sobe Anúbis, desce Tífon — e a Esfinge espera no topo com a resposta.",
+      "regions": {
+        "four-creatures": {
+          "title": "Os Quatro Viventes",
+          "description": "Anjo, águia, leão e touro nos cantos, cada qual com seu livro: os quatro evangelistas e os signos fixos — a Lei que se lê em quatro testemunhos, girando sem jamais mover-se."
+        },
+        "wheel-letters": {
+          "title": "As Letras da Roda",
+          "description": "TARO (ou ROTA, TORAT) entremeada às letras hebraicas Yod-Heh-Vav-Heh: a Lei que gira — o Nome divino que vira mundo, o mundo que, girado, vira Nome outra vez."
+        },
+        "alchemical-rim": {
+          "title": "O Aro Alquímico",
+          "description": "Enxofre, mercúrio, água e sal nos quadrantes externos: a roda é o próprio ateliê da Grande Obra — transmutação contínua."
+        },
+        "sphinx": {
+          "title": "A Esfinge no Topo",
+          "description": "Imóvel no ponto mais alto, com a espada erguida: o enigma e o equilíbrio — a única criatura que não sobe nem desce, porque já é o eixo."
+        },
+        "anubis": {
+          "title": "Anúbis Ascendente",
+          "description": "O psicopompo egípcio sobe com a roda: a evolução — a alma que sobe de giro em giro, guiada pelo que soube honrar."
+        },
+        "serpent-typhon": {
+          "title": "A Serpente Tífon",
+          "description": "Desce em espiral: a involução, o arrasto da matéria — toda subida tem seu contrapeso descendo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Wheel of Fortune",
+      "intro": "The still axis of eternal return: Anubis rises, Typhon descends — and the Sphinx waits at the top with the answer.",
+      "regions": {
+        "four-creatures": {
+          "title": "The Four Living Creatures",
+          "description": "Angel, eagle, lion and bull in the corners, each with its book: the four evangelists and the fixed signs — the Law read in four testimonies, turning without ever moving."
+        },
+        "wheel-letters": {
+          "title": "The Letters of the Wheel",
+          "description": "TARO (or ROTA, TORAT) interwoven with the Hebrew letters Yod-Heh-Vav-Heh: the Law that turns — the divine Name that becomes world, the world that, turned, becomes Name again."
+        },
+        "alchemical-rim": {
+          "title": "The Alchemical Rim",
+          "description": "Sulfur, mercury, water and salt in the outer quadrants: the wheel is the workshop of the Great Work itself — continuous transmutation."
+        },
+        "sphinx": {
+          "title": "The Sphinx at the Top",
+          "description": "Motionless at the highest point, sword raised: the riddle and the balance — the only creature that neither rises nor falls, because it is already the axis."
+        },
+        "anubis": {
+          "title": "Anubis Ascending",
+          "description": "The Egyptian psychopomp climbs with the wheel: evolution — the soul rising turn by turn, guided by what it learned to honor."
+        },
+        "serpent-typhon": {
+          "title": "The Serpent Typhon",
+          "description": "Descending in a spiral: involution, the drag of matter — every ascent has its counterweight going down."
+        }
+      }
+    },
+    "ja": {
+      "name": "運命の輪",
+      "intro": "永遠回帰の動かぬ軸。アヌビスは昇り、テュポンは降り——そしてスフィンクスは答えを携えて頂で待っています。",
+      "regions": {
+        "four-creatures": {
+          "title": "四つの生き物",
+          "description": "四隅に天使、鷲、獅子、雄牛がそれぞれ書物を携えて座します。四人の福音書記者と固定宮——四つの証言によって読まれる法は、決して動かずに回り続けます。"
+        },
+        "wheel-letters": {
+          "title": "輪の文字",
+          "description": "TARO（またはROTA、TORAT）がヘブライ文字ヨッド・ヘー・ヴァヴ・ヘーと織り込まれています。回る法——世界となる神の名、そして回されれば再び名となる世界。"
+        },
+        "alchemical-rim": {
+          "title": "錬金術の縁",
+          "description": "外側の四象限に硫黄、水銀、水、塩。この輪は大いなる業の工房そのもの——絶え間ない変容です。"
+        },
+        "sphinx": {
+          "title": "頂のスフィンクス",
+          "description": "最も高い点に動かず、剣を掲げて。謎と均衡——昇りも降りもしない唯一の存在。すでに軸そのものだからです。"
+        },
+        "anubis": {
+          "title": "昇るアヌビス",
+          "description": "エジプトの魂の導き手は輪とともに昇ります。進化——敬うことを学んだものに導かれ、一巡ごとに昇る魂です。"
+        },
+        "serpent-typhon": {
+          "title": "蛇テュポン",
+          "description": "螺旋を描いて降りてゆくのは退行、物質の引力——あらゆる上昇には、降りる釣り合いがあります。"
+        }
+      }
+    },
+    "he": {
+      "name": "גלגל המזל",
+      "intro": "הציר הדומם של השיבה הנצחית: אנוביס עולה, טיפון יורד — והספינקס ממתין בפסגה עם התשובה.",
+      "regions": {
+        "four-creatures": {
+          "title": "ארבע החיות",
+          "description": "מלאך, נשר, אריה ושור בפינות, כל אחד עם ספרו: ארבעת המבשרים והמזלות הקבועים — החוק הנקרא בארבע עדויות, מסתובב בלי לנוע לעולם."
+        },
+        "wheel-letters": {
+          "title": "אותיות הגלגל",
+          "description": "TARO (או ROTA, TORAT) שזור באותיות העבריות יוד-ה-ו-ה: החוק המסתובב — השם האלוהי ההופך לעולם, והעולם שכאשר מסובבים אותו שב והופך לשם."
+        },
+        "alchemical-rim": {
+          "title": "השפה האלכימית",
+          "description": "גופרית, כספית, מים ומלח בארבעת הרביעים החיצוניים: הגלגל הוא בית המלאכה של העבודה הגדולה — טרנספורמציה מתמדת."
+        },
+        "sphinx": {
+          "title": "הספינקס בפסגה",
+          "description": "דומם בנקודה הגבוהה, חרבו מורמת: החידה והאיזון — היצור היחיד שאינו עולה ואינו יורד, כי הוא עצמו הציר."
+        },
+        "anubis": {
+          "title": "אנוביס העולה",
+          "description": "המוליך הנשמות המצרי עולה עם הגלגל: האבולוציה — הנשמה העולה סיבוב אחר סיבוב, מונחית בידי מה שלמדה לכבד."
+        },
+        "serpent-typhon": {
+          "title": "הנחש טיפון",
+          "description": "יורד בספירלה: האינוולוציה, כובד החומר שמושך מטה — לכל עלייה יש משקל נגד היורד."
+        }
+      }
+    }
+  }
+}

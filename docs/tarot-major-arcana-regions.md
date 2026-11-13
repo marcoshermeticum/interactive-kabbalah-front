@@ -4,6 +4,13 @@
 > aquele documento explica **COMO** implementar uma carta; este define **O QUE** é
 > interativo em cada uma. Use os dois juntos — os `points` dos polígonos continuam
 > sendo desenhados manualmente conforme o Passo 4 do guia.
+>
+> **Automação:** o conteúdo multilíngue (nome, intro, ícones e textos em
+> pt-BR, en-US, ja e he) fica em [`docs/tarot-content/<slug>.json`](./tarot-content/).
+> `npm run tarot:new` lista as cartas pendentes e gera o arquivo de dados, as
+> traduções e o registro no catálogo sem pedir nenhum texto. `--from-doc <slug>`
+> ainda funciona como fallback: usa o JSON quando existir e, senão, lê a seção
+> desta página. As coordenadas continuam sendo ajustadas no editor (Passo 4).
 
 Seguindo o padrão da carta **A Temperança** (`src/data/tarot/temperance.ts`), este
 catálogo reúne, para cada um dos 22 arcanos maiores Rider-Waite, as áreas da arte

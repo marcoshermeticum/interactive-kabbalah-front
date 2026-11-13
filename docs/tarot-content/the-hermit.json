@@ -1,0 +1,133 @@
+{
+  "slug": "the-hermit",
+  "number": 9,
+  "image": "/tarot/09_Hermit.jpg",
+  "regions": [
+    {
+      "id": "lantern-star",
+      "icon": "🕯️"
+    },
+    {
+      "id": "staff",
+      "icon": "🪄"
+    },
+    {
+      "id": "gray-hood",
+      "icon": "🧥"
+    },
+    {
+      "id": "mountain-peak",
+      "icon": "🏔️"
+    },
+    {
+      "id": "bearded-face",
+      "icon": "🧓"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Eremita",
+      "intro": "No pico nevado da realização, o sábio procura dentro: a luz que carrega é a que encontra.",
+      "regions": {
+        "lantern-star": {
+          "title": "A Lanterna e o Selo de Salomão",
+          "description": "Erguida à altura dos olhos, a lanterna exibe o hexagrama: a sabedoria buscada lá fora brilha aqui dentro — procurar é lembrar."
+        },
+        "staff": {
+          "title": "O Cajado",
+          "description": "O bordão do peregrino é a coluna que sustenta a caminhada solitária — e o cetro humilde de quem já reina sobre si."
+        },
+        "gray-hood": {
+          "title": "O Capuz Cinza",
+          "description": "O manto apagado, sem brasão: o anonimato do mestre verdadeiro — o saber não se exibe, acende-se nos outros."
+        },
+        "mountain-peak": {
+          "title": "O Pico da Montanha",
+          "description": "Ele está no cume que todos os arcanos anteriores escalaram: da altura, o que era urgente se vê pequeno — e ainda assim ele continua buscando."
+        },
+        "bearded-face": {
+          "title": "O Rosto do Sábio",
+          "description": "A barba branca e o olhar baixo: a idade que não pesa — tempo destilado em compreensão, o silêncio como língua materna."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Hermit",
+      "intro": "On the snowy peak of attainment, the sage looks within: the light he carries is the one he finds.",
+      "regions": {
+        "lantern-star": {
+          "title": "The Lantern and the Seal of Solomon",
+          "description": "Raised to eye level, the lantern displays the hexagram: the wisdom sought outside shines here within — to seek is to remember."
+        },
+        "staff": {
+          "title": "The Staff",
+          "description": "The pilgrim's staff is the column that sustains the solitary walk — and the humble scepter of one who already reigns over himself."
+        },
+        "gray-hood": {
+          "title": "The Gray Hood",
+          "description": "The faded cloak, without a crest: the anonymity of the true master — knowledge is not displayed, it is kindled in others."
+        },
+        "mountain-peak": {
+          "title": "The Mountain Peak",
+          "description": "He stands on the summit that every previous arcana climbed: from such a height, what was urgent looks small — and still he keeps searching."
+        },
+        "bearded-face": {
+          "title": "The Face of the Sage",
+          "description": "The white beard and the lowered gaze: an age that does not weigh — time distilled into understanding, silence as his mother tongue."
+        }
+      }
+    },
+    "ja": {
+      "name": "隠者",
+      "intro": "到達の雪峰で、賢者は内側を見つめます。彼が携える光こそ、彼が見いだす光なのです。",
+      "regions": {
+        "lantern-star": {
+          "title": "ランタンとソロモンの封印",
+          "description": "目の高さに掲げたランタンには六芒星が輝きます。外に求めた知恵は内にこそ光る——探すことは思い出すことです。"
+        },
+        "staff": {
+          "title": "杖",
+          "description": "巡礼者の杖は、孤独な歩みを支える柱——そしてすでに自分自身を治める者の、謙虚な王笏です。"
+        },
+        "gray-hood": {
+          "title": "灰色のフード",
+          "description": "紋章もないくすんだ外套は、真の師の匿名性。知は誇示されず、他者のうちに灯されるものです。"
+        },
+        "mountain-peak": {
+          "title": "山の頂",
+          "description": "彼は、これまでのアルカナがすべて登ってきた頂に立ちます。高みから見れば、急ぎのことも小さく見える——それでも彼は探し続けます。"
+        },
+        "bearded-face": {
+          "title": "賢者の顔",
+          "description": "白い髭と伏せたまなざし。重くならない老い——時が理解へと蒸留され、沈黙が母語となっています。"
+        }
+      }
+    },
+    "he": {
+      "name": "הנזיר",
+      "intro": "על פסגת השלג של ההגשמה, החכם מביט פנימה: האור שהוא נושא הוא האור שהוא מוצא.",
+      "regions": {
+        "lantern-star": {
+          "title": "הפנס וחותם שלמה",
+          "description": "הפנס המורם לגובה העיניים נושא את המשושה: החוכמה שחיפשנו בחוץ זוהרת כאן בפנים — לחפש הוא לזכור."
+        },
+        "staff": {
+          "title": "המקל",
+          "description": "מקל העולה לרגל הוא העמוד שנושא את ההליכה הבודדה — ושרביטו הצנוע של מי שכבר מולך על עצמו."
+        },
+        "gray-hood": {
+          "title": "הברדס האפור",
+          "description": "הגלימה הדהויה, בלי סמל: האלמוניות של המורה האמיתי — הידע אינו מוצג לראווה, הוא מודלק באחרים."
+        },
+        "mountain-peak": {
+          "title": "פסגת ההר",
+          "description": "הוא עומד על הפסגה שכל הארקנות הקודמות טיפסו אליה: מגובה כזה, מה שהיה דחוף נראה קטן — ובכל זאת הוא ממשיך לחפש."
+        },
+        "bearded-face": {
+          "title": "פני החכם",
+          "description": "הזקן הלבן והמבט המושפל: זקנה שאינה מכבידה — הזמן מזוקק להבנה, והשתיקה היא שפת אמו."
+        }
+      }
+    }
+  }
+}

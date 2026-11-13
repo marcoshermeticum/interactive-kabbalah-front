@@ -1,0 +1,153 @@
+{
+  "slug": "the-hanged-man",
+  "number": 12,
+  "image": "/tarot/12_Hanged_Man.jpg",
+  "regions": [
+    {
+      "id": "beam",
+      "icon": "🪵"
+    },
+    {
+      "id": "living-tree",
+      "icon": "🌳"
+    },
+    {
+      "id": "halo",
+      "icon": "🌟"
+    },
+    {
+      "id": "crossed-leg",
+      "icon": "🦵"
+    },
+    {
+      "id": "bound-hands",
+      "icon": "🔗"
+    },
+    {
+      "id": "serene-face",
+      "icon": "😌"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Enforcado",
+      "intro": "Suspenso entre o céu e a terra pelo tornozelo, o mysticus voluntário: rendição que não é derrota.",
+      "regions": {
+        "beam": {
+          "title": "A Trave em Tau",
+          "description": "A forca em forma de T — o Tau, sinal de salvação: a mesma cruz que pune é a que redime, dependendo do lado em que se pendura."
+        },
+        "living-tree": {
+          "title": "A Árvore Viva",
+          "description": "O madeiro tem folhas verdes brotando: o sacrifício é feito em árvore viva, não em lenho morto — toda entrega aqui frutifica."
+        },
+        "halo": {
+          "title": "O Halo Dourado",
+          "description": "Ao redor da cabeça invertida: a luz não se perde com o sacrifício — intensifica-se. Iluminação pela entrega."
+        },
+        "crossed-leg": {
+          "title": "A Perna Cruzada",
+          "description": "As pernas desenham o algarismo 4 — o mundo da forma — e o corpo inteiro uma cruz invertida: a matéria pendurada na perspectiva virada do espírito, o mundo lido de cabeça para baixo."
+        },
+        "bound-hands": {
+          "title": "As Mãos Atadas às Costas",
+          "description": "Presas atrás do tronco em triângulo: a vontade que se entrega — as mãos que não agarram permitem que o alto as preencha."
+        },
+        "serene-face": {
+          "title": "O Rosto Sereno",
+          "description": "Nenhuma angústia no rosto: a rendição é plena e consciente — quem escolheu pender não é vítima da corda, mas seu parceiro de dança."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Hanged Man",
+      "intro": "Suspended between heaven and earth by the ankle, the voluntary mystic: a surrender that is not defeat.",
+      "regions": {
+        "beam": {
+          "title": "The Tau Beam",
+          "description": "The gallows shaped like a T — the Tau, sign of salvation: the same cross that punishes is the one that redeems, depending on which side one hangs from."
+        },
+        "living-tree": {
+          "title": "The Living Tree",
+          "description": "Green leaves sprout from the timber: the sacrifice is made on a living tree, not on dead wood — every surrender here bears fruit."
+        },
+        "halo": {
+          "title": "The Golden Halo",
+          "description": "Around the inverted head: light is not lost through sacrifice — it intensifies. Illumination through surrender."
+        },
+        "crossed-leg": {
+          "title": "The Crossed Leg",
+          "description": "The legs trace the numeral 4 — the world of form — and the whole body an inverted cross: matter hung on the spirit's turned perspective, the world read upside down."
+        },
+        "bound-hands": {
+          "title": "The Hands Bound Behind the Back",
+          "description": "Tied behind the trunk in a triangle: the will that gives itself over — hands that do not grasp allow the heights to fill them."
+        },
+        "serene-face": {
+          "title": "The Serene Face",
+          "description": "No anguish on the face: the surrender is complete and conscious — whoever chose to hang is not the rope's victim, but its dance partner."
+        }
+      }
+    },
+    "ja": {
+      "name": "吊るされた男",
+      "intro": "天と地の間に、足首で吊るされた自ら選んだ神秘家。それは敗北ではない降伏です。",
+      "regions": {
+        "beam": {
+          "title": "タウの梁",
+          "description": "T字の絞首台——救済の印であるタウ。罰する十字も、ぶら下がる側によっては贖う十字となります。"
+        },
+        "living-tree": {
+          "title": "生きた木",
+          "description": "木には緑の葉が芽吹いています。犠牲は枯れ木ではなく生きた木の上で捧げられる——ここでのすべての明け渡しは実を結ぶのです。"
+        },
+        "halo": {
+          "title": "黄金の光輪",
+          "description": "逆さになった頭のまわりに。光は犠牲によって失われず、むしろ強まります。明け渡しによる光の訪れです。"
+        },
+        "crossed-leg": {
+          "title": "組まれた脚",
+          "description": "脚は数字の4——形の世界——を描き、全身は逆さの十字をなします。物質は反転した霊の視点に吊るされ、世界は逆さまに読まれています。"
+        },
+        "bound-hands": {
+          "title": "背に縛られた両手",
+          "description": "幹の後ろで三角形に結ばれた両手。自らを明け渡す意志です——つかまない手にこそ、高みが満ちてゆきます。"
+        },
+        "serene-face": {
+          "title": "静かな顔",
+          "description": "顔に苦しみはありません。明け渡しは完全で、意識的です——吊るされることを選んだ者は縄の犠牲者ではなく、縄の踊り相手なのです。"
+        }
+      }
+    },
+    "he": {
+      "name": "התלוי",
+      "intro": "תלוי בין שמיים לארץ בקרסול, המיסטיקן מרצונו: כניעה שאינה תבוסה.",
+      "regions": {
+        "beam": {
+          "title": "קורת הטאו",
+          "description": "הגרדום בצורת T — הטאו, סימן הישועה: אותו צלב שמעניש הוא זה שגואל, תלוי באיזה צד תולים."
+        },
+        "living-tree": {
+          "title": "העץ החי",
+          "description": "עלים ירוקים מלבלבים מן העץ: הקורבן ניתן על עץ חי ולא על קרש מת — כל מסירה כאן נושאת פרי."
+        },
+        "halo": {
+          "title": "ההילה הזהובה",
+          "description": "סביב הראש ההפוך: האור אינו הולך לאיבוד בקורבן — הוא מתעצם. הארה באמצעות מסירה."
+        },
+        "crossed-leg": {
+          "title": "הרגל השלובה",
+          "description": "הרגליים משרטטות את הספרה 4 — עולם הצורה — והגוף כולו צלב הפוך: החומר תלוי בפרספקטיבה ההפוכה של הרוח, והעולם נקרא מלמטה למעלה."
+        },
+        "bound-hands": {
+          "title": "הידיים הקשורות מאחור",
+          "description": "קשורות מאחורי הגזע במשולש: הרצון שנמסר — הידיים שאינן אוחזות מאפשרות לגובה למלא אותן."
+        },
+        "serene-face": {
+          "title": "הפנים השלוות",
+          "description": "אין ייסורים בפנים: הכניעה שלמה ומודעת — מי שבחר להיתלות אינו קורבן החבל, אלא שותפו לריקוד."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "slug": "the-devil",
+  "number": 15,
+  "image": "/tarot/15_Devil.jpg",
+  "regions": [
+    {
+      "id": "inverted-pentagram",
+      "icon": "⛧"
+    },
+    {
+      "id": "bat-wings",
+      "icon": "🦇"
+    },
+    {
+      "id": "torch",
+      "icon": "🔥"
+    },
+    {
+      "id": "chains",
+      "icon": "⛓️"
+    },
+    {
+      "id": "captives",
+      "icon": "👫"
+    },
+    {
+      "id": "dark-cave",
+      "icon": "🕳️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Diabo",
+      "intro": "No antro escuro, o Bode de Mendes preside: as correntes estão frouxas — a prisão é opcional.",
+      "regions": {
+        "inverted-pentagram": {
+          "title": "O Pentagrama Invertido",
+          "description": "A estrela de cinco pontas virada: o espírito voltado para baixo — a matéria adorada como deus. O símbolo não é mau; apenas aponta na direção errada."
+        },
+        "bat-wings": {
+          "title": "As Asas de Morcego",
+          "description": "Asas noturnas que não voam ao alto, apenas sombreiam: o poder confinado ao subterrâneo — a sombra que prefere o porão ao céu."
+        },
+        "torch": {
+          "title": "A Tocha",
+          "description": "A chama na mão erguida desce sobre os cativos: a \"iluminação\" invertida — a consciência usada para escravizar, o fogo que queima em vez de clarear."
+        },
+        "chains": {
+          "title": "As Correntes Frouxas",
+          "description": "Postas ao alcance dos cativos, mas soltas: a revelação central do arcano — o cativeiro é autoposto; ninguém precisa permanecer; basta erguer-se e sair."
+        },
+        "captives": {
+          "title": "Os Dois Cativos",
+          "description": "O homem e a mulher nus, com chifres e caudas — os mesmos de Os Enamorados, agora na sombra: a relação que era comunhão virou grilhão; o desejo, possessão."
+        },
+        "dark-cave": {
+          "title": "A Caverna Escura",
+          "description": "O cenário sem céu nem horizonte: o mundo fechado da adoração material — aqui não há estrelas porque ninguém olha para cima."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Devil",
+      "intro": "In the dark grotto the Goat of Mendes presides: the chains hang loose — the prison is optional.",
+      "regions": {
+        "inverted-pentagram": {
+          "title": "The Inverted Pentagram",
+          "description": "The five-pointed star turned upside down: spirit facing the ground — matter adored as a god. The symbol is not evil; it merely points the wrong way."
+        },
+        "bat-wings": {
+          "title": "The Bat's Wings",
+          "description": "Night wings that never fly upward, only cast shadow: power confined to the underground — the shadow that prefers the cellar to the sky."
+        },
+        "torch": {
+          "title": "The Torch",
+          "description": "The flame in the raised hand descends upon the captives: inverted \"illumination\" — awareness used to enslave, fire that burns instead of lighting."
+        },
+        "chains": {
+          "title": "The Loose Chains",
+          "description": "Placed within the captives' reach, yet slack: the central revelation of the arcanum — captivity is self-imposed; no one must remain; it is enough to rise and walk out."
+        },
+        "captives": {
+          "title": "The Two Captives",
+          "description": "The naked man and woman, horned and tailed — the very pair of The Lovers, now in shadow: a bond that was communion has become a fetter; desire, possession."
+        },
+        "dark-cave": {
+          "title": "The Dark Cave",
+          "description": "A setting with no sky and no horizon: the closed world of material worship — there are no stars here because no one looks up."
+        }
+      }
+    },
+    "ja": {
+      "name": "悪魔",
+      "intro": "暗い洞窟でメンデスの山羊が統べています。鎖は緩く垂れ、囚われているかどうかは自分次第なのです。",
+      "regions": {
+        "inverted-pentagram": {
+          "title": "逆さの五芒星",
+          "description": "上下逆さにされた五芒星は、地へ向かう精神——神として崇められる物質。この象徴は悪ではなく、ただ向きが違うだけです。"
+        },
+        "bat-wings": {
+          "title": "コウモリの翼",
+          "description": "高く飛ばず、ただ影を落とす夜の翼。地下に閉じ込められた力——空よりも地下を好む影です。"
+        },
+        "torch": {
+          "title": "松明",
+          "description": "掲げた手の炎は囚人たちの上へ降りそそぎます。逆さまの「啓示」——人を縛るために使われる意識、照らすのではなく焼く火です。"
+        },
+        "chains": {
+          "title": "緩い鎖",
+          "description": "囚人の手の届くところにありながら、たるんだままの鎖。このアルカナの中心の啓示——囚われは自ら課したものであり、誰も留まる必要はなく、立ち上がって出ればよいのです。"
+        },
+        "captives": {
+          "title": "二人の囚人",
+          "description": "角と尾を持つ裸の男女は「恋人」と同じ二人、いまは影のなかに。交わりだった関係は枷となり、欲望は所有へと変わっています。"
+        },
+        "dark-cave": {
+          "title": "暗い洞窟",
+          "description": "空も地平もない舞台——物質崇拝の閉ざされた世界。ここに星がないのは、誰ひとり上を見上げないからです。"
+        }
+      }
+    },
+    "he": {
+      "name": "השטן",
+      "intro": "במערה החשוכה שולט תיש מנדס: השלשלאות רפויות — הכלא רשות, לא גזרה.",
+      "regions": {
+        "inverted-pentagram": {
+          "title": "הפנטגרם ההפוך",
+          "description": "הכוכב בעל חמש הקצוות, הפוך כלפי מטה: הרוח נופלת ארצה — החומר נערץ כאל. הסמל אינו רע; הוא רק מצביע לכיוון הלא נכון."
+        },
+        "bat-wings": {
+          "title": "כנפי העטלף",
+          "description": "כנפי לילה שאינן ממריאות, רק מטילות צל: כוח הכלוא מתחת לאדמה — הצל שמעדיף את המרתף על השמיים."
+        },
+        "torch": {
+          "title": "הלפיד",
+          "description": "הלהבה ביד המורמת יורדת על השבויים: \"הארה\" הפוכה — תודעה המשמשת לשעבוד, אש ששורפת במקום להאיר."
+        },
+        "chains": {
+          "title": "השלשלאות הרפויות",
+          "description": "מונחות בהישג ידם של השבויים, אך רפויות: הגילוי המרכזי של הארקנה — השבי הוא מעשה עצמי; איש אינו חייב להישאר; די להתרומם ולצאת."
+        },
+        "captives": {
+          "title": "שני השבויים",
+          "description": "האיש והאישה העירומים, בעלי הקרניים והזנבות — הם הזוג של \"האוהבים\", כעת בצל: מה שהיה איחוד הפך לכבל, והתשוקה לבעלות."
+        },
+        "dark-cave": {
+          "title": "המערה החשוכה",
+          "description": "נוף בלי שמיים ובלי אופק: עולמו הסגור של פולחן החומר — אין כאן כוכבים, כי איש אינו מרים מבט."
+        }
+      }
+    }
+  }
+}

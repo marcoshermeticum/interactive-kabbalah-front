@@ -1,0 +1,193 @@
+{
+  "slug": "the-high-priestess",
+  "number": 2,
+  "image": "/tarot/02_High_Priestess.jpg",
+  "regions": [
+    {
+      "id": "pillar-b",
+      "icon": "🏛️"
+    },
+    {
+      "id": "pillar-j",
+      "icon": "🏛️"
+    },
+    {
+      "id": "veil-pomegranates",
+      "icon": "🍈"
+    },
+    {
+      "id": "water",
+      "icon": "🌊"
+    },
+    {
+      "id": "scroll",
+      "icon": "📜"
+    },
+    {
+      "id": "crown",
+      "icon": "👑"
+    },
+    {
+      "id": "solar-cross",
+      "icon": "✚"
+    },
+    {
+      "id": "crescent-moon",
+      "icon": "🌙"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Sacerdotisa",
+      "intro": "Guardiã do santuário atrás do véu, a Sacerdotisa é a memória silenciosa entre as duas colunas do Templo. Explore cada símbolo da carta.",
+      "regions": {
+        "pillar-b": {
+          "title": "A Coluna B (Boaz)",
+          "description": "A coluna negra de Boaz representa a severidade, a contração e a forma. É o princípio que delimita e dá estrutura, sem o qual nenhuma manifestação pode existir."
+        },
+        "pillar-j": {
+          "title": "A Coluna J (Jachin)",
+          "description": "A coluna branca de Jachin representa a misericórdia, a expansão e a força. É o princípio que doa e amplia, abrindo espaço para que a vida floresça."
+        },
+        "veil-pomegranates": {
+          "title": "O Véu com Romãs",
+          "description": "O véu bordado de romãs e palmeiras esconde o sanctum: o conhecimento só se revela a quem atravessa — não a quem espia. As romãs remetem a Perséfone e aos mundos subterrâneos."
+        },
+        "water": {
+          "title": "O Mar Atrás do Véu",
+          "description": "Entre as colunas, além do véu, estende-se o oceano: o inconsciente coletivo, matriz de toda forma ainda não manifestada."
+        },
+        "scroll": {
+          "title": "O Pergaminho de TORA",
+          "description": "Parcialmente oculto em seu regaço, o rolo da Lei repousa: a sabedoria existe, mas permanece velada — intuição antes de letra."
+        },
+        "crown": {
+          "title": "A Coroa Lunar",
+          "description": "Os chifres em crescente abraçam o disco solar: a Sacerdotisa une Lua e Sol, recepção e radiação, no mesmo gesto de Hathor."
+        },
+        "solar-cross": {
+          "title": "A Cruz Solar no Peito",
+          "description": "A cruz de braços iguais sobre o coração: o eixo do equilíbrio entre os opostos, o ponto quieto do centro."
+        },
+        "crescent-moon": {
+          "title": "A Lua aos Seus Pés",
+          "description": "O crescente lunar sob suas vestes: tudo aqui é regido pela Lua — ciclos, marés, o inconsciente e o feminino profundo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The High Priestess",
+      "intro": "Guardian of the sanctuary behind the veil, the High Priestess is the silent memory between the two pillars of the Temple. Explore each symbol of the card.",
+      "regions": {
+        "pillar-b": {
+          "title": "The Pillar B (Boaz)",
+          "description": "The black pillar of Boaz represents severity, contraction and form. It is the principle that delimits and gives structure, without which no manifestation can exist."
+        },
+        "pillar-j": {
+          "title": "The Pillar J (Jachin)",
+          "description": "The white pillar of Jachin represents mercy, expansion and force. It is the principle that gives and expands, making room for life to flourish."
+        },
+        "veil-pomegranates": {
+          "title": "The Veil with Pomegranates",
+          "description": "The veil embroidered with pomegranates and palms hides the sanctum: knowledge reveals itself only to those who pass through — not to those who peep. The pomegranates evoke Persephone and the underworlds."
+        },
+        "water": {
+          "title": "The Sea Behind the Veil",
+          "description": "Between the pillars, beyond the veil, stretches the ocean: the collective unconscious, the matrix of every form not yet manifested."
+        },
+        "scroll": {
+          "title": "The TORA Scroll",
+          "description": "Partly hidden in her lap, the scroll of the Law rests: wisdom exists, but remains veiled — intuition before letter."
+        },
+        "crown": {
+          "title": "The Lunar Crown",
+          "description": "The crescent horns embrace the solar disc: the High Priestess unites Moon and Sun, reception and radiation, in the same gesture of Hathor."
+        },
+        "solar-cross": {
+          "title": "The Solar Cross on Her Chest",
+          "description": "The equal-armed cross over her heart: the axis of balance between opposites, the still point of the center."
+        },
+        "crescent-moon": {
+          "title": "The Moon at Her Feet",
+          "description": "The lunar crescent beneath her robes: everything here is governed by the Moon — cycles, tides, the unconscious and the deep feminine."
+        }
+      }
+    },
+    "ja": {
+      "name": "女教皇",
+      "intro": "ヴェールの向こうの聖域を守る女教皇は、神殿の二本の柱の間にたたずむ静かな記憶です。カードの象徴を一つずつ探求しましょう。",
+      "regions": {
+        "pillar-b": {
+          "title": "柱B（ボアズ）",
+          "description": "黒い柱ボアズは厳格、収縮、そして形を表します。限界を定め構造を与える原理であり、これなくして何も顕現できません。"
+        },
+        "pillar-j": {
+          "title": "柱J（ヤキン）",
+          "description": "白い柱ヤキンは慈悲、拡張、そして力を表します。与え広がる原理であり、生命が花開く余地を開きます。"
+        },
+        "veil-pomegranates": {
+          "title": "ざくろのヴェール",
+          "description": "ざくろと棕櫚で刺繍されたヴェールは至聖所を隠します。知識は通り抜ける者にのみ開かれ、覗き見る者には与えられません。ざくろはペルセポネと冥界を想わせます。"
+        },
+        "water": {
+          "title": "ヴェールの向こうの海",
+          "description": "柱の間、ヴェールの彼方には海が広がります。集合的無意識、まだ現れていないすべての形の母胎です。"
+        },
+        "scroll": {
+          "title": "TORAの巻物",
+          "description": "膝の上に半ば隠れて、法の巻物が横たわります。知恵は存在しますが、ヴェールに包まれたまま——文字より先に直観があります。"
+        },
+        "crown": {
+          "title": "月の冠",
+          "description": "三日月の角が太陽の円盤を抱き込みます。女教皇は月と太陽、受容と放射を、ハトホルの同じ仕草のうちに結びつけます。"
+        },
+        "solar-cross": {
+          "title": "胸の太陽十字",
+          "description": "心の上に描かれた等臂十字は、対立するものの間の均衡の軸、中心の静かな点を表します。"
+        },
+        "crescent-moon": {
+          "title": "足元の月",
+          "description": "衣の下に横たわる三日月。ここではすべてが月に支配されています——周期、潮の満ち引き、無意識、そして深い女性性。"
+        }
+      }
+    },
+    "he": {
+      "name": "הכוהנת הגדולה",
+      "intro": "שומרת המקדש שמאחורי הלוט, הכוהנת הגדולה היא הזיכרון השקט בין שני עמודי המקדש. חקרו כל סמל בקלף.",
+      "regions": {
+        "pillar-b": {
+          "title": "העמוד ב' (בועז)",
+          "description": "העמוד השחור של בועז מייצג חומרה, כיווץ וצורה. זהו העיקרון שמגביל ונותן מבנה, שבלעדיו שום התגשמות אינה אפשרית."
+        },
+        "pillar-j": {
+          "title": "העמוד י' (יכין)",
+          "description": "העמוד הלבן של יכין מייצג רחמים, התרחבות וכוח. זהו העיקרון שנותן ומרחיב, ופותח מקום לחיים לפרוח."
+        },
+        "veil-pomegranates": {
+          "title": "הלוט עם הרימונים",
+          "description": "הלוט הרקום ברימונים ובדקלים מסתיר את קודש הקודשים: הידע נגלה רק למי שחוצה אותו — ולא למי שמציץ. הרימונים מרמזים לפרספונה ולעולמות התחתונים."
+        },
+        "water": {
+          "title": "הים שמאחורי הלוט",
+          "description": "בין העמודים, מעבר ללוט, משתרע האוקיינוס: הלא־מודע הקולקטיבי, הרחם של כל צורה שעוד לא התגשמה."
+        },
+        "scroll": {
+          "title": "מגילת התורה",
+          "description": "חלקית מוסתרת בחיקה נחה מגילת החוק: החוכמה קיימת, אך נשארת רעולה — אינטואיציה לפני האות."
+        },
+        "crown": {
+          "title": "הכתר הירחי",
+          "description": "קרני הסהר חובקות את גלגל החמה: הכוהנת הגדולה מאחדת ירח ושמש, קליטה והקרנה, באותה תנועה של חתחור."
+        },
+        "solar-cross": {
+          "title": "הצלב השמשי על החזה",
+          "description": "הצלב שווה הזרועות על ליבה: ציר האיזון בין הניגודים, הנקודה השקטה של המרכז."
+        },
+        "crescent-moon": {
+          "title": "הירח לרגליה",
+          "description": "הסהר הירחי מתחת לגלימותיה: הכול כאן כפוף לירח — מחזורים, גאות ושפל, הלא־מודע והנשי העמוק."
+        }
+      }
+    }
+  }
+}

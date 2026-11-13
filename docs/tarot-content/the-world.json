@@ -1,0 +1,133 @@
+{
+  "slug": "the-world",
+  "number": 21,
+  "image": "/tarot/21_World.jpg",
+  "regions": [
+    {
+      "id": "laurel-wreath",
+      "icon": "🌿"
+    },
+    {
+      "id": "four-creatures",
+      "icon": "🦁"
+    },
+    {
+      "id": "dancer",
+      "icon": "💃"
+    },
+    {
+      "id": "two-wands",
+      "icon": "🪄"
+    },
+    {
+      "id": "clouds",
+      "icon": "☁️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Mundo",
+      "intro": "Dentro da coroa de louros, a dançarina contém tudo: os quatro viventes testemunham a síntese.",
+      "regions": {
+        "laurel-wreath": {
+          "title": "A Coroa de Louros",
+          "description": "O oval vivo que envolve tudo: a mandorla da vitória e da matriz — o útero cósmico onde tudo o que foi vivido se conclui, e de onde tudo recomeça."
+        },
+        "four-creatures": {
+          "title": "Os Quatro Viventes",
+          "description": "Anjo, águia, leão e touro nas nuvens dos cantos: os mesmos da Roda da Fortuna, agora sem livros — a Lei virou corpo; o que se estudou, encarnou."
+        },
+        "dancer": {
+          "title": "A Dançarina",
+          "description": "A alma celebrando a síntese: nada para conquistar, tudo para dançar — o centro que só existe em movimento, sustentando os opostos em rotação."
+        },
+        "two-wands": {
+          "title": "As Duas Varinhas",
+          "description": "Uma em cada mão: a vontade que não se divide mais — evocação e invocação, fazer e receber, ambas metades da mesma dança."
+        },
+        "clouds": {
+          "title": "As Nuvens nos Cantos",
+          "description": "Os bancos de nuvem sustentam os viventes: o testemunho que flutua — o mundo visto de cima e de dentro ao mesmo tempo; a matéria rarefeita em consciência."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The World",
+      "intro": "Inside the laurel wreath, the dancer contains everything: the four living creatures bear witness to the synthesis.",
+      "regions": {
+        "laurel-wreath": {
+          "title": "The Laurel Wreath",
+          "description": "The living oval that encloses everything: the mandorla of victory and of the womb — the cosmic uterus where all that was lived is completed, and from which everything begins again."
+        },
+        "four-creatures": {
+          "title": "The Four Living Creatures",
+          "description": "Angel, eagle, lion and bull in the clouds of the corners: the same as on the Wheel of Fortune, now without books — the Law has become body; what was studied has been embodied."
+        },
+        "dancer": {
+          "title": "The Dancer",
+          "description": "The soul celebrating the synthesis: nothing to conquer, everything to dance — the center that exists only in motion, holding the opposites in rotation."
+        },
+        "two-wands": {
+          "title": "The Two Wands",
+          "description": "One in each hand: the will that no longer divides — evocation and invocation, doing and receiving, both halves of the same dance."
+        },
+        "clouds": {
+          "title": "The Clouds in the Corners",
+          "description": "The banks of cloud uphold the living creatures: witness that floats — the world seen from above and from within at once; matter rarefied into consciousness."
+        }
+      }
+    },
+    "ja": {
+      "name": "世界",
+      "intro": "月桂樹の冠の内側で、踊り手はすべてを抱いています。四つの生き物が、その統合を見守っています。",
+      "regions": {
+        "laurel-wreath": {
+          "title": "月桂樹の冠",
+          "description": "すべてを包み込む生きた楕円。勝利と母胎のマンドルラ——生きられたすべてが完結し、そこからすべてが再び始まる宇宙の子宮です。"
+        },
+        "four-creatures": {
+          "title": "四つの生き物",
+          "description": "四隅の雲に描かれた天使、鷲、獅子、牡牛。運命の輪と同じ四者ですが、いまは書物を持ちません——法は身体となり、学んだことが血肉となったのです。"
+        },
+        "dancer": {
+          "title": "踊り手",
+          "description": "統合を祝う魂。征服すべきものは何もなく、ただ踊るだけ——動きの中にだけ存在する中心が、対立するものを回転のうちに保っています。"
+        },
+        "two-wands": {
+          "title": "二本の杖",
+          "description": "両手に一本ずつ。もう分かたれることのない意志——喚起と祈願、なすことと受け取ること、どちらも同じ踊りの半身です。"
+        },
+        "clouds": {
+          "title": "四隅の雲",
+          "description": "雲の層が四つの生き物を支えています。浮かぶ証人——世界を上からと内側から同時に見るまなざしであり、意識へと希薄化した物質です。"
+        }
+      }
+    },
+    "he": {
+      "name": "העולם",
+      "intro": "בתוך זר הדפנה, הרקדנית מכילה הכול: ארבע החיות מעידות על הסינתזה.",
+      "regions": {
+        "laurel-wreath": {
+          "title": "זר הדפנה",
+          "description": "האליפסה החיה העוטפת הכול: המנדורלה של הניצחון ושל הרחם — הרחם הקוסמי שבו נשלם כל מה שנחווה, וממנו הכול מתחיל מחדש."
+        },
+        "four-creatures": {
+          "title": "ארבע החיות",
+          "description": "מלאך, נשר, אריה ושור בעננים שבפינות: הם אותם ארבעה מגלגל המזל, אך כעת בלי ספרים — החוק הפך לגוף; מה שנלמד התגשם בבשר."
+        },
+        "dancer": {
+          "title": "הרקדנית",
+          "description": "הנשמה החוגגת את הסינתזה: אין מה לכבוש, יש רק לרקוד — המרכז שקיים רק בתנועה, ומחזיק את הניגודים בתנועה סיבובית."
+        },
+        "two-wands": {
+          "title": "שני השרביטים",
+          "description": "אחד בכל יד: הרצון שאינו מתפצל עוד — העלאה וקריאה, עשייה וקבלה, שניהם חצאיו של אותו ריקוד."
+        },
+        "clouds": {
+          "title": "העננים בפינות",
+          "description": "גושי הענן נושאים את החיות: עדות מרחפת — העולם הנשקף מלמעלה ומבפנים בעת ובעונה אחת; חומר שהתדלדל לתודעה."
+        }
+      }
+    }
+  }
+}

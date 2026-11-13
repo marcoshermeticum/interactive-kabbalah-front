@@ -190,6 +190,36 @@
           "description": "Ao fundo, a cachoeira e o bosque: a vida fluindo sem represa — a natureza que se renova dentro do próprio ritmo."
         }
       }
+    },
+    "theEmperor": {
+      "name": "O Imperador",
+      "intro": "O arquétipo do Pai: estrutura, lei e vontade férrea assentados sobre o trono do poder.",
+      "regions": {
+        "ramHeads": {
+          "title": "Os Carneiros do Trono",
+          "description": "As cabeças de carneiro esculpidas nos braços do trono: Áries e Marte — a força iniciadora, o ímpeto que abre cada novo ciclo."
+        },
+        "ankh": {
+          "title": "O Cetro Ankh",
+          "description": "A cruz ansada é a vida que o Imperador outorga e sustenta: seu poder existe para organizar e preservar a existência, não para destruí-la."
+        },
+        "orb": {
+          "title": "O Orbe",
+          "description": "Na mão esquerda, o globo do domínio: o mundo sob controle consciente — visão completa, governo à distância."
+        },
+        "armor": {
+          "title": "A Armadura sob o Manto",
+          "description": "Sob as vestes vermelhas, a couraça: o governante permanece guerreiro por dentro mesmo quando sereno por fora — a rigidez que protege e também aprisiona."
+        },
+        "beardCrown": {
+          "title": "A Barba e a Coroa",
+          "description": "A longa barba branca é a sabedoria acumulada do tempo; a coroa de ouro, o direito de comandar herdado da experiência — não do capricho."
+        },
+        "mountains": {
+          "title": "As Montanhas Áridas",
+          "description": "O deserto rochoso ao fundo: o reino da forma em seu estado mais seco e definido — limites claros, sem dissolução."
+        }
+      }
     }
   },
   "tarotWaite": {

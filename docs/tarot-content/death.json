@@ -1,0 +1,173 @@
+{
+  "slug": "death",
+  "number": 13,
+  "image": "/tarot/13_Death.jpg",
+  "regions": [
+    {
+      "id": "rising-sun",
+      "icon": "🌅"
+    },
+    {
+      "id": "river-boat",
+      "icon": "⛵"
+    },
+    {
+      "id": "skeleton-armor",
+      "icon": "💀"
+    },
+    {
+      "id": "black-horse",
+      "icon": "🐎"
+    },
+    {
+      "id": "banner-rose",
+      "icon": "🏴"
+    },
+    {
+      "id": "kneeling-figures",
+      "icon": "🧎"
+    },
+    {
+      "id": "child-flowers",
+      "icon": "💐"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "A Morte",
+      "intro": "Não o fim, mas a passagem: o sol nasce entre duas torres enquanto toda hierarquia se ajoelha.",
+      "regions": {
+        "rising-sun": {
+          "title": "O Sol entre as Torres",
+          "description": "Entre duas torres, o sol nasce — e não se põe: a promessa escondida do arcano XIII. Toda travessia termina em amanhecer."
+        },
+        "river-boat": {
+          "title": "O Rio e o Barco",
+          "description": "A barca parada no rio: a travessia que toda alma faz — o barqueiro de outrora agora aguarda; o rio não para de correr, só nós paramos."
+        },
+        "skeleton-armor": {
+          "title": "O Esqueleto Armadurado",
+          "description": "Ossos sob armadura negra: o que sobra quando toda forma cai — a estrutura última, o invencível que já é osso e por isso não teme."
+        },
+        "black-horse": {
+          "title": "O Cavalo Branco",
+          "description": "A montaria \"pálida\" das escrituras, branca como nenhum outro animal do arcano: a morte cavalga sobre o puro — nada impuro chega ao outro lado."
+        },
+        "banner-rose": {
+          "title": "O Estandarte da Rosa Branca",
+          "description": "A rosa de cinco pétalas no pano negro: a vida que persiste no símbolo da morte — transformação, não aniquilação; os cinco sentidos que se rendem."
+        },
+        "kneeling-figures": {
+          "title": "Os que se Ajoelham",
+          "description": "Rei, mulher e criança: poder, apego e inocência — as três reações humanas diante do inevitável: resistência, dor e aceitação."
+        },
+        "child-flowers": {
+          "title": "A Criança e as Flores",
+          "description": "Só a criança ergue flores ao cavaleiro: a inocência acolhe a transformação como primavera — morte vista por olhos sem medo é metamorfose."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Death",
+      "intro": "Not the end but the passage: the sun rises between two towers while every hierarchy kneels.",
+      "regions": {
+        "rising-sun": {
+          "title": "The Sun Between the Towers",
+          "description": "Between two towers the sun rises — and does not set: the hidden promise of arcanum XIII. Every crossing ends in dawn."
+        },
+        "river-boat": {
+          "title": "The River and the Boat",
+          "description": "The boat waits on the river: the crossing every soul must make — the ferryman of old now waits; the river never stops flowing, only we stop."
+        },
+        "skeleton-armor": {
+          "title": "The Skeleton in Armor",
+          "description": "Bones beneath black armor: what remains when every form falls — the final structure, the invincible that is already bone and therefore fears nothing."
+        },
+        "black-horse": {
+          "title": "The White Horse",
+          "description": "The \"pale\" steed of scripture, whiter than any other creature in the arcanum: death rides over the pure — nothing impure reaches the other shore."
+        },
+        "banner-rose": {
+          "title": "The Banner of the White Rose",
+          "description": "The five-petalled rose on the black cloth: life persisting within the symbol of death — transformation, not annihilation; the five senses surrendering."
+        },
+        "kneeling-figures": {
+          "title": "Those Who Kneel",
+          "description": "King, woman and child: power, attachment and innocence — the three human reactions before the inevitable: resistance, grief and acceptance."
+        },
+        "child-flowers": {
+          "title": "The Child and the Flowers",
+          "description": "Only the child raises flowers to the rider: innocence welcomes transformation as springtime — death seen by fearless eyes is metamorphosis."
+        }
+      }
+    },
+    "ja": {
+      "name": "死神",
+      "intro": "終わりではなく通過です。二本の塔のあいだに太陽が昇り、あらゆる階層が膝を屈します。",
+      "regions": {
+        "rising-sun": {
+          "title": "塔のあいだの太陽",
+          "description": "二本の塔のあいだで太陽は昇り、そして沈みません——大アルカナXIIIに隠された約束。すべての渡りは夜明けで終わるのです。"
+        },
+        "river-boat": {
+          "title": "川と小舟",
+          "description": "川に停まる小舟は、すべての魂が渡る道のりです。かつての渡し守が今、待っています。川は流れつづけ、止まるのは私たちのほうです。"
+        },
+        "skeleton-armor": {
+          "title": "鎧をまとった骸骨",
+          "description": "黒い鎧の下の骨——あらゆる形が崩れたあとに残る最終的な構造。すでに骨であるがゆえに、何も恐れない不屈のものです。"
+        },
+        "black-horse": {
+          "title": "白い馬",
+          "description": "聖書が「青白い」と呼ぶ馬は、このカードのどの獣よりも白い。死は純粋なものの上を駆け、穢れたものは彼岸には届きません。"
+        },
+        "banner-rose": {
+          "title": "白いバラの旗",
+          "description": "黒い布に咲く五弁のバラは、死の象徴のなかに生きつづける命。消滅ではなく変容であり、五つの感覚が身をゆだねます。"
+        },
+        "kneeling-figures": {
+          "title": "ひざまずく者たち",
+          "description": "王、女、そして子供——権力、執着、無垢。避けられないものの前での三つの反応、すなわち抵抗、悲しみ、受容です。"
+        },
+        "child-flowers": {
+          "title": "子供と花",
+          "description": "騎手に花を差し出すのは子供だけです。無垢は変容を春として迎えます——恐れのない目で見る死は、変態なのです。"
+        }
+      }
+    },
+    "he": {
+      "name": "המוות",
+      "intro": "לא הסוף אלא המעבר: השמש עולה בין שני המגדלים, וכל היררכיה כורעת ברך.",
+      "regions": {
+        "rising-sun": {
+          "title": "השמש בין המגדלים",
+          "description": "בין שני מגדלים השמש עולה — ואינה שוקעת: ההבטחה החבויה של ארקנה XIII. כל חצייה מסתיימת בשחר."
+        },
+        "river-boat": {
+          "title": "הנהר והסירה",
+          "description": "הסירה עומדת בנהר: החצייה שכל נשמה עוברת — המשיט של פעם ממתין עכשיו; הנהר אינו פוסק מלזרום, רק אנחנו עוצרים."
+        },
+        "skeleton-armor": {
+          "title": "השלד בשריון",
+          "description": "עצמות תחת שריון שחור: מה שנשאר כשכל צורה נופלת — המבנה האחרון, הבלתי מנוצח שהוא כבר עצם ולכן אינו ירא."
+        },
+        "black-horse": {
+          "title": "הסוס הלבן",
+          "description": "הרכיבה ה\"חיוורת\" של הכתובים, לבנה מכל חיה אחרת בארקנה: המוות רוכב על הטהור — שום דבר לא טהור לא מגיע אל הגדה האחרת."
+        },
+        "banner-rose": {
+          "title": "דגל הוורד הלבן",
+          "description": "הוורד בעל חמשת העלים על הבד השחור: החיים המתמידים בסמל המוות — טרנספורמציה ולא כליון; חמשת החושים הנכנעים."
+        },
+        "kneeling-figures": {
+          "title": "הכורעים ברך",
+          "description": "מלך, אישה וילד: כוח, אחיזה ותמימות — שלוש התגובות האנושיות מול הבלתי נמנע: התנגדות, כאב והשלמה."
+        },
+        "child-flowers": {
+          "title": "הילד והפרחים",
+          "description": "רק הילד מרים פרחים אל הרוכב: התמימות מקבלת את הטרנספורמציה כאביב — מוות בעיניים נטולות פחד הוא גלגול צורה."
+        }
+      }
+    }
+  }
+}

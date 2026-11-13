@@ -1,0 +1,153 @@
+{
+  "slug": "the-emperor",
+  "number": 4,
+  "image": "/tarot/04_Emperor.jpg",
+  "regions": [
+    {
+      "id": "ram-heads",
+      "icon": "🐏"
+    },
+    {
+      "id": "ankh",
+      "icon": "☥"
+    },
+    {
+      "id": "orb",
+      "icon": "🔮"
+    },
+    {
+      "id": "armor",
+      "icon": "🛡️"
+    },
+    {
+      "id": "beard-crown",
+      "icon": "👑"
+    },
+    {
+      "id": "mountains",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Imperador",
+      "intro": "O arquétipo do Pai: estrutura, lei e vontade férrea assentados sobre o trono do poder.",
+      "regions": {
+        "ram-heads": {
+          "title": "Os Carneiros do Trono",
+          "description": "As cabeças de carneiro esculpidas nos braços do trono: Áries e Marte — a força iniciadora, o ímpeto que abre cada novo ciclo."
+        },
+        "ankh": {
+          "title": "O Cetro Ankh",
+          "description": "A cruz ansada é a vida que o Imperador outorga e sustenta: seu poder existe para organizar e preservar a existência, não para destruí-la."
+        },
+        "orb": {
+          "title": "O Orbe",
+          "description": "Na mão esquerda, o globo do domínio: o mundo sob controle consciente — visão completa, governo à distância."
+        },
+        "armor": {
+          "title": "A Armadura sob o Manto",
+          "description": "Sob as vestes vermelhas, a couraça: o governante permanece guerreiro por dentro mesmo quando sereno por fora — a rigidez que protege e também aprisiona."
+        },
+        "beard-crown": {
+          "title": "A Barba e a Coroa",
+          "description": "A longa barba branca é a sabedoria acumulada do tempo; a coroa de ouro, o direito de comandar herdado da experiência — não do capricho."
+        },
+        "mountains": {
+          "title": "As Montanhas Áridas",
+          "description": "O deserto rochoso ao fundo: o reino da forma em seu estado mais seco e definido — limites claros, sem dissolução."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Emperor",
+      "intro": "The archetype of the Father: structure, law and iron will enthroned upon power.",
+      "regions": {
+        "ram-heads": {
+          "title": "The Rams of the Throne",
+          "description": "The rams' heads carved into the arms of the throne: Aries and Mars — the initiating force, the impulse that opens every new cycle."
+        },
+        "ankh": {
+          "title": "The Ankh Scepter",
+          "description": "The ankh cross is the life the Emperor grants and sustains: his power exists to organize and preserve existence, not to destroy it."
+        },
+        "orb": {
+          "title": "The Orb",
+          "description": "In his left hand, the globe of dominion: the world under conscious control — complete vision, government from afar."
+        },
+        "armor": {
+          "title": "The Armor Beneath the Mantle",
+          "description": "Under the red robes, the breastplate: the ruler remains a warrior within even when serene without — the rigidity that protects and also imprisons."
+        },
+        "beard-crown": {
+          "title": "The Beard and the Crown",
+          "description": "The long white beard is the wisdom accumulated by time; the golden crown, the right to command inherited from experience — not from whim."
+        },
+        "mountains": {
+          "title": "The Arid Mountains",
+          "description": "The rocky desert in the background: the realm of form in its driest, most defined state — clear limits, without dissolution."
+        }
+      }
+    },
+    "ja": {
+      "name": "皇帝",
+      "intro": "父なる元型。構造と法、そして鉄の意志が、権力の玉座に据えられています。",
+      "regions": {
+        "ram-heads": {
+          "title": "玉座の牡羊",
+          "description": "玉座の肘掛けに刻まれた牡羊の頭。牡羊座と火星——始まりの力、新しい周期を開く衝動を表します。"
+        },
+        "ankh": {
+          "title": "アンクの王笏",
+          "description": "アンクの十字は、皇帝が授け支える生命そのもの。その力は存在を秩序づけ保つためにあり、壊すためのものではありません。"
+        },
+        "orb": {
+          "title": "宝珠",
+          "description": "左手に持つ統治の球体。意識のもとに治められた世界——全体を見渡し、遠くから統べる力です。"
+        },
+        "armor": {
+          "title": "外套の下の鎧",
+          "description": "赤い衣の下には胸甲。統治者は外に静かであっても内に戦士を保ちます——守り、また閉じ込める硬さです。"
+        },
+        "beard-crown": {
+          "title": "髭と王冠",
+          "description": "長い白髭は歳月が積み上げた知恵、黄金の王冠は経験から受け継いだ統べる資格——気まぐれによるものではありません。"
+        },
+        "mountains": {
+          "title": "乾いた山々",
+          "description": "背景に広がる岩の砂漠。最も乾き、最も明確な状態にある形の領域——曖昧さのない、はっきりとした境界です。"
+        }
+      }
+    },
+    "he": {
+      "name": "הקיסר",
+      "intro": "ארכיטיפ האב: מבנה, חוק ורצון ברזל, היושבים על כס הכוח.",
+      "regions": {
+        "ram-heads": {
+          "title": "כבשי הכס",
+          "description": "ראשי הכבשים המגולפים בזרועות הכס: טלה ומאדים — הכוח המפתח, הדחף שפותח כל מחזור חדש."
+        },
+        "ankh": {
+          "title": "שרביט האנך",
+          "description": "צלב האנך הוא החיים שהקיסר מעניק ומקיים: כוחו נועד לארגן ולשמר את הקיום, ולא להחריב אותו."
+        },
+        "orb": {
+          "title": "הגלוב",
+          "description": "בידו השמאלית, גלוב השליטה: העולם תחת שליטה מודעת — ראייה שלמה, שלטון מרחוק."
+        },
+        "armor": {
+          "title": "השריון מתחת לגלימה",
+          "description": "מתחת לגלימה האדומה, שריון החזה: השליט נשאר לוחם מבפנים גם כשהוא שליו מבחוץ — הנוקשות שמגינה וגם כולאת."
+        },
+        "beard-crown": {
+          "title": "הזקן והכתר",
+          "description": "הזקן הלבן הארוך הוא החוכמה שנצברה בזמן; כתר הזהב הוא הזכות למשול, בירושה מן הניסיון — ולא מן הגחמה."
+        },
+        "mountains": {
+          "title": "ההרים הצחיחים",
+          "description": "המדבר הסלעי ברקע: ממלכת הצורה במצבה היבש והמוגדר ביותר — גבולות ברורים, בלי התמוססות."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "slug": "the-sun",
+  "number": 19,
+  "image": "/tarot/19_Sun.jpg",
+  "regions": [
+    {
+      "id": "sun-rays",
+      "icon": "☀️"
+    },
+    {
+      "id": "child-horse",
+      "icon": "🧒"
+    },
+    {
+      "id": "red-banner",
+      "icon": "🚩"
+    },
+    {
+      "id": "sunflower-wall",
+      "icon": "🌻"
+    },
+    {
+      "id": "red-plume",
+      "icon": "🪶"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "O Sol",
+      "intro": "A criança renascida cavalga ao amanhecer: nada a provar, tudo a brilhar.",
+      "regions": {
+        "sun-rays": {
+          "title": "O Sol de Raios Retos",
+          "description": "Diferente da Lua, os raios aqui não ondulam — são lanças de luz: a consciência plena, sem distorção nem luz emprestada — a fonte é o próprio centro."
+        },
+        "child-horse": {
+          "title": "A Criança no Cavalo Branco",
+          "description": "Despida e livre sobre a montaria branca: o eu renascido — a inocência recuperada depois de toda travessia; o cavalo é a força purificada a serviço da alegria."
+        },
+        "red-banner": {
+          "title": "O Estandarte Vermelho",
+          "description": "A criança segura a bandeira da vitória — mas não olha para ela: o triunfo que não precisa ser mostrado; o vermelho da vitalidade esvoaçando sem guerra."
+        },
+        "sunflower-wall": {
+          "title": "O Muro de Girassóis",
+          "description": "Quatro girassóis virados para a criança — e não para o sol: a natureza inteira reconhece o que está mais alto; quando o Sol é interno, até as flores se voltam para ele."
+        },
+        "red-plume": {
+          "title": "A Plumagem Vermelha",
+          "description": "A única pena na cabeça da criança: um toque de vontade — a liberdade não é passividade; exige um ponto de fogo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "The Sun",
+      "intro": "The reborn child rides at daybreak: nothing to prove, everything to shine.",
+      "regions": {
+        "sun-rays": {
+          "title": "The Sun of Straight Rays",
+          "description": "Unlike the Moon, the rays here do not waver — they are spears of light: full consciousness, without distortion or borrowed light — the source is the center itself."
+        },
+        "child-horse": {
+          "title": "The Child on the White Horse",
+          "description": "Naked and free on the white mount: the reborn self — innocence recovered after every crossing; the horse is strength purified in the service of joy."
+        },
+        "red-banner": {
+          "title": "The Red Banner",
+          "description": "The child holds the banner of victory — yet does not look at it: triumph that needs no display; the red of vitality streaming without war."
+        },
+        "sunflower-wall": {
+          "title": "The Wall of Sunflowers",
+          "description": "Four sunflowers turned toward the child — not toward the sun: all nature recognizes what stands higher; when the Sun is within, even flowers turn to it."
+        },
+        "red-plume": {
+          "title": "The Red Plume",
+          "description": "The single feather in the child's hair: a touch of will — freedom is not passivity; it demands a point of fire."
+        }
+      }
+    },
+    "ja": {
+      "name": "太陽",
+      "intro": "生まれ変わった子どもが夜明けに馬を駆ります。証明すべきものは何もなく、ただ輝くだけです。",
+      "regions": {
+        "sun-rays": {
+          "title": "まっすぐな光線の太陽",
+          "description": "月と違い、ここでは光線は波打ちません——光の槍です。ゆがみも借り物の光もない、完全な意識。源は中心そのものです。"
+        },
+        "child-horse": {
+          "title": "白馬の子ども",
+          "description": "白い馬の上で、裸のまま自由に。生まれ変わった自己——すべての渡航を経て取り戻された無垢です。馬は喜びに仕える、清められた力です。"
+        },
+        "red-banner": {
+          "title": "赤い旗",
+          "description": "子どもは勝利の旗を掲げながら、それを見ようとしません。見せる必要のない勝利——戦いのないままなびく、活力の赤です。"
+        },
+        "sunflower-wall": {
+          "title": "ひまわりの壁",
+          "description": "四本のひまわりは太陽ではなく、子どもへと顔を向けています。自然のすべてが、より高きものを認めているのです。太陽が内にあるとき、花さえもそちらへ向きます。"
+        },
+        "red-plume": {
+          "title": "赤い羽根",
+          "description": "子どもの頭に飾られた一本の羽根。それは意志のひと筆です——自由は受け身ではなく、一点の炎を必要とします。"
+        }
+      }
+    },
+    "he": {
+      "name": "השמש",
+      "intro": "הילד הנולד מחדש רוכב עם עלות השחר: אין מה להוכיח, יש רק לזהור.",
+      "regions": {
+        "sun-rays": {
+          "title": "השמש בקרניים ישרות",
+          "description": "שלא כירח, הקרניים כאן אינן גליות — הן חניתות של אור: תודעה שלמה, בלי עיוות ובלי אור שאול — המקור הוא המרכז עצמו."
+        },
+        "child-horse": {
+          "title": "הילד על הסוס הלבן",
+          "description": "עירום וחופשי על הסוס הלבן: האני הנולד מחדש — התום שהושב לאחר כל חצייה; הסוס הוא הכוח הטהור העומד לשירות השמחה."
+        },
+        "red-banner": {
+          "title": "הדגל האדום",
+          "description": "הילד אוחז בדגל הניצחון — אך אינו מביט בו: ניצחון שאינו זקוק להצגה; אדום החיות מתנופף בלי מלחמה."
+        },
+        "sunflower-wall": {
+          "title": "חומת החמניות",
+          "description": "ארבע חמניות פונות אל הילד — ולא אל השמש: כל הטבע מזהה את מה שגבוה יותר; כשהשמש נמצאת בפנים, אפילו הפרחים פונים אליה."
+        },
+        "red-plume": {
+          "title": "הנוצה האדומה",
+          "description": "הנוצה היחידה בשערו של הילד: נגיעה של רצון — החופש אינו פסיביות; הוא דורש נקודה של אש."
+        }
+      }
+    }
+  }
+}
