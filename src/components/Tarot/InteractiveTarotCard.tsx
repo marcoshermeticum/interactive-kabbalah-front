@@ -1,12 +1,14 @@
-'use client';
+﻿'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import type { TarotCard, TarotRegion } from '@/data/tarot/types';
 
 interface Props {
   card: TarotCard;
+  /** Rendered at the right end of the toolbar above the artwork (e.g. share menu). */
+  toolbarEnd?: ReactNode;
 }
 
 /**
@@ -23,7 +25,7 @@ interface Props {
  * A row of symbol "pills" lets users discover and jump between regions by
  * keyboard or touch, independent of pixel-hunting on the image.
  */
-export default function InteractiveTarotCard({ card }: Props) {
+export default function InteractiveTarotCard({ card, toolbarEnd }: Props) {
   const t = useTranslations('tarot');
   const [showRegions, setShowRegions] = useState(false);
   const [hoverId, setHoverId] = useState<string | null>(null);
@@ -117,19 +119,25 @@ export default function InteractiveTarotCard({ card }: Props) {
     <div className="grid w-full items-start justify-center gap-6 md:grid-cols-[minmax(0,26rem)_minmax(0,20rem)] md:gap-8">
       {/* ─── Card column: toggle + framed artwork ─── */}
       <section className="mx-auto w-full max-w-[320px] sm:max-w-[360px] md:col-start-1 md:row-start-1 md:max-w-none">
-        <div className="pb-4 flex justify-center">
+        {/* Toolbar right above the artwork: highlight toggle (left) and the
+            share/download menu (right). Icon-only so it never wraps. */}
+        <div className="flex items-center justify-between pb-3">
           <button
             type="button"
             onClick={() => setShowRegions((v) => !v)}
-            className="min-h-[44px] cursor-pointer rounded-full px-6 py-2 text-sm font-medium transition hover:opacity-80"
+            aria-pressed={showRegions}
+            aria-label={showRegions ? t('hideRegions') : t('showRegions')}
+            title={showRegions ? t('hideRegions') : t('showRegions')}
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full transition hover:opacity-80"
             style={{
-              color: 'var(--text-muted)',
-              border: '1px solid var(--border)',
-              background: 'var(--bg-secondary)',
+              color: showRegions ? '#1c1917' : 'var(--text-secondary)',
+              background: showRegions ? 'var(--gold)' : 'var(--bg-secondary)',
+              border: `1px solid ${showRegions ? 'var(--gold)' : 'var(--border)'}`,
             }}
           >
-            {showRegions ? `👁 ${t('hideRegions')}` : `✨ ${t('showRegions')}`}
+            <SparklesIcon />
           </button>
+          {toolbarEnd}
         </div>
         <div
           className="rounded-2xl p-2.5 sm:p-3"
@@ -247,6 +255,15 @@ export default function InteractiveTarotCard({ card }: Props) {
         </div>
       </div>
     </div>
+  );
+}
+
+function SparklesIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+      <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z" />
+    </svg>
   );
 }
 

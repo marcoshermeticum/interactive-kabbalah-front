@@ -65,6 +65,8 @@ export default function TarotCardDetail({ entry }: Props) {
     ...(corr.element ? [{ label: tCorr('element'), glyph: ELEMENT_GLYPH[corr.element], value: tCorr(`elements.${corr.element}`) }] : []),
   ];
 
+  const shareMenu = <TarotShareMenu cardName={name} image={entry.image} />;
+
   return (
     <div className="flex h-[100dvh] w-full flex-col overflow-hidden">
       <Navbar variant="catalog" />
@@ -117,7 +119,6 @@ export default function TarotCardDetail({ entry }: Props) {
                   {editorOpen ? '✕ Fechar editor' : '🎯 Posicionar destaques'}
                 </button>
               )}
-              <TarotShareMenu cardName={name} image={entry.image} />
             </div>
           </div>
 
@@ -202,7 +203,7 @@ export default function TarotCardDetail({ entry }: Props) {
             editorOpen && editorAvailable ? (
               <TarotRegionEditor card={card} />
             ) : (
-              <InteractiveTarotCard card={card} />
+              <InteractiveTarotCard card={card} toolbarEnd={shareMenu} />
             )
           ) : (
             <div
@@ -214,6 +215,7 @@ export default function TarotCardDetail({ entry }: Props) {
                 gap: '1.25rem',
               }}
             >
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '-0.5rem' }}>{shareMenu}</div>
               <div
                 style={{
                   position: 'relative',
