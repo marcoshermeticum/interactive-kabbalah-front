@@ -289,72 +289,131 @@
     "soonBadge": "Soon",
     "comingSoonTitle": "Card in preparation",
     "comingSoonText": "The interactive regions for this card are still being drawn. Check back soon to explore it symbol by symbol.",
+    "correspondences": {
+      "title": "Correspondences",
+      "path": "Path",
+      "hebrewLetter": "Hebrew letter",
+      "planet": "Planet",
+      "sign": "Sign",
+      "element": "Element",
+      "planets": {
+        "sun": "Sun",
+        "moon": "Moon",
+        "mercury": "Mercury",
+        "venus": "Venus",
+        "mars": "Mars",
+        "jupiter": "Jupiter",
+        "saturn": "Saturn"
+      },
+      "signs": {
+        "aries": "Aries",
+        "taurus": "Taurus",
+        "gemini": "Gemini",
+        "cancer": "Cancer",
+        "leo": "Leo",
+        "virgo": "Virgo",
+        "libra": "Libra",
+        "scorpio": "Scorpio",
+        "sagittarius": "Sagittarius",
+        "capricorn": "Capricorn",
+        "aquarius": "Aquarius",
+        "pisces": "Pisces"
+      },
+      "elements": {
+        "fire": "Fire",
+        "water": "Water",
+        "air": "Air",
+        "earth": "Earth"
+      }
+    },
     "cards": {
       "theFool": {
-        "name": "The Fool"
+        "name": "The Fool",
+        "summary": "The Fool is the start of every journey: a leap of faith into the unknown. It stands for pure potential, spontaneity and innocence, yet reminds us that courage without attention can lead to the edge of a cliff."
       },
       "theMagician": {
-        "name": "The Magician"
+        "name": "The Magician",
+        "summary": "The Magician joins heaven and earth: one hand raised, the other pointing down, channeling will into action. With the four suits on the table, the card shows that skill, focus and communication turn intention into reality."
       },
       "theHighPriestess": {
-        "name": "The High Priestess"
+        "name": "The High Priestess",
+        "summary": "Seated between the pillars of the Temple, the High Priestess guards the hidden knowledge behind the veil. She rules intuition, silence and the mysteries of the unconscious, and invites us to listen to what cannot yet be said."
       },
       "theEmpress": {
-        "name": "The Empress"
+        "name": "The Empress",
+        "summary": "The Empress is Mother Nature: fertility, beauty and abundance in full bloom. She speaks of creation, pleasure, care and the love that nurtures both ideas and people."
       },
       "theEmperor": {
-        "name": "The Emperor"
+        "name": "The Emperor",
+        "summary": "The Emperor stands for order, structure and authority. From his stone throne he teaches leadership through discipline and responsibility, and warns against the rigidity of confusing control with strength."
       },
       "theHierophant": {
-        "name": "The Hierophant"
+        "name": "The Hierophant",
+        "summary": "The Hierophant is the teacher of traditions and sacred rites, a bridge between the divine and the community. He symbolizes teaching, institutional faith and inherited values, and asks what deserves to be followed and what should be questioned."
       },
       "theLovers": {
-        "name": "The Lovers"
+        "name": "The Lovers",
+        "summary": "The Lovers speak of union and conscious choice. Beyond romance, the card asks for alignment between heart, values and action, reminding us that every true choice also defines who we are."
       },
       "theChariot": {
-        "name": "The Chariot"
+        "name": "The Chariot",
+        "summary": "The Chariot advances through willpower: the charioteer steers two opposing sphinxes without visible reins. It stands for victory, direction and self-control, the triumph of harmonizing opposing forces toward a goal."
       },
       "strength": {
-        "name": "Strength"
+        "name": "Strength",
+        "summary": "Strength shows a woman calming a lion with gentleness. It is quiet courage, patience and compassionate mastery of instinct, where true power comes from the heart rather than from force."
       },
       "theHermit": {
-        "name": "The Hermit"
+        "name": "The Hermit",
+        "summary": "The Hermit raises his lantern on the mountain and walks alone in search of meaning. He symbolizes introspection, prudence and the wisdom that grows in solitude, lighting the way for those who follow."
       },
       "wheelOfFortune": {
-        "name": "Wheel of Fortune"
+        "name": "Wheel of Fortune",
+        "summary": "The Wheel of Fortune turns the cycles of life: rise, fall and return. It reminds us that nothing is permanent, that fate keeps its own rhythms, and that wisdom lies in adapting to change without losing one's center."
       },
       "justice": {
-        "name": "Justice"
+        "name": "Justice",
+        "summary": "Justice weighs deeds with scales and sword: balance, truth and consequence. She asks for honesty, fair decisions and responsibility, because every cause has its effect."
       },
       "theHangedMan": {
-        "name": "The Hanged Man"
+        "name": "The Hanged Man",
+        "summary": "The Hanged Man hangs upside down, at peace, by his own choice. He stands for surrender, pause and a new perspective: sometimes we only move forward by letting go of control and seeing the world from another angle."
       },
       "death": {
-        "name": "Death"
+        "name": "Death",
+        "summary": "Death rarely speaks of a literal end. It is deep transformation: what must end so that something new can be born. The card asks for courage to release what has completed its cycle and to accept renewal."
       },
       "temperance": {
-        "name": "Temperance"
+        "name": "Temperance",
+        "summary": "Temperance pours between two cups in a continuous flow, uniting opposites in harmony. It is the card of inner alchemy: moderation, patience and integration, the middle path that heals and balances."
       },
       "theDevil": {
-        "name": "The Devil"
+        "name": "The Devil",
+        "summary": "The Devil shows the chains we accept ourselves: attachments, addictions and material illusions. Yet the chains hang loose, and the card invites us to face the shadow in order to reclaim freedom."
       },
       "theTower": {
-        "name": "The Tower"
+        "name": "The Tower",
+        "summary": "The Tower collapses in a flash of lightning: false structures fall all at once. It is the rupture that shakes certainties, painful yet liberating, making room for truth and for rebuilding on firmer ground."
       },
       "theStar": {
-        "name": "The Star"
+        "name": "The Star",
+        "summary": "The Star appears after the storm, bringing hope, healing and inspiration. A figure pours water onto the land and the pool, a symbol of renewed faith and trust that light guides even through the darkest night."
       },
       "theMoon": {
-        "name": "The Moon"
+        "name": "The Moon",
+        "summary": "The Moon lights an uncertain path between two towers, where a dog and a wolf howl. It rules dreams, fears and intuition: everything seems unclear, and the card asks us to cross the illusion by trusting instinct."
       },
       "theSun": {
-        "name": "The Sun"
+        "name": "The Sun",
+        "summary": "The Sun shines on a joyful, radiant child: happiness, vitality and clarity. It is the card of honest success, truth in daylight and the energy that gives life to everything it touches."
       },
       "judgement": {
-        "name": "Judgement"
+        "name": "Judgement",
+        "summary": "Judgement is the angel's call that awakens the dead: rebirth, reckoning and absolution. It invites us to heed the inner call, forgive the past and embrace a greater purpose."
       },
       "theWorld": {
-        "name": "The World"
+        "name": "The World",
+        "summary": "The World closes the cycle of the Major Arcana: fulfillment, integration and wholeness. The dancing figure within the wreath celebrates a journey completed, while the next beginning is already taking shape."
       }
     }
   },

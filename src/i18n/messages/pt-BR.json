@@ -289,72 +289,131 @@
     "soonBadge": "Em breve",
     "comingSoonTitle": "Carta em preparação",
     "comingSoonText": "As regiões interativas desta carta ainda estão sendo desenhadas. Volte em breve para explorá-la símbolo por símbolo.",
+    "correspondences": {
+      "title": "Correspondências",
+      "path": "Caminho",
+      "hebrewLetter": "Letra hebraica",
+      "planet": "Planeta",
+      "sign": "Signo",
+      "element": "Elemento",
+      "planets": {
+        "sun": "Sol",
+        "moon": "Lua",
+        "mercury": "Mercúrio",
+        "venus": "Vênus",
+        "mars": "Marte",
+        "jupiter": "Júpiter",
+        "saturn": "Saturno"
+      },
+      "signs": {
+        "aries": "Áries",
+        "taurus": "Touro",
+        "gemini": "Gêmeos",
+        "cancer": "Câncer",
+        "leo": "Leão",
+        "virgo": "Virgem",
+        "libra": "Libra",
+        "scorpio": "Escorpião",
+        "sagittarius": "Sagitário",
+        "capricorn": "Capricórnio",
+        "aquarius": "Aquário",
+        "pisces": "Peixes"
+      },
+      "elements": {
+        "fire": "Fogo",
+        "water": "Água",
+        "air": "Ar",
+        "earth": "Terra"
+      }
+    },
     "cards": {
       "theFool": {
-        "name": "O Louco"
+        "name": "O Louco",
+        "summary": "O Louco é o início de toda jornada: o salto de fé de quem confia no desconhecido. Representa o potencial puro, a espontaneidade e a inocência, mas lembra que a coragem sem atenção pode levar ao precipício."
       },
       "theMagician": {
-        "name": "O Mago"
+        "name": "O Mago",
+        "summary": "O Mago une céu e terra: com uma mão erguida e a outra apontando para baixo, canaliza a vontade em ação. Diante dos quatro naipes sobre a mesa, mostra que talento, foco e comunicação transformam intenção em realidade."
       },
       "theHighPriestess": {
-        "name": "A Sacerdotisa"
+        "name": "A Sacerdotisa",
+        "summary": "Sentada entre as colunas do Templo, a Sacerdotisa guarda o conhecimento oculto atrás do véu. Rege a intuição, o silêncio e os mistérios do inconsciente, e convida a escutar o que ainda não pode ser dito."
       },
       "theEmpress": {
-        "name": "A Imperatriz"
+        "name": "A Imperatriz",
+        "summary": "A Imperatriz é a Mãe Natureza: fertilidade, beleza e abundância em pleno florescer. Fala de criação, prazer, cuidado e do amor que nutre tanto as ideias quanto as pessoas."
       },
       "theEmperor": {
-        "name": "O Imperador"
+        "name": "O Imperador",
+        "summary": "O Imperador representa ordem, estrutura e autoridade. Do seu trono de pedra, ensina a liderar com disciplina e responsabilidade, e alerta contra a rigidez de quem confunde controle com força."
       },
       "theHierophant": {
-        "name": "O Hierofante"
+        "name": "O Hierofante",
+        "summary": "O Hierofante é o mestre das tradições e dos ritos sagrados, ponte entre o divino e a comunidade. Simboliza ensinamento, fé institucional e valores herdados, e pergunta o que vale seguir e o que precisa ser questionado."
       },
       "theLovers": {
-        "name": "Os Enamorados"
+        "name": "Os Enamorados",
+        "summary": "Os Enamorados falam de união e de escolha consciente. Mais que romance, a carta pede alinhamento entre coração, valores e ação, lembrando que toda escolha verdadeira também define quem somos."
       },
       "theChariot": {
-        "name": "O Carro"
+        "name": "O Carro",
+        "summary": "O Carro avança pela força de vontade: o condutor guia duas esfinges opostas sem rédeas visíveis. Representa vitória, direção e autocontrole, o triunfo de quem harmoniza forças contrárias rumo a um objetivo."
       },
       "strength": {
-        "name": "A Força"
+        "name": "A Força",
+        "summary": "A Força mostra uma mulher que acalma o leão com gentileza. É a coragem serena, a paciência e o domínio compassivo dos próprios instintos, em que a verdadeira potência nasce do coração e não da imposição."
       },
       "theHermit": {
-        "name": "O Eremita"
+        "name": "O Eremita",
+        "summary": "O Eremita ergue sua lanterna na montanha e caminha sozinho em busca de sentido. Simboliza introspecção, prudência e a sabedoria que surge no recolhimento, iluminando o caminho de quem vem depois."
       },
       "wheelOfFortune": {
-        "name": "A Roda da Fortuna"
+        "name": "A Roda da Fortuna",
+        "summary": "A Roda da Fortuna gira os ciclos da vida: ascensão, queda e retorno. Lembra que nada é permanente, que o destino tem seus ritmos e que a sabedoria está em se adaptar às mudanças sem perder o centro."
       },
       "justice": {
-        "name": "A Justiça"
+        "name": "A Justiça",
+        "summary": "A Justiça pesa os atos com balança e espada: equilíbrio, verdade e consequência. Pede honestidade, decisões imparciais e responsabilidade, pois toda causa tem seu efeito."
       },
       "theHangedMan": {
-        "name": "O Enforcado"
+        "name": "O Enforcado",
+        "summary": "O Enforcado pende de cabeça para baixo, em paz, por escolha própria. Representa rendição, pausa e nova perspectiva: às vezes só se avança ao soltar o controle e ver o mundo de outro ângulo."
       },
       "death": {
-        "name": "A Morte"
+        "name": "A Morte",
+        "summary": "A Morte raramente fala de um fim literal. É a transformação profunda: o que precisa terminar para que algo novo nasça. Pede coragem para soltar o que já cumpriu seu ciclo e aceitar a renovação."
       },
       "temperance": {
-        "name": "A Temperança"
+        "name": "A Temperança",
+        "summary": "A Temperança mistura duas taças em fluxo contínuo, unindo opostos em harmonia. É a carta da alquimia interior: moderação, paciência e integração, o caminho do meio que cura e equilibra."
       },
       "theDevil": {
-        "name": "O Diabo"
+        "name": "O Diabo",
+        "summary": "O Diabo mostra as correntes que nós mesmos aceitamos: apegos, vícios e ilusões materiais. Mas as correntes estão frouxas, e a carta convida a encarar a sombra para recuperar a liberdade."
       },
       "theTower": {
-        "name": "A Torre"
+        "name": "A Torre",
+        "summary": "A Torre desaba num raio: estruturas falsas ruem de uma vez. É a ruptura que abala certezas, dolorosa mas libertadora, abrindo espaço para a verdade e para reconstruir sobre bases mais firmes."
       },
       "theStar": {
-        "name": "A Estrela"
+        "name": "A Estrela",
+        "summary": "A Estrela surge depois da tempestade, trazendo esperança, cura e inspiração. A figura que derrama água na terra e no lago simboliza fé renovada e a confiança de que a luz guia até a noite mais escura."
       },
       "theMoon": {
-        "name": "A Lua"
+        "name": "A Lua",
+        "summary": "A Lua ilumina um caminho incerto entre duas torres, onde um cão e um lobo uivam. Rege sonhos, medos e intuição: tudo parece nebuloso, e a carta pede atravessar a ilusão confiando nos instintos."
       },
       "theSun": {
-        "name": "O Sol"
+        "name": "O Sol",
+        "summary": "O Sol brilha sobre uma criança feliz e radiante: alegria, vitalidade e clareza. É a carta do sucesso sincero, da verdade à luz do dia e da energia que dá vida a tudo o que toca."
       },
       "judgement": {
-        "name": "O Julgamento"
+        "name": "O Julgamento",
+        "summary": "O Julgamento é o chamado do anjo que desperta os mortos: renascimento, balanço da vida e absolvição. Convida a ouvir o chamado interior, perdoar o passado e assumir um propósito maior."
       },
       "theWorld": {
-        "name": "O Mundo"
+        "name": "O Mundo",
+        "summary": "O Mundo fecha o ciclo dos Arcanos Maiores: realização, integração e plenitude. A figura que dança dentro da coroa celebra uma jornada concluída, enquanto o próximo começo já se prepara."
       }
     }
   },
