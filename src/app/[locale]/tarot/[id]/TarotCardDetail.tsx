@@ -184,7 +184,7 @@ export default function TarotCardDetail({ entry }: Props) {
               ))}
             </ul>
 
-            {card && !editorOpen && ( 
+            {card && !editorOpen && (
               <p
                 style={{
                   color: 'var(--text-muted)',
@@ -195,7 +195,8 @@ export default function TarotCardDetail({ entry }: Props) {
               >
                 💡 {tTarot('hint')}
               </p>
-            ) : null}          </header>
+            )}
+          </header>
 
           {card ? (
             editorOpen && editorAvailable ? (
