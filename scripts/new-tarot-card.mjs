@@ -1015,6 +1015,8 @@ function applyPlan(plan, dryRun) {
     console.log(`  + ${relative(dataPath)}`);
     for (const { file } of localeFiles) console.log(`  ~ ${relative(file)}`);
     console.log(`  ~ ${relative(catalogFile)}`);
+    console.log('\nSitemap (incluído automaticamente ao entrar em cardData):');
+    for (const url of sitemapPaths(plan.slug)) console.log(`  ${url}`);
     console.log('\n--- src/data/tarot/<slug>.ts ---');
     console.log(dataFile);
     return;
@@ -1030,6 +1032,8 @@ function applyPlan(plan, dryRun) {
   console.log(`  ~ ${relative(catalogFile)} (import + cardData)`);
   if (!plan.catalogEntry) console.log(`  ~ ${relative(catalogFile)} (nova entrada no mosaico)`);
   console.log(`  ✓ rota pronta: /pt-BR/tarot/${plan.slug} (página dinâmica, nada a registrar)`);
+  console.log(`  ✓ sitemap: ${sitemapPaths(plan.slug).join(', ')}`);
+  console.log('    (src/app/sitemap.ts lista as cartas já criadas — nada a editar)');
 
   for (const warning of plan.warnings) console.log(`\n⚠ ${warning}`);
 
@@ -1041,6 +1045,10 @@ Próximos passos:
   4. "Copiar JSON" e substitua o array regions em ${relative(dataPath)}
   5. npx tsc --noEmit && npm run build
 `);
+}
+
+function sitemapPaths(slug) {
+  return LOCALES.map((locale) => `/${locale}/tarot/${slug}`);
 }
 
 function printSummary(plan) {

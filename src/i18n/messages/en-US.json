@@ -248,6 +248,36 @@
           "description": "The rocky desert in the background: the realm of form in its driest, most defined state — clear limits, without dissolution."
         }
       }
+    },
+    "theHierophant": {
+      "name": "The Hierophant",
+      "intro": "The priest of tradition: between the temple columns, he blesses and keeps the keys of the established mystery.",
+      "regions": {
+        "tripleCrown": {
+          "title": "The Triple Crown",
+          "description": "The three bands of the tiara: the three worlds — physical, mental and spiritual — under a single authority; pope, emperor and god in one office."
+        },
+        "tripleCross": {
+          "title": "The Triple Cross",
+          "description": "The staff with three crossbars: blessing descends through every level of existence, from heaven to earth."
+        },
+        "crossedKeys": {
+          "title": "The Crossed Keys",
+          "description": "Of gold and silver, sun and moon: the keys that open the outer and inner mysteries — the exoteric and the esoteric set in a cross."
+        },
+        "blessingHand": {
+          "title": "The Hand in Blessing",
+          "description": "The two raised fingers: the gesture of teaching and blessing — doctrine handed down from hand to hand, from generation to generation."
+        },
+        "acolytes": {
+          "title": "The Two Monks",
+          "description": "The tonsured initiates in embroidered cloaks — obedience and devotion: tradition exists only because there are those who receive it."
+        },
+        "pillars": {
+          "title": "The Temple Pillars",
+          "description": "Unlike those of the High Priestess (J and B), these belong to the established: the visible church, the structure that sustains the sacred in matter."
+        }
+      }
     }
   },
   "tarotWaite": {

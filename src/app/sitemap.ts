@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { routing, type Locale } from '@/i18n/routing';
-import { majorArcana } from '@/data/tarot/majorArcana';
+import { isCardAvailable, majorArcana } from '@/data/tarot/majorArcana';
 import { absoluteUrl, alternateLanguages, cardPath, localizedPath } from '@/lib/seo';
 
 type StaticRoute = keyof typeof routing.pathnames;
@@ -36,7 +36,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  for (const card of majorArcana) {
+  // Only cards that already have an interactive page. `tarot:new` adds the
+  // card to `cardData`, so a freshly created card joins the sitemap on the
+  // next build without touching this file.
+  for (const card of majorArcana.filter((entry) => isCardAvailable(entry.slug))) {
     for (const locale of routing.locales) {
       entries.push({
         url: absoluteUrl(cardPath(locale as Locale, card.slug)),

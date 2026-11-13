@@ -27,6 +27,7 @@ npm run tarot:new  →  escolher a carta  →  arquivos gerados  →  posicionar
 | Adiciona a entrada no mosaico, se ainda não existir. | Não altera o documento de regiões. |
 | Calcula o `viewBox` a partir das dimensões reais do JPG/PNG. | Não ajusta o enquadramento além da proporção. |
 | Deixa a rota `/[locale]/tarot/<slug>` funcionando (é dinâmica). | — |
+| Inclui as 4 URLs da carta no `sitemap.xml` (via `cardData`). | — |
 
 Depois de criar, o posicionamento é feito com o botão **"🎯 Posicionar
 destaques"** na própria single e o JSON exportado é colado de volta no arquivo
@@ -335,12 +336,18 @@ validado com `JSON.parse` antes de qualquer gravação.
 
 Todas as alterações no catálogo são verificadas antes de gravar.
 
-### 4. Rota
+### 4. Rota e sitemap
 
 Nada a fazer: a página dinâmica
 [`src/app/[locale]/tarot/[id]/page.tsx`](../src/app/[locale]/tarot/[id]/page.tsx)
 consulta o catálogo e passa a servir `/pt-BR/tarot/<slug>` (e os demais locales)
 automaticamente. O comando imprime a rota pronta no final.
+
+O [`src/app/sitemap.ts`](../src/app/sitemap.ts) lista as cartas que estão em
+`cardData` — ou seja, as cartas já criadas. Como o comando adiciona a carta
+nesse objeto, as 4 URLs (`/pt-BR`, `/en-US`, `/ja`, `/he` + `/tarot/<slug>`)
+entram no `sitemap.xml` no próximo `npm run build`, sem editar nenhum arquivo
+de sitemap. Cartas ainda não criadas (estado "em breve") ficam fora dele.
 
 ---
 

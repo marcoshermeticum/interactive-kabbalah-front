@@ -248,6 +248,36 @@
           "description": "O deserto rochoso ao fundo: o reino da forma em seu estado mais seco e definido — limites claros, sem dissolução."
         }
       }
+    },
+    "theHierophant": {
+      "name": "O Hierofante",
+      "intro": "O sacerdote da tradição: entre as colunas do templo, ele abençoa e guarda as chaves do mistério instituído.",
+      "regions": {
+        "tripleCrown": {
+          "title": "A Coroa Tripla",
+          "description": "As três faixas da tiara: os três mundos — físico, mental e espiritual — sob uma só autoridade; papa, imperador e deus num só ofício."
+        },
+        "tripleCross": {
+          "title": "A Cruz Tripla",
+          "description": "O báculo de três travessas: a bênção desce por todos os níveis da existência, do céu à terra."
+        },
+        "crossedKeys": {
+          "title": "As Chaves Cruzadas",
+          "description": "De ouro e de prata, sol e lua: as chaves que abrem os mistérios exteriores e interiores — o exotérico e o esotérico postos em cruz."
+        },
+        "blessingHand": {
+          "title": "A Mão em Bênção",
+          "description": "Os dois dedos erguidos: o gesto de ensinar e abençoar — a doutrina transmitida de mão em mão, de geração em geração."
+        },
+        "acolytes": {
+          "title": "Os Dois Monges",
+          "description": "Os iniciados tonsurados, de mantos bordados — obediência e devoção: a tradição só existe porque há quem a receba."
+        },
+        "pillars": {
+          "title": "As Colunas do Templo",
+          "description": "Diferentes das da Sacerdotisa (J e B), estas pertencem ao estabelecido: a igreja visível, a estrutura que sustenta o sagrado na matéria."
+        }
+      }
     }
   },
   "tarotWaite": {
