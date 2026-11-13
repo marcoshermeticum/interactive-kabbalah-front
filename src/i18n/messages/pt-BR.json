@@ -338,6 +338,32 @@
           "description": "O horizonte de picos ao fundo: a tarefa é longa — a domesticação do leão é prática diária, não evento único."
         }
       }
+    },
+    "theHermit": {
+      "name": "O Eremita",
+      "intro": "No pico nevado da realização, o sábio procura dentro: a luz que carrega é a que encontra.",
+      "regions": {
+        "lanternStar": {
+          "title": "A Lanterna e o Selo de Salomão",
+          "description": "Erguida à altura dos olhos, a lanterna exibe o hexagrama: a sabedoria buscada lá fora brilha aqui dentro — procurar é lembrar."
+        },
+        "staff": {
+          "title": "O Cajado",
+          "description": "O bordão do peregrino é a coluna que sustenta a caminhada solitária — e o cetro humilde de quem já reina sobre si."
+        },
+        "grayHood": {
+          "title": "O Capuz Cinza",
+          "description": "O manto apagado, sem brasão: o anonimato do mestre verdadeiro — o saber não se exibe, acende-se nos outros."
+        },
+        "mountainPeak": {
+          "title": "O Pico da Montanha",
+          "description": "Ele está no cume que todos os arcanos anteriores escalaram: da altura, o que era urgente se vê pequeno — e ainda assim ele continua buscando."
+        },
+        "beardedFace": {
+          "title": "O Rosto do Sábio",
+          "description": "A barba branca e o olhar baixo: a idade que não pesa — tempo destilado em compreensão, o silêncio como língua materna."
+        }
+      }
     }
   },
   "tarotWaite": {

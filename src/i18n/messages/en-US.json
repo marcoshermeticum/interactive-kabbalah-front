@@ -338,6 +338,32 @@
           "description": "The horizon of peaks in the background: the task is long — taming the lion is daily practice, not a single event."
         }
       }
+    },
+    "theHermit": {
+      "name": "The Hermit",
+      "intro": "On the snowy peak of attainment, the sage looks within: the light he carries is the one he finds.",
+      "regions": {
+        "lanternStar": {
+          "title": "The Lantern and the Seal of Solomon",
+          "description": "Raised to eye level, the lantern displays the hexagram: the wisdom sought outside shines here within — to seek is to remember."
+        },
+        "staff": {
+          "title": "The Staff",
+          "description": "The pilgrim's staff is the column that sustains the solitary walk — and the humble scepter of one who already reigns over himself."
+        },
+        "grayHood": {
+          "title": "The Gray Hood",
+          "description": "The faded cloak, without a crest: the anonymity of the true master — knowledge is not displayed, it is kindled in others."
+        },
+        "mountainPeak": {
+          "title": "The Mountain Peak",
+          "description": "He stands on the summit that every previous arcana climbed: from such a height, what was urgent looks small — and still he keeps searching."
+        },
+        "beardedFace": {
+          "title": "The Face of the Sage",
+          "description": "The white beard and the lowered gaze: an age that does not weigh — time distilled into understanding, silence as his mother tongue."
+        }
+      }
     }
   },
   "tarotWaite": {
