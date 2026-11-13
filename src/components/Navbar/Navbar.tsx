@@ -81,7 +81,7 @@ export default function Navbar(props: Props) {
     <>
       {/* === TOP BAR === */}
       <header
-        className="shrink-0 z-50 px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between gap-2"
+        className="relative shrink-0 z-50 px-3 sm:px-6 py-2 sm:py-3 flex items-center justify-between gap-2"
         style={{ background: 'var(--header-bg)', borderBottom: '1px solid var(--border)' }}
       >
         {/* Left: Brand */}
@@ -96,6 +96,35 @@ export default function Navbar(props: Props) {
             {ui('title')}
           </h1>
         </Link>
+
+        {/* Center: view switcher — desktop only, centered with the tree canvas */}
+        {treeProps && (
+          <nav
+            className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center rounded-full p-1 md:flex"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)' }}
+            aria-label={ui('title')}
+          >
+            {(['life', 'death', 'both'] as const).map((v) => (
+              <button
+                key={v}
+                onClick={() => treeProps.onViewChange(v)}
+                aria-pressed={treeProps.view === v}
+                className={`cursor-pointer whitespace-nowrap rounded-full px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
+                  treeProps.view === v
+                    ? v === 'death'
+                      ? 'bg-red-900/40 text-red-200 shadow-sm'
+                      : v === 'both'
+                        ? 'bg-purple-900/40 text-purple-200 shadow-sm'
+                        : 'bg-white/15 text-white shadow-sm'
+                    : 'text-white/40 hover:text-white/70'
+                }`}
+              >
+                <span aria-hidden>{v === 'life' ? '🌳' : v === 'death' ? '💀' : '☯'}</span>
+                <span className="ml-1">{ui(v)}</span>
+              </button>
+            ))}
+          </nav>
+        )}
 
         {/* Right: logo/title stay left; only notifications, theme, language and menu are always visible */}
         <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
@@ -170,24 +199,7 @@ export default function Navbar(props: Props) {
                 </nav>
               </div>
 
-              {/* Tree view (hidden on mobile: the bottom tab bar already has it) */}
-              {treeProps && <div className="hidden sm:block">
-                <div className="grid grid-cols-3 gap-1">
-                  {(['life', 'death', 'both'] as const).map((v) => (
-                    <button
-                      key={v}
-                      onClick={() => { treeProps.onViewChange(v); setSidebarOpen(false); }}
-                      aria-pressed={treeProps.view === v}
-                      className={`flex flex-col items-center gap-0.5 py-2 rounded-xl text-xs transition ${
-                        treeProps.view === v ? 'bg-white/15 text-white' : 'text-white/50 hover:bg-white/5'
-                      }`}
-                    >
-                      <span className="text-lg">{v === 'life' ? '🌳' : v === 'death' ? '💀' : '☯'}</span>
-                      <span>{ui(v)}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>}
+              {/* Tree view lives in the top bar (desktop) or the bottom bar (mobile) */}
 
               {/* Settings */}
               {treeProps && <div>
@@ -234,14 +246,16 @@ export default function Navbar(props: Props) {
 
       {/* === MOBILE BOTTOM TAB BAR === */}
       {treeProps && <nav
-        className="sm:hidden fixed bottom-0 inset-x-0 z-50 flex items-center justify-center gap-1 px-4 py-2 safe-area-bottom"
+        className="md:hidden fixed bottom-0 inset-x-0 z-50 flex items-center justify-center gap-1 px-4 py-2 safe-area-bottom"
         style={{ background: 'var(--header-bg)', borderTop: '1px solid var(--border)' }}
+        aria-label={ui('title')}
       >
         {(['life', 'death', 'both'] as const).map((v) => (
           <button
             key={v}
             onClick={() => treeProps.onViewChange(v)}
-            className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-xl transition-all duration-200 ${
+            aria-pressed={treeProps.view === v}
+            className={`flex flex-1 cursor-pointer flex-col items-center gap-0.5 rounded-xl py-1.5 transition-all duration-200 ${
               treeProps.view === v
                 ? v === 'death'
                   ? 'bg-red-900/30 text-red-200'
