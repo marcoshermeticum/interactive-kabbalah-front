@@ -278,6 +278,36 @@
           "description": "Diferentes das da Sacerdotisa (J e B), estas pertencem ao estabelecido: a igreja visível, a estrutura que sustenta o sagrado na matéria."
         }
       }
+    },
+    "theChariot": {
+      "name": "O Carro",
+      "intro": "Vencedor sereno de batalhas passadas, o auriga conduz esfinges opostas sem rédeas — apenas pela vontade.",
+      "regions": {
+        "starryCanopy": {
+          "title": "O Dossel Estrelado",
+          "description": "O céu tecido que cobre o carro: proteção celestial e os destinos — os astros que acompanham quem se move com propósito."
+        },
+        "sphinxes": {
+          "title": "As Esfinges Branca e Preta",
+          "description": "As forças opostas que o auriga não doma pela força, mas orquestra pela direção: sem rédeas, a intenção governa."
+        },
+        "wingedSun": {
+          "title": "O Disco Solar Alado",
+          "description": "O emblema egípcio à frente do carro: o coração elevado — a vitória de quem já dominou a si antes de vencer o mundo."
+        },
+        "shoulderMoons": {
+          "title": "As Luas nos Ombros",
+          "description": "Os crescentes nas espáduas: intuição e receptividade viajando junto à determinação — o lunar a serviço do solar."
+        },
+        "cityWalls": {
+          "title": "A Cidade à Retaguarda",
+          "description": "As muralhas ficaram para trás: o que foi conquistado já está atrás; o Carro avança por terreno aberto — novos desafios, sem muros."
+        },
+        "squareEmblem": {
+          "title": "O Quadrado no Peito",
+          "description": "O símbolo quadrado sobre o peito: a vontade quadrada — quatro elementos, quatro direções — firmeza geométrica no centro da ação."
+        }
+      }
     }
   },
   "tarotWaite": {

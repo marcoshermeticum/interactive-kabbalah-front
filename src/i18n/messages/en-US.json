@@ -278,6 +278,36 @@
           "description": "Unlike those of the High Priestess (J and B), these belong to the established: the visible church, the structure that sustains the sacred in matter."
         }
       }
+    },
+    "theChariot": {
+      "name": "The Chariot",
+      "intro": "A serene victor of battles past, the charioteer drives opposing sphinxes without reins — by will alone.",
+      "regions": {
+        "starryCanopy": {
+          "title": "The Starry Canopy",
+          "description": "The woven sky that roofs the chariot: celestial protection and destinies — the stars that accompany those who move with purpose."
+        },
+        "sphinxes": {
+          "title": "The White and Black Sphinxes",
+          "description": "The opposing forces the charioteer does not tame by force but orchestrates by direction: without reins, intention governs."
+        },
+        "wingedSun": {
+          "title": "The Winged Solar Disc",
+          "description": "The Egyptian emblem at the front of the chariot: the uplifted heart — the victory of one who has mastered himself before conquering the world."
+        },
+        "shoulderMoons": {
+          "title": "The Moons on His Shoulders",
+          "description": "The crescents on his shoulder plates: intuition and receptivity traveling alongside determination — the lunar in the service of the solar."
+        },
+        "cityWalls": {
+          "title": "The City Behind",
+          "description": "The walls are left behind: what has been conquered already lies at the rear; the Chariot advances through open ground — new challenges, without walls."
+        },
+        "squareEmblem": {
+          "title": "The Square on His Chest",
+          "description": "The square symbol on his breastplate: the squared will — four elements, four directions — geometric firmness at the center of action."
+        }
+      }
     }
   },
   "tarotWaite": {
