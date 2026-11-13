@@ -22,16 +22,14 @@ import {
 import '../globals.css';
 
 const garamond = EB_Garamond({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
   style: ['normal', 'italic'],
   display: 'swap',
   variable: '--font-garamond',
 });
 
 const inter = Inter({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '500', '600'],
+  subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 });

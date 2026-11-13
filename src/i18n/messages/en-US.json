@@ -308,6 +308,36 @@
           "description": "The square symbol on his breastplate: the squared will — four elements, four directions — geometric firmness at the center of action."
         }
       }
+    },
+    "strength": {
+      "name": "Strength",
+      "intro": "Not the strength that subjugates, but the one that tames by gentleness — roses where there would be chains.",
+      "regions": {
+        "infinity": {
+          "title": "The Infinity Above Her Head",
+          "description": "The same lemniscate worn by the Magician, now on the woman's brow: spiritual strength — the power that comes from above, not from muscle."
+        },
+        "lionMouth": {
+          "title": "The Lion's Mouth",
+          "description": "Her fingers intertwined with the lion's jaws: raw instinct is not beaten down but embraced — the animal ego tamed by affectionate firmness."
+        },
+        "roseGarland": {
+          "title": "The Garland of Roses",
+          "description": "Roses crown her head and waist: the bonds here are bonds of beauty — desire (red) transformed into conscious adornment."
+        },
+        "redRibbon": {
+          "title": "The Red Ribbon",
+          "description": "The red sash at her waist: appetite is not eliminated in the taming — only tied in a graceful bow."
+        },
+        "whiteRobe": {
+          "title": "The White Robe",
+          "description": "The simple tunic: purity of intention — nothing to defend, no armor; courage unarmed."
+        },
+        "mountains": {
+          "title": "The Mountains Behind",
+          "description": "The horizon of peaks in the background: the task is long — taming the lion is daily practice, not a single event."
+        }
+      }
     }
   },
   "tarotWaite": {

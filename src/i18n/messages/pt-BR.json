@@ -308,6 +308,36 @@
           "description": "O símbolo quadrado sobre o peito: a vontade quadrada — quatro elementos, quatro direções — firmeza geométrica no centro da ação."
         }
       }
+    },
+    "strength": {
+      "name": "A Força",
+      "intro": "Não a força que subjuga: a que domestica pela doçura — rosas onde haveriam correntes.",
+      "regions": {
+        "infinity": {
+          "title": "O Infinito sobre a Cabeça",
+          "description": "A mesma lemniscata do Mago, agora na fronte da mulher: força espiritual — o poder que vem do alto, não do músculo."
+        },
+        "lionMouth": {
+          "title": "A Boca do Leão",
+          "description": "Os dedos entrelaçados às mandíbulas do leão: o instinto bruto não é espancado, é abraçado — o ego animal domado pela firmeza afetuosa."
+        },
+        "roseGarland": {
+          "title": "A Guirlanda de Rosas",
+          "description": "As rosas coroam sua cabeça e cintura: os vínculos aqui são de beleza — o desejo (vermelho) transformado em ornamento consciente."
+        },
+        "redRibbon": {
+          "title": "O Laço Vermelho",
+          "description": "A faixa vermelha à cintura: o apetite não é eliminado na domesticação — apenas amarrado com laço gracioso."
+        },
+        "whiteRobe": {
+          "title": "A Veste Branca",
+          "description": "A túnica simples: pureza de intenção — nada a defender, nenhuma armadura; a coragem desarmada."
+        },
+        "mountains": {
+          "title": "As Montanhas ao Fundo",
+          "description": "O horizonte de picos ao fundo: a tarefa é longa — a domesticação do leão é prática diária, não evento único."
+        }
+      }
     }
   },
   "tarotWaite": {

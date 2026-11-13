@@ -13,6 +13,32 @@ const CATALOG_FILE = path.join(TAROT_DIR, 'majorArcana.ts');
 const DOC_FILE = path.join(ROOT, 'docs/tarot-major-arcana-regions.md');
 const CONTENT_DIR = path.join(ROOT, 'docs/tarot-content');
 const LOCALES = ['pt-BR', 'en-US', 'ja', 'he'];
+// Golden Dawn correspondences by arcana number (path, Hebrew letter, planet/sign/element).
+// Only used when a card is missing from the catalog; keep in sync with majorArcana.ts.
+const CORRESPONDENCES = {
+  0: "path: 11, letter: 'א', letterName: 'Aleph', element: 'air'",
+  1: "path: 12, letter: 'ב', letterName: 'Beth', planet: 'mercury'",
+  2: "path: 13, letter: 'ג', letterName: 'Gimel', planet: 'moon'",
+  3: "path: 14, letter: 'ד', letterName: 'Daleth', planet: 'venus'",
+  4: "path: 15, letter: 'ה', letterName: 'Heh', sign: 'aries', planet: 'mars', element: 'fire'",
+  5: "path: 16, letter: 'ו', letterName: 'Vav', sign: 'taurus', planet: 'venus', element: 'earth'",
+  6: "path: 17, letter: 'ז', letterName: 'Zayin', sign: 'gemini', planet: 'mercury', element: 'air'",
+  7: "path: 18, letter: 'ח', letterName: 'Cheth', sign: 'cancer', planet: 'moon', element: 'water'",
+  8: "path: 19, letter: 'ט', letterName: 'Teth', sign: 'leo', planet: 'sun', element: 'fire'",
+  9: "path: 20, letter: 'י', letterName: 'Yod', sign: 'virgo', planet: 'mercury', element: 'earth'",
+  10: "path: 21, letter: 'כ', letterName: 'Kaph', planet: 'jupiter'",
+  11: "path: 22, letter: 'ל', letterName: 'Lamed', sign: 'libra', planet: 'venus', element: 'air'",
+  12: "path: 23, letter: 'מ', letterName: 'Mem', element: 'water'",
+  13: "path: 24, letter: 'נ', letterName: 'Nun', sign: 'scorpio', planet: 'mars', element: 'water'",
+  14: "path: 25, letter: 'ס', letterName: 'Samekh', sign: 'sagittarius', planet: 'jupiter', element: 'fire'",
+  15: "path: 26, letter: 'ע', letterName: 'Ayin', sign: 'capricorn', planet: 'saturn', element: 'earth'",
+  16: "path: 27, letter: 'פ', letterName: 'Peh', planet: 'mars'",
+  17: "path: 28, letter: 'צ', letterName: 'Tzaddi', sign: 'aquarius', planet: 'saturn', element: 'air'",
+  18: "path: 29, letter: 'ק', letterName: 'Qoph', sign: 'pisces', planet: 'jupiter', element: 'water'",
+  19: "path: 30, letter: 'ר', letterName: 'Resh', planet: 'sun'",
+  20: "path: 31, letter: 'ש', letterName: 'Shin', element: 'fire'",
+  21: "path: 32, letter: 'ת', letterName: 'Tav', planet: 'saturn'",
+};
 const ROMAN = [
   '0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
   'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI',
@@ -1166,13 +1192,15 @@ function updateCatalog(raw, plan) {
     if (entryLine.test(next)) {
       next = next.replace(entryLine, `$1${plan.image.publicPath}$2`);
     }
-  } else {
+  } else if (!new RegExp(`\{ slug: '${escapeRegExp(plan.slug)}'`).test(next)) {
     const arrayStart = next.indexOf('export const majorArcana: MajorArcanaEntry[] = [');
     if (arrayStart === -1) throw new Error('Array majorArcana não encontrado.');
     const arrayClose = next.indexOf(`${eol}];`, arrayStart);
     if (arrayClose === -1) throw new Error('Fechamento do array majorArcana não encontrado.');
 
-    const entryLine = `  { slug: '${plan.slug}', i18nKey: '${plan.camel}', number: ${plan.number}, roman: '${plan.roman}', image: '${plan.image.publicPath}' },`;
+    const correspondence = CORRESPONDENCES[plan.number];
+    if (!correspondence) throw new Error(`Sem correspondência cadastrada para o arcano ${plan.number}.`);
+    const entryLine = `  { slug: '${plan.slug}', i18nKey: '${plan.camel}', number: ${plan.number}, roman: '${plan.roman}', image: '${plan.image.publicPath}', correspondence: { ${correspondence} } },`;
     next = `${next.slice(0, arrayClose)}${eol}${entryLine}${next.slice(arrayClose)}`;
   }
 
@@ -1215,7 +1243,7 @@ function assertCatalogUpdate(content, plan) {
 
 function parseCatalog(raw) {
   const pattern =
-    /\{\s*slug:\s*'([^']+)',\s*i18nKey:\s*'([^']+)',\s*number:\s*(\d+),\s*roman:\s*'([^']+)',\s*image:\s*'([^']+)'\s*\}/g;
+    /\{\s*slug:\s*'([^']+)',\s*i18nKey:\s*'([^']+)',\s*number:\s*(\d+),\s*roman:\s*'([^']+)',\s*image:\s*'([^']+)'(?:,\s*correspondence:\s*\{[^}]*\})?\s*\}/g;
   const entries = [];
 
   let match;
