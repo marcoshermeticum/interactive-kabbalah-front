@@ -436,6 +436,32 @@
           "description": "Desce em espiral: a involução, o arrasto da matéria — toda subida tem seu contrapeso descendo."
         }
       }
+    },
+    "justice": {
+      "name": "A Justiça",
+      "intro": "Entre as colunas da lei, a espada e a balança: cada ato pesado com a mesma pedra.",
+      "regions": {
+        "pillarsVeil": {
+          "title": "As Colunas e o Véu",
+          "description": "Atrás dela, colunas e véu: a Justiça atua dentro da estrutura — o veredito é humano, mas o tribunal é cósmico."
+        },
+        "scales": {
+          "title": "A Balança",
+          "description": "Na mão esquerda, o fiel no zero: equilíbrio exato entre o que se fez e o que se deve — a matemática sem piedade e sem crueldade do karma."
+        },
+        "sword": {
+          "title": "A Espada Erguida",
+          "description": "Na mão direita, de fio impecável: a verdade que corta — decidir é separar, e julgar exige lâmina limpa de vaidade."
+        },
+        "crown": {
+          "title": "A Coroa",
+          "description": "A coroa de três andares: pensamento, palavra e ato sob a mesma medida — a lei que reina antes de punir."
+        },
+        "redMantle": {
+          "title": "O Manto Vermelho",
+          "description": "Sob a túnica clara, o manto vermelho: a paixão existe, mas subjacente — o juiz sente, e por isso mesmo pesa com as duas mãos."
+        }
+      }
     }
   },
   "tarotWaite": {

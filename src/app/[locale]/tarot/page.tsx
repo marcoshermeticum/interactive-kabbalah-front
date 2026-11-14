@@ -155,20 +155,7 @@ export default function TarotWaitePage() {
                       }}
                     />
 
-                    {/* Roman numeral */}
-                    <span
-                      style={{
-                        position: 'absolute',
-                        top: '0.6rem',
-                        insetInlineStart: '0.7rem',
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: '0.8rem',
-                        letterSpacing: '0.1em',
-                        color: 'var(--gold)',
-                      }}
-                    >
-                      {card.roman}
-                    </span>
+                    {/* The roman numeral is already printed on the artwork itself */}
 
                     {!available && (
                       <span

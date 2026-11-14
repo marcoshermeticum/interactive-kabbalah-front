@@ -436,6 +436,32 @@
           "description": "Descending in a spiral: involution, the drag of matter — every ascent has its counterweight going down."
         }
       }
+    },
+    "justice": {
+      "name": "Justice",
+      "intro": "Between the pillars of the law, the sword and the scales: every act weighed with the same stone.",
+      "regions": {
+        "pillarsVeil": {
+          "title": "The Pillars and the Veil",
+          "description": "Behind her, pillars and a veil: Justice acts within structure — the verdict is human, but the court is cosmic."
+        },
+        "scales": {
+          "title": "The Scales",
+          "description": "In her left hand, the beam balanced at zero: exact equilibrium between what was done and what is owed — the mathematics of karma, without pity and without cruelty."
+        },
+        "sword": {
+          "title": "The Upright Sword",
+          "description": "In her right hand, with an impeccable edge: the truth that cuts — to decide is to separate, and judging demands a blade clean of vanity."
+        },
+        "crown": {
+          "title": "The Crown",
+          "description": "The three-tiered crown: thought, word and deed under the same measure — the law that reigns before it punishes."
+        },
+        "redMantle": {
+          "title": "The Red Mantle",
+          "description": "Beneath the pale tunic, the red mantle: passion exists, but underlying — the judge feels, and for that very reason weighs with both hands."
+        }
+      }
     }
   },
   "tarotWaite": {
