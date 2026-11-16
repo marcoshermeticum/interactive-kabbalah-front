@@ -492,6 +492,40 @@
           "description": "No anguish on the face: the surrender is complete and conscious — whoever chose to hang is not the rope's victim, but its dance partner."
         }
       }
+    },
+    "death": {
+      "name": "Death",
+      "intro": "Not the end but the passage: the sun rises between two towers while every hierarchy kneels.",
+      "regions": {
+        "risingSun": {
+          "title": "The Sun Between the Towers",
+          "description": "Between two towers the sun rises — and does not set: the hidden promise of arcanum XIII. Every crossing ends in dawn."
+        },
+        "riverBoat": {
+          "title": "The River and the Boat",
+          "description": "The boat waits on the river: the crossing every soul must make — the ferryman of old now waits; the river never stops flowing, only we stop."
+        },
+        "skeletonArmor": {
+          "title": "The Skeleton in Armor",
+          "description": "Bones beneath black armor: what remains when every form falls — the final structure, the invincible that is already bone and therefore fears nothing."
+        },
+        "blackHorse": {
+          "title": "The White Horse",
+          "description": "The \"pale\" steed of scripture, whiter than any other creature in the arcanum: death rides over the pure — nothing impure reaches the other shore."
+        },
+        "bannerRose": {
+          "title": "The Banner of the White Rose",
+          "description": "The five-petalled rose on the black cloth: life persisting within the symbol of death — transformation, not annihilation; the five senses surrendering."
+        },
+        "kneelingFigures": {
+          "title": "Those Who Kneel",
+          "description": "King, woman and child: power, attachment and innocence — the three human reactions before the inevitable: resistance, grief and acceptance."
+        },
+        "childFlowers": {
+          "title": "The Child and the Flowers",
+          "description": "Only the child raises flowers to the rider: innocence welcomes transformation as springtime — death seen by fearless eyes is metamorphosis."
+        }
+      }
     }
   },
   "tarotWaite": {

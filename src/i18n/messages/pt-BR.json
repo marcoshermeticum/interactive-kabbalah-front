@@ -492,6 +492,40 @@
           "description": "Nenhuma angústia no rosto: a rendição é plena e consciente — quem escolheu pender não é vítima da corda, mas seu parceiro de dança."
         }
       }
+    },
+    "death": {
+      "name": "A Morte",
+      "intro": "Não o fim, mas a passagem: o sol nasce entre duas torres enquanto toda hierarquia se ajoelha.",
+      "regions": {
+        "risingSun": {
+          "title": "O Sol entre as Torres",
+          "description": "Entre duas torres, o sol nasce — e não se põe: a promessa escondida do arcano XIII. Toda travessia termina em amanhecer."
+        },
+        "riverBoat": {
+          "title": "O Rio e o Barco",
+          "description": "A barca parada no rio: a travessia que toda alma faz — o barqueiro de outrora agora aguarda; o rio não para de correr, só nós paramos."
+        },
+        "skeletonArmor": {
+          "title": "O Esqueleto Armadurado",
+          "description": "Ossos sob armadura negra: o que sobra quando toda forma cai — a estrutura última, o invencível que já é osso e por isso não teme."
+        },
+        "blackHorse": {
+          "title": "O Cavalo Branco",
+          "description": "A montaria \"pálida\" das escrituras, branca como nenhum outro animal do arcano: a morte cavalga sobre o puro — nada impuro chega ao outro lado."
+        },
+        "bannerRose": {
+          "title": "O Estandarte da Rosa Branca",
+          "description": "A rosa de cinco pétalas no pano negro: a vida que persiste no símbolo da morte — transformação, não aniquilação; os cinco sentidos que se rendem."
+        },
+        "kneelingFigures": {
+          "title": "Os que se Ajoelham",
+          "description": "Rei, mulher e criança: poder, apego e inocência — as três reações humanas diante do inevitável: resistência, dor e aceitação."
+        },
+        "childFlowers": {
+          "title": "A Criança e as Flores",
+          "description": "Só a criança ergue flores ao cavaleiro: a inocência acolhe a transformação como primavera — morte vista por olhos sem medo é metamorfose."
+        }
+      }
     }
   },
   "tarotWaite": {
