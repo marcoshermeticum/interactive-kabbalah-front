@@ -462,6 +462,36 @@
           "description": "Sob a túnica clara, o manto vermelho: a paixão existe, mas subjacente — o juiz sente, e por isso mesmo pesa com as duas mãos."
         }
       }
+    },
+    "theHangedMan": {
+      "name": "O Enforcado",
+      "intro": "Suspenso entre o céu e a terra pelo tornozelo, o mysticus voluntário: rendição que não é derrota.",
+      "regions": {
+        "beam": {
+          "title": "A Trave em Tau",
+          "description": "A forca em forma de T — o Tau, sinal de salvação: a mesma cruz que pune é a que redime, dependendo do lado em que se pendura."
+        },
+        "livingTree": {
+          "title": "A Árvore Viva",
+          "description": "O madeiro tem folhas verdes brotando: o sacrifício é feito em árvore viva, não em lenho morto — toda entrega aqui frutifica."
+        },
+        "halo": {
+          "title": "O Halo Dourado",
+          "description": "Ao redor da cabeça invertida: a luz não se perde com o sacrifício — intensifica-se. Iluminação pela entrega."
+        },
+        "crossedLeg": {
+          "title": "A Perna Cruzada",
+          "description": "As pernas desenham o algarismo 4 — o mundo da forma — e o corpo inteiro uma cruz invertida: a matéria pendurada na perspectiva virada do espírito, o mundo lido de cabeça para baixo."
+        },
+        "boundHands": {
+          "title": "As Mãos Atadas às Costas",
+          "description": "Presas atrás do tronco em triângulo: a vontade que se entrega — as mãos que não agarram permitem que o alto as preencha."
+        },
+        "sereneFace": {
+          "title": "O Rosto Sereno",
+          "description": "Nenhuma angústia no rosto: a rendição é plena e consciente — quem escolheu pender não é vítima da corda, mas seu parceiro de dança."
+        }
+      }
     }
   },
   "tarotWaite": {

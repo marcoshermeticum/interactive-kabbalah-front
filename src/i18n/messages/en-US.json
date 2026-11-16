@@ -462,6 +462,36 @@
           "description": "Beneath the pale tunic, the red mantle: passion exists, but underlying — the judge feels, and for that very reason weighs with both hands."
         }
       }
+    },
+    "theHangedMan": {
+      "name": "The Hanged Man",
+      "intro": "Suspended between heaven and earth by the ankle, the voluntary mystic: a surrender that is not defeat.",
+      "regions": {
+        "beam": {
+          "title": "The Tau Beam",
+          "description": "The gallows shaped like a T — the Tau, sign of salvation: the same cross that punishes is the one that redeems, depending on which side one hangs from."
+        },
+        "livingTree": {
+          "title": "The Living Tree",
+          "description": "Green leaves sprout from the timber: the sacrifice is made on a living tree, not on dead wood — every surrender here bears fruit."
+        },
+        "halo": {
+          "title": "The Golden Halo",
+          "description": "Around the inverted head: light is not lost through sacrifice — it intensifies. Illumination through surrender."
+        },
+        "crossedLeg": {
+          "title": "The Crossed Leg",
+          "description": "The legs trace the numeral 4 — the world of form — and the whole body an inverted cross: matter hung on the spirit's turned perspective, the world read upside down."
+        },
+        "boundHands": {
+          "title": "The Hands Bound Behind the Back",
+          "description": "Tied behind the trunk in a triangle: the will that gives itself over — hands that do not grasp allow the heights to fill them."
+        },
+        "sereneFace": {
+          "title": "The Serene Face",
+          "description": "No anguish on the face: the surrender is complete and conscious — whoever chose to hang is not the rope's victim, but its dance partner."
+        }
+      }
     }
   },
   "tarotWaite": {
