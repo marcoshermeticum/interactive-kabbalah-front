@@ -612,6 +612,114 @@
           "description": "It climbs, turns, vanishes and reappears: the night journey is no straight line — you cross it by trusting whoever drew the trail this way."
         }
       }
+    },
+    "theDevil": {
+      "name": "The Devil",
+      "intro": "In the dark grotto the Goat of Mendes presides: the chains hang loose — the prison is optional.",
+      "regions": {
+        "invertedPentagram": {
+          "title": "The Inverted Pentagram",
+          "description": "The five-pointed star turned upside down: spirit facing the ground — matter adored as a god. The symbol is not evil; it merely points the wrong way."
+        },
+        "batWings": {
+          "title": "The Bat's Wings",
+          "description": "Night wings that never fly upward, only cast shadow: power confined to the underground — the shadow that prefers the cellar to the sky."
+        },
+        "torch": {
+          "title": "The Torch",
+          "description": "The flame in the raised hand descends upon the captives: inverted \"illumination\" — awareness used to enslave, fire that burns instead of lighting."
+        },
+        "chains": {
+          "title": "The Loose Chains",
+          "description": "Placed within the captives' reach, yet slack: the central revelation of the arcanum — captivity is self-imposed; no one must remain; it is enough to rise and walk out."
+        },
+        "captives": {
+          "title": "The Two Captives",
+          "description": "The naked man and woman, horned and tailed — the very pair of The Lovers, now in shadow: a bond that was communion has become a fetter; desire, possession."
+        },
+        "darkCave": {
+          "title": "The Dark Cave",
+          "description": "A setting with no sky and no horizon: the closed world of material worship — there are no stars here because no one looks up."
+        }
+      }
+    },
+    "theSun": {
+      "name": "The Sun",
+      "intro": "The reborn child rides at daybreak: nothing to prove, everything to shine.",
+      "regions": {
+        "sunRays": {
+          "title": "The Sun of Straight Rays",
+          "description": "Unlike the Moon, the rays here do not waver — they are spears of light: full consciousness, without distortion or borrowed light — the source is the center itself."
+        },
+        "childHorse": {
+          "title": "The Child on the White Horse",
+          "description": "Naked and free on the white mount: the reborn self — innocence recovered after every crossing; the horse is strength purified in the service of joy."
+        },
+        "redBanner": {
+          "title": "The Red Banner",
+          "description": "The child holds the banner of victory — yet does not look at it: triumph that needs no display; the red of vitality streaming without war."
+        },
+        "sunflowerWall": {
+          "title": "The Wall of Sunflowers",
+          "description": "Four sunflowers turned toward the child — not toward the sun: all nature recognizes what stands higher; when the Sun is within, even flowers turn to it."
+        },
+        "redPlume": {
+          "title": "The Red Plume",
+          "description": "The single feather in the child's hair: a touch of will — freedom is not passivity; it demands a point of fire."
+        }
+      }
+    },
+    "judgement": {
+      "name": "Judgement",
+      "intro": "The trumpet sounds over the open coffins: to rise again is to remember where you came from.",
+      "regions": {
+        "angelTrumpet": {
+          "title": "The Angel and the Trumpet",
+          "description": "The sound that wakes the dead: the call — no threat, a summons; the same note that is terror to the old structure is dawn to the soul."
+        },
+        "flagCross": {
+          "title": "The Banner on the Trumpet",
+          "description": "The flag bearing the cross, fixed to the instrument: the message that descends — the axis between heaven and earth along which resurrection travels."
+        },
+        "risenFamily": {
+          "title": "Those Who Rise",
+          "description": "Man, woman and child rise from the coffins with open arms: memory, welcome and new beginning — the whole self leaving the old form as one leaves an old bed."
+        },
+        "coffins": {
+          "title": "The Floating Coffins",
+          "description": "On the water, open, they do not sink: the past that served as a cradle becomes a shell — the old form honored for all it allowed, and left behind with gratitude."
+        },
+        "seaMountains": {
+          "title": "The Sea and the Mountains",
+          "description": "In the background, the unconscious (sea) and the journey to come (mountains): awakening is not the end — it is setting out again, now with open eyes."
+        }
+      }
+    },
+    "theWorld": {
+      "name": "The World",
+      "intro": "Inside the laurel wreath, the dancer contains everything: the four living creatures bear witness to the synthesis.",
+      "regions": {
+        "laurelWreath": {
+          "title": "The Laurel Wreath",
+          "description": "The living oval that encloses everything: the mandorla of victory and of the womb — the cosmic uterus where all that was lived is completed, and from which everything begins again."
+        },
+        "fourCreatures": {
+          "title": "The Four Living Creatures",
+          "description": "Angel, eagle, lion and bull in the clouds of the corners: the same as on the Wheel of Fortune, now without books — the Law has become body; what was studied has been embodied."
+        },
+        "dancer": {
+          "title": "The Dancer",
+          "description": "The soul celebrating the synthesis: nothing to conquer, everything to dance — the center that exists only in motion, holding the opposites in rotation."
+        },
+        "twoWands": {
+          "title": "The Two Wands",
+          "description": "One in each hand: the will that no longer divides — evocation and invocation, doing and receiving, both halves of the same dance."
+        },
+        "clouds": {
+          "title": "The Clouds in the Corners",
+          "description": "The banks of cloud uphold the living creatures: witness that floats — the world seen from above and from within at once; matter rarefied into consciousness."
+        }
+      }
     }
   },
   "tarotWaite": {

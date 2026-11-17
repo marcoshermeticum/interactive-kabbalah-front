@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import Image from 'next/image';
@@ -99,13 +99,24 @@ export default function InteractiveTarotCard({ card, toolbarEnd }: Props) {
   // Panel content: hover wins on desktop; otherwise the selected (tapped) region.
   const shownId = hoverId ?? selectedId;
   const shownRegion = card.regions.find((r) => r.id === shownId) ?? null;
+  // Regions that share an i18nKey are one symbol drawn in several places
+  // (e.g. the four creatures of The World): they highlight together and
+  // share a single pill.
+  const keyOf = (id: string | null) =>
+    id ? (card.regions.find((r) => r.id === id)?.i18nKey ?? null) : null;
+  const shownKey = keyOf(shownId);
+  const hoverKey = keyOf(hoverId);
+  const selectedKey = keyOf(selectedId);
+  const pillRegions = card.regions.filter(
+    (region, index, all) => all.findIndex((other) => other.i18nKey === region.i18nKey) === index
+  );
 
   // Keep the active pill scrolled into view in the horizontal carousel, so a
   // region triggered by clicking the artwork always highlights its pill.
   // Only the mobile carousel scrolls; on desktop the pills wrap in place.
   useEffect(() => {
-    if (!shownId) return;
-    const el = pillRefs.current.get(shownId);
+    if (!shownKey) return;
+    const el = pillRefs.current.get(shownKey);
     if (!el) return;
     const mobile = window.matchMedia('(max-width: 767px)').matches;
     el.scrollIntoView({
@@ -113,7 +124,7 @@ export default function InteractiveTarotCard({ card, toolbarEnd }: Props) {
       block: 'nearest',
       inline: mobile ? 'center' : 'nearest',
     });
-  }, [shownId]);
+  }, [shownKey]);
 
   return (
     <div className="grid w-full items-start justify-center gap-6 md:grid-cols-[minmax(0,26rem)_minmax(0,20rem)] md:gap-8">
@@ -183,15 +194,15 @@ export default function InteractiveTarotCard({ card, toolbarEnd }: Props) {
             >
               {card.regions.map((region) => {
                 const active =
-                  region.id === hoverId ||
-                  region.id === selectedId ||
+                  region.i18nKey === hoverKey ||
+                  region.i18nKey === selectedKey ||
                   showRegions;
                 return (
                   <RegionShape
                     key={region.id}
                     region={region}
                     active={active}
-                    selected={region.id === selectedId}
+                    selected={region.i18nKey === selectedKey}
                     label={t(`${region.i18nKey}.title`)}
                     onEnter={() => setHover(region.id)}
                     onLeave={scheduleClear}
@@ -222,14 +233,14 @@ export default function InteractiveTarotCard({ card, toolbarEnd }: Props) {
             role="tablist"
             aria-label={t('panelEmptyTitle')}
           >
-            {card.regions.map((region) => {
-              const active = region.id === shownId;
+            {pillRegions.map((region) => {
+              const active = region.i18nKey === shownKey;
               return (
                 <button
-                  key={region.id}
+                  key={region.i18nKey}
                   ref={(el) => {
-                    if (el) pillRefs.current.set(region.id, el);
-                    else pillRefs.current.delete(region.id);
+                    if (el) pillRefs.current.set(region.i18nKey, el);
+                    else pillRefs.current.delete(region.i18nKey);
                   }}
                   type="button"
                   role="tab"

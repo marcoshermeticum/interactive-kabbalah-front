@@ -612,6 +612,114 @@
           "description": "Sobe, vira, some e reaparece: a jornada noturna não é linha reta — atravessa-se confiando em quem desenhou a trilha assim."
         }
       }
+    },
+    "theDevil": {
+      "name": "O Diabo",
+      "intro": "No antro escuro, o Bode de Mendes preside: as correntes estão frouxas — a prisão é opcional.",
+      "regions": {
+        "invertedPentagram": {
+          "title": "O Pentagrama Invertido",
+          "description": "A estrela de cinco pontas virada: o espírito voltado para baixo — a matéria adorada como deus. O símbolo não é mau; apenas aponta na direção errada."
+        },
+        "batWings": {
+          "title": "As Asas de Morcego",
+          "description": "Asas noturnas que não voam ao alto, apenas sombreiam: o poder confinado ao subterrâneo — a sombra que prefere o porão ao céu."
+        },
+        "torch": {
+          "title": "A Tocha",
+          "description": "A chama na mão erguida desce sobre os cativos: a \"iluminação\" invertida — a consciência usada para escravizar, o fogo que queima em vez de clarear."
+        },
+        "chains": {
+          "title": "As Correntes Frouxas",
+          "description": "Postas ao alcance dos cativos, mas soltas: a revelação central do arcano — o cativeiro é autoposto; ninguém precisa permanecer; basta erguer-se e sair."
+        },
+        "captives": {
+          "title": "Os Dois Cativos",
+          "description": "O homem e a mulher nus, com chifres e caudas — os mesmos de Os Enamorados, agora na sombra: a relação que era comunhão virou grilhão; o desejo, possessão."
+        },
+        "darkCave": {
+          "title": "A Caverna Escura",
+          "description": "O cenário sem céu nem horizonte: o mundo fechado da adoração material — aqui não há estrelas porque ninguém olha para cima."
+        }
+      }
+    },
+    "theSun": {
+      "name": "O Sol",
+      "intro": "A criança renascida cavalga ao amanhecer: nada a provar, tudo a brilhar.",
+      "regions": {
+        "sunRays": {
+          "title": "O Sol de Raios Retos",
+          "description": "Diferente da Lua, os raios aqui não ondulam — são lanças de luz: a consciência plena, sem distorção nem luz emprestada — a fonte é o próprio centro."
+        },
+        "childHorse": {
+          "title": "A Criança no Cavalo Branco",
+          "description": "Despida e livre sobre a montaria branca: o eu renascido — a inocência recuperada depois de toda travessia; o cavalo é a força purificada a serviço da alegria."
+        },
+        "redBanner": {
+          "title": "O Estandarte Vermelho",
+          "description": "A criança segura a bandeira da vitória — mas não olha para ela: o triunfo que não precisa ser mostrado; o vermelho da vitalidade esvoaçando sem guerra."
+        },
+        "sunflowerWall": {
+          "title": "O Muro de Girassóis",
+          "description": "Quatro girassóis virados para a criança — e não para o sol: a natureza inteira reconhece o que está mais alto; quando o Sol é interno, até as flores se voltam para ele."
+        },
+        "redPlume": {
+          "title": "A Plumagem Vermelha",
+          "description": "A única pena na cabeça da criança: um toque de vontade — a liberdade não é passividade; exige um ponto de fogo."
+        }
+      }
+    },
+    "judgement": {
+      "name": "O Julgamento",
+      "intro": "A trombeta soa sobre os caixões abertos: ressuscitar é lembrar de onde se veio.",
+      "regions": {
+        "angelTrumpet": {
+          "title": "O Anjo e a Trombeta",
+          "description": "O som que desperta os mortos: o chamado — não ameaça, convoca; a mesma nota que é terror para a estrutura é alvorada para a alma."
+        },
+        "flagCross": {
+          "title": "O Estandarte na Trombeta",
+          "description": "A bandeira com a cruz presa ao instrumento: a mensagem que desce — o eixo entre céu e terra por onde a ressurreição trafega."
+        },
+        "risenFamily": {
+          "title": "Os que Ressuscitam",
+          "description": "Homem, mulher e criança erguem-se dos caixões de braços abertos: memória, acolhimento e recomeço — o eu inteiro saindo da velha forma como quem sai de uma cama antiga."
+        },
+        "coffins": {
+          "title": "Os Caixões Flutuantes",
+          "description": "Sobre a água, abertos, não afundam: o passado que serviu de berço vira casca — a velha forma respeitada por tudo o que permitiu, e deixada para trás com gratidão."
+        },
+        "seaMountains": {
+          "title": "O Mar e as Montanhas",
+          "description": "Ao fundo, o inconsciente (mar) e a jornada por vir (montanhas): o despertar não é o fim — é a partida de novo, agora com os olhos abertos."
+        }
+      }
+    },
+    "theWorld": {
+      "name": "O Mundo",
+      "intro": "Dentro da coroa de louros, a dançarina contém tudo: os quatro viventes testemunham a síntese.",
+      "regions": {
+        "laurelWreath": {
+          "title": "A Coroa de Louros",
+          "description": "O oval vivo que envolve tudo: a mandorla da vitória e da matriz — o útero cósmico onde tudo o que foi vivido se conclui, e de onde tudo recomeça."
+        },
+        "fourCreatures": {
+          "title": "Os Quatro Viventes",
+          "description": "Anjo, águia, leão e touro nas nuvens dos cantos: os mesmos da Roda da Fortuna, agora sem livros — a Lei virou corpo; o que se estudou, encarnou."
+        },
+        "dancer": {
+          "title": "A Dançarina",
+          "description": "A alma celebrando a síntese: nada para conquistar, tudo para dançar — o centro que só existe em movimento, sustentando os opostos em rotação."
+        },
+        "twoWands": {
+          "title": "As Duas Varinhas",
+          "description": "Uma em cada mão: a vontade que não se divide mais — evocação e invocação, fazer e receber, ambas metades da mesma dança."
+        },
+        "clouds": {
+          "title": "As Nuvens nos Cantos",
+          "description": "Os bancos de nuvem sustentam os viventes: o testemunho que flutua — o mundo visto de cima e de dentro ao mesmo tempo; a matéria rarefeita em consciência."
+        }
+      }
     }
   },
   "tarotWaite": {
