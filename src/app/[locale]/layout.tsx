@@ -92,6 +92,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       apple: [{ url: '/favicon-192.png', sizes: '192x192', type: 'image/png' }],
     },
     manifest: '/manifest.webmanifest',
+    // AdSense site verification (same publisher id as the script and ads.txt).
+    other: { 'google-adsense-account': 'ca-pub-4170456120089512' },
     formatDetection: { telephone: false },
     appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: 'default' },
   };
