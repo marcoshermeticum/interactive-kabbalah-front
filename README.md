@@ -187,7 +187,7 @@ e2e/
 
 ### Vercel (produção)
 
-Produção: https://interactive-kabbalah.vercel.app
+Produção: https://interactive-kabbalah-front.vercel.app
 
 1. Importe o repositório em [vercel.com/new](https://vercel.com/new). O framework (Next.js) é detectado sozinho e o Node vem do campo `engines` do `package.json` (22.x).
 2. Em **Settings → Environment Variables**, cadastre as variáveis de `.env.example` (nenhuma é obrigatória para o site público):
@@ -200,7 +200,7 @@ Os cabeçalhos de segurança ficam em `next.config.ts`.
 
 ### Netlify (somente redirecionamento)
 
-O site antigo no Netlify não roda mais o Next.js. O `netlify.toml` publica a pasta `netlify-redirect/` e redireciona (301, forçado) todo caminho e query string para `https://interactive-kabbalah.vercel.app`.
+O site antigo no Netlify não roda mais o Next.js. O `netlify.toml` publica a pasta `netlify-redirect/` e redireciona (301, forçado) todo caminho e query string para `https://interactive-kabbalah-front.vercel.app`.
 ## Roadmap
 
 - [ ] PWA (Service Worker, manifest, offline)

@@ -4,7 +4,7 @@ import { routing, type Locale } from '@/i18n/routing';
 export const SITE_NAME = 'Interactive Kabbalah';
 export const DEFAULT_LOCALE = routing.defaultLocale as Locale;
 
-export const PRODUCTION_URL = 'https://interactive-kabbalah.vercel.app';
+export const PRODUCTION_URL = 'https://interactive-kabbalah-front.vercel.app';
 const DEV_URL = 'http://localhost:3000';
 
 /**

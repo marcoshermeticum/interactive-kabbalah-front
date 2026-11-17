@@ -1,4 +1,4 @@
-# The site now lives on Vercel (https://interactive-kabbalah.vercel.app).
+# The site now lives on Vercel (https://interactive-kabbalah-front.vercel.app).
 # This Netlify site only forwards every request there, keeping the path and
 # query string, so old links and search results keep working.
 # No Next.js build runs on Netlify: it publishes the tiny static folder below.
@@ -8,6 +8,6 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://interactive-kabbalah.vercel.app/:splat"
+  to = "https://interactive-kabbalah-front.vercel.app/:splat"
   status = 301
   force = true
