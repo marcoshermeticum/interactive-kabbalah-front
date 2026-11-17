@@ -526,6 +526,32 @@
           "description": "Só a criança ergue flores ao cavaleiro: a inocência acolhe a transformação como primavera — morte vista por olhos sem medo é metamorfose."
         }
       }
+    },
+    "theTower": {
+      "name": "A Torre",
+      "intro": "O raio que derruba a coroa falsa: ninguém cai da Torre por acaso — cai de si mesmo.",
+      "regions": {
+        "towerCrag": {
+          "title": "A Torre no Rochedo",
+          "description": "Sobre a rocha nua, sem alicerces visíveis: a estrutura que se julgava eterna — construída sobre o que não se via; cai quando o invisível se move."
+        },
+        "lightning": {
+          "title": "O Raio",
+          "description": "Desce exatamente pela coroa da torre: a intervenção súbita — a verdade que não pede licença e atinge primeiro o que estava mais alto porque estava mais falso."
+        },
+        "fallingCrown": {
+          "title": "A Coroa que Cai",
+          "description": "Despregada do alto da torre, ainda em queda: todo poder fundado no erro se decora com o que não pode sustentar — a autoridade desabando junto com a estrutura."
+        },
+        "fallingFigures": {
+          "title": "Os Dois que Caem",
+          "description": "De cabeça para baixo, como o Enforcado — mas sem halo e sem escolha: aqui a rendição não foi voluntária; o despertar chegou como terremoto."
+        },
+        "flamesYods": {
+          "title": "Os Yods de Fogo",
+          "description": "22 línguas de fogo em forma da letra hebraica Yod: a semente divina espalhada na ruína — o mesmo fogo que derruba a Torre semeia o alfabeto da reconstrução (22 letras, 22 caminhos)."
+        }
+      }
     }
   },
   "tarotWaite": {

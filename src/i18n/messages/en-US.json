@@ -526,6 +526,32 @@
           "description": "Only the child raises flowers to the rider: innocence welcomes transformation as springtime — death seen by fearless eyes is metamorphosis."
         }
       }
+    },
+    "theTower": {
+      "name": "The Tower",
+      "intro": "The lightning bolt that strikes down the false crown: no one falls from the Tower by chance — each falls from himself.",
+      "regions": {
+        "towerCrag": {
+          "title": "The Tower on the Crag",
+          "description": "Upon the bare rock, with no foundations in sight: the structure believed eternal — built on what was unseen, it falls when the unseen shifts."
+        },
+        "lightning": {
+          "title": "The Lightning",
+          "description": "It descends exactly through the crown of the tower: sudden intervention — truth that asks no leave and strikes first what stood highest, because it rested on the falsest ground."
+        },
+        "fallingCrown": {
+          "title": "The Falling Crown",
+          "description": "Torn from the top of the tower, still in its fall: every power founded on error adorns itself with what it cannot sustain — authority collapsing along with the structure."
+        },
+        "fallingFigures": {
+          "title": "The Two Who Fall",
+          "description": "Head over heels, like the Hanged Man — but without halo and without choice: here surrender was not voluntary; awakening arrived as an earthquake."
+        },
+        "flamesYods": {
+          "title": "The Yods of Fire",
+          "description": "Twenty-two tongues of fire shaped like the Hebrew letter Yod: the divine seed scattered through the ruin — the same fire that topples the Tower sows the alphabet of rebuilding (22 letters, 22 paths)."
+        }
+      }
     }
   },
   "tarotWaite": {
