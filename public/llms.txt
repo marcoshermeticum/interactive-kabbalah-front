@@ -6,11 +6,11 @@ Content is educational and symbolic. Every page exists in the four languages und
 
 ## Main pages
 
-- [Home](https://interactive-kabbalah.netlify.app/pt-BR): portal with every study area.
-- [Tree of Life](https://interactive-kabbalah.netlify.app/pt-BR/arvore-da-vida): the 10 Sephirot, the 22 paths and the Qliphoth (Tree of Death) in an interactive, pan-and-zoom map.
-- [Rider-Waite Tarot](https://interactive-kabbalah.netlify.app/pt-BR/tarot): the 22 major arcana with symbol-by-symbol readings and Golden Dawn correspondences (Hebrew letter, planet, sign, element).
-- [Alchemical Symbols](https://interactive-kabbalah.netlify.app/pt-BR/simbolos-alquimicos): catalog of the Unicode alchemical symbols with copy-to-clipboard.
+- [Home](https://interactive-kabbalah.vercel.app/pt-BR): portal with every study area.
+- [Tree of Life](https://interactive-kabbalah.vercel.app/pt-BR/arvore-da-vida): the 10 Sephirot, the 22 paths and the Qliphoth (Tree of Death) in an interactive, pan-and-zoom map.
+- [Rider-Waite Tarot](https://interactive-kabbalah.vercel.app/pt-BR/tarot): the 22 major arcana with symbol-by-symbol readings and Golden Dawn correspondences (Hebrew letter, planet, sign, element).
+- [Alchemical Symbols](https://interactive-kabbalah.vercel.app/pt-BR/simbolos-alquimicos): catalog of the Unicode alchemical symbols with copy-to-clipboard.
 
 ## Optional
 
-- [Sitemap](https://interactive-kabbalah.netlify.app/sitemap.xml): every localized URL with hreflang alternates.
+- [Sitemap](https://interactive-kabbalah.vercel.app/sitemap.xml): every localized URL with hreflang alternates.

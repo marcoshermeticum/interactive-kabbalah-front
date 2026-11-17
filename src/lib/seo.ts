@@ -4,17 +4,24 @@ import { routing, type Locale } from '@/i18n/routing';
 export const SITE_NAME = 'Interactive Kabbalah';
 export const DEFAULT_LOCALE = routing.defaultLocale as Locale;
 
-const FALLBACK_URL = 'http://localhost:3000';
+export const PRODUCTION_URL = 'https://interactive-kabbalah.vercel.app';
+const DEV_URL = 'http://localhost:3000';
 
+/**
+ * Canonical origin of the site. Priority:
+ * 1. NEXT_PUBLIC_SITE_URL (explicit, e.g. a custom domain);
+ * 2. VERCEL_PROJECT_PRODUCTION_URL (set automatically by Vercel);
+ * 3. the production URL in production builds, localhost otherwise.
+ */
 export function siteUrl(): string {
   const detected =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    process.env.URL ||
     (process.env.VERCEL_PROJECT_PRODUCTION_URL
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : '');
+      : '') ||
+    (process.env.NODE_ENV === 'production' ? PRODUCTION_URL : DEV_URL);
 
-  return (detected || FALLBACK_URL).trim().replace(/\/+$/, '');
+  return detected.trim().replace(/\/+$/, '');
 }
 
 export function absoluteUrl(pathname = '/'): string {

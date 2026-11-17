@@ -185,16 +185,22 @@ e2e/
 
 ## Deploy
 
-### Netlify (configurado)
-```bash
-git push origin main
-```
+### Vercel (produção)
 
-### Vercel
-```bash
-npx vercel
-```
+Produção: https://interactive-kabbalah.vercel.app
 
+1. Importe o repositório em [vercel.com/new](https://vercel.com/new). O framework (Next.js) é detectado sozinho e o Node vem do campo `engines` do `package.json` (22.x).
+2. Em **Settings → Environment Variables**, cadastre as variáveis de `.env.example` (nenhuma é obrigatória para o site público):
+   - `NEXT_PUBLIC_GA_ID` (Google Analytics);
+   - `NEXT_PUBLIC_SITE_URL` somente se usar domínio próprio; sem ela, a URL canônica vem de `VERCEL_PROJECT_PRODUCTION_URL`;
+   - painel admin: `ADMIN_PASSWORD_HASH`, `ADMIN_JWT_SECRET`, `CAPTCHA_SECRET`, `GH_API_TOKEN`, `GH_REPO_OWNER`, `GH_REPO_NAME` e, opcional, `GH_REPO_BRANCH`.
+3. Cada `git push origin main` gera um deploy de produção; as demais branches geram previews.
+
+Os cabeçalhos de segurança ficam em `next.config.ts`.
+
+### Netlify (somente redirecionamento)
+
+O site antigo no Netlify não roda mais o Next.js. O `netlify.toml` publica a pasta `netlify-redirect/` e redireciona (301, forçado) todo caminho e query string para `https://interactive-kabbalah.vercel.app`.
 ## Roadmap
 
 - [ ] PWA (Service Worker, manifest, offline)

@@ -1,24 +1,13 @@
+# The site now lives on Vercel (https://interactive-kabbalah.vercel.app).
+# This Netlify site only forwards every request there, keeping the path and
+# query string, so old links and search results keep working.
+# No Next.js build runs on Netlify: it publishes the tiny static folder below.
+
 [build]
-  command = "yarn build"
-  publish = ".next"
+  publish = "netlify-redirect"
 
-[build.environment]
-  NODE_VERSION = "22"
-  SECRETS_SCAN_OMIT_KEYS = "GH_REPO_BRANCH,GH_REPO_NAME,GH_REPO_OWNER"
-
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "SAMEORIGIN"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Cross-Origin-Opener-Policy = "same-origin-allow-popups"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
-
-[[headers]]
-  for = "/llms.txt"
-  [headers.values]
-    Content-Type = "text/plain; charset=utf-8"
+[[redirects]]
+  from = "/*"
+  to = "https://interactive-kabbalah.vercel.app/:splat"
+  status = 301
+  force = true
