@@ -552,6 +552,36 @@
           "description": "22 línguas de fogo em forma da letra hebraica Yod: a semente divina espalhada na ruína — o mesmo fogo que derruba a Torre semeia o alfabeto da reconstrução (22 letras, 22 caminhos)."
         }
       }
+    },
+    "theStar": {
+      "name": "A Estrela",
+      "intro": "Depois da tempestade, o céu se abre: a Donadora despeja suas águas sobre a terra e sobre o lago.",
+      "regions": {
+        "greatStar": {
+          "title": "A Grande Estrela",
+          "description": "A estrela maior de oito raios: a esperança que não depende de circunstância — Vênus, a estrela da manhã, que anuncia o Sol sem ser o Sol."
+        },
+        "sevenStars": {
+          "title": "As Sete Estrelas Menores",
+          "description": "Sete pequenos sóis ao redor: os sete chakras, os sete planetas clássicos — a hierarquia intermediária entre você e a Grande Estrela."
+        },
+        "twoJugs": {
+          "title": "Os Dois Jarros",
+          "description": "A água vertida em duas direções — sobre a terra (o corpo, o prático) e sobre o lago (a alma, o inconsciente): nutrir os dois mundos com a mesma fonte."
+        },
+        "ibis": {
+          "title": "O Íbis na Árvore",
+          "description": "A ave de Thoth à beira da água: o pensamento que se renova — após a purificação da Torre, o primeiro pássaro a voltar é a reflexão serena."
+        },
+        "pool": {
+          "title": "O Lago",
+          "description": "A água parada que recebe: o inconsciente reabastecido — a psique que não pede para entender, apenas para ser banhada."
+        },
+        "horizon": {
+          "title": "A Terra e o Horizonte",
+          "description": "O chão e o limite do céu: a promessa de integração — o que desceu do alto vai crescer no chão; esperança que vira planta."
+        }
+      }
     }
   },
   "tarotWaite": {

@@ -552,6 +552,36 @@
           "description": "Twenty-two tongues of fire shaped like the Hebrew letter Yod: the divine seed scattered through the ruin — the same fire that topples the Tower sows the alphabet of rebuilding (22 letters, 22 paths)."
         }
       }
+    },
+    "theStar": {
+      "name": "The Star",
+      "intro": "After the storm the sky opens: the Giver pours her waters over the earth and over the lake.",
+      "regions": {
+        "greatStar": {
+          "title": "The Great Star",
+          "description": "The larger star with eight rays: hope that does not depend on circumstance — Venus, the morning star, announcing the Sun without being the Sun."
+        },
+        "sevenStars": {
+          "title": "The Seven Smaller Stars",
+          "description": "Seven little suns around her: the seven chakras, the seven classical planets — the intermediate hierarchy between you and the Great Star."
+        },
+        "twoJugs": {
+          "title": "The Two Jugs",
+          "description": "Water poured in two directions — onto the land (the body, the practical) and into the lake (the soul, the unconscious): feeding both worlds from the same source."
+        },
+        "ibis": {
+          "title": "The Ibis in the Tree",
+          "description": "The bird of Thoth at the water's edge: thought renewing itself — after the purification of the Tower, the first bird to return is serene reflection."
+        },
+        "pool": {
+          "title": "The Pool",
+          "description": "The still water that receives: the unconscious replenished — the psyche that does not ask to understand, only to be bathed."
+        },
+        "horizon": {
+          "title": "The Earth and the Horizon",
+          "description": "The ground and the limit of the sky: the promise of integration — what descended from above will grow in the soil; hope that becomes a plant."
+        }
+      }
     }
   },
   "tarotWaite": {
