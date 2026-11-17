@@ -582,6 +582,36 @@
           "description": "O chão e o limite do céu: a promessa de integração — o que desceu do alto vai crescer no chão; esperança que vira planta."
         }
       }
+    },
+    "theMoon": {
+      "name": "A Lua",
+      "intro": "No caminho entre duas torres, o que sobe do lago ainda não tem nome: cão, lobo e lagostim respondem ao mesmo silêncio.",
+      "regions": {
+        "moonFace": {
+          "title": "A Lua com Rosto",
+          "description": "O disco com semblante, entre raios retos e ondulados: a luz emprestada, cambiante — a verdade lunar muda de fase conforme quem olha."
+        },
+        "dewDrops": {
+          "title": "As Gotas de Orvalho",
+          "description": "Caem do céu à terra: inspiração e intuição — o orvalho que só se recolhe de madrugada, em silêncio."
+        },
+        "dogWolf": {
+          "title": "O Cão e o Lobo",
+          "description": "O doméstico e o selvagem uivam para a mesma Lua: a natureza treinada e a natureza intacta reagem ao que não controlam — revelam-se na noite."
+        },
+        "crayfish": {
+          "title": "O Lagostim",
+          "description": "Emergindo do lago, entre as águas e o caminho: o fundo mais antigo do inconsciente — os medos primitivos, couraçados, que só sobem quando a luz diminui."
+        },
+        "twoTowers": {
+          "title": "As Duas Torres",
+          "description": "A entrada do desconhecido: portais incompletos — a passagem entre o conhecido e o jamais mapeado; o caminho segue entre elas, não por fora."
+        },
+        "windingPath": {
+          "title": "O Caminho Sinuoso",
+          "description": "Sobe, vira, some e reaparece: a jornada noturna não é linha reta — atravessa-se confiando em quem desenhou a trilha assim."
+        }
+      }
     }
   },
   "tarotWaite": {

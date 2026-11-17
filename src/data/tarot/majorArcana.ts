@@ -16,6 +16,7 @@ import { theHangedMan } from './the-hanged-man';
 import { death } from './death';
 import { theTower } from './the-tower';
 import { theStar } from './the-star';
+import { theMoon } from './the-moon';
 
 /**
  * Catalog of the 22 Rider-Waite major arcana, in RWS order.
@@ -113,6 +114,7 @@ const cardData: Record<string, TarotCard> = {
   'death': death,
   'the-tower': theTower,
   'the-star': theStar,
+  'the-moon': theMoon,
 };
 
 export function getMajorArcana(slug: string): MajorArcanaEntry | undefined {

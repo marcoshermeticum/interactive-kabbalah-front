@@ -582,6 +582,36 @@
           "description": "The ground and the limit of the sky: the promise of integration — what descended from above will grow in the soil; hope that becomes a plant."
         }
       }
+    },
+    "theMoon": {
+      "name": "The Moon",
+      "intro": "On the path between two towers, what rises from the lake has no name yet: dog, wolf and crayfish answer to the same silence.",
+      "regions": {
+        "moonFace": {
+          "title": "The Moon with a Face",
+          "description": "The disc with a countenance, between straight and wavy rays: borrowed, shifting light — lunar truth changes phase according to who looks at it."
+        },
+        "dewDrops": {
+          "title": "The Drops of Dew",
+          "description": "They fall from sky to earth: inspiration and intuition — the dew that is gathered only at dawn, in silence."
+        },
+        "dogWolf": {
+          "title": "The Dog and the Wolf",
+          "description": "The tame and the wild howl at the same Moon: trained nature and untouched nature react to what they cannot control — they reveal themselves in the night."
+        },
+        "crayfish": {
+          "title": "The Crayfish",
+          "description": "Emerging from the lake, between the waters and the path: the oldest floor of the unconscious — the primitive, armored fears that rise only when the light dims."
+        },
+        "twoTowers": {
+          "title": "The Two Towers",
+          "description": "The gateway to the unknown: unfinished portals — the passage between the known and the never-mapped; the path runs between them, not around them."
+        },
+        "windingPath": {
+          "title": "The Winding Path",
+          "description": "It climbs, turns, vanishes and reappears: the night journey is no straight line — you cross it by trusting whoever drew the trail this way."
+        }
+      }
     }
   },
   "tarotWaite": {
