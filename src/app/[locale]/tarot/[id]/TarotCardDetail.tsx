@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
@@ -7,7 +7,8 @@ import Navbar from '@/components/Navbar/Navbar';
 import InteractiveTarotCard from '@/components/Tarot/InteractiveTarotCard';
 import TarotRegionEditor from '@/components/Tarot/TarotRegionEditor';
 import TarotShareMenu from '@/components/Tarot/TarotShareMenu';
-import { getTarotCard, type Element, type MajorArcanaEntry, type Planet, type ZodiacSign } from '@/data/tarot/majorArcana';
+import { getTarotCard, type Element, type Planet, type ZodiacSign } from '@/data/tarot/majorArcana';
+import type { TarotEntry } from '@/data/tarot/catalog';
 
 const PLANET_GLYPH: Record<Planet, string> = { sun: '☉', moon: '☽', mercury: '☿', venus: '♀', mars: '♂', jupiter: '♃', saturn: '♄' };
 const SIGN_GLYPH: Record<ZodiacSign, string> = {
@@ -17,7 +18,7 @@ const SIGN_GLYPH: Record<ZodiacSign, string> = {
 const ELEMENT_GLYPH: Record<Element, string> = { fire: '🜂', water: '🜄', air: '🜁', earth: '🜃' };
 
 type Props = {
-  entry: MajorArcanaEntry;
+  target: TarotEntry;
 };
 
 /**
@@ -43,12 +44,14 @@ const chipLabelStyle = {
   textTransform: 'uppercase',
 } as const;
 
-export default function TarotCardDetail({ entry }: Props) {
+export default function TarotCardDetail({ target }: Props) {
   const t = useTranslations('tarotWaite');
   const tc = useTranslations('tarotWaite.cards');
   const tTarot = useTranslations('tarot');
   const tCorr = useTranslations('tarotWaite.correspondences');
+  const tm = useTranslations('tarotWaite.minor');
 
+  const { entry } = target;
   const card = getTarotCard(entry.slug);
   const name = tc(`${entry.i18nKey}.name`);
 
@@ -57,14 +60,31 @@ export default function TarotCardDetail({ entry }: Props) {
   const editorAvailable =
     process.env.NODE_ENV !== 'production' || process.env.NEXT_PUBLIC_TAROT_EDITOR === '1';
   const [editorOpen, setEditorOpen] = useState(false);
-  const { correspondence: corr } = entry;
-  const correspondences: { label: string; glyph: string; value: string }[] = [
-    { label: tCorr('hebrewLetter'), glyph: corr.letter, value: corr.letterName },
-    ...(corr.planet ? [{ label: tCorr('planet'), glyph: PLANET_GLYPH[corr.planet], value: tCorr(`planets.${corr.planet}`) }] : []),
-    ...(corr.sign ? [{ label: tCorr('sign'), glyph: SIGN_GLYPH[corr.sign], value: tCorr(`signs.${corr.sign}`) }] : []),
-    ...(corr.element ? [{ label: tCorr('element'), glyph: ELEMENT_GLYPH[corr.element], value: tCorr(`elements.${corr.element}`) }] : []),
-  ];
-
+  // Chips under the summary: what the card corresponds to on the Tree of Life.
+  const chips: { label: string; glyph?: string; value: string }[] = [];
+  if (target.kind === 'major') {
+    const corr = target.entry.correspondence;
+    chips.push(
+      { label: tCorr('path'), value: String(corr.path) },
+      { label: tCorr('hebrewLetter'), glyph: corr.letter, value: corr.letterName }
+    );
+    if (corr.planet) chips.push({ label: tCorr('planet'), glyph: PLANET_GLYPH[corr.planet], value: tCorr(`planets.${corr.planet}`) });
+    if (corr.sign) chips.push({ label: tCorr('sign'), glyph: SIGN_GLYPH[corr.sign], value: tCorr(`signs.${corr.sign}`) });
+    if (corr.element) chips.push({ label: tCorr('element'), glyph: ELEMENT_GLYPH[corr.element], value: tCorr(`elements.${corr.element}`) });
+  } else {
+    const corr = target.entry.correspondence;
+    chips.push(
+      { label: tCorr('suit'), value: tm(`suits.${target.entry.suit}`) },
+      { label: tCorr('element'), glyph: ELEMENT_GLYPH[corr.element], value: tCorr(`elements.${corr.element}`) }
+    );
+    if (corr.sephirah) chips.push({ label: tCorr('sephirah'), value: tCorr(`sephiroth.${corr.sephirah}`) });
+    if (corr.planet) chips.push({ label: tCorr('planet'), glyph: PLANET_GLYPH[corr.planet], value: tCorr(`planets.${corr.planet}`) });
+    if (corr.sign) chips.push({ label: tCorr('sign'), glyph: SIGN_GLYPH[corr.sign], value: tCorr(`signs.${corr.sign}`) });
+    if (corr.letter && corr.letterName) chips.push({ label: tCorr('hebrewLetter'), glyph: corr.letter, value: corr.letterName });
+    if (corr.courtElement) chips.push({ label: tCorr('courtElement'), glyph: ELEMENT_GLYPH[corr.courtElement], value: tCorr(`elements.${corr.courtElement}`) });
+  }
+  const badge =
+    target.kind === 'major' ? `${name} · ${target.entry.roman}` : `${tm('badge')} · ${tm(`suits.${target.entry.suit}`)}`;
   const shareMenu = <TarotShareMenu cardName={name} image={entry.image} />;
 
   return (
@@ -136,7 +156,7 @@ export default function TarotCardDetail({ entry }: Props) {
                 textTransform: 'uppercase',
               }}
             >
-              {name} · {entry.roman}
+              {badge}
             </span>
             <h1
               style={{
@@ -172,18 +192,15 @@ export default function TarotCardDetail({ entry }: Props) {
                 padding: 0,
               }}
             >
-              <li style={chipStyle}>
-                <span style={chipLabelStyle}>{tCorr('path')}</span>
-                <span style={{ color: 'var(--gold-text)' }}>{corr.path}</span>
-              </li>
-              {correspondences.map((item) => (
+              {chips.map((item) => (
                 <li key={item.label} style={chipStyle}>
                   <span style={chipLabelStyle}>{item.label}</span>
-                  <span aria-hidden="true" style={{ color: 'var(--gold)', fontFamily: 'serif', fontSize: '1.05rem', lineHeight: 1 }}>{item.glyph}</span>
+                  {item.glyph && (
+                    <span aria-hidden="true" style={{ color: 'var(--gold-text)', fontFamily: 'serif', fontSize: '1.05rem', lineHeight: 1 }}>{item.glyph}</span>
+                  )}
                   <span>{item.value}</span>
                 </li>
-              ))}
-            </ul>
+              ))}            </ul>
 
             {card && !editorOpen && (
               <p

@@ -1,0 +1,115 @@
+{
+  "slug": "nine-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 9,
+  "image": "/tarot/minor/nine-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "falcon-glove",
+      "icon": "🦅"
+    },
+    {
+      "id": "vineyard-pentacles",
+      "icon": "🍇"
+    },
+    {
+      "id": "floral-robe",
+      "icon": "👗"
+    },
+    {
+      "id": "garden-snail",
+      "icon": "🐌"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Nove de Ouros",
+      "intro": "Uma mulher elegante, de vestido bordado, caminha sozinha por um vinhedo com um falcão na mão. Independência, conforto conquistado e o prazer de desfrutar o fruto do próprio esforço.",
+      "regions": {
+        "falcon-glove": {
+          "title": "O Falcão na Luva",
+          "description": "A ave de caça repousa na mão enluvada, com o capuz: a vontade disciplinada. Ela domina o instinto e o transforma em parceria."
+        },
+        "vineyard-pentacles": {
+          "title": "O Vinhedo de Pentáculos",
+          "description": "Cachos e moedas entre as videiras: a prosperidade que veio do cultivo paciente. O que se plantou com cuidado agora rende em abundância."
+        },
+        "floral-robe": {
+          "title": "O Vestido Florido",
+          "description": "Flores bordadas em ouro no manto: beleza e refinamento como expressão do que se conquistou. Gozar dos frutos é também honrar o esforço."
+        },
+        "garden-snail": {
+          "title": "O Caracol",
+          "description": "Um pequeno caracol no chão: o ritmo lento que sustenta a obra. A riqueza duradoura se faz devagar, e a lentidão é parte da maturidade."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Nine of Pentacles",
+      "intro": "An elegant woman in an embroidered gown walks alone through a vineyard with a falcon on her hand. Independence, earned comfort and the pleasure of enjoying the fruit of your own effort.",
+      "regions": {
+        "falcon-glove": {
+          "title": "The Falcon on the Glove",
+          "description": "The bird of prey rests on her gloved hand, hooded: disciplined will. She masters instinct and turns it into partnership."
+        },
+        "vineyard-pentacles": {
+          "title": "The Vineyard of Pentacles",
+          "description": "Grapes and coins among the vines: prosperity that came from patient cultivation. What was planted with care now yields in abundance."
+        },
+        "floral-robe": {
+          "title": "The Floral Gown",
+          "description": "Flowers embroidered in gold on the robe: beauty and refinement as an expression of what was achieved. Enjoying the fruits also honors the effort."
+        },
+        "garden-snail": {
+          "title": "The Snail",
+          "description": "A small snail on the ground: the slow rhythm that sustains the work. Lasting wealth is made slowly, and slowness is part of maturity."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの9",
+      "intro": "刺繍のドレスをまとった優雅な女性が、手に鷹を乗せ、ひとりでブドウ園を歩いています。自立、勝ち取った快適さ、自らの努力の実りを味わう喜びです。",
+      "regions": {
+        "falcon-glove": {
+          "title": "手袋の鷹",
+          "description": "猛禽が、頭巾をかぶり手袋の手に休んでいます。鍛えられた意志です。彼女は本能を統御し、それを協力関係に変えます。"
+        },
+        "vineyard-pentacles": {
+          "title": "ペンタクルのブドウ園",
+          "description": "ブドウの房と硬貨がつる棚の間にあります。忍耐強い栽培から生まれた繁栄です。丁寧に植えたものが、今、豊かに実っています。"
+        },
+        "floral-robe": {
+          "title": "花柄のドレス",
+          "description": "衣に金で刺繍された花々。成し遂げたことの表れとしての美と洗練です。実りを味わうことは、努力に敬意を払うことでもあります。"
+        },
+        "garden-snail": {
+          "title": "カタツムリ",
+          "description": "地面の小さなカタツムリ。仕事を支えるゆっくりしたリズムです。持続する豊かさはゆっくり作られ、遅さは成熟の一部です。"
+        }
+      }
+    },
+    "he": {
+      "name": "תשע של מטבעות",
+      "intro": "אישה אלגנטית בשמלה רקומה צועדת לבדה בכרם ובז על ידה. עצמאות, נוחות שהושגה והעונג שבהנאה מפרי המאמץ שלך.",
+      "regions": {
+        "falcon-glove": {
+          "title": "הבז על הכפפה",
+          "description": "עוף הטרף נח על ידה הכפופה, עם כיסוי ראש: רצון ממושמע. היא שולטת באינסטינקט והופכת אותו לשותפות."
+        },
+        "vineyard-pentacles": {
+          "title": "כרם המטבעות",
+          "description": "ענבים ומטבעות בין הגפנים: שגשוג שבא מעיבוד סבלני. מה שנטע בקפידה נותן כעת פרי בשפע."
+        },
+        "floral-robe": {
+          "title": "השמלה הפרחונית",
+          "description": "פרחים רקומים בזהב על הגלימה: יופי ועידון כביטוי למה שהושג. ליהנות מהפירות הוא גם לכבד את המאמץ."
+        },
+        "garden-snail": {
+          "title": "החילזון",
+          "description": "חילזון קטן על הקרקע: הקצב האיטי שמקיים את היצירה. עושר מתמשך נבנה לאט, והאיטיות היא חלק מהבגרות."
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
-﻿import type { TarotCard } from './types';
+import type { TarotCard } from './types';
+import { minorCardData } from './minorArcana';
 import { theFool } from './the-fool';
 import { theMagician } from './the-magician';
 import { theHighPriestess } from './the-high-priestess';
@@ -129,10 +130,11 @@ export function getMajorArcana(slug: string): MajorArcanaEntry | undefined {
   return majorArcana.find((entry) => entry.slug === slug);
 }
 
+/** Interactive data for any card, major or minor arcana. */
 export function getTarotCard(slug: string): TarotCard | undefined {
-  return cardData[slug];
+  return cardData[slug] ?? minorCardData[slug];
 }
 
 export function isCardAvailable(slug: string): boolean {
-  return slug in cardData;
+  return slug in cardData || slug in minorCardData;
 }

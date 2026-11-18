@@ -18,6 +18,7 @@
     "test:admin": "npx playwright test admin.spec.ts",
     "test:unit": "vitest --run",
     "tarot:new": "node scripts/new-tarot-card.mjs",
+    "tarot:doc": "node scripts/tarot-minor-doc.mjs",
     "install:yarn": "yarn install",
     "install:npm": "npm install"
   },

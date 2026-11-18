@@ -1,0 +1,115 @@
+{
+  "slug": "three-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 3,
+  "image": "/tarot/minor/three-of-wands.jpg",
+  "regions": [
+    {
+      "id": "man-from-behind",
+      "icon": "🧍"
+    },
+    {
+      "id": "three-wands",
+      "icon": "🪄"
+    },
+    {
+      "id": "ships-sea",
+      "icon": "⛵"
+    },
+    {
+      "id": "golden-sky",
+      "icon": "🌅"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Três de Paus",
+      "intro": "De costas, um homem no alto do penhasco vê seus barcos partirem para o mar. Os primeiros frutos de um plano em marcha: visão ampliada, espera confiante e expansão.",
+      "regions": {
+        "man-from-behind": {
+          "title": "O Homem de Costas",
+          "description": "Ele já fez sua parte e agora observa: a confiança de quem plantou o plano e aceita esperar. Voltado ao horizonte, deixa o passado atrás."
+        },
+        "three-wands": {
+          "title": "Os Três Cajados",
+          "description": "Três hastes firmes no chão: a base já está plantada. Um cajado serve de apoio à mão, mostrando que a vontade agora se sustenta sozinha."
+        },
+        "ships-sea": {
+          "title": "Os Navios no Mar",
+          "description": "As embarcações carregam o que foi investido rumo a terras distantes: o trabalho que sai de suas mãos e volta, um dia, com retorno."
+        },
+        "golden-sky": {
+          "title": "O Céu Dourado",
+          "description": "Um céu amarelo e aberto sobre o mar: a luz do otimismo, a promessa de que o caminho escolhido tem espaço para crescer."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Three of Wands",
+      "intro": "Seen from behind, a man on a cliff watches his ships set sail. The first fruits of a plan in motion: wider vision, confident waiting and expansion.",
+      "regions": {
+        "man-from-behind": {
+          "title": "The Man from Behind",
+          "description": "He has done his part and now watches: the trust of one who planted the plan and accepts waiting. Facing the horizon, he leaves the past behind."
+        },
+        "three-wands": {
+          "title": "The Three Wands",
+          "description": "Three firm staves in the ground: the foundation is already planted. One serves as support for his hand, showing that will can now stand on its own."
+        },
+        "ships-sea": {
+          "title": "The Ships at Sea",
+          "description": "The vessels carry what was invested toward distant lands: work leaving your hands that will someday return with a yield."
+        },
+        "golden-sky": {
+          "title": "The Golden Sky",
+          "description": "An open yellow sky over the sea: the light of optimism, the promise that the chosen path has room to grow."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの3",
+      "intro": "崖の上の男は背中を見せ、船が海へ出ていくのを見送っています。動き出した計画の最初の実り。視野の拡大、自信に満ちた待機、そして拡大です。",
+      "regions": {
+        "man-from-behind": {
+          "title": "後ろ姿の男",
+          "description": "彼は自分の役目を果たし、今は見守っています。計画を植え、待つことを受け入れた者の信頼です。地平線に向かい、過去を背にしています。"
+        },
+        "three-wands": {
+          "title": "三本の杖",
+          "description": "地面にしっかり立つ三本の杖。土台はすでに据えられています。一本は手の支えとなり、意志がもう自力で立てることを示します。"
+        },
+        "ships-sea": {
+          "title": "海を行く船",
+          "description": "船は投資したものを遠い土地へ運びます。手元を離れた仕事が、いつか実りを携えて戻ってくるのです。"
+        },
+        "golden-sky": {
+          "title": "黄金の空",
+          "description": "海の上に広がる黄色い空。楽観の光であり、選んだ道にはまだ成長する余地があるという約束です。"
+        }
+      }
+    },
+    "he": {
+      "name": "שלוש של מטות",
+      "intro": "אדם על צוק, מצולם מאחור, צופה בספינותיו יוצאות לים. הפירות הראשונים של תוכנית שיצאה לדרך: מבט רחב, המתנה בטוחה והתרחבות.",
+      "regions": {
+        "man-from-behind": {
+          "title": "האיש מאחור",
+          "description": "הוא כבר עשה את חלקו ועכשיו צופה: הביטחון של מי שזרע את התוכנית ומקבל להמתין. פניו אל האופק והעבר מאחוריו."
+        },
+        "three-wands": {
+          "title": "שלושת המטות",
+          "description": "שלושה מטות יציבים באדמה: היסוד כבר נטוע. אחד מהם משמש משענת ליד, וכך מראה שהרצון יכול כעת לעמוד בכוחות עצמו."
+        },
+        "ships-sea": {
+          "title": "הספינות בים",
+          "description": "הכלים נושאים את מה שהושקע אל ארצות רחוקות: עבודה שיצאה מידיך וישובו ממנה יום אחד פירות."
+        },
+        "golden-sky": {
+          "title": "השמיים הזהובים",
+          "description": "שמיים צהובים ופתוחים מעל הים: אור האופטימיות, ההבטחה שבדרך שנבחרה יש עוד מקום לצמוח."
+        }
+      }
+    }
+  }
+}

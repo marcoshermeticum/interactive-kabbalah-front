@@ -1,0 +1,115 @@
+{
+  "slug": "three-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 3,
+  "image": "/tarot/minor/three-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "craftsman",
+      "icon": "🔨"
+    },
+    {
+      "id": "carved-pentacles",
+      "icon": "🪙"
+    },
+    {
+      "id": "plan-patrons",
+      "icon": "📜"
+    },
+    {
+      "id": "gothic-arch",
+      "icon": "⛪"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Três de Ouros",
+      "intro": "Num salão gótico, um artesão trabalha sobre o arco enquanto um monge e um nobre discutem a planta. Trabalho em equipe, mestria compartilhada e o valor de cada contribuição numa obra comum.",
+      "regions": {
+        "craftsman": {
+          "title": "O Artesão",
+          "description": "Sobre o banco, ele esculpe com ferramentas: a competência prática dá forma à visão dos outros. Sem mão de obra, o projeto não passa do papel."
+        },
+        "carved-pentacles": {
+          "title": "Os Pentáculos no Arco",
+          "description": "Três pentáculos gravados na pedra: o resultado concreto do trabalho. A obra bem feita deixa marca duradoura, visível a quem passar."
+        },
+        "plan-patrons": {
+          "title": "Os Mentores com a Planta",
+          "description": "O monge e o nobre estudam o projeto: planejamento, patrocínio e orientação. Cada um contribui com o saber que o outro não tem."
+        },
+        "gothic-arch": {
+          "title": "O Arco Gótico",
+          "description": "Uma abóbada de pedra nervurada: a estrutura que une peças em direção ao alto. Obras duradouras dependem de que cada pedra sustente a outra."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Three of Pentacles",
+      "intro": "In a Gothic hall, a craftsman works on the arch while a monk and a noble discuss the plan. Teamwork, shared mastery and the value of each contribution to a common work.",
+      "regions": {
+        "craftsman": {
+          "title": "The Craftsman",
+          "description": "On the bench, he carves with tools: practical skill gives form to the vision of others. Without craft, the project never leaves the paper."
+        },
+        "carved-pentacles": {
+          "title": "The Pentacles on the Arch",
+          "description": "Three pentacles carved in stone: the concrete result of the work. A well-made work leaves a lasting mark, visible to all who pass."
+        },
+        "plan-patrons": {
+          "title": "The Patrons with the Plan",
+          "description": "The monk and the noble study the plan: design, sponsorship and guidance. Each contributes the knowledge the other lacks."
+        },
+        "gothic-arch": {
+          "title": "The Gothic Arch",
+          "description": "A ribbed stone vault: structure that joins pieces upward. Lasting works depend on each stone supporting the next."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの3",
+      "intro": "ゴシック様式の広間で、職人がアーチの仕事をし、修道士と貴人が設計図を相談しています。チームワーク、分かち合われる熟練、共同の仕事におけるそれぞれの貢献の価値です。",
+      "regions": {
+        "craftsman": {
+          "title": "職人",
+          "description": "台の上で道具を使って彫っています。実践的な技が、他者のビジョンに形を与えます。腕がなければ、計画は紙の上から出ません。"
+        },
+        "carved-pentacles": {
+          "title": "アーチのペンタクル",
+          "description": "石に刻まれた三つのペンタクル。仕事の具体的な成果です。よくできた仕事は、通る人の目に見える、永続する痕跡を残します。"
+        },
+        "plan-patrons": {
+          "title": "設計図を見る依頼人たち",
+          "description": "修道士と貴人が設計図を検討します。計画、後援、助言です。それぞれが、相手の持たない知識で貢献しています。"
+        },
+        "gothic-arch": {
+          "title": "ゴシックのアーチ",
+          "description": "リブのある石のヴォールト。部材を上へ結ぶ構造です。長く残る仕事は、石の一つひとつが次を支えることにかかっています。"
+        }
+      }
+    },
+    "he": {
+      "name": "שלוש של מטבעות",
+      "intro": "באולם גותי בעל מלאכה עובד על הקשת בעוד נזיר ואציל דנים בתוכנית. עבודת צוות, מומחיות משותפת וערכה של כל תרומה ליצירה משותפת.",
+      "regions": {
+        "craftsman": {
+          "title": "בעל המלאכה",
+          "description": "על הספסל הוא מגלף בכלים: מיומנות מעשית נותנת צורה לחזון של אחרים. בלי אומנות התוכנית נשארת על הנייר."
+        },
+        "carved-pentacles": {
+          "title": "המטבעות על הקשת",
+          "description": "שלושה מטבעות חקוקים באבן: התוצאה המוחשית של העבודה. יצירה שנעשתה היטב משאירה חותם מתמשך, גלוי לכל עובר."
+        },
+        "plan-patrons": {
+          "title": "המורים עם התוכנית",
+          "description": "הנזיר והאציל לומדים את התוכנית: תכנון, חסות והכוונה. כל אחד תורם את הידע שחסר לאחר."
+        },
+        "gothic-arch": {
+          "title": "הקשת הגותית",
+          "description": "קמרון אבן מצולע: מבנה שמחבר חלקים כלפי מעלה. יצירות מתמשכות תלויות בכך שכל אבן תומכת באחרת."
+        }
+      }
+    }
+  }
+}

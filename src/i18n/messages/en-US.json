@@ -25,6 +25,11 @@
       "keywords": "{name}, tarot, rider-waite, arcana {number}",
       "title": "{name} — Major Arcana {roman}"
     },
+    "minorCard": {
+      "title": "{name} — Minor Arcana",
+      "description": "{name}, a card of the suit of {suit} in the Rider-Waite Tarot: artwork, symbols and Kabbalistic correspondences.",
+      "keywords": "{name}, tarot, rider-waite, minor arcana, {suit}"
+    },
     "breadcrumbHome": "Home"
   },
   "app": {
@@ -725,13 +730,28 @@
   "tarotWaite": {
     "backToPortal": "← Back to the portal",
     "backToCatalog": "← Back to the catalog",
-    "eyebrow": "22 major arcana",
+    "eyebrow": "78 cards",
     "title": "Rider-Waite Tarot",
-    "subtitle": "The 22 major arcana of the Rider-Waite Tarot. Tap a card to explore its symbols and correspondences.",
+    "subtitle": "The 78 cards of the Rider-Waite Tarot: 22 major and 56 minor arcana. Tap a card to explore its symbols and correspondences.",
     "soonBadge": "Soon",
     "comingSoonTitle": "Card in preparation",
     "comingSoonText": "The interactive regions for this card are still being drawn. Check back soon to explore it symbol by symbol.",
     "correspondences": {
+      "suit": "Suit",
+      "sephirah": "Sephirah",
+      "courtElement": "Court element",
+      "sephiroth": {
+        "kether": "Kether",
+        "chokmah": "Chokmah",
+        "binah": "Binah",
+        "chesed": "Chesed",
+        "gevurah": "Gevurah",
+        "tiferet": "Tiferet",
+        "netzach": "Netzach",
+        "hod": "Hod",
+        "yesod": "Yesod",
+        "malkuth": "Malkuth"
+      },
       "title": "Correspondences",
       "path": "Path",
       "hebrewLetter": "Hebrew letter",
@@ -767,6 +787,35 @@
         "air": "Air",
         "earth": "Earth"
       }
+    },
+    "minor": {
+      "majorTitle": "Major Arcana",
+      "majorSubtitle": "The 22 cards of the great archetypes, tied to the 22 paths of the Tree of Life.",
+      "title": "Minor Arcana",
+      "subtitle": "The 56 cards of everyday life, in four suits that follow the four elements: Wands (fire), Cups (water), Swords (air) and Pentacles (earth).",
+      "suits": {
+        "wands": "Wands",
+        "cups": "Cups",
+        "swords": "Swords",
+        "pentacles": "Pentacles"
+      },
+      "ranks": {
+        "ace": "Ace",
+        "two": "Two",
+        "three": "Three",
+        "four": "Four",
+        "five": "Five",
+        "six": "Six",
+        "seven": "Seven",
+        "eight": "Eight",
+        "nine": "Nine",
+        "ten": "Ten",
+        "page": "Page",
+        "knight": "Knight",
+        "queen": "Queen",
+        "king": "King"
+      },
+      "badge": "Minor Arcana"
     },
     "cards": {
       "theFool": {
@@ -856,6 +905,230 @@
       "theWorld": {
         "name": "The World",
         "summary": "The World closes the cycle of the Major Arcana: fulfillment, integration and wholeness. The dancing figure within the wreath celebrates a journey completed, while the next beginning is already taking shape."
+      },
+      "aceOfWands": {
+        "name": "Ace of Wands",
+        "summary": "A hand emerges from a cloud offering a budding wand: the first impulse, the creative spark and the courage to begin. It is fire in its purest state, still formless and full of promise."
+      },
+      "twoOfWands": {
+        "name": "Two of Wands",
+        "summary": "A man on a battlement holds the world in one hand and a wand in the other, gazing at the sea. Planning, choosing a direction and deciding between what he has and what he could win."
+      },
+      "threeOfWands": {
+        "name": "Three of Wands",
+        "summary": "Seen from behind, a man on a cliff watches his ships set sail. The first fruits of a plan in motion: wider vision, confident waiting and expansion."
+      },
+      "fourOfWands": {
+        "name": "Four of Wands",
+        "summary": "Four wands hold up a garland of flowers over a couple celebrating before the castle. The feast after the effort: stability, home, welcome and community."
+      },
+      "fiveOfWands": {
+        "name": "Five of Wands",
+        "summary": "Five young men brandish staves in a struggle with no clear winner. Competition, friction and the confused energy of many wills colliding, which can wear down or sharpen those involved."
+      },
+      "sixOfWands": {
+        "name": "Six of Wands",
+        "summary": "A rider crowned with laurel returns in triumph, surrounded by a crowd of staves. Public victory, recognition and the pride of having won in front of everyone."
+      },
+      "sevenOfWands": {
+        "name": "Seven of Wands",
+        "summary": "On a hilltop, a man defends his position against six wands rising from below. Courage, firmness and the decision to hold what is yours even at a disadvantage."
+      },
+      "eightOfWands": {
+        "name": "Eight of Wands",
+        "summary": "Eight wands cut across the sky in swift flight toward the ground, with no human figure in sight. Speed, messages and events arriving all at once, with the momentum of something that cannot stop."
+      },
+      "nineOfWands": {
+        "name": "Nine of Wands",
+        "summary": "Wounded and bandaged, a man leans on his staff before a fence of wands. Weariness, caution and the persistence of someone who has faced much and still has not given up."
+      },
+      "tenOfWands": {
+        "name": "Ten of Wands",
+        "summary": "Bent under the weight of ten bundled wands, a man walks toward the village in the distance. Overload, too much responsibility taken on, and the need to share the weight."
+      },
+      "pageOfWands": {
+        "name": "Page of Wands",
+        "summary": "A young man in a tunic patterned with salamanders gazes at the wand he holds, in the middle of the desert. Curiosity, enthusiasm and the message of a new idea asking to be explored."
+      },
+      "knightOfWands": {
+        "name": "Knight of Wands",
+        "summary": "A knight in armor and a salamander tunic charges on a rearing horse. Drive, adventure and an enthusiasm that does not weigh risk, but can trample whatever is in the way."
+      },
+      "queenOfWands": {
+        "name": "Queen of Wands",
+        "summary": "Seated on a lion throne with a sunflower in hand and a black cat at her feet, the queen radiates confidence and warmth. Magnetism, generosity and a will that attracts rather than imposes."
+      },
+      "kingOfWands": {
+        "name": "King of Wands",
+        "summary": "The king in a salamander-patterned mantle holds the budding wand, seated on a lion throne. Vision, charismatic leadership and a mastery of fire that inspires others to follow."
+      },
+      "aceOfCups": {
+        "name": "Ace of Cups",
+        "summary": "A hand emerges from a cloud offering an overflowing chalice while a dove lowers a wafer onto it. The beginning of a love, an intuition or a grace that pours out without measure."
+      },
+      "twoOfCups": {
+        "name": "Two of Cups",
+        "summary": "A man and a woman exchange cups beneath the winged caduceus of Hermes. Mutual attraction, partnership and the pact of two who recognize one another in equality and respect."
+      },
+      "threeOfCups": {
+        "name": "Three of Cups",
+        "summary": "Three women dance with raised cups among fruit and garlands. Shared joy, friendship and the celebration of a harvest nobody won alone."
+      },
+      "fourOfCups": {
+        "name": "Four of Cups",
+        "summary": "A young man with crossed arms meditates under a tree, ignoring the three cups before him while a hand offers a fourth. Apathy, contemplation and the opportunity that goes unnoticed."
+      },
+      "fiveOfCups": {
+        "name": "Five of Cups",
+        "summary": "A cloaked figure in black mourns three spilled cups, without seeing the two still standing behind. Grief, regret and the choice to look at what remains."
+      },
+      "sixOfCups": {
+        "name": "Six of Cups",
+        "summary": "Two children exchange a cup of flowers in an old village courtyard. Nostalgia, innocence and the sweetness of simple gestures that remind us who we were and what we can still give."
+      },
+      "sevenOfCups": {
+        "name": "Seven of Cups",
+        "summary": "Before a dark silhouette, seven cups float among the clouds, each holding a different vision. Fantasy, many options and the need to tell dream from what is possible."
+      },
+      "eightOfCups": {
+        "name": "Eight of Cups",
+        "summary": "Under an eclipsed moon, a man in a red cloak leaves eight neatly stacked cups behind and climbs toward the mountains. Walking away from what no longer satisfies, in search of deeper meaning."
+      },
+      "nineOfCups": {
+        "name": "Nine of Cups",
+        "summary": "A satisfied man with crossed arms sits before nine cups arranged in an arc. The wish card: contentment, well-earned pleasure and the joy of being able to enjoy."
+      },
+      "tenOfCups": {
+        "name": "Ten of Cups",
+        "summary": "Beneath a rainbow of ten cups, a couple raises their arms while two children play before a house. Emotional fulfillment, family harmony and happiness that reaches everyone."
+      },
+      "pageOfCups": {
+        "name": "Page of Cups",
+        "summary": "A young man in a flowered tunic gazes at a fish emerging from his cup before the sea. An unexpected message, creative sensitivity and an invitation to take imagination seriously."
+      },
+      "knightOfCups": {
+        "name": "Knight of Cups",
+        "summary": "A knight in winged armor advances calmly, carrying his cup before him. Romance, a sincere offer and the delicacy of one who acts from the heart, in no hurry to conquer."
+      },
+      "queenOfCups": {
+        "name": "Queen of Cups",
+        "summary": "The queen contemplates an ornate closed cup, seated on a throne by the sea. Deep intuition, compassion and the ability to feel another without losing your own center."
+      },
+      "kingOfCups": {
+        "name": "King of Cups",
+        "summary": "The king sits on a throne floating on the restless sea, holding cup and sceptre. Mastery of emotion, compassionate wisdom and the calm of one who rules without denying depth."
+      },
+      "aceOfSwords": {
+        "name": "Ace of Swords",
+        "summary": "A hand emerges from a cloud gripping a crowned sword flanked by laurel and palm. The moment of clarity: a truth that cuts through confusion and the victory of thought over doubt."
+      },
+      "twoOfSwords": {
+        "name": "Two of Swords",
+        "summary": "A blindfolded woman crosses two swords over her chest before a calm sea under a crescent moon. Stalemate, forced balance and a decision postponed for fear of looking."
+      },
+      "threeOfSwords": {
+        "name": "Three of Swords",
+        "summary": "A red heart is pierced by three swords under clouds and rain. Grief, betrayal or a truth that hurts: pain that cannot be argued with and must be gone through to heal."
+      },
+      "fourOfSwords": {
+        "name": "Four of Swords",
+        "summary": "A knight lies in effigy on a tomb beneath a stained-glass window, with three swords on the wall. A necessary pause, retreat and the rest that restores the mind after a battle."
+      },
+      "fiveOfSwords": {
+        "name": "Five of Swords",
+        "summary": "A man smiles holding three swords while two others walk away defeated. A doubtful victory, conflict won at any cost and the price of winning without generosity."
+      },
+      "sixOfSwords": {
+        "name": "Six of Swords",
+        "summary": "A ferryman poles a hooded woman and child across rough water toward calm, with six swords in the hull. Crossing out of crisis: distance, transition and gradual recovery."
+      },
+      "sevenOfSwords": {
+        "name": "Seven of Swords",
+        "summary": "A man tiptoes away carrying five swords and leaves two behind, with a camp in the background. Strategy, stealth and the dilemma between cunning and honesty."
+      },
+      "eightOfSwords": {
+        "name": "Eight of Swords",
+        "summary": "A blindfolded, bound woman stands surrounded by eight swords on soaked ground. A sense of imprisonment, fear and the realization that the way out depends on your own perception."
+      },
+      "nineOfSwords": {
+        "name": "Nine of Swords",
+        "summary": "Sitting up in bed, a person hides her face in her hands beneath nine swords hung in the dark. Anxiety, guilt and the nights when the mind works against rest."
+      },
+      "tenOfSwords": {
+        "name": "Ten of Swords",
+        "summary": "A figure lies face down with ten swords in the back, under a black sky and a dawn on the horizon. The end of a painful cycle: the worst has passed, and something new begins to be born."
+      },
+      "pageOfSwords": {
+        "name": "Page of Swords",
+        "summary": "A youth with windblown hair raises a sword on a hill among clouds and birds. Curiosity, vigilance and the agile mind that wants to learn, ask and discover."
+      },
+      "knightOfSwords": {
+        "name": "Knight of Swords",
+        "summary": "A knight with raised sword gallops on a white horse as the wind bends the trees. Intellectual drive, quick decisions and a frankness that cuts, sometimes without measuring the impact."
+      },
+      "queenOfSwords": {
+        "name": "Queen of Swords",
+        "summary": "The queen with a butterfly crown holds her sword up with one hand and opens the other, on a carved throne. Clarity, independence and the wisdom of one who learned from pain and speaks frankly."
+      },
+      "kingOfSwords": {
+        "name": "King of Swords",
+        "summary": "The king with a butterfly crown holds a sword, seated on a throne beneath a cloudy sky. Intellectual authority, justice and the word that governs through logic and ethics."
+      },
+      "aceOfPentacles": {
+        "name": "Ace of Pentacles",
+        "summary": "A hand emerges from a cloud offering a golden pentacle above a flowering garden. A seed of prosperity: a concrete, material and promising opportunity that asks to be planted."
+      },
+      "twoOfPentacles": {
+        "name": "Two of Pentacles",
+        "summary": "A juggler in a tall hat balances two pentacles bound by a figure-eight ribbon amid big waves. Adaptation, flexibility and the art of keeping several fronts going without losing rhythm."
+      },
+      "threeOfPentacles": {
+        "name": "Three of Pentacles",
+        "summary": "In a Gothic hall, a craftsman works on the arch while a monk and a noble discuss the plan. Teamwork, shared mastery and the value of each contribution to a common work."
+      },
+      "fourOfPentacles": {
+        "name": "Four of Pentacles",
+        "summary": "A seated man clutches a pentacle to his chest, has another on his head and two under his feet, before a city. Security, possession and the risk of closing off to protect what you have."
+      },
+      "fiveOfPentacles": {
+        "name": "Five of Pentacles",
+        "summary": "Two injured beggars walk through snow past an illuminated stained-glass window with five pentacles. Hardship, exclusion and shelter so near yet seemingly out of reach."
+      },
+      "sixOfPentacles": {
+        "name": "Six of Pentacles",
+        "summary": "A merchant in a red robe weighs coins on a scale and gives them to two kneeling beggars. Generosity, reciprocity and the fairness of giving and receiving in the right measure."
+      },
+      "sevenOfPentacles": {
+        "name": "Seven of Pentacles",
+        "summary": "A young man leans on his hoe and contemplates a bush heavy with seven pentacles. A pause to assess what has been planted, patience and the doubt between waiting and acting."
+      },
+      "eightOfPentacles": {
+        "name": "Eight of Pentacles",
+        "summary": "Seated at a bench, a craftsman carefully engraves each pentacle; several are already finished beside him. Dedication to craft, learning and the pleasure of improving through repetition."
+      },
+      "nineOfPentacles": {
+        "name": "Nine of Pentacles",
+        "summary": "An elegant woman in an embroidered gown walks alone through a vineyard with a falcon on her hand. Independence, earned comfort and the pleasure of enjoying the fruit of your own effort."
+      },
+      "tenOfPentacles": {
+        "name": "Ten of Pentacles",
+        "summary": "Under a stone arch, a patriarch, a couple, a child and two dogs occupy a courtyard where ten pentacles form the Tree of Life. Inheritance, family, tradition and prosperity that spans generations."
+      },
+      "pageOfPentacles": {
+        "name": "Page of Pentacles",
+        "summary": "A young man in a green tunic gazes at a raised pentacle in a plowed field before the mountains. Study, practical curiosity and the start of a project that demands consistency."
+      },
+      "knightOfPentacles": {
+        "name": "Knight of Pentacles",
+        "summary": "An armored knight stays still on a steady black horse, holding a pentacle in a plowed field. Responsibility, perseverance and methodical work that is in no hurry."
+      },
+      "queenOfPentacles": {
+        "name": "Queen of Pentacles",
+        "summary": "The queen on a throne of fruit and goats cradles a pentacle in her lap in a garden with a rabbit. Care, abundance and the practical generosity of one who nurtures her surroundings."
+      },
+      "kingOfPentacles": {
+        "name": "King of Pentacles",
+        "summary": "The king in a mantle of grapes sits on a throne of bulls, holding sceptre and pentacle before his castle. Prosperity, stability and the power of one who built and now administers with generosity."
       }
     }
   },

@@ -13,7 +13,9 @@ exemplo de carta com regiões no formato `shape`, ajustadas pelo **editor visual
 > esqueleto completo — dados, traduções nos 4 idiomas e registro no catálogo —
 > a partir de `docs/tarot-content/<slug>.json`, sem pedir nenhum texto.
 > `npm run tarot:new -- --card <slug|número>` faz o mesmo direto pelo slug.
-> Veja [new-tarot-card-cli.md](./new-tarot-card-cli.md). Este guia continua sendo
+> Veja [new-tarot-card-cli.md](./new-tarot-card-cli.md). Para os 56 arcanos menores (`ace-of-wands`,
+> `two-of-cups`...), o conteúdo está em [tarot-minor-arcana-regions.md](./tarot-minor-arcana-regions.md)
+> e a arte em `public/tarot/minor/`. Este guia continua sendo
 > a referência manual, e o posicionamento das regiões segue no passo 4.
 
 ---

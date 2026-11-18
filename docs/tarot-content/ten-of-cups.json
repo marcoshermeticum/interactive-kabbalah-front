@@ -1,0 +1,115 @@
+{
+  "slug": "ten-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 10,
+  "image": "/tarot/minor/ten-of-cups.jpg",
+  "regions": [
+    {
+      "id": "rainbow-cups",
+      "icon": "🌈"
+    },
+    {
+      "id": "embracing-couple",
+      "icon": "💑"
+    },
+    {
+      "id": "playing-children",
+      "icon": "🧒"
+    },
+    {
+      "id": "home-valley",
+      "icon": "🏡"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dez de Copas",
+      "intro": "Sob um arco-íris de dez taças, um casal ergue os braços enquanto duas crianças brincam diante de uma casa. Plenitude afetiva, harmonia familiar e a felicidade que se estende a todos.",
+      "regions": {
+        "rainbow-cups": {
+          "title": "O Arco-íris de Taças",
+          "description": "Dez taças desenham o arco que une céu e terra: a bênção que recompensa e abriga. Depois da chuva, a promessa de uma vida em paz."
+        },
+        "embracing-couple": {
+          "title": "O Casal de Braços Erguidos",
+          "description": "Abraçados, de costas e com os braços para o alto: gratidão compartilhada. Eles não olham um para o outro, mas na mesma direção."
+        },
+        "playing-children": {
+          "title": "As Crianças que Dançam",
+          "description": "Duas crianças brincam sem pressa: a felicidade que se renova nas gerações. A casa só é completa quando há alegria para continuar."
+        },
+        "home-valley": {
+          "title": "A Casa e o Vale",
+          "description": "Uma casa entre árvores à beira do rio: o lar que abriga e o campo que sustenta. Raízes, estabilidade e a paz de pertencer a um lugar."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ten of Cups",
+      "intro": "Beneath a rainbow of ten cups, a couple raises their arms while two children play before a house. Emotional fulfillment, family harmony and happiness that reaches everyone.",
+      "regions": {
+        "rainbow-cups": {
+          "title": "The Rainbow of Cups",
+          "description": "Ten cups draw the arc that joins heaven and earth: a blessing that rewards and shelters. After the rain, the promise of a peaceful life."
+        },
+        "embracing-couple": {
+          "title": "The Couple with Raised Arms",
+          "description": "Embracing, seen from behind with arms lifted: shared gratitude. They do not look at each other but in the same direction."
+        },
+        "playing-children": {
+          "title": "The Dancing Children",
+          "description": "Two children play without hurry: happiness that renews itself across generations. A home is complete only when there is joy to carry on."
+        },
+        "home-valley": {
+          "title": "The Home and the Valley",
+          "description": "A house among trees by the river: the home that shelters and the land that sustains. Roots, stability and the peace of belonging to a place."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの10",
+      "intro": "十の杯が描く虹の下で、夫婦が腕を上げ、二人の子どもが家の前で遊んでいます。情愛の充足、家族の調和、すべての人に広がる幸福です。",
+      "regions": {
+        "rainbow-cups": {
+          "title": "杯の虹",
+          "description": "十の杯が天と地を結ぶ弧を描きます。報い、守る祝福です。雨の後に、穏やかな暮らしの約束があります。"
+        },
+        "embracing-couple": {
+          "title": "腕を上げる夫婦",
+          "description": "寄り添い、後ろ姿で腕を高く上げています。分かち合う感謝です。二人は互いではなく、同じ方向を見つめています。"
+        },
+        "playing-children": {
+          "title": "踊る子どもたち",
+          "description": "二人の子どもが急がずに遊んでいます。世代を超えて新しくなる幸福です。家は、続いていく喜びがあって初めて完成します。"
+        },
+        "home-valley": {
+          "title": "家と谷",
+          "description": "川辺の木々の間に建つ家。守る我が家と、養う大地です。根を張り、安定し、ある場所に属する安らぎです。"
+        }
+      }
+    },
+    "he": {
+      "name": "עשר של גביעים",
+      "intro": "תחת קשת של עשרה גביעים, זוג מרים זרועות בעוד שני ילדים משחקים מול בית. מילוי רגשי, הרמוניה משפחתית ואושר שמגיע לכולם.",
+      "regions": {
+        "rainbow-cups": {
+          "title": "קשת הגביעים",
+          "description": "עשרה גביעים משרטטים את הקשת שמחברת שמיים וארץ: ברכה שמגמלת ומגינה. אחרי הגשם, ההבטחה לחיים של שלווה."
+        },
+        "embracing-couple": {
+          "title": "הזוג בזרועות מורמות",
+          "description": "מחובקים, מאחור וזרועותיהם למעלה: הכרת תודה משותפת. הם לא מביטים זה בזה אלא לאותו כיוון."
+        },
+        "playing-children": {
+          "title": "הילדים הרוקדים",
+          "description": "שני ילדים משחקים בלי חיפזון: אושר שמתחדש בין הדורות. בית שלם רק כשיש בו שמחה להמשיך."
+        },
+        "home-valley": {
+          "title": "הבית והעמק",
+          "description": "בית בין עצים על גדת הנהר: הבית שמגן והאדמה שמזינה. שורשים, יציבות ושלוות השייכות למקום."
+        }
+      }
+    }
+  }
+}

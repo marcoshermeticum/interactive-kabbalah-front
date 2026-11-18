@@ -10,6 +10,7 @@ const ROOT = path.resolve(SCRIPT_DIR, '..');
 const TAROT_DIR = path.join(ROOT, 'src/data/tarot');
 const MESSAGES_DIR = path.join(ROOT, 'src/i18n/messages');
 const CATALOG_FILE = path.join(TAROT_DIR, 'majorArcana.ts');
+const MINOR_CATALOG_FILE = path.join(TAROT_DIR, 'minorArcana.ts');
 const DOC_FILE = path.join(ROOT, 'docs/tarot-major-arcana-regions.md');
 const CONTENT_DIR = path.join(ROOT, 'docs/tarot-content');
 const LOCALES = ['pt-BR', 'en-US', 'ja', 'he'];
@@ -43,8 +44,16 @@ const ROMAN = [
   '0', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
   'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI',
 ];
+// Minor arcana: slug = <rank>-of-<suit>, rank 1 (Ace) to 14 (King).
+const SUITS = ['wands', 'cups', 'swords', 'pentacles'];
+const RANKS = [
+  'ace', 'two', 'three', 'four', 'five', 'six', 'seven',
+  'eight', 'nine', 'ten', 'page', 'knight', 'queen', 'king',
+];
 const MIN_REGIONS = 5;
 const MAX_REGIONS = 8;
+const MINOR_MIN_REGIONS = 3;
+const MINOR_MAX_REGIONS = 6;
 const MAX_REGIONS_HARD = 12;
 const KEBAB = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -74,7 +83,9 @@ async function main() {
       );
     }
     const cards = contentCards();
-    const pending = pendingContentCards();
+    const pending = pendingContentCards().filter(
+      (item) => !args.suit || item.content.suit === args.suit
+    );
     if (!cards.length) {
       rawConfig = await promptConfig();
       if (!rawConfig) {
@@ -96,7 +107,7 @@ async function main() {
 // ─── CLI args ────────────────────────────────────────────────────────────────
 
 function parseArgs(argv) {
-  const args = { help: false, dryRun: false, config: null, fromDoc: null, card: null };
+  const args = { help: false, dryRun: false, config: null, fromDoc: null, card: null, suit: null };
 
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
@@ -109,6 +120,12 @@ function parseArgs(argv) {
     } else if (arg === '--card') {
       args.card = argv[i + 1];
       if (!args.card) throw new Error('--card exige o slug ou o número da carta.');
+      i += 1;
+    } else if (arg === '--suit') {
+      args.suit = argv[i + 1];
+      if (!SUITS.includes(args.suit)) {
+        throw new Error(`--suit exige um destes valores: ${SUITS.join(', ')}.`);
+      }
       i += 1;
     } else if (arg === '--from-doc') {
       args.fromDoc = argv[i + 1];
@@ -129,6 +146,8 @@ Cria o esqueleto de uma carta de Tarot interativa a partir de docs/tarot-content
 Uso:
   npm run tarot:new                    # menu das cartas pendentes
   npm run tarot:new -- --card the-star # cria direto pelo slug ou número
+  npm run tarot:new -- --card ace-of-wands   # arcano menor (sempre pelo slug)
+  npm run tarot:new -- --suit cups           # menu só com as cartas de um naipe
   npm run tarot:new -- --from-doc the-star
   npm run tarot:new -- --config caminho.json
   npm run tarot:new -- --dry-run
@@ -136,6 +155,8 @@ Uso:
 Flags:
   --card <slug|número>  Cria a carta usando docs/tarot-content/<slug>.json,
                         sem nenhum prompt de texto.
+  --suit <naipe>        Restringe o menu a um naipe dos arcanos menores
+                        (wands, cups, swords ou pentacles).
   --from-doc <slug>     Usa o conteúdo em docs/tarot-content quando existir;
                         senão importa do documento de regiões (traduções
                         viram placeholder em pt-BR).
@@ -151,8 +172,9 @@ Conteúdo multilíngue:
 O comando gera:
   • src/data/tarot/<slug>.ts com as regiões em caixas provisórias
   • bloco tarot.<camel> nos 4 arquivos de idioma
-  • import e entrada em cardData (majorArcana.ts)
-  • entrada no mosaico, se a carta ainda não estiver no catálogo
+  • import e entrada em cardData (majorArcana.ts) ou minorCardData (minorArcana.ts)
+  • entrada no mosaico, se a carta (arcano maior) ainda não estiver no catálogo
+    — os 56 arcanos menores já estão todos listados em minorArcana.ts
 
 A rota /[locale]/tarot/<slug> é dinâmica e passa a funcionar sozinha assim que
 o catálogo é atualizado — não há arquivo de rota para criar.
@@ -558,7 +580,23 @@ function contentCards() {
       }
       return { content, file, problems: contentProblems(content, file) };
     })
-    .sort((a, b) => (a.content.number ?? 99) - (b.content.number ?? 99));
+    .sort((a, b) => contentOrder(a.content) - contentOrder(b.content));
+}
+
+function isMinor(content) {
+  return content?.arcana === 'minor';
+}
+
+/** Majors by number (0-21), then minors by suit and rank. */
+function contentOrder(content) {
+  if (isMinor(content)) {
+    return 100 + SUITS.indexOf(content.suit) * 20 + (Number.isInteger(content.rank) ? content.rank : 0);
+  }
+  return content.number ?? 99;
+}
+
+function minorSlug(suit, rank) {
+  return `${RANKS[rank - 1]}-of-${suit}`;
 }
 
 function contentProblems(content, file) {
@@ -573,7 +611,15 @@ function contentProblems(content, file) {
   if (typeof content.slug !== 'string' || !KEBAB.test(content.slug)) {
     fail('"slug" precisa ser um texto em kebab-case.');
   }
-  if (!Number.isInteger(content.number) || content.number < 0 || content.number > 21) {
+  if (isMinor(content)) {
+    if (!SUITS.includes(content.suit)) fail(`"suit" precisa ser um de: ${SUITS.join(', ')}.`);
+    if (!Number.isInteger(content.rank) || content.rank < 1 || content.rank > 14) {
+      fail('"rank" precisa ser um inteiro entre 1 (Ás) e 14 (Rei).');
+    } else if (SUITS.includes(content.suit) && content.slug !== minorSlug(content.suit, content.rank)) {
+      fail(`"slug" deveria ser "${minorSlug(content.suit, content.rank)}" para este naipe e posição.`);
+    }
+    if (content.number !== undefined) fail('arcanos menores não usam "number": use "suit" e "rank".');
+  } else if (!Number.isInteger(content.number) || content.number < 0 || content.number > 21) {
     fail('"number" precisa ser um inteiro entre 0 e 21.');
   }
   if (typeof content.image !== 'string' || !content.image.trim()) {
@@ -641,8 +687,8 @@ function contentProblems(content, file) {
 
 function isImplemented(slug) {
   if (existsSync(path.join(TAROT_DIR, `${slug}.ts`))) return true;
-  const catalog = readFileSync(CATALOG_FILE, 'utf8');
-  return new RegExp(`['"]${escapeRegExp(slug)}['"]\\s*:`).test(catalog);
+  const key = new RegExp(`['"]${escapeRegExp(slug)}['"]\\s*:`);
+  return [CATALOG_FILE, MINOR_CATALOG_FILE].some((file) => key.test(readFileSync(file, 'utf8')));
 }
 
 function pendingContentCards() {
@@ -654,7 +700,8 @@ function pendingContentCards() {
 function describeContent(item) {
   const content = item.content;
   const name = content.locales?.['pt-BR']?.name || content.slug;
-  return `${ROMAN[content.number] || '?'} · ${name} — ${content.slug}`;
+  const label = isMinor(content) ? `${content.suit} ${content.rank}` : ROMAN[content.number] || '?';
+  return `${label} · ${name} — ${content.slug}`;
 }
 
 async function promptContentCard(pending) {
@@ -730,7 +777,9 @@ function configFromContent(content) {
   return {
     slug: content.slug,
     name: content.locales['en-US'].name.trim(),
-    number: content.number,
+    ...(isMinor(content)
+      ? { arcana: 'minor', suit: content.suit, rank: content.rank }
+      : { number: content.number }),
     image: content.image,
     locales,
   };
@@ -743,7 +792,7 @@ function contentCardBy(identifier) {
 
   if (/^\d+$/.test(value)) {
     const number = Number(value);
-    card = cards.find((item) => item.content.number === number);
+    card = cards.find((item) => !isMinor(item.content) && item.content.number === number);
     if (!card) {
       throw new Error(`Não encontrei uma carta com o número ${number} em docs/tarot-content.`);
     }
@@ -797,7 +846,22 @@ function buildPlan(raw) {
   const camel = toCamel(slug);
 
   const name = requireString(raw.name, 'name');
-  const number = requireInteger(raw.number, 'number', 0, 21);
+  const minor = raw.arcana === 'minor';
+  let number = null;
+  let suit = null;
+  let rank = null;
+  if (minor) {
+    suit = raw.suit;
+    if (!SUITS.includes(suit)) throw new Error(`"suit" precisa ser um de: ${SUITS.join(', ')}.`);
+    rank = requireInteger(raw.rank, 'rank', 1, 14);
+    if (slug !== minorSlug(suit, rank)) {
+      throw new Error(`O slug de ${suit} ${rank} deveria ser "${minorSlug(suit, rank)}".`);
+    }
+  } else {
+    number = requireInteger(raw.number, 'number', 0, 21);
+  }
+  const minRegions = minor ? MINOR_MIN_REGIONS : MIN_REGIONS;
+  const maxRegions = minor ? MINOR_MAX_REGIONS : MAX_REGIONS;
   const image = resolveImage(requireString(raw.image, 'image'));
   const size = imageSize(image.abs);
   const viewBox = {
@@ -856,11 +920,17 @@ function buildPlan(raw) {
     }
   }
 
-  const catalogRaw = readFileSync(CATALOG_FILE, 'utf8');
-  const entries = parseCatalog(catalogRaw);
-  const catalogEntry = entries.find((entry) => entry.slug === slug);
+  const catalogRaw = readFileSync(minor ? MINOR_CATALOG_FILE : CATALOG_FILE, 'utf8');
+  const entries = minor ? [] : parseCatalog(catalogRaw);
+  const catalogEntry = minor ? { slug } : entries.find((entry) => entry.slug === slug);
 
-  if (catalogEntry) {
+  if (minor) {
+    // All 56 minor arcana are generated from suit and rank in minorArcana.ts,
+    // so there is nothing to compare besides the expected i18n key.
+    if (camel !== toCamel(minorSlug(suit, rank))) {
+      throw new Error(`O id i18n esperado para "${slug}" é "${toCamel(minorSlug(suit, rank))}".`);
+    }
+  } else if (catalogEntry) {
     if (catalogEntry.i18nKey !== camel) {
       throw new Error(
         `O catálogo usa i18nKey "${catalogEntry.i18nKey}" para "${slug}", mas o esperado é "${camel}".`
@@ -871,7 +941,7 @@ function buildPlan(raw) {
         `O catálogo associa "${slug}" ao número ${catalogEntry.number}, mas você informou ${number}.`
       );
     }
-  } else {
+  } else if (!minor) {
     const sameNumber = entries.find((entry) => entry.number === number);
     if (sameNumber) {
       throw new Error(`O número ${number} já pertence a "${sameNumber.slug}" no catálogo.`);
@@ -885,9 +955,9 @@ function buildPlan(raw) {
   }));
 
   const warnings = [];
-  if (regions.length < MIN_REGIONS || regions.length > MAX_REGIONS) {
+  if (regions.length < minRegions || regions.length > maxRegions) {
     warnings.push(
-      `O guia recomenda de ${MIN_REGIONS} a ${MAX_REGIONS} regiões; esta carta terá ${regions.length}.`
+      `O guia recomenda de ${minRegions} a ${maxRegions} regiões; esta carta terá ${regions.length}.`
     );
   }
   if (raw.meta?.placeholders) {
@@ -895,7 +965,7 @@ function buildPlan(raw) {
       'en-US, ja e he estão com o texto de pt-BR como placeholder. Revise as traduções depois.'
     );
   }
-  if (catalogEntry && catalogEntry.image !== image.publicPath) {
+  if (!minor && catalogEntry && catalogEntry.image !== image.publicPath) {
     warnings.push(
       `O catálogo já apontava para "${catalogEntry.image}"; a imagem será atualizada para "${image.publicPath}".`
     );
@@ -905,14 +975,17 @@ function buildPlan(raw) {
     slug,
     camel,
     name,
+    minor,
+    suit,
+    rank,
     number,
-    roman: ROMAN[number],
+    roman: minor ? `${suit} ${rank}` : ROMAN[number],
     image,
     size,
     viewBox,
     regions,
     locales: raw.locales,
-    catalogEntry,
+    catalogEntry: minor ? { slug } : catalogEntry,
     warnings,
   };
 }
@@ -936,10 +1009,11 @@ function assertSlugAvailable(slug) {
     throw new Error(`O arquivo ${relative(dataFile)} já existe.`);
   }
 
-  const catalog = readFileSync(CATALOG_FILE, 'utf8');
   const cardDataKey = new RegExp(`['"]${escapeRegExp(slug)}['"]\\s*:`);
-  if (cardDataKey.test(catalog)) {
-    throw new Error(`A carta "${slug}" já está registrada em cardData.`);
+  for (const catalogFile of [CATALOG_FILE, MINOR_CATALOG_FILE]) {
+    if (cardDataKey.test(readFileSync(catalogFile, 'utf8'))) {
+      throw new Error(`A carta "${slug}" já está registrada em cardData (${relative(catalogFile)}).`);
+    }
   }
 }
 
@@ -1030,7 +1104,7 @@ function applyPlan(plan, dryRun) {
     return { file, content };
   });
 
-  const catalogFile = CATALOG_FILE;
+  const catalogFile = plan.minor ? MINOR_CATALOG_FILE : CATALOG_FILE;
   const catalogContent = updateCatalog(readFileSync(catalogFile, 'utf8'), plan);
   assertCatalogUpdate(catalogContent, plan);
 
@@ -1055,8 +1129,8 @@ function applyPlan(plan, dryRun) {
   console.log('\n✓ Carta criada:');
   console.log(`  + ${relative(dataPath)}`);
   console.log(`  ~ ${LOCALES.map((locale) => `src/i18n/messages/${locale}.json`).join(', ')}`);
-  console.log(`  ~ ${relative(catalogFile)} (import + cardData)`);
-  if (!plan.catalogEntry) console.log(`  ~ ${relative(catalogFile)} (nova entrada no mosaico)`);
+  console.log(`  ~ ${relative(catalogFile)} (import + ${plan.minor ? 'minorCardData' : 'cardData'})`);
+  if (!plan.minor && !plan.catalogEntry) console.log(`  ~ ${relative(catalogFile)} (nova entrada no mosaico)`);
   console.log(`  ✓ rota pronta: /pt-BR/tarot/${plan.slug} (página dinâmica, nada a registrar)`);
   console.log(`  ✓ sitemap: ${sitemapPaths(plan.slug).join(', ')}`);
   console.log('    (src/app/sitemap.ts lista as cartas já criadas — nada a editar)');
@@ -1080,7 +1154,11 @@ function sitemapPaths(slug) {
 function printSummary(plan) {
   const ptName = plan.locales['pt-BR'].name;
   console.log('\nResumo da carta:');
-  console.log(`  ${ptName} (${plan.name}) — ${plan.roman} (${plan.number})`);
+  console.log(
+    plan.minor
+      ? `  ${ptName} (${plan.name}) — arcano menor: ${plan.suit}, posição ${plan.rank}`
+      : `  ${ptName} (${plan.name}) — ${plan.roman} (${plan.number})`
+  );
   console.log(`  slug: ${plan.slug} · id i18n: ${plan.camel}`);
   console.log(
     `  imagem: ${plan.image.publicPath} (${plan.size.width}×${plan.size.height} → viewBox 100×${plan.viewBox.height})`
@@ -1108,7 +1186,7 @@ function buildDataFile(plan) {
   return `import type { TarotCard } from './types';
 
 /**
- * ${plan.name} (${plan.roman}) — Rider-Waite major arcana.
+ * ${plan.name} (${plan.roman}) — Rider-Waite ${plan.minor ? 'minor' : 'major'} arcana.
  *
  * viewBox ${plan.viewBox.width} x ${plan.viewBox.height} to match the
  * ${plan.size.width}×${plan.size.height} artwork aspect ratio.
@@ -1117,7 +1195,9 @@ function buildDataFile(plan) {
  */
 export const ${plan.camel}: TarotCard = {
   id: ${quote(plan.camel)},
-  number: ${plan.number},
+${plan.minor ? `  arcana: 'minor',
+  suit: ${quote(plan.suit)},
+  rank: ${plan.rank},` : `  number: ${plan.number},`}
   name: ${quote(plan.name)},
   image: ${quote(plan.image.publicPath)},
   viewBox: { width: ${plan.viewBox.width}, height: ${plan.viewBox.height} },
@@ -1184,6 +1264,10 @@ function updateCatalog(raw, plan) {
   const eol = raw.includes('\r\n') ? '\r\n' : '\n';
   let next = raw;
 
+  // Minor arcana are already listed (generated from suit and rank): only the
+  // import and the minorCardData entry are needed.
+  if (plan.minor) return addCardData(next, plan, 'export const minorCardData: Record<string, TarotCard> = {', eol);
+
   if (plan.catalogEntry) {
     const entryLine = new RegExp(
       `^(\\s*\\{ slug: '${escapeRegExp(plan.slug)}'[^\\r\\n]*?image: ')[^']*('.*)$`,
@@ -1204,6 +1288,13 @@ function updateCatalog(raw, plan) {
     next = `${next.slice(0, arrayClose)}${eol}${entryLine}${next.slice(arrayClose)}`;
   }
 
+  return addCardData(next, plan, 'const cardData: Record<string, TarotCard> = {', eol);
+}
+
+/** Adds the import of a card data file and its entry to a card-data object. */
+function addCardData(raw, plan, objectStart, eol) {
+  let next = raw;
+
   if (!next.includes(`from './${plan.slug}'`)) {
     const importPattern = /^import [^\r\n]+ from '\.\/[^']+';/gm;
     let match;
@@ -1216,8 +1307,8 @@ function updateCatalog(raw, plan) {
 
   const cardDataKey = new RegExp(`['"]${escapeRegExp(plan.slug)}['"]\\s*:`);
   if (!cardDataKey.test(next)) {
-    const cardDataStart = next.indexOf('const cardData: Record<string, TarotCard> = {');
-    if (cardDataStart === -1) throw new Error('Objeto cardData não encontrado.');
+    const cardDataStart = next.indexOf(objectStart);
+    if (cardDataStart === -1) throw new Error(`Objeto não encontrado: ${objectStart}`);
     const cardDataClose = next.indexOf(`${eol}};`, cardDataStart);
     if (cardDataClose === -1) throw new Error('Fechamento do cardData não encontrado.');
 
@@ -1234,7 +1325,7 @@ function assertCatalogUpdate(content, plan) {
   if (!content.includes(`'${plan.slug}': ${plan.camel}`)) {
     throw new Error('Falha ao adicionar a entrada em cardData.');
   }
-  if (!new RegExp(`slug: '${escapeRegExp(plan.slug)}'`).test(content)) {
+  if (!plan.minor && !new RegExp(`slug: '${escapeRegExp(plan.slug)}'`).test(content)) {
     throw new Error('Falha ao garantir a entrada no array majorArcana.');
   }
 }

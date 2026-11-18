@@ -1,0 +1,115 @@
+{
+  "slug": "six-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 6,
+  "image": "/tarot/minor/six-of-swords.jpg",
+  "regions": [
+    {
+      "id": "ferryman",
+      "icon": "🛶"
+    },
+    {
+      "id": "hooded-passengers",
+      "icon": "🧕"
+    },
+    {
+      "id": "six-swords-hull",
+      "icon": "🗡️"
+    },
+    {
+      "id": "two-waters",
+      "icon": "🌊"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Seis de Espadas",
+      "intro": "Um barqueiro conduz uma mulher e uma criança encapuzadas por águas agitadas rumo a águas calmas, com seis espadas no casco. A travessia da crise: distância, transição e recuperação gradual.",
+      "regions": {
+        "ferryman": {
+          "title": "O Barqueiro",
+          "description": "De costas, empurra a embarcação com uma vara: alguém conduz a travessia sem exigir nada. Aceitar ajuda também é parte da recuperação."
+        },
+        "hooded-passengers": {
+          "title": "Os Passageiros Encapuzados",
+          "description": "A mulher e a criança seguem em silêncio, cobertas: a dor ainda é discreta e carregada com dignidade. Partir também é proteger quem se ama."
+        },
+        "six-swords-hull": {
+          "title": "As Seis Espadas",
+          "description": "Seis lâminas fincadas no barco acompanham a viagem: as lembranças e os pensamentos que se carregam. Deixar o lugar não apaga o que se viveu."
+        },
+        "two-waters": {
+          "title": "As Duas Águas",
+          "description": "A água à esquerda é turbulenta, à direita, calma: o antes e o depois. A mudança de estado é gradual e já está em curso."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Six of Swords",
+      "intro": "A ferryman poles a hooded woman and child across rough water toward calm, with six swords in the hull. Crossing out of crisis: distance, transition and gradual recovery.",
+      "regions": {
+        "ferryman": {
+          "title": "The Ferryman",
+          "description": "Seen from behind, he pushes the boat with a pole: someone steers the crossing without demanding anything. Accepting help is part of recovery."
+        },
+        "hooded-passengers": {
+          "title": "The Hooded Passengers",
+          "description": "The woman and child travel in silence, covered: the pain is still private and carried with dignity. Leaving is also a way to protect those you love."
+        },
+        "six-swords-hull": {
+          "title": "The Six Swords",
+          "description": "Six blades stuck in the boat accompany the journey: memories and thoughts we carry. Leaving a place does not erase what we lived."
+        },
+        "two-waters": {
+          "title": "The Two Waters",
+          "description": "The water on the left is turbulent, on the right calm: the before and the after. The change of state is gradual and already under way."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの6",
+      "intro": "渡し守が、頭巾をかぶった女性と子どもを乗せ、荒れた水から静かな水へ舟を進めます。舟には六本の剣が立っています。危機を渡ること。距離、移行、少しずつの回復です。",
+      "regions": {
+        "ferryman": {
+          "title": "渡し守",
+          "description": "後ろ姿で竿を使って舟を進めます。何も求めずに渡りを導いてくれる人がいます。助けを受け入れることも回復の一部です。"
+        },
+        "hooded-passengers": {
+          "title": "頭巾の乗客",
+          "description": "女性と子どもは覆いをかぶり、黙って進みます。痛みはまだ人目に触れず、品位をもって運ばれています。去ることは、愛する者を守る方法でもあります。"
+        },
+        "six-swords-hull": {
+          "title": "六本の剣",
+          "description": "舟に突き立つ六本の刃が旅に付き添います。私たちが運ぶ記憶と考えです。場所を離れても、経験したことは消えません。"
+        },
+        "two-waters": {
+          "title": "二つの水面",
+          "description": "左の水は荒れ、右は凪いでいます。前と後です。状態の変化は少しずつ、すでに進んでいます。"
+        }
+      }
+    },
+    "he": {
+      "name": "שש של חרבות",
+      "intro": "סירן מוביל אישה וילד עטויי ברדס דרך מים סוערים אל מים שקטים, ושש חרבות בגוף הסירה. חציית משבר: ריחוק, מעבר והחלמה הדרגתית.",
+      "regions": {
+        "ferryman": {
+          "title": "הסירן",
+          "description": "מאחור, הוא דוחף את הסירה במוט: מישהו מוביל את החצייה בלי לדרוש דבר. קבלת עזרה היא חלק מההחלמה."
+        },
+        "hooded-passengers": {
+          "title": "הנוסעים עטויי הברדס",
+          "description": "האישה והילד נוסעים בשתיקה, מכוסים: הכאב עדיין פרטי ונישא בכבוד. לעזוב היא גם דרך להגן על מי שאוהבים."
+        },
+        "six-swords-hull": {
+          "title": "שש החרבות",
+          "description": "שישה להבים תקועים בסירה מלווים את המסע: זיכרונות ומחשבות שנושאים. לעזוב מקום לא מוחק את מה שחוויתם."
+        },
+        "two-waters": {
+          "title": "שני המים",
+          "description": "המים משמאל סוערים ומימין שקטים: לפני ואחרי. שינוי המצב הדרגתי וכבר מתרחש."
+        }
+      }
+    }
+  }
+}

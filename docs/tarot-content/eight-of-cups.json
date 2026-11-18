@@ -1,0 +1,115 @@
+{
+  "slug": "eight-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 8,
+  "image": "/tarot/minor/eight-of-cups.jpg",
+  "regions": [
+    {
+      "id": "departing-man",
+      "icon": "🚶"
+    },
+    {
+      "id": "stacked-cups",
+      "icon": "🥃"
+    },
+    {
+      "id": "eclipsed-moon",
+      "icon": "🌘"
+    },
+    {
+      "id": "mountains-river",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Oito de Copas",
+      "intro": "Sob uma lua eclipsada, um homem de manto vermelho deixa para trás oito taças arrumadas e sobe em direção às montanhas. Partir do que não satisfaz mais, em busca de um sentido maior.",
+      "regions": {
+        "departing-man": {
+          "title": "O Caminhante",
+          "description": "Ele parte de cajado na mão, sem olhar para trás: a decisão silenciosa de quem sabe que ficar seria trair a própria necessidade."
+        },
+        "stacked-cups": {
+          "title": "As Oito Taças",
+          "description": "Arrumadas, completas, mas com um vão no meio: tudo parece em ordem, e ainda assim falta o essencial. O que foi construído não preenche."
+        },
+        "eclipsed-moon": {
+          "title": "A Lua Eclipsada",
+          "description": "A lua com rosto, em parte coberta pelo sol: a intuição e a razão se encontram. O ciclo emocional se encerra e outro está para começar."
+        },
+        "mountains-river": {
+          "title": "As Montanhas e o Rio",
+          "description": "O caminho cruza água e sobe a rocha: a busca espiritual exige travessias e esforço. O destino ainda está fora de vista."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Eight of Cups",
+      "intro": "Under an eclipsed moon, a man in a red cloak leaves eight neatly stacked cups behind and climbs toward the mountains. Walking away from what no longer satisfies, in search of deeper meaning.",
+      "regions": {
+        "departing-man": {
+          "title": "The Walker",
+          "description": "He leaves staff in hand without looking back: the silent decision of one who knows that staying would betray his own need."
+        },
+        "stacked-cups": {
+          "title": "The Eight Cups",
+          "description": "Arranged, complete, yet with a gap in the middle: everything seems in order and yet the essential is missing. What was built does not fulfill."
+        },
+        "eclipsed-moon": {
+          "title": "The Eclipsed Moon",
+          "description": "The moon with a face, partly covered by the sun: intuition and reason meet. The emotional cycle closes and another is about to begin."
+        },
+        "mountains-river": {
+          "title": "The Mountains and the River",
+          "description": "The path crosses water and climbs rock: the spiritual search demands crossings and effort. The destination is still out of sight."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの8",
+      "intro": "日食の月の下、赤いマントの男は整然と積まれた八つの杯を後にして山へ登ります。もはや満たされないものを離れ、より深い意味を求める旅立ちです。",
+      "regions": {
+        "departing-man": {
+          "title": "旅立つ男",
+          "description": "彼は杖を手に、振り返らずに去ります。留まることは自分の必要を裏切ることだと知る者の、静かな決断です。"
+        },
+        "stacked-cups": {
+          "title": "八つの杯",
+          "description": "整い、揃っているのに、真ん中に隙間があります。すべてが整って見えて、肝心なものが欠けています。築いたものは満たしてくれません。"
+        },
+        "eclipsed-moon": {
+          "title": "日食の月",
+          "description": "顔を持つ月が、太陽に一部覆われています。直感と理性が出会います。感情の周期が閉じ、次の周期が始まろうとしています。"
+        },
+        "mountains-river": {
+          "title": "山と川",
+          "description": "道は水を越え、岩を登ります。精神の探求には渡渉と努力が要ります。目的地はまだ見えていません。"
+        }
+      }
+    },
+    "he": {
+      "name": "שמונה של גביעים",
+      "intro": "תחת ירח בליקוי, אדם בגלימה אדומה משאיר מאחוריו שמונה גביעים מסודרים ועולה לעבר ההרים. עוזב את מה שכבר אינו מספק, בחיפוש אחר משמעות עמוקה יותר.",
+      "regions": {
+        "departing-man": {
+          "title": "ההולך",
+          "description": "הוא יוצא עם מקל בידו בלי להביט לאחור: ההחלטה השקטה של מי שיודע שהישארות תבגוד בצורך שלו."
+        },
+        "stacked-cups": {
+          "title": "שמונת הגביעים",
+          "description": "מסודרים, שלמים, אך עם פער באמצע: הכול נראה בסדר ובכל זאת חסר העיקר. מה שנבנה אינו ממלא."
+        },
+        "eclipsed-moon": {
+          "title": "הירח בליקוי",
+          "description": "ירח עם פנים, מכוסה חלקית בשמש: האינטואיציה והשכל נפגשים. מחזור רגשי נסגר ואחר עומד להתחיל."
+        },
+        "mountains-river": {
+          "title": "ההרים והנהר",
+          "description": "הדרך חוצה מים ועולה בסלע: החיפוש הרוחני דורש מעברים ומאמץ. היעד עדיין מחוץ לטווח הראייה."
+        }
+      }
+    }
+  }
+}

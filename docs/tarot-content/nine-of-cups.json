@@ -1,0 +1,115 @@
+{
+  "slug": "nine-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 9,
+  "image": "/tarot/minor/nine-of-cups.jpg",
+  "regions": [
+    {
+      "id": "content-man",
+      "icon": "😌"
+    },
+    {
+      "id": "arc-of-cups",
+      "icon": "🏆"
+    },
+    {
+      "id": "blue-drape",
+      "icon": "🟦"
+    },
+    {
+      "id": "golden-backdrop",
+      "icon": "🌟"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Nove de Copas",
+      "intro": "Um homem satisfeito, de braços cruzados, senta diante de nove taças dispostas em arco. A carta dos desejos realizados: contentamento, prazer merecido e a alegria de poder desfrutar.",
+      "regions": {
+        "content-man": {
+          "title": "O Homem Satisfeito",
+          "description": "Barriga à frente e sorriso discreto: ele reconhece o que conquistou. Há um prazer legítimo em simplesmente aproveitar o que se construiu."
+        },
+        "arc-of-cups": {
+          "title": "O Arco de Taças",
+          "description": "As nove taças alinhadas na prateleira, todas à vista: um desejo cumprido é exibido com orgulho, como símbolo do que se alcançou."
+        },
+        "blue-drape": {
+          "title": "O Pano Azul",
+          "description": "Um tecido azul cobre a mesa e o fundo: conforto, proteção e calma emocional. Tudo está no lugar e nada precisa ser escondido."
+        },
+        "golden-backdrop": {
+          "title": "O Fundo Dourado",
+          "description": "Um fundo amarelo intenso: a luz do otimismo e da recompensa. A vida mostra sua face mais generosa a quem soube esperar."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Nine of Cups",
+      "intro": "A satisfied man with crossed arms sits before nine cups arranged in an arc. The wish card: contentment, well-earned pleasure and the joy of being able to enjoy.",
+      "regions": {
+        "content-man": {
+          "title": "The Satisfied Man",
+          "description": "Round belly and a quiet smile: he acknowledges what he has achieved. There is legitimate pleasure in simply enjoying what you have built."
+        },
+        "arc-of-cups": {
+          "title": "The Arc of Cups",
+          "description": "Nine cups lined up on the shelf, all in view: a fulfilled wish displayed with pride, as a symbol of what was reached."
+        },
+        "blue-drape": {
+          "title": "The Blue Drape",
+          "description": "Blue cloth covers the table and background: comfort, protection and emotional calm. Everything is in its place and nothing needs hiding."
+        },
+        "golden-backdrop": {
+          "title": "The Golden Backdrop",
+          "description": "A bright yellow background: the light of optimism and reward. Life shows its most generous face to those who knew how to wait."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの9",
+      "intro": "満足げに腕を組んだ男が、弧を描いて並ぶ九つの杯の前に座っています。願いが叶う札。満足、当然の楽しみ、味わえる喜びです。",
+      "regions": {
+        "content-man": {
+          "title": "満足した男",
+          "description": "張り出したお腹と控えめな笑み。彼は自分が成し遂げたことを認めています。築いたものをただ味わうことには、正当な喜びがあります。"
+        },
+        "arc-of-cups": {
+          "title": "杯の弧",
+          "description": "棚に並ぶ九つの杯が、すべて見える形で並んでいます。叶った望みが誇りをもって飾られ、到達したものの象徴となっています。"
+        },
+        "blue-drape": {
+          "title": "青い布",
+          "description": "青い布がテーブルと背景を覆っています。安らぎ、保護、感情の落ち着き。すべてが定位置にあり、隠すものはありません。"
+        },
+        "golden-backdrop": {
+          "title": "黄金の背景",
+          "description": "鮮やかな黄色の背景。楽観と報いの光です。待つことを知っていた者に、人生は最も寛大な顔を見せます。"
+        }
+      }
+    },
+    "he": {
+      "name": "תשע של גביעים",
+      "intro": "אדם מרוצה בזרועות שלובות יושב מול תשעה גביעים המסודרים בקשת. קלף המשאלות שהתגשמו: סיפוק, הנאה ראויה והשמחה שבאפשרות ליהנות.",
+      "regions": {
+        "content-man": {
+          "title": "האיש המרוצה",
+          "description": "בטן בולטת וחיוך מאופק: הוא מכיר במה שהשיג. יש הנאה לגיטימית בלהנות פשוט ממה שבנית."
+        },
+        "arc-of-cups": {
+          "title": "קשת הגביעים",
+          "description": "תשעה גביעים בשורה על המדף, כולם גלויים: משאלה שהתגשמה מוצגת בגאווה כסמל למה שהושג."
+        },
+        "blue-drape": {
+          "title": "הבד הכחול",
+          "description": "בד כחול מכסה את השולחן והרקע: נוחות, הגנה ושלווה רגשית. הכול במקומו ואין מה להסתיר."
+        },
+        "golden-backdrop": {
+          "title": "הרקע הזהוב",
+          "description": "רקע צהוב עז: אור האופטימיות והגמול. החיים מראים את פניהם הנדיבות ביותר למי שידע להמתין."
+        }
+      }
+    }
+  }
+}

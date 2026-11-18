@@ -1,0 +1,115 @@
+{
+  "slug": "six-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 6,
+  "image": "/tarot/minor/six-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "merchant-scales",
+      "icon": "⚖️"
+    },
+    {
+      "id": "coins-given",
+      "icon": "🪙"
+    },
+    {
+      "id": "kneeling-beggars",
+      "icon": "🙏"
+    },
+    {
+      "id": "six-pentacles",
+      "icon": "🪙"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Seis de Ouros",
+      "intro": "Um mercador de manto vermelho pesa moedas numa balança e as dá a dois mendigos que se ajoelham. Generosidade, reciprocidade e a justiça de dar e receber na medida certa.",
+      "regions": {
+        "merchant-scales": {
+          "title": "A Balança",
+          "description": "Medir antes de dar: a generosidade consciente avalia o que cada um precisa. A justiça não é igualar tudo, é dar o que cabe."
+        },
+        "coins-given": {
+          "title": "As Moedas Dadas",
+          "description": "Uma moeda passa da mão do mercador à do necessitado: o fluxo que mantém a riqueza viva. O que se compartilha volta de outras formas."
+        },
+        "kneeling-beggars": {
+          "title": "Os Pedintes Ajoelhados",
+          "description": "Dois à espera de ajuda, com gratidão e necessidade: a posição de quem recebe. Todos, em algum momento, ocupamos um dos dois lados."
+        },
+        "six-pentacles": {
+          "title": "Os Seis Pentáculos",
+          "description": "Seis moedas pairam acima: os recursos disponíveis, que dependem da distribuição. A abundância só cumpre sua função quando circula."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Six of Pentacles",
+      "intro": "A merchant in a red robe weighs coins on a scale and gives them to two kneeling beggars. Generosity, reciprocity and the fairness of giving and receiving in the right measure.",
+      "regions": {
+        "merchant-scales": {
+          "title": "The Scales",
+          "description": "Measuring before giving: conscious generosity assesses what each one needs. Justice is not making everything equal but giving what fits."
+        },
+        "coins-given": {
+          "title": "The Coins Given",
+          "description": "A coin passes from the merchant's hand to the needy one: the flow that keeps wealth alive. What is shared returns in other forms."
+        },
+        "kneeling-beggars": {
+          "title": "The Kneeling Beggars",
+          "description": "Two awaiting help, with gratitude and need: the position of the one who receives. At some moment, each of us takes one of the two sides."
+        },
+        "six-pentacles": {
+          "title": "The Six Pentacles",
+          "description": "Six coins hover above: available resources, which depend on distribution. Abundance fulfills its function only when it circulates."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの6",
+      "intro": "赤い衣の商人が、秤で硬貨を量り、ひざまずく二人の物乞いに与えます。寛大さ、互恵、そして適切な量で与え受け取る公正さです。",
+      "regions": {
+        "merchant-scales": {
+          "title": "秤",
+          "description": "与える前に量ります。意識された寛大さは、それぞれが何を必要とするかを見極めます。公正とはすべてを同じにすることではなく、ふさわしいものを与えることです。"
+        },
+        "coins-given": {
+          "title": "与えられる硬貨",
+          "description": "硬貨が商人の手から困っている人の手へ渡ります。富を生き生きと保つ流れです。分かち合ったものは、別の形で戻ってきます。"
+        },
+        "kneeling-beggars": {
+          "title": "ひざまずく物乞い",
+          "description": "感謝と必要を抱えて助けを待つ二人。受け取る側の立場です。誰もが、いつかどちらかの側に立ちます。"
+        },
+        "six-pentacles": {
+          "title": "六つのペンタクル",
+          "description": "上に浮かぶ六枚の硬貨。分配に左右される、利用可能な資源です。豊かさは、巡って初めてその役割を果たします。"
+        }
+      }
+    },
+    "he": {
+      "name": "שש של מטבעות",
+      "intro": "סוחר בגלימה אדומה שוקל מטבעות במאזניים ונותן אותם לשני קבצנים כורעים. נדיבות, גומלין והצדק שבנתינה ובקבלה במידה הנכונה.",
+      "regions": {
+        "merchant-scales": {
+          "title": "המאזניים",
+          "description": "למדוד לפני שנותנים: נדיבות מודעת בוחנת מה כל אחד צריך. צדק אינו להשוות הכול אלא לתת את הראוי."
+        },
+        "coins-given": {
+          "title": "המטבעות הניתנים",
+          "description": "מטבע עובר מידי הסוחר לידי הנזקק: הזרימה ששומרת על העושר חי. מה שחולקים חוזר בצורות אחרות."
+        },
+        "kneeling-beggars": {
+          "title": "הקבצנים הכורעים",
+          "description": "שניים ממתינים לעזרה, בהכרת תודה ובצורך: עמדתו של מי שמקבל. כולנו, ברגע כלשהו, תופסים אחד משני הצדדים."
+        },
+        "six-pentacles": {
+          "title": "ששת המטבעות",
+          "description": "שישה מטבעות מרחפים למעלה: המשאבים הזמינים, שתלויים בחלוקה. השפע ממלא את תפקידו רק כשהוא מסתובב."
+        }
+      }
+    }
+  }
+}

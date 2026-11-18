@@ -1,0 +1,115 @@
+{
+  "slug": "two-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 2,
+  "image": "/tarot/minor/two-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "juggled-pentacles",
+      "icon": "🤹"
+    },
+    {
+      "id": "infinity-ribbon",
+      "icon": "♾️"
+    },
+    {
+      "id": "ships-waves",
+      "icon": "🚢"
+    },
+    {
+      "id": "tall-hat",
+      "icon": "🎩"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dois de Ouros",
+      "intro": "Um malabarista de chapéu alto equilibra dois pentáculos presos por uma faixa em oito, entre ondas grandes. Adaptação, flexibilidade e a arte de manter várias frentes sem perder o ritmo.",
+      "regions": {
+        "juggled-pentacles": {
+          "title": "Os Dois Pentáculos",
+          "description": "Um sobe enquanto o outro desce: recursos que se alternam entre ganho e gasto. A atenção contínua evita que algum caia."
+        },
+        "infinity-ribbon": {
+          "title": "A Faixa do Infinito",
+          "description": "A fita desenha o lemniscata: movimento sem fim, ciclo contínuo de dar e receber. O equilíbrio é um fluxo, não um estado fixo."
+        },
+        "ships-waves": {
+          "title": "Os Navios nas Ondas",
+          "description": "Duas embarcações sobem e descem em ondas altas: as flutuações do mercado e da vida. Quem sabe dançar com a oscilação não naufraga."
+        },
+        "tall-hat": {
+          "title": "O Chapéu Alto",
+          "description": "Um chapéu vermelho, alto e leve: humor e ligeireza diante da instabilidade. Levar a sério o trabalho, mas não a si mesmo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Two of Pentacles",
+      "intro": "A juggler in a tall hat balances two pentacles bound by a figure-eight ribbon amid big waves. Adaptation, flexibility and the art of keeping several fronts going without losing rhythm.",
+      "regions": {
+        "juggled-pentacles": {
+          "title": "The Two Pentacles",
+          "description": "One rises while the other falls: resources alternating between gain and spending. Continuous attention keeps either from dropping."
+        },
+        "infinity-ribbon": {
+          "title": "The Infinity Ribbon",
+          "description": "The ribbon draws the lemniscate: endless motion, a continuous cycle of giving and receiving. Balance is a flow, not a fixed state."
+        },
+        "ships-waves": {
+          "title": "The Ships on the Waves",
+          "description": "Two ships rise and fall on high waves: the fluctuations of markets and of life. Whoever can dance with the swell does not sink."
+        },
+        "tall-hat": {
+          "title": "The Tall Hat",
+          "description": "A tall, light red hat: humor and lightness amid instability. Taking the work seriously, but not yourself."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの2",
+      "intro": "背の高い帽子をかぶった曲芸師が、大きな波の間で、8の字のリボンで結ばれた二つのペンタクルを操っています。適応、柔軟さ、いくつもの課題をリズムを崩さず保つ技です。",
+      "regions": {
+        "juggled-pentacles": {
+          "title": "二つのペンタクル",
+          "description": "一つが上がれば、もう一つは下がります。収入と支出を行き来する資源です。絶え間ない注意が、どちらも落とさせません。"
+        },
+        "infinity-ribbon": {
+          "title": "無限のリボン",
+          "description": "リボンは無限大の形を描きます。終わりのない動き、与え受け取る連続した循環です。均衡は固定された状態ではなく流れです。"
+        },
+        "ships-waves": {
+          "title": "波間の船",
+          "description": "二隻の船が高い波に上下します。市場や人生の変動です。うねりと共に踊れる者は沈みません。"
+        },
+        "tall-hat": {
+          "title": "背の高い帽子",
+          "description": "背が高く軽やかな赤い帽子。不安定さの中のユーモアと軽やかさです。仕事は真剣に、自分自身は深刻に捉えすぎない姿勢です。"
+        }
+      }
+    },
+    "he": {
+      "name": "שתיים של מטבעות",
+      "intro": "ליצן מיומן בכובע גבוה מאזן שני מטבעות הקשורים בסרט בצורת שמונה, בין גלים גדולים. הסתגלות, גמישות ואמנות ההחזקה של כמה חזיתות בלי לאבד קצב.",
+      "regions": {
+        "juggled-pentacles": {
+          "title": "שני המטבעות",
+          "description": "אחד עולה בעוד השני יורד: משאבים שמתחלפים בין רווח להוצאה. קשב רציף מונע מאחד מהם ליפול."
+        },
+        "infinity-ribbon": {
+          "title": "סרט האינסוף",
+          "description": "הסרט משרטט את סימן האינסוף: תנועה אינסופית, מחזור מתמשך של נתינה וקבלה. איזון הוא זרימה ולא מצב קבוע."
+        },
+        "ships-waves": {
+          "title": "הספינות בגלים",
+          "description": "שתי ספינות עולות ויורדות בגלים גבוהים: תנודות השוק והחיים. מי שיודע לרקוד עם ההתנדנדות לא טובע."
+        },
+        "tall-hat": {
+          "title": "הכובע הגבוה",
+          "description": "כובע אדום, גבוה וקל: הומור וקלילות מול חוסר היציבות. לקחת ברצינות את העבודה אך לא את עצמך."
+        }
+      }
+    }
+  }
+}

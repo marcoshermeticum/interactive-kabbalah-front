@@ -1,0 +1,115 @@
+{
+  "slug": "eight-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 8,
+  "image": "/tarot/minor/eight-of-wands.jpg",
+  "regions": [
+    {
+      "id": "eight-wands",
+      "icon": "🪄"
+    },
+    {
+      "id": "open-sky",
+      "icon": "☁️"
+    },
+    {
+      "id": "river",
+      "icon": "🏞️"
+    },
+    {
+      "id": "green-hills",
+      "icon": "🌿"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Oito de Paus",
+      "intro": "Oito cajados cortam o céu em voo veloz rumo ao chão, sem nenhuma figura humana. Rapidez, mensagens e acontecimentos que chegam de uma vez, com a energia de quem não pode parar.",
+      "regions": {
+        "eight-wands": {
+          "title": "Os Oito Cajados",
+          "description": "Paralelos e em movimento, os bastões avançam todos na mesma direção: ações alinhadas que ganham velocidade e chegam ao destino com força."
+        },
+        "open-sky": {
+          "title": "O Céu Aberto",
+          "description": "Um céu azul e limpo, sem nuvens a bloquear: nada atrapalha a passagem. É a fase em que os caminhos se abrem e os obstáculos recuam."
+        },
+        "river": {
+          "title": "O Rio",
+          "description": "Um curso de água corre pela paisagem na mesma direção dos cajados: o fluxo natural das coisas, quando se está em sintonia com ele, acelera tudo."
+        },
+        "green-hills": {
+          "title": "As Colinas Verdes",
+          "description": "Terra fértil e uma casa discreta ao fundo: o ponto de chegada é acolhedor. A pressa leva a algo concreto, com raízes e lugar para pousar."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Eight of Wands",
+      "intro": "Eight wands cut across the sky in swift flight toward the ground, with no human figure in sight. Speed, messages and events arriving all at once, with the momentum of something that cannot stop.",
+      "regions": {
+        "eight-wands": {
+          "title": "The Eight Wands",
+          "description": "Parallel and moving, the staves all advance in the same direction: aligned actions that gain speed and arrive with force."
+        },
+        "open-sky": {
+          "title": "The Open Sky",
+          "description": "A clear blue sky with no clouds to block the way: nothing hinders the passage. It is the phase when paths open and obstacles recede."
+        },
+        "river": {
+          "title": "The River",
+          "description": "A watercourse runs through the landscape in the same direction as the wands: the natural flow of things, when you are in tune with it, speeds everything up."
+        },
+        "green-hills": {
+          "title": "The Green Hills",
+          "description": "Fertile land and a modest house in the distance: the arrival point is welcoming. The haste leads somewhere concrete, with roots and a place to land."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの8",
+      "intro": "八本の杖が、人影のないまま空を切り、地上へ向かって素早く飛んでいきます。スピード、知らせ、一度に訪れる出来事。止まれない勢いです。",
+      "regions": {
+        "eight-wands": {
+          "title": "八本の杖",
+          "description": "平行に動く杖は、すべて同じ方向へ進みます。足並みの揃った行動が速度を増し、力強く目的地へ届きます。"
+        },
+        "open-sky": {
+          "title": "開けた空",
+          "description": "雲ひとつない青空。行く手を阻むものはありません。道が開け、障害が退いていく時期です。"
+        },
+        "river": {
+          "title": "川",
+          "description": "川が杖と同じ方向に風景を流れていきます。物事の自然な流れに調和すると、すべてが加速します。"
+        },
+        "green-hills": {
+          "title": "緑の丘",
+          "description": "実り豊かな大地と遠くの小さな家。到着点は温かく迎えてくれます。急ぎは、根を張り降り立てる確かな場所へ通じています。"
+        }
+      }
+    },
+    "he": {
+      "name": "שמונה של מטות",
+      "intro": "שמונה מטות חותכים את השמיים בטיסה מהירה אל הקרקע, בלי דמות אנושית. מהירות, הודעות ואירועים שמגיעים בבת אחת, בתנופה שאי אפשר לעצור.",
+      "regions": {
+        "eight-wands": {
+          "title": "שמונת המטות",
+          "description": "מקבילים ובתנועה, המטות מתקדמים כולם לאותו כיוון: פעולות מתואמות שצוברות מהירות ומגיעות ליעד בעוצמה."
+        },
+        "open-sky": {
+          "title": "השמיים הפתוחים",
+          "description": "שמיים כחולים וצלולים בלי עננים שחוסמים: דבר לא מפריע למעבר. זה השלב שבו דרכים נפתחות ומכשולים נסוגים."
+        },
+        "river": {
+          "title": "הנהר",
+          "description": "נחל זורם בנוף באותו כיוון של המטות: הזרימה הטבעית של הדברים, כשמתיישרים איתה, מאיצה הכול."
+        },
+        "green-hills": {
+          "title": "הגבעות הירוקות",
+          "description": "אדמה פורייה ובית צנוע ברקע: נקודת ההגעה מזמינה. החיפזון מוביל למשהו מוחשי, עם שורשים ומקום לנחות בו."
+        }
+      }
+    }
+  }
+}

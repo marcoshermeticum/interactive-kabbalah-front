@@ -1,0 +1,115 @@
+{
+  "slug": "ace-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 1,
+  "image": "/tarot/minor/ace-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "hand-cloud",
+      "icon": "✋"
+    },
+    {
+      "id": "golden-pentacle",
+      "icon": "🪙"
+    },
+    {
+      "id": "flower-garden",
+      "icon": "🌷"
+    },
+    {
+      "id": "arch-mountains",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Ás de Ouros",
+      "intro": "Uma mão surge da nuvem oferecendo um pentáculo dourado sobre um jardim florido. Uma semente de prosperidade: uma oportunidade concreta, material e promissora que pede para ser plantada.",
+      "regions": {
+        "hand-cloud": {
+          "title": "A Mão na Nuvem",
+          "description": "A oportunidade chega como dádiva: o convite a receber e a trabalhar com o que foi oferecido. A mão mostra o pentáculo, mas ele só frutifica na terra."
+        },
+        "golden-pentacle": {
+          "title": "O Pentáculo Dourado",
+          "description": "Uma moeda marcada com a estrela de cinco pontas: o espírito encarnado na matéria. A riqueza verdadeira nasce do cuidado com o que é concreto."
+        },
+        "flower-garden": {
+          "title": "O Jardim Florido",
+          "description": "Lírios e rosas em um canteiro cuidado: o terreno fértil já preparado. Boas condições ajudam, mas é o cuidado diário que faz crescer."
+        },
+        "arch-mountains": {
+          "title": "O Arco e as Montanhas",
+          "description": "Um arco de folhagem se abre para o caminho entre montanhas: a passagem para uma nova etapa. A semente promete o que o percurso revelará."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ace of Pentacles",
+      "intro": "A hand emerges from a cloud offering a golden pentacle above a flowering garden. A seed of prosperity: a concrete, material and promising opportunity that asks to be planted.",
+      "regions": {
+        "hand-cloud": {
+          "title": "The Hand in the Cloud",
+          "description": "The opportunity arrives as a gift: an invitation to receive and work with what is offered. The hand shows the pentacle, but it bears fruit only in the earth."
+        },
+        "golden-pentacle": {
+          "title": "The Golden Pentacle",
+          "description": "A coin marked with the five-pointed star: spirit incarnate in matter. True wealth is born from care for what is concrete."
+        },
+        "flower-garden": {
+          "title": "The Flowering Garden",
+          "description": "Lilies and roses in a tended bed: fertile ground already prepared. Good conditions help, but daily care is what makes things grow."
+        },
+        "arch-mountains": {
+          "title": "The Arch and the Mountains",
+          "description": "An arch of foliage opens onto a path between mountains: the passage to a new stage. The seed promises what the journey will reveal."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルのエース",
+      "intro": "雲から現れた手が、花咲く庭の上に金のペンタクルを差し出します。繁栄の種。具体的で物質的で、有望な好機が、植えられるのを待っています。",
+      "regions": {
+        "hand-cloud": {
+          "title": "雲の中の手",
+          "description": "好機は贈り物として訪れます。差し出されたものを受け取り、活かす誘いです。手はペンタクルを示しますが、それは大地でのみ実を結びます。"
+        },
+        "golden-pentacle": {
+          "title": "金のペンタクル",
+          "description": "五芒星の刻まれた硬貨。物質に宿る精神です。本当の豊かさは、具体的なものへの配慮から生まれます。"
+        },
+        "flower-garden": {
+          "title": "花咲く庭",
+          "description": "手入れされた花壇のユリとバラ。すでに整えられた肥沃な土壌です。良い条件は助けになりますが、育てるのは日々の手入れです。"
+        },
+        "arch-mountains": {
+          "title": "アーチと山々",
+          "description": "葉のアーチが、山々の間の道へ開いています。新しい段階への通り道です。種は、旅路が明らかにするものを約束します。"
+        }
+      }
+    },
+    "he": {
+      "name": "אס של מטבעות",
+      "intro": "יד יוצאת מהענן ומושיטה מטבע זהב עם פנטגרם מעל גן פורח. זרע של שגשוג: הזדמנות מוחשית, חומרית ומבטיחה שמבקשת להישתל.",
+      "regions": {
+        "hand-cloud": {
+          "title": "היד בענן",
+          "description": "ההזדמנות מגיעה כמתנה: הזמנה לקבל ולעבוד עם מה שהוצע. היד מציגה את המטבע, אך הוא נושא פרי רק באדמה."
+        },
+        "golden-pentacle": {
+          "title": "המטבע הזהוב",
+          "description": "מטבע החתום בכוכב בעל חמש קצוות: הרוח המגולמת בחומר. עושר אמיתי נולד מהטיפול במוחשי."
+        },
+        "flower-garden": {
+          "title": "הגן הפורח",
+          "description": "שושנים וורדים בערוגה מטופחת: אדמה פורייה שכבר הוכנה. תנאים טובים עוזרים, אך הטיפול היומיומי הוא שמצמיח."
+        },
+        "arch-mountains": {
+          "title": "הקשת וההרים",
+          "description": "קשת עלווה נפתחת אל שביל בין הרים: המעבר לשלב חדש. הזרע מבטיח את מה שהמסע יגלה."
+        }
+      }
+    }
+  }
+}

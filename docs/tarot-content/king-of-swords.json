@@ -1,0 +1,115 @@
+{
+  "slug": "king-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 14,
+  "image": "/tarot/minor/king-of-swords.jpg",
+  "regions": [
+    {
+      "id": "judge-sword",
+      "icon": "⚔️"
+    },
+    {
+      "id": "butterfly-crown",
+      "icon": "🦋"
+    },
+    {
+      "id": "carved-throne",
+      "icon": "🪑"
+    },
+    {
+      "id": "blue-mantle",
+      "icon": "🟦"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rei de Espadas",
+      "intro": "O rei de coroa de borboletas empunha uma espada, sentado num trono sob um céu de nuvens. Autoridade intelectual, justiça e a palavra que governa com lógica e ética.",
+      "regions": {
+        "judge-sword": {
+          "title": "A Espada do Juiz",
+          "description": "Empunhada de lado, como um cetro: a lei vem antes do impulso. O rei decide por princípios e não por simpatias passageiras."
+        },
+        "butterfly-crown": {
+          "title": "A Coroa de Borboletas",
+          "description": "O símbolo da alma e da transformação coroa o pensamento: a mente serena é capaz de mudar sem perder a firmeza."
+        },
+        "carved-throne": {
+          "title": "O Trono Entalhado",
+          "description": "Um trono sóbrio, adornado com símbolos do espírito: estrutura sólida para decisões sérias, sem ostentação nem tirania."
+        },
+        "blue-mantle": {
+          "title": "O Manto Azul",
+          "description": "O azul do ar e da mente cobre o rei: a calma do pensamento que pondera antes de falar. A voz vem depois de ouvir tudo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "King of Swords",
+      "intro": "The king with a butterfly crown holds a sword, seated on a throne beneath a cloudy sky. Intellectual authority, justice and the word that governs through logic and ethics.",
+      "regions": {
+        "judge-sword": {
+          "title": "The Judge's Sword",
+          "description": "Held at his side like a sceptre: law comes before impulse. The king decides by principle rather than passing sympathy."
+        },
+        "butterfly-crown": {
+          "title": "The Butterfly Crown",
+          "description": "The symbol of the soul and of transformation crowns thought: a serene mind can change without losing steadiness."
+        },
+        "carved-throne": {
+          "title": "The Carved Throne",
+          "description": "A sober throne adorned with symbols of spirit: a solid structure for serious decisions, without ostentation or tyranny."
+        },
+        "blue-mantle": {
+          "title": "The Blue Mantle",
+          "description": "The blue of air and mind covers the king: the calm of thought that weighs before speaking. The voice comes after hearing everything."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードのキング",
+      "intro": "蝶の冠をつけた王が、雲の広がる空の下の玉座で剣を握っています。知的な権威、正義、論理と倫理で治める言葉です。",
+      "regions": {
+        "judge-sword": {
+          "title": "裁きの剣",
+          "description": "笏のように脇に構えられた剣。法は衝動に先立ちます。王は、一時の好意ではなく原則によって決めます。"
+        },
+        "butterfly-crown": {
+          "title": "蝶の冠",
+          "description": "魂と変容の象徴が思考に冠を授けます。穏やかな心は、揺るぎなさを失わずに変わることができます。"
+        },
+        "carved-throne": {
+          "title": "彫刻の玉座",
+          "description": "精神の象徴で飾られた質素な玉座。誇示も暴政もない、重大な決断のための確かな構造です。"
+        },
+        "blue-mantle": {
+          "title": "青いマント",
+          "description": "空気と精神の青が王を覆います。語る前に熟慮する思考の落ち着きです。声は、すべてを聞いた後に発せられます。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלך החרבות",
+      "intro": "המלך בכתר פרפרים אוחז חרב, יושב על כס תחת שמיים מעוננים. סמכות אינטלקטואלית, צדק והמילה ששולטת בהגיון ובמוסר.",
+      "regions": {
+        "judge-sword": {
+          "title": "חרב השופט",
+          "description": "מוחזקת בצד כמו שרביט: החוק קודם לדחף. המלך מכריע לפי עקרונות ולא לפי אהדה חולפת."
+        },
+        "butterfly-crown": {
+          "title": "כתר הפרפרים",
+          "description": "סמל הנשמה וההתמרה מעטר את המחשבה: תודעה שלווה מסוגלת להשתנות בלי לאבד יציבות."
+        },
+        "carved-throne": {
+          "title": "הכס המגולף",
+          "description": "כס מאופק מעוטר בסמלי רוח: מבנה מוצק להחלטות רציניות, בלי ראוותנות ובלי עריצות."
+        },
+        "blue-mantle": {
+          "title": "המעטה הכחול",
+          "description": "הכחול של האוויר והשכל מכסה את המלך: שלוות המחשבה ששוקלת לפני שהיא מדברת. הקול בא אחרי ששמעו הכול."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "page-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 11,
+  "image": "/tarot/minor/page-of-swords.jpg",
+  "regions": [
+    {
+      "id": "raised-sword",
+      "icon": "⚔️"
+    },
+    {
+      "id": "windblown-hair",
+      "icon": "💨"
+    },
+    {
+      "id": "birds-clouds",
+      "icon": "🕊️"
+    },
+    {
+      "id": "bending-trees",
+      "icon": "🌳"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Valete de Espadas",
+      "intro": "Um jovem de cabelo ao vento ergue uma espada sobre uma colina, entre nuvens e pássaros. Curiosidade, vigilância e a mente ágil que quer aprender, perguntar e descobrir.",
+      "regions": {
+        "raised-sword": {
+          "title": "A Espada Erguida",
+          "description": "Segura com as duas mãos, apontando para o alto: a mente alerta e pronta para testar ideias. A lâmina ainda é jovem e precisa de treino."
+        },
+        "windblown-hair": {
+          "title": "O Cabelo ao Vento",
+          "description": "O vento bagunça os cabelos e o corpo inteiro do jovem: ele está exposto às mudanças de ideia e de humor. Sua mente nunca fica parada."
+        },
+        "birds-clouds": {
+          "title": "Os Pássaros e as Nuvens",
+          "description": "Aves cruzam o céu agitado: pensamentos que passam rápido, mensagens, notícias. Observar a mente é como observar um céu em movimento."
+        },
+        "bending-trees": {
+          "title": "As Árvores ao Vento",
+          "description": "Árvores se curvam ao fundo: a força do ar é grande, mas a vida se adapta. A flexibilidade protege melhor do que a rigidez."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Page of Swords",
+      "intro": "A youth with windblown hair raises a sword on a hill among clouds and birds. Curiosity, vigilance and the agile mind that wants to learn, ask and discover.",
+      "regions": {
+        "raised-sword": {
+          "title": "The Raised Sword",
+          "description": "Held in both hands, pointing upward: an alert mind ready to test ideas. The blade is still young and needs training."
+        },
+        "windblown-hair": {
+          "title": "The Windblown Hair",
+          "description": "Wind tousles the youth's hair and his whole body: he is exposed to shifts of thought and mood. His mind never stands still."
+        },
+        "birds-clouds": {
+          "title": "The Birds and the Clouds",
+          "description": "Birds cross the restless sky: thoughts that pass quickly, messages, news. Watching the mind is like watching a moving sky."
+        },
+        "bending-trees": {
+          "title": "The Bending Trees",
+          "description": "Trees bend in the background: the wind's force is great, but life adapts. Flexibility protects better than rigidity."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードのペイジ",
+      "intro": "風に髪をなびかせた若者が、雲と鳥の間の丘で剣を掲げます。好奇心、警戒、学び、問い、発見したいと願う機敏な精神です。",
+      "regions": {
+        "raised-sword": {
+          "title": "掲げた剣",
+          "description": "両手で握り、上を向いています。警戒し、考えを試す準備のできた心です。刃はまだ若く、鍛錬を必要とします。"
+        },
+        "windblown-hair": {
+          "title": "風になびく髪",
+          "description": "風が若者の髪と全身を乱します。彼は考えや気分の変化にさらされています。その心は決して止まりません。"
+        },
+        "birds-clouds": {
+          "title": "鳥と雲",
+          "description": "鳥たちがざわめく空を横切ります。素早く過ぎる思考、メッセージ、知らせです。心を観察することは、動く空を眺めるようなものです。"
+        },
+        "bending-trees": {
+          "title": "風に揺れる木々",
+          "description": "背景の木々がしなっています。風の力は大きいものの、生命は適応します。柔軟さは、硬さよりもよく身を守ります。"
+        }
+      }
+    },
+    "he": {
+      "name": "נער החרבות",
+      "intro": "צעיר בשיער מתנופף ברוח מרים חרב על גבעה בין עננים וציפורים. סקרנות, ערנות והתודעה הזריזה שרוצה ללמוד, לשאול ולגלות.",
+      "regions": {
+        "raised-sword": {
+          "title": "החרב המורמת",
+          "description": "אחוזה בשתי ידיים ומופנית למעלה: תודעה ערנית ומוכנה לבחון רעיונות. הלהב עדיין צעיר וצריך אימון."
+        },
+        "windblown-hair": {
+          "title": "השיער המתנופף",
+          "description": "הרוח מפרעת את שיערו ואת גופו כולו: הוא חשוף לשינויים של מחשבה ושל מצב רוח. תודעתו לעולם לא עומדת במקום."
+        },
+        "birds-clouds": {
+          "title": "הציפורים והעננים",
+          "description": "ציפורים חוצות את השמיים הסוערים: מחשבות שחולפות מהר, מסרים, חדשות. התבוננות בתודעה דומה להתבוננות בשמיים בתנועה."
+        },
+        "bending-trees": {
+          "title": "העצים המתכופפים",
+          "description": "עצים מתכופפים ברקע: כוח הרוח גדול, אך החיים מסתגלים. גמישות מגינה יותר מנוקשות."
+        }
+      }
+    }
+  }
+}

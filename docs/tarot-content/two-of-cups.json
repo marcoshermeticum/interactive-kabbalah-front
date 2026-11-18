@@ -1,0 +1,115 @@
+{
+  "slug": "two-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 2,
+  "image": "/tarot/minor/two-of-cups.jpg",
+  "regions": [
+    {
+      "id": "cup-exchange",
+      "icon": "🥂"
+    },
+    {
+      "id": "winged-caduceus",
+      "icon": "🦁"
+    },
+    {
+      "id": "couple-wreaths",
+      "icon": "💞"
+    },
+    {
+      "id": "house-hill",
+      "icon": "🏡"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dois de Copas",
+      "intro": "Um homem e uma mulher trocam taças sob o caduceu alado de Hermes. Atração mútua, parceria e o pacto de dois que se reconhecem em igualdade e respeito.",
+      "regions": {
+        "cup-exchange": {
+          "title": "A Troca das Taças",
+          "description": "Cada um oferece e recebe ao mesmo tempo: o vínculo verdadeiro é uma troca, nunca uma posse. As taças se encontram no centro."
+        },
+        "winged-caduceus": {
+          "title": "O Caduceu e o Leão Alado",
+          "description": "Duas serpentes enlaçadas e uma cabeça de leão com asas: o desejo apaixonado (leão) elevado pela comunicação e pela consciência (o caduceu)."
+        },
+        "couple-wreaths": {
+          "title": "O Casal Coroado",
+          "description": "Ambos usam coroas de folhagem: uma união que celebra a vida e não nega a natureza. Estão frente a frente, no mesmo nível, sem hierarquia."
+        },
+        "house-hill": {
+          "title": "A Casa na Colina",
+          "description": "Ao fundo, uma casa entre colinas: o lugar que essa união pode construir. A carta aponta para um futuro compartilhado, ainda em formação."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Two of Cups",
+      "intro": "A man and a woman exchange cups beneath the winged caduceus of Hermes. Mutual attraction, partnership and the pact of two who recognize one another in equality and respect.",
+      "regions": {
+        "cup-exchange": {
+          "title": "The Exchange of Cups",
+          "description": "Each offers and receives at once: a true bond is an exchange, never a possession. The cups meet at the center."
+        },
+        "winged-caduceus": {
+          "title": "The Caduceus and the Winged Lion",
+          "description": "Two entwined serpents and a winged lion's head: passionate desire (the lion) lifted by communication and awareness (the caduceus)."
+        },
+        "couple-wreaths": {
+          "title": "The Wreathed Couple",
+          "description": "Both wear wreaths of foliage: a union that celebrates life and does not deny nature. They stand face to face, on the same level, without hierarchy."
+        },
+        "house-hill": {
+          "title": "The House on the Hill",
+          "description": "In the background, a house among hills: the place this union may build. The card points to a shared future still taking shape."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの2",
+      "intro": "男と女がヘルメスの翼ある杖の下で杯を交わします。互いへの引力、パートナーシップ、そして対等と敬意で認め合う二人の契りです。",
+      "regions": {
+        "cup-exchange": {
+          "title": "杯の交換",
+          "description": "それぞれが同時に差し出し、受け取ります。本物の絆は交換であって、所有ではありません。杯は中央で出会います。"
+        },
+        "winged-caduceus": {
+          "title": "カドゥケウスと翼ある獅子",
+          "description": "絡み合う二匹の蛇と翼のある獅子の頭。情熱的な欲望(獅子)が、対話と意識(カドゥケウス)によって高められます。"
+        },
+        "couple-wreaths": {
+          "title": "冠をかぶった二人",
+          "description": "二人とも葉の冠をつけています。自然を否定せず、生を祝う結びつきです。向かい合って同じ高さに立ち、上下関係はありません。"
+        },
+        "house-hill": {
+          "title": "丘の家",
+          "description": "背景の丘の間に建つ家。この結びつきが築きうる場所です。カードは、まだ形になりつつある共有された未来を指しています。"
+        }
+      }
+    },
+    "he": {
+      "name": "שתיים של גביעים",
+      "intro": "גבר ואישה מחליפים גביעים תחת הקדוקאוס המכונף של הרמס. משיכה הדדית, שותפות והברית של שניים שמכירים זה בזה בשוויון ובכבוד.",
+      "regions": {
+        "cup-exchange": {
+          "title": "חילוף הגביעים",
+          "description": "כל אחד נותן ומקבל בעת ובעונה אחת: קשר אמיתי הוא חילופין ולא בעלות. הגביעים נפגשים במרכז."
+        },
+        "winged-caduceus": {
+          "title": "הקדוקאוס והאריה המכונף",
+          "description": "שני נחשים שלובים וראש אריה מכונף: התשוקה הלוהטת (האריה) מורמת בידי תקשורת ומודעות (הקדוקאוס)."
+        },
+        "couple-wreaths": {
+          "title": "הזוג עם הזרים",
+          "description": "שניהם חובשים זרי עלווה: איחוד שחוגג את החיים ואינו מכחיש את הטבע. הם ניצבים פנים אל פנים, באותו גובה, בלי היררכיה."
+        },
+        "house-hill": {
+          "title": "הבית על הגבעה",
+          "description": "ברקע בית בין גבעות: המקום שהקשר הזה יכול לבנות. הקלף מצביע על עתיד משותף שעוד מתעצב."
+        }
+      }
+    }
+  }
+}

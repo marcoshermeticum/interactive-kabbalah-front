@@ -1,0 +1,115 @@
+{
+  "slug": "two-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 2,
+  "image": "/tarot/minor/two-of-swords.jpg",
+  "regions": [
+    {
+      "id": "blindfold",
+      "icon": "🙈"
+    },
+    {
+      "id": "crossed-swords",
+      "icon": "⚔️"
+    },
+    {
+      "id": "crescent-moon",
+      "icon": "🌙"
+    },
+    {
+      "id": "calm-sea-rocks",
+      "icon": "🌊"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dois de Espadas",
+      "intro": "Uma mulher de olhos vendados cruza duas espadas sobre o peito, diante de um mar calmo sob a lua crescente. Impasse, equilíbrio forçado e a decisão adiada por medo de olhar.",
+      "regions": {
+        "blindfold": {
+          "title": "A Venda nos Olhos",
+          "description": "Ela escolhe não ver: a venda protege da dor imediata, mas impede de conhecer as opções. Decidir às cegas é adiar a decisão."
+        },
+        "crossed-swords": {
+          "title": "As Espadas Cruzadas",
+          "description": "Duas lâminas em equilíbrio tenso contra o peito: o coração protegido pela razão, mas também preso por ela. Nada avança nem recua."
+        },
+        "crescent-moon": {
+          "title": "A Lua Crescente",
+          "description": "A lua nova no céu aponta para a intuição ainda por se manifestar: algo está prestes a crescer, desde que ela se permita enxergar."
+        },
+        "calm-sea-rocks": {
+          "title": "O Mar e as Rochas",
+          "description": "Um mar calmo com rochas à vista: a superfície tranquila esconde perigos. A paz aparente depende de enfrentar o que está submerso."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Two of Swords",
+      "intro": "A blindfolded woman crosses two swords over her chest before a calm sea under a crescent moon. Stalemate, forced balance and a decision postponed for fear of looking.",
+      "regions": {
+        "blindfold": {
+          "title": "The Blindfold",
+          "description": "She chooses not to see: the blindfold shields from immediate pain but prevents knowing the options. Deciding blind is postponing the decision."
+        },
+        "crossed-swords": {
+          "title": "The Crossed Swords",
+          "description": "Two blades in tense balance against her chest: the heart protected by reason but also held by it. Nothing advances or retreats."
+        },
+        "crescent-moon": {
+          "title": "The Crescent Moon",
+          "description": "The new moon in the sky points to intuition yet to manifest: something is about to grow, provided she lets herself see."
+        },
+        "calm-sea-rocks": {
+          "title": "The Sea and the Rocks",
+          "description": "A calm sea with rocks in sight: the quiet surface hides dangers. The apparent peace depends on facing what lies submerged."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの2",
+      "intro": "目隠しをした女性が、三日月の下の凪いだ海を前に、二本の剣を胸の前で交差させています。膠着、強いられた均衡、見ることを恐れて先延ばしにされた決断です。",
+      "regions": {
+        "blindfold": {
+          "title": "目隠し",
+          "description": "彼女は見ないことを選びます。目隠しは目前の痛みから守りますが、選択肢を知ることを妨げます。見ずに決めることは、決断を先送りにすることです。"
+        },
+        "crossed-swords": {
+          "title": "交差した剣",
+          "description": "胸に当てられた二本の刃が張りつめた均衡を保ちます。理性に守られた心は、同時に理性に縛られてもいます。何も進まず、退きもしません。"
+        },
+        "crescent-moon": {
+          "title": "三日月",
+          "description": "空の新月は、まだ現れていない直感を示します。彼女が見ることを自分に許せば、何かが育とうとしています。"
+        },
+        "calm-sea-rocks": {
+          "title": "海と岩",
+          "description": "岩が見える凪いだ海。静かな水面は危険を隠しています。見かけの平穏は、水面下にあるものに向き合えるかにかかっています。"
+        }
+      }
+    },
+    "he": {
+      "name": "שתיים של חרבות",
+      "intro": "אישה בעיניים מכוסות חוצה שתי חרבות על חזה, מול ים שקט תחת ירח חצי. קיפאון, איזון כפוי והחלטה שנדחית מפחד להביט.",
+      "regions": {
+        "blindfold": {
+          "title": "כיסוי העיניים",
+          "description": "היא בוחרת לא לראות: הכיסוי מגן מכאב מיידי אך מונע להכיר את האפשרויות. להחליט בעיניים עצומות פירושו לדחות את ההחלטה."
+        },
+        "crossed-swords": {
+          "title": "החרבות החוצות",
+          "description": "שני להבים באיזון מתוח על החזה: הלב מוגן בשכל אך גם כבול בו. שום דבר לא מתקדם ולא נסוג."
+        },
+        "crescent-moon": {
+          "title": "הירח החצי",
+          "description": "הירח החדש בשמיים מצביע על אינטואיציה שעדיין לא התבטאה: משהו עומד לצמוח, אם רק תרשה לעצמה לראות."
+        },
+        "calm-sea-rocks": {
+          "title": "הים והסלעים",
+          "description": "ים שקט עם סלעים בנראה: פני המים השקטים מסתירים סכנות. השלווה לכאורה תלויה בהתמודדות עם מה שמתחת לפני השטח."
+        }
+      }
+    }
+  }
+}

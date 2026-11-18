@@ -1,0 +1,115 @@
+{
+  "slug": "two-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 2,
+  "image": "/tarot/minor/two-of-wands.jpg",
+  "regions": [
+    {
+      "id": "globe",
+      "icon": "🌍"
+    },
+    {
+      "id": "two-wands",
+      "icon": "🪄"
+    },
+    {
+      "id": "sea-horizon",
+      "icon": "🌊"
+    },
+    {
+      "id": "rose-lily-emblem",
+      "icon": "🌹"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dois de Paus",
+      "intro": "Um homem no alto da muralha segura o mundo na mão e um cajado na outra, olhando o mar. Planejar, escolher o rumo e decidir entre o que já se tem e o que se pode conquistar.",
+      "regions": {
+        "globe": {
+          "title": "O Globo na Mão",
+          "description": "O mundo cabe na palma de quem planeja: poder, alcance e responsabilidade. A esfera lembra que ainda é preciso escolher onde pousá-la."
+        },
+        "two-wands": {
+          "title": "Os Dois Cajados",
+          "description": "Um empunhado, outro fixo na parede: a vontade em movimento e a vontade enraizada. Entre o que se leva e o que se deixa firme, nasce a estratégia."
+        },
+        "sea-horizon": {
+          "title": "O Mar e o Horizonte",
+          "description": "O olhar do homem vai além das muralhas, para o mar aberto: a ambição de ir além do território conhecido, ainda sem saber o que há do outro lado."
+        },
+        "rose-lily-emblem": {
+          "title": "A Rosa e o Lírio",
+          "description": "Rosas e lírios cruzados na parede: o desejo (rosa) e a pureza (lírio) unidos na mesma decisão. A vontade que escolhe com o coração e a clareza juntos."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Two of Wands",
+      "intro": "A man on a battlement holds the world in one hand and a wand in the other, gazing at the sea. Planning, choosing a direction and deciding between what he has and what he could win.",
+      "regions": {
+        "globe": {
+          "title": "The Globe in Hand",
+          "description": "The world fits in the palm of the one who plans: power, reach and responsibility. The sphere reminds him he must still choose where to set it down."
+        },
+        "two-wands": {
+          "title": "The Two Wands",
+          "description": "One held, one fixed to the wall: will in motion and will rooted in place. Between what you carry and what you leave standing, strategy is born."
+        },
+        "sea-horizon": {
+          "title": "The Sea and the Horizon",
+          "description": "His gaze goes past the walls to the open sea: the ambition to leave known territory without yet knowing what lies on the other side."
+        },
+        "rose-lily-emblem": {
+          "title": "The Rose and the Lily",
+          "description": "Crossed roses and lilies on the wall: desire (rose) and purity (lily) joined in the same decision. A will that chooses with heart and clarity together."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの2",
+      "intro": "城壁の上の男は、片手に世界、もう片手に杖を持ち、海を見つめています。計画し、進む方向を選び、今あるものと得られるものの間で決断する時です。",
+      "regions": {
+        "globe": {
+          "title": "手の中の地球",
+          "description": "世界は計画する者の手のひらに収まります。力、射程、責任。球体は、それをどこに置くか選ばねばならないことを思い出させます。"
+        },
+        "two-wands": {
+          "title": "二本の杖",
+          "description": "一本は手に、もう一本は壁に固定されています。動く意志と根を張る意志。持ち運ぶものと据え置くものの間に戦略が生まれます。"
+        },
+        "sea-horizon": {
+          "title": "海と水平線",
+          "description": "男の視線は城壁を越えて外海へ向かいます。未知の側に何があるか分からないまま、既知の領域を出ていきたいという野心です。"
+        },
+        "rose-lily-emblem": {
+          "title": "バラとユリ",
+          "description": "壁に交差するバラとユリ。欲望(バラ)と純粋(ユリ)が同じ決断の中で結ばれています。心と明晰さの両方で選ぶ意志です。"
+        }
+      }
+    },
+    "he": {
+      "name": "שתיים של מטות",
+      "intro": "אדם על החומה מחזיק את העולם בידו האחת ומטה בשנייה, ומביט אל הים. תכנון, בחירת כיוון והכרעה בין מה שכבר יש לבין מה שאפשר לכבוש.",
+      "regions": {
+        "globe": {
+          "title": "הכדור בכף היד",
+          "description": "העולם נכנס לכף ידו של המתכנן: כוח, טווח ואחריות. הכדור מזכיר שעוד צריך לבחור היכן להניח אותו."
+        },
+        "two-wands": {
+          "title": "שני המטות",
+          "description": "אחד בידו ואחד קבוע בקיר: רצון בתנועה ורצון מושרש. בין מה שנושאים לבין מה שמשאירים יציב נולדת האסטרטגיה."
+        },
+        "sea-horizon": {
+          "title": "הים והאופק",
+          "description": "מבטו חוצה את החומות אל הים הפתוח: השאיפה לצאת מהשטח המוכר בלי לדעת מה מצפה בצד השני."
+        },
+        "rose-lily-emblem": {
+          "title": "השושנה והשושן",
+          "description": "ורדים ושושנים שלובים על הקיר: התשוקה (ורד) והטוהר (שושן) מאוחדים בהחלטה אחת. רצון שבוחר בלב ובבהירות יחד."
+        }
+      }
+    }
+  }
+}

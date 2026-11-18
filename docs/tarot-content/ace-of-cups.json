@@ -1,0 +1,115 @@
+{
+  "slug": "ace-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 1,
+  "image": "/tarot/minor/ace-of-cups.jpg",
+  "regions": [
+    {
+      "id": "hand-cloud",
+      "icon": "✋"
+    },
+    {
+      "id": "overflowing-chalice",
+      "icon": "🏆"
+    },
+    {
+      "id": "dove-wafer",
+      "icon": "🕊️"
+    },
+    {
+      "id": "lotus-pond",
+      "icon": "🪷"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Ás de Copas",
+      "intro": "Uma mão sai da nuvem oferecendo um cálice transbordante, enquanto uma pomba deposita a hóstia sobre ele. O início de um amor, de uma intuição ou de uma graça que se derrama sem medida.",
+      "regions": {
+        "hand-cloud": {
+          "title": "A Mão na Nuvem",
+          "description": "O dom que desce do alto: o amor e a graça não se conquistam, são oferecidos. A mão apresenta o cálice e espera que você o receba."
+        },
+        "overflowing-chalice": {
+          "title": "O Cálice Transbordante",
+          "description": "A taça cheia de que a água escorre: a abundância emocional que não cabe em si e precisa ser compartilhada para continuar viva."
+        },
+        "dove-wafer": {
+          "title": "A Pomba e a Hóstia",
+          "description": "A pomba traz o disco sagrado marcado com uma cruz: o espírito que abençoa a matéria. O sentimento puro é também uma forma de comunhão."
+        },
+        "lotus-pond": {
+          "title": "O Lago de Lótus",
+          "description": "Cinco fios de água caem num lago de lírios: os cinco sentidos alimentando a alma. Do fundo calmo da emoção brotam as flores da percepção."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ace of Cups",
+      "intro": "A hand emerges from a cloud offering an overflowing chalice while a dove lowers a wafer onto it. The beginning of a love, an intuition or a grace that pours out without measure.",
+      "regions": {
+        "hand-cloud": {
+          "title": "The Hand in the Cloud",
+          "description": "The gift descending from above: love and grace are not won, they are offered. The hand presents the chalice and waits for you to receive it."
+        },
+        "overflowing-chalice": {
+          "title": "The Overflowing Chalice",
+          "description": "The full cup from which water spills: emotional abundance that cannot be contained and must be shared to stay alive."
+        },
+        "dove-wafer": {
+          "title": "The Dove and the Wafer",
+          "description": "The dove brings the sacred disc marked with a cross: spirit blessing matter. Pure feeling is also a form of communion."
+        },
+        "lotus-pond": {
+          "title": "The Lotus Pond",
+          "description": "Five streams of water fall into a pond of lilies: the five senses feeding the soul. From the calm depths of emotion bloom the flowers of perception."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップのエース",
+      "intro": "雲から現れた手が、あふれる聖杯を差し出し、鳩が聖餅を降ろします。愛、直感、あるいは惜しみなく注がれる恵みの始まりです。",
+      "regions": {
+        "hand-cloud": {
+          "title": "雲の中の手",
+          "description": "天から降りてくる贈り物。愛と恵みは勝ち取るものではなく、差し出されるものです。手は聖杯を示し、あなたが受け取るのを待っています。"
+        },
+        "overflowing-chalice": {
+          "title": "あふれる聖杯",
+          "description": "水がこぼれ落ちる満ちた杯。自分の中に収まりきらず、分かち合うことで生き続ける感情の豊かさです。"
+        },
+        "dove-wafer": {
+          "title": "鳩と聖餅",
+          "description": "鳩は十字の刻まれた聖なる円盤を運びます。精神が物質を祝福する姿です。純粋な感情もまた、一種の聖餐です。"
+        },
+        "lotus-pond": {
+          "title": "蓮の池",
+          "description": "五筋の水が睡蓮の池へ落ちます。魂を養う五感です。感情の静かな深みから、知覚の花が咲きます。"
+        }
+      }
+    },
+    "he": {
+      "name": "אס של גביעים",
+      "intro": "יד יוצאת מהענן ומושיטה גביע גולש, ויונה מניחה עליו לחם קודש. ראשיתה של אהבה, של אינטואיציה או של חסד שנשפך בלי מידה.",
+      "regions": {
+        "hand-cloud": {
+          "title": "היד בענן",
+          "description": "המתנה היורדת מלמעלה: אהבה וחסד אינם נכבשים אלא מוגשים. היד מציגה את הגביע וממתינה שתקבל אותו."
+        },
+        "overflowing-chalice": {
+          "title": "הגביע השופע",
+          "description": "הכוס המלאה שהמים גולשים ממנה: שפע רגשי שאינו מצליח להכיל את עצמו וצריך להתחלק כדי להישאר חי."
+        },
+        "dove-wafer": {
+          "title": "היונה ולחם הקודש",
+          "description": "היונה מביאה את הדיסקית הקדושה החתומה בצלב: הרוח שמברכת את החומר. רגש טהור הוא גם סוג של התחברות קדושה."
+        },
+        "lotus-pond": {
+          "title": "בריכת הלוטוס",
+          "description": "חמישה פלגי מים נופלים אל בריכת שושני מים: חמשת החושים שמזינים את הנשמה. מעומק רגוע של רגש צומחים פרחי התפיסה."
+        }
+      }
+    }
+  }
+}

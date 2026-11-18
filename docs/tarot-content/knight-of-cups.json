@@ -1,0 +1,115 @@
+{
+  "slug": "knight-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 12,
+  "image": "/tarot/minor/knight-of-cups.jpg",
+  "regions": [
+    {
+      "id": "offered-cup",
+      "icon": "🏆"
+    },
+    {
+      "id": "winged-helmet",
+      "icon": "🪽"
+    },
+    {
+      "id": "white-horse",
+      "icon": "🐴"
+    },
+    {
+      "id": "river-mountains",
+      "icon": "🏞️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cavaleiro de Copas",
+      "intro": "Um cavaleiro de armadura alada avança com calma, trazendo a taça diante de si. Romance, proposta sincera e a delicadeza de quem age com o coração, sem pressa de conquistar.",
+      "regions": {
+        "offered-cup": {
+          "title": "A Taça Oferecida",
+          "description": "Ele a estende com as duas mãos: um gesto de entrega, e não de exigência. O presente é o sentimento, apresentado com respeito."
+        },
+        "winged-helmet": {
+          "title": "O Elmo Alado",
+          "description": "Asas no elmo e nos calcanhares, como Mercúrio: imaginação e mensagens que voam. A cavalaria aqui serve ao ideal e à inspiração."
+        },
+        "white-horse": {
+          "title": "O Cavalo Branco Calmo",
+          "description": "A montaria anda a passo, sem pressa: ele escolhe a ternura e a paciência. A emoção guia o ritmo, em vez da ambição."
+        },
+        "river-mountains": {
+          "title": "O Rio e a Colina",
+          "description": "Um riacho serpenteia entre colinas distantes: o fluxo do sentimento que atravessa a paisagem e leva a cavalgada em direção ao destino."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Knight of Cups",
+      "intro": "A knight in winged armor advances calmly, carrying his cup before him. Romance, a sincere offer and the delicacy of one who acts from the heart, in no hurry to conquer.",
+      "regions": {
+        "offered-cup": {
+          "title": "The Offered Cup",
+          "description": "He extends it with both hands: a gesture of giving, not demand. The gift is the feeling itself, presented with respect."
+        },
+        "winged-helmet": {
+          "title": "The Winged Helmet",
+          "description": "Wings on the helmet and the heels, like Mercury: imagination and messages that fly. Chivalry here serves ideal and inspiration."
+        },
+        "white-horse": {
+          "title": "The Calm White Horse",
+          "description": "The mount walks at an easy pace: he chooses tenderness and patience. Emotion sets the rhythm, not ambition."
+        },
+        "river-mountains": {
+          "title": "The River and the Hills",
+          "description": "A stream winds between distant hills: the flow of feeling that crosses the landscape and carries the ride toward its destination."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップのナイト",
+      "intro": "翼のついた鎧の騎士が、杯を前に掲げて穏やかに進みます。ロマンス、誠実な申し出、そして征服を急がず心から行動する者の繊細さです。",
+      "regions": {
+        "offered-cup": {
+          "title": "差し出された杯",
+          "description": "彼は両手で杯を差し出します。要求ではなく、捧げる仕草です。贈り物は感情そのもので、敬意をもって差し出されます。"
+        },
+        "winged-helmet": {
+          "title": "翼のある兜",
+          "description": "兜とかかとに翼があり、メルクリウスのようです。飛び交う想像力と知らせ。ここでの騎士道は理想とひらめきに仕えます。"
+        },
+        "white-horse": {
+          "title": "落ち着いた白い馬",
+          "description": "馬は急がず並足で歩きます。彼は優しさと忍耐を選んでいます。野心ではなく感情がリズムを決めます。"
+        },
+        "river-mountains": {
+          "title": "川と丘",
+          "description": "小川が遠くの丘の間を曲がりくねって流れます。風景を横切る感情の流れが、この騎行を目的地へ運びます。"
+        }
+      }
+    },
+    "he": {
+      "name": "אביר הגביעים",
+      "intro": "אביר בשריון מכונף מתקדם בנחת ונושא את גביעו לפניו. רומנטיקה, הצעה כנה והעדינות של מי שפועל מהלב, בלי למהר לכבוש.",
+      "regions": {
+        "offered-cup": {
+          "title": "הגביע המוגש",
+          "description": "הוא מושיט אותו בשתי ידיים: מחווה של נתינה ולא של דרישה. המתנה היא הרגש עצמו, מוגש בכבוד."
+        },
+        "winged-helmet": {
+          "title": "הקסדה המכונפת",
+          "description": "כנפיים בקסדה ובעקבים, כמו מרקורי: דמיון ומסרים שמעופפים. האבירות כאן משרתת רעיון והשראה."
+        },
+        "white-horse": {
+          "title": "הסוס הלבן והרגוע",
+          "description": "הסוס צועד בקצב רגוע: הוא בוחר ברוך ובסבלנות. הרגש קובע את הקצב ולא השאפתנות."
+        },
+        "river-mountains": {
+          "title": "הנהר והגבעות",
+          "description": "נחל מתפתל בין גבעות רחוקות: זרימת הרגש שחוצה את הנוף ונושאת את הרכיבה אל יעדה."
+        }
+      }
+    }
+  }
+}

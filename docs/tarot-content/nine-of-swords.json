@@ -1,0 +1,115 @@
+{
+  "slug": "nine-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 9,
+  "image": "/tarot/minor/nine-of-swords.jpg",
+  "regions": [
+    {
+      "id": "face-in-hands",
+      "icon": "🫣"
+    },
+    {
+      "id": "nine-swords-wall",
+      "icon": "🗡️"
+    },
+    {
+      "id": "rose-quilt",
+      "icon": "🛏️"
+    },
+    {
+      "id": "carved-bed",
+      "icon": "🪑"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Nove de Espadas",
+      "intro": "Sentada na cama, uma pessoa esconde o rosto nas mãos sob nove espadas penduradas na escuridão. Ansiedade, culpa e as noites em que a mente trabalha contra o descanso.",
+      "regions": {
+        "face-in-hands": {
+          "title": "O Rosto nas Mãos",
+          "description": "Ela chora sem ver ninguém: o sofrimento é privado e silencioso. Nomear a angústia é o primeiro movimento para dissolvê-la."
+        },
+        "nine-swords-wall": {
+          "title": "As Nove Espadas",
+          "description": "Penduradas no ar, sem tocá-la: os medos pesam mais na imaginação do que na realidade. As lâminas ameaçam, mas ainda não caíram."
+        },
+        "rose-quilt": {
+          "title": "A Colcha de Rosas",
+          "description": "Rosas e símbolos astrológicos bordados na manta: o amor e o destino a cobrem, mesmo na noite escura. Há consolo na própria cama."
+        },
+        "carved-bed": {
+          "title": "O Entalhe na Cama",
+          "description": "Uma cena gravada no leito mostra uma luta e uma figura caída: a origem da culpa está na memória, repetida a cada noite sem solução."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Nine of Swords",
+      "intro": "Sitting up in bed, a person hides her face in her hands beneath nine swords hung in the dark. Anxiety, guilt and the nights when the mind works against rest.",
+      "regions": {
+        "face-in-hands": {
+          "title": "The Face in the Hands",
+          "description": "She weeps without seeing anyone: the suffering is private and silent. Naming the anguish is the first move toward dissolving it."
+        },
+        "nine-swords-wall": {
+          "title": "The Nine Swords",
+          "description": "Hung in the air without touching her: fears weigh more in imagination than in reality. The blades threaten, but have not yet fallen."
+        },
+        "rose-quilt": {
+          "title": "The Rose Quilt",
+          "description": "Roses and astrological symbols embroidered on the blanket: love and destiny cover her even in the dark night. There is comfort in the bed itself."
+        },
+        "carved-bed": {
+          "title": "The Carving on the Bed",
+          "description": "A scene carved on the bedframe shows a fight and a fallen figure: the source of guilt lives in memory, replayed every night without resolution."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの9",
+      "intro": "ベッドに起き上がった人が、暗闇に掛かる九本の剣の下で両手に顔を埋めています。不安、罪悪感、そして心が休息に逆らって働く夜です。",
+      "regions": {
+        "face-in-hands": {
+          "title": "手の中の顔",
+          "description": "彼女は誰の姿も見ずに泣いています。苦しみは個人的で静かです。苦悩に名前をつけることが、それを溶かす最初の動きです。"
+        },
+        "nine-swords-wall": {
+          "title": "九本の剣",
+          "description": "彼女に触れずに宙に掛かっています。恐れは現実より想像の中で重くなります。刃は脅かしますが、まだ落ちてはいません。"
+        },
+        "rose-quilt": {
+          "title": "バラのキルト",
+          "description": "毛布に刺繍されたバラと占星術の記号。暗い夜にも愛と運命が彼女を覆っています。ベッドそのものに慰めがあります。"
+        },
+        "carved-bed": {
+          "title": "ベッドの彫刻",
+          "description": "ベッドの枠に彫られた場面には争いと倒れた人物があります。罪悪感の源は記憶にあり、解決のないまま毎晩繰り返されます。"
+        }
+      }
+    },
+    "he": {
+      "name": "תשע של חרבות",
+      "intro": "אדם יושב במיטה ומסתיר את פניו בידיים תחת תשע חרבות התלויות בחושך. חרדה, אשמה והלילות שבהם התודעה פועלת נגד המנוחה.",
+      "regions": {
+        "face-in-hands": {
+          "title": "הפנים בידיים",
+          "description": "היא בוכה בלי לראות איש: הסבל פרטי ושקט. מתן שם לייסורים הוא התנועה הראשונה לפירוקם."
+        },
+        "nine-swords-wall": {
+          "title": "תשע החרבות",
+          "description": "תלויות באוויר בלי לגעת בה: הפחדים כבדים יותר בדמיון מאשר במציאות. הלהבים מאיימים אך עוד לא נפלו."
+        },
+        "rose-quilt": {
+          "title": "השמיכה עם הוורדים",
+          "description": "ורדים וסמלים אסטרולוגיים רקומים על השמיכה: אהבה וגורל מכסים אותה גם בלילה האפל. יש נחמה במיטה עצמה."
+        },
+        "carved-bed": {
+          "title": "הגילוף במיטה",
+          "description": "סצנה מגולפת במסגרת המיטה מראה קרב ודמות שנפלה: מקור האשמה נמצא בזיכרון וחוזר כל לילה בלי פתרון."
+        }
+      }
+    }
+  }
+}

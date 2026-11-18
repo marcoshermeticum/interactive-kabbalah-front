@@ -1,0 +1,115 @@
+{
+  "slug": "seven-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 7,
+  "image": "/tarot/minor/seven-of-wands.jpg",
+  "regions": [
+    {
+      "id": "defender",
+      "icon": "🛡️"
+    },
+    {
+      "id": "six-wands-below",
+      "icon": "🪄"
+    },
+    {
+      "id": "mismatched-shoes",
+      "icon": "👞"
+    },
+    {
+      "id": "high-ground",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Sete de Paus",
+      "intro": "No alto de uma colina, um homem defende sua posição contra seis cajados que sobem de baixo. Coragem, firmeza e a decisão de manter o que é seu mesmo em desvantagem.",
+      "regions": {
+        "defender": {
+          "title": "O Defensor",
+          "description": "Ele está sozinho e em guarda, olhando para baixo: quem sustenta uma convicção quase sempre se vê assim, em desvantagem, mas de pé."
+        },
+        "six-wands-below": {
+          "title": "Os Seis Cajados",
+          "description": "Seis hastes surgem de baixo: desafios que não dão trégua e obrigam a escolher o que vale a pena defender. A pressão revela o que realmente importa."
+        },
+        "mismatched-shoes": {
+          "title": "Os Sapatos Desiguais",
+          "description": "Ele calça sapatos diferentes, como se tivesse se levantado às pressas: a defesa nem sempre é perfeita nem preparada, e ainda assim se mantém."
+        },
+        "high-ground": {
+          "title": "A Posição Elevada",
+          "description": "A colina dá vantagem a quem a ocupa: ver mais longe e ter apoio no chão. A firmeza interior é o terreno mais seguro que existe."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Seven of Wands",
+      "intro": "On a hilltop, a man defends his position against six wands rising from below. Courage, firmness and the decision to hold what is yours even at a disadvantage.",
+      "regions": {
+        "defender": {
+          "title": "The Defender",
+          "description": "He stands alone on guard, looking down: one who holds a conviction often finds himself like this, at a disadvantage but upright."
+        },
+        "six-wands-below": {
+          "title": "The Six Wands",
+          "description": "Six staves rise from below: challenges that give no respite and force a choice about what is worth defending. Pressure reveals what truly matters."
+        },
+        "mismatched-shoes": {
+          "title": "The Mismatched Shoes",
+          "description": "He wears unmatched shoes, as if he had risen in a hurry: defense is not always perfect or prepared, and yet it holds."
+        },
+        "high-ground": {
+          "title": "The High Ground",
+          "description": "The hill gives an advantage to whoever holds it: seeing farther and having ground underfoot. Inner steadiness is the safest terrain there is."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの7",
+      "intro": "丘の上で、男は下から突き上げる六本の杖に対して自分の立場を守っています。勇気、揺るぎなさ、不利な状況でも自分のものを守り抜く決意です。",
+      "regions": {
+        "defender": {
+          "title": "守る者",
+          "description": "彼は一人で身構え、下を見据えています。信念を貫く者は、不利でも立ち続けるこの姿になることが多いのです。"
+        },
+        "six-wands-below": {
+          "title": "六本の杖",
+          "description": "下から六本の杖が突き上がります。休む間もない挑戦は、守る価値のあるものを選ぶよう迫ります。圧力は本当に大切なものを明らかにします。"
+        },
+        "mismatched-shoes": {
+          "title": "左右違いの靴",
+          "description": "彼は左右違う靴を履いています。急いで立ち上がったかのように。防御は完璧でも準備万端でもないことがありますが、それでも持ちこたえます。"
+        },
+        "high-ground": {
+          "title": "高い地の利",
+          "description": "丘を占める者は有利です。遠くを見渡し、足元に地盤があります。内なる確かさこそ、最も安全な足場です。"
+        }
+      }
+    },
+    "he": {
+      "name": "שבע של מטות",
+      "intro": "על פסגת גבעה אדם מגן על עמדתו מפני שישה מטות העולים מלמטה. אומץ, נחישות והחלטה לשמור על מה שלך גם כשהמצב לא נוח.",
+      "regions": {
+        "defender": {
+          "title": "המגן",
+          "description": "הוא עומד לבדו על המשמר ומביט מטה: מי שמחזיק באמונה מוצא עצמו לא פעם כך, בעמדת נחיתות אך זקוף."
+        },
+        "six-wands-below": {
+          "title": "ששת המטות",
+          "description": "שישה מטות עולים מלמטה: אתגרים בלי רגע מנוחה שמכריחים לבחור מה ראוי להגנה. הלחץ חושף מה באמת חשוב."
+        },
+        "mismatched-shoes": {
+          "title": "הנעליים הלא תואמות",
+          "description": "הוא נועל נעליים שונות, כאילו קם בחיפזון: ההגנה לא תמיד מושלמת או מוכנה, ובכל זאת היא מחזיקה מעמד."
+        },
+        "high-ground": {
+          "title": "העמדה הגבוהה",
+          "description": "הגבעה נותנת יתרון למי שתופס אותה: לראות רחוק ולעמוד על קרקע. יציבות פנימית היא השטח הבטוח ביותר שיש."
+        }
+      }
+    }
+  }
+}

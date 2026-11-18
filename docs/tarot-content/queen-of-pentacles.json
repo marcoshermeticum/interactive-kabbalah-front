@@ -1,0 +1,115 @@
+{
+  "slug": "queen-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 13,
+  "image": "/tarot/minor/queen-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "pentacle-lap",
+      "icon": "🪙"
+    },
+    {
+      "id": "hare",
+      "icon": "🐇"
+    },
+    {
+      "id": "carved-throne",
+      "icon": "🐐"
+    },
+    {
+      "id": "rose-bower",
+      "icon": "🌹"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rainha de Ouros",
+      "intro": "A rainha em trono de frutas e cabras ampara um pentáculo no colo, num jardim com um coelho. Cuidado, abundância e a generosidade prática de quem nutre o ambiente à sua volta.",
+      "regions": {
+        "pentacle-lap": {
+          "title": "O Pentáculo no Colo",
+          "description": "Ela o segura como a um filho, com os dois braços: a riqueza tratada com ternura. Cuidar do que é material também é um ato de amor."
+        },
+        "hare": {
+          "title": "O Coelho",
+          "description": "Um coelho salta no canto: fertilidade, abundância e instinto vivo. A natureza circula livre onde a rainha reina com acolhimento."
+        },
+        "carved-throne": {
+          "title": "O Trono Entalhado",
+          "description": "Cabras e frutas esculpidas: a vitalidade da terra e a colheita. Seu poder repousa na natureza e na fartura que dela se extrai."
+        },
+        "rose-bower": {
+          "title": "O Caramanchão de Rosas",
+          "description": "Rosas florescem sobre ela como um dossel: beleza e sensualidade em equilíbrio com a ordem. O ambiente ao redor reflete seu cuidado."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Queen of Pentacles",
+      "intro": "The queen on a throne of fruit and goats cradles a pentacle in her lap in a garden with a rabbit. Care, abundance and the practical generosity of one who nurtures her surroundings.",
+      "regions": {
+        "pentacle-lap": {
+          "title": "The Pentacle in Her Lap",
+          "description": "She holds it like a child, with both arms: wealth treated with tenderness. Caring for the material is also an act of love."
+        },
+        "hare": {
+          "title": "The Rabbit",
+          "description": "A rabbit leaps in the corner: fertility, abundance and living instinct. Nature moves freely where the queen rules with welcome."
+        },
+        "carved-throne": {
+          "title": "The Carved Throne",
+          "description": "Goats and fruit carved in relief: the earth's vitality and the harvest. Her power rests on nature and on the plenty drawn from it."
+        },
+        "rose-bower": {
+          "title": "The Rose Bower",
+          "description": "Roses bloom above her like a canopy: beauty and sensuality in balance with order. The surroundings reflect her care."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルのクイーン",
+      "intro": "果実と山羊の彫られた玉座の女王が、ウサギのいる庭で、膝にペンタクルを抱えています。思いやり、豊かさ、周囲を育む者の実際的な寛大さです。",
+      "regions": {
+        "pentacle-lap": {
+          "title": "膝のペンタクル",
+          "description": "彼女は子どものように両腕でそれを抱いています。優しく扱われる富です。物質的なものを大切にすることも、愛の行為です。"
+        },
+        "hare": {
+          "title": "ウサギ",
+          "description": "隅でウサギが跳ねます。多産、豊かさ、生きた本能です。女王が歓迎をもって治める場所では、自然が自由に巡ります。"
+        },
+        "carved-throne": {
+          "title": "彫刻の玉座",
+          "description": "山羊と果実の浮き彫り。大地の生命力と収穫です。彼女の力は自然と、そこから得られる豊穣に基づいています。"
+        },
+        "rose-bower": {
+          "title": "バラの東屋",
+          "description": "バラが天蓋のように彼女の上に咲いています。秩序と釣り合う美と官能です。周囲の環境は、彼女の心遣いを映しています。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלכת המטבעות",
+      "intro": "המלכה על כס פירות ועיזים מחבקת מטבע בחיקה בגן שבו ארנב. דאגה, שפע והנדיבות המעשית של מי שמזינה את סביבתה.",
+      "regions": {
+        "pentacle-lap": {
+          "title": "המטבע בחיק",
+          "description": "היא אוחזת בו כמו בילד, בשתי זרועות: עושר שמטופל ברוך. טיפול בחומרי הוא גם מעשה של אהבה."
+        },
+        "hare": {
+          "title": "הארנב",
+          "description": "ארנב קופץ בפינה: פוריות, שפע ואינסטינקט חי. הטבע נע חופשי היכן שהמלכה שולטת בקבלת פנים."
+        },
+        "carved-throne": {
+          "title": "הכס המגולף",
+          "description": "עיזים ופירות מגולפים בתבליט: חיוניות האדמה והקציר. כוחה נשען על הטבע ועל השפע המופק ממנו."
+        },
+        "rose-bower": {
+          "title": "סוכת הוורדים",
+          "description": "ורדים פורחים מעליה כחופה: יופי ותשוקה באיזון עם סדר. הסביבה משקפת את הדאגה שלה."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "king-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 14,
+  "image": "/tarot/minor/king-of-cups.jpg",
+  "regions": [
+    {
+      "id": "cup-and-sceptre",
+      "icon": "🏆"
+    },
+    {
+      "id": "floating-throne",
+      "icon": "🪨"
+    },
+    {
+      "id": "leaping-fish",
+      "icon": "🐟"
+    },
+    {
+      "id": "ship-horizon",
+      "icon": "🚢"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rei de Copas",
+      "intro": "O rei senta num trono flutuante sobre o mar agitado, com taça e cetro nas mãos. Domínio das emoções, sabedoria compassiva e a calma de quem governa sem negar a profundidade.",
+      "regions": {
+        "cup-and-sceptre": {
+          "title": "A Taça e o Cetro",
+          "description": "Uma mão guarda o sentimento, a outra, a autoridade: o rei equilibra coração e comando e não deixa um sufocar o outro."
+        },
+        "floating-throne": {
+          "title": "O Trono nas Águas",
+          "description": "O trono boia entre ondas: ele mantém a estabilidade no meio da turbulência. Serenidade não é ausência de tempestade, é presença nela."
+        },
+        "leaping-fish": {
+          "title": "O Peixe que Salta",
+          "description": "Um peixe pula ao lado do trono: o inconsciente é visitante bem-vindo, não ameaça. O rei convive com seus impulsos profundos."
+        },
+        "ship-horizon": {
+          "title": "O Navio no Horizonte",
+          "description": "Um barco cruza ao longe: as aventuras do mundo exterior continuam, enquanto o rei guarda a calma interior que lhes serve de porto."
+        }
+      }
+    },
+    "en-US": {
+      "name": "King of Cups",
+      "intro": "The king sits on a throne floating on the restless sea, holding cup and sceptre. Mastery of emotion, compassionate wisdom and the calm of one who rules without denying depth.",
+      "regions": {
+        "cup-and-sceptre": {
+          "title": "The Cup and the Sceptre",
+          "description": "One hand holds feeling, the other authority: the king balances heart and command and lets neither smother the other."
+        },
+        "floating-throne": {
+          "title": "The Throne on the Water",
+          "description": "The throne floats among waves: he keeps stability amid turbulence. Serenity is not the absence of storm but presence within it."
+        },
+        "leaping-fish": {
+          "title": "The Leaping Fish",
+          "description": "A fish leaps beside the throne: the unconscious is a welcome visitor, not a threat. The king lives alongside his deepest impulses."
+        },
+        "ship-horizon": {
+          "title": "The Ship on the Horizon",
+          "description": "A ship passes in the distance: the adventures of the outer world go on, while the king keeps the inner calm that serves as their harbor."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップのキング",
+      "intro": "王は荒れる海に浮かぶ玉座に座り、杯と笏を手にしています。感情の統御、慈悲深い知恵、深さを否定せずに統べる者の落ち着きです。",
+      "regions": {
+        "cup-and-sceptre": {
+          "title": "杯と笏",
+          "description": "片手は感情を、もう片手は権威を握ります。王は心と統率の均衡を保ち、どちらにももう一方を押しつぶさせません。"
+        },
+        "floating-throne": {
+          "title": "水に浮かぶ玉座",
+          "description": "玉座は波の間に浮かびます。彼は乱流の中で安定を保っています。静けさとは嵐がないことではなく、嵐の中にいながら在ることです。"
+        },
+        "leaping-fish": {
+          "title": "跳ねる魚",
+          "description": "玉座の傍らで魚が跳ねます。無意識は脅威ではなく歓迎すべき訪問者です。王は自らの深い衝動と共に生きています。"
+        },
+        "ship-horizon": {
+          "title": "水平線の船",
+          "description": "遠くを船が横切ります。外の世界の冒険は続き、王は、その港となる内なる静けさを保っています。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלך הגביעים",
+      "intro": "המלך יושב על כס צף על ים גועש ואוחז גביע ושרביט. שליטה ברגשות, חוכמה רחומה והשלווה של מי ששולט בלי להכחיש עומק.",
+      "regions": {
+        "cup-and-sceptre": {
+          "title": "הגביע והשרביט",
+          "description": "יד אחת מחזיקה את הרגש והאחרת את הסמכות: המלך מאזן בין לב לפיקוד ולא נותן לאחד לחנוק את השני."
+        },
+        "floating-throne": {
+          "title": "הכס על המים",
+          "description": "הכס צף בין הגלים: הוא שומר על יציבות בלב הסערה. שלווה היא לא היעדר סערה אלא נוכחות בתוכה."
+        },
+        "leaping-fish": {
+          "title": "הדג הקופץ",
+          "description": "דג קופץ לצד הכס: הלא־מודע הוא אורח רצוי ולא איום. המלך חי לצד הדחפים העמוקים שלו."
+        },
+        "ship-horizon": {
+          "title": "הספינה באופק",
+          "description": "ספינה חולפת מרחוק: הרפתקאות העולם החיצוני נמשכות, והמלך שומר על השלווה הפנימית שמשמשת להן נמל."
+        }
+      }
+    }
+  }
+}

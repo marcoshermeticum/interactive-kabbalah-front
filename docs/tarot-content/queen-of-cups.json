@@ -1,0 +1,115 @@
+{
+  "slug": "queen-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 13,
+  "image": "/tarot/minor/queen-of-cups.jpg",
+  "regions": [
+    {
+      "id": "ornate-cup",
+      "icon": "🏺"
+    },
+    {
+      "id": "shell-throne",
+      "icon": "🐚"
+    },
+    {
+      "id": "tide-shore",
+      "icon": "🌊"
+    },
+    {
+      "id": "crown-veil",
+      "icon": "👑"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rainha de Copas",
+      "intro": "A rainha contempla uma taça ornamentada e fechada, sentada num trono à beira-mar. Intuição profunda, compaixão e a capacidade de sentir o outro sem perder o próprio centro.",
+      "regions": {
+        "ornate-cup": {
+          "title": "A Taça Fechada",
+          "description": "Diferente das outras, esta taça tem tampa e anjos nas alças: o sentimento sagrado guardado com cuidado. Ela o sustenta, sem derramá-lo."
+        },
+        "shell-throne": {
+          "title": "O Trono de Conchas",
+          "description": "Um trono decorado com conchas e crianças aladas: o mar o molda. Seu poder é sensível e nasce da sintonia com os ciclos da emoção."
+        },
+        "tide-shore": {
+          "title": "A Orla do Mar",
+          "description": "Seus pés repousam sobre seixos, com a água a lamber a base do trono: ela vive no limiar entre o consciente (terra) e o inconsciente (mar)."
+        },
+        "crown-veil": {
+          "title": "A Coroa e o Olhar",
+          "description": "Um olhar fixo e absorto na taça, sob uma coroa discreta: a atenção interior vale mais do que o domínio sobre os outros."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Queen of Cups",
+      "intro": "The queen contemplates an ornate closed cup, seated on a throne by the sea. Deep intuition, compassion and the ability to feel another without losing your own center.",
+      "regions": {
+        "ornate-cup": {
+          "title": "The Closed Cup",
+          "description": "Unlike the others, this cup has a lid and angels on the handles: sacred feeling kept with care. She holds it without spilling it."
+        },
+        "shell-throne": {
+          "title": "The Shell Throne",
+          "description": "A throne decorated with shells and winged children: the sea shapes it. Her power is sensitive and springs from attunement to the cycles of emotion."
+        },
+        "tide-shore": {
+          "title": "The Shoreline",
+          "description": "Her feet rest on pebbles with water lapping at the base of the throne: she lives on the threshold between the conscious (land) and the unconscious (sea)."
+        },
+        "crown-veil": {
+          "title": "The Crown and the Gaze",
+          "description": "A fixed, absorbed gaze on the cup beneath a modest crown: inner attention is worth more than ruling others."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップのクイーン",
+      "intro": "女王は海辺の玉座に座り、装飾の施された蓋付きの杯を見つめています。深い直感、思いやり、自分の軸を失わずに他者を感じ取る力です。",
+      "regions": {
+        "ornate-cup": {
+          "title": "蓋のある杯",
+          "description": "他の札と違い、この杯には蓋があり、持ち手には天使がいます。大切に保たれた神聖な感情です。彼女は一滴もこぼさずに支えています。"
+        },
+        "shell-throne": {
+          "title": "貝の玉座",
+          "description": "貝殻と翼のある子どもたちで飾られた玉座。海がそれを形づくっています。彼女の力は繊細で、感情の周期との調和から生まれます。"
+        },
+        "tide-shore": {
+          "title": "波打ち際",
+          "description": "彼女の足は小石の上にあり、玉座の根元には水が寄せています。意識(陸)と無意識(海)の境に生きています。"
+        },
+        "crown-veil": {
+          "title": "王冠とまなざし",
+          "description": "ささやかな王冠の下で、杯に注がれる集中したまなざし。内なる注意は、他者を治めること以上に価値があります。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלכת הגביעים",
+      "intro": "המלכה מתבוננת בגביע מעוטר וסגור, יושבת על כס ליד הים. אינטואיציה עמוקה, חמלה והיכולת להרגיש את האחר בלי לאבד את המרכז שלך.",
+      "regions": {
+        "ornate-cup": {
+          "title": "הגביע הסגור",
+          "description": "בניגוד לאחרים, לגביע הזה יש מכסה ומלאכים על הידיות: רגש קדוש ששומרים עליו בקפידה. היא נושאת אותו בלי לשפוך."
+        },
+        "shell-throne": {
+          "title": "כס הצדפים",
+          "description": "כס מעוטר בצדפים וילדים מכונפים: הים מעצב אותו. כוחה רגיש ונובע מהתכוונות למחזורי הרגש."
+        },
+        "tide-shore": {
+          "title": "קו החוף",
+          "description": "רגליה נחות על חלוקי נחל כשהמים ליד בסיס הכס: היא חיה בסף שבין המודע (יבשה) ללא־מודע (ים)."
+        },
+        "crown-veil": {
+          "title": "הכתר והמבט",
+          "description": "מבט נעוץ ושקוע בגביע תחת כתר צנוע: תשומת הלב הפנימית שווה יותר משליטה באחרים."
+        }
+      }
+    }
+  }
+}

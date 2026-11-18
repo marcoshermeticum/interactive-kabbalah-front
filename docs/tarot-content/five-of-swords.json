@@ -1,0 +1,115 @@
+{
+  "slug": "five-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 5,
+  "image": "/tarot/minor/five-of-swords.jpg",
+  "regions": [
+    {
+      "id": "victor",
+      "icon": "😏"
+    },
+    {
+      "id": "collected-swords",
+      "icon": "⚔️"
+    },
+    {
+      "id": "departing-losers",
+      "icon": "🚶"
+    },
+    {
+      "id": "stormy-sky",
+      "icon": "🌥️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cinco de Espadas",
+      "intro": "Um homem sorri segurando três espadas, enquanto dois outros se afastam derrotados. Vitória duvidosa, conflito vencido a qualquer custo e o preço de ganhar sem generosidade.",
+      "regions": {
+        "victor": {
+          "title": "O Vencedor",
+          "description": "O sorriso de canto revela satisfação e desprezo: ele venceu, mas está sozinho. Ganhar a discussão pode custar o vínculo."
+        },
+        "collected-swords": {
+          "title": "As Espadas Recolhidas",
+          "description": "Ele toma as armas dos derrotados: o triunfo se mede em despojos. Quem acumula armas alheias vive sempre à espera da próxima luta."
+        },
+        "departing-losers": {
+          "title": "Os que Se Afastam",
+          "description": "Dois vultos caminham de cabeça baixa rumo ao mar: as consequências da derrota. A carta lembra que todo conflito deixa ressentimentos."
+        },
+        "stormy-sky": {
+          "title": "O Céu Rasgado",
+          "description": "Nuvens longas e agitadas cortam o céu: o ar ainda está tenso depois do embate. Mesmo o vencedor não encontra calma imediata."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Five of Swords",
+      "intro": "A man smiles holding three swords while two others walk away defeated. A doubtful victory, conflict won at any cost and the price of winning without generosity.",
+      "regions": {
+        "victor": {
+          "title": "The Victor",
+          "description": "The sidelong smile reveals satisfaction and contempt: he won, but he is alone. Winning the argument can cost the bond."
+        },
+        "collected-swords": {
+          "title": "The Collected Swords",
+          "description": "He takes the weapons of the defeated: triumph measured in spoils. One who gathers others' arms lives forever awaiting the next fight."
+        },
+        "departing-losers": {
+          "title": "The Departing Losers",
+          "description": "Two figures walk with lowered heads toward the sea: the consequences of defeat. The card reminds us every conflict leaves resentment."
+        },
+        "stormy-sky": {
+          "title": "The Ragged Sky",
+          "description": "Long, restless clouds cut across the sky: the air is still tense after the clash. Even the winner finds no immediate calm."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの5",
+      "intro": "男が三本の剣を握って笑みを浮かべ、他の二人は敗れて立ち去ります。疑わしい勝利、手段を選ばず勝ち取った争い、そして寛大さなく勝つことの代償です。",
+      "regions": {
+        "victor": {
+          "title": "勝者",
+          "description": "横目の笑みは満足と軽蔑を表しています。彼は勝ちましたが、一人きりです。議論に勝つことが、絆を失う代償になることもあります。"
+        },
+        "collected-swords": {
+          "title": "集められた剣",
+          "description": "彼は敗者の武器を奪います。勝利が戦利品で測られています。他人の武器を集める者は、常に次の戦いを待って生きます。"
+        },
+        "departing-losers": {
+          "title": "去っていく敗者たち",
+          "description": "二つの人影がうなだれて海へ向かいます。敗北の結果です。あらゆる対立が遺恨を残すことを、カードは思い出させます。"
+        },
+        "stormy-sky": {
+          "title": "裂けた空",
+          "description": "長くざわめく雲が空を横切ります。衝突の後も空気は張りつめています。勝者でさえ、すぐには安らぎを得られません。"
+        }
+      }
+    },
+    "he": {
+      "name": "חמש של חרבות",
+      "intro": "אדם מחייך ואוחז בשלוש חרבות, בעוד שניים אחרים מתרחקים מובסים. ניצחון מפוקפק, סכסוך שנוצח בכל מחיר והמחיר של לנצח בלי נדיבות.",
+      "regions": {
+        "victor": {
+          "title": "המנצח",
+          "description": "החיוך הצדדי חושף סיפוק ובוז: הוא ניצח אך נשאר לבד. לנצח בוויכוח עלול לעלות במחיר הקשר."
+        },
+        "collected-swords": {
+          "title": "החרבות שנאספו",
+          "description": "הוא לוקח את נשקם של המובסים: הניצחון נמדד בשלל. מי שאוסף את נשקם של אחרים חי תמיד בציפייה לקרב הבא."
+        },
+        "departing-losers": {
+          "title": "המתרחקים",
+          "description": "שתי דמויות הולכות בראש מושפל לעבר הים: תוצאות התבוסה. הקלף מזכיר שכל סכסוך משאיר טינה."
+        },
+        "stormy-sky": {
+          "title": "השמיים הקרועים",
+          "description": "עננים ארוכים ונסערים חותכים את השמיים: האוויר עדיין מתוח אחרי העימות. גם המנצח לא מוצא שלווה מיידית."
+        }
+      }
+    }
+  }
+}

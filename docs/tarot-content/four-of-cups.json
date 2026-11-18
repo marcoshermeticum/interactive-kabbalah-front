@@ -1,0 +1,115 @@
+{
+  "slug": "four-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 4,
+  "image": "/tarot/minor/four-of-cups.jpg",
+  "regions": [
+    {
+      "id": "hand-fourth-cup",
+      "icon": "✋"
+    },
+    {
+      "id": "three-cups-ground",
+      "icon": "🥤"
+    },
+    {
+      "id": "crossed-arms",
+      "icon": "🧘"
+    },
+    {
+      "id": "tree",
+      "icon": "🌳"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Quatro de Copas",
+      "intro": "Um jovem de braços cruzados medita sob uma árvore, ignorando as três taças à frente enquanto uma mão oferece uma quarta. Apatia, contemplação e a oportunidade que passa despercebida.",
+      "regions": {
+        "hand-fourth-cup": {
+          "title": "A Mão e a Quarta Taça",
+          "description": "Uma mão sai da nuvem oferecendo mais uma taça: a vida continua trazendo novas possibilidades, mesmo quando não estamos olhando para elas."
+        },
+        "three-cups-ground": {
+          "title": "As Três Taças no Chão",
+          "description": "Alinhadas à frente dele, as taças que já tem: o que foi dado se torna invisível quando a mente só quer o que falta."
+        },
+        "crossed-arms": {
+          "title": "Os Braços Cruzados",
+          "description": "Postura fechada e olhar baixo: ele se protege do mundo. A introspecção ajuda, mas pode virar muro quando impede de receber."
+        },
+        "tree": {
+          "title": "A Árvore",
+          "description": "Ele repousa ao pé de uma árvore robusta: o refúgio da pausa. É um tempo legítimo de reflexão, desde que não se transforme em estagnação."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Four of Cups",
+      "intro": "A young man with crossed arms meditates under a tree, ignoring the three cups before him while a hand offers a fourth. Apathy, contemplation and the opportunity that goes unnoticed.",
+      "regions": {
+        "hand-fourth-cup": {
+          "title": "The Hand and the Fourth Cup",
+          "description": "A hand emerges from a cloud offering one more cup: life keeps bringing new possibilities even when we are not looking."
+        },
+        "three-cups-ground": {
+          "title": "The Three Cups on the Ground",
+          "description": "Lined up before him, the cups he already has: what has been given becomes invisible when the mind only wants what is missing."
+        },
+        "crossed-arms": {
+          "title": "The Crossed Arms",
+          "description": "A closed posture and lowered gaze: he shields himself from the world. Introspection helps, but it can become a wall when it prevents receiving."
+        },
+        "tree": {
+          "title": "The Tree",
+          "description": "He rests at the foot of a sturdy tree: the refuge of pause. It is a legitimate time of reflection, so long as it does not turn into stagnation."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの4",
+      "intro": "腕を組んだ若者が木の下で瞑想し、目の前の三つの杯を気にせず、差し出される四つ目の杯にも気づきません。無関心、内省、見過ごされる好機です。",
+      "regions": {
+        "hand-fourth-cup": {
+          "title": "手と四つ目の杯",
+          "description": "雲から現れた手が、もう一つ杯を差し出します。私たちが見ていなくても、人生は新しい可能性を運び続けています。"
+        },
+        "three-cups-ground": {
+          "title": "地面の三つの杯",
+          "description": "彼の前に並ぶ、すでに持っている杯。心が足りないものだけを求めると、与えられたものは見えなくなります。"
+        },
+        "crossed-arms": {
+          "title": "組んだ腕",
+          "description": "閉じた姿勢と伏せた視線。彼は世間から身を守っています。内省は助けになりますが、受け取ることを妨げるなら壁になります。"
+        },
+        "tree": {
+          "title": "木",
+          "description": "彼は頑丈な木の根元で休んでいます。立ち止まる避難所です。停滞に変わらない限り、内省の正当な時間です。"
+        }
+      }
+    },
+    "he": {
+      "name": "ארבע של גביעים",
+      "intro": "צעיר בזרועות שלובות מהרהר מתחת לעץ ומתעלם משלושת הגביעים שלפניו, בעוד יד מציעה לו רביעי. אדישות, התבוננות והזדמנות שחולפת בלי שמבחינים בה.",
+      "regions": {
+        "hand-fourth-cup": {
+          "title": "היד והגביע הרביעי",
+          "description": "יד יוצאת מהענן ומציעה עוד גביע: החיים ממשיכים להביא אפשרויות חדשות גם כשאיננו מביטים בהן."
+        },
+        "three-cups-ground": {
+          "title": "שלושת הגביעים על הקרקע",
+          "description": "מסודרים לפניו, הגביעים שכבר יש לו: מה שניתן נעשה בלתי נראה כשהתודעה רוצה רק את מה שחסר."
+        },
+        "crossed-arms": {
+          "title": "הזרועות השלובות",
+          "description": "יציבה סגורה ומבט מושפל: הוא מגן על עצמו מהעולם. התבוננות פנימית מועילה, אך הופכת לחומה כשהיא מונעת לקבל."
+        },
+        "tree": {
+          "title": "העץ",
+          "description": "הוא נח למרגלות עץ איתן: מקלט ההפסקה. זו תקופה לגיטימית של הרהור, כל עוד היא לא הופכת לקיפאון."
+        }
+      }
+    }
+  }
+}

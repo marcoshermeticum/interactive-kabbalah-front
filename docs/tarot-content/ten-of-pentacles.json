@@ -1,0 +1,115 @@
+{
+  "slug": "ten-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 10,
+  "image": "/tarot/minor/ten-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "patriarch-dogs",
+      "icon": "🐕"
+    },
+    {
+      "id": "family-child",
+      "icon": "👨‍👩‍👧"
+    },
+    {
+      "id": "tree-of-life-pentacles",
+      "icon": "🌳"
+    },
+    {
+      "id": "estate-arch",
+      "icon": "🏰"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dez de Ouros",
+      "intro": "Sob um arco de pedra, um patriarca, um casal, uma criança e dois cães ocupam um pátio onde dez pentáculos formam a Árvore da Vida. Herança, família, tradição e prosperidade que atravessa gerações.",
+      "regions": {
+        "patriarch-dogs": {
+          "title": "O Patriarca e os Cães",
+          "description": "O ancião de manto bordado acaricia os cães: a sabedoria acumulada e a lealdade. O legado é cuidado por quem sabe receber de volta."
+        },
+        "family-child": {
+          "title": "O Casal e a Criança",
+          "description": "Um casal conversa enquanto a criança observa: a transmissão que se faz pelo exemplo. A família é o primeiro lugar onde se aprende a prosperar."
+        },
+        "tree-of-life-pentacles": {
+          "title": "Os Pentáculos em Árvore",
+          "description": "Dez moedas dispostas como a Árvore da Vida: a riqueza como estrutura espiritual completa. Cada esfera material tem seu lugar no todo."
+        },
+        "estate-arch": {
+          "title": "O Arco e a Propriedade",
+          "description": "A arcada de pedra emoldura o castelo ao fundo: a continuidade de uma casa estável, um refúgio que protege o que as gerações construíram."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ten of Pentacles",
+      "intro": "Under a stone arch, a patriarch, a couple, a child and two dogs occupy a courtyard where ten pentacles form the Tree of Life. Inheritance, family, tradition and prosperity that spans generations.",
+      "regions": {
+        "patriarch-dogs": {
+          "title": "The Patriarch and the Dogs",
+          "description": "The elder in an embroidered robe pets the dogs: accumulated wisdom and loyalty. The legacy is cared for by those who know how to receive in return."
+        },
+        "family-child": {
+          "title": "The Couple and the Child",
+          "description": "A couple talks while the child watches: transmission through example. The family is the first place where one learns to prosper."
+        },
+        "tree-of-life-pentacles": {
+          "title": "The Pentacles as a Tree",
+          "description": "Ten coins arranged as the Tree of Life: wealth as a complete spiritual structure. Each material sphere has its place in the whole."
+        },
+        "estate-arch": {
+          "title": "The Arch and the Estate",
+          "description": "The stone archway frames the castle behind: the continuity of a stable house, a haven protecting what generations have built."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの10",
+      "intro": "石のアーチの下、家長、夫婦、子ども、二匹の犬が中庭にいて、十のペンタクルが生命の樹を形づくっています。遺産、家族、伝統、世代を超える繁栄です。",
+      "regions": {
+        "patriarch-dogs": {
+          "title": "家長と犬",
+          "description": "刺繍の衣をまとった長老が犬をなでています。蓄えられた知恵と忠誠です。遺産は、お返しを受け取れる者によって大切にされます。"
+        },
+        "family-child": {
+          "title": "夫婦と子ども",
+          "description": "夫婦が語らう間、子どもが見ています。模範によって伝わるものです。家族は、繁栄することを最初に学ぶ場所です。"
+        },
+        "tree-of-life-pentacles": {
+          "title": "樹の形のペンタクル",
+          "description": "生命の樹のように並ぶ十枚の硬貨。完全な精神的構造としての富です。物質のそれぞれの領域に、全体の中の居場所があります。"
+        },
+        "estate-arch": {
+          "title": "アーチと屋敷",
+          "description": "石のアーチが背後の城を縁取っています。安定した家の継続性であり、世代が築いたものを守る避難所です。"
+        }
+      }
+    },
+    "he": {
+      "name": "עשר של מטבעות",
+      "intro": "תחת קשת אבן מתגוררים פטריארך, זוג, ילד ושני כלבים בחצר שבה עשרה מטבעות יוצרים את עץ החיים. ירושה, משפחה, מסורת ושגשוג שחוצה דורות.",
+      "regions": {
+        "patriarch-dogs": {
+          "title": "הפטריארך והכלבים",
+          "description": "הזקן בגלימה רקומה מלטף את הכלבים: חוכמה שהצטברה ונאמנות. המורשת מטופחת בידי מי שיודע לקבל בחזרה."
+        },
+        "family-child": {
+          "title": "הזוג והילד",
+          "description": "זוג משוחח בעוד הילד צופה: העברה דרך הדוגמה. המשפחה היא המקום הראשון שבו לומדים לשגשג."
+        },
+        "tree-of-life-pentacles": {
+          "title": "המטבעות כעץ",
+          "description": "עשרה מטבעות מסודרים כעץ החיים: העושר כמבנה רוחני שלם. לכל תחום חומרי יש מקומו בתוך השלם."
+        },
+        "estate-arch": {
+          "title": "הקשת והאחוזה",
+          "description": "שער האבן ממסגר את הטירה ברקע: המשכיות של בית יציב, מקלט שמגן על מה שדורות בנו."
+        }
+      }
+    }
+  }
+}

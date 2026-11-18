@@ -14,6 +14,10 @@ O fluxo completo é:
 npm run tarot:new  →  escolher a carta  →  arquivos gerados  →  posicionar destaques
 ```
 
+> **Arcanos menores:** as 56 cartas de Paus, Copas, Espadas e Ouros também são criadas por este
+> comando. O conteúdo delas já está pronto em `docs/tarot-content/` e a arte em
+> `public/tarot/minor/`. Veja [Arcanos menores](#arcanos-menores-56-cartas).
+
 ---
 
 ## O que ele faz — e o que não faz
@@ -148,6 +152,58 @@ o comando avisa em vez de sobrescrever.
 
 ---
 
+## Arcanos menores (56 cartas)
+
+Os arcanos menores seguem o mesmo fluxo dos maiores, com estas diferenças:
+
+| Item | Arcanos maiores | Arcanos menores |
+|------|-----------------|-----------------|
+| Identificação | `number` (0 a 21) | `arcana: "minor"`, `suit` e `rank` (1 a 14), **sem** `number` |
+| Slug | livre, kebab-case | obrigatório: `<posição>-of-<naipe>` (`ace-of-wands`, `page-of-cups`) |
+| Arte | `public/tarot/` | `public/tarot/minor/<slug>.jpg` |
+| Catálogo | `majorArcana.ts` | `minorArcana.ts`, que **já lista as 56 cartas**. O comando só acrescenta o import e a entrada em `minorCardData` |
+| Regiões por carta | 5 a 8 | 3 a 6 (aviso fora disso) |
+| Seleção por número | `--card 17` | só por slug: `--card two-of-cups` |
+
+```bash
+npm run tarot:new -- --card ace-of-wands      # direto pelo slug
+npm run tarot:new -- --suit cups              # menu só com as cartas de Copas
+npm run tarot:new                             # menu com tudo que está pendente
+npm run tarot:new -- --card king-of-swords --dry-run
+```
+
+Posições (`rank`): 1 Ás · 2 a 10 numeradas · 11 Valete (`page`) · 12 Cavaleiro (`knight`) ·
+13 Rainha (`queen`) · 14 Rei (`king`). Naipes (`suit`): `wands`, `cups`, `swords`, `pentacles`.
+
+Exemplo do cabeçalho de `docs/tarot-content/ace-of-wands.json`:
+
+```jsonc
+{
+  "slug": "ace-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 1,
+  "image": "/tarot/minor/ace-of-wands.jpg",
+  "regions": [ { "id": "hand-cloud", "icon": "✋" } /* ... */ ],
+  "locales": { "pt-BR": { "name": "Ás de Paus", "intro": "...", "regions": { } } /* en-US, ja, he */ }
+}
+```
+
+As validações extras do conteúdo (a carta fica fora do menu até corrigir):
+
+- `suit` precisa ser um dos quatro naipes e `rank` um inteiro de 1 a 14;
+- o `slug` precisa bater com o naipe e a posição (`rank: 3`, `suit: "cups"` exige `three-of-cups`);
+- arcanos menores não aceitam o campo `number`.
+
+O arquivo de dados gerado leva `arcana: 'minor'`, `suit` e `rank` no lugar de `number`. Os nomes
+(`tarotWaite.cards.<id>.name`/`summary`) e as correspondências (naipe, elemento, sephirah, decã,
+letra do Tetragrama) já existem para as 56 cartas e **não** são tocados pelo comando.
+
+O catálogo legível de todos os textos está em
+[`tarot-minor-arcana-regions.md`](./tarot-minor-arcana-regions.md).
+
+---
+
 ## Importar do documento de regiões (`--from-doc`)
 
 ```bash
@@ -278,7 +334,8 @@ Regras de validação:
 | Flag | O que faz |
 |------|-----------|
 | *(nenhuma)* | Menu das cartas pendentes em `docs/tarot-content` (TTY). |
-| `--card <slug\|número>` | Cria a carta direto do conteúdo, sem prompts. |
+| `--card <slug\|número>` | Cria a carta direto do conteúdo, sem prompts. O número só vale para os arcanos maiores; os menores usam o slug. |
+| `--suit <naipe>` | Restringe o menu a um naipe dos arcanos menores (`wands`, `cups`, `swords`, `pentacles`). |
 | `--from-doc <slug>` | Usa o conteúdo do JSON quando existir; senão importa do documento de regiões. |
 | `--config <arquivo>` | Lê a carta de um JSON completo e não abre prompts. |
 | `--dry-run`, `-n` | Valida tudo e mostra os arquivos que seriam alterados + o conteúdo do arquivo de dados, **sem gravar nada**. |
@@ -402,6 +459,8 @@ Passo 3 e 4 em detalhe: [guia manual, passo 4](./interactive-tarot-cards.md#pass
 
 - [Guia manual](./interactive-tarot-cards.md) — referência completa da
   arquitetura, do `viewBox`, do catálogo e do posicionamento das regiões.
+- [Catálogo dos arcanos menores](./tarot-minor-arcana-regions.md) — os 56 arcanos menores, com textos,
+  correspondências e regiões em pt-BR.
 - [Catálogo de regiões](./tarot-major-arcana-regions.md) — fonte dos símbolos em
   pt-BR e resumo das 22 cartas.
 - `docs/tarot-content/` — fonte multilíngue consumida pelo `--card` e pelo menu.

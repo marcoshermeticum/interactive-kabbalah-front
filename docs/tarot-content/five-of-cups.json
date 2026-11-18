@@ -1,0 +1,115 @@
+{
+  "slug": "five-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 5,
+  "image": "/tarot/minor/five-of-cups.jpg",
+  "regions": [
+    {
+      "id": "black-cloak",
+      "icon": "🖤"
+    },
+    {
+      "id": "spilled-cups",
+      "icon": "🍷"
+    },
+    {
+      "id": "standing-cups",
+      "icon": "🏆"
+    },
+    {
+      "id": "river-bridge",
+      "icon": "🌉"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cinco de Copas",
+      "intro": "Uma figura de capa preta chora três taças derramadas, sem ver as duas que ainda estão de pé atrás dela. Luto, arrependimento e a escolha de olhar para o que ainda resta.",
+      "regions": {
+        "black-cloak": {
+          "title": "A Capa Negra",
+          "description": "O corpo envolto em luto, de costas para o que ainda tem: a dor ocupa todo o espaço e impede de ver além dela."
+        },
+        "spilled-cups": {
+          "title": "As Taças Derramadas",
+          "description": "Três taças caídas e o líquido escorrido: a perda é real e merece ser sentida. A carta não pede para negar o luto, e sim para atravessá-lo."
+        },
+        "standing-cups": {
+          "title": "As Duas Taças em Pé",
+          "description": "Cheias e firmes atrás dele: o que sobrou, esperando ser notado. Uma mudança de postura basta para perceber que nem tudo se perdeu."
+        },
+        "river-bridge": {
+          "title": "O Rio e a Ponte",
+          "description": "Uma ponte sobre o rio leva a uma casa ao longe: a travessia do luto é possível. A água separa, mas há caminho para o outro lado."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Five of Cups",
+      "intro": "A cloaked figure in black mourns three spilled cups, without seeing the two still standing behind. Grief, regret and the choice to look at what remains.",
+      "regions": {
+        "black-cloak": {
+          "title": "The Black Cloak",
+          "description": "A body wrapped in mourning, back turned to what remains: pain fills the whole space and prevents seeing beyond it."
+        },
+        "spilled-cups": {
+          "title": "The Spilled Cups",
+          "description": "Three fallen cups and liquid run out: the loss is real and deserves to be felt. The card does not ask you to deny grief but to pass through it."
+        },
+        "standing-cups": {
+          "title": "The Two Standing Cups",
+          "description": "Full and steady behind him: what remains, waiting to be noticed. A shift in posture is enough to realize not everything was lost."
+        },
+        "river-bridge": {
+          "title": "The River and the Bridge",
+          "description": "A bridge over the river leads to a house in the distance: crossing grief is possible. The water separates, but there is a path to the other side."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの5",
+      "intro": "黒いマントの人物が倒れた三つの杯を嘆き、背後にまだ立っている二つの杯に気づいていません。悲嘆、後悔、そして残っているものへ目を向ける選択です。",
+      "regions": {
+        "black-cloak": {
+          "title": "黒いマント",
+          "description": "喪に包まれた体は、残されたものに背を向けています。痛みがすべての空間を占め、その先を見ることを妨げます。"
+        },
+        "spilled-cups": {
+          "title": "こぼれた杯",
+          "description": "倒れた三つの杯と流れ出た液体。喪失は現実であり、感じる価値があります。カードは悲しみを否定するのではなく、通り抜けるよう促します。"
+        },
+        "standing-cups": {
+          "title": "立っている二つの杯",
+          "description": "彼の背後で満ちて安定している杯。気づかれるのを待つ、残されたものです。向きを変えるだけで、すべてを失ったわけではないと分かります。"
+        },
+        "river-bridge": {
+          "title": "川と橋",
+          "description": "川に架かる橋が、遠くの家へ通じています。悲しみを渡ることは可能です。水は隔てますが、向こう岸への道はあります。"
+        }
+      }
+    },
+    "he": {
+      "name": "חמש של גביעים",
+      "intro": "דמות בגלימה שחורה מתאבלת על שלושה גביעים שנשפכו, בלי לראות את השניים שעדיין עומדים מאחוריה. אבל, חרטה והבחירה להביט במה שנותר.",
+      "regions": {
+        "black-cloak": {
+          "title": "הגלימה השחורה",
+          "description": "גוף עטוף באבל, גבו אל מה שנותר: הכאב ממלא את כל המקום ומונע לראות מעבר לו."
+        },
+        "spilled-cups": {
+          "title": "הגביעים שנשפכו",
+          "description": "שלושה גביעים שנפלו והנוזל שנשפך: האובדן אמיתי וראוי להיות מורגש. הקלף לא מבקש להכחיש את האבל אלא לעבור דרכו."
+        },
+        "standing-cups": {
+          "title": "שני הגביעים העומדים",
+          "description": "מלאים ויציבים מאחוריו: מה שנשאר, ממתין שישימו לב אליו. שינוי יציבה מספיק כדי להבין שלא הכול אבד."
+        },
+        "river-bridge": {
+          "title": "הנהר והגשר",
+          "description": "גשר מעל הנהר מוביל אל בית מרוחק: אפשר לחצות את האבל. המים מפרידים, אך יש דרך אל הצד השני."
+        }
+      }
+    }
+  }
+}

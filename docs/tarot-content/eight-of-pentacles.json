@@ -1,0 +1,115 @@
+{
+  "slug": "eight-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 8,
+  "image": "/tarot/minor/eight-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "engraving-craftsman",
+      "icon": "🔨"
+    },
+    {
+      "id": "finished-pentacles",
+      "icon": "🪙"
+    },
+    {
+      "id": "pentacle-in-progress",
+      "icon": "🛠️"
+    },
+    {
+      "id": "distant-town",
+      "icon": "🏘️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Oito de Ouros",
+      "intro": "Sentado a um banco, um artesão grava com cuidado cada pentáculo; vários já estão prontos ao lado. Dedicação ao ofício, aprendizado e o prazer de aperfeiçoar-se pela repetição.",
+      "regions": {
+        "engraving-craftsman": {
+          "title": "O Artesão Concentrado",
+          "description": "Cabeça baixa, atenção total à peça: o trabalho bem feito é uma forma de meditação. A mestria nasce da paciência com os detalhes."
+        },
+        "finished-pentacles": {
+          "title": "Os Pentáculos Prontos",
+          "description": "Seis peças acabadas, penduradas à vista: a obra acumulada. Cada moeda é um passo concluído na construção de uma competência."
+        },
+        "pentacle-in-progress": {
+          "title": "A Peça em Andamento",
+          "description": "Uma moeda ainda está no chão, ao pé do banco: sempre há mais um trabalho esperando. A prática nunca termina, apenas se refina."
+        },
+        "distant-town": {
+          "title": "A Cidade ao Longe",
+          "description": "Os telhados ao fundo mostram que o ofício serve a uma comunidade. O trabalho dedicado pode parecer isolado, mas alimenta o mundo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Eight of Pentacles",
+      "intro": "Seated at a bench, a craftsman carefully engraves each pentacle; several are already finished beside him. Dedication to craft, learning and the pleasure of improving through repetition.",
+      "regions": {
+        "engraving-craftsman": {
+          "title": "The Focused Craftsman",
+          "description": "Head bowed, total attention on the piece: work well done is a form of meditation. Mastery is born of patience with detail."
+        },
+        "finished-pentacles": {
+          "title": "The Finished Pentacles",
+          "description": "Six finished pieces hang in view: accumulated work. Each coin is a completed step in building competence."
+        },
+        "pentacle-in-progress": {
+          "title": "The Piece in Progress",
+          "description": "One coin still lies on the ground at the foot of the bench: there is always another job waiting. Practice never ends, it only refines."
+        },
+        "distant-town": {
+          "title": "The Distant Town",
+          "description": "The rooftops behind show that the craft serves a community. Dedicated work may seem solitary, but it feeds the world."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの8",
+      "intro": "作業台に座った職人が、ひとつひとつのペンタクルを丁寧に彫っています。傍らにはすでに何枚も完成しています。仕事への献身、学び、繰り返しによって上達する喜びです。",
+      "regions": {
+        "engraving-craftsman": {
+          "title": "集中する職人",
+          "description": "うつむき、作品に全神経を注いでいます。丁寧な仕事は一種の瞑想です。熟達は、細部への忍耐から生まれます。"
+        },
+        "finished-pentacles": {
+          "title": "完成したペンタクル",
+          "description": "見える場所に掛けられた六つの完成品。積み重なった仕事です。一枚一枚が、技量を築く過程で完了した一歩です。"
+        },
+        "pentacle-in-progress": {
+          "title": "制作中の一枚",
+          "description": "作業台の足元の地面にまだ一枚の硬貨があります。待っている仕事は常にもう一つあります。鍛錬は終わらず、ただ洗練されていきます。"
+        },
+        "distant-town": {
+          "title": "遠くの町",
+          "description": "背景の屋根は、この仕事が共同体に仕えていることを示します。打ち込む仕事は孤独に見えても、世界を養います。"
+        }
+      }
+    },
+    "he": {
+      "name": "שמונה של מטבעות",
+      "intro": "יושב ליד שולחן עבודה, בעל מלאכה חורט בקפידה כל מטבע; כמה מהם כבר גמורים לידו. מסירות למלאכה, למידה והעונג שבשיפור דרך חזרה.",
+      "regions": {
+        "engraving-craftsman": {
+          "title": "בעל המלאכה המרוכז",
+          "description": "ראש מושפל ותשומת לב מלאה ליצירה: עבודה טובה היא סוג של מדיטציה. מומחיות נולדת מסבלנות בפרטים."
+        },
+        "finished-pentacles": {
+          "title": "המטבעות המוגמרים",
+          "description": "שישה חלקים גמורים תלויים לעין: העבודה שהצטברה. כל מטבע הוא צעד שהושלם בבניית מיומנות."
+        },
+        "pentacle-in-progress": {
+          "title": "היצירה בעבודה",
+          "description": "מטבע אחד עדיין מונח על הקרקע למרגלות הספסל: תמיד יש עוד עבודה שממתינה. התרגול לא נגמר, הוא רק מתעדן."
+        },
+        "distant-town": {
+          "title": "העיירה המרוחקת",
+          "description": "הגגות ברקע מראים שהמלאכה משרתת קהילה. עבודה מסורה עשויה להיראות בודדת, אך היא מזינה את העולם."
+        }
+      }
+    }
+  }
+}

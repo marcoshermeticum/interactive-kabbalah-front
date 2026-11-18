@@ -1,0 +1,115 @@
+{
+  "slug": "king-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 14,
+  "image": "/tarot/minor/king-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "pentacle-sceptre",
+      "icon": "🪙"
+    },
+    {
+      "id": "bull-throne",
+      "icon": "🐂"
+    },
+    {
+      "id": "grape-mantle",
+      "icon": "🍇"
+    },
+    {
+      "id": "castle-garden",
+      "icon": "🏰"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rei de Ouros",
+      "intro": "O rei de manto de uvas senta num trono de touros, segurando cetro e pentáculo diante de seu castelo. Prosperidade, estabilidade e o poder de quem construiu e agora administra com generosidade.",
+      "regions": {
+        "pentacle-sceptre": {
+          "title": "O Pentáculo e o Cetro",
+          "description": "Uma mão guarda a moeda, a outra o cetro: riqueza e autoridade a serviço do que construiu. Governar é também saber conservar."
+        },
+        "bull-throne": {
+          "title": "O Trono de Touros",
+          "description": "Cabeças de touro nos braços do trono: força, teimosia e fertilidade da terra. Sua autoridade é paciente, mas firme como a rocha."
+        },
+        "grape-mantle": {
+          "title": "O Manto de Uvas",
+          "description": "Videiras e cachos bordados cobrem a veste: a colheita feita roupa. A abundância é seu estado natural, fruto de décadas de cultivo."
+        },
+        "castle-garden": {
+          "title": "O Castelo e o Jardim",
+          "description": "A fortaleza e o jardim florido atrás dele: segurança que convida ao prazer. O patrimônio é lugar de proteção e também de acolhida."
+        }
+      }
+    },
+    "en-US": {
+      "name": "King of Pentacles",
+      "intro": "The king in a mantle of grapes sits on a throne of bulls, holding sceptre and pentacle before his castle. Prosperity, stability and the power of one who built and now administers with generosity.",
+      "regions": {
+        "pentacle-sceptre": {
+          "title": "The Pentacle and the Sceptre",
+          "description": "One hand holds the coin, the other the sceptre: wealth and authority serving what he built. Ruling also means knowing how to preserve."
+        },
+        "bull-throne": {
+          "title": "The Bull Throne",
+          "description": "Bull heads on the arms of the throne: strength, stubbornness and earthly fertility. His authority is patient, yet firm as rock."
+        },
+        "grape-mantle": {
+          "title": "The Grape Mantle",
+          "description": "Embroidered vines and grapes cover the garment: harvest made into clothing. Abundance is his natural state, the fruit of decades of cultivation."
+        },
+        "castle-garden": {
+          "title": "The Castle and Garden",
+          "description": "The fortress and the flowering garden behind him: security that invites pleasure. His estate is a place of protection and also of welcome."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルのキング",
+      "intro": "ブドウ模様のマントをまとった王が、雄牛の玉座に座り、城の前で笏とペンタクルを持っています。繁栄、安定、築き上げ、今は寛大に治める者の力です。",
+      "regions": {
+        "pentacle-sceptre": {
+          "title": "ペンタクルと笏",
+          "description": "片手に硬貨、もう片手に笏。築いたものに仕える富と権威です。治めるとは、守ることを知ることでもあります。"
+        },
+        "bull-throne": {
+          "title": "雄牛の玉座",
+          "description": "玉座の肘掛けの雄牛の頭。力、頑固さ、大地の豊穣です。彼の権威は辛抱強く、それでいて岩のように揺るぎません。"
+        },
+        "grape-mantle": {
+          "title": "ブドウのマント",
+          "description": "刺繍されたつると房が衣を覆います。収穫が衣になりました。豊かさは彼の自然な状態であり、何十年もの栽培の実りです。"
+        },
+        "castle-garden": {
+          "title": "城と庭",
+          "description": "背後の城塞と花咲く庭。喜びへ誘う安定です。彼の財産は守りの場であると同時に、迎え入れの場でもあります。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלך המטבעות",
+      "intro": "המלך במעטה ענבים יושב על כס שוורים, אוחז שרביט ומטבע מול טירתו. שגשוג, יציבות וכוחו של מי שבנה וכעת מנהל בנדיבות.",
+      "regions": {
+        "pentacle-sceptre": {
+          "title": "המטבע והשרביט",
+          "description": "יד אחת מחזיקה את המטבע והשנייה את השרביט: עושר וסמכות שמשרתים את מה שבנה. לשלוט פירושו גם לדעת לשמר."
+        },
+        "bull-throne": {
+          "title": "כס השוורים",
+          "description": "ראשי שוורים בידיות הכס: כוח, עקשנות ופוריות האדמה. סמכותו סבלנית אך איתנה כסלע."
+        },
+        "grape-mantle": {
+          "title": "מעטה הענבים",
+          "description": "גפנים וענבים רקומים מכסים את הבגד: הקציר שהפך ללבוש. השפע הוא מצבו הטבעי, פרי עשרות שנות עיבוד."
+        },
+        "castle-garden": {
+          "title": "הטירה והגן",
+          "description": "המבצר והגן הפורח מאחוריו: ביטחון שמזמין להנאה. נכסיו הם מקום של הגנה וגם של קבלת פנים."
+        }
+      }
+    }
+  }
+}

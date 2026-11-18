@@ -1,0 +1,115 @@
+{
+  "slug": "page-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 11,
+  "image": "/tarot/minor/page-of-wands.jpg",
+  "regions": [
+    {
+      "id": "salamander-tunic",
+      "icon": "🦎"
+    },
+    {
+      "id": "wand-gaze",
+      "icon": "🪄"
+    },
+    {
+      "id": "feathered-hat",
+      "icon": "🪶"
+    },
+    {
+      "id": "desert-pyramids",
+      "icon": "🏜️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Valete de Paus",
+      "intro": "Um jovem de túnica ornada de salamandras fita o cajado que segura, em meio ao deserto. Curiosidade, entusiasmo e a mensagem de uma ideia nova que pede para ser explorada.",
+      "regions": {
+        "salamander-tunic": {
+          "title": "A Túnica de Salamandras",
+          "description": "A salamandra, criatura do fogo, estampa a roupa do jovem: o elemento da carta vive nele, ainda sem dominar a própria chama."
+        },
+        "wand-gaze": {
+          "title": "O Cajado Contemplado",
+          "description": "Ele observa o bastão como quem examina uma possibilidade: antes de agir, olha para a própria vontade e se pergunta o que fazer com ela."
+        },
+        "feathered-hat": {
+          "title": "O Chapéu com Pena",
+          "description": "A pena no chapéu é leveza e liberdade: a mente aberta do aprendiz, pronta para ser levada pelo vento de uma nova ideia."
+        },
+        "desert-pyramids": {
+          "title": "O Deserto e as Pirâmides",
+          "description": "Areia e pirâmides ao fundo: terreno árido e antigo onde só o fogo da iniciativa pode fazer algo brotar. Tudo ainda está por ser feito."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Page of Wands",
+      "intro": "A young man in a tunic patterned with salamanders gazes at the wand he holds, in the middle of the desert. Curiosity, enthusiasm and the message of a new idea asking to be explored.",
+      "regions": {
+        "salamander-tunic": {
+          "title": "The Salamander Tunic",
+          "description": "The salamander, creature of fire, patterns the youth's clothing: the card's element lives in him, though he does not yet master his own flame."
+        },
+        "wand-gaze": {
+          "title": "The Contemplated Wand",
+          "description": "He studies the staff like one examining a possibility: before acting, he looks at his own will and asks what to do with it."
+        },
+        "feathered-hat": {
+          "title": "The Feathered Hat",
+          "description": "The feather in the hat is lightness and freedom: the open mind of the apprentice, ready to be carried off by the wind of a new idea."
+        },
+        "desert-pyramids": {
+          "title": "The Desert and the Pyramids",
+          "description": "Sand and pyramids behind him: an arid, ancient terrain where only the fire of initiative can make something grow. Everything is still to be done."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドのペイジ",
+      "intro": "サラマンダー模様のチュニックを着た若者が、砂漠の中で手にした杖を見つめています。好奇心、熱意、そして探求を待つ新しい発想の知らせです。",
+      "regions": {
+        "salamander-tunic": {
+          "title": "サラマンダーのチュニック",
+          "description": "火の生き物サラマンダーが若者の服を飾ります。このカードの元素は彼の中に生きていますが、自らの炎をまだ使いこなしてはいません。"
+        },
+        "wand-gaze": {
+          "title": "見つめられる杖",
+          "description": "彼は可能性を吟味するように杖を観察します。行動する前に自らの意志を見つめ、それをどう使うかを問うています。"
+        },
+        "feathered-hat": {
+          "title": "羽根付きの帽子",
+          "description": "帽子の羽根は軽やかさと自由。見習いの開かれた心であり、新しい発想の風に運ばれる準備ができています。"
+        },
+        "desert-pyramids": {
+          "title": "砂漠とピラミッド",
+          "description": "背景の砂とピラミッド。何かを芽吹かせられるのは主体性の炎だけという、乾いた古い大地です。すべてはこれからです。"
+        }
+      }
+    },
+    "he": {
+      "name": "נער המטות",
+      "intro": "צעיר בטוניקה מעוטרת סלמנדרות מביט במטה שבידו, בלב המדבר. סקרנות, התלהבות והבשורה של רעיון חדש שמבקש להיחקר.",
+      "regions": {
+        "salamander-tunic": {
+          "title": "הטוניקה עם הסלמנדרות",
+          "description": "הסלמנדרה, יצור האש, מעטרת את בגדי הצעיר: יסוד הקלף חי בו, אף שעוד אינו שולט בלהבה שלו."
+        },
+        "wand-gaze": {
+          "title": "המטה המוּבָט",
+          "description": "הוא בוחן את המקל כמי שבודק אפשרות: לפני שיפעל הוא מביט ברצונו שלו ושואל מה לעשות איתו."
+        },
+        "feathered-hat": {
+          "title": "הכובע עם הנוצה",
+          "description": "הנוצה בכובע היא קלילות וחופש: תודעה פתוחה של חניך, מוכנה להיסחף ברוח של רעיון חדש."
+        },
+        "desert-pyramids": {
+          "title": "המדבר והפירמידות",
+          "description": "חול ופירמידות ברקע: שטח צחיח ועתיק שרק אש היוזמה יכולה להצמיח בו משהו. הכול עוד לפניו."
+        }
+      }
+    }
+  }
+}

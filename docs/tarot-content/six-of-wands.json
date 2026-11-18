@@ -1,0 +1,115 @@
+{
+  "slug": "six-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 6,
+  "image": "/tarot/minor/six-of-wands.jpg",
+  "regions": [
+    {
+      "id": "laurel-wreath",
+      "icon": "🏆"
+    },
+    {
+      "id": "victorious-rider",
+      "icon": "🏇"
+    },
+    {
+      "id": "white-horse",
+      "icon": "🐴"
+    },
+    {
+      "id": "crowd-of-staves",
+      "icon": "👥"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Seis de Paus",
+      "intro": "Um cavaleiro coroado de louros volta em triunfo, cercado por uma multidão de cajados. Vitória pública, reconhecimento e o orgulho de ter vencido à vista de todos.",
+      "regions": {
+        "laurel-wreath": {
+          "title": "A Coroa de Louros",
+          "description": "Uma coroa de louros no cajado e na cabeça do cavaleiro: a vitória conquistada que se reconhece na honra. O mérito é de quem o merece."
+        },
+        "victorious-rider": {
+          "title": "O Cavaleiro Vitorioso",
+          "description": "Ele cavalga de cabeça erguida, com a capa vermelha ao vento: a confiança de quem venceu e sabe que o sucesso vem acompanhado de responsabilidade."
+        },
+        "white-horse": {
+          "title": "O Cavalo Branco",
+          "description": "A montaria branca, enfeitada de verde: a energia domada e a pureza do propósito que levou à conquista, conduzida pelo cavaleiro e não o contrário."
+        },
+        "crowd-of-staves": {
+          "title": "A Multidão de Cajados",
+          "description": "Seguidores marcham a pé ao redor, erguendo seus cajados: o sucesso pessoal depende do apoio de muitos. A glória é compartilhada com quem caminhou ao lado."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Six of Wands",
+      "intro": "A rider crowned with laurel returns in triumph, surrounded by a crowd of staves. Public victory, recognition and the pride of having won in front of everyone.",
+      "regions": {
+        "laurel-wreath": {
+          "title": "The Laurel Wreath",
+          "description": "A laurel wreath on the wand and on the rider's head: victory earned and acknowledged in honor. The merit belongs to the one who deserves it."
+        },
+        "victorious-rider": {
+          "title": "The Victorious Rider",
+          "description": "He rides with head high, red cloak in the wind: the confidence of someone who has won and knows that success brings responsibility."
+        },
+        "white-horse": {
+          "title": "The White Horse",
+          "description": "The white mount, adorned in green: tamed energy and the purity of purpose that led to the conquest, guided by the rider and not the reverse."
+        },
+        "crowd-of-staves": {
+          "title": "The Crowd of Staves",
+          "description": "Followers march on foot around him, raising their staves: personal success depends on the support of many. The glory is shared with those who walked alongside."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの6",
+      "intro": "月桂冠をかぶった騎手が、杖を掲げる群衆に囲まれて凱旋します。公の勝利、承認、そして皆の前で勝ち取った誇りです。",
+      "regions": {
+        "laurel-wreath": {
+          "title": "月桂冠",
+          "description": "杖と騎手の頭に月桂冠。勝ち取った勝利が名誉として認められています。功績は、それにふさわしい者のものです。"
+        },
+        "victorious-rider": {
+          "title": "勝利の騎手",
+          "description": "彼は赤いマントを風になびかせ、頭を高く上げて進みます。勝利した者の自信と、成功には責任が伴うという自覚です。"
+        },
+        "white-horse": {
+          "title": "白い馬",
+          "description": "緑の飾りをまとった白い馬。飼いならされた力と、勝利に導いた目的の純粋さ。馬が騎手を導くのではなく、騎手が馬を導きます。"
+        },
+        "crowd-of-staves": {
+          "title": "杖を掲げる群衆",
+          "description": "徒歩の従者たちが杖を掲げて周りを行進します。個人の成功は多くの人の支えに依存しています。栄光は共に歩んだ人と分かち合われます。"
+        }
+      }
+    },
+    "he": {
+      "name": "שש של מטות",
+      "intro": "רוכב עטור דפנה חוזר בניצחון, מוקף המון מטות. ניצחון פומבי, הכרה והגאווה שבניצחון לעיני כולם.",
+      "regions": {
+        "laurel-wreath": {
+          "title": "זר הדפנה",
+          "description": "זר דפנה על המטה ועל ראש הרוכב: ניצחון שהושג והוכר בכבוד. ההצלחה שייכת למי שראוי לה."
+        },
+        "victorious-rider": {
+          "title": "הרוכב המנצח",
+          "description": "הוא רוכב בראש מורם, גלימה אדומה ברוח: הביטחון של מי שניצח ויודע שההצלחה באה עם אחריות."
+        },
+        "white-horse": {
+          "title": "הסוס הלבן",
+          "description": "הסוס הלבן מעוטר בירוק: אנרגיה מאולפת וטוהר המטרה שהביא לניצחון, כשהרוכב מנהיג ולא להפך."
+        },
+        "crowd-of-staves": {
+          "title": "המון המטות",
+          "description": "עוקבים צועדים ברגל סביבו ומרימים את מטותיהם: ההצלחה האישית תלויה בתמיכתם של רבים. התהילה משותפת למי שהלך לצידו."
+        }
+      }
+    }
+  }
+}

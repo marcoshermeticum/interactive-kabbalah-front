@@ -1,0 +1,115 @@
+{
+  "slug": "knight-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 12,
+  "image": "/tarot/minor/knight-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "held-pentacle",
+      "icon": "🪙"
+    },
+    {
+      "id": "black-horse",
+      "icon": "🐴"
+    },
+    {
+      "id": "oak-leaf-helmet",
+      "icon": "🍃"
+    },
+    {
+      "id": "plowed-land",
+      "icon": "🌾"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cavaleiro de Ouros",
+      "intro": "Um cavaleiro de armadura permanece imóvel num cavalo negro de passo firme, segurando um pentáculo num campo arado. Responsabilidade, perseverança e o trabalho metódico que não tem pressa.",
+      "regions": {
+        "held-pentacle": {
+          "title": "O Pentáculo na Mão",
+          "description": "Ele o sustenta com atenção e o examina: a tarefa está nas mãos. A confiança vem de cumprir o prometido, sem atalhos."
+        },
+        "black-horse": {
+          "title": "O Cavalo Negro",
+          "description": "Forte e parado, de crina espessa: a energia da terra, robusta e paciente. Não corre, mas aguenta qualquer jornada longa."
+        },
+        "oak-leaf-helmet": {
+          "title": "O Elmo de Folhas",
+          "description": "Folhas de carvalho adornam o elmo: força e durabilidade da natureza. Sua autoridade vem do mérito constante, não do brilho passageiro."
+        },
+        "plowed-land": {
+          "title": "A Terra Arada",
+          "description": "Sulcos retos a perder de vista: o trabalho meticuloso e repetido. Quem confia no processo colhe no tempo certo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Knight of Pentacles",
+      "intro": "An armored knight stays still on a steady black horse, holding a pentacle in a plowed field. Responsibility, perseverance and methodical work that is in no hurry.",
+      "regions": {
+        "held-pentacle": {
+          "title": "The Held Pentacle",
+          "description": "He holds it with attention and examines it: the task is in his hands. Confidence comes from fulfilling what was promised, with no shortcuts."
+        },
+        "black-horse": {
+          "title": "The Black Horse",
+          "description": "Strong and still, with a thick mane: the energy of earth, robust and patient. It does not race, but endures any long journey."
+        },
+        "oak-leaf-helmet": {
+          "title": "The Leaf Helmet",
+          "description": "Oak leaves adorn the helmet: nature's strength and durability. His authority comes from steady merit, not passing brilliance."
+        },
+        "plowed-land": {
+          "title": "The Plowed Land",
+          "description": "Straight furrows as far as the eye can see: meticulous, repeated work. Whoever trusts the process harvests at the right time."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルのナイト",
+      "intro": "鎧の騎士が、耕された畑で、しっかりした黒い馬の上に静止し、ペンタクルを持っています。責任、粘り強さ、急がない着実な仕事です。",
+      "regions": {
+        "held-pentacle": {
+          "title": "手の中のペンタクル",
+          "description": "彼は注意深くそれを支え、吟味します。仕事は手の中にあります。信頼は、近道なしに約束を果たすことから生まれます。"
+        },
+        "black-horse": {
+          "title": "黒い馬",
+          "description": "強く静かで、豊かなたてがみを持ちます。大地の力、頑健で忍耐強いものです。走りはしませんが、どんな長い旅にも耐えます。"
+        },
+        "oak-leaf-helmet": {
+          "title": "葉飾りの兜",
+          "description": "オークの葉が兜を飾ります。自然の強さと耐久性です。彼の権威は、一時の輝きではなく、一貫した功績から来ます。"
+        },
+        "plowed-land": {
+          "title": "耕された大地",
+          "description": "見渡す限り続く真っすぐな畝。丹念に繰り返される仕事です。過程を信じる者は、ふさわしい時期に収穫します。"
+        }
+      }
+    },
+    "he": {
+      "name": "אביר המטבעות",
+      "intro": "אביר בשריון עומד בלי תנועה על סוס שחור יציב ואוחז מטבע בשדה חרוש. אחריות, התמדה ועבודה שיטתית שאינה ממהרת.",
+      "regions": {
+        "held-pentacle": {
+          "title": "המטבע ביד",
+          "description": "הוא מחזיק אותו בתשומת לב ובוחן אותו: המשימה בידיו. ביטחון בא מקיום מה שהובטח, בלי קיצורי דרך."
+        },
+        "black-horse": {
+          "title": "הסוס השחור",
+          "description": "חזק ועומד, בעל רעמה עבה: אנרגיית האדמה, איתנה וסבלנית. הוא לא דוהר, אך עומד בכל מסע ארוך."
+        },
+        "oak-leaf-helmet": {
+          "title": "הקסדה עם העלים",
+          "description": "עלי אלון מעטרים את הקסדה: כוחו ועמידותו של הטבע. סמכותו נובעת מהצטיינות עקבית ולא מזוהר חולף."
+        },
+        "plowed-land": {
+          "title": "האדמה החרושה",
+          "description": "תלמים ישרים עד קצה הראייה: עבודה קפדנית וחוזרת. מי שבוטח בתהליך קוצר בזמן הנכון."
+        }
+      }
+    }
+  }
+}

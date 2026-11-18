@@ -1,0 +1,115 @@
+{
+  "slug": "ten-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 10,
+  "image": "/tarot/minor/ten-of-wands.jpg",
+  "regions": [
+    {
+      "id": "bundle-of-wands",
+      "icon": "🪵"
+    },
+    {
+      "id": "bent-back",
+      "icon": "🧎"
+    },
+    {
+      "id": "distant-village",
+      "icon": "🏘️"
+    },
+    {
+      "id": "dusty-path",
+      "icon": "🛤️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dez de Paus",
+      "intro": "Curvado sob o peso de dez cajados amarrados, um homem caminha em direção à vila ao longe. Sobrecarga, responsabilidade assumida demais e a necessidade de repartir o peso.",
+      "regions": {
+        "bundle-of-wands": {
+          "title": "O Feixe de Cajados",
+          "description": "Dez hastes carregadas juntas escondem o rosto do homem: quando se acumula demais, a tarefa passa a ofuscar quem a realiza."
+        },
+        "bent-back": {
+          "title": "As Costas Curvadas",
+          "description": "O corpo vergado mostra o custo do esforço sem pausa: o sucesso conquistado cobra seu preço quando não se sabe soltar o que já foi cumprido."
+        },
+        "distant-village": {
+          "title": "A Vila ao Longe",
+          "description": "As casas ainda estão distantes, mas visíveis: o fim do trabalho está à vista. Só resta decidir como chegar lá sem se quebrar no caminho."
+        },
+        "dusty-path": {
+          "title": "O Caminho de Terra",
+          "description": "A trilha estreita leva direto à porta: não há atalhos. Cada passo é inevitável e cada um conta, mesmo com o fardo nos ombros."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ten of Wands",
+      "intro": "Bent under the weight of ten bundled wands, a man walks toward the village in the distance. Overload, too much responsibility taken on, and the need to share the weight.",
+      "regions": {
+        "bundle-of-wands": {
+          "title": "The Bundle of Wands",
+          "description": "Ten staves carried together hide the man's face: when too much accumulates, the task begins to overshadow the one who carries it."
+        },
+        "bent-back": {
+          "title": "The Bent Back",
+          "description": "The bowed body shows the cost of effort without pause: hard-won success exacts its price when you cannot put down what is already done."
+        },
+        "distant-village": {
+          "title": "The Distant Village",
+          "description": "The houses are still far but visible: the end of the work is in sight. All that remains is deciding how to arrive without breaking along the way."
+        },
+        "dusty-path": {
+          "title": "The Dirt Path",
+          "description": "The narrow trail leads straight to the door: there are no shortcuts. Each step is unavoidable and each one counts, even with the burden on his shoulders."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの10",
+      "intro": "束ねた十本の杖の重みに背を丸め、男は遠くの村へ歩いていきます。過重、引き受けすぎた責任、そして重荷を分かち合う必要性です。",
+      "regions": {
+        "bundle-of-wands": {
+          "title": "杖の束",
+          "description": "十本まとめて運ぶ杖が男の顔を隠しています。抱え込みすぎると、仕事そのものが、それを担う人を覆い隠してしまいます。"
+        },
+        "bent-back": {
+          "title": "丸まった背中",
+          "description": "曲がった体は休みなき努力の代償を示します。勝ち取った成功は、すでに果たしたことを手放せないとき、その代償を求めます。"
+        },
+        "distant-village": {
+          "title": "遠くの村",
+          "description": "家々はまだ遠いものの見えています。仕事の終わりは視界に入っています。あとは、道中で壊れずにたどり着く方法を決めるだけです。"
+        },
+        "dusty-path": {
+          "title": "土の道",
+          "description": "細い道は扉までまっすぐ続きます。近道はありません。肩に荷を負っていても、一歩一歩は避けられず、そのすべてに意味があります。"
+        }
+      }
+    },
+    "he": {
+      "name": "עשר של מטות",
+      "intro": "כפוף תחת משקל עשרה מטות קשורים, אדם צועד אל הכפר שבמרחק. עומס יתר, אחריות שנלקחה יותר מדי, והצורך לחלוק את המשא.",
+      "regions": {
+        "bundle-of-wands": {
+          "title": "צרור המטות",
+          "description": "עשרה מטות הנישאים יחד מסתירים את פני האיש: כשצוברים יותר מדי, המשימה מתחילה להאפיל על מי שנושא אותה."
+        },
+        "bent-back": {
+          "title": "הגב הכפוף",
+          "description": "הגוף הכפוף מראה את מחיר המאמץ בלי הפסקה: ההצלחה שהושגה גובה את מחירה כשלא יודעים לשחרר את מה שכבר הושלם."
+        },
+        "distant-village": {
+          "title": "הכפר הרחוק",
+          "description": "הבתים עוד רחוקים אך נראים לעין: סוף העבודה נראה באופק. נותר רק להחליט איך מגיעים לשם בלי להישבר בדרך."
+        },
+        "dusty-path": {
+          "title": "שביל העפר",
+          "description": "השביל הצר מוביל ישר אל הדלת: אין קיצורי דרך. כל צעד הכרחי וכל אחד חשוב, גם כשהמשא על הכתפיים."
+        }
+      }
+    }
+  }
+}

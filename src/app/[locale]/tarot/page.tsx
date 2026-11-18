@@ -7,17 +7,19 @@ import type { Pathnames } from '@/i18n/routing';
 import Navbar from '@/components/Navbar/Navbar';
 import { useNavigationLoading } from '@/components/NavigationLoading';
 import { majorArcana, isCardAvailable } from '@/data/tarot/majorArcana';
+import { SUITS, SUIT_ELEMENT, getMinorArcanaBySuit } from '@/data/tarot/minorArcana';
 
 /**
- * Tarot Rider-Waite catalog: a mosaic of the 22 major arcana.
+ * Tarot Rider-Waite catalog: a mosaic of the 22 major arcana followed by the
+ * 56 minor arcana, grouped by suit.
  *
  * Every tile links to `/tarot/[id]`, which renders the interactive single
  * when the card is already implemented and a "coming soon" state otherwise.
  */
 export default function TarotWaitePage() {
   const t = useTranslations('tarotWaite');
-  const tc = useTranslations('tarotWaite.cards');
-  const showLoading = useNavigationLoading();
+  const tm = useTranslations('tarotWaite.minor');
+  const tCorr = useTranslations('tarotWaite.correspondences');
 
   return (
     <div className="flex h-[100dvh] w-full flex-col overflow-hidden">
@@ -47,7 +49,7 @@ export default function TarotWaitePage() {
             {t('backToPortal')}
           </Link>
 
-          <header style={{ marginBottom: '2rem', textAlign: 'center' }}>
+          <header style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
             <span
               style={{
                 display: 'inline-block',
@@ -86,128 +88,248 @@ export default function TarotWaitePage() {
             </p>
           </header>
 
-          <div
+          <nav
+            aria-label={t('title')}
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-              gap: '1rem',
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              marginBottom: '2.25rem',
             }}
           >
-            {majorArcana.map((card, index) => {
-              const available = isCardAvailable(card.slug);
-              return (
-                // Card slugs are the same in every locale, so they are not
-                // part of the typed `pathnames` map.
-                <Link
+            {[
+              { href: '#major', label: tm('majorTitle') },
+              { href: '#minor', label: tm('title') },
+            ].map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                style={{
+                  background: 'var(--bg-secondary)',
+                  border: '1px solid var(--border)',
+                  borderRadius: '999px',
+                  color: 'var(--text-primary)',
+                  fontSize: '0.85rem',
+                  padding: '0.4rem 1rem',
+                  textDecoration: 'none',
+                }}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* ─── Major arcana ─── */}
+          <section id="major" aria-labelledby="major-title" style={{ marginBottom: '3.5rem' }}>
+            <SectionHeading id="major-title" title={tm('majorTitle')} subtitle={tm('majorSubtitle')} />
+            <div style={GRID_STYLE}>
+              {majorArcana.map((card, index) => (
+                <CardTile
                   key={card.slug}
-                  href={`/tarot/${card.slug}` as Pathnames}
-                  onNavigate={showLoading}
-                  aria-label={tc(`${card.i18nKey}.name`)}
-                  style={{ display: 'block', textDecoration: 'none' }}
+                  slug={card.slug}
+                  image={card.image}
+                  nameKey={card.i18nKey}
+                  index={index}
+                  priority={index < 4}
+                  heading="h3"
+                />
+              ))}
+            </div>
+          </section>
+
+          {/* ─── Minor arcana, one group per suit ─── */}
+          <section id="minor" aria-labelledby="minor-title">
+            <SectionHeading id="minor-title" title={tm('title')} subtitle={tm('subtitle')} />
+            {SUITS.map((suit) => (
+              <div key={suit} style={{ marginTop: '2rem' }}>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '1.35rem',
+                    fontWeight: 500,
+                    margin: '0 0 0.9rem',
+                  }}
                 >
-                  <article
-                    className={`portal-card${available ? '' : ' portal-card-soon'}`}
-                    style={{
-                      position: 'relative',
-                      aspectRatio: '3 / 5',
-                      overflow: 'hidden',
-                      borderRadius: '14px',
-                      outline: '1px solid var(--border)',
-                      outlineOffset: '-1px',
-                      cursor: 'pointer',
-                      animation: 'portal-card-in 0.6s cubic-bezier(0.2,0.7,0.2,1) both',
-                      animationDelay: `${Math.min(index * 40, 600)}ms`,
-                    }}
-                  >
-                    <Image
-                      src={card.image}
-                      alt={tc(`${card.i18nKey}.name`)}
-                      fill
-                      sizes="(max-width: 640px) 45vw, 200px"
-                      priority={index < 4}
-                      className="portal-card-img"
-                      style={{
-                        objectFit: 'cover',
-                        filter: available ? 'none' : 'grayscale(1)',
-                      }}
+                  {tm(`suits.${suit}`)}
+                  <span style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginInlineStart: '0.6rem' }}>
+                    · {tCorr(`elements.${SUIT_ELEMENT[suit]}`)}
+                  </span>
+                </h3>
+                <div style={GRID_STYLE}>
+                  {getMinorArcanaBySuit(suit).map((card, index) => (
+                    <CardTile
+                      key={card.slug}
+                      slug={card.slug}
+                      image={card.image}
+                      nameKey={card.i18nKey}
+                      index={index}
+                      priority={false}
+                      heading="h4"
                     />
-
-                    {/* Veil for text legibility */}
-                    <div
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        background:
-                          'linear-gradient(to top, rgba(28,25,23,0.9), rgba(28,25,23,0.15) 52%, transparent)',
-                      }}
-                    />
-
-                    {/* Warm gold glow on hover (available cards only) */}
-                    <div
-                      className="portal-card-glow"
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        background:
-                          'linear-gradient(to bottom right, color-mix(in srgb, var(--gold) 28%, transparent), transparent)',
-                        opacity: 0,
-                        transition: 'opacity 0.5s ease',
-                      }}
-                    />
-
-                    {/* The roman numeral is already printed on the artwork itself */}
-
-                    {!available && (
-                      <span
-                        style={{
-                          position: 'absolute',
-                          top: '0.6rem',
-                          insetInlineEnd: '0.6rem',
-                          borderRadius: '999px',
-                          padding: '0.18rem 0.5rem',
-                          fontSize: '9px',
-                          fontWeight: 500,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.06em',
-                          background: 'rgba(246,239,227,0.12)',
-                          color: 'rgba(246,239,227,0.8)',
-                          border: '1px solid rgba(246,239,227,0.18)',
-                        }}
-                      >
-                        {t('soonBadge')}
-                      </span>
-                    )}
-
-                    <div
-                      style={{
-                        position: 'absolute',
-                        inset: 0,
-                        display: 'flex',
-                        alignItems: 'flex-end',
-                        padding: '0.75rem',
-                      }}
-                    >
-                      <h2
-                        style={{
-                          fontFamily: 'var(--font-heading)',
-                          fontSize: 'clamp(0.95rem, 2.4vw, 1.1rem)',
-                          fontWeight: 500,
-                          lineHeight: 1.2,
-                          color: '#f6efe3',
-                          margin: 0,
-                          textWrap: 'balance',
-                        }}
-                      >
-                        {tc(`${card.i18nKey}.name`)}
-                      </h2>
-                    </div>
-                  </article>
-                </Link>
-              );
-            })}
-          </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </section>
         </div>
       </main>
     </div>
+  );
+}
+
+const GRID_STYLE = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+  gap: '1rem',
+} as const;
+
+function SectionHeading({ id, title, subtitle }: { id: string; title: string; subtitle: string }) {
+  return (
+    <header style={{ marginBottom: '1.25rem' }}>
+      <h2
+        id={id}
+        style={{
+          fontFamily: 'var(--font-heading)',
+          fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+          fontWeight: 500,
+          margin: '0 0 0.4rem',
+        }}
+      >
+        {title}
+      </h2>
+      <p style={{ color: 'var(--text-muted)', lineHeight: 1.6, margin: 0, maxWidth: '46rem' }}>
+        {subtitle}
+      </p>
+    </header>
+  );
+}
+
+function CardTile({
+  slug,
+  image,
+  nameKey,
+  index,
+  priority,
+  heading: Heading,
+}: {
+  slug: string;
+  image: string;
+  nameKey: string;
+  index: number;
+  priority: boolean;
+  heading: 'h3' | 'h4';
+}) {
+  const t = useTranslations('tarotWaite');
+  const tc = useTranslations('tarotWaite.cards');
+  const showLoading = useNavigationLoading();
+  const available = isCardAvailable(slug);
+  const name = tc(`${nameKey}.name`);
+
+  return (
+    // Card slugs are the same in every locale, so they are not part of the
+    // typed `pathnames` map.
+    <Link
+      href={`/tarot/${slug}` as Pathnames}
+      onNavigate={showLoading}
+      aria-label={name}
+      style={{ display: 'block', textDecoration: 'none' }}
+    >
+      <article
+        className={`portal-card${available ? '' : ' portal-card-soon'}`}
+        style={{
+          position: 'relative',
+          aspectRatio: '3 / 5',
+          overflow: 'hidden',
+          borderRadius: '14px',
+          outline: '1px solid var(--border)',
+          outlineOffset: '-1px',
+          cursor: 'pointer',
+          animation: 'portal-card-in 0.6s cubic-bezier(0.2,0.7,0.2,1) both',
+          animationDelay: `${Math.min(index * 40, 600)}ms`,
+        }}
+      >
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(max-width: 640px) 45vw, 200px"
+          priority={priority}
+          className="portal-card-img"
+          style={{
+            objectFit: 'cover',
+            filter: available ? 'none' : 'grayscale(1)',
+          }}
+        />
+
+        {/* Veil for text legibility */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(to top, rgba(28,25,23,0.9), rgba(28,25,23,0.15) 52%, transparent)',
+          }}
+        />
+
+        {/* Warm gold glow on hover (available cards only) */}
+        <div
+          className="portal-card-glow"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'linear-gradient(to bottom right, color-mix(in srgb, var(--gold) 28%, transparent), transparent)',
+            opacity: 0,
+            transition: 'opacity 0.5s ease',
+          }}
+        />
+
+        {!available && (
+          <span
+            style={{
+              position: 'absolute',
+              top: '0.6rem',
+              insetInlineEnd: '0.6rem',
+              borderRadius: '999px',
+              padding: '0.18rem 0.5rem',
+              fontSize: '9px',
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              background: 'rgba(246,239,227,0.12)',
+              color: 'rgba(246,239,227,0.8)',
+              border: '1px solid rgba(246,239,227,0.18)',
+            }}
+          >
+            {t('soonBadge')}
+          </span>
+        )}
+
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'flex-end',
+            padding: '0.75rem',
+          }}
+        >
+          <Heading
+            style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(0.95rem, 2.4vw, 1.1rem)',
+              fontWeight: 500,
+              lineHeight: 1.2,
+              color: '#f6efe3',
+              margin: 0,
+              textWrap: 'balance',
+            }}
+          >
+            {name}
+          </Heading>
+        </div>
+      </article>
+    </Link>
   );
 }

@@ -1,0 +1,115 @@
+{
+  "slug": "ace-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 1,
+  "image": "/tarot/minor/ace-of-wands.jpg",
+  "regions": [
+    {
+      "id": "hand-cloud",
+      "icon": "✋"
+    },
+    {
+      "id": "budding-wand",
+      "icon": "🌱"
+    },
+    {
+      "id": "falling-leaves",
+      "icon": "🍃"
+    },
+    {
+      "id": "castle-landscape",
+      "icon": "🏰"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Ás de Paus",
+      "intro": "Uma mão surge da nuvem e oferece um cajado em flor: o impulso inicial, a faísca criativa e a coragem de começar. É o fogo em estado puro, ainda sem forma e cheio de promessa.",
+      "regions": {
+        "hand-cloud": {
+          "title": "A Mão na Nuvem",
+          "description": "O dom que vem de cima: a inspiração chega como presente, não como conquista. A mão oferece o cajado, mas cabe a você segurá-lo."
+        },
+        "budding-wand": {
+          "title": "O Cajado em Botão",
+          "description": "Um bastão vivo que ainda brota: a vontade não é madeira morta, é força que cresce. Cada folha é uma ideia pronta para se desdobrar."
+        },
+        "falling-leaves": {
+          "title": "As Folhas que Caem",
+          "description": "Folhas em forma de iode (י), a primeira letra do Nome divino, flutuam no ar: centelhas espalhadas, sementes de possibilidade que o vento leva adiante."
+        },
+        "castle-landscape": {
+          "title": "O Castelo e a Paisagem",
+          "description": "Ao longe, um castelo sobre a colina e um vale fértil: o destino que o primeiro passo ainda não alcançou, mas já enxerga."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ace of Wands",
+      "intro": "A hand emerges from a cloud offering a budding wand: the first impulse, the creative spark and the courage to begin. It is fire in its purest state, still formless and full of promise.",
+      "regions": {
+        "hand-cloud": {
+          "title": "The Hand in the Cloud",
+          "description": "The gift from above: inspiration arrives as a present, not a conquest. The hand offers the wand, but you must take hold of it."
+        },
+        "budding-wand": {
+          "title": "The Budding Wand",
+          "description": "A living staff still sprouting: will is not dead wood but growing force. Each leaf is an idea ready to unfold."
+        },
+        "falling-leaves": {
+          "title": "The Falling Leaves",
+          "description": "Leaves shaped like the Hebrew letter yod (י), first letter of the divine Name, drift in the air: scattered sparks, seeds of possibility carried by the wind."
+        },
+        "castle-landscape": {
+          "title": "The Castle and the Landscape",
+          "description": "In the distance a castle on a hill and a fertile valley: the destination the first step has not yet reached but can already see."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドのエース",
+      "intro": "雲から現れた手が、芽吹く杖を差し出します。最初の衝動、創造の火花、始める勇気。まだ形のない純粋な火であり、可能性に満ちています。",
+      "regions": {
+        "hand-cloud": {
+          "title": "雲の中の手",
+          "description": "上から与えられる贈り物。ひらめきは獲得するものではなく授かるもの。手は杖を差し出しますが、握るのはあなたです。"
+        },
+        "budding-wand": {
+          "title": "芽吹く杖",
+          "description": "まだ芽を出し続ける生きた杖。意志は枯れ木ではなく、育つ力です。一枚一枚の葉は、広がろうとする発想です。"
+        },
+        "falling-leaves": {
+          "title": "舞い落ちる葉",
+          "description": "神名の最初の文字ヨッド(י)の形をした葉が宙を舞います。散らばる火花、風に運ばれる可能性の種です。"
+        },
+        "castle-landscape": {
+          "title": "城と風景",
+          "description": "遠くの丘に立つ城と実り豊かな谷。最初の一歩がまだ届かない、しかしすでに見えている目的地です。"
+        }
+      }
+    },
+    "he": {
+      "name": "אס של מטות",
+      "intro": "יד יוצאת מהענן ומושיטה מטה שמבצבצים ממנו ניצנים: הדחף הראשון, ניצוץ היצירה והאומץ להתחיל. זו אש בצורתה הטהורה, עוד בלי צורה ומלאה הבטחה.",
+      "regions": {
+        "hand-cloud": {
+          "title": "היד בענן",
+          "description": "המתנה מלמעלה: ההשראה מגיעה כמתנה ולא ככיבוש. היד מושיטה את המטה, אך ההחלטה לאחוז בו שלך."
+        },
+        "budding-wand": {
+          "title": "המטה המנצנץ",
+          "description": "מטה חי שעדיין צומח: הרצון אינו עץ יבש אלא כוח שגדל. כל עלה הוא רעיון שמוכן להיפתח."
+        },
+        "falling-leaves": {
+          "title": "העלים הנושרים",
+          "description": "עלים בצורת האות יוד (י), האות הראשונה בשם האלוהי, מרחפים באוויר: ניצוצות מפוזרים, זרעים של אפשרות שהרוח נושאת."
+        },
+        "castle-landscape": {
+          "title": "הטירה והנוף",
+          "description": "ברקע טירה על גבעה ועמק פורה: היעד שהצעד הראשון עוד לא הגיע אליו, אך כבר רואה."
+        }
+      }
+    }
+  }
+}

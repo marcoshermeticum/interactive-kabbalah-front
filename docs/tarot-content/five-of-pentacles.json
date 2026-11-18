@@ -1,0 +1,115 @@
+{
+  "slug": "five-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 5,
+  "image": "/tarot/minor/five-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "stained-glass-pentacles",
+      "icon": "🪟"
+    },
+    {
+      "id": "shawled-woman",
+      "icon": "🧣"
+    },
+    {
+      "id": "crutches-man",
+      "icon": "🩼"
+    },
+    {
+      "id": "snow-night",
+      "icon": "❄️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cinco de Ouros",
+      "intro": "Dois mendigos feridos caminham na neve diante de um vitral iluminado com cinco pentáculos. Carência, exclusão e o abrigo que está tão perto e ainda assim parece fora do alcance.",
+      "regions": {
+        "stained-glass-pentacles": {
+          "title": "O Vitral de Pentáculos",
+          "description": "Cinco moedas dispostas como a Árvore da Vida numa janela acesa: o refúgio visível. A ajuda existe, mas pede que alguém bata à porta."
+        },
+        "shawled-woman": {
+          "title": "A Mulher Descalça",
+          "description": "Encolhida num xale, de pés descalços sobre a neve: a vulnerabilidade levada sem queixa. A pobreza não é só falta de dinheiro, é falta de acolhimento."
+        },
+        "crutches-man": {
+          "title": "O Homem de Muletas",
+          "description": "Ele caminha com dificuldade ao lado dela: a dor compartilhada. Mesmo na carência, o companheirismo sustenta mais do que as posses."
+        },
+        "snow-night": {
+          "title": "A Neve e a Noite",
+          "description": "Um cenário gelado e escuro envolve a cena: o frio da solidão. Quem passa por ele sente cada esforço pesado, mas também pode escolher pedir ajuda."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Five of Pentacles",
+      "intro": "Two injured beggars walk through snow past an illuminated stained-glass window with five pentacles. Hardship, exclusion and shelter so near yet seemingly out of reach.",
+      "regions": {
+        "stained-glass-pentacles": {
+          "title": "The Stained Glass of Pentacles",
+          "description": "Five coins arranged like the Tree of Life in a lit window: the visible refuge. Help exists, but it asks that someone knock on the door."
+        },
+        "shawled-woman": {
+          "title": "The Barefoot Woman",
+          "description": "Hunched in a shawl, barefoot on the snow: vulnerability carried without complaint. Poverty is not only lack of money but lack of welcome."
+        },
+        "crutches-man": {
+          "title": "The Man on Crutches",
+          "description": "He walks with difficulty beside her: shared pain. Even in want, companionship supports more than possessions."
+        },
+        "snow-night": {
+          "title": "The Snow and the Night",
+          "description": "A cold, dark setting surrounds the scene: the chill of solitude. Whoever passes through feels every effort as heavy, but can also choose to ask for help."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの5",
+      "intro": "傷ついた二人の物乞いが雪の中を歩き、五つのペンタクルが描かれた明るいステンドグラスの前を通ります。困窮、排除、すぐそこにあるのに手が届かないように見える避難所です。",
+      "regions": {
+        "stained-glass-pentacles": {
+          "title": "ペンタクルのステンドグラス",
+          "description": "灯った窓に、生命の樹のように配置された五枚の硬貨。目に見える避難所です。助けはありますが、誰かが扉を叩くことを求めます。"
+        },
+        "shawled-woman": {
+          "title": "裸足の女性",
+          "description": "ショールに身を縮め、雪の上を裸足で歩いています。不平を言わずに運ばれる脆さです。貧しさはお金の不足だけでなく、受け入れの不足でもあります。"
+        },
+        "crutches-man": {
+          "title": "松葉杖の男",
+          "description": "彼は彼女の隣を苦労して歩きます。分かち合う痛みです。窮乏の中でも、仲間の存在は財産以上に支えになります。"
+        },
+        "snow-night": {
+          "title": "雪と夜",
+          "description": "冷たく暗い情景が場面を包みます。孤独の冷えです。そこを通る者はあらゆる努力を重く感じますが、助けを求めることを選ぶこともできます。"
+        }
+      }
+    },
+    "he": {
+      "name": "חמש של מטבעות",
+      "intro": "שני קבצנים פצועים צועדים בשלג ליד חלון ויטראז׳ מואר עם חמישה מטבעות. מצוקה, הדרה ומקלט שקרוב כל כך ובכל זאת נדמה רחוק מהישג יד.",
+      "regions": {
+        "stained-glass-pentacles": {
+          "title": "חלון המטבעות",
+          "description": "חמישה מטבעות מסודרים כעץ החיים בחלון מואר: המקלט הנראה לעין. העזרה קיימת, אך היא דורשת שמישהו ידפוק בדלת."
+        },
+        "shawled-woman": {
+          "title": "האישה היחפה",
+          "description": "מקופלת בצעיף, יחפה על השלג: פגיעות הנישאת בלי תלונה. עוני אינו רק חוסר כסף אלא גם חוסר קבלה."
+        },
+        "crutches-man": {
+          "title": "האיש עם הקב",
+          "description": "הוא צועד בקושי לצידה: כאב משותף. גם במחסור, חברות תומכת יותר מרכוש."
+        },
+        "snow-night": {
+          "title": "השלג והלילה",
+          "description": "סביבה קרה וחשוכה עוטפת את הסצנה: צינת הבדידות. מי שעובר בה חש כל מאמץ כבד, אך יכול גם לבחור לבקש עזרה."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "seven-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 7,
+  "image": "/tarot/minor/seven-of-cups.jpg",
+  "regions": [
+    {
+      "id": "dark-silhouette",
+      "icon": "👤"
+    },
+    {
+      "id": "veiled-figure",
+      "icon": "🫥"
+    },
+    {
+      "id": "serpent-dragon",
+      "icon": "🐉"
+    },
+    {
+      "id": "jewels-laurel",
+      "icon": "💎"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Sete de Copas",
+      "intro": "Diante de uma silhueta sombria, sete taças flutuam entre as nuvens, cada uma com uma visão diferente. Fantasia, múltiplas opções e a necessidade de distinguir o sonho do possível.",
+      "regions": {
+        "dark-silhouette": {
+          "title": "A Silhueta Escura",
+          "description": "De costas e sem rosto, a figura somos nós diante das opções: contemplamos tudo e ainda não escolhemos nada. A dúvida é parte do desejo."
+        },
+        "veiled-figure": {
+          "title": "A Figura Velada",
+          "description": "Um vulto coberto por um pano na taça do centro: o mistério que atrai e assusta. O que ainda não se revelou pede coragem para ser descoberto."
+        },
+        "serpent-dragon": {
+          "title": "A Serpente e o Dragão",
+          "description": "Visões ameaçadoras entre as promessas: nem tudo o que brilha é seguro. As ilusões trazem riscos escondidos junto ao encanto."
+        },
+        "jewels-laurel": {
+          "title": "As Joias e os Louros",
+          "description": "Joias, uma coroa de louros e uma torre: riqueza, glória e poder prometidos. Desejos grandiosos que nem sempre têm base na realidade."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Seven of Cups",
+      "intro": "Before a dark silhouette, seven cups float among the clouds, each holding a different vision. Fantasy, many options and the need to tell dream from what is possible.",
+      "regions": {
+        "dark-silhouette": {
+          "title": "The Dark Silhouette",
+          "description": "Seen from behind and faceless, the figure is us before our options: we contemplate everything and have not yet chosen anything. Doubt is part of desire."
+        },
+        "veiled-figure": {
+          "title": "The Veiled Figure",
+          "description": "A form covered by a cloth in the central cup: the mystery that attracts and frightens. What has not yet revealed itself asks for courage to be uncovered."
+        },
+        "serpent-dragon": {
+          "title": "The Serpent and the Dragon",
+          "description": "Threatening visions among the promises: not everything that glitters is safe. Illusions carry hidden risks alongside their charm."
+        },
+        "jewels-laurel": {
+          "title": "The Jewels and the Laurels",
+          "description": "Jewels, a laurel wreath and a tower: wealth, glory and power promised. Grand desires that do not always rest on reality."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの7",
+      "intro": "暗いシルエットの前で、七つの杯が雲の間に浮かび、それぞれ異なる幻影を宿しています。空想、数多くの選択肢、そして夢と実現可能なものを見分ける必要性です。",
+      "regions": {
+        "dark-silhouette": {
+          "title": "暗いシルエット",
+          "description": "後ろ姿で顔のない人物は、選択肢を前にした私たち自身です。すべてを眺め、まだ何も選んでいません。迷いは望みの一部です。"
+        },
+        "veiled-figure": {
+          "title": "ベールの人影",
+          "description": "中央の杯の中で布に覆われた影。惹きつけ、怖れさせる神秘です。まだ現れていないものは、暴かれる勇気を求めます。"
+        },
+        "serpent-dragon": {
+          "title": "蛇と竜",
+          "description": "約束の中に混じる脅威の幻影。輝くものすべてが安全とは限りません。幻想は、魅力のそばに隠れた危険を伴います。"
+        },
+        "jewels-laurel": {
+          "title": "宝石と月桂冠",
+          "description": "宝石、月桂冠、そして塔。約束される富、栄光、権力です。必ずしも現実に根ざしていない壮大な望みです。"
+        }
+      }
+    },
+    "he": {
+      "name": "שבע של גביעים",
+      "intro": "מול צללית אפלה שבעה גביעים מרחפים בין העננים, וכל אחד מהם מכיל חזון אחר. פנטזיה, אפשרויות רבות והצורך להבדיל בין חלום לבין מה שאפשרי.",
+      "regions": {
+        "dark-silhouette": {
+          "title": "הצללית האפלה",
+          "description": "מאחור וללא פנים, הדמות היא אנחנו מול האפשרויות: מתבוננים בהכול ועדיין לא בחרנו דבר. הספק הוא חלק מהתשוקה."
+        },
+        "veiled-figure": {
+          "title": "הדמות המכוסה",
+          "description": "צורה מכוסה בבד בגביע המרכזי: המסתורין שמושך ומפחיד. מה שעוד לא נחשף דורש אומץ כדי שיתגלה."
+        },
+        "serpent-dragon": {
+          "title": "הנחש והדרקון",
+          "description": "חזיונות מאיימים בין ההבטחות: לא כל מה שנוצץ בטוח. אשליות נושאות סיכונים נסתרים לצד הקסם."
+        },
+        "jewels-laurel": {
+          "title": "התכשיטים והדפנה",
+          "description": "תכשיטים, זר דפנה ומגדל: עושר, תהילה וכוח מובטחים. תשוקות גדולות שלא תמיד נשענות על המציאות."
+        }
+      }
+    }
+  }
+}

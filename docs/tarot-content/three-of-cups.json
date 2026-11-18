@@ -1,0 +1,115 @@
+{
+  "slug": "three-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 3,
+  "image": "/tarot/minor/three-of-cups.jpg",
+  "regions": [
+    {
+      "id": "raised-cups",
+      "icon": "🥂"
+    },
+    {
+      "id": "dancing-women",
+      "icon": "💃"
+    },
+    {
+      "id": "flower-garlands",
+      "icon": "🌸"
+    },
+    {
+      "id": "harvest-fruits",
+      "icon": "🎃"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Três de Copas",
+      "intro": "Três mulheres dançam com as taças erguidas entre frutos e guirlandas. A alegria compartilhada, a amizade e a celebração de uma colheita que ninguém conquistou sozinho.",
+      "regions": {
+        "raised-cups": {
+          "title": "As Taças Erguidas",
+          "description": "Três brindes no ar, reunidos no centro: a alegria se multiplica ao ser compartilhada. Um brinde à vida, ao encontro e ao que já se alcançou."
+        },
+        "dancing-women": {
+          "title": "As Três Dançarinas",
+          "description": "Mãos dadas em roda, vestidas de cores diferentes: três pessoas, três temperamentos, uma só harmonia. A amizade que une sem anular as diferenças."
+        },
+        "flower-garlands": {
+          "title": "As Guirlandas de Flores",
+          "description": "Coroas e guirlandas de flores enfeitam a dança: a festa é também um ritual de beleza, em que a natureza participa do encontro."
+        },
+        "harvest-fruits": {
+          "title": "Os Frutos da Colheita",
+          "description": "Abóboras e frutas aos pés das dançarinas: a abundância que veio do trabalho e do tempo. A festa é a gratidão por aquilo que amadureceu."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Three of Cups",
+      "intro": "Three women dance with raised cups among fruit and garlands. Shared joy, friendship and the celebration of a harvest nobody won alone.",
+      "regions": {
+        "raised-cups": {
+          "title": "The Raised Cups",
+          "description": "Three toasts in the air, gathered at the center: joy multiplies when shared. A toast to life, to togetherness and to what has been achieved."
+        },
+        "dancing-women": {
+          "title": "The Three Dancers",
+          "description": "Hands joined in a circle, dressed in different colors: three people, three temperaments, one harmony. Friendship that unites without erasing differences."
+        },
+        "flower-garlands": {
+          "title": "The Flower Garlands",
+          "description": "Crowns and garlands of flowers adorn the dance: the feast is also a ritual of beauty, with nature joining the gathering."
+        },
+        "harvest-fruits": {
+          "title": "The Harvest Fruits",
+          "description": "Pumpkins and fruit at the dancers' feet: abundance that came from work and time. The feast is gratitude for what has ripened."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの3",
+      "intro": "三人の女性が、果実と花輪の間で杯を掲げて踊ります。分かち合う喜び、友情、そして誰も一人では得られなかった収穫の祝いです。",
+      "regions": {
+        "raised-cups": {
+          "title": "掲げられた杯",
+          "description": "空に掲げられ、中央に集まる三つの乾杯。喜びは分かち合うことで増えます。人生と、出会いと、すでに得たものへの乾杯です。"
+        },
+        "dancing-women": {
+          "title": "三人の踊り手",
+          "description": "手をつないで輪になり、それぞれ違う色をまとっています。三人、三つの気質、ひとつの調和。違いを消さずに結ぶ友情です。"
+        },
+        "flower-garlands": {
+          "title": "花の花輪",
+          "description": "花の冠と花輪が踊りを飾ります。祝宴は美の儀式でもあり、自然も集いに加わります。"
+        },
+        "harvest-fruits": {
+          "title": "収穫の果実",
+          "description": "踊り手の足元のかぼちゃと果物。労働と時間がもたらした豊かさです。祝宴は、実ったものへの感謝です。"
+        }
+      }
+    },
+    "he": {
+      "name": "שלוש של גביעים",
+      "intro": "שלוש נשים רוקדות בגביעים מורמים בין פירות וזרים. שמחה משותפת, ידידות וחגיגת קציר שאיש לא השיג לבדו.",
+      "regions": {
+        "raised-cups": {
+          "title": "הגביעים המורמים",
+          "description": "שלוש ברכות באוויר, מתכנסות במרכז: השמחה מתרבה כשחולקים אותה. כוסית לחיים, למפגש ולמה שכבר הושג."
+        },
+        "dancing-women": {
+          "title": "שלוש הרקדניות",
+          "description": "ידיים שלובות במעגל, בצבעים שונים: שלושה אנשים, שלושה מזגים, הרמוניה אחת. ידידות שמאחדת בלי למחוק הבדלים."
+        },
+        "flower-garlands": {
+          "title": "זרי הפרחים",
+          "description": "כתרים וזרי פרחים מעטרים את הריקוד: החגיגה היא גם טקס של יופי, והטבע משתתף במפגש."
+        },
+        "harvest-fruits": {
+          "title": "פירות הקציר",
+          "description": "דלעות ופירות למרגלות הרקדניות: שפע שבא מעבודה ומזמן. החגיגה היא הכרת תודה על מה שהבשיל."
+        }
+      }
+    }
+  }
+}

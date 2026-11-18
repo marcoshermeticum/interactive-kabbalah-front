@@ -1,0 +1,115 @@
+{
+  "slug": "three-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 3,
+  "image": "/tarot/minor/three-of-swords.jpg",
+  "regions": [
+    {
+      "id": "pierced-heart",
+      "icon": "❤️‍🩹"
+    },
+    {
+      "id": "three-swords",
+      "icon": "🗡️"
+    },
+    {
+      "id": "rain",
+      "icon": "🌧️"
+    },
+    {
+      "id": "storm-clouds",
+      "icon": "⛈️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Três de Espadas",
+      "intro": "Um coração vermelho é atravessado por três espadas sob nuvens e chuva. O luto, a traição ou a verdade que dói: a dor que não se discute e precisa ser atravessada para curar.",
+      "regions": {
+        "pierced-heart": {
+          "title": "O Coração Ferido",
+          "description": "A carta não suaviza: o coração está ferido e a dor é real. Reconhecê-la é o primeiro passo, porque o que é negado se cronifica."
+        },
+        "three-swords": {
+          "title": "As Três Espadas",
+          "description": "Três lâminas simétricas entram juntas: a dor que vem de um só golpe com várias raízes. Cada espada nomeia uma ferida: perda, palavra e verdade."
+        },
+        "rain": {
+          "title": "A Chuva",
+          "description": "A chuva cai sem parar: a tristeza também limpa. As lágrimas não são fraqueza, são o modo de a alma lavar o que não pode carregar."
+        },
+        "storm-clouds": {
+          "title": "As Nuvens Pesadas",
+          "description": "Um céu cinza cobre tudo: a tempestade é um estado, não um destino. Nuvens carregadas passam, mesmo quando parecem permanentes."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Three of Swords",
+      "intro": "A red heart is pierced by three swords under clouds and rain. Grief, betrayal or a truth that hurts: pain that cannot be argued with and must be gone through to heal.",
+      "regions": {
+        "pierced-heart": {
+          "title": "The Wounded Heart",
+          "description": "The card does not soften: the heart is wounded and the pain is real. Acknowledging it is the first step, because what is denied becomes chronic."
+        },
+        "three-swords": {
+          "title": "The Three Swords",
+          "description": "Three symmetrical blades enter together: pain that comes in one blow with many roots. Each sword names a wound: loss, word and truth."
+        },
+        "rain": {
+          "title": "The Rain",
+          "description": "Rain falls without pause: sadness also cleanses. Tears are not weakness but the soul's way of washing what it cannot carry."
+        },
+        "storm-clouds": {
+          "title": "The Heavy Clouds",
+          "description": "A gray sky covers everything: the storm is a state, not a destiny. Loaded clouds pass, even when they seem permanent."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの3",
+      "intro": "雲と雨の下、赤い心臓が三本の剣に貫かれています。悲しみ、裏切り、あるいは痛みを伴う真実。論じることのできない、癒えるために通り抜けねばならない痛みです。",
+      "regions": {
+        "pierced-heart": {
+          "title": "傷ついた心臓",
+          "description": "このカードは和らげません。心は傷つき、痛みは本物です。認めることが第一歩です。否定されたものは慢性化するからです。"
+        },
+        "three-swords": {
+          "title": "三本の剣",
+          "description": "対称の三本の刃が一緒に刺さります。多くの根を持つ一撃の痛みです。それぞれの剣は傷に名を与えます。喪失、言葉、そして真実。"
+        },
+        "rain": {
+          "title": "雨",
+          "description": "雨は止まずに降り続けます。悲しみは洗い流しもします。涙は弱さではなく、魂が抱えきれないものを洗う方法です。"
+        },
+        "storm-clouds": {
+          "title": "重い雲",
+          "description": "灰色の空がすべてを覆います。嵐は状態であって運命ではありません。垂れ込める雲は、永遠に見えても過ぎ去ります。"
+        }
+      }
+    },
+    "he": {
+      "name": "שלוש של חרבות",
+      "intro": "לב אדום נוקב בשלוש חרבות תחת עננים וגשם. אבל, בגידה או אמת שכואבת: כאב שאי אפשר להתווכח איתו וצריך לעבור אותו כדי להחלים.",
+      "regions": {
+        "pierced-heart": {
+          "title": "הלב הפצוע",
+          "description": "הקלף לא מרכך: הלב פצוע והכאב אמיתי. להכיר בו הוא הצעד הראשון, כי מה שמכחישים הופך כרוני."
+        },
+        "three-swords": {
+          "title": "שלוש החרבות",
+          "description": "שלושה להבים סימטריים נכנסים יחד: כאב שמגיע במכה אחת עם שורשים רבים. כל חרב מכנה פצע בשמו: אובדן, מילה ואמת."
+        },
+        "rain": {
+          "title": "הגשם",
+          "description": "הגשם יורד בלי הפסק: גם העצב מנקה. דמעות אינן חולשה אלא דרכה של הנשמה לשטוף את מה שאינה יכולה לשאת."
+        },
+        "storm-clouds": {
+          "title": "העננים הכבדים",
+          "description": "שמיים אפורים מכסים הכול: הסערה היא מצב ולא גורל. עננים כבדים חולפים, גם כשנדמה שהם קבועים."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "page-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 11,
+  "image": "/tarot/minor/page-of-cups.jpg",
+  "regions": [
+    {
+      "id": "fish-in-cup",
+      "icon": "🐟"
+    },
+    {
+      "id": "lotus-tunic",
+      "icon": "🪷"
+    },
+    {
+      "id": "sea-waves",
+      "icon": "🌊"
+    },
+    {
+      "id": "blue-hat",
+      "icon": "🎩"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Valete de Copas",
+      "intro": "Um jovem de túnica florida fita um peixe que emerge de sua taça diante do mar. Mensagem inesperada, sensibilidade criativa e o convite a levar a sério a imaginação.",
+      "regions": {
+        "fish-in-cup": {
+          "title": "O Peixe na Taça",
+          "description": "Uma criatura do inconsciente surge sem aviso: uma ideia, um sentimento ou um sonho que quer ser olhado. Ele a encara com espanto e ternura."
+        },
+        "lotus-tunic": {
+          "title": "A Túnica de Lótus",
+          "description": "Flores de lótus bordadas na roupa: pureza e sensibilidade espiritual. O jovem carrega a delicadeza como parte de sua identidade."
+        },
+        "sea-waves": {
+          "title": "O Mar Agitado",
+          "description": "As ondas ao fundo trazem o mundo emocional em movimento: o fluxo de onde saem as mensagens e as intuições que mudam o dia."
+        },
+        "blue-hat": {
+          "title": "O Chapéu Azul",
+          "description": "Um turbante azul com tecido solto: a mente leve e criativa de quem ainda brinca com as formas e sonha acordado."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Page of Cups",
+      "intro": "A young man in a flowered tunic gazes at a fish emerging from his cup before the sea. An unexpected message, creative sensitivity and an invitation to take imagination seriously.",
+      "regions": {
+        "fish-in-cup": {
+          "title": "The Fish in the Cup",
+          "description": "A creature of the unconscious appears without warning: an idea, a feeling or a dream asking to be seen. He meets it with wonder and tenderness."
+        },
+        "lotus-tunic": {
+          "title": "The Lotus Tunic",
+          "description": "Lotus flowers embroidered on his clothing: purity and spiritual sensitivity. The youth carries delicacy as part of his identity."
+        },
+        "sea-waves": {
+          "title": "The Restless Sea",
+          "description": "The waves behind him bring the emotional world in motion: the flow from which messages and intuitions arise that change the day."
+        },
+        "blue-hat": {
+          "title": "The Blue Hat",
+          "description": "A blue cap with trailing cloth: the light, creative mind of one who still plays with forms and daydreams."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップのペイジ",
+      "intro": "花柄のチュニックを着た若者が、海を前に、杯から現れた魚を見つめています。予期せぬ知らせ、創造的な感受性、そして想像力を真剣に受けとめる誘いです。",
+      "regions": {
+        "fish-in-cup": {
+          "title": "杯の中の魚",
+          "description": "無意識の生き物が前触れなく現れます。見つめられたがっている発想、感情、夢です。彼は驚きと優しさでそれを見つめます。"
+        },
+        "lotus-tunic": {
+          "title": "蓮のチュニック",
+          "description": "服に刺繍された蓮の花。純粋さと精神的な感受性です。若者は繊細さを自分らしさの一部として身につけています。"
+        },
+        "sea-waves": {
+          "title": "波立つ海",
+          "description": "背景の波は動き続ける感情の世界をもたらします。一日を変える知らせや直感が生まれる流れです。"
+        },
+        "blue-hat": {
+          "title": "青い帽子",
+          "description": "布の垂れた青い帽子。まだ形と戯れ、白昼夢を見る、軽やかで創造的な心です。"
+        }
+      }
+    },
+    "he": {
+      "name": "נער הגביעים",
+      "intro": "צעיר בטוניקה פרחונית מביט בדג שמגיח מתוך הגביע שלו מול הים. מסר בלתי צפוי, רגישות יצירתית והזמנה לקחת ברצינות את הדמיון.",
+      "regions": {
+        "fish-in-cup": {
+          "title": "הדג בגביע",
+          "description": "יצור מהלא־מודע מופיע בלי התראה: רעיון, רגש או חלום שמבקש שיביטו בו. הוא פוגש אותו בפליאה וברכות."
+        },
+        "lotus-tunic": {
+          "title": "הטוניקה עם הלוטוס",
+          "description": "פרחי לוטוס רקומים על הבגד: טוהר ורגישות רוחנית. הצעיר נושא עדינות כחלק מזהותו."
+        },
+        "sea-waves": {
+          "title": "הים הגועש",
+          "description": "הגלים ברקע מביאים את העולם הרגשי בתנועה: הזרימה שממנה עולים מסרים ואינטואיציות ששינו את היום."
+        },
+        "blue-hat": {
+          "title": "הכובע הכחול",
+          "description": "כובע כחול עם בד משתלשל: התודעה הקלילה והיצירתית של מי שעדיין משחק בצורות וחולם בהקיץ."
+        }
+      }
+    }
+  }
+}

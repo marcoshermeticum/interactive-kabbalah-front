@@ -1,0 +1,115 @@
+{
+  "slug": "five-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 5,
+  "image": "/tarot/minor/five-of-wands.jpg",
+  "regions": [
+    {
+      "id": "crossed-staves",
+      "icon": "⚔️"
+    },
+    {
+      "id": "five-youths",
+      "icon": "🧑‍🤝‍🧑"
+    },
+    {
+      "id": "mixed-clothing",
+      "icon": "🎨"
+    },
+    {
+      "id": "uneven-ground",
+      "icon": "⛰️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cinco de Paus",
+      "intro": "Cinco jovens brandem cajados num embate sem vencedor claro. Competição, atrito e a energia confusa de muitas vontades colidindo, que pode desgastar ou afiar quem participa.",
+      "regions": {
+        "crossed-staves": {
+          "title": "Os Cajados Cruzados",
+          "description": "Nenhum golpe acerta: os bastões se cruzam no ar e se anulam. A disputa gasta força sem produzir uma direção."
+        },
+        "five-youths": {
+          "title": "Os Cinco Jovens",
+          "description": "Ninguém é vilão: cada um luta por seu lugar. A carta mostra o atrito natural de quem tem ideias fortes e ainda não aprendeu a cooperar."
+        },
+        "mixed-clothing": {
+          "title": "As Roupas Díspares",
+          "description": "Cada jovem veste cores e estilos diferentes: não há uniforme nem equipe. A diversidade, quando não é organizada, vira confusão em vez de força."
+        },
+        "uneven-ground": {
+          "title": "O Terreno Irregular",
+          "description": "O chão acidentado e a clareira aberta: um campo de treino, não de guerra. O conflito aqui é um teste de força, e não uma batalha mortal."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Five of Wands",
+      "intro": "Five young men brandish staves in a struggle with no clear winner. Competition, friction and the confused energy of many wills colliding, which can wear down or sharpen those involved.",
+      "regions": {
+        "crossed-staves": {
+          "title": "The Crossed Staves",
+          "description": "No blow lands: the staves cross in the air and cancel each other. The contest spends strength without producing a direction."
+        },
+        "five-youths": {
+          "title": "The Five Youths",
+          "description": "No one is a villain: each fights for his place. The card shows the natural friction of people with strong ideas who have not yet learned to cooperate."
+        },
+        "mixed-clothing": {
+          "title": "The Mismatched Clothes",
+          "description": "Each youth wears different colors and styles: no uniform, no team. Diversity, when unorganized, becomes confusion instead of strength."
+        },
+        "uneven-ground": {
+          "title": "The Uneven Ground",
+          "description": "Rough ground and an open clearing: a training field, not a war. The conflict here is a test of strength, not a deadly battle."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの5",
+      "intro": "五人の若者が杖を振り回し、勝者の見えない争いをしています。競争、摩擦、多くの意志がぶつかり合う混沌としたエネルギー。それは人を消耗させも、磨きもします。",
+      "regions": {
+        "crossed-staves": {
+          "title": "交差する杖",
+          "description": "どの一撃も当たらず、杖は空中で交わって打ち消し合います。争いは力を使い果たすだけで、方向を生みません。"
+        },
+        "five-youths": {
+          "title": "五人の若者",
+          "description": "悪人はいません。それぞれが自分の居場所のために戦っています。強い考えを持ちながら、まだ協力を学んでいない者たちの自然な摩擦です。"
+        },
+        "mixed-clothing": {
+          "title": "ばらばらの衣服",
+          "description": "若者たちはそれぞれ違う色と様式を着ています。制服もチームもありません。多様性は、整えられないと力ではなく混乱になります。"
+        },
+        "uneven-ground": {
+          "title": "でこぼこの地面",
+          "description": "起伏のある地面と開けた空き地。戦場ではなく鍛錬の場です。ここでの対立は力試しであって、命がけの戦いではありません。"
+        }
+      }
+    },
+    "he": {
+      "name": "חמש של מטות",
+      "intro": "חמישה צעירים מניפים מקלות במאבק בלי מנצח ברור. תחרות, חיכוך והאנרגיה המבולבלת של רצונות רבים שמתנגשים, שיכולה לשחוק או לחדד את המשתתפים.",
+      "regions": {
+        "crossed-staves": {
+          "title": "המקלות הצולבים",
+          "description": "אף מכה לא פוגעת: המקלות נחצים באוויר ומבטלים זה את זה. המאבק מבזבז כוח בלי להפיק כיוון."
+        },
+        "five-youths": {
+          "title": "חמשת הצעירים",
+          "description": "אין כאן נבל: כל אחד נלחם על מקומו. הקלף מראה את החיכוך הטבעי של בעלי רעיונות חזקים שעוד לא למדו לשתף פעולה."
+        },
+        "mixed-clothing": {
+          "title": "הבגדים השונים",
+          "description": "כל צעיר לובש צבעים וסגנון אחרים: אין מדים ואין צוות. גיוון שלא מאורגן הופך לבלבול ולא לכוח."
+        },
+        "uneven-ground": {
+          "title": "השטח המשובש",
+          "description": "קרקע לא אחידה ומרחב פתוח: מגרש אימונים ולא שדה קרב. הסכסוך כאן הוא מבחן כוח ולא מלחמה קטלנית."
+        }
+      }
+    }
+  }
+}

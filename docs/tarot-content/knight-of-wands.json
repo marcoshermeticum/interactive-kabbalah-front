@@ -1,0 +1,115 @@
+{
+  "slug": "knight-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 12,
+  "image": "/tarot/minor/knight-of-wands.jpg",
+  "regions": [
+    {
+      "id": "rearing-horse",
+      "icon": "🐎"
+    },
+    {
+      "id": "red-plume",
+      "icon": "🪶"
+    },
+    {
+      "id": "salamander-surcoat",
+      "icon": "🦎"
+    },
+    {
+      "id": "desert-ride",
+      "icon": "🏜️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cavaleiro de Paus",
+      "intro": "Um cavaleiro de armadura e túnica de salamandras avança a galope num cavalo empinado. Impulso, aventura e entusiasmo que não mede riscos, mas pode atropelar o que está no caminho.",
+      "regions": {
+        "rearing-horse": {
+          "title": "O Cavalo Empinado",
+          "description": "O cavalo avança em fúria, pronto para disparar: a energia bruta do fogo, que ainda espera a mão firme que a direcione."
+        },
+        "red-plume": {
+          "title": "A Pluma Vermelha",
+          "description": "A pluma ardente no elmo é a ousadia à mostra: o cavaleiro quer ser visto e reconhecido, e seu entusiasmo contagia quem o segue."
+        },
+        "salamander-surcoat": {
+          "title": "A Túnica de Fogo",
+          "description": "As salamandras amarelas cobrem o peito: ele veste o próprio elemento. A paixão está à flor da pele, sem filtros entre desejo e ação."
+        },
+        "desert-ride": {
+          "title": "O Deserto Aberto",
+          "description": "A cavalgada cruza areia e pirâmides: uma jornada longa e sem sombra, onde só o ímpeto mantém o ânimo, e o destino ainda não está claro."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Knight of Wands",
+      "intro": "A knight in armor and a salamander tunic charges on a rearing horse. Drive, adventure and an enthusiasm that does not weigh risk, but can trample whatever is in the way.",
+      "regions": {
+        "rearing-horse": {
+          "title": "The Rearing Horse",
+          "description": "The horse surges in fury, ready to bolt: the raw energy of fire, still waiting for a steady hand to direct it."
+        },
+        "red-plume": {
+          "title": "The Red Plume",
+          "description": "The blazing plume on the helmet is boldness on display: the knight wants to be seen and recognized, and his enthusiasm is contagious."
+        },
+        "salamander-surcoat": {
+          "title": "The Surcoat of Fire",
+          "description": "Yellow salamanders cover his chest: he wears his own element. Passion is on the surface, with no filter between desire and action."
+        },
+        "desert-ride": {
+          "title": "The Open Desert",
+          "description": "The ride crosses sand and pyramids: a long journey without shade, where only momentum keeps spirits up and the destination is still unclear."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドのナイト",
+      "intro": "鎧とサラマンダー模様の上衣をまとった騎士が、後ろ脚で立つ馬で突き進みます。衝動、冒険、リスクを量らない熱意。ただし進路上のものを踏みつけることもあります。",
+      "regions": {
+        "rearing-horse": {
+          "title": "後ろ脚で立つ馬",
+          "description": "馬は怒りを漲らせて飛び出す構えです。火の生の力が、方向づける確かな手を待っています。"
+        },
+        "red-plume": {
+          "title": "赤い羽根飾り",
+          "description": "兜の燃えるような羽根飾りは、見せつけられる大胆さです。騎士は見られ認められたいと願い、その熱意は周囲に伝わります。"
+        },
+        "salamander-surcoat": {
+          "title": "炎の上衣",
+          "description": "黄色いサラマンダーが胸を覆います。彼は自らの元素をまとっています。情熱は表に出て、欲望と行動の間に何の濾過もありません。"
+        },
+        "desert-ride": {
+          "title": "広がる砂漠",
+          "description": "騎行は砂とピラミッドを横切ります。日陰のない長い旅で、士気を保つのは勢いだけ。目的地はまだ定かではありません。"
+        }
+      }
+    },
+    "he": {
+      "name": "אביר המטות",
+      "intro": "אביר בשריון ובטוניקה עם סלמנדרות דוהר על סוס מזדקף. דחף, הרפתקה והתלהבות שלא שוקלת סיכונים, אך עלולה לרמוס כל מה שבדרך.",
+      "regions": {
+        "rearing-horse": {
+          "title": "הסוס המזדקף",
+          "description": "הסוס מזנק בזעם, מוכן לפרוץ: האנרגיה הגולמית של האש, שעדיין מחכה ליד יציבה שתכוון אותה."
+        },
+        "red-plume": {
+          "title": "הנוצה האדומה",
+          "description": "הנוצה הבוערת בקסדה היא העזה שמוצגת לראווה: האביר רוצה שיראו ויכירו בו, וההתלהבות שלו מדביקה את העוקבים."
+        },
+        "salamander-surcoat": {
+          "title": "מעיל האש",
+          "description": "סלמנדרות צהובות מכסות את חזהו: הוא לובש את היסוד שלו. התשוקה על פני השטח, בלי מסנן בין רצון למעשה."
+        },
+        "desert-ride": {
+          "title": "המדבר הפתוח",
+          "description": "הדהירה חוצה חול ופירמידות: מסע ארוך בלי צל, שבו רק התנופה מחזיקה את המורל והיעד עדיין לא ברור."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "nine-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 9,
+  "image": "/tarot/minor/nine-of-wands.jpg",
+  "regions": [
+    {
+      "id": "bandaged-head",
+      "icon": "🤕"
+    },
+    {
+      "id": "leaning-wand",
+      "icon": "🪄"
+    },
+    {
+      "id": "wand-fence",
+      "icon": "🚧"
+    },
+    {
+      "id": "wary-gaze",
+      "icon": "👁️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Nove de Paus",
+      "intro": "Ferido e enfaixado, um homem se apoia no cajado diante de uma cerca de bastões. Cansaço, cautela e a persistência de quem já enfrentou muito e ainda não desiste.",
+      "regions": {
+        "bandaged-head": {
+          "title": "A Cabeça Enfaixada",
+          "description": "A atadura revela batalhas passadas: a experiência que deixa marcas, mas também ensina. Cada ferida é uma lição que o torna mais atento."
+        },
+        "leaning-wand": {
+          "title": "O Cajado de Apoio",
+          "description": "Ele se apoia no bastão que já foi arma: a força que antes servia ao ataque agora sustenta o descanso. Resistir também é saber usar o que se tem."
+        },
+        "wand-fence": {
+          "title": "A Cerca de Cajados",
+          "description": "Oito hastes enfileiradas atrás dele formam uma barreira: as defesas que construiu, uma a uma, ao longo do caminho. Elas protegem, mas também limitam."
+        },
+        "wary-gaze": {
+          "title": "O Olhar Vigilante",
+          "description": "Ele olha de lado, atento a uma ameaça que pode ou não vir: a desconfiança de quem já foi surpreendido e agora mede cada passo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Nine of Wands",
+      "intro": "Wounded and bandaged, a man leans on his staff before a fence of wands. Weariness, caution and the persistence of someone who has faced much and still has not given up.",
+      "regions": {
+        "bandaged-head": {
+          "title": "The Bandaged Head",
+          "description": "The bandage reveals past battles: experience that leaves marks but also teaches. Each wound is a lesson that makes him more alert."
+        },
+        "leaning-wand": {
+          "title": "The Supporting Wand",
+          "description": "He leans on a staff that was once a weapon: strength that once served attack now supports rest. Endurance is also knowing how to use what you have."
+        },
+        "wand-fence": {
+          "title": "The Fence of Wands",
+          "description": "Eight staves lined up behind him form a barrier: the defenses he built one by one along the way. They protect, but they also confine."
+        },
+        "wary-gaze": {
+          "title": "The Wary Gaze",
+          "description": "He glances sideways, watching for a threat that may or may not come: the distrust of one who has been surprised before and now measures every step."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの9",
+      "intro": "傷つき包帯を巻いた男が、杖の柵の前で杖にもたれています。疲れ、警戒、そして多くを乗り越えてなお諦めない粘り強さです。",
+      "regions": {
+        "bandaged-head": {
+          "title": "包帯を巻いた頭",
+          "description": "包帯は過去の戦いを物語ります。傷を残しながらも教えてくれる経験。傷のひとつひとつが、彼をより注意深くする教訓です。"
+        },
+        "leaning-wand": {
+          "title": "支えの杖",
+          "description": "彼はかつて武器だった杖にもたれます。攻撃に使われた力が、今は休息を支えています。耐えるとは、手元にあるものを活かすことでもあります。"
+        },
+        "wand-fence": {
+          "title": "杖の柵",
+          "description": "背後に並ぶ八本の杖が障壁を作ります。道すがら一つずつ築いた防御です。守ってくれる一方で、行動を制限もします。"
+        },
+        "wary-gaze": {
+          "title": "警戒のまなざし",
+          "description": "彼は来るかどうかも分からない脅威を横目で見張ります。かつて不意を突かれ、今は一歩ごとに慎重な者の疑いです。"
+        }
+      }
+    },
+    "he": {
+      "name": "תשע של מטות",
+      "intro": "פצוע ועטוף תחבושת, אדם נשען על מטהו מול גדר מטות. עייפות, זהירות והתמדה של מי שכבר עבר הרבה ועדיין לא מוותר.",
+      "regions": {
+        "bandaged-head": {
+          "title": "הראש החבוש",
+          "description": "התחבושת חושפת קרבות שעברו: ניסיון שמשאיר סימנים אך גם מלמד. כל פצע הוא לקח שהופך אותו לקשוב יותר."
+        },
+        "leaning-wand": {
+          "title": "המטה התומך",
+          "description": "הוא נשען על מקל שפעם היה נשק: הכוח ששימש לתקיפה תומך עכשיו במנוחה. עמידה היא גם לדעת להשתמש במה שיש."
+        },
+        "wand-fence": {
+          "title": "גדר המטות",
+          "description": "שמונה מטות בשורה מאחוריו יוצרים מחסום: ההגנות שבנה אחת אחת לאורך הדרך. הן מגינות, אך גם מגבילות."
+        },
+        "wary-gaze": {
+          "title": "המבט הדרוך",
+          "description": "הוא מציץ הצידה, דרוך לאיום שאולי יגיע ואולי לא: חשדנותו של מי שכבר הופתע בעבר וכעת מודד כל צעד."
+        }
+      }
+    }
+  }
+}

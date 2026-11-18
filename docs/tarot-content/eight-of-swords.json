@@ -1,0 +1,115 @@
+{
+  "slug": "eight-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 8,
+  "image": "/tarot/minor/eight-of-swords.jpg",
+  "regions": [
+    {
+      "id": "bound-blindfold",
+      "icon": "🧣"
+    },
+    {
+      "id": "eight-swords",
+      "icon": "🗡️"
+    },
+    {
+      "id": "wet-ground",
+      "icon": "💧"
+    },
+    {
+      "id": "castle-on-cliff",
+      "icon": "🏰"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Oito de Espadas",
+      "intro": "Uma mulher de olhos vendados e amarrada está cercada por oito espadas num chão encharcado. Sensação de prisão, medo e a revelação de que a saída depende da própria percepção.",
+      "regions": {
+        "bound-blindfold": {
+          "title": "A Venda e as Amarras",
+          "description": "O tecido solto no corpo e nos olhos: as prisões aqui são folgadas. O que prende é a crença de que não há saída, mais do que as cordas."
+        },
+        "eight-swords": {
+          "title": "As Oito Espadas",
+          "description": "As lâminas formam uma cerca, mas deixam brechas: o medo desenha limites que a realidade não impõe. Os obstáculos são menos sólidos do que parecem."
+        },
+        "wet-ground": {
+          "title": "O Chão Molhado",
+          "description": "A água cobre os pés dela: as emoções tomam conta do terreno e dificultam o passo. Para sair, é preciso aceitar a lama."
+        },
+        "castle-on-cliff": {
+          "title": "O Castelo no Penhasco",
+          "description": "Ao longe, no alto, uma fortaleza: a segurança está à vista. A saída existe, mas exige tirar a venda e dar o primeiro passo."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Eight of Swords",
+      "intro": "A blindfolded, bound woman stands surrounded by eight swords on soaked ground. A sense of imprisonment, fear and the realization that the way out depends on your own perception.",
+      "regions": {
+        "bound-blindfold": {
+          "title": "The Blindfold and Bindings",
+          "description": "Loose cloth on her body and eyes: these bonds are slack. What traps her is the belief there is no way out more than the ropes."
+        },
+        "eight-swords": {
+          "title": "The Eight Swords",
+          "description": "The blades form a fence but leave gaps: fear draws limits reality does not impose. Obstacles are less solid than they look."
+        },
+        "wet-ground": {
+          "title": "The Wet Ground",
+          "description": "Water covers her feet: emotions take over the terrain and slow each step. To get out, one must accept the mud."
+        },
+        "castle-on-cliff": {
+          "title": "The Castle on the Cliff",
+          "description": "In the distance, high up, a fortress: safety is in sight. The way out exists, but it requires removing the blindfold and taking the first step."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの8",
+      "intro": "目隠しをされ縛られた女性が、水浸しの地面で八本の剣に囲まれて立っています。囚われの感覚、恐れ、そして出口は自らの認識にかかっているという気づきです。",
+      "regions": {
+        "bound-blindfold": {
+          "title": "目隠しと縄",
+          "description": "体と目にゆるく巻かれた布。この拘束は緩んでいます。彼女を縛るのは縄より、出口はないという思い込みです。"
+        },
+        "eight-swords": {
+          "title": "八本の剣",
+          "description": "刃は柵を作りますが、隙間を残しています。恐れは、現実が課していない限界を描きます。障害は見た目ほど堅固ではありません。"
+        },
+        "wet-ground": {
+          "title": "濡れた地面",
+          "description": "水が彼女の足を覆います。感情が地面を占め、一歩ごとを重くします。抜け出すには、泥を受け入れる必要があります。"
+        },
+        "castle-on-cliff": {
+          "title": "崖の上の城",
+          "description": "遠く高みにある城塞。安全は視界にあります。出口は存在しますが、目隠しを外して最初の一歩を踏み出す必要があります。"
+        }
+      }
+    },
+    "he": {
+      "name": "שמונה של חרבות",
+      "intro": "אישה כבולה ועיניה מכוסות עומדת מוקפת שמונה חרבות על קרקע ספוגת מים. תחושת כליאה, פחד וההבנה שהיציאה תלויה בתפיסה שלך.",
+      "regions": {
+        "bound-blindfold": {
+          "title": "הכיסוי והכבלים",
+          "description": "בד רפוי על גופה ועל עיניה: הכבלים כאן רפויים. מה שכולא אותה הוא האמונה שאין מוצא, יותר מהחבלים."
+        },
+        "eight-swords": {
+          "title": "שמונה החרבות",
+          "description": "הלהבים יוצרים גדר אך משאירים פערים: הפחד משרטט גבולות שהמציאות לא כופה. המכשולים פחות מוצקים ממה שנראה."
+        },
+        "wet-ground": {
+          "title": "הקרקע הרטובה",
+          "description": "מים מכסים את רגליה: הרגשות משתלטים על השטח ומקשים על כל צעד. כדי לצאת צריך לקבל את הבוץ."
+        },
+        "castle-on-cliff": {
+          "title": "הטירה על הצוק",
+          "description": "ברקע, למעלה, מבצר: הביטחון נראה לעין. המוצא קיים, אך הוא דורש להסיר את הכיסוי ולצעוד את הצעד הראשון."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "seven-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 7,
+  "image": "/tarot/minor/seven-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "leaning-hoe",
+      "icon": "🧑‍🌾"
+    },
+    {
+      "id": "pentacle-bush",
+      "icon": "🌿"
+    },
+    {
+      "id": "reflective-gaze",
+      "icon": "🤔"
+    },
+    {
+      "id": "green-field",
+      "icon": "🌱"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Sete de Ouros",
+      "intro": "Um jovem se apoia na enxada e contempla um arbusto carregado de sete pentáculos. Pausa para avaliar o que já foi plantado, paciência e a dúvida entre esperar ou agir.",
+      "regions": {
+        "leaning-hoe": {
+          "title": "A Enxada",
+          "description": "Ele se apoia na ferramenta, de olhar fixo: um momento de descanso depois do esforço. Trabalhar bem inclui parar para olhar o que se fez."
+        },
+        "pentacle-bush": {
+          "title": "O Arbusto de Pentáculos",
+          "description": "As moedas brotam como frutos de uma planta: o retorno que cresce com o tempo. Não se colhe por pressão, mas por amadurecimento."
+        },
+        "reflective-gaze": {
+          "title": "O Olhar Pensativo",
+          "description": "Ele avalia sem pressa: vale o esforço continuar, ou é hora de mudar de plantio? A paciência exige reconhecer o que ainda não deu certo."
+        },
+        "green-field": {
+          "title": "O Campo Verde",
+          "description": "O terreno cultivado se estende atrás: o trabalho de meses. O investimento já está na terra, e o tempo é o próximo ingrediente."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Seven of Pentacles",
+      "intro": "A young man leans on his hoe and contemplates a bush heavy with seven pentacles. A pause to assess what has been planted, patience and the doubt between waiting and acting.",
+      "regions": {
+        "leaning-hoe": {
+          "title": "The Hoe",
+          "description": "He leans on his tool, gaze fixed: a moment of rest after effort. Working well includes stopping to look at what has been done."
+        },
+        "pentacle-bush": {
+          "title": "The Pentacle Bush",
+          "description": "The coins grow like fruit on a plant: the return that grows with time. It is harvested not by pressure but by ripening."
+        },
+        "reflective-gaze": {
+          "title": "The Thoughtful Gaze",
+          "description": "He assesses without hurry: is it worth continuing, or is it time to change crops? Patience requires acknowledging what has not yet worked."
+        },
+        "green-field": {
+          "title": "The Green Field",
+          "description": "The cultivated land stretches behind: months of work. The investment is already in the soil, and time is the next ingredient."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの7",
+      "intro": "若者が鍬にもたれ、七つのペンタクルの実る茂みを見つめています。植えたものを見極める小休止、忍耐、そして待つか動くかの迷いです。",
+      "regions": {
+        "leaning-hoe": {
+          "title": "鍬",
+          "description": "彼は道具にもたれ、視線を定めています。努力の後の休息の瞬間です。うまく働くことには、したことを立ち止まって眺めることも含まれます。"
+        },
+        "pentacle-bush": {
+          "title": "ペンタクルの茂み",
+          "description": "硬貨が植物の実のように育っています。時間とともに育つ見返りです。圧力ではなく、熟すことで収穫されます。"
+        },
+        "reflective-gaze": {
+          "title": "思案するまなざし",
+          "description": "彼は急がずに見極めます。続ける価値があるのか、作物を変える時なのか。忍耐には、まだうまくいっていないことを認める必要があります。"
+        },
+        "green-field": {
+          "title": "緑の畑",
+          "description": "背後に耕された土地が広がります。数か月の労働です。投資はすでに土の中にあり、次の材料は時間です。"
+        }
+      }
+    },
+    "he": {
+      "name": "שבע של מטבעות",
+      "intro": "צעיר נשען על מעדרו ומתבונן בשיח עמוס שבעה מטבעות. הפסקה להערכת מה שנזרע, סבלנות והספק בין להמתין לפעול.",
+      "regions": {
+        "leaning-hoe": {
+          "title": "המעדר",
+          "description": "הוא נשען על הכלי, מבטו נעוץ: רגע מנוחה אחרי מאמץ. עבודה טובה כוללת עצירה כדי להביט במה שנעשה."
+        },
+        "pentacle-bush": {
+          "title": "שיח המטבעות",
+          "description": "המטבעות צומחים כפירות על צמח: התשואה שגדלה עם הזמן. קוצרים אותה לא בלחץ אלא בהבשלה."
+        },
+        "reflective-gaze": {
+          "title": "המבט המהרהר",
+          "description": "הוא מעריך בלי חיפזון: האם כדאי להמשיך או שהגיע הזמן להחליף גידול? סבלנות מחייבת להכיר במה שעדיין לא הצליח."
+        },
+        "green-field": {
+          "title": "השדה הירוק",
+          "description": "האדמה המעובדת משתרעת מאחור: עבודה של חודשים. ההשקעה כבר באדמה, והזמן הוא המרכיב הבא."
+        }
+      }
+    }
+  }
+}

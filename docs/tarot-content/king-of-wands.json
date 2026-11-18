@@ -1,0 +1,115 @@
+{
+  "slug": "king-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 14,
+  "image": "/tarot/minor/king-of-wands.jpg",
+  "regions": [
+    {
+      "id": "budding-sceptre",
+      "icon": "🪄"
+    },
+    {
+      "id": "salamander-mantle",
+      "icon": "🦎"
+    },
+    {
+      "id": "lion-throne",
+      "icon": "🦁"
+    },
+    {
+      "id": "crown-gaze",
+      "icon": "👑"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rei de Paus",
+      "intro": "O rei de manto estampado de salamandras empunha o cajado em flor, sentado num trono de leões. Visão, liderança carismática e o domínio do fogo que inspira outros a segui-lo.",
+      "regions": {
+        "budding-sceptre": {
+          "title": "O Cetro em Flor",
+          "description": "O cajado ainda dá brotos: o rei não esqueceu que o poder nasce de algo vivo. Seu comando é criador, e não apenas administrador."
+        },
+        "salamander-mantle": {
+          "title": "O Manto de Salamandras",
+          "description": "O manto bordado com salamandras mostra o fogo incorporado: ele não teme a chama porque a atravessou e a transformou em autoridade."
+        },
+        "lion-throne": {
+          "title": "O Trono de Leões e Salamandras",
+          "description": "Leões e salamandras decoram o trono: realeza fundada em coragem e paixão. O poder do rei é a soma das forças que aprendeu a conduzir."
+        },
+        "crown-gaze": {
+          "title": "A Coroa e o Olhar",
+          "description": "Coroa em chamas e olhar voltado ao lado, adiante: ele enxerga longe e decide pelo futuro, não só pelo momento."
+        }
+      }
+    },
+    "en-US": {
+      "name": "King of Wands",
+      "intro": "The king in a salamander-patterned mantle holds the budding wand, seated on a lion throne. Vision, charismatic leadership and a mastery of fire that inspires others to follow.",
+      "regions": {
+        "budding-sceptre": {
+          "title": "The Budding Sceptre",
+          "description": "The staff still sprouts: the king has not forgotten that power springs from something alive. His command creates, not merely administers."
+        },
+        "salamander-mantle": {
+          "title": "The Salamander Mantle",
+          "description": "The mantle embroidered with salamanders shows fire embodied: he does not fear the flame because he has passed through it and turned it into authority."
+        },
+        "lion-throne": {
+          "title": "The Throne of Lions and Salamanders",
+          "description": "Lions and salamanders decorate the throne: royalty founded on courage and passion. The king's power is the sum of forces he has learned to guide."
+        },
+        "crown-gaze": {
+          "title": "The Crown and the Gaze",
+          "description": "A flame-like crown and a gaze turned sideways and forward: he sees far and decides for the future, not just the moment."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドのキング",
+      "intro": "サラマンダー模様のマントをまとった王が、ライオンの玉座に座り、芽吹く杖を握ります。ビジョン、カリスマ的な指導力、他者を導く火の統御です。",
+      "regions": {
+        "budding-sceptre": {
+          "title": "芽吹く笏",
+          "description": "杖はまだ芽を出しています。王は、力が生きたものから生まれることを忘れていません。彼の指揮は管理ではなく創造です。"
+        },
+        "salamander-mantle": {
+          "title": "サラマンダーのマント",
+          "description": "サラマンダーを刺繍したマントは、火が体現されたことを示します。彼は炎をくぐり抜けて権威に変えたので、それを恐れません。"
+        },
+        "lion-throne": {
+          "title": "ライオンとサラマンダーの玉座",
+          "description": "ライオンとサラマンダーが玉座を飾ります。勇気と情熱に根ざした王権です。王の力は、導くことを学んだ力の総和です。"
+        },
+        "crown-gaze": {
+          "title": "王冠とまなざし",
+          "description": "炎のような王冠と、横から先へ向けられた視線。彼は遠くを見渡し、その場しのぎではなく未来のために決断します。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלך המטות",
+      "intro": "המלך במעטה עם דוגמת סלמנדרות אוחז במטה הפורח, יושב על כס אריות. חזון, מנהיגות כריזמטית ושליטה באש שמעוררת אחרים ללכת אחריו.",
+      "regions": {
+        "budding-sceptre": {
+          "title": "השרביט הפורח",
+          "description": "המטה עדיין מצמיח ניצנים: המלך לא שכח שהכוח נובע ממשהו חי. שליטתו יוצרת ולא רק מנהלת."
+        },
+        "salamander-mantle": {
+          "title": "מעטה הסלמנדרות",
+          "description": "המעטה המעוטר סלמנדרות מראה אש שהפכה לחלק ממנו: הוא אינו חושש מהלהבה כי עבר דרכה והפך אותה לסמכות."
+        },
+        "lion-throne": {
+          "title": "כס האריות והסלמנדרות",
+          "description": "אריות וסלמנדרות מעטרים את הכס: מלכות שנשענת על אומץ ותשוקה. כוחו של המלך הוא סך הכוחות שלמד להוביל."
+        },
+        "crown-gaze": {
+          "title": "הכתר והמבט",
+          "description": "כתר דמוי להבה ומבט מופנה הצידה וקדימה: הוא רואה רחוק ומחליט למען העתיד ולא רק לרגע."
+        }
+      }
+    }
+  }
+}

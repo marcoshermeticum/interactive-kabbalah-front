@@ -1,0 +1,115 @@
+{
+  "slug": "ace-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 1,
+  "image": "/tarot/minor/ace-of-swords.jpg",
+  "regions": [
+    {
+      "id": "hand-cloud",
+      "icon": "✋"
+    },
+    {
+      "id": "crowned-sword",
+      "icon": "⚔️"
+    },
+    {
+      "id": "laurel-palm",
+      "icon": "🌿"
+    },
+    {
+      "id": "barren-peaks",
+      "icon": "🏔️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Ás de Espadas",
+      "intro": "Uma mão emerge da nuvem empunhando uma espada coroada, ladeada por louros e palmas. O momento da clareza: uma verdade que corta a confusão e a vitória do pensamento sobre a dúvida.",
+      "regions": {
+        "hand-cloud": {
+          "title": "A Mão na Nuvem",
+          "description": "A lucidez chega como dom e como responsabilidade: a mão oferece a espada, mas a verdade só serve a quem a empunha com firmeza."
+        },
+        "crowned-sword": {
+          "title": "A Espada Coroada",
+          "description": "A coroa no alto da lâmina: o intelecto elevado a serviço do bem. A mente que decide com justiça tem autoridade de verdade."
+        },
+        "laurel-palm": {
+          "title": "O Louro e a Palma",
+          "description": "Os ramos de vitória e de paz pendem da coroa: a verdade que vence sem destruir. O triunfo do pensamento traz também reconciliação."
+        },
+        "barren-peaks": {
+          "title": "Os Picos Áridos",
+          "description": "Montanhas nuas ao fundo: a paisagem do pensamento puro é fria e exigente. Clareza tem altitude, e o ar rarefeito não perdoa a ilusão."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ace of Swords",
+      "intro": "A hand emerges from a cloud gripping a crowned sword flanked by laurel and palm. The moment of clarity: a truth that cuts through confusion and the victory of thought over doubt.",
+      "regions": {
+        "hand-cloud": {
+          "title": "The Hand in the Cloud",
+          "description": "Lucidity arrives as a gift and as a responsibility: the hand offers the sword, but truth serves only the one who wields it firmly."
+        },
+        "crowned-sword": {
+          "title": "The Crowned Sword",
+          "description": "The crown at the tip of the blade: intellect raised to the service of good. A mind that decides with justice carries true authority."
+        },
+        "laurel-palm": {
+          "title": "The Laurel and the Palm",
+          "description": "Branches of victory and peace hang from the crown: truth that wins without destroying. The triumph of thought also brings reconciliation."
+        },
+        "barren-peaks": {
+          "title": "The Barren Peaks",
+          "description": "Bare mountains in the background: the landscape of pure thought is cold and demanding. Clarity has altitude, and thin air does not forgive illusion."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードのエース",
+      "intro": "雲から現れた手が、月桂樹と棕櫚に囲まれた王冠付きの剣を握っています。明晰さの瞬間。混乱を断ち切る真実と、疑いに対する思考の勝利です。",
+      "regions": {
+        "hand-cloud": {
+          "title": "雲の中の手",
+          "description": "明晰さは贈り物であり責任でもあります。手は剣を差し出しますが、真実はそれをしっかり握る者にだけ仕えます。"
+        },
+        "crowned-sword": {
+          "title": "王冠の剣",
+          "description": "刃の先に載る王冠。善に仕えるよう高められた知性です。公正に判断する心には、本物の権威があります。"
+        },
+        "laurel-palm": {
+          "title": "月桂樹と棕櫚",
+          "description": "勝利と平和の枝が王冠から垂れています。破壊せずに勝つ真実です。思考の勝利は和解ももたらします。"
+        },
+        "barren-peaks": {
+          "title": "荒涼とした峰",
+          "description": "背景の裸の山々。純粋な思考の風景は冷たく厳しいものです。明晰さには高度があり、薄い空気は幻想を許しません。"
+        }
+      }
+    },
+    "he": {
+      "name": "אס של חרבות",
+      "intro": "יד יוצאת מהענן ואוחזת בחרב עטורת כתר, שלצדה דפנה ודקל. רגע הבהירות: אמת שחותכת את הבלבול וניצחון המחשבה על הספק.",
+      "regions": {
+        "hand-cloud": {
+          "title": "היד בענן",
+          "description": "צלילות הדעת מגיעה כמתנה וכאחריות: היד מציעה את החרב, אך האמת משרתת רק את מי שאוחז בה בחוזקה."
+        },
+        "crowned-sword": {
+          "title": "החרב העטורה",
+          "description": "הכתר בקצה הלהב: שכל שהורם לשרת את הטוב. מחשבה שמכריעה בצדק נושאת סמכות אמיתית."
+        },
+        "laurel-palm": {
+          "title": "הדפנה והדקל",
+          "description": "ענפי ניצחון ושלום תלויים מהכתר: אמת שמנצחת בלי להרוס. ניצחון המחשבה מביא גם פיוס."
+        },
+        "barren-peaks": {
+          "title": "הפסגות השוממות",
+          "description": "הרים חשופים ברקע: נוף המחשבה הטהורה קר ותובעני. לבהירות יש גובה, והאוויר הדליל לא סולח לאשליה."
+        }
+      }
+    }
+  }
+}

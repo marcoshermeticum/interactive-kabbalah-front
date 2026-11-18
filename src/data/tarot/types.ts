@@ -57,8 +57,13 @@ export interface TarotRegion {
 export interface TarotCard {
   /** Stable id, used in routes and data lookups (e.g. "temperance"). */
   id: string;
-  /** Major arcana number (0–21). */
-  number: number;
+  /** Major arcana number (0–21). Minor arcana use suit and rank instead. */
+  number?: number;
+  /** Present on minor arcana only. */
+  arcana?: 'minor';
+  suit?: 'wands' | 'cups' | 'swords' | 'pentacles';
+  /** 1 (Ace) to 14 (King), minor arcana only. */
+  rank?: number;
   /** Canonical English name, used as fallback. */
   name: string;
   /** Public path to the artwork image. */

@@ -1,0 +1,115 @@
+{
+  "slug": "seven-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 7,
+  "image": "/tarot/minor/seven-of-swords.jpg",
+  "regions": [
+    {
+      "id": "sneaking-man",
+      "icon": "🥷"
+    },
+    {
+      "id": "five-swords-carried",
+      "icon": "⚔️"
+    },
+    {
+      "id": "swords-left-behind",
+      "icon": "🗡️"
+    },
+    {
+      "id": "camp-tents",
+      "icon": "⛺"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Sete de Espadas",
+      "intro": "Um homem se afasta na ponta dos pés carregando cinco espadas e deixa duas para trás, com um acampamento ao fundo. Estratégia, furtividade e o dilema entre a astúcia e a honestidade.",
+      "regions": {
+        "sneaking-man": {
+          "title": "O Furtivo",
+          "description": "Anda de lado, olhando para trás com um sorriso: confia na própria esperteza. A carta pergunta se o atalho vale o risco de ser descoberto."
+        },
+        "five-swords-carried": {
+          "title": "As Cinco Espadas",
+          "description": "Ele leva só o que consegue segurar: não dá para ganhar tudo. Decidir o que levar é também decidir o que abandonar."
+        },
+        "swords-left-behind": {
+          "title": "As Duas Espadas Deixadas",
+          "description": "Duas lâminas ficam cravadas no solo: o que sobrou, esquecido ou sacrificado. Toda fuga deixa rastros que podem entregar quem foge."
+        },
+        "camp-tents": {
+          "title": "O Acampamento",
+          "description": "Tendas e figuras ao longe: o grupo de onde ele sai sem aviso. A carta fala de segredos, de confiança rompida e de agir às escondidas."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Seven of Swords",
+      "intro": "A man tiptoes away carrying five swords and leaves two behind, with a camp in the background. Strategy, stealth and the dilemma between cunning and honesty.",
+      "regions": {
+        "sneaking-man": {
+          "title": "The Sneak",
+          "description": "He walks sideways, glancing back with a smile: he trusts his own cleverness. The card asks whether the shortcut is worth the risk of being found out."
+        },
+        "five-swords-carried": {
+          "title": "The Five Swords Carried",
+          "description": "He takes only what he can hold: you cannot win everything. Deciding what to carry is also deciding what to abandon."
+        },
+        "swords-left-behind": {
+          "title": "The Two Swords Left Behind",
+          "description": "Two blades stay stuck in the ground: what remained, forgotten or sacrificed. Every escape leaves traces that can give the fugitive away."
+        },
+        "camp-tents": {
+          "title": "The Camp",
+          "description": "Tents and figures in the distance: the group he slips away from unnoticed. The card speaks of secrets, broken trust and acting in hiding."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの7",
+      "intro": "男が五本の剣を抱えて忍び足で去り、二本を残していきます。背景には野営地が見えます。戦略、隠密、そして狡知と誠実さの間のジレンマです。",
+      "regions": {
+        "sneaking-man": {
+          "title": "忍び歩く男",
+          "description": "彼は横歩きで、笑みを浮かべて振り返ります。自分の賢さを信じています。近道が、発覚する危険に見合うかをカードは問います。"
+        },
+        "five-swords-carried": {
+          "title": "運ばれる五本の剣",
+          "description": "彼は持てる分だけを持っていきます。すべてを得ることはできません。何を運ぶかを決めることは、何を捨てるかを決めることでもあります。"
+        },
+        "swords-left-behind": {
+          "title": "残された二本の剣",
+          "description": "二本の刃が地面に刺さったままです。残されたもの、忘れられたもの、犠牲になったものです。あらゆる逃走は、逃げる者を暴く痕跡を残します。"
+        },
+        "camp-tents": {
+          "title": "野営地",
+          "description": "遠くのテントと人影。彼が気づかれずに抜け出す集団です。カードは、秘密、壊れた信頼、そして隠れた行動を語ります。"
+        }
+      }
+    },
+    "he": {
+      "name": "שבע של חרבות",
+      "intro": "אדם מתרחק על קצות האצבעות ונושא חמש חרבות, ומשאיר שתיים מאחור, ומחנה ברקע. אסטרטגיה, התגנבות והדילמה בין ערמה ליושר.",
+      "regions": {
+        "sneaking-man": {
+          "title": "המתגנב",
+          "description": "הוא הולך הצידה ומציץ לאחור בחיוך: בוטח בתחכום שלו. הקלף שואל אם הקיצור שווה את הסיכון להיתפס."
+        },
+        "five-swords-carried": {
+          "title": "חמש החרבות הנישאות",
+          "description": "הוא לוקח רק מה שהוא מצליח להחזיק: אי אפשר לזכות בהכול. להחליט מה לשאת פירושו גם להחליט מה לנטוש."
+        },
+        "swords-left-behind": {
+          "title": "שתי החרבות שהושארו",
+          "description": "שני להבים נשארים תקועים באדמה: מה שנותר, נשכח או הוקרב. כל בריחה משאירה עקבות שעלולות לחשוף את הבורח."
+        },
+        "camp-tents": {
+          "title": "המחנה",
+          "description": "אוהלים ודמויות במרחק: הקבוצה שממנה הוא נעלם בלי להיראות. הקלף מדבר על סודות, על אמון שנשבר ועל פעולה בהסתר."
+        }
+      }
+    }
+  }
+}

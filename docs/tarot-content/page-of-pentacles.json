@@ -1,0 +1,115 @@
+{
+  "slug": "page-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 11,
+  "image": "/tarot/minor/page-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "raised-pentacle",
+      "icon": "🪙"
+    },
+    {
+      "id": "red-cap",
+      "icon": "🧢"
+    },
+    {
+      "id": "plowed-field",
+      "icon": "🌾"
+    },
+    {
+      "id": "trees-mountains",
+      "icon": "🏔️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Valete de Ouros",
+      "intro": "Um jovem de túnica verde contempla um pentáculo erguido, num campo arado diante das montanhas. Estudo, curiosidade prática e o início de um projeto que exige constância.",
+      "regions": {
+        "raised-pentacle": {
+          "title": "O Pentáculo Contemplado",
+          "description": "Ele o ergue com as duas mãos e o observa de perto: a proposta de algo concreto, tratada com cuidado e atenção ao detalhe."
+        },
+        "red-cap": {
+          "title": "O Gorro Vermelho",
+          "description": "Um gorro simples e vermelho: a energia contida do aprendiz, discreta e diligente. O entusiasmo está no trabalho, não na aparência."
+        },
+        "plowed-field": {
+          "title": "O Campo Arado",
+          "description": "Sulcos prontos para a semente: o terreno foi trabalhado e espera paciência. Começar bem é preparar o chão antes de plantar."
+        },
+        "trees-mountains": {
+          "title": "As Árvores e as Montanhas",
+          "description": "Árvores e montanhas ao longe: o horizonte de longo prazo. O jovem olha de perto para algo que só o tempo fará crescer."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Page of Pentacles",
+      "intro": "A young man in a green tunic gazes at a raised pentacle in a plowed field before the mountains. Study, practical curiosity and the start of a project that demands consistency.",
+      "regions": {
+        "raised-pentacle": {
+          "title": "The Contemplated Pentacle",
+          "description": "He raises it with both hands and studies it closely: the proposal of something concrete, treated with care and attention to detail."
+        },
+        "red-cap": {
+          "title": "The Red Cap",
+          "description": "A simple red cap: the contained energy of the apprentice, modest and diligent. Enthusiasm lives in the work, not in appearance."
+        },
+        "plowed-field": {
+          "title": "The Plowed Field",
+          "description": "Furrows ready for seed: the ground has been worked and waits for patience. Starting well means preparing the soil before planting."
+        },
+        "trees-mountains": {
+          "title": "The Trees and the Mountains",
+          "description": "Trees and mountains in the distance: the long-term horizon. The youth looks closely at something only time will make grow."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルのペイジ",
+      "intro": "緑のチュニックを着た若者が、山を前にした耕された畑で、掲げたペンタクルを見つめています。学び、実践的な好奇心、そして継続を求める計画の始まりです。",
+      "regions": {
+        "raised-pentacle": {
+          "title": "見つめられるペンタクル",
+          "description": "彼は両手でそれを掲げ、間近で観察します。具体的なものの提案が、丁寧さと細部への注意をもって扱われています。"
+        },
+        "red-cap": {
+          "title": "赤い帽子",
+          "description": "素朴な赤い帽子。控えめで勤勉な見習いの、抑えられた活力です。熱意は見た目ではなく、仕事の中にあります。"
+        },
+        "plowed-field": {
+          "title": "耕された畑",
+          "description": "種を待つ畝。土は耕され、忍耐を待っています。よく始めるとは、植える前に土を整えることです。"
+        },
+        "trees-mountains": {
+          "title": "木々と山々",
+          "description": "遠くの木々と山々。長期的な地平です。若者は、時間だけが育てうるものを、間近に見つめています。"
+        }
+      }
+    },
+    "he": {
+      "name": "נער המטבעות",
+      "intro": "צעיר בטוניקה ירוקה מביט במטבע מורם בשדה חרוש מול ההרים. לימוד, סקרנות מעשית ותחילתו של פרויקט שדורש עקביות.",
+      "regions": {
+        "raised-pentacle": {
+          "title": "המטבע המוּבט",
+          "description": "הוא מרים אותו בשתי ידיים ובוחן מקרוב: הצעה למשהו מוחשי, שמטופלת בזהירות ובתשומת לב לפרטים."
+        },
+        "red-cap": {
+          "title": "הכובע האדום",
+          "description": "כובע אדום פשוט: האנרגיה המאופקת של החניך, צנוע ושקדן. ההתלהבות מצויה בעבודה ולא במראה."
+        },
+        "plowed-field": {
+          "title": "השדה החרוש",
+          "description": "תלמים מוכנים לזרע: האדמה עובדה וממתינה לסבלנות. להתחיל היטב פירושו להכין את הקרקע לפני הזריעה."
+        },
+        "trees-mountains": {
+          "title": "העצים וההרים",
+          "description": "עצים והרים במרחק: האופק לטווח ארוך. הצעיר מביט מקרוב במשהו שרק הזמן יצמיח."
+        }
+      }
+    }
+  }
+}

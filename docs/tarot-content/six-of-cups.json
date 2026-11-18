@@ -1,0 +1,115 @@
+{
+  "slug": "six-of-cups",
+  "arcana": "minor",
+  "suit": "cups",
+  "rank": 6,
+  "image": "/tarot/minor/six-of-cups.jpg",
+  "regions": [
+    {
+      "id": "flower-cups",
+      "icon": "🌼"
+    },
+    {
+      "id": "children-gift",
+      "icon": "🧒"
+    },
+    {
+      "id": "village-courtyard",
+      "icon": "🏘️"
+    },
+    {
+      "id": "background-figure",
+      "icon": "🚶"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Seis de Copas",
+      "intro": "Duas crianças trocam um cálice de flores num pátio de aldeia antiga. Nostalgia, inocência e a doçura de gestos simples que lembram quem fomos e o que ainda podemos dar.",
+      "regions": {
+        "flower-cups": {
+          "title": "As Taças de Flores",
+          "description": "Seis cálices transbordam de flores brancas: lembranças que florescem. O que um dia foi guardado com carinho continua dando frutos."
+        },
+        "children-gift": {
+          "title": "As Crianças e o Presente",
+          "description": "O mais velho oferece uma taça ao menor: generosidade sem interesse, cuidado entre gerações. A bondade mais pura se aprende cedo."
+        },
+        "village-courtyard": {
+          "title": "O Pátio da Aldeia",
+          "description": "Casas de pedra, um brasão e um chão conhecido: o cenário da infância. Um lugar seguro ao qual a memória volta em busca de afeto."
+        },
+        "background-figure": {
+          "title": "O Vulto ao Fundo",
+          "description": "Uma figura caminha ao longe, de costas: o tempo que passa e o adulto que o menino será. A lembrança convive com a vida que segue."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Six of Cups",
+      "intro": "Two children exchange a cup of flowers in an old village courtyard. Nostalgia, innocence and the sweetness of simple gestures that remind us who we were and what we can still give.",
+      "regions": {
+        "flower-cups": {
+          "title": "The Cups of Flowers",
+          "description": "Six chalices overflow with white flowers: memories in bloom. What was once kept with care continues to bear fruit."
+        },
+        "children-gift": {
+          "title": "The Children and the Gift",
+          "description": "The older one offers a cup to the younger: generosity without interest, care between generations. The purest kindness is learned early."
+        },
+        "village-courtyard": {
+          "title": "The Village Courtyard",
+          "description": "Stone houses, a coat of arms and a familiar ground: the setting of childhood. A safe place to which memory returns in search of affection."
+        },
+        "background-figure": {
+          "title": "The Figure in the Background",
+          "description": "A figure walks away in the distance, back turned: time passing, and the adult the child will become. Memory lives alongside the life that goes on."
+        }
+      }
+    },
+    "ja": {
+      "name": "カップの6",
+      "intro": "二人の子どもが、古い村の中庭で花の入った杯を渡し合います。郷愁、無垢、そして私たちが誰であったか、今も何を与えられるかを思い出させる素朴な仕草の優しさです。",
+      "regions": {
+        "flower-cups": {
+          "title": "花の杯",
+          "description": "六つの杯が白い花であふれています。咲き誇る思い出です。かつて大切にしまわれたものは、今も実を結び続けます。"
+        },
+        "children-gift": {
+          "title": "子どもと贈り物",
+          "description": "年上の子が年下の子に杯を差し出します。見返りを求めない寛大さ、世代を超えた思いやり。最も純粋な優しさは幼くして学ばれます。"
+        },
+        "village-courtyard": {
+          "title": "村の中庭",
+          "description": "石の家々、紋章、見慣れた地面。子ども時代の舞台です。記憶が愛情を求めて戻ってくる、安心できる場所です。"
+        },
+        "background-figure": {
+          "title": "背景の人影",
+          "description": "遠くを背を向けて歩く人影。過ぎゆく時間と、子どもがやがてなる大人です。記憶は、続いていく人生と共にあります。"
+        }
+      }
+    },
+    "he": {
+      "name": "שש של גביעים",
+      "intro": "שני ילדים מעבירים גביע של פרחים בחצר כפר ישן. נוסטלגיה, תמימות והמתיקות של מחוות פשוטות שמזכירות מי היינו ומה עוד אפשר לתת.",
+      "regions": {
+        "flower-cups": {
+          "title": "גביעי הפרחים",
+          "description": "שישה גביעים גולשים פרחים לבנים: זיכרונות בפריחה. מה ששמרו פעם באהבה ממשיך להניב פירות."
+        },
+        "children-gift": {
+          "title": "הילדים והמתנה",
+          "description": "הגדול מגיש גביע לקטן: נדיבות בלי אינטרס, דאגה בין דורות. את הטוב הטהור ביותר לומדים מוקדם."
+        },
+        "village-courtyard": {
+          "title": "חצר הכפר",
+          "description": "בתי אבן, סמל משפחתי וקרקע מוכרת: תפאורת הילדות. מקום בטוח שהזיכרון חוזר אליו בחיפוש אחר חום."
+        },
+        "background-figure": {
+          "title": "הדמות ברקע",
+          "description": "דמות הולכת למרחוק, גבה אלינו: הזמן שעובר והמבוגר שהילד יהפוך להיות. הזיכרון חי לצד החיים שממשיכים."
+        }
+      }
+    }
+  }
+}

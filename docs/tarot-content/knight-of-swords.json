@@ -1,0 +1,115 @@
+{
+  "slug": "knight-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 12,
+  "image": "/tarot/minor/knight-of-swords.jpg",
+  "regions": [
+    {
+      "id": "raised-sword",
+      "icon": "⚔️"
+    },
+    {
+      "id": "galloping-horse",
+      "icon": "🐎"
+    },
+    {
+      "id": "wind-bent-trees",
+      "icon": "🌬️"
+    },
+    {
+      "id": "storm-clouds",
+      "icon": "☁️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Cavaleiro de Espadas",
+      "intro": "Um cavaleiro de espada em riste galopa num cavalo branco, enquanto o vento dobra as árvores. Ímpeto intelectual, decisão rápida e a franqueza que corta, às vezes sem medir o impacto.",
+      "regions": {
+        "raised-sword": {
+          "title": "A Espada em Riste",
+          "description": "Empunhada alto, sem hesitar: ele ataca a questão de frente. A clareza de propósito é grande, mas a pressa pode ferir quem está perto."
+        },
+        "galloping-horse": {
+          "title": "O Cavalo a Galope",
+          "description": "A montaria branca corre ao limite, com as patas no ar: a velocidade do pensamento que se lança sem olhar o terreno."
+        },
+        "wind-bent-trees": {
+          "title": "As Árvores Dobradas",
+          "description": "O vento verga as árvores: tudo que está no caminho sofre o impacto. O cavaleiro move o ambiente à sua volta, queira ou não."
+        },
+        "storm-clouds": {
+          "title": "As Nuvens Rasgadas",
+          "description": "O céu em turbilhão acompanha a cavalgada: o debate é intenso e o ambiente mental, agitado. Tempestade de ideias, com raios e trovões."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Knight of Swords",
+      "intro": "A knight with raised sword gallops on a white horse as the wind bends the trees. Intellectual drive, quick decisions and a frankness that cuts, sometimes without measuring the impact.",
+      "regions": {
+        "raised-sword": {
+          "title": "The Raised Sword",
+          "description": "Held high without hesitation: he attacks the issue head on. Clarity of purpose is great, but haste may wound those nearby."
+        },
+        "galloping-horse": {
+          "title": "The Galloping Horse",
+          "description": "The white mount runs at its limit, hooves in the air: the speed of thought hurling forward without looking at the terrain."
+        },
+        "wind-bent-trees": {
+          "title": "The Wind-Bent Trees",
+          "description": "The wind bows the trees: everything in the way feels the impact. The knight moves the environment around him, whether he means to or not."
+        },
+        "storm-clouds": {
+          "title": "The Torn Clouds",
+          "description": "The swirling sky accompanies the ride: the debate is intense and the mental climate agitated. A storm of ideas, with lightning and thunder."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードのナイト",
+      "intro": "剣を掲げた騎士が白い馬で駆け、風が木々を曲げます。知的な衝動、素早い決断、時に影響を考えずに切り込む率直さです。",
+      "regions": {
+        "raised-sword": {
+          "title": "振りかざした剣",
+          "description": "ためらわず高く掲げられています。彼は問題に正面から挑みます。目的は明確ですが、急ぎは近くの人を傷つけかねません。"
+        },
+        "galloping-horse": {
+          "title": "疾走する馬",
+          "description": "白い馬は限界まで走り、蹄が宙に浮いています。地形を見ずに突き進む思考の速さです。"
+        },
+        "wind-bent-trees": {
+          "title": "風に曲がる木々",
+          "description": "風が木々を曲げます。進路上のすべてが影響を受けます。騎士は、望むと望まざるとにかかわらず、周囲を動かします。"
+        },
+        "storm-clouds": {
+          "title": "裂けた雲",
+          "description": "渦巻く空が騎行に寄り添います。議論は激しく、精神的な空気はざわついています。稲妻と雷を伴う、発想の嵐です。"
+        }
+      }
+    },
+    "he": {
+      "name": "אביר החרבות",
+      "intro": "אביר בחרב מורמת דוהר על סוס לבן בעוד הרוח מכופפת את העצים. תנופה אינטלקטואלית, החלטה מהירה וכנות שחותכת, לפעמים בלי למדוד את ההשפעה.",
+      "regions": {
+        "raised-sword": {
+          "title": "החרב המורמת",
+          "description": "מורמת גבוה בלי היסוס: הוא תוקף את העניין חזיתית. בהירות המטרה גדולה, אך החיפזון עלול לפצוע את הקרובים."
+        },
+        "galloping-horse": {
+          "title": "הסוס הדוהר",
+          "description": "הסוס הלבן דוהר עד הקצה, פרסותיו באוויר: מהירות המחשבה שמסתערת בלי להביט בשטח."
+        },
+        "wind-bent-trees": {
+          "title": "העצים הכפופים",
+          "description": "הרוח מעקמת את העצים: כל מה שבדרך חש את ההשפעה. האביר מזיז את הסביבה סביבו, רוצה או לא."
+        },
+        "storm-clouds": {
+          "title": "העננים הקרועים",
+          "description": "השמיים המערבלים מלווים את הדהירה: הוויכוח עז והאקלים המנטלי נסער. סערת רעיונות, עם ברקים ורעמים."
+        }
+      }
+    }
+  }
+}

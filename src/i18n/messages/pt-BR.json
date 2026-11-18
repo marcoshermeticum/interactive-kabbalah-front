@@ -25,6 +25,11 @@
       "keywords": "{name}, tarot, rider-waite, arcano {number}",
       "title": "{name} — Arcano {roman}"
     },
+    "minorCard": {
+      "title": "{name} — Arcano Menor",
+      "description": "{name}, carta do naipe de {suit} no Tarot Rider-Waite: arte, símbolos e correspondências cabalísticas.",
+      "keywords": "{name}, tarot, rider-waite, arcanos menores, {suit}"
+    },
     "breadcrumbHome": "Início"
   },
   "app": {
@@ -725,13 +730,28 @@
   "tarotWaite": {
     "backToPortal": "← Voltar ao portal",
     "backToCatalog": "← Voltar ao catálogo",
-    "eyebrow": "22 arcanos maiores",
+    "eyebrow": "78 arcanos",
     "title": "Tarot Rider-Waite",
-    "subtitle": "Os 22 arcanos maiores do Tarot Rider-Waite. Toque em uma carta para explorar seus símbolos e correspondências.",
+    "subtitle": "Os 78 arcanos do Tarot Rider-Waite: 22 maiores e 56 menores. Toque em uma carta para explorar seus símbolos e correspondências.",
     "soonBadge": "Em breve",
     "comingSoonTitle": "Carta em preparação",
     "comingSoonText": "As regiões interativas desta carta ainda estão sendo desenhadas. Volte em breve para explorá-la símbolo por símbolo.",
     "correspondences": {
+      "suit": "Naipe",
+      "sephirah": "Sephirah",
+      "courtElement": "Elemento da corte",
+      "sephiroth": {
+        "kether": "Kether",
+        "chokmah": "Chokmah",
+        "binah": "Binah",
+        "chesed": "Chesed",
+        "gevurah": "Gevurah",
+        "tiferet": "Tiferet",
+        "netzach": "Netzach",
+        "hod": "Hod",
+        "yesod": "Yesod",
+        "malkuth": "Malkuth"
+      },
       "title": "Correspondências",
       "path": "Caminho",
       "hebrewLetter": "Letra hebraica",
@@ -767,6 +787,35 @@
         "air": "Ar",
         "earth": "Terra"
       }
+    },
+    "minor": {
+      "majorTitle": "Arcanos Maiores",
+      "majorSubtitle": "As 22 cartas dos grandes arquétipos, ligadas aos 22 caminhos da Árvore da Vida.",
+      "title": "Arcanos Menores",
+      "subtitle": "As 56 cartas do cotidiano, em quatro naipes que seguem os quatro elementos: Paus (fogo), Copas (água), Espadas (ar) e Ouros (terra).",
+      "suits": {
+        "wands": "Paus",
+        "cups": "Copas",
+        "swords": "Espadas",
+        "pentacles": "Ouros"
+      },
+      "ranks": {
+        "ace": "Ás",
+        "two": "Dois",
+        "three": "Três",
+        "four": "Quatro",
+        "five": "Cinco",
+        "six": "Seis",
+        "seven": "Sete",
+        "eight": "Oito",
+        "nine": "Nove",
+        "ten": "Dez",
+        "page": "Valete",
+        "knight": "Cavaleiro",
+        "queen": "Rainha",
+        "king": "Rei"
+      },
+      "badge": "Arcano Menor"
     },
     "cards": {
       "theFool": {
@@ -856,6 +905,230 @@
       "theWorld": {
         "name": "O Mundo",
         "summary": "O Mundo fecha o ciclo dos Arcanos Maiores: realização, integração e plenitude. A figura que dança dentro da coroa celebra uma jornada concluída, enquanto o próximo começo já se prepara."
+      },
+      "aceOfWands": {
+        "name": "Ás de Paus",
+        "summary": "Uma mão surge da nuvem e oferece um cajado em flor: o impulso inicial, a faísca criativa e a coragem de começar. É o fogo em estado puro, ainda sem forma e cheio de promessa."
+      },
+      "twoOfWands": {
+        "name": "Dois de Paus",
+        "summary": "Um homem no alto da muralha segura o mundo na mão e um cajado na outra, olhando o mar. Planejar, escolher o rumo e decidir entre o que já se tem e o que se pode conquistar."
+      },
+      "threeOfWands": {
+        "name": "Três de Paus",
+        "summary": "De costas, um homem no alto do penhasco vê seus barcos partirem para o mar. Os primeiros frutos de um plano em marcha: visão ampliada, espera confiante e expansão."
+      },
+      "fourOfWands": {
+        "name": "Quatro de Paus",
+        "summary": "Quatro cajados sustentam uma guirlanda de flores sobre um casal que celebra diante do castelo. A festa depois do esforço: estabilidade, lar, acolhimento e comunidade."
+      },
+      "fiveOfWands": {
+        "name": "Cinco de Paus",
+        "summary": "Cinco jovens brandem cajados num embate sem vencedor claro. Competição, atrito e a energia confusa de muitas vontades colidindo, que pode desgastar ou afiar quem participa."
+      },
+      "sixOfWands": {
+        "name": "Seis de Paus",
+        "summary": "Um cavaleiro coroado de louros volta em triunfo, cercado por uma multidão de cajados. Vitória pública, reconhecimento e o orgulho de ter vencido à vista de todos."
+      },
+      "sevenOfWands": {
+        "name": "Sete de Paus",
+        "summary": "No alto de uma colina, um homem defende sua posição contra seis cajados que sobem de baixo. Coragem, firmeza e a decisão de manter o que é seu mesmo em desvantagem."
+      },
+      "eightOfWands": {
+        "name": "Oito de Paus",
+        "summary": "Oito cajados cortam o céu em voo veloz rumo ao chão, sem nenhuma figura humana. Rapidez, mensagens e acontecimentos que chegam de uma vez, com a energia de quem não pode parar."
+      },
+      "nineOfWands": {
+        "name": "Nove de Paus",
+        "summary": "Ferido e enfaixado, um homem se apoia no cajado diante de uma cerca de bastões. Cansaço, cautela e a persistência de quem já enfrentou muito e ainda não desiste."
+      },
+      "tenOfWands": {
+        "name": "Dez de Paus",
+        "summary": "Curvado sob o peso de dez cajados amarrados, um homem caminha em direção à vila ao longe. Sobrecarga, responsabilidade assumida demais e a necessidade de repartir o peso."
+      },
+      "pageOfWands": {
+        "name": "Valete de Paus",
+        "summary": "Um jovem de túnica ornada de salamandras fita o cajado que segura, em meio ao deserto. Curiosidade, entusiasmo e a mensagem de uma ideia nova que pede para ser explorada."
+      },
+      "knightOfWands": {
+        "name": "Cavaleiro de Paus",
+        "summary": "Um cavaleiro de armadura e túnica de salamandras avança a galope num cavalo empinado. Impulso, aventura e entusiasmo que não mede riscos, mas pode atropelar o que está no caminho."
+      },
+      "queenOfWands": {
+        "name": "Rainha de Paus",
+        "summary": "Sentada num trono de leões com um girassol na mão e um gato preto aos pés, a rainha irradia confiança e calor. Magnetismo, generosidade e uma vontade que atrai em vez de impor."
+      },
+      "kingOfWands": {
+        "name": "Rei de Paus",
+        "summary": "O rei de manto estampado de salamandras empunha o cajado em flor, sentado num trono de leões. Visão, liderança carismática e o domínio do fogo que inspira outros a segui-lo."
+      },
+      "aceOfCups": {
+        "name": "Ás de Copas",
+        "summary": "Uma mão sai da nuvem oferecendo um cálice transbordante, enquanto uma pomba deposita a hóstia sobre ele. O início de um amor, de uma intuição ou de uma graça que se derrama sem medida."
+      },
+      "twoOfCups": {
+        "name": "Dois de Copas",
+        "summary": "Um homem e uma mulher trocam taças sob o caduceu alado de Hermes. Atração mútua, parceria e o pacto de dois que se reconhecem em igualdade e respeito."
+      },
+      "threeOfCups": {
+        "name": "Três de Copas",
+        "summary": "Três mulheres dançam com as taças erguidas entre frutos e guirlandas. A alegria compartilhada, a amizade e a celebração de uma colheita que ninguém conquistou sozinho."
+      },
+      "fourOfCups": {
+        "name": "Quatro de Copas",
+        "summary": "Um jovem de braços cruzados medita sob uma árvore, ignorando as três taças à frente enquanto uma mão oferece uma quarta. Apatia, contemplação e a oportunidade que passa despercebida."
+      },
+      "fiveOfCups": {
+        "name": "Cinco de Copas",
+        "summary": "Uma figura de capa preta chora três taças derramadas, sem ver as duas que ainda estão de pé atrás dela. Luto, arrependimento e a escolha de olhar para o que ainda resta."
+      },
+      "sixOfCups": {
+        "name": "Seis de Copas",
+        "summary": "Duas crianças trocam um cálice de flores num pátio de aldeia antiga. Nostalgia, inocência e a doçura de gestos simples que lembram quem fomos e o que ainda podemos dar."
+      },
+      "sevenOfCups": {
+        "name": "Sete de Copas",
+        "summary": "Diante de uma silhueta sombria, sete taças flutuam entre as nuvens, cada uma com uma visão diferente. Fantasia, múltiplas opções e a necessidade de distinguir o sonho do possível."
+      },
+      "eightOfCups": {
+        "name": "Oito de Copas",
+        "summary": "Sob uma lua eclipsada, um homem de manto vermelho deixa para trás oito taças arrumadas e sobe em direção às montanhas. Partir do que não satisfaz mais, em busca de um sentido maior."
+      },
+      "nineOfCups": {
+        "name": "Nove de Copas",
+        "summary": "Um homem satisfeito, de braços cruzados, senta diante de nove taças dispostas em arco. A carta dos desejos realizados: contentamento, prazer merecido e a alegria de poder desfrutar."
+      },
+      "tenOfCups": {
+        "name": "Dez de Copas",
+        "summary": "Sob um arco-íris de dez taças, um casal ergue os braços enquanto duas crianças brincam diante de uma casa. Plenitude afetiva, harmonia familiar e a felicidade que se estende a todos."
+      },
+      "pageOfCups": {
+        "name": "Valete de Copas",
+        "summary": "Um jovem de túnica florida fita um peixe que emerge de sua taça diante do mar. Mensagem inesperada, sensibilidade criativa e o convite a levar a sério a imaginação."
+      },
+      "knightOfCups": {
+        "name": "Cavaleiro de Copas",
+        "summary": "Um cavaleiro de armadura alada avança com calma, trazendo a taça diante de si. Romance, proposta sincera e a delicadeza de quem age com o coração, sem pressa de conquistar."
+      },
+      "queenOfCups": {
+        "name": "Rainha de Copas",
+        "summary": "A rainha contempla uma taça ornamentada e fechada, sentada num trono à beira-mar. Intuição profunda, compaixão e a capacidade de sentir o outro sem perder o próprio centro."
+      },
+      "kingOfCups": {
+        "name": "Rei de Copas",
+        "summary": "O rei senta num trono flutuante sobre o mar agitado, com taça e cetro nas mãos. Domínio das emoções, sabedoria compassiva e a calma de quem governa sem negar a profundidade."
+      },
+      "aceOfSwords": {
+        "name": "Ás de Espadas",
+        "summary": "Uma mão emerge da nuvem empunhando uma espada coroada, ladeada por louros e palmas. O momento da clareza: uma verdade que corta a confusão e a vitória do pensamento sobre a dúvida."
+      },
+      "twoOfSwords": {
+        "name": "Dois de Espadas",
+        "summary": "Uma mulher de olhos vendados cruza duas espadas sobre o peito, diante de um mar calmo sob a lua crescente. Impasse, equilíbrio forçado e a decisão adiada por medo de olhar."
+      },
+      "threeOfSwords": {
+        "name": "Três de Espadas",
+        "summary": "Um coração vermelho é atravessado por três espadas sob nuvens e chuva. O luto, a traição ou a verdade que dói: a dor que não se discute e precisa ser atravessada para curar."
+      },
+      "fourOfSwords": {
+        "name": "Quatro de Espadas",
+        "summary": "Um cavaleiro repousa em efígie sobre um túmulo, sob um vitral, com três espadas na parede. Pausa necessária, recolhimento e o descanso que recompõe a mente depois de uma batalha."
+      },
+      "fiveOfSwords": {
+        "name": "Cinco de Espadas",
+        "summary": "Um homem sorri segurando três espadas, enquanto dois outros se afastam derrotados. Vitória duvidosa, conflito vencido a qualquer custo e o preço de ganhar sem generosidade."
+      },
+      "sixOfSwords": {
+        "name": "Seis de Espadas",
+        "summary": "Um barqueiro conduz uma mulher e uma criança encapuzadas por águas agitadas rumo a águas calmas, com seis espadas no casco. A travessia da crise: distância, transição e recuperação gradual."
+      },
+      "sevenOfSwords": {
+        "name": "Sete de Espadas",
+        "summary": "Um homem se afasta na ponta dos pés carregando cinco espadas e deixa duas para trás, com um acampamento ao fundo. Estratégia, furtividade e o dilema entre a astúcia e a honestidade."
+      },
+      "eightOfSwords": {
+        "name": "Oito de Espadas",
+        "summary": "Uma mulher de olhos vendados e amarrada está cercada por oito espadas num chão encharcado. Sensação de prisão, medo e a revelação de que a saída depende da própria percepção."
+      },
+      "nineOfSwords": {
+        "name": "Nove de Espadas",
+        "summary": "Sentada na cama, uma pessoa esconde o rosto nas mãos sob nove espadas penduradas na escuridão. Ansiedade, culpa e as noites em que a mente trabalha contra o descanso."
+      },
+      "tenOfSwords": {
+        "name": "Dez de Espadas",
+        "summary": "Uma figura jaz de bruços com dez espadas nas costas, sob um céu negro e um amanhecer no horizonte. O fim de um ciclo doloroso: o pior já passou, e algo novo começa a nascer."
+      },
+      "pageOfSwords": {
+        "name": "Valete de Espadas",
+        "summary": "Um jovem de cabelo ao vento ergue uma espada sobre uma colina, entre nuvens e pássaros. Curiosidade, vigilância e a mente ágil que quer aprender, perguntar e descobrir."
+      },
+      "knightOfSwords": {
+        "name": "Cavaleiro de Espadas",
+        "summary": "Um cavaleiro de espada em riste galopa num cavalo branco, enquanto o vento dobra as árvores. Ímpeto intelectual, decisão rápida e a franqueza que corta, às vezes sem medir o impacto."
+      },
+      "queenOfSwords": {
+        "name": "Rainha de Espadas",
+        "summary": "A rainha de coroa de borboletas ergue a espada com uma mão e abre a outra, num trono entalhado. Lucidez, independência e a sabedoria de quem aprendeu com a dor e fala com franqueza."
+      },
+      "kingOfSwords": {
+        "name": "Rei de Espadas",
+        "summary": "O rei de coroa de borboletas empunha uma espada, sentado num trono sob um céu de nuvens. Autoridade intelectual, justiça e a palavra que governa com lógica e ética."
+      },
+      "aceOfPentacles": {
+        "name": "Ás de Ouros",
+        "summary": "Uma mão surge da nuvem oferecendo um pentáculo dourado sobre um jardim florido. Uma semente de prosperidade: uma oportunidade concreta, material e promissora que pede para ser plantada."
+      },
+      "twoOfPentacles": {
+        "name": "Dois de Ouros",
+        "summary": "Um malabarista de chapéu alto equilibra dois pentáculos presos por uma faixa em oito, entre ondas grandes. Adaptação, flexibilidade e a arte de manter várias frentes sem perder o ritmo."
+      },
+      "threeOfPentacles": {
+        "name": "Três de Ouros",
+        "summary": "Num salão gótico, um artesão trabalha sobre o arco enquanto um monge e um nobre discutem a planta. Trabalho em equipe, mestria compartilhada e o valor de cada contribuição numa obra comum."
+      },
+      "fourOfPentacles": {
+        "name": "Quatro de Ouros",
+        "summary": "Um homem sentado agarra um pentáculo contra o peito, tem outro sobre a cabeça e dois sob os pés, diante de uma cidade. Segurança, posse e o risco de se fechar para proteger o que se tem."
+      },
+      "fiveOfPentacles": {
+        "name": "Cinco de Ouros",
+        "summary": "Dois mendigos feridos caminham na neve diante de um vitral iluminado com cinco pentáculos. Carência, exclusão e o abrigo que está tão perto e ainda assim parece fora do alcance."
+      },
+      "sixOfPentacles": {
+        "name": "Seis de Ouros",
+        "summary": "Um mercador de manto vermelho pesa moedas numa balança e as dá a dois mendigos que se ajoelham. Generosidade, reciprocidade e a justiça de dar e receber na medida certa."
+      },
+      "sevenOfPentacles": {
+        "name": "Sete de Ouros",
+        "summary": "Um jovem se apoia na enxada e contempla um arbusto carregado de sete pentáculos. Pausa para avaliar o que já foi plantado, paciência e a dúvida entre esperar ou agir."
+      },
+      "eightOfPentacles": {
+        "name": "Oito de Ouros",
+        "summary": "Sentado a um banco, um artesão grava com cuidado cada pentáculo; vários já estão prontos ao lado. Dedicação ao ofício, aprendizado e o prazer de aperfeiçoar-se pela repetição."
+      },
+      "nineOfPentacles": {
+        "name": "Nove de Ouros",
+        "summary": "Uma mulher elegante, de vestido bordado, caminha sozinha por um vinhedo com um falcão na mão. Independência, conforto conquistado e o prazer de desfrutar o fruto do próprio esforço."
+      },
+      "tenOfPentacles": {
+        "name": "Dez de Ouros",
+        "summary": "Sob um arco de pedra, um patriarca, um casal, uma criança e dois cães ocupam um pátio onde dez pentáculos formam a Árvore da Vida. Herança, família, tradição e prosperidade que atravessa gerações."
+      },
+      "pageOfPentacles": {
+        "name": "Valete de Ouros",
+        "summary": "Um jovem de túnica verde contempla um pentáculo erguido, num campo arado diante das montanhas. Estudo, curiosidade prática e o início de um projeto que exige constância."
+      },
+      "knightOfPentacles": {
+        "name": "Cavaleiro de Ouros",
+        "summary": "Um cavaleiro de armadura permanece imóvel num cavalo negro de passo firme, segurando um pentáculo num campo arado. Responsabilidade, perseverança e o trabalho metódico que não tem pressa."
+      },
+      "queenOfPentacles": {
+        "name": "Rainha de Ouros",
+        "summary": "A rainha em trono de frutas e cabras ampara um pentáculo no colo, num jardim com um coelho. Cuidado, abundância e a generosidade prática de quem nutre o ambiente à sua volta."
+      },
+      "kingOfPentacles": {
+        "name": "Rei de Ouros",
+        "summary": "O rei de manto de uvas senta num trono de touros, segurando cetro e pentáculo diante de seu castelo. Prosperidade, estabilidade e o poder de quem construiu e agora administra com generosidade."
       }
     }
   },

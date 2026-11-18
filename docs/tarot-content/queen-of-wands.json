@@ -1,0 +1,115 @@
+{
+  "slug": "queen-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 13,
+  "image": "/tarot/minor/queen-of-wands.jpg",
+  "regions": [
+    {
+      "id": "sunflower",
+      "icon": "🌻"
+    },
+    {
+      "id": "wand-in-hand",
+      "icon": "🪄"
+    },
+    {
+      "id": "black-cat",
+      "icon": "🐈‍⬛"
+    },
+    {
+      "id": "lion-throne",
+      "icon": "🦁"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rainha de Paus",
+      "intro": "Sentada num trono de leões com um girassol na mão e um gato preto aos pés, a rainha irradia confiança e calor. Magnetismo, generosidade e uma vontade que atrai em vez de impor.",
+      "regions": {
+        "sunflower": {
+          "title": "O Girassol",
+          "description": "A flor que acompanha o Sol: vitalidade, otimismo e abundância. A rainha o segura sem esforço, como quem faz brilhar o que toca."
+        },
+        "wand-in-hand": {
+          "title": "O Cajado da Rainha",
+          "description": "O bastão em flor, firme na mão direita: a criatividade e a vontade sob controle, a energia posta a serviço de um propósito claro."
+        },
+        "black-cat": {
+          "title": "O Gato Preto",
+          "description": "O felino atento aos pés do trono: intuição, independência e o lado misterioso da rainha, que sente antes de ver e confia no que percebe."
+        },
+        "lion-throne": {
+          "title": "O Trono de Leões",
+          "description": "Leões entalhados no encosto: coragem e domínio de si. Ela governa com a força serena de quem não precisa provar nada a ninguém."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Queen of Wands",
+      "intro": "Seated on a lion throne with a sunflower in hand and a black cat at her feet, the queen radiates confidence and warmth. Magnetism, generosity and a will that attracts rather than imposes.",
+      "regions": {
+        "sunflower": {
+          "title": "The Sunflower",
+          "description": "The flower that follows the Sun: vitality, optimism and abundance. The queen holds it effortlessly, as one who makes whatever she touches shine."
+        },
+        "wand-in-hand": {
+          "title": "The Queen's Wand",
+          "description": "The budding wand, steady in her right hand: creativity and will under control, energy placed in service of a clear purpose."
+        },
+        "black-cat": {
+          "title": "The Black Cat",
+          "description": "The alert feline at the foot of the throne: intuition, independence and the queen's mysterious side, who senses before she sees and trusts what she perceives."
+        },
+        "lion-throne": {
+          "title": "The Lion Throne",
+          "description": "Lions carved into the back: courage and self-mastery. She rules with the serene strength of one who has nothing to prove to anyone."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドのクイーン",
+      "intro": "ライオンの玉座に座り、手にひまわりを持ち、足元に黒猫を従えた女王は、自信と温かさを放ちます。魅力、寛大さ、押しつけず引き寄せる意志です。",
+      "regions": {
+        "sunflower": {
+          "title": "ひまわり",
+          "description": "太陽を追う花。活力、楽観、豊かさ。女王は難なくそれを掲げます。触れるものを輝かせる人のように。"
+        },
+        "wand-in-hand": {
+          "title": "女王の杖",
+          "description": "右手にしっかり握られた芽吹く杖。制御された創造性と意志、明確な目的のために用いられるエネルギーです。"
+        },
+        "black-cat": {
+          "title": "黒猫",
+          "description": "玉座の足元で身構える猫。直感、独立心、そして女王の神秘的な面。見る前に感じ取り、察したことを信頼します。"
+        },
+        "lion-throne": {
+          "title": "ライオンの玉座",
+          "description": "背もたれに刻まれたライオン。勇気と自己統御。彼女は、誰にも何も証明する必要のない者の静かな強さで統治します。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלכת המטות",
+      "intro": "יושבת על כס אריות, עם חמנייה ביד וחתול שחור לרגליה, המלכה קורנת ביטחון וחום. מגנטיות, נדיבות ורצון שמושך במקום לכפות.",
+      "regions": {
+        "sunflower": {
+          "title": "החמנייה",
+          "description": "הפרח שעוקב אחרי השמש: חיוניות, אופטימיות ושפע. המלכה אוחזת בה בלי מאמץ, כמי שגורמת לכל מה שהיא נוגעת בו לזרוח."
+        },
+        "wand-in-hand": {
+          "title": "מטה המלכה",
+          "description": "המטה הפורח, יציב בידה הימנית: יצירתיות ורצון בשליטה, אנרגיה שמוצבת לשירותה של מטרה ברורה."
+        },
+        "black-cat": {
+          "title": "החתול השחור",
+          "description": "החתול הדרוך למרגלות הכס: אינטואיציה, עצמאות והצד המסתורי של המלכה, שחשה לפני שהיא רואה ובוטחת במה שהיא קולטת."
+        },
+        "lion-throne": {
+          "title": "כס האריות",
+          "description": "אריות מגולפים בגב הכס: אומץ ושליטה עצמית. היא שולטת בכוחה השקט של מי שאין לה מה להוכיח לאיש."
+        }
+      }
+    }
+  }
+}

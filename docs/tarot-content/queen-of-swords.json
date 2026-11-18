@@ -1,0 +1,115 @@
+{
+  "slug": "queen-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 13,
+  "image": "/tarot/minor/queen-of-swords.jpg",
+  "regions": [
+    {
+      "id": "upright-sword",
+      "icon": "⚔️"
+    },
+    {
+      "id": "open-hand",
+      "icon": "🖐️"
+    },
+    {
+      "id": "cherub-throne",
+      "icon": "👼"
+    },
+    {
+      "id": "bird-clouds",
+      "icon": "🐦"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Rainha de Espadas",
+      "intro": "A rainha de coroa de borboletas ergue a espada com uma mão e abre a outra, num trono entalhado. Lucidez, independência e a sabedoria de quem aprendeu com a dor e fala com franqueza.",
+      "regions": {
+        "upright-sword": {
+          "title": "A Espada Vertical",
+          "description": "A lâmina aponta para o alto, firme na mão: o julgamento claro, sem espaço para ilusões. Decide com a cabeça fria e o coração presente."
+        },
+        "open-hand": {
+          "title": "A Mão Aberta",
+          "description": "A outra mão se abre, receptiva: ela ouve antes de julgar. A verdade precisa de espaço para escutar e não só para falar."
+        },
+        "cherub-throne": {
+          "title": "O Trono de Querubins",
+          "description": "Querubins e borboletas esculpidos no trono: a inocência e a transformação sustentam sua autoridade. Ela sabe de onde vem o seu poder."
+        },
+        "bird-clouds": {
+          "title": "A Ave nas Nuvens",
+          "description": "Uma ave solitária cruza o céu limpo: perspectiva e liberdade de pensamento. Ela observa de cima, sem se prender ao drama."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Queen of Swords",
+      "intro": "The queen with a butterfly crown holds her sword up with one hand and opens the other, on a carved throne. Clarity, independence and the wisdom of one who learned from pain and speaks frankly.",
+      "regions": {
+        "upright-sword": {
+          "title": "The Upright Sword",
+          "description": "The blade points upward, steady in her hand: clear judgment with no room for illusion. She decides with a cool head and a present heart."
+        },
+        "open-hand": {
+          "title": "The Open Hand",
+          "description": "The other hand opens, receptive: she listens before judging. Truth needs room to listen, not only to speak."
+        },
+        "cherub-throne": {
+          "title": "The Cherub Throne",
+          "description": "Cherubs and butterflies carved into the throne: innocence and transformation support her authority. She knows where her power comes from."
+        },
+        "bird-clouds": {
+          "title": "The Bird in the Clouds",
+          "description": "A lone bird crosses the clear sky: perspective and freedom of thought. She observes from above without clinging to drama."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードのクイーン",
+      "intro": "蝶の冠をつけた女王が、彫刻された玉座で片手に剣を掲げ、もう片方の手を開いています。明晰さ、自立、痛みから学び率直に語る者の知恵です。",
+      "regions": {
+        "upright-sword": {
+          "title": "垂直の剣",
+          "description": "刃は上を向き、手の中で揺るぎません。幻想の入る余地のない明晰な判断です。冷静な頭と、そこにある心で決めます。"
+        },
+        "open-hand": {
+          "title": "開いた手",
+          "description": "もう一方の手は開かれ、受け入れる姿勢です。彼女は判断する前に耳を傾けます。真実には、話すだけでなく聴く余地が必要です。"
+        },
+        "cherub-throne": {
+          "title": "天使の玉座",
+          "description": "玉座には天使と蝶が彫られています。無垢と変容が、彼女の権威を支えています。彼女は自分の力の源を知っています。"
+        },
+        "bird-clouds": {
+          "title": "雲の中の鳥",
+          "description": "一羽の鳥が澄んだ空を横切ります。視点と思考の自由です。彼女は、劇的な出来事に囚われず、上から見渡します。"
+        }
+      }
+    },
+    "he": {
+      "name": "מלכת החרבות",
+      "intro": "המלכה בכתר פרפרים מרימה חרב ביד אחת ופותחת את השנייה, על כס מגולף. בהירות, עצמאות וחוכמתה של מי שלמדה מהכאב ומדברת בכנות.",
+      "regions": {
+        "upright-sword": {
+          "title": "החרב האנכית",
+          "description": "הלהב מכוון כלפי מעלה, יציב בידה: שיקול דעת צלול בלי מקום לאשליות. היא מחליטה בראש קר ובלב נוכח."
+        },
+        "open-hand": {
+          "title": "היד הפתוחה",
+          "description": "היד האחרת פתוחה וקולטת: היא מקשיבה לפני ששופטת. לאמת צריך מקום להקשיב ולא רק לדבר."
+        },
+        "cherub-throne": {
+          "title": "כס הכרובים",
+          "description": "כרובים ופרפרים מגולפים בכס: תמימות והתמרה תומכות בסמכותה. היא יודעת מניין כוחה בא."
+        },
+        "bird-clouds": {
+          "title": "הציפור בעננים",
+          "description": "ציפור בודדת חוצה את השמיים הצלולים: פרספקטיבה וחופש מחשבה. היא צופה מלמעלה בלי להיאחז בדרמה."
+        }
+      }
+    }
+  }
+}

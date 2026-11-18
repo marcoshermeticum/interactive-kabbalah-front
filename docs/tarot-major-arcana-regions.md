@@ -12,6 +12,9 @@
 > ainda funciona como fallback: usa o JSON quando existir e, senão, lê a seção
 > desta página. As coordenadas continuam sendo ajustadas no editor (Passo 4).
 
+> **Arcanos menores:** as 56 cartas de Paus, Copas, Espadas e Ouros têm o catálogo equivalente em
+> [tarot-minor-arcana-regions.md](./tarot-minor-arcana-regions.md).
+
 Seguindo o padrão da carta **A Temperança** (`src/data/tarot/temperance.ts`), este
 catálogo reúne, para cada um dos 22 arcanos maiores Rider-Waite, as áreas da arte
 que podem se tornar regiões interativas: hover/tap revela um texto educativo no

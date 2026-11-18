@@ -1,0 +1,115 @@
+{
+  "slug": "four-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 4,
+  "image": "/tarot/minor/four-of-swords.jpg",
+  "regions": [
+    {
+      "id": "stained-glass",
+      "icon": "🪟"
+    },
+    {
+      "id": "effigy-knight",
+      "icon": "🛌"
+    },
+    {
+      "id": "hanging-swords",
+      "icon": "🗡️"
+    },
+    {
+      "id": "sword-below",
+      "icon": "⚔️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Quatro de Espadas",
+      "intro": "Um cavaleiro repousa em efígie sobre um túmulo, sob um vitral, com três espadas na parede. Pausa necessária, recolhimento e o descanso que recompõe a mente depois de uma batalha.",
+      "regions": {
+        "stained-glass": {
+          "title": "O Vitral",
+          "description": "Uma cena sagrada colorida filtra a luz: a fé e o sentido que acompanham o descanso. Silêncio não é vazio, é um espaço de cura."
+        },
+        "effigy-knight": {
+          "title": "A Efígie do Cavaleiro",
+          "description": "Imóvel, mãos em prece: o guerreiro depõe as armas por um tempo. Recolher-se também é uma forma de coragem e de estratégia."
+        },
+        "hanging-swords": {
+          "title": "As Espadas na Parede",
+          "description": "Três lâminas penduradas acima: os pensamentos e as batalhas em suspenso. Estão ao alcance, mas, por ora, ninguém precisa empunhá-las."
+        },
+        "sword-below": {
+          "title": "A Espada Sob o Túmulo",
+          "description": "Uma quarta espada repousa junto ao sarcófago: a força guardada e à mão. O descanso inclui preparar-se para voltar à ação."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Four of Swords",
+      "intro": "A knight lies in effigy on a tomb beneath a stained-glass window, with three swords on the wall. A necessary pause, retreat and the rest that restores the mind after a battle.",
+      "regions": {
+        "stained-glass": {
+          "title": "The Stained Glass",
+          "description": "A colored sacred scene filters the light: the faith and meaning that accompany rest. Silence is not emptiness but a space of healing."
+        },
+        "effigy-knight": {
+          "title": "The Knight's Effigy",
+          "description": "Motionless, hands in prayer: the warrior lays down arms for a while. Withdrawing is also a form of courage and of strategy."
+        },
+        "hanging-swords": {
+          "title": "The Swords on the Wall",
+          "description": "Three blades hung above: thoughts and battles in suspension. They are within reach, but for now no one needs to wield them."
+        },
+        "sword-below": {
+          "title": "The Sword Beneath the Tomb",
+          "description": "A fourth sword rests alongside the sarcophagus: strength held in reserve and at hand. Rest includes preparing to return to action."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの4",
+      "intro": "騎士が、ステンドグラスの下の墓の上に彫像として横たわり、壁には三本の剣が掛かっています。必要な休止、退避、そして戦いの後に心を立て直す休息です。",
+      "regions": {
+        "stained-glass": {
+          "title": "ステンドグラス",
+          "description": "彩色された聖なる場面が光を和らげます。休息に寄り添う信仰と意味です。静寂は空虚ではなく、癒しの空間です。"
+        },
+        "effigy-knight": {
+          "title": "騎士の彫像",
+          "description": "動かず、手を合わせて祈っています。戦士はしばし武器を置きます。身を引くこともまた、勇気であり戦略です。"
+        },
+        "hanging-swords": {
+          "title": "壁の剣",
+          "description": "上に掛けられた三本の刃。保留された思考と戦いです。手の届く所にありますが、今は誰も握る必要はありません。"
+        },
+        "sword-below": {
+          "title": "墓の下の剣",
+          "description": "石棺のそばに四本目の剣が横たわります。手元に温存された力です。休息には、行動へ戻る準備も含まれます。"
+        }
+      }
+    },
+    "he": {
+      "name": "ארבע של חרבות",
+      "intro": "אביר שוכב כפסל על קבר מתחת לחלון ויטראז׳, ושלוש חרבות על הקיר. הפסקה הכרחית, נסיגה והמנוחה שמשקמת את התודעה אחרי קרב.",
+      "regions": {
+        "stained-glass": {
+          "title": "חלון הוויטראז׳",
+          "description": "סצנה קדושה צבעונית מסננת את האור: האמונה והמשמעות שמלווות את המנוחה. שתיקה אינה ריק אלא מרחב של ריפוי."
+        },
+        "effigy-knight": {
+          "title": "פסל האביר",
+          "description": "ללא תנועה, ידיים בתפילה: הלוחם מניח נשק לזמן מה. נסיגה היא גם סוג של אומץ ושל אסטרטגיה."
+        },
+        "hanging-swords": {
+          "title": "החרבות על הקיר",
+          "description": "שלושה להבים תלויים מעל: מחשבות וקרבות בהשהיה. הם בהישג יד, אך לעת עתה אין צורך לאחוז בהם."
+        },
+        "sword-below": {
+          "title": "החרב מתחת לקבר",
+          "description": "חרב רביעית מונחת לצד הסרקופג: כוח שמור וקרוב. מנוחה כוללת גם הכנה לחזרה לפעולה."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "four-of-pentacles",
+  "arcana": "minor",
+  "suit": "pentacles",
+  "rank": 4,
+  "image": "/tarot/minor/four-of-pentacles.jpg",
+  "regions": [
+    {
+      "id": "coin-on-chest",
+      "icon": "🫀"
+    },
+    {
+      "id": "coin-on-head",
+      "icon": "👑"
+    },
+    {
+      "id": "coins-under-feet",
+      "icon": "🦶"
+    },
+    {
+      "id": "city-behind",
+      "icon": "🏙️"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Quatro de Ouros",
+      "intro": "Um homem sentado agarra um pentáculo contra o peito, tem outro sobre a cabeça e dois sob os pés, diante de uma cidade. Segurança, posse e o risco de se fechar para proteger o que se tem.",
+      "regions": {
+        "coin-on-chest": {
+          "title": "O Pentáculo no Peito",
+          "description": "Abraçado contra o corpo: o apego ao que se tem. A segurança é legítima, mas, quando é tudo o que importa, o coração se estreita."
+        },
+        "coin-on-head": {
+          "title": "O Pentáculo na Cabeça",
+          "description": "Uma moeda coroa os pensamentos: a mente ocupada com o que se possui. O bem material governa as decisões e limita a visão."
+        },
+        "coins-under-feet": {
+          "title": "Os Pentáculos sob os Pés",
+          "description": "Duas moedas firmam os pés no chão: base sólida, mas também âncora. Ele não se move porque tem demais a perder."
+        },
+        "city-behind": {
+          "title": "A Cidade ao Fundo",
+          "description": "A cidade prospera atrás dele, mas ele a evita: a prosperidade que se isola do convívio. A riqueza ganha sentido quando circula."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Four of Pentacles",
+      "intro": "A seated man clutches a pentacle to his chest, has another on his head and two under his feet, before a city. Security, possession and the risk of closing off to protect what you have.",
+      "regions": {
+        "coin-on-chest": {
+          "title": "The Pentacle on the Chest",
+          "description": "Clasped against his body: attachment to what he has. Security is legitimate, but when it is all that matters the heart narrows."
+        },
+        "coin-on-head": {
+          "title": "The Pentacle on the Head",
+          "description": "A coin crowns his thoughts: a mind occupied with what he owns. Material goods govern decisions and narrow the view."
+        },
+        "coins-under-feet": {
+          "title": "The Pentacles Under the Feet",
+          "description": "Two coins plant his feet on the ground: a solid base, but also an anchor. He does not move because he has too much to lose."
+        },
+        "city-behind": {
+          "title": "The City Behind",
+          "description": "The city thrives behind him, yet he avoids it: prosperity that cuts itself off from company. Wealth gains meaning when it circulates."
+        }
+      }
+    },
+    "ja": {
+      "name": "ペンタクルの4",
+      "intro": "座った男が、街を前に、ペンタクルを胸に抱え、頭にもう一つ載せ、足の下に二つ踏んでいます。安定、所有、そして持っているものを守るために閉じこもる危うさです。",
+      "regions": {
+        "coin-on-chest": {
+          "title": "胸のペンタクル",
+          "description": "体に抱きしめられています。持っているものへの執着です。安定は正当ですが、それがすべてになると、心は狭まります。"
+        },
+        "coin-on-head": {
+          "title": "頭のペンタクル",
+          "description": "硬貨が思考に冠を載せています。持ち物に占められた心です。物質的なものが決断を支配し、視野を狭めます。"
+        },
+        "coins-under-feet": {
+          "title": "足元のペンタクル",
+          "description": "二枚の硬貨が足を地面に据えています。堅固な土台であり、錨でもあります。失うものが多すぎて動けません。"
+        },
+        "city-behind": {
+          "title": "背後の街",
+          "description": "街は彼の背後で栄えていますが、彼はそれを避けています。人との交わりから孤立した繁栄です。富は、巡ってこそ意味を持ちます。"
+        }
+      }
+    },
+    "he": {
+      "name": "ארבע של מטבעות",
+      "intro": "אדם יושב לוחץ מטבע אל חזהו, עוד אחד על ראשו ושניים תחת רגליו, מול עיר. ביטחון, בעלות והסיכון להסתגר כדי להגן על מה שיש.",
+      "regions": {
+        "coin-on-chest": {
+          "title": "המטבע על החזה",
+          "description": "לחוץ אל גופו: ההיאחזות במה שיש. ביטחון הוא לגיטימי, אך כשהוא כל מה שחשוב הלב מצטמצם."
+        },
+        "coin-on-head": {
+          "title": "המטבע על הראש",
+          "description": "מטבע מעטר את מחשבותיו: תודעה עסוקה במה שברשותו. הטוב החומרי שולט בהחלטות ומצמצם את הראייה."
+        },
+        "coins-under-feet": {
+          "title": "המטבעות תחת הרגליים",
+          "description": "שני מטבעות מקבעים את רגליו לקרקע: בסיס יציב אך גם עוגן. הוא לא זז כי יש לו יותר מדי מה להפסיד."
+        },
+        "city-behind": {
+          "title": "העיר ברקע",
+          "description": "העיר משגשגת מאחוריו אך הוא נמנע ממנה: שגשוג שמתבודד מהחברה. העושר מקבל משמעות כשהוא מסתובב."
+        }
+      }
+    }
+  }
+}

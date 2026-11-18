@@ -1,0 +1,115 @@
+{
+  "slug": "four-of-wands",
+  "arcana": "minor",
+  "suit": "wands",
+  "rank": 4,
+  "image": "/tarot/minor/four-of-wands.jpg",
+  "regions": [
+    {
+      "id": "garland-canopy",
+      "icon": "💐"
+    },
+    {
+      "id": "four-wands",
+      "icon": "🪄"
+    },
+    {
+      "id": "celebrating-couple",
+      "icon": "💃"
+    },
+    {
+      "id": "castle-gate",
+      "icon": "🏰"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Quatro de Paus",
+      "intro": "Quatro cajados sustentam uma guirlanda de flores sobre um casal que celebra diante do castelo. A festa depois do esforço: estabilidade, lar, acolhimento e comunidade.",
+      "regions": {
+        "garland-canopy": {
+          "title": "A Guirlanda",
+          "description": "Flores e frutos pendem entre os cajados como um dossel de festa: o fruto do esforço virou celebração compartilhada."
+        },
+        "four-wands": {
+          "title": "Os Quatro Cajados",
+          "description": "Quatro pilares erguidos formam um portal: as quatro direções, os quatro elementos, uma base firme que protege a alegria."
+        },
+        "celebrating-couple": {
+          "title": "O Casal em Festa",
+          "description": "Duas figuras erguem buquês de braços abertos: a alegria que se divide dobra. A conquista só se completa quando é celebrada em companhia."
+        },
+        "castle-gate": {
+          "title": "O Castelo e a Ponte",
+          "description": "Ao fundo, o castelo com sua ponte e o grupo que se aproxima: o lar como refúgio e ponto de encontro, aberto a quem chega."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Four of Wands",
+      "intro": "Four wands hold up a garland of flowers over a couple celebrating before the castle. The feast after the effort: stability, home, welcome and community.",
+      "regions": {
+        "garland-canopy": {
+          "title": "The Garland",
+          "description": "Flowers and fruit hang between the wands like a festive canopy: the fruit of effort has become a shared celebration."
+        },
+        "four-wands": {
+          "title": "The Four Wands",
+          "description": "Four raised pillars form a gateway: the four directions, the four elements, a firm base that shelters joy."
+        },
+        "celebrating-couple": {
+          "title": "The Celebrating Couple",
+          "description": "Two figures raise bouquets with open arms: shared joy doubles. An achievement is only complete when celebrated in company."
+        },
+        "castle-gate": {
+          "title": "The Castle and the Bridge",
+          "description": "In the background, the castle with its bridge and the group approaching: home as refuge and meeting place, open to those who arrive."
+        }
+      }
+    },
+    "ja": {
+      "name": "ワンドの4",
+      "intro": "四本の杖が花の花輪を支え、城の前で祝う二人を覆います。努力の後の祝宴。安定、家庭、歓迎、そして共同体です。",
+      "regions": {
+        "garland-canopy": {
+          "title": "花輪",
+          "description": "杖の間に花と果実が祝祭の天蓋のように垂れています。努力の実りが、分かち合う祝いになりました。"
+        },
+        "four-wands": {
+          "title": "四本の杖",
+          "description": "立ち上がる四本の柱が門を作ります。四つの方角、四つの元素、そして喜びを守る確かな土台です。"
+        },
+        "celebrating-couple": {
+          "title": "祝う二人",
+          "description": "二人は両腕を広げて花束を掲げます。分かち合う喜びは倍になります。成果は、誰かと祝って初めて完成します。"
+        },
+        "castle-gate": {
+          "title": "城と橋",
+          "description": "背景には橋のある城と、近づく人々。避難所であり集いの場でもある我が家が、訪れる人に開かれています。"
+        }
+      }
+    },
+    "he": {
+      "name": "ארבע של מטות",
+      "intro": "ארבעה מטות נושאים זר פרחים מעל זוג שחוגג מול הטירה. החגיגה אחרי המאמץ: יציבות, בית, קבלת פנים וקהילה.",
+      "regions": {
+        "garland-canopy": {
+          "title": "הזר",
+          "description": "פרחים ופירות תלויים בין המטות כחופה חגיגית: פרי המאמץ הפך לחגיגה משותפת."
+        },
+        "four-wands": {
+          "title": "ארבעת המטות",
+          "description": "ארבעה עמודים זקופים יוצרים שער: ארבעת הכיוונים, ארבעת היסודות, בסיס יציב שמגן על השמחה."
+        },
+        "celebrating-couple": {
+          "title": "הזוג החוגג",
+          "description": "שתי דמויות מרימות זרים בזרועות פרושות: שמחה משותפת מוכפלת. הישג מושלם רק כשחוגגים אותו בחברה."
+        },
+        "castle-gate": {
+          "title": "הטירה והגשר",
+          "description": "ברקע הטירה עם הגשר והקבוצה המתקרבת: הבית כמקלט וכמקום מפגש, פתוח לכל מי שמגיע."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "slug": "ten-of-swords",
+  "arcana": "minor",
+  "suit": "swords",
+  "rank": 10,
+  "image": "/tarot/minor/ten-of-swords.jpg",
+  "regions": [
+    {
+      "id": "ten-swords",
+      "icon": "🗡️"
+    },
+    {
+      "id": "fallen-figure",
+      "icon": "🪦"
+    },
+    {
+      "id": "dawn-horizon",
+      "icon": "🌅"
+    },
+    {
+      "id": "black-sky",
+      "icon": "🌑"
+    }
+  ],
+  "locales": {
+    "pt-BR": {
+      "name": "Dez de Espadas",
+      "intro": "Uma figura jaz de bruços com dez espadas nas costas, sob um céu negro e um amanhecer no horizonte. O fim de um ciclo doloroso: o pior já passou, e algo novo começa a nascer.",
+      "regions": {
+        "ten-swords": {
+          "title": "As Dez Espadas",
+          "description": "Excesso e esgotamento: a dor chegou ao limite e já não pode crescer mais. O extremo, por si só, encerra o ciclo que o produziu."
+        },
+        "fallen-figure": {
+          "title": "A Figura Caída",
+          "description": "O corpo caído, com a capa vermelha: a derrota total que também liberta. Quando nada mais se sustenta, resta recomeçar do chão."
+        },
+        "dawn-horizon": {
+          "title": "O Amanhecer",
+          "description": "Uma faixa dourada no horizonte, sob a escuridão: a noite mais densa precede o dia. A luz já está a caminho, embora ainda não aqueça."
+        },
+        "black-sky": {
+          "title": "O Céu Negro",
+          "description": "Escuridão total no alto: o momento do desespero. A carta o mostra sem rodeios para dizer que ele tem limite e que o fundo existe."
+        }
+      }
+    },
+    "en-US": {
+      "name": "Ten of Swords",
+      "intro": "A figure lies face down with ten swords in the back, under a black sky and a dawn on the horizon. The end of a painful cycle: the worst has passed, and something new begins to be born.",
+      "regions": {
+        "ten-swords": {
+          "title": "The Ten Swords",
+          "description": "Excess and exhaustion: pain has reached its limit and can grow no more. The extreme, by itself, closes the cycle that produced it."
+        },
+        "fallen-figure": {
+          "title": "The Fallen Figure",
+          "description": "The fallen body with its red cloak: total defeat that also frees. When nothing more can hold, what remains is to begin again from the ground."
+        },
+        "dawn-horizon": {
+          "title": "The Dawn",
+          "description": "A golden band on the horizon beneath the darkness: the deepest night precedes the day. Light is already on its way, though it does not yet warm."
+        },
+        "black-sky": {
+          "title": "The Black Sky",
+          "description": "Total darkness above: the moment of despair. The card shows it without detour to say that it has a limit and that rock bottom exists."
+        }
+      }
+    },
+    "ja": {
+      "name": "ソードの10",
+      "intro": "一人の人物が背中に十本の剣を受けてうつ伏せに倒れ、黒い空の下、水平線には夜明けがあります。苦しい周期の終わり。最悪は過ぎ、新しいものが生まれ始めます。",
+      "regions": {
+        "ten-swords": {
+          "title": "十本の剣",
+          "description": "過剰と消耗。痛みは限界に達し、これ以上は増えません。極限は、それを生んだ周期そのものを終わらせます。"
+        },
+        "fallen-figure": {
+          "title": "倒れた人物",
+          "description": "赤いマントをまとって倒れた体。すべてを失う敗北は、解放でもあります。もう何も支えられないとき、地面から再出発するしかありません。"
+        },
+        "dawn-horizon": {
+          "title": "夜明け",
+          "description": "闇の下の水平線に金色の帯があります。最も深い夜が、昼の前に訪れます。光はすでに近づいていますが、まだ温めてはくれません。"
+        },
+        "black-sky": {
+          "title": "黒い空",
+          "description": "頭上は完全な闇。絶望の瞬間です。カードはそれを率直に示し、それには限りがあり、底があることを伝えます。"
+        }
+      }
+    },
+    "he": {
+      "name": "עשר של חרבות",
+      "intro": "דמות שוכבת על פניה עם עשר חרבות בגבה, תחת שמיים שחורים ושחר באופק. סיומו של מחזור כואב: הגרוע מכול חלף, ומשהו חדש מתחיל להיוולד.",
+      "regions": {
+        "ten-swords": {
+          "title": "עשר החרבות",
+          "description": "עודף ותשישות: הכאב הגיע לקצה ולא יכול לגדול עוד. הקיצון עצמו סוגר את המחזור שהוליד אותו."
+        },
+        "fallen-figure": {
+          "title": "הדמות שנפלה",
+          "description": "הגוף שנפל בגלימה האדומה: תבוסה מוחלטת שמשחררת גם. כשדבר כבר לא מחזיק, נשאר להתחיל מחדש מהקרקע."
+        },
+        "dawn-horizon": {
+          "title": "השחר",
+          "description": "פס זהוב באופק תחת החשכה: הלילה העמוק ביותר קודם ליום. האור כבר בדרך, אף שעוד אינו מחמם."
+        },
+        "black-sky": {
+          "title": "השמיים השחורים",
+          "description": "חשכה מוחלטת למעלה: רגע הייאוש. הקלף מציג אותו בלי עיגולי פינות כדי לומר שיש לו גבול ושקיים תחתית."
+        }
+      }
+    }
+  }
+}
