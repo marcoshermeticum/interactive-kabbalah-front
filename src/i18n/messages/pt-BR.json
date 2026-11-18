@@ -747,6 +747,28 @@
           "description": "Ao longe, um castelo sobre a colina e um vale fértil: o destino que o primeiro passo ainda não alcançou, mas já enxerga."
         }
       }
+    },
+    "twoOfWands": {
+      "name": "Dois de Paus",
+      "intro": "Um homem no alto da muralha segura o mundo na mão e um cajado na outra, olhando o mar. Planejar, escolher o rumo e decidir entre o que já se tem e o que se pode conquistar.",
+      "regions": {
+        "globe": {
+          "title": "O Globo na Mão",
+          "description": "O mundo cabe na palma de quem planeja: poder, alcance e responsabilidade. A esfera lembra que ainda é preciso escolher onde pousá-la."
+        },
+        "twoWands": {
+          "title": "Os Dois Cajados",
+          "description": "Um empunhado, outro fixo na parede: a vontade em movimento e a vontade enraizada. Entre o que se leva e o que se deixa firme, nasce a estratégia."
+        },
+        "seaHorizon": {
+          "title": "O Mar e o Horizonte",
+          "description": "O olhar do homem vai além das muralhas, para o mar aberto: a ambição de ir além do território conhecido, ainda sem saber o que há do outro lado."
+        },
+        "roseLilyEmblem": {
+          "title": "A Rosa e o Lírio",
+          "description": "Rosas e lírios cruzados na parede: o desejo (rosa) e a pureza (lírio) unidos na mesma decisão. A vontade que escolhe com o coração e a clareza juntos."
+        }
+      }
     }
   },
   "tarotWaite": {

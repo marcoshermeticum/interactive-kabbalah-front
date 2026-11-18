@@ -747,6 +747,28 @@
           "description": "In the distance a castle on a hill and a fertile valley: the destination the first step has not yet reached but can already see."
         }
       }
+    },
+    "twoOfWands": {
+      "name": "Two of Wands",
+      "intro": "A man on a battlement holds the world in one hand and a wand in the other, gazing at the sea. Planning, choosing a direction and deciding between what he has and what he could win.",
+      "regions": {
+        "globe": {
+          "title": "The Globe in Hand",
+          "description": "The world fits in the palm of the one who plans: power, reach and responsibility. The sphere reminds him he must still choose where to set it down."
+        },
+        "twoWands": {
+          "title": "The Two Wands",
+          "description": "One held, one fixed to the wall: will in motion and will rooted in place. Between what you carry and what you leave standing, strategy is born."
+        },
+        "seaHorizon": {
+          "title": "The Sea and the Horizon",
+          "description": "His gaze goes past the walls to the open sea: the ambition to leave known territory without yet knowing what lies on the other side."
+        },
+        "roseLilyEmblem": {
+          "title": "The Rose and the Lily",
+          "description": "Crossed roses and lilies on the wall: desire (rose) and purity (lily) joined in the same decision. A will that chooses with heart and clarity together."
+        }
+      }
     }
   },
   "tarotWaite": {
