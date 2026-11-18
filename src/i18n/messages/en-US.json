@@ -857,6 +857,28 @@
           "description": "Followers march on foot around him, raising their staves: personal success depends on the support of many. The glory is shared with those who walked alongside."
         }
       }
+    },
+    "sevenOfWands": {
+      "name": "Seven of Wands",
+      "intro": "On a hilltop, a man defends his position against six wands rising from below. Courage, firmness and the decision to hold what is yours even at a disadvantage.",
+      "regions": {
+        "defender": {
+          "title": "The Defender",
+          "description": "He stands alone on guard, looking down: one who holds a conviction often finds himself like this, at a disadvantage but upright."
+        },
+        "sixWandsBelow": {
+          "title": "The Six Wands",
+          "description": "Six staves rise from below: challenges that give no respite and force a choice about what is worth defending. Pressure reveals what truly matters."
+        },
+        "mismatchedShoes": {
+          "title": "The Mismatched Shoes",
+          "description": "He wears unmatched shoes, as if he had risen in a hurry: defense is not always perfect or prepared, and yet it holds."
+        },
+        "highGround": {
+          "title": "The High Ground",
+          "description": "The hill gives an advantage to whoever holds it: seeing farther and having ground underfoot. Inner steadiness is the safest terrain there is."
+        }
+      }
     }
   },
   "tarotWaite": {

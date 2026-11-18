@@ -857,6 +857,28 @@
           "description": "Seguidores marcham a pé ao redor, erguendo seus cajados: o sucesso pessoal depende do apoio de muitos. A glória é compartilhada com quem caminhou ao lado."
         }
       }
+    },
+    "sevenOfWands": {
+      "name": "Sete de Paus",
+      "intro": "No alto de uma colina, um homem defende sua posição contra seis cajados que sobem de baixo. Coragem, firmeza e a decisão de manter o que é seu mesmo em desvantagem.",
+      "regions": {
+        "defender": {
+          "title": "O Defensor",
+          "description": "Ele está sozinho e em guarda, olhando para baixo: quem sustenta uma convicção quase sempre se vê assim, em desvantagem, mas de pé."
+        },
+        "sixWandsBelow": {
+          "title": "Os Seis Cajados",
+          "description": "Seis hastes surgem de baixo: desafios que não dão trégua e obrigam a escolher o que vale a pena defender. A pressão revela o que realmente importa."
+        },
+        "mismatchedShoes": {
+          "title": "Os Sapatos Desiguais",
+          "description": "Ele calça sapatos diferentes, como se tivesse se levantado às pressas: a defesa nem sempre é perfeita nem preparada, e ainda assim se mantém."
+        },
+        "highGround": {
+          "title": "A Posição Elevada",
+          "description": "A colina dá vantagem a quem a ocupa: ver mais longe e ter apoio no chão. A firmeza interior é o terreno mais seguro que existe."
+        }
+      }
     }
   },
   "tarotWaite": {
