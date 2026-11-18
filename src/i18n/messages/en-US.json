@@ -813,6 +813,28 @@
           "description": "In the background, the castle with its bridge and the group approaching: home as refuge and meeting place, open to those who arrive."
         }
       }
+    },
+    "fiveOfWands": {
+      "name": "Five of Wands",
+      "intro": "Five young men brandish staves in a struggle with no clear winner. Competition, friction and the confused energy of many wills colliding, which can wear down or sharpen those involved.",
+      "regions": {
+        "crossedStaves": {
+          "title": "The Crossed Staves",
+          "description": "No blow lands: the staves cross in the air and cancel each other. The contest spends strength without producing a direction."
+        },
+        "fiveYouths": {
+          "title": "The Five Youths",
+          "description": "No one is a villain: each fights for his place. The card shows the natural friction of people with strong ideas who have not yet learned to cooperate."
+        },
+        "mixedClothing": {
+          "title": "The Mismatched Clothes",
+          "description": "Each youth wears different colors and styles: no uniform, no team. Diversity, when unorganized, becomes confusion instead of strength."
+        },
+        "unevenGround": {
+          "title": "The Uneven Ground",
+          "description": "Rough ground and an open clearing: a training field, not a war. The conflict here is a test of strength, not a deadly battle."
+        }
+      }
     }
   },
   "tarotWaite": {

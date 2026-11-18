@@ -813,6 +813,28 @@
           "description": "Ao fundo, o castelo com sua ponte e o grupo que se aproxima: o lar como refúgio e ponto de encontro, aberto a quem chega."
         }
       }
+    },
+    "fiveOfWands": {
+      "name": "Cinco de Paus",
+      "intro": "Cinco jovens brandem cajados num embate sem vencedor claro. Competição, atrito e a energia confusa de muitas vontades colidindo, que pode desgastar ou afiar quem participa.",
+      "regions": {
+        "crossedStaves": {
+          "title": "Os Cajados Cruzados",
+          "description": "Nenhum golpe acerta: os bastões se cruzam no ar e se anulam. A disputa gasta força sem produzir uma direção."
+        },
+        "fiveYouths": {
+          "title": "Os Cinco Jovens",
+          "description": "Ninguém é vilão: cada um luta por seu lugar. A carta mostra o atrito natural de quem tem ideias fortes e ainda não aprendeu a cooperar."
+        },
+        "mixedClothing": {
+          "title": "As Roupas Díspares",
+          "description": "Cada jovem veste cores e estilos diferentes: não há uniforme nem equipe. A diversidade, quando não é organizada, vira confusão em vez de força."
+        },
+        "unevenGround": {
+          "title": "O Terreno Irregular",
+          "description": "O chão acidentado e a clareira aberta: um campo de treino, não de guerra. O conflito aqui é um teste de força, e não uma batalha mortal."
+        }
+      }
     }
   },
   "tarotWaite": {
