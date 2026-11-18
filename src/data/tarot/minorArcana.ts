@@ -5,6 +5,7 @@ import { twoOfWands } from './two-of-wands';
 import { threeOfWands } from './three-of-wands';
 import { fourOfWands } from './four-of-wands';
 import { fiveOfWands } from './five-of-wands';
+import { sixOfWands } from './six-of-wands';
 
 /**
  * Catalog of the 56 Rider-Waite minor arcana (4 suits x 14 ranks).
@@ -170,4 +171,5 @@ export const minorCardData: Record<string, TarotCard> = {
   'three-of-wands': threeOfWands,
   'four-of-wands': fourOfWands,
   'five-of-wands': fiveOfWands,
+  'six-of-wands': sixOfWands,
 };

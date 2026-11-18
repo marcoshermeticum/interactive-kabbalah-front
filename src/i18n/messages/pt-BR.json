@@ -835,6 +835,28 @@
           "description": "O chão acidentado e a clareira aberta: um campo de treino, não de guerra. O conflito aqui é um teste de força, e não uma batalha mortal."
         }
       }
+    },
+    "sixOfWands": {
+      "name": "Seis de Paus",
+      "intro": "Um cavaleiro coroado de louros volta em triunfo, cercado por uma multidão de cajados. Vitória pública, reconhecimento e o orgulho de ter vencido à vista de todos.",
+      "regions": {
+        "laurelWreath": {
+          "title": "A Coroa de Louros",
+          "description": "Uma coroa de louros no cajado e na cabeça do cavaleiro: a vitória conquistada que se reconhece na honra. O mérito é de quem o merece."
+        },
+        "victoriousRider": {
+          "title": "O Cavaleiro Vitorioso",
+          "description": "Ele cavalga de cabeça erguida, com a capa vermelha ao vento: a confiança de quem venceu e sabe que o sucesso vem acompanhado de responsabilidade."
+        },
+        "whiteHorse": {
+          "title": "O Cavalo Branco",
+          "description": "A montaria branca, enfeitada de verde: a energia domada e a pureza do propósito que levou à conquista, conduzida pelo cavaleiro e não o contrário."
+        },
+        "crowdOfStaves": {
+          "title": "A Multidão de Cajados",
+          "description": "Seguidores marcham a pé ao redor, erguendo seus cajados: o sucesso pessoal depende do apoio de muitos. A glória é compartilhada com quem caminhou ao lado."
+        }
+      }
     }
   },
   "tarotWaite": {

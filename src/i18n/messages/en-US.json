@@ -835,6 +835,28 @@
           "description": "Rough ground and an open clearing: a training field, not a war. The conflict here is a test of strength, not a deadly battle."
         }
       }
+    },
+    "sixOfWands": {
+      "name": "Six of Wands",
+      "intro": "A rider crowned with laurel returns in triumph, surrounded by a crowd of staves. Public victory, recognition and the pride of having won in front of everyone.",
+      "regions": {
+        "laurelWreath": {
+          "title": "The Laurel Wreath",
+          "description": "A laurel wreath on the wand and on the rider's head: victory earned and acknowledged in honor. The merit belongs to the one who deserves it."
+        },
+        "victoriousRider": {
+          "title": "The Victorious Rider",
+          "description": "He rides with head high, red cloak in the wind: the confidence of someone who has won and knows that success brings responsibility."
+        },
+        "whiteHorse": {
+          "title": "The White Horse",
+          "description": "The white mount, adorned in green: tamed energy and the purity of purpose that led to the conquest, guided by the rider and not the reverse."
+        },
+        "crowdOfStaves": {
+          "title": "The Crowd of Staves",
+          "description": "Followers march on foot around him, raising their staves: personal success depends on the support of many. The glory is shared with those who walked alongside."
+        }
+      }
     }
   },
   "tarotWaite": {
