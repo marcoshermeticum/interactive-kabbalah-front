@@ -725,6 +725,28 @@
           "description": "The banks of cloud uphold the living creatures: witness that floats — the world seen from above and from within at once; matter rarefied into consciousness."
         }
       }
+    },
+    "aceOfWands": {
+      "name": "Ace of Wands",
+      "intro": "A hand emerges from a cloud offering a budding wand: the first impulse, the creative spark and the courage to begin. It is fire in its purest state, still formless and full of promise.",
+      "regions": {
+        "handCloud": {
+          "title": "The Hand in the Cloud",
+          "description": "The gift from above: inspiration arrives as a present, not a conquest. The hand offers the wand, but you must take hold of it."
+        },
+        "buddingWand": {
+          "title": "The Budding Wand",
+          "description": "A living staff still sprouting: will is not dead wood but growing force. Each leaf is an idea ready to unfold."
+        },
+        "fallingLeaves": {
+          "title": "The Falling Leaves",
+          "description": "Leaves shaped like the Hebrew letter yod (י), first letter of the divine Name, drift in the air: scattered sparks, seeds of possibility carried by the wind."
+        },
+        "castleLandscape": {
+          "title": "The Castle and the Landscape",
+          "description": "In the distance a castle on a hill and a fertile valley: the destination the first step has not yet reached but can already see."
+        }
+      }
     }
   },
   "tarotWaite": {

@@ -1,5 +1,6 @@
 import type { TarotCard } from './types';
 import type { Element, Planet, ZodiacSign } from './majorArcana';
+import { aceOfWands } from './ace-of-wands';
 
 /**
  * Catalog of the 56 Rider-Waite minor arcana (4 suits x 14 ranks).
@@ -160,4 +161,5 @@ export function getMinorArcanaBySuit(suit: Suit): MinorArcanaEntry[] {
  * adds an import and an entry here.
  */
 export const minorCardData: Record<string, TarotCard> = {
+  'ace-of-wands': aceOfWands,
 };

@@ -725,6 +725,28 @@
           "description": "Os bancos de nuvem sustentam os viventes: o testemunho que flutua — o mundo visto de cima e de dentro ao mesmo tempo; a matéria rarefeita em consciência."
         }
       }
+    },
+    "aceOfWands": {
+      "name": "Ás de Paus",
+      "intro": "Uma mão surge da nuvem e oferece um cajado em flor: o impulso inicial, a faísca criativa e a coragem de começar. É o fogo em estado puro, ainda sem forma e cheio de promessa.",
+      "regions": {
+        "handCloud": {
+          "title": "A Mão na Nuvem",
+          "description": "O dom que vem de cima: a inspiração chega como presente, não como conquista. A mão oferece o cajado, mas cabe a você segurá-lo."
+        },
+        "buddingWand": {
+          "title": "O Cajado em Botão",
+          "description": "Um bastão vivo que ainda brota: a vontade não é madeira morta, é força que cresce. Cada folha é uma ideia pronta para se desdobrar."
+        },
+        "fallingLeaves": {
+          "title": "As Folhas que Caem",
+          "description": "Folhas em forma de iode (י), a primeira letra do Nome divino, flutuam no ar: centelhas espalhadas, sementes de possibilidade que o vento leva adiante."
+        },
+        "castleLandscape": {
+          "title": "O Castelo e a Paisagem",
+          "description": "Ao longe, um castelo sobre a colina e um vale fértil: o destino que o primeiro passo ainda não alcançou, mas já enxerga."
+        }
+      }
     }
   },
   "tarotWaite": {
