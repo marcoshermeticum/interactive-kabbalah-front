@@ -791,6 +791,28 @@
           "description": "Um céu amarelo e aberto sobre o mar: a luz do otimismo, a promessa de que o caminho escolhido tem espaço para crescer."
         }
       }
+    },
+    "fourOfWands": {
+      "name": "Quatro de Paus",
+      "intro": "Quatro cajados sustentam uma guirlanda de flores sobre um casal que celebra diante do castelo. A festa depois do esforço: estabilidade, lar, acolhimento e comunidade.",
+      "regions": {
+        "garlandCanopy": {
+          "title": "A Guirlanda",
+          "description": "Flores e frutos pendem entre os cajados como um dossel de festa: o fruto do esforço virou celebração compartilhada."
+        },
+        "fourWands": {
+          "title": "Os Quatro Cajados",
+          "description": "Quatro pilares erguidos formam um portal: as quatro direções, os quatro elementos, uma base firme que protege a alegria."
+        },
+        "celebratingCouple": {
+          "title": "O Casal em Festa",
+          "description": "Duas figuras erguem buquês de braços abertos: a alegria que se divide dobra. A conquista só se completa quando é celebrada em companhia."
+        },
+        "castleGate": {
+          "title": "O Castelo e a Ponte",
+          "description": "Ao fundo, o castelo com sua ponte e o grupo que se aproxima: o lar como refúgio e ponto de encontro, aberto a quem chega."
+        }
+      }
     }
   },
   "tarotWaite": {

@@ -791,6 +791,28 @@
           "description": "An open yellow sky over the sea: the light of optimism, the promise that the chosen path has room to grow."
         }
       }
+    },
+    "fourOfWands": {
+      "name": "Four of Wands",
+      "intro": "Four wands hold up a garland of flowers over a couple celebrating before the castle. The feast after the effort: stability, home, welcome and community.",
+      "regions": {
+        "garlandCanopy": {
+          "title": "The Garland",
+          "description": "Flowers and fruit hang between the wands like a festive canopy: the fruit of effort has become a shared celebration."
+        },
+        "fourWands": {
+          "title": "The Four Wands",
+          "description": "Four raised pillars form a gateway: the four directions, the four elements, a firm base that shelters joy."
+        },
+        "celebratingCouple": {
+          "title": "The Celebrating Couple",
+          "description": "Two figures raise bouquets with open arms: shared joy doubles. An achievement is only complete when celebrated in company."
+        },
+        "castleGate": {
+          "title": "The Castle and the Bridge",
+          "description": "In the background, the castle with its bridge and the group approaching: home as refuge and meeting place, open to those who arrive."
+        }
+      }
     }
   },
   "tarotWaite": {
