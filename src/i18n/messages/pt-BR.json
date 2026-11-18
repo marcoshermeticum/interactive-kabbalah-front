@@ -901,6 +901,28 @@
           "description": "Leões entalhados no encosto: coragem e domínio de si. Ela governa com a força serena de quem não precisa provar nada a ninguém."
         }
       }
+    },
+    "eightOfWands": {
+      "name": "Oito de Paus",
+      "intro": "Oito cajados cortam o céu em voo veloz rumo ao chão, sem nenhuma figura humana. Rapidez, mensagens e acontecimentos que chegam de uma vez, com a energia de quem não pode parar.",
+      "regions": {
+        "eightWands": {
+          "title": "Os Oito Cajados",
+          "description": "Paralelos e em movimento, os bastões avançam todos na mesma direção: ações alinhadas que ganham velocidade e chegam ao destino com força."
+        },
+        "openSky": {
+          "title": "O Céu Aberto",
+          "description": "Um céu azul e limpo, sem nuvens a bloquear: nada atrapalha a passagem. É a fase em que os caminhos se abrem e os obstáculos recuam."
+        },
+        "river": {
+          "title": "O Rio",
+          "description": "Um curso de água corre pela paisagem na mesma direção dos cajados: o fluxo natural das coisas, quando se está em sintonia com ele, acelera tudo."
+        },
+        "greenHills": {
+          "title": "As Colinas Verdes",
+          "description": "Terra fértil e uma casa discreta ao fundo: o ponto de chegada é acolhedor. A pressa leva a algo concreto, com raízes e lugar para pousar."
+        }
+      }
     }
   },
   "tarotWaite": {

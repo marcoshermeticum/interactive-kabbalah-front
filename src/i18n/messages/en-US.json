@@ -901,6 +901,28 @@
           "description": "Lions carved into the back: courage and self-mastery. She rules with the serene strength of one who has nothing to prove to anyone."
         }
       }
+    },
+    "eightOfWands": {
+      "name": "Eight of Wands",
+      "intro": "Eight wands cut across the sky in swift flight toward the ground, with no human figure in sight. Speed, messages and events arriving all at once, with the momentum of something that cannot stop.",
+      "regions": {
+        "eightWands": {
+          "title": "The Eight Wands",
+          "description": "Parallel and moving, the staves all advance in the same direction: aligned actions that gain speed and arrive with force."
+        },
+        "openSky": {
+          "title": "The Open Sky",
+          "description": "A clear blue sky with no clouds to block the way: nothing hinders the passage. It is the phase when paths open and obstacles recede."
+        },
+        "river": {
+          "title": "The River",
+          "description": "A watercourse runs through the landscape in the same direction as the wands: the natural flow of things, when you are in tune with it, speeds everything up."
+        },
+        "greenHills": {
+          "title": "The Green Hills",
+          "description": "Fertile land and a modest house in the distance: the arrival point is welcoming. The haste leads somewhere concrete, with roots and a place to land."
+        }
+      }
     }
   },
   "tarotWaite": {
