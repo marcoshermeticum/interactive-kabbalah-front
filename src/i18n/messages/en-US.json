@@ -769,6 +769,28 @@
           "description": "Crossed roses and lilies on the wall: desire (rose) and purity (lily) joined in the same decision. A will that chooses with heart and clarity together."
         }
       }
+    },
+    "threeOfWands": {
+      "name": "Three of Wands",
+      "intro": "Seen from behind, a man on a cliff watches his ships set sail. The first fruits of a plan in motion: wider vision, confident waiting and expansion.",
+      "regions": {
+        "manFromBehind": {
+          "title": "The Man from Behind",
+          "description": "He has done his part and now watches: the trust of one who planted the plan and accepts waiting. Facing the horizon, he leaves the past behind."
+        },
+        "threeWands": {
+          "title": "The Three Wands",
+          "description": "Three firm staves in the ground: the foundation is already planted. One serves as support for his hand, showing that will can now stand on its own."
+        },
+        "shipsSea": {
+          "title": "The Ships at Sea",
+          "description": "The vessels carry what was invested toward distant lands: work leaving your hands that will someday return with a yield."
+        },
+        "goldenSky": {
+          "title": "The Golden Sky",
+          "description": "An open yellow sky over the sea: the light of optimism, the promise that the chosen path has room to grow."
+        }
+      }
     }
   },
   "tarotWaite": {

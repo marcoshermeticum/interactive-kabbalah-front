@@ -769,6 +769,28 @@
           "description": "Rosas e lírios cruzados na parede: o desejo (rosa) e a pureza (lírio) unidos na mesma decisão. A vontade que escolhe com o coração e a clareza juntos."
         }
       }
+    },
+    "threeOfWands": {
+      "name": "Três de Paus",
+      "intro": "De costas, um homem no alto do penhasco vê seus barcos partirem para o mar. Os primeiros frutos de um plano em marcha: visão ampliada, espera confiante e expansão.",
+      "regions": {
+        "manFromBehind": {
+          "title": "O Homem de Costas",
+          "description": "Ele já fez sua parte e agora observa: a confiança de quem plantou o plano e aceita esperar. Voltado ao horizonte, deixa o passado atrás."
+        },
+        "threeWands": {
+          "title": "Os Três Cajados",
+          "description": "Três hastes firmes no chão: a base já está plantada. Um cajado serve de apoio à mão, mostrando que a vontade agora se sustenta sozinha."
+        },
+        "shipsSea": {
+          "title": "Os Navios no Mar",
+          "description": "As embarcações carregam o que foi investido rumo a terras distantes: o trabalho que sai de suas mãos e volta, um dia, com retorno."
+        },
+        "goldenSky": {
+          "title": "O Céu Dourado",
+          "description": "Um céu amarelo e aberto sobre o mar: a luz do otimismo, a promessa de que o caminho escolhido tem espaço para crescer."
+        }
+      }
     }
   },
   "tarotWaite": {
