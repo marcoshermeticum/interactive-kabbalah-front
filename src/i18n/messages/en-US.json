@@ -879,6 +879,28 @@
           "description": "The hill gives an advantage to whoever holds it: seeing farther and having ground underfoot. Inner steadiness is the safest terrain there is."
         }
       }
+    },
+    "queenOfWands": {
+      "name": "Queen of Wands",
+      "intro": "Seated on a lion throne with a sunflower in hand and a black cat at her feet, the queen radiates confidence and warmth. Magnetism, generosity and a will that attracts rather than imposes.",
+      "regions": {
+        "sunflower": {
+          "title": "The Sunflower",
+          "description": "The flower that follows the Sun: vitality, optimism and abundance. The queen holds it effortlessly, as one who makes whatever she touches shine."
+        },
+        "wandInHand": {
+          "title": "The Queen's Wand",
+          "description": "The budding wand, steady in her right hand: creativity and will under control, energy placed in service of a clear purpose."
+        },
+        "blackCat": {
+          "title": "The Black Cat",
+          "description": "The alert feline at the foot of the throne: intuition, independence and the queen's mysterious side, who senses before she sees and trusts what she perceives."
+        },
+        "lionThrone": {
+          "title": "The Lion Throne",
+          "description": "Lions carved into the back: courage and self-mastery. She rules with the serene strength of one who has nothing to prove to anyone."
+        }
+      }
     }
   },
   "tarotWaite": {

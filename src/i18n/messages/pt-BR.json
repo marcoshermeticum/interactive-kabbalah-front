@@ -879,6 +879,28 @@
           "description": "A colina dá vantagem a quem a ocupa: ver mais longe e ter apoio no chão. A firmeza interior é o terreno mais seguro que existe."
         }
       }
+    },
+    "queenOfWands": {
+      "name": "Rainha de Paus",
+      "intro": "Sentada num trono de leões com um girassol na mão e um gato preto aos pés, a rainha irradia confiança e calor. Magnetismo, generosidade e uma vontade que atrai em vez de impor.",
+      "regions": {
+        "sunflower": {
+          "title": "O Girassol",
+          "description": "A flor que acompanha o Sol: vitalidade, otimismo e abundância. A rainha o segura sem esforço, como quem faz brilhar o que toca."
+        },
+        "wandInHand": {
+          "title": "O Cajado da Rainha",
+          "description": "O bastão em flor, firme na mão direita: a criatividade e a vontade sob controle, a energia posta a serviço de um propósito claro."
+        },
+        "blackCat": {
+          "title": "O Gato Preto",
+          "description": "O felino atento aos pés do trono: intuição, independência e o lado misterioso da rainha, que sente antes de ver e confia no que percebe."
+        },
+        "lionThrone": {
+          "title": "O Trono de Leões",
+          "description": "Leões entalhados no encosto: coragem e domínio de si. Ela governa com a força serena de quem não precisa provar nada a ninguém."
+        }
+      }
     }
   },
   "tarotWaite": {
