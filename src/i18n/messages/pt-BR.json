@@ -923,6 +923,28 @@
           "description": "Terra fértil e uma casa discreta ao fundo: o ponto de chegada é acolhedor. A pressa leva a algo concreto, com raízes e lugar para pousar."
         }
       }
+    },
+    "nineOfWands": {
+      "name": "Nove de Paus",
+      "intro": "Ferido e enfaixado, um homem se apoia no cajado diante de uma cerca de bastões. Cansaço, cautela e a persistência de quem já enfrentou muito e ainda não desiste.",
+      "regions": {
+        "bandagedHead": {
+          "title": "A Cabeça Enfaixada",
+          "description": "A atadura revela batalhas passadas: a experiência que deixa marcas, mas também ensina. Cada ferida é uma lição que o torna mais atento."
+        },
+        "leaningWand": {
+          "title": "O Cajado de Apoio",
+          "description": "Ele se apoia no bastão que já foi arma: a força que antes servia ao ataque agora sustenta o descanso. Resistir também é saber usar o que se tem."
+        },
+        "wandFence": {
+          "title": "A Cerca de Cajados",
+          "description": "Oito hastes enfileiradas atrás dele formam uma barreira: as defesas que construiu, uma a uma, ao longo do caminho. Elas protegem, mas também limitam."
+        },
+        "waryGaze": {
+          "title": "O Olhar Vigilante",
+          "description": "Ele olha de lado, atento a uma ameaça que pode ou não vir: a desconfiança de quem já foi surpreendido e agora mede cada passo."
+        }
+      }
     }
   },
   "tarotWaite": {

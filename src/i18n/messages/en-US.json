@@ -923,6 +923,28 @@
           "description": "Fertile land and a modest house in the distance: the arrival point is welcoming. The haste leads somewhere concrete, with roots and a place to land."
         }
       }
+    },
+    "nineOfWands": {
+      "name": "Nine of Wands",
+      "intro": "Wounded and bandaged, a man leans on his staff before a fence of wands. Weariness, caution and the persistence of someone who has faced much and still has not given up.",
+      "regions": {
+        "bandagedHead": {
+          "title": "The Bandaged Head",
+          "description": "The bandage reveals past battles: experience that leaves marks but also teaches. Each wound is a lesson that makes him more alert."
+        },
+        "leaningWand": {
+          "title": "The Supporting Wand",
+          "description": "He leans on a staff that was once a weapon: strength that once served attack now supports rest. Endurance is also knowing how to use what you have."
+        },
+        "wandFence": {
+          "title": "The Fence of Wands",
+          "description": "Eight staves lined up behind him form a barrier: the defenses he built one by one along the way. They protect, but they also confine."
+        },
+        "waryGaze": {
+          "title": "The Wary Gaze",
+          "description": "He glances sideways, watching for a threat that may or may not come: the distrust of one who has been surprised before and now measures every step."
+        }
+      }
     }
   },
   "tarotWaite": {
