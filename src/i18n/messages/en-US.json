@@ -2049,6 +2049,17 @@
       },
       "badge": "Minor Arcana"
     },
+    "filters": {
+      "toggle": "Advanced filters",
+      "element": "Element",
+      "sign": "Sign",
+      "sephirah": "Sephirah",
+      "clear": "Clear filters",
+      "active": "{count, plural, one {# active filter} other {# active filters}}",
+      "results": "{count, plural, =0 {No cards} one {# card} other {# cards}}",
+      "empty": "No card matches these filters.",
+      "hint": "Filters combine: a card must meet all of them. For major arcana, the sephirah matches either end of the card's path on the Tree of Life. Cards without the chosen attribute (for example, no sign) are left out."
+    },
     "cards": {
       "theFool": {
         "name": "The Fool",

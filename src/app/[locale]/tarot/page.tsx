@@ -1,13 +1,15 @@
-﻿'use client';
+'use client';
 
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useState } from 'react';
+import Image from 'next/image';import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import type { Pathnames } from '@/i18n/routing';
 import Navbar from '@/components/Navbar/Navbar';
 import { useNavigationLoading } from '@/components/NavigationLoading';
 import { majorArcana, isCardAvailable } from '@/data/tarot/majorArcana';
 import { SUITS, SUIT_ELEMENT, getMinorArcanaBySuit } from '@/data/tarot/minorArcana';
+import { NO_FILTERS, activeFilterCount, cardMatches, type CardFilters } from '@/data/tarot/filters';
+import TarotFilters from '@/components/Tarot/TarotFilters';
 
 /**
  * Tarot Rider-Waite catalog: a mosaic of the 22 major arcana followed by the
@@ -20,6 +22,16 @@ export default function TarotWaitePage() {
   const t = useTranslations('tarotWaite');
   const tm = useTranslations('tarotWaite.minor');
   const tCorr = useTranslations('tarotWaite.correspondences');
+  const tf = useTranslations('tarotWaite.filters');
+  const [filters, setFilters] = useState<CardFilters>(NO_FILTERS);
+  const filtering = activeFilterCount(filters) > 0;
+
+  const majors = majorArcana.filter((card) => cardMatches(card.slug, filters));
+  const minorsBySuit = SUITS.map((suit) => ({
+    suit,
+    cards: getMinorArcanaBySuit(suit).filter((card) => cardMatches(card.slug, filters)),
+  }));
+  const resultCount = majors.length + minorsBySuit.reduce((sum, group) => sum + group.cards.length, 0);
 
   return (
     <div className="flex h-[100dvh] w-full flex-col overflow-hidden">
@@ -120,28 +132,39 @@ export default function TarotWaitePage() {
             ))}
           </nav>
 
+          <TarotFilters filters={filters} onChange={setFilters} resultCount={resultCount} />
+
+          {filtering && resultCount === 0 && (
+            <p role="status" style={{ color: 'var(--text-muted)', margin: '2rem 0', textAlign: 'center' }}>
+              {tf('empty')}
+            </p>
+          )}
+
           {/* ─── Major arcana ─── */}
+          {majors.length > 0 && (
           <section id="major" aria-labelledby="major-title" style={{ marginBottom: '3.5rem' }}>
             <SectionHeading id="major-title" title={tm('majorTitle')} subtitle={tm('majorSubtitle')} />
             <div style={GRID_STYLE}>
-              {majorArcana.map((card, index) => (
+              {majors.map((card, index) => (
                 <CardTile
                   key={card.slug}
                   slug={card.slug}
                   image={card.image}
                   nameKey={card.i18nKey}
                   index={index}
-                  priority={index < 4}
+                  priority={index < 4 && !filtering}
                   heading="h3"
                 />
               ))}
             </div>
           </section>
+          )}
 
           {/* ─── Minor arcana, one group per suit ─── */}
+          {minorsBySuit.some((group) => group.cards.length > 0) && (
           <section id="minor" aria-labelledby="minor-title">
             <SectionHeading id="minor-title" title={tm('title')} subtitle={tm('subtitle')} />
-            {SUITS.map((suit) => (
+            {minorsBySuit.filter((group) => group.cards.length > 0).map(({ suit, cards }) => (
               <div key={suit} style={{ marginTop: '2rem' }}>
                 <h3
                   style={{
@@ -157,7 +180,7 @@ export default function TarotWaitePage() {
                   </span>
                 </h3>
                 <div style={GRID_STYLE}>
-                  {getMinorArcanaBySuit(suit).map((card, index) => (
+                  {cards.map((card, index) => (
                     <CardTile
                       key={card.slug}
                       slug={card.slug}
@@ -172,6 +195,7 @@ export default function TarotWaitePage() {
               </div>
             ))}
           </section>
+          )}
         </div>
       </main>
     </div>

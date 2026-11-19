@@ -2049,6 +2049,17 @@
       },
       "badge": "Arcano Menor"
     },
+    "filters": {
+      "toggle": "Filtros avançados",
+      "element": "Elemento",
+      "sign": "Signo",
+      "sephirah": "Sefira",
+      "clear": "Limpar filtros",
+      "active": "{count, plural, one {# filtro ativo} other {# filtros ativos}}",
+      "results": "{count, plural, =0 {Nenhuma carta} one {# carta} other {# cartas}}",
+      "empty": "Nenhuma carta corresponde a esses filtros.",
+      "hint": "Os filtros se combinam: a carta precisa atender a todos. Nos arcanos maiores, a sefira vale para as duas pontas do caminho da carta na Árvore da Vida. Cartas sem o atributo escolhido (por exemplo, sem signo) ficam de fora."
+    },
     "cards": {
       "theFool": {
         "name": "O Louco",
