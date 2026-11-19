@@ -945,6 +945,1018 @@
           "description": "He glances sideways, watching for a threat that may or may not come: the distrust of one who has been surprised before and now measures every step."
         }
       }
+    },
+    "tenOfWands": {
+      "name": "Ten of Wands",
+      "intro": "Bent under the weight of ten bundled wands, a man walks toward the village in the distance. Overload, too much responsibility taken on, and the need to share the weight.",
+      "regions": {
+        "bundleOfWands": {
+          "title": "The Bundle of Wands",
+          "description": "Ten staves carried together hide the man's face: when too much accumulates, the task begins to overshadow the one who carries it."
+        },
+        "bentBack": {
+          "title": "The Bent Back",
+          "description": "The bowed body shows the cost of effort without pause: hard-won success exacts its price when you cannot put down what is already done."
+        },
+        "distantVillage": {
+          "title": "The Distant Village",
+          "description": "The houses are still far but visible: the end of the work is in sight. All that remains is deciding how to arrive without breaking along the way."
+        },
+        "dustyPath": {
+          "title": "The Dirt Path",
+          "description": "The narrow trail leads straight to the door: there are no shortcuts. Each step is unavoidable and each one counts, even with the burden on his shoulders."
+        }
+      }
+    },
+    "pageOfWands": {
+      "name": "Page of Wands",
+      "intro": "A young man in a tunic patterned with salamanders gazes at the wand he holds, in the middle of the desert. Curiosity, enthusiasm and the message of a new idea asking to be explored.",
+      "regions": {
+        "salamanderTunic": {
+          "title": "The Salamander Tunic",
+          "description": "The salamander, creature of fire, patterns the youth's clothing: the card's element lives in him, though he does not yet master his own flame."
+        },
+        "wandGaze": {
+          "title": "The Contemplated Wand",
+          "description": "He studies the staff like one examining a possibility: before acting, he looks at his own will and asks what to do with it."
+        },
+        "featheredHat": {
+          "title": "The Feathered Hat",
+          "description": "The feather in the hat is lightness and freedom: the open mind of the apprentice, ready to be carried off by the wind of a new idea."
+        },
+        "desertPyramids": {
+          "title": "The Desert and the Pyramids",
+          "description": "Sand and pyramids behind him: an arid, ancient terrain where only the fire of initiative can make something grow. Everything is still to be done."
+        }
+      }
+    },
+    "knightOfWands": {
+      "name": "Knight of Wands",
+      "intro": "A knight in armor and a salamander tunic charges on a rearing horse. Drive, adventure and an enthusiasm that does not weigh risk, but can trample whatever is in the way.",
+      "regions": {
+        "rearingHorse": {
+          "title": "The Rearing Horse",
+          "description": "The horse surges in fury, ready to bolt: the raw energy of fire, still waiting for a steady hand to direct it."
+        },
+        "redPlume": {
+          "title": "The Red Plume",
+          "description": "The blazing plume on the helmet is boldness on display: the knight wants to be seen and recognized, and his enthusiasm is contagious."
+        },
+        "salamanderSurcoat": {
+          "title": "The Surcoat of Fire",
+          "description": "Yellow salamanders cover his chest: he wears his own element. Passion is on the surface, with no filter between desire and action."
+        },
+        "desertRide": {
+          "title": "The Open Desert",
+          "description": "The ride crosses sand and pyramids: a long journey without shade, where only momentum keeps spirits up and the destination is still unclear."
+        }
+      }
+    },
+    "kingOfWands": {
+      "name": "King of Wands",
+      "intro": "The king in a salamander-patterned mantle holds the budding wand, seated on a lion throne. Vision, charismatic leadership and a mastery of fire that inspires others to follow.",
+      "regions": {
+        "buddingSceptre": {
+          "title": "The Budding Sceptre",
+          "description": "The staff still sprouts: the king has not forgotten that power springs from something alive. His command creates, not merely administers."
+        },
+        "salamanderMantle": {
+          "title": "The Salamander Mantle",
+          "description": "The mantle embroidered with salamanders shows fire embodied: he does not fear the flame because he has passed through it and turned it into authority."
+        },
+        "lionThrone": {
+          "title": "The Throne of Lions and Salamanders",
+          "description": "Lions and salamanders decorate the throne: royalty founded on courage and passion. The king's power is the sum of forces he has learned to guide."
+        },
+        "crownGaze": {
+          "title": "The Crown and the Gaze",
+          "description": "A flame-like crown and a gaze turned sideways and forward: he sees far and decides for the future, not just the moment."
+        }
+      }
+    },
+    "aceOfCups": {
+      "name": "Ace of Cups",
+      "intro": "A hand emerges from a cloud offering an overflowing chalice while a dove lowers a wafer onto it. The beginning of a love, an intuition or a grace that pours out without measure.",
+      "regions": {
+        "handCloud": {
+          "title": "The Hand in the Cloud",
+          "description": "The gift descending from above: love and grace are not won, they are offered. The hand presents the chalice and waits for you to receive it."
+        },
+        "overflowingChalice": {
+          "title": "The Overflowing Chalice",
+          "description": "The full cup from which water spills: emotional abundance that cannot be contained and must be shared to stay alive."
+        },
+        "doveWafer": {
+          "title": "The Dove and the Wafer",
+          "description": "The dove brings the sacred disc marked with a cross: spirit blessing matter. Pure feeling is also a form of communion."
+        },
+        "lotusPond": {
+          "title": "The Lotus Pond",
+          "description": "Five streams of water fall into a pond of lilies: the five senses feeding the soul. From the calm depths of emotion bloom the flowers of perception."
+        }
+      }
+    },
+    "twoOfCups": {
+      "name": "Two of Cups",
+      "intro": "A man and a woman exchange cups beneath the winged caduceus of Hermes. Mutual attraction, partnership and the pact of two who recognize one another in equality and respect.",
+      "regions": {
+        "cupExchange": {
+          "title": "The Exchange of Cups",
+          "description": "Each offers and receives at once: a true bond is an exchange, never a possession. The cups meet at the center."
+        },
+        "wingedCaduceus": {
+          "title": "The Caduceus and the Winged Lion",
+          "description": "Two entwined serpents and a winged lion's head: passionate desire (the lion) lifted by communication and awareness (the caduceus)."
+        },
+        "coupleWreaths": {
+          "title": "The Wreathed Couple",
+          "description": "Both wear wreaths of foliage: a union that celebrates life and does not deny nature. They stand face to face, on the same level, without hierarchy."
+        },
+        "houseHill": {
+          "title": "The House on the Hill",
+          "description": "In the background, a house among hills: the place this union may build. The card points to a shared future still taking shape."
+        }
+      }
+    },
+    "threeOfCups": {
+      "name": "Three of Cups",
+      "intro": "Three women dance with raised cups among fruit and garlands. Shared joy, friendship and the celebration of a harvest nobody won alone.",
+      "regions": {
+        "raisedCups": {
+          "title": "The Raised Cups",
+          "description": "Three toasts in the air, gathered at the center: joy multiplies when shared. A toast to life, to togetherness and to what has been achieved."
+        },
+        "dancingWomen": {
+          "title": "The Three Dancers",
+          "description": "Hands joined in a circle, dressed in different colors: three people, three temperaments, one harmony. Friendship that unites without erasing differences."
+        },
+        "flowerGarlands": {
+          "title": "The Flower Garlands",
+          "description": "Crowns and garlands of flowers adorn the dance: the feast is also a ritual of beauty, with nature joining the gathering."
+        },
+        "harvestFruits": {
+          "title": "The Harvest Fruits",
+          "description": "Pumpkins and fruit at the dancers' feet: abundance that came from work and time. The feast is gratitude for what has ripened."
+        }
+      }
+    },
+    "fourOfCups": {
+      "name": "Four of Cups",
+      "intro": "A young man with crossed arms meditates under a tree, ignoring the three cups before him while a hand offers a fourth. Apathy, contemplation and the opportunity that goes unnoticed.",
+      "regions": {
+        "handFourthCup": {
+          "title": "The Hand and the Fourth Cup",
+          "description": "A hand emerges from a cloud offering one more cup: life keeps bringing new possibilities even when we are not looking."
+        },
+        "threeCupsGround": {
+          "title": "The Three Cups on the Ground",
+          "description": "Lined up before him, the cups he already has: what has been given becomes invisible when the mind only wants what is missing."
+        },
+        "crossedArms": {
+          "title": "The Crossed Arms",
+          "description": "A closed posture and lowered gaze: he shields himself from the world. Introspection helps, but it can become a wall when it prevents receiving."
+        },
+        "tree": {
+          "title": "The Tree",
+          "description": "He rests at the foot of a sturdy tree: the refuge of pause. It is a legitimate time of reflection, so long as it does not turn into stagnation."
+        }
+      }
+    },
+    "fiveOfCups": {
+      "name": "Five of Cups",
+      "intro": "A cloaked figure in black mourns three spilled cups, without seeing the two still standing behind. Grief, regret and the choice to look at what remains.",
+      "regions": {
+        "blackCloak": {
+          "title": "The Black Cloak",
+          "description": "A body wrapped in mourning, back turned to what remains: pain fills the whole space and prevents seeing beyond it."
+        },
+        "spilledCups": {
+          "title": "The Spilled Cups",
+          "description": "Three fallen cups and liquid run out: the loss is real and deserves to be felt. The card does not ask you to deny grief but to pass through it."
+        },
+        "standingCups": {
+          "title": "The Two Standing Cups",
+          "description": "Full and steady behind him: what remains, waiting to be noticed. A shift in posture is enough to realize not everything was lost."
+        },
+        "riverBridge": {
+          "title": "The River and the Bridge",
+          "description": "A bridge over the river leads to a house in the distance: crossing grief is possible. The water separates, but there is a path to the other side."
+        }
+      }
+    },
+    "sixOfCups": {
+      "name": "Six of Cups",
+      "intro": "Two children exchange a cup of flowers in an old village courtyard. Nostalgia, innocence and the sweetness of simple gestures that remind us who we were and what we can still give.",
+      "regions": {
+        "flowerCups": {
+          "title": "The Cups of Flowers",
+          "description": "Six chalices overflow with white flowers: memories in bloom. What was once kept with care continues to bear fruit."
+        },
+        "childrenGift": {
+          "title": "The Children and the Gift",
+          "description": "The older one offers a cup to the younger: generosity without interest, care between generations. The purest kindness is learned early."
+        },
+        "villageCourtyard": {
+          "title": "The Village Courtyard",
+          "description": "Stone houses, a coat of arms and a familiar ground: the setting of childhood. A safe place to which memory returns in search of affection."
+        },
+        "backgroundFigure": {
+          "title": "The Figure in the Background",
+          "description": "A figure walks away in the distance, back turned: time passing, and the adult the child will become. Memory lives alongside the life that goes on."
+        }
+      }
+    },
+    "sevenOfCups": {
+      "name": "Seven of Cups",
+      "intro": "Before a dark silhouette, seven cups float among the clouds, each holding a different vision. Fantasy, many options and the need to tell dream from what is possible.",
+      "regions": {
+        "darkSilhouette": {
+          "title": "The Dark Silhouette",
+          "description": "Seen from behind and faceless, the figure is us before our options: we contemplate everything and have not yet chosen anything. Doubt is part of desire."
+        },
+        "veiledFigure": {
+          "title": "The Veiled Figure",
+          "description": "A form covered by a cloth in the central cup: the mystery that attracts and frightens. What has not yet revealed itself asks for courage to be uncovered."
+        },
+        "serpentDragon": {
+          "title": "The Serpent and the Dragon",
+          "description": "Threatening visions among the promises: not everything that glitters is safe. Illusions carry hidden risks alongside their charm."
+        },
+        "jewelsLaurel": {
+          "title": "The Jewels and the Laurels",
+          "description": "Jewels, a laurel wreath and a tower: wealth, glory and power promised. Grand desires that do not always rest on reality."
+        }
+      }
+    },
+    "eightOfCups": {
+      "name": "Eight of Cups",
+      "intro": "Under an eclipsed moon, a man in a red cloak leaves eight neatly stacked cups behind and climbs toward the mountains. Walking away from what no longer satisfies, in search of deeper meaning.",
+      "regions": {
+        "departingMan": {
+          "title": "The Walker",
+          "description": "He leaves staff in hand without looking back: the silent decision of one who knows that staying would betray his own need."
+        },
+        "stackedCups": {
+          "title": "The Eight Cups",
+          "description": "Arranged, complete, yet with a gap in the middle: everything seems in order and yet the essential is missing. What was built does not fulfill."
+        },
+        "eclipsedMoon": {
+          "title": "The Eclipsed Moon",
+          "description": "The moon with a face, partly covered by the sun: intuition and reason meet. The emotional cycle closes and another is about to begin."
+        },
+        "mountainsRiver": {
+          "title": "The Mountains and the River",
+          "description": "The path crosses water and climbs rock: the spiritual search demands crossings and effort. The destination is still out of sight."
+        }
+      }
+    },
+    "nineOfCups": {
+      "name": "Nine of Cups",
+      "intro": "A satisfied man with crossed arms sits before nine cups arranged in an arc. The wish card: contentment, well-earned pleasure and the joy of being able to enjoy.",
+      "regions": {
+        "contentMan": {
+          "title": "The Satisfied Man",
+          "description": "Round belly and a quiet smile: he acknowledges what he has achieved. There is legitimate pleasure in simply enjoying what you have built."
+        },
+        "arcOfCups": {
+          "title": "The Arc of Cups",
+          "description": "Nine cups lined up on the shelf, all in view: a fulfilled wish displayed with pride, as a symbol of what was reached."
+        },
+        "blueDrape": {
+          "title": "The Blue Drape",
+          "description": "Blue cloth covers the table and background: comfort, protection and emotional calm. Everything is in its place and nothing needs hiding."
+        },
+        "goldenBackdrop": {
+          "title": "The Golden Backdrop",
+          "description": "A bright yellow background: the light of optimism and reward. Life shows its most generous face to those who knew how to wait."
+        }
+      }
+    },
+    "tenOfCups": {
+      "name": "Ten of Cups",
+      "intro": "Beneath a rainbow of ten cups, a couple raises their arms while two children play before a house. Emotional fulfillment, family harmony and happiness that reaches everyone.",
+      "regions": {
+        "rainbowCups": {
+          "title": "The Rainbow of Cups",
+          "description": "Ten cups draw the arc that joins heaven and earth: a blessing that rewards and shelters. After the rain, the promise of a peaceful life."
+        },
+        "embracingCouple": {
+          "title": "The Couple with Raised Arms",
+          "description": "Embracing, seen from behind with arms lifted: shared gratitude. They do not look at each other but in the same direction."
+        },
+        "playingChildren": {
+          "title": "The Dancing Children",
+          "description": "Two children play without hurry: happiness that renews itself across generations. A home is complete only when there is joy to carry on."
+        },
+        "homeValley": {
+          "title": "The Home and the Valley",
+          "description": "A house among trees by the river: the home that shelters and the land that sustains. Roots, stability and the peace of belonging to a place."
+        }
+      }
+    },
+    "pageOfCups": {
+      "name": "Page of Cups",
+      "intro": "A young man in a flowered tunic gazes at a fish emerging from his cup before the sea. An unexpected message, creative sensitivity and an invitation to take imagination seriously.",
+      "regions": {
+        "fishInCup": {
+          "title": "The Fish in the Cup",
+          "description": "A creature of the unconscious appears without warning: an idea, a feeling or a dream asking to be seen. He meets it with wonder and tenderness."
+        },
+        "lotusTunic": {
+          "title": "The Lotus Tunic",
+          "description": "Lotus flowers embroidered on his clothing: purity and spiritual sensitivity. The youth carries delicacy as part of his identity."
+        },
+        "seaWaves": {
+          "title": "The Restless Sea",
+          "description": "The waves behind him bring the emotional world in motion: the flow from which messages and intuitions arise that change the day."
+        },
+        "blueHat": {
+          "title": "The Blue Hat",
+          "description": "A blue cap with trailing cloth: the light, creative mind of one who still plays with forms and daydreams."
+        }
+      }
+    },
+    "knightOfCups": {
+      "name": "Knight of Cups",
+      "intro": "A knight in winged armor advances calmly, carrying his cup before him. Romance, a sincere offer and the delicacy of one who acts from the heart, in no hurry to conquer.",
+      "regions": {
+        "offeredCup": {
+          "title": "The Offered Cup",
+          "description": "He extends it with both hands: a gesture of giving, not demand. The gift is the feeling itself, presented with respect."
+        },
+        "wingedHelmet": {
+          "title": "The Winged Helmet",
+          "description": "Wings on the helmet and the heels, like Mercury: imagination and messages that fly. Chivalry here serves ideal and inspiration."
+        },
+        "whiteHorse": {
+          "title": "The Calm White Horse",
+          "description": "The mount walks at an easy pace: he chooses tenderness and patience. Emotion sets the rhythm, not ambition."
+        },
+        "riverMountains": {
+          "title": "The River and the Hills",
+          "description": "A stream winds between distant hills: the flow of feeling that crosses the landscape and carries the ride toward its destination."
+        }
+      }
+    },
+    "queenOfCups": {
+      "name": "Queen of Cups",
+      "intro": "The queen contemplates an ornate closed cup, seated on a throne by the sea. Deep intuition, compassion and the ability to feel another without losing your own center.",
+      "regions": {
+        "ornateCup": {
+          "title": "The Closed Cup",
+          "description": "Unlike the others, this cup has a lid and angels on the handles: sacred feeling kept with care. She holds it without spilling it."
+        },
+        "shellThrone": {
+          "title": "The Shell Throne",
+          "description": "A throne decorated with shells and winged children: the sea shapes it. Her power is sensitive and springs from attunement to the cycles of emotion."
+        },
+        "tideShore": {
+          "title": "The Shoreline",
+          "description": "Her feet rest on pebbles with water lapping at the base of the throne: she lives on the threshold between the conscious (land) and the unconscious (sea)."
+        },
+        "crownVeil": {
+          "title": "The Crown and the Gaze",
+          "description": "A fixed, absorbed gaze on the cup beneath a modest crown: inner attention is worth more than ruling others."
+        }
+      }
+    },
+    "kingOfCups": {
+      "name": "King of Cups",
+      "intro": "The king sits on a throne floating on the restless sea, holding cup and sceptre. Mastery of emotion, compassionate wisdom and the calm of one who rules without denying depth.",
+      "regions": {
+        "cupAndSceptre": {
+          "title": "The Cup and the Sceptre",
+          "description": "One hand holds feeling, the other authority: the king balances heart and command and lets neither smother the other."
+        },
+        "floatingThrone": {
+          "title": "The Throne on the Water",
+          "description": "The throne floats among waves: he keeps stability amid turbulence. Serenity is not the absence of storm but presence within it."
+        },
+        "leapingFish": {
+          "title": "The Leaping Fish",
+          "description": "A fish leaps beside the throne: the unconscious is a welcome visitor, not a threat. The king lives alongside his deepest impulses."
+        },
+        "shipHorizon": {
+          "title": "The Ship on the Horizon",
+          "description": "A ship passes in the distance: the adventures of the outer world go on, while the king keeps the inner calm that serves as their harbor."
+        }
+      }
+    },
+    "aceOfSwords": {
+      "name": "Ace of Swords",
+      "intro": "A hand emerges from a cloud gripping a crowned sword flanked by laurel and palm. The moment of clarity: a truth that cuts through confusion and the victory of thought over doubt.",
+      "regions": {
+        "handCloud": {
+          "title": "The Hand in the Cloud",
+          "description": "Lucidity arrives as a gift and as a responsibility: the hand offers the sword, but truth serves only the one who wields it firmly."
+        },
+        "crownedSword": {
+          "title": "The Crowned Sword",
+          "description": "The crown at the tip of the blade: intellect raised to the service of good. A mind that decides with justice carries true authority."
+        },
+        "laurelPalm": {
+          "title": "The Laurel and the Palm",
+          "description": "Branches of victory and peace hang from the crown: truth that wins without destroying. The triumph of thought also brings reconciliation."
+        },
+        "barrenPeaks": {
+          "title": "The Barren Peaks",
+          "description": "Bare mountains in the background: the landscape of pure thought is cold and demanding. Clarity has altitude, and thin air does not forgive illusion."
+        }
+      }
+    },
+    "twoOfSwords": {
+      "name": "Two of Swords",
+      "intro": "A blindfolded woman crosses two swords over her chest before a calm sea under a crescent moon. Stalemate, forced balance and a decision postponed for fear of looking.",
+      "regions": {
+        "blindfold": {
+          "title": "The Blindfold",
+          "description": "She chooses not to see: the blindfold shields from immediate pain but prevents knowing the options. Deciding blind is postponing the decision."
+        },
+        "crossedSwords": {
+          "title": "The Crossed Swords",
+          "description": "Two blades in tense balance against her chest: the heart protected by reason but also held by it. Nothing advances or retreats."
+        },
+        "crescentMoon": {
+          "title": "The Crescent Moon",
+          "description": "The new moon in the sky points to intuition yet to manifest: something is about to grow, provided she lets herself see."
+        },
+        "calmSeaRocks": {
+          "title": "The Sea and the Rocks",
+          "description": "A calm sea with rocks in sight: the quiet surface hides dangers. The apparent peace depends on facing what lies submerged."
+        }
+      }
+    },
+    "threeOfSwords": {
+      "name": "Three of Swords",
+      "intro": "A red heart is pierced by three swords under clouds and rain. Grief, betrayal or a truth that hurts: pain that cannot be argued with and must be gone through to heal.",
+      "regions": {
+        "piercedHeart": {
+          "title": "The Wounded Heart",
+          "description": "The card does not soften: the heart is wounded and the pain is real. Acknowledging it is the first step, because what is denied becomes chronic."
+        },
+        "threeSwords": {
+          "title": "The Three Swords",
+          "description": "Three symmetrical blades enter together: pain that comes in one blow with many roots. Each sword names a wound: loss, word and truth."
+        },
+        "rain": {
+          "title": "The Rain",
+          "description": "Rain falls without pause: sadness also cleanses. Tears are not weakness but the soul's way of washing what it cannot carry."
+        },
+        "stormClouds": {
+          "title": "The Heavy Clouds",
+          "description": "A gray sky covers everything: the storm is a state, not a destiny. Loaded clouds pass, even when they seem permanent."
+        }
+      }
+    },
+    "fourOfSwords": {
+      "name": "Four of Swords",
+      "intro": "A knight lies in effigy on a tomb beneath a stained-glass window, with three swords on the wall. A necessary pause, retreat and the rest that restores the mind after a battle.",
+      "regions": {
+        "stainedGlass": {
+          "title": "The Stained Glass",
+          "description": "A colored sacred scene filters the light: the faith and meaning that accompany rest. Silence is not emptiness but a space of healing."
+        },
+        "effigyKnight": {
+          "title": "The Knight's Effigy",
+          "description": "Motionless, hands in prayer: the warrior lays down arms for a while. Withdrawing is also a form of courage and of strategy."
+        },
+        "hangingSwords": {
+          "title": "The Swords on the Wall",
+          "description": "Three blades hung above: thoughts and battles in suspension. They are within reach, but for now no one needs to wield them."
+        },
+        "swordBelow": {
+          "title": "The Sword Beneath the Tomb",
+          "description": "A fourth sword rests alongside the sarcophagus: strength held in reserve and at hand. Rest includes preparing to return to action."
+        }
+      }
+    },
+    "fiveOfSwords": {
+      "name": "Five of Swords",
+      "intro": "A man smiles holding three swords while two others walk away defeated. A doubtful victory, conflict won at any cost and the price of winning without generosity.",
+      "regions": {
+        "victor": {
+          "title": "The Victor",
+          "description": "The sidelong smile reveals satisfaction and contempt: he won, but he is alone. Winning the argument can cost the bond."
+        },
+        "collectedSwords": {
+          "title": "The Collected Swords",
+          "description": "He takes the weapons of the defeated: triumph measured in spoils. One who gathers others' arms lives forever awaiting the next fight."
+        },
+        "departingLosers": {
+          "title": "The Departing Losers",
+          "description": "Two figures walk with lowered heads toward the sea: the consequences of defeat. The card reminds us every conflict leaves resentment."
+        },
+        "stormySky": {
+          "title": "The Ragged Sky",
+          "description": "Long, restless clouds cut across the sky: the air is still tense after the clash. Even the winner finds no immediate calm."
+        }
+      }
+    },
+    "sixOfSwords": {
+      "name": "Six of Swords",
+      "intro": "A ferryman poles a hooded woman and child across rough water toward calm, with six swords in the hull. Crossing out of crisis: distance, transition and gradual recovery.",
+      "regions": {
+        "ferryman": {
+          "title": "The Ferryman",
+          "description": "Seen from behind, he pushes the boat with a pole: someone steers the crossing without demanding anything. Accepting help is part of recovery."
+        },
+        "hoodedPassengers": {
+          "title": "The Hooded Passengers",
+          "description": "The woman and child travel in silence, covered: the pain is still private and carried with dignity. Leaving is also a way to protect those you love."
+        },
+        "sixSwordsHull": {
+          "title": "The Six Swords",
+          "description": "Six blades stuck in the boat accompany the journey: memories and thoughts we carry. Leaving a place does not erase what we lived."
+        },
+        "twoWaters": {
+          "title": "The Two Waters",
+          "description": "The water on the left is turbulent, on the right calm: the before and the after. The change of state is gradual and already under way."
+        }
+      }
+    },
+    "sevenOfSwords": {
+      "name": "Seven of Swords",
+      "intro": "A man tiptoes away carrying five swords and leaves two behind, with a camp in the background. Strategy, stealth and the dilemma between cunning and honesty.",
+      "regions": {
+        "sneakingMan": {
+          "title": "The Sneak",
+          "description": "He walks sideways, glancing back with a smile: he trusts his own cleverness. The card asks whether the shortcut is worth the risk of being found out."
+        },
+        "fiveSwordsCarried": {
+          "title": "The Five Swords Carried",
+          "description": "He takes only what he can hold: you cannot win everything. Deciding what to carry is also deciding what to abandon."
+        },
+        "swordsLeftBehind": {
+          "title": "The Two Swords Left Behind",
+          "description": "Two blades stay stuck in the ground: what remained, forgotten or sacrificed. Every escape leaves traces that can give the fugitive away."
+        },
+        "campTents": {
+          "title": "The Camp",
+          "description": "Tents and figures in the distance: the group he slips away from unnoticed. The card speaks of secrets, broken trust and acting in hiding."
+        }
+      }
+    },
+    "eightOfSwords": {
+      "name": "Eight of Swords",
+      "intro": "A blindfolded, bound woman stands surrounded by eight swords on soaked ground. A sense of imprisonment, fear and the realization that the way out depends on your own perception.",
+      "regions": {
+        "boundBlindfold": {
+          "title": "The Blindfold and Bindings",
+          "description": "Loose cloth on her body and eyes: these bonds are slack. What traps her is the belief there is no way out more than the ropes."
+        },
+        "eightSwords": {
+          "title": "The Eight Swords",
+          "description": "The blades form a fence but leave gaps: fear draws limits reality does not impose. Obstacles are less solid than they look."
+        },
+        "wetGround": {
+          "title": "The Wet Ground",
+          "description": "Water covers her feet: emotions take over the terrain and slow each step. To get out, one must accept the mud."
+        },
+        "castleOnCliff": {
+          "title": "The Castle on the Cliff",
+          "description": "In the distance, high up, a fortress: safety is in sight. The way out exists, but it requires removing the blindfold and taking the first step."
+        }
+      }
+    },
+    "nineOfSwords": {
+      "name": "Nine of Swords",
+      "intro": "Sitting up in bed, a person hides her face in her hands beneath nine swords hung in the dark. Anxiety, guilt and the nights when the mind works against rest.",
+      "regions": {
+        "faceInHands": {
+          "title": "The Face in the Hands",
+          "description": "She weeps without seeing anyone: the suffering is private and silent. Naming the anguish is the first move toward dissolving it."
+        },
+        "nineSwordsWall": {
+          "title": "The Nine Swords",
+          "description": "Hung in the air without touching her: fears weigh more in imagination than in reality. The blades threaten, but have not yet fallen."
+        },
+        "roseQuilt": {
+          "title": "The Rose Quilt",
+          "description": "Roses and astrological symbols embroidered on the blanket: love and destiny cover her even in the dark night. There is comfort in the bed itself."
+        },
+        "carvedBed": {
+          "title": "The Carving on the Bed",
+          "description": "A scene carved on the bedframe shows a fight and a fallen figure: the source of guilt lives in memory, replayed every night without resolution."
+        }
+      }
+    },
+    "tenOfSwords": {
+      "name": "Ten of Swords",
+      "intro": "A figure lies face down with ten swords in the back, under a black sky and a dawn on the horizon. The end of a painful cycle: the worst has passed, and something new begins to be born.",
+      "regions": {
+        "tenSwords": {
+          "title": "The Ten Swords",
+          "description": "Excess and exhaustion: pain has reached its limit and can grow no more. The extreme, by itself, closes the cycle that produced it."
+        },
+        "fallenFigure": {
+          "title": "The Fallen Figure",
+          "description": "The fallen body with its red cloak: total defeat that also frees. When nothing more can hold, what remains is to begin again from the ground."
+        },
+        "dawnHorizon": {
+          "title": "The Dawn",
+          "description": "A golden band on the horizon beneath the darkness: the deepest night precedes the day. Light is already on its way, though it does not yet warm."
+        },
+        "blackSky": {
+          "title": "The Black Sky",
+          "description": "Total darkness above: the moment of despair. The card shows it without detour to say that it has a limit and that rock bottom exists."
+        }
+      }
+    },
+    "pageOfSwords": {
+      "name": "Page of Swords",
+      "intro": "A youth with windblown hair raises a sword on a hill among clouds and birds. Curiosity, vigilance and the agile mind that wants to learn, ask and discover.",
+      "regions": {
+        "raisedSword": {
+          "title": "The Raised Sword",
+          "description": "Held in both hands, pointing upward: an alert mind ready to test ideas. The blade is still young and needs training."
+        },
+        "windblownHair": {
+          "title": "The Windblown Hair",
+          "description": "Wind tousles the youth's hair and his whole body: he is exposed to shifts of thought and mood. His mind never stands still."
+        },
+        "birdsClouds": {
+          "title": "The Birds and the Clouds",
+          "description": "Birds cross the restless sky: thoughts that pass quickly, messages, news. Watching the mind is like watching a moving sky."
+        },
+        "bendingTrees": {
+          "title": "The Bending Trees",
+          "description": "Trees bend in the background: the wind's force is great, but life adapts. Flexibility protects better than rigidity."
+        }
+      }
+    },
+    "knightOfSwords": {
+      "name": "Knight of Swords",
+      "intro": "A knight with raised sword gallops on a white horse as the wind bends the trees. Intellectual drive, quick decisions and a frankness that cuts, sometimes without measuring the impact.",
+      "regions": {
+        "raisedSword": {
+          "title": "The Raised Sword",
+          "description": "Held high without hesitation: he attacks the issue head on. Clarity of purpose is great, but haste may wound those nearby."
+        },
+        "gallopingHorse": {
+          "title": "The Galloping Horse",
+          "description": "The white mount runs at its limit, hooves in the air: the speed of thought hurling forward without looking at the terrain."
+        },
+        "windBentTrees": {
+          "title": "The Wind-Bent Trees",
+          "description": "The wind bows the trees: everything in the way feels the impact. The knight moves the environment around him, whether he means to or not."
+        },
+        "stormClouds": {
+          "title": "The Torn Clouds",
+          "description": "The swirling sky accompanies the ride: the debate is intense and the mental climate agitated. A storm of ideas, with lightning and thunder."
+        }
+      }
+    },
+    "queenOfSwords": {
+      "name": "Queen of Swords",
+      "intro": "The queen with a butterfly crown holds her sword up with one hand and opens the other, on a carved throne. Clarity, independence and the wisdom of one who learned from pain and speaks frankly.",
+      "regions": {
+        "uprightSword": {
+          "title": "The Upright Sword",
+          "description": "The blade points upward, steady in her hand: clear judgment with no room for illusion. She decides with a cool head and a present heart."
+        },
+        "openHand": {
+          "title": "The Open Hand",
+          "description": "The other hand opens, receptive: she listens before judging. Truth needs room to listen, not only to speak."
+        },
+        "cherubThrone": {
+          "title": "The Cherub Throne",
+          "description": "Cherubs and butterflies carved into the throne: innocence and transformation support her authority. She knows where her power comes from."
+        },
+        "birdClouds": {
+          "title": "The Bird in the Clouds",
+          "description": "A lone bird crosses the clear sky: perspective and freedom of thought. She observes from above without clinging to drama."
+        }
+      }
+    },
+    "kingOfSwords": {
+      "name": "King of Swords",
+      "intro": "The king with a butterfly crown holds a sword, seated on a throne beneath a cloudy sky. Intellectual authority, justice and the word that governs through logic and ethics.",
+      "regions": {
+        "judgeSword": {
+          "title": "The Judge's Sword",
+          "description": "Held at his side like a sceptre: law comes before impulse. The king decides by principle rather than passing sympathy."
+        },
+        "butterflyCrown": {
+          "title": "The Butterfly Crown",
+          "description": "The symbol of the soul and of transformation crowns thought: a serene mind can change without losing steadiness."
+        },
+        "carvedThrone": {
+          "title": "The Carved Throne",
+          "description": "A sober throne adorned with symbols of spirit: a solid structure for serious decisions, without ostentation or tyranny."
+        },
+        "blueMantle": {
+          "title": "The Blue Mantle",
+          "description": "The blue of air and mind covers the king: the calm of thought that weighs before speaking. The voice comes after hearing everything."
+        }
+      }
+    },
+    "aceOfPentacles": {
+      "name": "Ace of Pentacles",
+      "intro": "A hand emerges from a cloud offering a golden pentacle above a flowering garden. A seed of prosperity: a concrete, material and promising opportunity that asks to be planted.",
+      "regions": {
+        "handCloud": {
+          "title": "The Hand in the Cloud",
+          "description": "The opportunity arrives as a gift: an invitation to receive and work with what is offered. The hand shows the pentacle, but it bears fruit only in the earth."
+        },
+        "goldenPentacle": {
+          "title": "The Golden Pentacle",
+          "description": "A coin marked with the five-pointed star: spirit incarnate in matter. True wealth is born from care for what is concrete."
+        },
+        "flowerGarden": {
+          "title": "The Flowering Garden",
+          "description": "Lilies and roses in a tended bed: fertile ground already prepared. Good conditions help, but daily care is what makes things grow."
+        },
+        "archMountains": {
+          "title": "The Arch and the Mountains",
+          "description": "An arch of foliage opens onto a path between mountains: the passage to a new stage. The seed promises what the journey will reveal."
+        }
+      }
+    },
+    "twoOfPentacles": {
+      "name": "Two of Pentacles",
+      "intro": "A juggler in a tall hat balances two pentacles bound by a figure-eight ribbon amid big waves. Adaptation, flexibility and the art of keeping several fronts going without losing rhythm.",
+      "regions": {
+        "juggledPentacles": {
+          "title": "The Two Pentacles",
+          "description": "One rises while the other falls: resources alternating between gain and spending. Continuous attention keeps either from dropping."
+        },
+        "infinityRibbon": {
+          "title": "The Infinity Ribbon",
+          "description": "The ribbon draws the lemniscate: endless motion, a continuous cycle of giving and receiving. Balance is a flow, not a fixed state."
+        },
+        "shipsWaves": {
+          "title": "The Ships on the Waves",
+          "description": "Two ships rise and fall on high waves: the fluctuations of markets and of life. Whoever can dance with the swell does not sink."
+        },
+        "tallHat": {
+          "title": "The Tall Hat",
+          "description": "A tall, light red hat: humor and lightness amid instability. Taking the work seriously, but not yourself."
+        }
+      }
+    },
+    "threeOfPentacles": {
+      "name": "Three of Pentacles",
+      "intro": "In a Gothic hall, a craftsman works on the arch while a monk and a noble discuss the plan. Teamwork, shared mastery and the value of each contribution to a common work.",
+      "regions": {
+        "craftsman": {
+          "title": "The Craftsman",
+          "description": "On the bench, he carves with tools: practical skill gives form to the vision of others. Without craft, the project never leaves the paper."
+        },
+        "carvedPentacles": {
+          "title": "The Pentacles on the Arch",
+          "description": "Three pentacles carved in stone: the concrete result of the work. A well-made work leaves a lasting mark, visible to all who pass."
+        },
+        "planPatrons": {
+          "title": "The Patrons with the Plan",
+          "description": "The monk and the noble study the plan: design, sponsorship and guidance. Each contributes the knowledge the other lacks."
+        },
+        "gothicArch": {
+          "title": "The Gothic Arch",
+          "description": "A ribbed stone vault: structure that joins pieces upward. Lasting works depend on each stone supporting the next."
+        }
+      }
+    },
+    "fourOfPentacles": {
+      "name": "Four of Pentacles",
+      "intro": "A seated man clutches a pentacle to his chest, has another on his head and two under his feet, before a city. Security, possession and the risk of closing off to protect what you have.",
+      "regions": {
+        "coinOnChest": {
+          "title": "The Pentacle on the Chest",
+          "description": "Clasped against his body: attachment to what he has. Security is legitimate, but when it is all that matters the heart narrows."
+        },
+        "coinOnHead": {
+          "title": "The Pentacle on the Head",
+          "description": "A coin crowns his thoughts: a mind occupied with what he owns. Material goods govern decisions and narrow the view."
+        },
+        "coinsUnderFeet": {
+          "title": "The Pentacles Under the Feet",
+          "description": "Two coins plant his feet on the ground: a solid base, but also an anchor. He does not move because he has too much to lose."
+        },
+        "cityBehind": {
+          "title": "The City Behind",
+          "description": "The city thrives behind him, yet he avoids it: prosperity that cuts itself off from company. Wealth gains meaning when it circulates."
+        }
+      }
+    },
+    "fiveOfPentacles": {
+      "name": "Five of Pentacles",
+      "intro": "Two injured beggars walk through snow past an illuminated stained-glass window with five pentacles. Hardship, exclusion and shelter so near yet seemingly out of reach.",
+      "regions": {
+        "stainedGlassPentacles": {
+          "title": "The Stained Glass of Pentacles",
+          "description": "Five coins arranged like the Tree of Life in a lit window: the visible refuge. Help exists, but it asks that someone knock on the door."
+        },
+        "shawledWoman": {
+          "title": "The Barefoot Woman",
+          "description": "Hunched in a shawl, barefoot on the snow: vulnerability carried without complaint. Poverty is not only lack of money but lack of welcome."
+        },
+        "crutchesMan": {
+          "title": "The Man on Crutches",
+          "description": "He walks with difficulty beside her: shared pain. Even in want, companionship supports more than possessions."
+        },
+        "snowNight": {
+          "title": "The Snow and the Night",
+          "description": "A cold, dark setting surrounds the scene: the chill of solitude. Whoever passes through feels every effort as heavy, but can also choose to ask for help."
+        }
+      }
+    },
+    "sixOfPentacles": {
+      "name": "Six of Pentacles",
+      "intro": "A merchant in a red robe weighs coins on a scale and gives them to two kneeling beggars. Generosity, reciprocity and the fairness of giving and receiving in the right measure.",
+      "regions": {
+        "merchantScales": {
+          "title": "The Scales",
+          "description": "Measuring before giving: conscious generosity assesses what each one needs. Justice is not making everything equal but giving what fits."
+        },
+        "coinsGiven": {
+          "title": "The Coins Given",
+          "description": "A coin passes from the merchant's hand to the needy one: the flow that keeps wealth alive. What is shared returns in other forms."
+        },
+        "kneelingBeggars": {
+          "title": "The Kneeling Beggars",
+          "description": "Two awaiting help, with gratitude and need: the position of the one who receives. At some moment, each of us takes one of the two sides."
+        },
+        "sixPentacles": {
+          "title": "The Six Pentacles",
+          "description": "Six coins hover above: available resources, which depend on distribution. Abundance fulfills its function only when it circulates."
+        }
+      }
+    },
+    "sevenOfPentacles": {
+      "name": "Seven of Pentacles",
+      "intro": "A young man leans on his hoe and contemplates a bush heavy with seven pentacles. A pause to assess what has been planted, patience and the doubt between waiting and acting.",
+      "regions": {
+        "leaningHoe": {
+          "title": "The Hoe",
+          "description": "He leans on his tool, gaze fixed: a moment of rest after effort. Working well includes stopping to look at what has been done."
+        },
+        "pentacleBush": {
+          "title": "The Pentacle Bush",
+          "description": "The coins grow like fruit on a plant: the return that grows with time. It is harvested not by pressure but by ripening."
+        },
+        "reflectiveGaze": {
+          "title": "The Thoughtful Gaze",
+          "description": "He assesses without hurry: is it worth continuing, or is it time to change crops? Patience requires acknowledging what has not yet worked."
+        },
+        "greenField": {
+          "title": "The Green Field",
+          "description": "The cultivated land stretches behind: months of work. The investment is already in the soil, and time is the next ingredient."
+        }
+      }
+    },
+    "eightOfPentacles": {
+      "name": "Eight of Pentacles",
+      "intro": "Seated at a bench, a craftsman carefully engraves each pentacle; several are already finished beside him. Dedication to craft, learning and the pleasure of improving through repetition.",
+      "regions": {
+        "engravingCraftsman": {
+          "title": "The Focused Craftsman",
+          "description": "Head bowed, total attention on the piece: work well done is a form of meditation. Mastery is born of patience with detail."
+        },
+        "finishedPentacles": {
+          "title": "The Finished Pentacles",
+          "description": "Six finished pieces hang in view: accumulated work. Each coin is a completed step in building competence."
+        },
+        "pentacleInProgress": {
+          "title": "The Piece in Progress",
+          "description": "One coin still lies on the ground at the foot of the bench: there is always another job waiting. Practice never ends, it only refines."
+        },
+        "distantTown": {
+          "title": "The Distant Town",
+          "description": "The rooftops behind show that the craft serves a community. Dedicated work may seem solitary, but it feeds the world."
+        }
+      }
+    },
+    "nineOfPentacles": {
+      "name": "Nine of Pentacles",
+      "intro": "An elegant woman in an embroidered gown walks alone through a vineyard with a falcon on her hand. Independence, earned comfort and the pleasure of enjoying the fruit of your own effort.",
+      "regions": {
+        "falconGlove": {
+          "title": "The Falcon on the Glove",
+          "description": "The bird of prey rests on her gloved hand, hooded: disciplined will. She masters instinct and turns it into partnership."
+        },
+        "vineyardPentacles": {
+          "title": "The Vineyard of Pentacles",
+          "description": "Grapes and coins among the vines: prosperity that came from patient cultivation. What was planted with care now yields in abundance."
+        },
+        "floralRobe": {
+          "title": "The Floral Gown",
+          "description": "Flowers embroidered in gold on the robe: beauty and refinement as an expression of what was achieved. Enjoying the fruits also honors the effort."
+        },
+        "gardenSnail": {
+          "title": "The Snail",
+          "description": "A small snail on the ground: the slow rhythm that sustains the work. Lasting wealth is made slowly, and slowness is part of maturity."
+        }
+      }
+    },
+    "tenOfPentacles": {
+      "name": "Ten of Pentacles",
+      "intro": "Under a stone arch, a patriarch, a couple, a child and two dogs occupy a courtyard where ten pentacles form the Tree of Life. Inheritance, family, tradition and prosperity that spans generations.",
+      "regions": {
+        "patriarchDogs": {
+          "title": "The Patriarch and the Dogs",
+          "description": "The elder in an embroidered robe pets the dogs: accumulated wisdom and loyalty. The legacy is cared for by those who know how to receive in return."
+        },
+        "familyChild": {
+          "title": "The Couple and the Child",
+          "description": "A couple talks while the child watches: transmission through example. The family is the first place where one learns to prosper."
+        },
+        "treeOfLifePentacles": {
+          "title": "The Pentacles as a Tree",
+          "description": "Ten coins arranged as the Tree of Life: wealth as a complete spiritual structure. Each material sphere has its place in the whole."
+        },
+        "estateArch": {
+          "title": "The Arch and the Estate",
+          "description": "The stone archway frames the castle behind: the continuity of a stable house, a haven protecting what generations have built."
+        }
+      }
+    },
+    "pageOfPentacles": {
+      "name": "Page of Pentacles",
+      "intro": "A young man in a green tunic gazes at a raised pentacle in a plowed field before the mountains. Study, practical curiosity and the start of a project that demands consistency.",
+      "regions": {
+        "raisedPentacle": {
+          "title": "The Contemplated Pentacle",
+          "description": "He raises it with both hands and studies it closely: the proposal of something concrete, treated with care and attention to detail."
+        },
+        "redCap": {
+          "title": "The Red Cap",
+          "description": "A simple red cap: the contained energy of the apprentice, modest and diligent. Enthusiasm lives in the work, not in appearance."
+        },
+        "plowedField": {
+          "title": "The Plowed Field",
+          "description": "Furrows ready for seed: the ground has been worked and waits for patience. Starting well means preparing the soil before planting."
+        },
+        "treesMountains": {
+          "title": "The Trees and the Mountains",
+          "description": "Trees and mountains in the distance: the long-term horizon. The youth looks closely at something only time will make grow."
+        }
+      }
+    },
+    "knightOfPentacles": {
+      "name": "Knight of Pentacles",
+      "intro": "An armored knight stays still on a steady black horse, holding a pentacle in a plowed field. Responsibility, perseverance and methodical work that is in no hurry.",
+      "regions": {
+        "heldPentacle": {
+          "title": "The Held Pentacle",
+          "description": "He holds it with attention and examines it: the task is in his hands. Confidence comes from fulfilling what was promised, with no shortcuts."
+        },
+        "blackHorse": {
+          "title": "The Black Horse",
+          "description": "Strong and still, with a thick mane: the energy of earth, robust and patient. It does not race, but endures any long journey."
+        },
+        "oakLeafHelmet": {
+          "title": "The Leaf Helmet",
+          "description": "Oak leaves adorn the helmet: nature's strength and durability. His authority comes from steady merit, not passing brilliance."
+        },
+        "plowedLand": {
+          "title": "The Plowed Land",
+          "description": "Straight furrows as far as the eye can see: meticulous, repeated work. Whoever trusts the process harvests at the right time."
+        }
+      }
+    },
+    "queenOfPentacles": {
+      "name": "Queen of Pentacles",
+      "intro": "The queen on a throne of fruit and goats cradles a pentacle in her lap in a garden with a rabbit. Care, abundance and the practical generosity of one who nurtures her surroundings.",
+      "regions": {
+        "pentacleLap": {
+          "title": "The Pentacle in Her Lap",
+          "description": "She holds it like a child, with both arms: wealth treated with tenderness. Caring for the material is also an act of love."
+        },
+        "hare": {
+          "title": "The Rabbit",
+          "description": "A rabbit leaps in the corner: fertility, abundance and living instinct. Nature moves freely where the queen rules with welcome."
+        },
+        "carvedThrone": {
+          "title": "The Carved Throne",
+          "description": "Goats and fruit carved in relief: the earth's vitality and the harvest. Her power rests on nature and on the plenty drawn from it."
+        },
+        "roseBower": {
+          "title": "The Rose Bower",
+          "description": "Roses bloom above her like a canopy: beauty and sensuality in balance with order. The surroundings reflect her care."
+        }
+      }
+    },
+    "kingOfPentacles": {
+      "name": "King of Pentacles",
+      "intro": "The king in a mantle of grapes sits on a throne of bulls, holding sceptre and pentacle before his castle. Prosperity, stability and the power of one who built and now administers with generosity.",
+      "regions": {
+        "pentacleSceptre": {
+          "title": "The Pentacle and the Sceptre",
+          "description": "One hand holds the coin, the other the sceptre: wealth and authority serving what he built. Ruling also means knowing how to preserve."
+        },
+        "bullThrone": {
+          "title": "The Bull Throne",
+          "description": "Bull heads on the arms of the throne: strength, stubbornness and earthly fertility. His authority is patient, yet firm as rock."
+        },
+        "grapeMantle": {
+          "title": "The Grape Mantle",
+          "description": "Embroidered vines and grapes cover the garment: harvest made into clothing. Abundance is his natural state, the fruit of decades of cultivation."
+        },
+        "castleGarden": {
+          "title": "The Castle and Garden",
+          "description": "The fortress and the flowering garden behind him: security that invites pleasure. His estate is a place of protection and also of welcome."
+        }
+      }
     }
   },
   "tarotWaite": {

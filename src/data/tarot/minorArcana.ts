@@ -10,6 +10,52 @@ import { sevenOfWands } from './seven-of-wands';
 import { queenOfWands } from './queen-of-wands';
 import { eightOfWands } from './eight-of-wands';
 import { nineOfWands } from './nine-of-wands';
+import { tenOfWands } from './ten-of-wands';
+import { pageOfWands } from './page-of-wands';
+import { knightOfWands } from './knight-of-wands';
+import { kingOfWands } from './king-of-wands';
+import { aceOfCups } from './ace-of-cups';
+import { twoOfCups } from './two-of-cups';
+import { threeOfCups } from './three-of-cups';
+import { fourOfCups } from './four-of-cups';
+import { fiveOfCups } from './five-of-cups';
+import { sixOfCups } from './six-of-cups';
+import { sevenOfCups } from './seven-of-cups';
+import { eightOfCups } from './eight-of-cups';
+import { nineOfCups } from './nine-of-cups';
+import { tenOfCups } from './ten-of-cups';
+import { pageOfCups } from './page-of-cups';
+import { knightOfCups } from './knight-of-cups';
+import { queenOfCups } from './queen-of-cups';
+import { kingOfCups } from './king-of-cups';
+import { aceOfSwords } from './ace-of-swords';
+import { twoOfSwords } from './two-of-swords';
+import { threeOfSwords } from './three-of-swords';
+import { fourOfSwords } from './four-of-swords';
+import { fiveOfSwords } from './five-of-swords';
+import { sixOfSwords } from './six-of-swords';
+import { sevenOfSwords } from './seven-of-swords';
+import { eightOfSwords } from './eight-of-swords';
+import { nineOfSwords } from './nine-of-swords';
+import { tenOfSwords } from './ten-of-swords';
+import { pageOfSwords } from './page-of-swords';
+import { knightOfSwords } from './knight-of-swords';
+import { queenOfSwords } from './queen-of-swords';
+import { kingOfSwords } from './king-of-swords';
+import { aceOfPentacles } from './ace-of-pentacles';
+import { twoOfPentacles } from './two-of-pentacles';
+import { threeOfPentacles } from './three-of-pentacles';
+import { fourOfPentacles } from './four-of-pentacles';
+import { fiveOfPentacles } from './five-of-pentacles';
+import { sixOfPentacles } from './six-of-pentacles';
+import { sevenOfPentacles } from './seven-of-pentacles';
+import { eightOfPentacles } from './eight-of-pentacles';
+import { nineOfPentacles } from './nine-of-pentacles';
+import { tenOfPentacles } from './ten-of-pentacles';
+import { pageOfPentacles } from './page-of-pentacles';
+import { knightOfPentacles } from './knight-of-pentacles';
+import { queenOfPentacles } from './queen-of-pentacles';
+import { kingOfPentacles } from './king-of-pentacles';
 
 /**
  * Catalog of the 56 Rider-Waite minor arcana (4 suits x 14 ranks).
@@ -180,4 +226,50 @@ export const minorCardData: Record<string, TarotCard> = {
   'queen-of-wands': queenOfWands,
   'eight-of-wands': eightOfWands,
   'nine-of-wands': nineOfWands,
+  'ten-of-wands': tenOfWands,
+  'page-of-wands': pageOfWands,
+  'knight-of-wands': knightOfWands,
+  'king-of-wands': kingOfWands,
+  'ace-of-cups': aceOfCups,
+  'two-of-cups': twoOfCups,
+  'three-of-cups': threeOfCups,
+  'four-of-cups': fourOfCups,
+  'five-of-cups': fiveOfCups,
+  'six-of-cups': sixOfCups,
+  'seven-of-cups': sevenOfCups,
+  'eight-of-cups': eightOfCups,
+  'nine-of-cups': nineOfCups,
+  'ten-of-cups': tenOfCups,
+  'page-of-cups': pageOfCups,
+  'knight-of-cups': knightOfCups,
+  'queen-of-cups': queenOfCups,
+  'king-of-cups': kingOfCups,
+  'ace-of-swords': aceOfSwords,
+  'two-of-swords': twoOfSwords,
+  'three-of-swords': threeOfSwords,
+  'four-of-swords': fourOfSwords,
+  'five-of-swords': fiveOfSwords,
+  'six-of-swords': sixOfSwords,
+  'seven-of-swords': sevenOfSwords,
+  'eight-of-swords': eightOfSwords,
+  'nine-of-swords': nineOfSwords,
+  'ten-of-swords': tenOfSwords,
+  'page-of-swords': pageOfSwords,
+  'knight-of-swords': knightOfSwords,
+  'queen-of-swords': queenOfSwords,
+  'king-of-swords': kingOfSwords,
+  'ace-of-pentacles': aceOfPentacles,
+  'two-of-pentacles': twoOfPentacles,
+  'three-of-pentacles': threeOfPentacles,
+  'four-of-pentacles': fourOfPentacles,
+  'five-of-pentacles': fiveOfPentacles,
+  'six-of-pentacles': sixOfPentacles,
+  'seven-of-pentacles': sevenOfPentacles,
+  'eight-of-pentacles': eightOfPentacles,
+  'nine-of-pentacles': nineOfPentacles,
+  'ten-of-pentacles': tenOfPentacles,
+  'page-of-pentacles': pageOfPentacles,
+  'knight-of-pentacles': knightOfPentacles,
+  'queen-of-pentacles': queenOfPentacles,
+  'king-of-pentacles': kingOfPentacles,
 };

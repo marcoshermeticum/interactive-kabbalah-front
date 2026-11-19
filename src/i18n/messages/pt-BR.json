@@ -945,6 +945,1018 @@
           "description": "Ele olha de lado, atento a uma ameaça que pode ou não vir: a desconfiança de quem já foi surpreendido e agora mede cada passo."
         }
       }
+    },
+    "tenOfWands": {
+      "name": "Dez de Paus",
+      "intro": "Curvado sob o peso de dez cajados amarrados, um homem caminha em direção à vila ao longe. Sobrecarga, responsabilidade assumida demais e a necessidade de repartir o peso.",
+      "regions": {
+        "bundleOfWands": {
+          "title": "O Feixe de Cajados",
+          "description": "Dez hastes carregadas juntas escondem o rosto do homem: quando se acumula demais, a tarefa passa a ofuscar quem a realiza."
+        },
+        "bentBack": {
+          "title": "As Costas Curvadas",
+          "description": "O corpo vergado mostra o custo do esforço sem pausa: o sucesso conquistado cobra seu preço quando não se sabe soltar o que já foi cumprido."
+        },
+        "distantVillage": {
+          "title": "A Vila ao Longe",
+          "description": "As casas ainda estão distantes, mas visíveis: o fim do trabalho está à vista. Só resta decidir como chegar lá sem se quebrar no caminho."
+        },
+        "dustyPath": {
+          "title": "O Caminho de Terra",
+          "description": "A trilha estreita leva direto à porta: não há atalhos. Cada passo é inevitável e cada um conta, mesmo com o fardo nos ombros."
+        }
+      }
+    },
+    "pageOfWands": {
+      "name": "Valete de Paus",
+      "intro": "Um jovem de túnica ornada de salamandras fita o cajado que segura, em meio ao deserto. Curiosidade, entusiasmo e a mensagem de uma ideia nova que pede para ser explorada.",
+      "regions": {
+        "salamanderTunic": {
+          "title": "A Túnica de Salamandras",
+          "description": "A salamandra, criatura do fogo, estampa a roupa do jovem: o elemento da carta vive nele, ainda sem dominar a própria chama."
+        },
+        "wandGaze": {
+          "title": "O Cajado Contemplado",
+          "description": "Ele observa o bastão como quem examina uma possibilidade: antes de agir, olha para a própria vontade e se pergunta o que fazer com ela."
+        },
+        "featheredHat": {
+          "title": "O Chapéu com Pena",
+          "description": "A pena no chapéu é leveza e liberdade: a mente aberta do aprendiz, pronta para ser levada pelo vento de uma nova ideia."
+        },
+        "desertPyramids": {
+          "title": "O Deserto e as Pirâmides",
+          "description": "Areia e pirâmides ao fundo: terreno árido e antigo onde só o fogo da iniciativa pode fazer algo brotar. Tudo ainda está por ser feito."
+        }
+      }
+    },
+    "knightOfWands": {
+      "name": "Cavaleiro de Paus",
+      "intro": "Um cavaleiro de armadura e túnica de salamandras avança a galope num cavalo empinado. Impulso, aventura e entusiasmo que não mede riscos, mas pode atropelar o que está no caminho.",
+      "regions": {
+        "rearingHorse": {
+          "title": "O Cavalo Empinado",
+          "description": "O cavalo avança em fúria, pronto para disparar: a energia bruta do fogo, que ainda espera a mão firme que a direcione."
+        },
+        "redPlume": {
+          "title": "A Pluma Vermelha",
+          "description": "A pluma ardente no elmo é a ousadia à mostra: o cavaleiro quer ser visto e reconhecido, e seu entusiasmo contagia quem o segue."
+        },
+        "salamanderSurcoat": {
+          "title": "A Túnica de Fogo",
+          "description": "As salamandras amarelas cobrem o peito: ele veste o próprio elemento. A paixão está à flor da pele, sem filtros entre desejo e ação."
+        },
+        "desertRide": {
+          "title": "O Deserto Aberto",
+          "description": "A cavalgada cruza areia e pirâmides: uma jornada longa e sem sombra, onde só o ímpeto mantém o ânimo, e o destino ainda não está claro."
+        }
+      }
+    },
+    "kingOfWands": {
+      "name": "Rei de Paus",
+      "intro": "O rei de manto estampado de salamandras empunha o cajado em flor, sentado num trono de leões. Visão, liderança carismática e o domínio do fogo que inspira outros a segui-lo.",
+      "regions": {
+        "buddingSceptre": {
+          "title": "O Cetro em Flor",
+          "description": "O cajado ainda dá brotos: o rei não esqueceu que o poder nasce de algo vivo. Seu comando é criador, e não apenas administrador."
+        },
+        "salamanderMantle": {
+          "title": "O Manto de Salamandras",
+          "description": "O manto bordado com salamandras mostra o fogo incorporado: ele não teme a chama porque a atravessou e a transformou em autoridade."
+        },
+        "lionThrone": {
+          "title": "O Trono de Leões e Salamandras",
+          "description": "Leões e salamandras decoram o trono: realeza fundada em coragem e paixão. O poder do rei é a soma das forças que aprendeu a conduzir."
+        },
+        "crownGaze": {
+          "title": "A Coroa e o Olhar",
+          "description": "Coroa em chamas e olhar voltado ao lado, adiante: ele enxerga longe e decide pelo futuro, não só pelo momento."
+        }
+      }
+    },
+    "aceOfCups": {
+      "name": "Ás de Copas",
+      "intro": "Uma mão sai da nuvem oferecendo um cálice transbordante, enquanto uma pomba deposita a hóstia sobre ele. O início de um amor, de uma intuição ou de uma graça que se derrama sem medida.",
+      "regions": {
+        "handCloud": {
+          "title": "A Mão na Nuvem",
+          "description": "O dom que desce do alto: o amor e a graça não se conquistam, são oferecidos. A mão apresenta o cálice e espera que você o receba."
+        },
+        "overflowingChalice": {
+          "title": "O Cálice Transbordante",
+          "description": "A taça cheia de que a água escorre: a abundância emocional que não cabe em si e precisa ser compartilhada para continuar viva."
+        },
+        "doveWafer": {
+          "title": "A Pomba e a Hóstia",
+          "description": "A pomba traz o disco sagrado marcado com uma cruz: o espírito que abençoa a matéria. O sentimento puro é também uma forma de comunhão."
+        },
+        "lotusPond": {
+          "title": "O Lago de Lótus",
+          "description": "Cinco fios de água caem num lago de lírios: os cinco sentidos alimentando a alma. Do fundo calmo da emoção brotam as flores da percepção."
+        }
+      }
+    },
+    "twoOfCups": {
+      "name": "Dois de Copas",
+      "intro": "Um homem e uma mulher trocam taças sob o caduceu alado de Hermes. Atração mútua, parceria e o pacto de dois que se reconhecem em igualdade e respeito.",
+      "regions": {
+        "cupExchange": {
+          "title": "A Troca das Taças",
+          "description": "Cada um oferece e recebe ao mesmo tempo: o vínculo verdadeiro é uma troca, nunca uma posse. As taças se encontram no centro."
+        },
+        "wingedCaduceus": {
+          "title": "O Caduceu e o Leão Alado",
+          "description": "Duas serpentes enlaçadas e uma cabeça de leão com asas: o desejo apaixonado (leão) elevado pela comunicação e pela consciência (o caduceu)."
+        },
+        "coupleWreaths": {
+          "title": "O Casal Coroado",
+          "description": "Ambos usam coroas de folhagem: uma união que celebra a vida e não nega a natureza. Estão frente a frente, no mesmo nível, sem hierarquia."
+        },
+        "houseHill": {
+          "title": "A Casa na Colina",
+          "description": "Ao fundo, uma casa entre colinas: o lugar que essa união pode construir. A carta aponta para um futuro compartilhado, ainda em formação."
+        }
+      }
+    },
+    "threeOfCups": {
+      "name": "Três de Copas",
+      "intro": "Três mulheres dançam com as taças erguidas entre frutos e guirlandas. A alegria compartilhada, a amizade e a celebração de uma colheita que ninguém conquistou sozinho.",
+      "regions": {
+        "raisedCups": {
+          "title": "As Taças Erguidas",
+          "description": "Três brindes no ar, reunidos no centro: a alegria se multiplica ao ser compartilhada. Um brinde à vida, ao encontro e ao que já se alcançou."
+        },
+        "dancingWomen": {
+          "title": "As Três Dançarinas",
+          "description": "Mãos dadas em roda, vestidas de cores diferentes: três pessoas, três temperamentos, uma só harmonia. A amizade que une sem anular as diferenças."
+        },
+        "flowerGarlands": {
+          "title": "As Guirlandas de Flores",
+          "description": "Coroas e guirlandas de flores enfeitam a dança: a festa é também um ritual de beleza, em que a natureza participa do encontro."
+        },
+        "harvestFruits": {
+          "title": "Os Frutos da Colheita",
+          "description": "Abóboras e frutas aos pés das dançarinas: a abundância que veio do trabalho e do tempo. A festa é a gratidão por aquilo que amadureceu."
+        }
+      }
+    },
+    "fourOfCups": {
+      "name": "Quatro de Copas",
+      "intro": "Um jovem de braços cruzados medita sob uma árvore, ignorando as três taças à frente enquanto uma mão oferece uma quarta. Apatia, contemplação e a oportunidade que passa despercebida.",
+      "regions": {
+        "handFourthCup": {
+          "title": "A Mão e a Quarta Taça",
+          "description": "Uma mão sai da nuvem oferecendo mais uma taça: a vida continua trazendo novas possibilidades, mesmo quando não estamos olhando para elas."
+        },
+        "threeCupsGround": {
+          "title": "As Três Taças no Chão",
+          "description": "Alinhadas à frente dele, as taças que já tem: o que foi dado se torna invisível quando a mente só quer o que falta."
+        },
+        "crossedArms": {
+          "title": "Os Braços Cruzados",
+          "description": "Postura fechada e olhar baixo: ele se protege do mundo. A introspecção ajuda, mas pode virar muro quando impede de receber."
+        },
+        "tree": {
+          "title": "A Árvore",
+          "description": "Ele repousa ao pé de uma árvore robusta: o refúgio da pausa. É um tempo legítimo de reflexão, desde que não se transforme em estagnação."
+        }
+      }
+    },
+    "fiveOfCups": {
+      "name": "Cinco de Copas",
+      "intro": "Uma figura de capa preta chora três taças derramadas, sem ver as duas que ainda estão de pé atrás dela. Luto, arrependimento e a escolha de olhar para o que ainda resta.",
+      "regions": {
+        "blackCloak": {
+          "title": "A Capa Negra",
+          "description": "O corpo envolto em luto, de costas para o que ainda tem: a dor ocupa todo o espaço e impede de ver além dela."
+        },
+        "spilledCups": {
+          "title": "As Taças Derramadas",
+          "description": "Três taças caídas e o líquido escorrido: a perda é real e merece ser sentida. A carta não pede para negar o luto, e sim para atravessá-lo."
+        },
+        "standingCups": {
+          "title": "As Duas Taças em Pé",
+          "description": "Cheias e firmes atrás dele: o que sobrou, esperando ser notado. Uma mudança de postura basta para perceber que nem tudo se perdeu."
+        },
+        "riverBridge": {
+          "title": "O Rio e a Ponte",
+          "description": "Uma ponte sobre o rio leva a uma casa ao longe: a travessia do luto é possível. A água separa, mas há caminho para o outro lado."
+        }
+      }
+    },
+    "sixOfCups": {
+      "name": "Seis de Copas",
+      "intro": "Duas crianças trocam um cálice de flores num pátio de aldeia antiga. Nostalgia, inocência e a doçura de gestos simples que lembram quem fomos e o que ainda podemos dar.",
+      "regions": {
+        "flowerCups": {
+          "title": "As Taças de Flores",
+          "description": "Seis cálices transbordam de flores brancas: lembranças que florescem. O que um dia foi guardado com carinho continua dando frutos."
+        },
+        "childrenGift": {
+          "title": "As Crianças e o Presente",
+          "description": "O mais velho oferece uma taça ao menor: generosidade sem interesse, cuidado entre gerações. A bondade mais pura se aprende cedo."
+        },
+        "villageCourtyard": {
+          "title": "O Pátio da Aldeia",
+          "description": "Casas de pedra, um brasão e um chão conhecido: o cenário da infância. Um lugar seguro ao qual a memória volta em busca de afeto."
+        },
+        "backgroundFigure": {
+          "title": "O Vulto ao Fundo",
+          "description": "Uma figura caminha ao longe, de costas: o tempo que passa e o adulto que o menino será. A lembrança convive com a vida que segue."
+        }
+      }
+    },
+    "sevenOfCups": {
+      "name": "Sete de Copas",
+      "intro": "Diante de uma silhueta sombria, sete taças flutuam entre as nuvens, cada uma com uma visão diferente. Fantasia, múltiplas opções e a necessidade de distinguir o sonho do possível.",
+      "regions": {
+        "darkSilhouette": {
+          "title": "A Silhueta Escura",
+          "description": "De costas e sem rosto, a figura somos nós diante das opções: contemplamos tudo e ainda não escolhemos nada. A dúvida é parte do desejo."
+        },
+        "veiledFigure": {
+          "title": "A Figura Velada",
+          "description": "Um vulto coberto por um pano na taça do centro: o mistério que atrai e assusta. O que ainda não se revelou pede coragem para ser descoberto."
+        },
+        "serpentDragon": {
+          "title": "A Serpente e o Dragão",
+          "description": "Visões ameaçadoras entre as promessas: nem tudo o que brilha é seguro. As ilusões trazem riscos escondidos junto ao encanto."
+        },
+        "jewelsLaurel": {
+          "title": "As Joias e os Louros",
+          "description": "Joias, uma coroa de louros e uma torre: riqueza, glória e poder prometidos. Desejos grandiosos que nem sempre têm base na realidade."
+        }
+      }
+    },
+    "eightOfCups": {
+      "name": "Oito de Copas",
+      "intro": "Sob uma lua eclipsada, um homem de manto vermelho deixa para trás oito taças arrumadas e sobe em direção às montanhas. Partir do que não satisfaz mais, em busca de um sentido maior.",
+      "regions": {
+        "departingMan": {
+          "title": "O Caminhante",
+          "description": "Ele parte de cajado na mão, sem olhar para trás: a decisão silenciosa de quem sabe que ficar seria trair a própria necessidade."
+        },
+        "stackedCups": {
+          "title": "As Oito Taças",
+          "description": "Arrumadas, completas, mas com um vão no meio: tudo parece em ordem, e ainda assim falta o essencial. O que foi construído não preenche."
+        },
+        "eclipsedMoon": {
+          "title": "A Lua Eclipsada",
+          "description": "A lua com rosto, em parte coberta pelo sol: a intuição e a razão se encontram. O ciclo emocional se encerra e outro está para começar."
+        },
+        "mountainsRiver": {
+          "title": "As Montanhas e o Rio",
+          "description": "O caminho cruza água e sobe a rocha: a busca espiritual exige travessias e esforço. O destino ainda está fora de vista."
+        }
+      }
+    },
+    "nineOfCups": {
+      "name": "Nove de Copas",
+      "intro": "Um homem satisfeito, de braços cruzados, senta diante de nove taças dispostas em arco. A carta dos desejos realizados: contentamento, prazer merecido e a alegria de poder desfrutar.",
+      "regions": {
+        "contentMan": {
+          "title": "O Homem Satisfeito",
+          "description": "Barriga à frente e sorriso discreto: ele reconhece o que conquistou. Há um prazer legítimo em simplesmente aproveitar o que se construiu."
+        },
+        "arcOfCups": {
+          "title": "O Arco de Taças",
+          "description": "As nove taças alinhadas na prateleira, todas à vista: um desejo cumprido é exibido com orgulho, como símbolo do que se alcançou."
+        },
+        "blueDrape": {
+          "title": "O Pano Azul",
+          "description": "Um tecido azul cobre a mesa e o fundo: conforto, proteção e calma emocional. Tudo está no lugar e nada precisa ser escondido."
+        },
+        "goldenBackdrop": {
+          "title": "O Fundo Dourado",
+          "description": "Um fundo amarelo intenso: a luz do otimismo e da recompensa. A vida mostra sua face mais generosa a quem soube esperar."
+        }
+      }
+    },
+    "tenOfCups": {
+      "name": "Dez de Copas",
+      "intro": "Sob um arco-íris de dez taças, um casal ergue os braços enquanto duas crianças brincam diante de uma casa. Plenitude afetiva, harmonia familiar e a felicidade que se estende a todos.",
+      "regions": {
+        "rainbowCups": {
+          "title": "O Arco-íris de Taças",
+          "description": "Dez taças desenham o arco que une céu e terra: a bênção que recompensa e abriga. Depois da chuva, a promessa de uma vida em paz."
+        },
+        "embracingCouple": {
+          "title": "O Casal de Braços Erguidos",
+          "description": "Abraçados, de costas e com os braços para o alto: gratidão compartilhada. Eles não olham um para o outro, mas na mesma direção."
+        },
+        "playingChildren": {
+          "title": "As Crianças que Dançam",
+          "description": "Duas crianças brincam sem pressa: a felicidade que se renova nas gerações. A casa só é completa quando há alegria para continuar."
+        },
+        "homeValley": {
+          "title": "A Casa e o Vale",
+          "description": "Uma casa entre árvores à beira do rio: o lar que abriga e o campo que sustenta. Raízes, estabilidade e a paz de pertencer a um lugar."
+        }
+      }
+    },
+    "pageOfCups": {
+      "name": "Valete de Copas",
+      "intro": "Um jovem de túnica florida fita um peixe que emerge de sua taça diante do mar. Mensagem inesperada, sensibilidade criativa e o convite a levar a sério a imaginação.",
+      "regions": {
+        "fishInCup": {
+          "title": "O Peixe na Taça",
+          "description": "Uma criatura do inconsciente surge sem aviso: uma ideia, um sentimento ou um sonho que quer ser olhado. Ele a encara com espanto e ternura."
+        },
+        "lotusTunic": {
+          "title": "A Túnica de Lótus",
+          "description": "Flores de lótus bordadas na roupa: pureza e sensibilidade espiritual. O jovem carrega a delicadeza como parte de sua identidade."
+        },
+        "seaWaves": {
+          "title": "O Mar Agitado",
+          "description": "As ondas ao fundo trazem o mundo emocional em movimento: o fluxo de onde saem as mensagens e as intuições que mudam o dia."
+        },
+        "blueHat": {
+          "title": "O Chapéu Azul",
+          "description": "Um turbante azul com tecido solto: a mente leve e criativa de quem ainda brinca com as formas e sonha acordado."
+        }
+      }
+    },
+    "knightOfCups": {
+      "name": "Cavaleiro de Copas",
+      "intro": "Um cavaleiro de armadura alada avança com calma, trazendo a taça diante de si. Romance, proposta sincera e a delicadeza de quem age com o coração, sem pressa de conquistar.",
+      "regions": {
+        "offeredCup": {
+          "title": "A Taça Oferecida",
+          "description": "Ele a estende com as duas mãos: um gesto de entrega, e não de exigência. O presente é o sentimento, apresentado com respeito."
+        },
+        "wingedHelmet": {
+          "title": "O Elmo Alado",
+          "description": "Asas no elmo e nos calcanhares, como Mercúrio: imaginação e mensagens que voam. A cavalaria aqui serve ao ideal e à inspiração."
+        },
+        "whiteHorse": {
+          "title": "O Cavalo Branco Calmo",
+          "description": "A montaria anda a passo, sem pressa: ele escolhe a ternura e a paciência. A emoção guia o ritmo, em vez da ambição."
+        },
+        "riverMountains": {
+          "title": "O Rio e a Colina",
+          "description": "Um riacho serpenteia entre colinas distantes: o fluxo do sentimento que atravessa a paisagem e leva a cavalgada em direção ao destino."
+        }
+      }
+    },
+    "queenOfCups": {
+      "name": "Rainha de Copas",
+      "intro": "A rainha contempla uma taça ornamentada e fechada, sentada num trono à beira-mar. Intuição profunda, compaixão e a capacidade de sentir o outro sem perder o próprio centro.",
+      "regions": {
+        "ornateCup": {
+          "title": "A Taça Fechada",
+          "description": "Diferente das outras, esta taça tem tampa e anjos nas alças: o sentimento sagrado guardado com cuidado. Ela o sustenta, sem derramá-lo."
+        },
+        "shellThrone": {
+          "title": "O Trono de Conchas",
+          "description": "Um trono decorado com conchas e crianças aladas: o mar o molda. Seu poder é sensível e nasce da sintonia com os ciclos da emoção."
+        },
+        "tideShore": {
+          "title": "A Orla do Mar",
+          "description": "Seus pés repousam sobre seixos, com a água a lamber a base do trono: ela vive no limiar entre o consciente (terra) e o inconsciente (mar)."
+        },
+        "crownVeil": {
+          "title": "A Coroa e o Olhar",
+          "description": "Um olhar fixo e absorto na taça, sob uma coroa discreta: a atenção interior vale mais do que o domínio sobre os outros."
+        }
+      }
+    },
+    "kingOfCups": {
+      "name": "Rei de Copas",
+      "intro": "O rei senta num trono flutuante sobre o mar agitado, com taça e cetro nas mãos. Domínio das emoções, sabedoria compassiva e a calma de quem governa sem negar a profundidade.",
+      "regions": {
+        "cupAndSceptre": {
+          "title": "A Taça e o Cetro",
+          "description": "Uma mão guarda o sentimento, a outra, a autoridade: o rei equilibra coração e comando e não deixa um sufocar o outro."
+        },
+        "floatingThrone": {
+          "title": "O Trono nas Águas",
+          "description": "O trono boia entre ondas: ele mantém a estabilidade no meio da turbulência. Serenidade não é ausência de tempestade, é presença nela."
+        },
+        "leapingFish": {
+          "title": "O Peixe que Salta",
+          "description": "Um peixe pula ao lado do trono: o inconsciente é visitante bem-vindo, não ameaça. O rei convive com seus impulsos profundos."
+        },
+        "shipHorizon": {
+          "title": "O Navio no Horizonte",
+          "description": "Um barco cruza ao longe: as aventuras do mundo exterior continuam, enquanto o rei guarda a calma interior que lhes serve de porto."
+        }
+      }
+    },
+    "aceOfSwords": {
+      "name": "Ás de Espadas",
+      "intro": "Uma mão emerge da nuvem empunhando uma espada coroada, ladeada por louros e palmas. O momento da clareza: uma verdade que corta a confusão e a vitória do pensamento sobre a dúvida.",
+      "regions": {
+        "handCloud": {
+          "title": "A Mão na Nuvem",
+          "description": "A lucidez chega como dom e como responsabilidade: a mão oferece a espada, mas a verdade só serve a quem a empunha com firmeza."
+        },
+        "crownedSword": {
+          "title": "A Espada Coroada",
+          "description": "A coroa no alto da lâmina: o intelecto elevado a serviço do bem. A mente que decide com justiça tem autoridade de verdade."
+        },
+        "laurelPalm": {
+          "title": "O Louro e a Palma",
+          "description": "Os ramos de vitória e de paz pendem da coroa: a verdade que vence sem destruir. O triunfo do pensamento traz também reconciliação."
+        },
+        "barrenPeaks": {
+          "title": "Os Picos Áridos",
+          "description": "Montanhas nuas ao fundo: a paisagem do pensamento puro é fria e exigente. Clareza tem altitude, e o ar rarefeito não perdoa a ilusão."
+        }
+      }
+    },
+    "twoOfSwords": {
+      "name": "Dois de Espadas",
+      "intro": "Uma mulher de olhos vendados cruza duas espadas sobre o peito, diante de um mar calmo sob a lua crescente. Impasse, equilíbrio forçado e a decisão adiada por medo de olhar.",
+      "regions": {
+        "blindfold": {
+          "title": "A Venda nos Olhos",
+          "description": "Ela escolhe não ver: a venda protege da dor imediata, mas impede de conhecer as opções. Decidir às cegas é adiar a decisão."
+        },
+        "crossedSwords": {
+          "title": "As Espadas Cruzadas",
+          "description": "Duas lâminas em equilíbrio tenso contra o peito: o coração protegido pela razão, mas também preso por ela. Nada avança nem recua."
+        },
+        "crescentMoon": {
+          "title": "A Lua Crescente",
+          "description": "A lua nova no céu aponta para a intuição ainda por se manifestar: algo está prestes a crescer, desde que ela se permita enxergar."
+        },
+        "calmSeaRocks": {
+          "title": "O Mar e as Rochas",
+          "description": "Um mar calmo com rochas à vista: a superfície tranquila esconde perigos. A paz aparente depende de enfrentar o que está submerso."
+        }
+      }
+    },
+    "threeOfSwords": {
+      "name": "Três de Espadas",
+      "intro": "Um coração vermelho é atravessado por três espadas sob nuvens e chuva. O luto, a traição ou a verdade que dói: a dor que não se discute e precisa ser atravessada para curar.",
+      "regions": {
+        "piercedHeart": {
+          "title": "O Coração Ferido",
+          "description": "A carta não suaviza: o coração está ferido e a dor é real. Reconhecê-la é o primeiro passo, porque o que é negado se cronifica."
+        },
+        "threeSwords": {
+          "title": "As Três Espadas",
+          "description": "Três lâminas simétricas entram juntas: a dor que vem de um só golpe com várias raízes. Cada espada nomeia uma ferida: perda, palavra e verdade."
+        },
+        "rain": {
+          "title": "A Chuva",
+          "description": "A chuva cai sem parar: a tristeza também limpa. As lágrimas não são fraqueza, são o modo de a alma lavar o que não pode carregar."
+        },
+        "stormClouds": {
+          "title": "As Nuvens Pesadas",
+          "description": "Um céu cinza cobre tudo: a tempestade é um estado, não um destino. Nuvens carregadas passam, mesmo quando parecem permanentes."
+        }
+      }
+    },
+    "fourOfSwords": {
+      "name": "Quatro de Espadas",
+      "intro": "Um cavaleiro repousa em efígie sobre um túmulo, sob um vitral, com três espadas na parede. Pausa necessária, recolhimento e o descanso que recompõe a mente depois de uma batalha.",
+      "regions": {
+        "stainedGlass": {
+          "title": "O Vitral",
+          "description": "Uma cena sagrada colorida filtra a luz: a fé e o sentido que acompanham o descanso. Silêncio não é vazio, é um espaço de cura."
+        },
+        "effigyKnight": {
+          "title": "A Efígie do Cavaleiro",
+          "description": "Imóvel, mãos em prece: o guerreiro depõe as armas por um tempo. Recolher-se também é uma forma de coragem e de estratégia."
+        },
+        "hangingSwords": {
+          "title": "As Espadas na Parede",
+          "description": "Três lâminas penduradas acima: os pensamentos e as batalhas em suspenso. Estão ao alcance, mas, por ora, ninguém precisa empunhá-las."
+        },
+        "swordBelow": {
+          "title": "A Espada Sob o Túmulo",
+          "description": "Uma quarta espada repousa junto ao sarcófago: a força guardada e à mão. O descanso inclui preparar-se para voltar à ação."
+        }
+      }
+    },
+    "fiveOfSwords": {
+      "name": "Cinco de Espadas",
+      "intro": "Um homem sorri segurando três espadas, enquanto dois outros se afastam derrotados. Vitória duvidosa, conflito vencido a qualquer custo e o preço de ganhar sem generosidade.",
+      "regions": {
+        "victor": {
+          "title": "O Vencedor",
+          "description": "O sorriso de canto revela satisfação e desprezo: ele venceu, mas está sozinho. Ganhar a discussão pode custar o vínculo."
+        },
+        "collectedSwords": {
+          "title": "As Espadas Recolhidas",
+          "description": "Ele toma as armas dos derrotados: o triunfo se mede em despojos. Quem acumula armas alheias vive sempre à espera da próxima luta."
+        },
+        "departingLosers": {
+          "title": "Os que Se Afastam",
+          "description": "Dois vultos caminham de cabeça baixa rumo ao mar: as consequências da derrota. A carta lembra que todo conflito deixa ressentimentos."
+        },
+        "stormySky": {
+          "title": "O Céu Rasgado",
+          "description": "Nuvens longas e agitadas cortam o céu: o ar ainda está tenso depois do embate. Mesmo o vencedor não encontra calma imediata."
+        }
+      }
+    },
+    "sixOfSwords": {
+      "name": "Seis de Espadas",
+      "intro": "Um barqueiro conduz uma mulher e uma criança encapuzadas por águas agitadas rumo a águas calmas, com seis espadas no casco. A travessia da crise: distância, transição e recuperação gradual.",
+      "regions": {
+        "ferryman": {
+          "title": "O Barqueiro",
+          "description": "De costas, empurra a embarcação com uma vara: alguém conduz a travessia sem exigir nada. Aceitar ajuda também é parte da recuperação."
+        },
+        "hoodedPassengers": {
+          "title": "Os Passageiros Encapuzados",
+          "description": "A mulher e a criança seguem em silêncio, cobertas: a dor ainda é discreta e carregada com dignidade. Partir também é proteger quem se ama."
+        },
+        "sixSwordsHull": {
+          "title": "As Seis Espadas",
+          "description": "Seis lâminas fincadas no barco acompanham a viagem: as lembranças e os pensamentos que se carregam. Deixar o lugar não apaga o que se viveu."
+        },
+        "twoWaters": {
+          "title": "As Duas Águas",
+          "description": "A água à esquerda é turbulenta, à direita, calma: o antes e o depois. A mudança de estado é gradual e já está em curso."
+        }
+      }
+    },
+    "sevenOfSwords": {
+      "name": "Sete de Espadas",
+      "intro": "Um homem se afasta na ponta dos pés carregando cinco espadas e deixa duas para trás, com um acampamento ao fundo. Estratégia, furtividade e o dilema entre a astúcia e a honestidade.",
+      "regions": {
+        "sneakingMan": {
+          "title": "O Furtivo",
+          "description": "Anda de lado, olhando para trás com um sorriso: confia na própria esperteza. A carta pergunta se o atalho vale o risco de ser descoberto."
+        },
+        "fiveSwordsCarried": {
+          "title": "As Cinco Espadas",
+          "description": "Ele leva só o que consegue segurar: não dá para ganhar tudo. Decidir o que levar é também decidir o que abandonar."
+        },
+        "swordsLeftBehind": {
+          "title": "As Duas Espadas Deixadas",
+          "description": "Duas lâminas ficam cravadas no solo: o que sobrou, esquecido ou sacrificado. Toda fuga deixa rastros que podem entregar quem foge."
+        },
+        "campTents": {
+          "title": "O Acampamento",
+          "description": "Tendas e figuras ao longe: o grupo de onde ele sai sem aviso. A carta fala de segredos, de confiança rompida e de agir às escondidas."
+        }
+      }
+    },
+    "eightOfSwords": {
+      "name": "Oito de Espadas",
+      "intro": "Uma mulher de olhos vendados e amarrada está cercada por oito espadas num chão encharcado. Sensação de prisão, medo e a revelação de que a saída depende da própria percepção.",
+      "regions": {
+        "boundBlindfold": {
+          "title": "A Venda e as Amarras",
+          "description": "O tecido solto no corpo e nos olhos: as prisões aqui são folgadas. O que prende é a crença de que não há saída, mais do que as cordas."
+        },
+        "eightSwords": {
+          "title": "As Oito Espadas",
+          "description": "As lâminas formam uma cerca, mas deixam brechas: o medo desenha limites que a realidade não impõe. Os obstáculos são menos sólidos do que parecem."
+        },
+        "wetGround": {
+          "title": "O Chão Molhado",
+          "description": "A água cobre os pés dela: as emoções tomam conta do terreno e dificultam o passo. Para sair, é preciso aceitar a lama."
+        },
+        "castleOnCliff": {
+          "title": "O Castelo no Penhasco",
+          "description": "Ao longe, no alto, uma fortaleza: a segurança está à vista. A saída existe, mas exige tirar a venda e dar o primeiro passo."
+        }
+      }
+    },
+    "nineOfSwords": {
+      "name": "Nove de Espadas",
+      "intro": "Sentada na cama, uma pessoa esconde o rosto nas mãos sob nove espadas penduradas na escuridão. Ansiedade, culpa e as noites em que a mente trabalha contra o descanso.",
+      "regions": {
+        "faceInHands": {
+          "title": "O Rosto nas Mãos",
+          "description": "Ela chora sem ver ninguém: o sofrimento é privado e silencioso. Nomear a angústia é o primeiro movimento para dissolvê-la."
+        },
+        "nineSwordsWall": {
+          "title": "As Nove Espadas",
+          "description": "Penduradas no ar, sem tocá-la: os medos pesam mais na imaginação do que na realidade. As lâminas ameaçam, mas ainda não caíram."
+        },
+        "roseQuilt": {
+          "title": "A Colcha de Rosas",
+          "description": "Rosas e símbolos astrológicos bordados na manta: o amor e o destino a cobrem, mesmo na noite escura. Há consolo na própria cama."
+        },
+        "carvedBed": {
+          "title": "O Entalhe na Cama",
+          "description": "Uma cena gravada no leito mostra uma luta e uma figura caída: a origem da culpa está na memória, repetida a cada noite sem solução."
+        }
+      }
+    },
+    "tenOfSwords": {
+      "name": "Dez de Espadas",
+      "intro": "Uma figura jaz de bruços com dez espadas nas costas, sob um céu negro e um amanhecer no horizonte. O fim de um ciclo doloroso: o pior já passou, e algo novo começa a nascer.",
+      "regions": {
+        "tenSwords": {
+          "title": "As Dez Espadas",
+          "description": "Excesso e esgotamento: a dor chegou ao limite e já não pode crescer mais. O extremo, por si só, encerra o ciclo que o produziu."
+        },
+        "fallenFigure": {
+          "title": "A Figura Caída",
+          "description": "O corpo caído, com a capa vermelha: a derrota total que também liberta. Quando nada mais se sustenta, resta recomeçar do chão."
+        },
+        "dawnHorizon": {
+          "title": "O Amanhecer",
+          "description": "Uma faixa dourada no horizonte, sob a escuridão: a noite mais densa precede o dia. A luz já está a caminho, embora ainda não aqueça."
+        },
+        "blackSky": {
+          "title": "O Céu Negro",
+          "description": "Escuridão total no alto: o momento do desespero. A carta o mostra sem rodeios para dizer que ele tem limite e que o fundo existe."
+        }
+      }
+    },
+    "pageOfSwords": {
+      "name": "Valete de Espadas",
+      "intro": "Um jovem de cabelo ao vento ergue uma espada sobre uma colina, entre nuvens e pássaros. Curiosidade, vigilância e a mente ágil que quer aprender, perguntar e descobrir.",
+      "regions": {
+        "raisedSword": {
+          "title": "A Espada Erguida",
+          "description": "Segura com as duas mãos, apontando para o alto: a mente alerta e pronta para testar ideias. A lâmina ainda é jovem e precisa de treino."
+        },
+        "windblownHair": {
+          "title": "O Cabelo ao Vento",
+          "description": "O vento bagunça os cabelos e o corpo inteiro do jovem: ele está exposto às mudanças de ideia e de humor. Sua mente nunca fica parada."
+        },
+        "birdsClouds": {
+          "title": "Os Pássaros e as Nuvens",
+          "description": "Aves cruzam o céu agitado: pensamentos que passam rápido, mensagens, notícias. Observar a mente é como observar um céu em movimento."
+        },
+        "bendingTrees": {
+          "title": "As Árvores ao Vento",
+          "description": "Árvores se curvam ao fundo: a força do ar é grande, mas a vida se adapta. A flexibilidade protege melhor do que a rigidez."
+        }
+      }
+    },
+    "knightOfSwords": {
+      "name": "Cavaleiro de Espadas",
+      "intro": "Um cavaleiro de espada em riste galopa num cavalo branco, enquanto o vento dobra as árvores. Ímpeto intelectual, decisão rápida e a franqueza que corta, às vezes sem medir o impacto.",
+      "regions": {
+        "raisedSword": {
+          "title": "A Espada em Riste",
+          "description": "Empunhada alto, sem hesitar: ele ataca a questão de frente. A clareza de propósito é grande, mas a pressa pode ferir quem está perto."
+        },
+        "gallopingHorse": {
+          "title": "O Cavalo a Galope",
+          "description": "A montaria branca corre ao limite, com as patas no ar: a velocidade do pensamento que se lança sem olhar o terreno."
+        },
+        "windBentTrees": {
+          "title": "As Árvores Dobradas",
+          "description": "O vento verga as árvores: tudo que está no caminho sofre o impacto. O cavaleiro move o ambiente à sua volta, queira ou não."
+        },
+        "stormClouds": {
+          "title": "As Nuvens Rasgadas",
+          "description": "O céu em turbilhão acompanha a cavalgada: o debate é intenso e o ambiente mental, agitado. Tempestade de ideias, com raios e trovões."
+        }
+      }
+    },
+    "queenOfSwords": {
+      "name": "Rainha de Espadas",
+      "intro": "A rainha de coroa de borboletas ergue a espada com uma mão e abre a outra, num trono entalhado. Lucidez, independência e a sabedoria de quem aprendeu com a dor e fala com franqueza.",
+      "regions": {
+        "uprightSword": {
+          "title": "A Espada Vertical",
+          "description": "A lâmina aponta para o alto, firme na mão: o julgamento claro, sem espaço para ilusões. Decide com a cabeça fria e o coração presente."
+        },
+        "openHand": {
+          "title": "A Mão Aberta",
+          "description": "A outra mão se abre, receptiva: ela ouve antes de julgar. A verdade precisa de espaço para escutar e não só para falar."
+        },
+        "cherubThrone": {
+          "title": "O Trono de Querubins",
+          "description": "Querubins e borboletas esculpidos no trono: a inocência e a transformação sustentam sua autoridade. Ela sabe de onde vem o seu poder."
+        },
+        "birdClouds": {
+          "title": "A Ave nas Nuvens",
+          "description": "Uma ave solitária cruza o céu limpo: perspectiva e liberdade de pensamento. Ela observa de cima, sem se prender ao drama."
+        }
+      }
+    },
+    "kingOfSwords": {
+      "name": "Rei de Espadas",
+      "intro": "O rei de coroa de borboletas empunha uma espada, sentado num trono sob um céu de nuvens. Autoridade intelectual, justiça e a palavra que governa com lógica e ética.",
+      "regions": {
+        "judgeSword": {
+          "title": "A Espada do Juiz",
+          "description": "Empunhada de lado, como um cetro: a lei vem antes do impulso. O rei decide por princípios e não por simpatias passageiras."
+        },
+        "butterflyCrown": {
+          "title": "A Coroa de Borboletas",
+          "description": "O símbolo da alma e da transformação coroa o pensamento: a mente serena é capaz de mudar sem perder a firmeza."
+        },
+        "carvedThrone": {
+          "title": "O Trono Entalhado",
+          "description": "Um trono sóbrio, adornado com símbolos do espírito: estrutura sólida para decisões sérias, sem ostentação nem tirania."
+        },
+        "blueMantle": {
+          "title": "O Manto Azul",
+          "description": "O azul do ar e da mente cobre o rei: a calma do pensamento que pondera antes de falar. A voz vem depois de ouvir tudo."
+        }
+      }
+    },
+    "aceOfPentacles": {
+      "name": "Ás de Ouros",
+      "intro": "Uma mão surge da nuvem oferecendo um pentáculo dourado sobre um jardim florido. Uma semente de prosperidade: uma oportunidade concreta, material e promissora que pede para ser plantada.",
+      "regions": {
+        "handCloud": {
+          "title": "A Mão na Nuvem",
+          "description": "A oportunidade chega como dádiva: o convite a receber e a trabalhar com o que foi oferecido. A mão mostra o pentáculo, mas ele só frutifica na terra."
+        },
+        "goldenPentacle": {
+          "title": "O Pentáculo Dourado",
+          "description": "Uma moeda marcada com a estrela de cinco pontas: o espírito encarnado na matéria. A riqueza verdadeira nasce do cuidado com o que é concreto."
+        },
+        "flowerGarden": {
+          "title": "O Jardim Florido",
+          "description": "Lírios e rosas em um canteiro cuidado: o terreno fértil já preparado. Boas condições ajudam, mas é o cuidado diário que faz crescer."
+        },
+        "archMountains": {
+          "title": "O Arco e as Montanhas",
+          "description": "Um arco de folhagem se abre para o caminho entre montanhas: a passagem para uma nova etapa. A semente promete o que o percurso revelará."
+        }
+      }
+    },
+    "twoOfPentacles": {
+      "name": "Dois de Ouros",
+      "intro": "Um malabarista de chapéu alto equilibra dois pentáculos presos por uma faixa em oito, entre ondas grandes. Adaptação, flexibilidade e a arte de manter várias frentes sem perder o ritmo.",
+      "regions": {
+        "juggledPentacles": {
+          "title": "Os Dois Pentáculos",
+          "description": "Um sobe enquanto o outro desce: recursos que se alternam entre ganho e gasto. A atenção contínua evita que algum caia."
+        },
+        "infinityRibbon": {
+          "title": "A Faixa do Infinito",
+          "description": "A fita desenha o lemniscata: movimento sem fim, ciclo contínuo de dar e receber. O equilíbrio é um fluxo, não um estado fixo."
+        },
+        "shipsWaves": {
+          "title": "Os Navios nas Ondas",
+          "description": "Duas embarcações sobem e descem em ondas altas: as flutuações do mercado e da vida. Quem sabe dançar com a oscilação não naufraga."
+        },
+        "tallHat": {
+          "title": "O Chapéu Alto",
+          "description": "Um chapéu vermelho, alto e leve: humor e ligeireza diante da instabilidade. Levar a sério o trabalho, mas não a si mesmo."
+        }
+      }
+    },
+    "threeOfPentacles": {
+      "name": "Três de Ouros",
+      "intro": "Num salão gótico, um artesão trabalha sobre o arco enquanto um monge e um nobre discutem a planta. Trabalho em equipe, mestria compartilhada e o valor de cada contribuição numa obra comum.",
+      "regions": {
+        "craftsman": {
+          "title": "O Artesão",
+          "description": "Sobre o banco, ele esculpe com ferramentas: a competência prática dá forma à visão dos outros. Sem mão de obra, o projeto não passa do papel."
+        },
+        "carvedPentacles": {
+          "title": "Os Pentáculos no Arco",
+          "description": "Três pentáculos gravados na pedra: o resultado concreto do trabalho. A obra bem feita deixa marca duradoura, visível a quem passar."
+        },
+        "planPatrons": {
+          "title": "Os Mentores com a Planta",
+          "description": "O monge e o nobre estudam o projeto: planejamento, patrocínio e orientação. Cada um contribui com o saber que o outro não tem."
+        },
+        "gothicArch": {
+          "title": "O Arco Gótico",
+          "description": "Uma abóbada de pedra nervurada: a estrutura que une peças em direção ao alto. Obras duradouras dependem de que cada pedra sustente a outra."
+        }
+      }
+    },
+    "fourOfPentacles": {
+      "name": "Quatro de Ouros",
+      "intro": "Um homem sentado agarra um pentáculo contra o peito, tem outro sobre a cabeça e dois sob os pés, diante de uma cidade. Segurança, posse e o risco de se fechar para proteger o que se tem.",
+      "regions": {
+        "coinOnChest": {
+          "title": "O Pentáculo no Peito",
+          "description": "Abraçado contra o corpo: o apego ao que se tem. A segurança é legítima, mas, quando é tudo o que importa, o coração se estreita."
+        },
+        "coinOnHead": {
+          "title": "O Pentáculo na Cabeça",
+          "description": "Uma moeda coroa os pensamentos: a mente ocupada com o que se possui. O bem material governa as decisões e limita a visão."
+        },
+        "coinsUnderFeet": {
+          "title": "Os Pentáculos sob os Pés",
+          "description": "Duas moedas firmam os pés no chão: base sólida, mas também âncora. Ele não se move porque tem demais a perder."
+        },
+        "cityBehind": {
+          "title": "A Cidade ao Fundo",
+          "description": "A cidade prospera atrás dele, mas ele a evita: a prosperidade que se isola do convívio. A riqueza ganha sentido quando circula."
+        }
+      }
+    },
+    "fiveOfPentacles": {
+      "name": "Cinco de Ouros",
+      "intro": "Dois mendigos feridos caminham na neve diante de um vitral iluminado com cinco pentáculos. Carência, exclusão e o abrigo que está tão perto e ainda assim parece fora do alcance.",
+      "regions": {
+        "stainedGlassPentacles": {
+          "title": "O Vitral de Pentáculos",
+          "description": "Cinco moedas dispostas como a Árvore da Vida numa janela acesa: o refúgio visível. A ajuda existe, mas pede que alguém bata à porta."
+        },
+        "shawledWoman": {
+          "title": "A Mulher Descalça",
+          "description": "Encolhida num xale, de pés descalços sobre a neve: a vulnerabilidade levada sem queixa. A pobreza não é só falta de dinheiro, é falta de acolhimento."
+        },
+        "crutchesMan": {
+          "title": "O Homem de Muletas",
+          "description": "Ele caminha com dificuldade ao lado dela: a dor compartilhada. Mesmo na carência, o companheirismo sustenta mais do que as posses."
+        },
+        "snowNight": {
+          "title": "A Neve e a Noite",
+          "description": "Um cenário gelado e escuro envolve a cena: o frio da solidão. Quem passa por ele sente cada esforço pesado, mas também pode escolher pedir ajuda."
+        }
+      }
+    },
+    "sixOfPentacles": {
+      "name": "Seis de Ouros",
+      "intro": "Um mercador de manto vermelho pesa moedas numa balança e as dá a dois mendigos que se ajoelham. Generosidade, reciprocidade e a justiça de dar e receber na medida certa.",
+      "regions": {
+        "merchantScales": {
+          "title": "A Balança",
+          "description": "Medir antes de dar: a generosidade consciente avalia o que cada um precisa. A justiça não é igualar tudo, é dar o que cabe."
+        },
+        "coinsGiven": {
+          "title": "As Moedas Dadas",
+          "description": "Uma moeda passa da mão do mercador à do necessitado: o fluxo que mantém a riqueza viva. O que se compartilha volta de outras formas."
+        },
+        "kneelingBeggars": {
+          "title": "Os Pedintes Ajoelhados",
+          "description": "Dois à espera de ajuda, com gratidão e necessidade: a posição de quem recebe. Todos, em algum momento, ocupamos um dos dois lados."
+        },
+        "sixPentacles": {
+          "title": "Os Seis Pentáculos",
+          "description": "Seis moedas pairam acima: os recursos disponíveis, que dependem da distribuição. A abundância só cumpre sua função quando circula."
+        }
+      }
+    },
+    "sevenOfPentacles": {
+      "name": "Sete de Ouros",
+      "intro": "Um jovem se apoia na enxada e contempla um arbusto carregado de sete pentáculos. Pausa para avaliar o que já foi plantado, paciência e a dúvida entre esperar ou agir.",
+      "regions": {
+        "leaningHoe": {
+          "title": "A Enxada",
+          "description": "Ele se apoia na ferramenta, de olhar fixo: um momento de descanso depois do esforço. Trabalhar bem inclui parar para olhar o que se fez."
+        },
+        "pentacleBush": {
+          "title": "O Arbusto de Pentáculos",
+          "description": "As moedas brotam como frutos de uma planta: o retorno que cresce com o tempo. Não se colhe por pressão, mas por amadurecimento."
+        },
+        "reflectiveGaze": {
+          "title": "O Olhar Pensativo",
+          "description": "Ele avalia sem pressa: vale o esforço continuar, ou é hora de mudar de plantio? A paciência exige reconhecer o que ainda não deu certo."
+        },
+        "greenField": {
+          "title": "O Campo Verde",
+          "description": "O terreno cultivado se estende atrás: o trabalho de meses. O investimento já está na terra, e o tempo é o próximo ingrediente."
+        }
+      }
+    },
+    "eightOfPentacles": {
+      "name": "Oito de Ouros",
+      "intro": "Sentado a um banco, um artesão grava com cuidado cada pentáculo; vários já estão prontos ao lado. Dedicação ao ofício, aprendizado e o prazer de aperfeiçoar-se pela repetição.",
+      "regions": {
+        "engravingCraftsman": {
+          "title": "O Artesão Concentrado",
+          "description": "Cabeça baixa, atenção total à peça: o trabalho bem feito é uma forma de meditação. A mestria nasce da paciência com os detalhes."
+        },
+        "finishedPentacles": {
+          "title": "Os Pentáculos Prontos",
+          "description": "Seis peças acabadas, penduradas à vista: a obra acumulada. Cada moeda é um passo concluído na construção de uma competência."
+        },
+        "pentacleInProgress": {
+          "title": "A Peça em Andamento",
+          "description": "Uma moeda ainda está no chão, ao pé do banco: sempre há mais um trabalho esperando. A prática nunca termina, apenas se refina."
+        },
+        "distantTown": {
+          "title": "A Cidade ao Longe",
+          "description": "Os telhados ao fundo mostram que o ofício serve a uma comunidade. O trabalho dedicado pode parecer isolado, mas alimenta o mundo."
+        }
+      }
+    },
+    "nineOfPentacles": {
+      "name": "Nove de Ouros",
+      "intro": "Uma mulher elegante, de vestido bordado, caminha sozinha por um vinhedo com um falcão na mão. Independência, conforto conquistado e o prazer de desfrutar o fruto do próprio esforço.",
+      "regions": {
+        "falconGlove": {
+          "title": "O Falcão na Luva",
+          "description": "A ave de caça repousa na mão enluvada, com o capuz: a vontade disciplinada. Ela domina o instinto e o transforma em parceria."
+        },
+        "vineyardPentacles": {
+          "title": "O Vinhedo de Pentáculos",
+          "description": "Cachos e moedas entre as videiras: a prosperidade que veio do cultivo paciente. O que se plantou com cuidado agora rende em abundância."
+        },
+        "floralRobe": {
+          "title": "O Vestido Florido",
+          "description": "Flores bordadas em ouro no manto: beleza e refinamento como expressão do que se conquistou. Gozar dos frutos é também honrar o esforço."
+        },
+        "gardenSnail": {
+          "title": "O Caracol",
+          "description": "Um pequeno caracol no chão: o ritmo lento que sustenta a obra. A riqueza duradoura se faz devagar, e a lentidão é parte da maturidade."
+        }
+      }
+    },
+    "tenOfPentacles": {
+      "name": "Dez de Ouros",
+      "intro": "Sob um arco de pedra, um patriarca, um casal, uma criança e dois cães ocupam um pátio onde dez pentáculos formam a Árvore da Vida. Herança, família, tradição e prosperidade que atravessa gerações.",
+      "regions": {
+        "patriarchDogs": {
+          "title": "O Patriarca e os Cães",
+          "description": "O ancião de manto bordado acaricia os cães: a sabedoria acumulada e a lealdade. O legado é cuidado por quem sabe receber de volta."
+        },
+        "familyChild": {
+          "title": "O Casal e a Criança",
+          "description": "Um casal conversa enquanto a criança observa: a transmissão que se faz pelo exemplo. A família é o primeiro lugar onde se aprende a prosperar."
+        },
+        "treeOfLifePentacles": {
+          "title": "Os Pentáculos em Árvore",
+          "description": "Dez moedas dispostas como a Árvore da Vida: a riqueza como estrutura espiritual completa. Cada esfera material tem seu lugar no todo."
+        },
+        "estateArch": {
+          "title": "O Arco e a Propriedade",
+          "description": "A arcada de pedra emoldura o castelo ao fundo: a continuidade de uma casa estável, um refúgio que protege o que as gerações construíram."
+        }
+      }
+    },
+    "pageOfPentacles": {
+      "name": "Valete de Ouros",
+      "intro": "Um jovem de túnica verde contempla um pentáculo erguido, num campo arado diante das montanhas. Estudo, curiosidade prática e o início de um projeto que exige constância.",
+      "regions": {
+        "raisedPentacle": {
+          "title": "O Pentáculo Contemplado",
+          "description": "Ele o ergue com as duas mãos e o observa de perto: a proposta de algo concreto, tratada com cuidado e atenção ao detalhe."
+        },
+        "redCap": {
+          "title": "O Gorro Vermelho",
+          "description": "Um gorro simples e vermelho: a energia contida do aprendiz, discreta e diligente. O entusiasmo está no trabalho, não na aparência."
+        },
+        "plowedField": {
+          "title": "O Campo Arado",
+          "description": "Sulcos prontos para a semente: o terreno foi trabalhado e espera paciência. Começar bem é preparar o chão antes de plantar."
+        },
+        "treesMountains": {
+          "title": "As Árvores e as Montanhas",
+          "description": "Árvores e montanhas ao longe: o horizonte de longo prazo. O jovem olha de perto para algo que só o tempo fará crescer."
+        }
+      }
+    },
+    "knightOfPentacles": {
+      "name": "Cavaleiro de Ouros",
+      "intro": "Um cavaleiro de armadura permanece imóvel num cavalo negro de passo firme, segurando um pentáculo num campo arado. Responsabilidade, perseverança e o trabalho metódico que não tem pressa.",
+      "regions": {
+        "heldPentacle": {
+          "title": "O Pentáculo na Mão",
+          "description": "Ele o sustenta com atenção e o examina: a tarefa está nas mãos. A confiança vem de cumprir o prometido, sem atalhos."
+        },
+        "blackHorse": {
+          "title": "O Cavalo Negro",
+          "description": "Forte e parado, de crina espessa: a energia da terra, robusta e paciente. Não corre, mas aguenta qualquer jornada longa."
+        },
+        "oakLeafHelmet": {
+          "title": "O Elmo de Folhas",
+          "description": "Folhas de carvalho adornam o elmo: força e durabilidade da natureza. Sua autoridade vem do mérito constante, não do brilho passageiro."
+        },
+        "plowedLand": {
+          "title": "A Terra Arada",
+          "description": "Sulcos retos a perder de vista: o trabalho meticuloso e repetido. Quem confia no processo colhe no tempo certo."
+        }
+      }
+    },
+    "queenOfPentacles": {
+      "name": "Rainha de Ouros",
+      "intro": "A rainha em trono de frutas e cabras ampara um pentáculo no colo, num jardim com um coelho. Cuidado, abundância e a generosidade prática de quem nutre o ambiente à sua volta.",
+      "regions": {
+        "pentacleLap": {
+          "title": "O Pentáculo no Colo",
+          "description": "Ela o segura como a um filho, com os dois braços: a riqueza tratada com ternura. Cuidar do que é material também é um ato de amor."
+        },
+        "hare": {
+          "title": "O Coelho",
+          "description": "Um coelho salta no canto: fertilidade, abundância e instinto vivo. A natureza circula livre onde a rainha reina com acolhimento."
+        },
+        "carvedThrone": {
+          "title": "O Trono Entalhado",
+          "description": "Cabras e frutas esculpidas: a vitalidade da terra e a colheita. Seu poder repousa na natureza e na fartura que dela se extrai."
+        },
+        "roseBower": {
+          "title": "O Caramanchão de Rosas",
+          "description": "Rosas florescem sobre ela como um dossel: beleza e sensualidade em equilíbrio com a ordem. O ambiente ao redor reflete seu cuidado."
+        }
+      }
+    },
+    "kingOfPentacles": {
+      "name": "Rei de Ouros",
+      "intro": "O rei de manto de uvas senta num trono de touros, segurando cetro e pentáculo diante de seu castelo. Prosperidade, estabilidade e o poder de quem construiu e agora administra com generosidade.",
+      "regions": {
+        "pentacleSceptre": {
+          "title": "O Pentáculo e o Cetro",
+          "description": "Uma mão guarda a moeda, a outra o cetro: riqueza e autoridade a serviço do que construiu. Governar é também saber conservar."
+        },
+        "bullThrone": {
+          "title": "O Trono de Touros",
+          "description": "Cabeças de touro nos braços do trono: força, teimosia e fertilidade da terra. Sua autoridade é paciente, mas firme como a rocha."
+        },
+        "grapeMantle": {
+          "title": "O Manto de Uvas",
+          "description": "Videiras e cachos bordados cobrem a veste: a colheita feita roupa. A abundância é seu estado natural, fruto de décadas de cultivo."
+        },
+        "castleGarden": {
+          "title": "O Castelo e o Jardim",
+          "description": "A fortaleza e o jardim florido atrás dele: segurança que convida ao prazer. O patrimônio é lugar de proteção e também de acolhida."
+        }
+      }
     }
   },
   "tarotWaite": {
