@@ -147,7 +147,7 @@ export default async function RootLayout({ children, params }: Props) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4170456120089512"
           crossOrigin="anonymous"
         />
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="2a693d97-8387-4b71-bf4d-20cdfaf00a9c"></script>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="429b7cd8-6ea2-4ccf-84ae-824bd15095e8"></script>
         {/* Inline theme script — applies dark class before paint to avoid flash/hydration mismatch */}
         <script
           dangerouslySetInnerHTML={{
